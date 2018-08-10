@@ -14,17 +14,17 @@ class Excel:
         # 分析每张工作表的内容
         data = xlrd.open_workbook(path)
         for sheet in data.sheets():
-            self.sheets[sheet.name] = self.__analyze_sheet__(sheet)
+            self.sheets[sheet.name] = self.__analyze_sheet__(sheet.name, sheet)
     
     @staticmethod
-    def __analyze_sheet__(sheet):
+    def __analyze_sheet__(name, sheet):
         # 获取基本属性
         types = sheet.row_values(Excel.TYPE_ROW_ID)
         notes = sheet.row_values(Excel.NOTE_ROW_ID)
         fields = sheet.row_values(Excel.FIELD_ROW_ID)
 
         # 生成数据类
-        sheetData = SwapData(types, notes, fields)
+        sheetData = SwapData(name, types, notes, fields)
 
         # 获需所有字段
         for row_index in range(Excel.FIELD_ROW_ID + 1, sheet.nrows):
@@ -32,6 +32,6 @@ class Excel:
             for col_index in range(0, sheet.ncols):
                 field_name = fields[col_index]
                 data[field_name] = sheet.cell(row_index, col_index).value
-                sheetData.insert(data)
+            sheetData.insert(data)
         
         return sheetData

@@ -1,0 +1,188 @@
+syntax = "proto3";
+option csharp_namespace = "NetProcol";
+	message Unit{
+	 int64 id =1;
+	}
+
+	/// <summary>
+	/// 传送unit
+	/// </summary>
+	message Op_M2M_TrasferUnitRequest // IRequest
+	{
+		 Unit Unit = 1;
+	}
+	
+	message Op_M2M_TrasferUnitResponse // IResponse
+	{
+		 int64 InstanceId = 1;
+	}
+	
+	message Op_M2A_Reload // IRequest
+	{
+	}
+
+	message Op_A2M_Reload // IResponse
+	{
+	}
+
+	message Op_G2G_LockRequest // IRequest
+	{
+		 int64 Id = 1;
+		 string Address = 2;
+	}
+
+	message Op_G2G_LockResponse // IResponse
+	{
+	}
+
+	message Op_G2G_LockReleaseRequest // IRequest
+	{
+		 int64 Id = 1;
+		 string Address = 2;
+	}
+
+	message Op_G2G_LockReleaseResponse // IResponse
+	{
+	}
+
+	message ComponentWithId{
+		 int64 Id = 1;	
+	}
+
+	message Op_DBSaveRequest // IRequest
+	{
+		 bool NeedCache = 1;
+
+		 string CollectionName = 2;
+
+		 ComponentWithId Component = 3;
+	}
+
+
+	message Op_DBSaveBatchResponse // IResponse
+	{
+	}
+
+	message Op_DBSaveBatchRequest // IRequest
+	{
+		 bool NeedCache = 1;
+		 string CollectionName = 2;
+		repeated ComponentWithId Components = 3;
+	}
+
+	message Op_DBSaveResponse // IResponse
+	{
+	}
+
+	message Op_DBQueryRequest // IRequest
+	{
+		 int64 Id = 1;
+		 string CollectionName = 2;
+		 bool NeedCache = 3;
+	}
+
+	message Op_DBQueryResponse // IResponse
+	{
+		 ComponentWithId Component = 1;
+	}
+
+	message Op_DBQueryBatchRequest // IRequest
+	{
+		 string CollectionName = 1;
+		repeated int64 IdList = 2;
+		 bool NeedCache = 3;
+	}
+
+	message Op_DBQueryBatchResponse // IResponse
+	{
+		repeated ComponentWithId Components = 1;
+	}
+
+	message Op_DBQueryJsonRequest // IRequest
+	{
+		 string CollectionName = 1;
+		 string Json = 2;
+	}
+
+	message Op_DBQueryJsonResponse // IResponse
+	{
+		repeated ComponentWithId Components = 1;
+	}
+
+	message Op_ObjectAddRequest // IRequest
+	{
+		 int64 Key = 1;
+		 int64 InstanceId = 2;
+	}
+
+	message Op_ObjectAddResponse // IResponse
+	{
+	}
+
+	message Op_ObjectRemoveRequest // IRequest
+	{
+		 int64 Key = 1;
+	}
+
+	message Op_ObjectRemoveResponse // IResponse
+	{
+	}
+
+	message Op_ObjectLockRequest // IRequest
+	{
+		 int64 Key = 1;
+		 int64 InstanceId = 2;
+		 int64 Time = 3;
+	}
+
+	message Op_ObjectLockResponse // IResponse
+	{
+	}
+
+	message Op_ObjectUnLockRequest // IRequest
+	{
+		 int64 Key = 1;
+		 int64 OldInstanceId = 2;
+		 int64 InstanceId = 3;
+	}
+
+	message Op_ObjectUnLockResponse // IResponse
+	{
+	}
+
+	message Op_ObjectGetRequest // IRequest
+	{
+		 int64 Key = 1;
+	}
+
+	message Op_ObjectGetResponse // IResponse
+	{
+		 int64 InstanceId = 1;
+	}
+
+	message Op_R2G_GetLoginKey // IRequest
+	{
+		 string Account = 1;
+	}
+
+	message Op_G2R_GetLoginKey // IResponse
+	{
+		 int64 Key = 1;
+	}
+
+	message Op_G2M_CreateUnit // IRequest
+	{
+		 int64 PlayerId = 1;
+		 int64 GateSessionId = 2;
+	}
+
+	message Op_M2G_CreateUnit // IResponse
+	{
+		 int64 UnitId = 1;
+		 int64 Count = 2;
+	}
+
+	message Op_G2M_SessionDisconnect // IActorMessage
+	{
+	}
+    

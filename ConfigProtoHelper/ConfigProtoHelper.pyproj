@@ -27,7 +27,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ExcelHelper.py" />
+    <Compile Include="ProtoHelper.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProtoTemplate.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SwapData.py" />

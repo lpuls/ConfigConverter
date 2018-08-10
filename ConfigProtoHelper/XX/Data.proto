@@ -2,7 +2,10 @@
 syntax = "proto3";
 option csharp_namespace = "Config";
 
-enum cast_type {
+
+
+message cast_type
+{
 	cast_type_none = 0;  // 无
 	cast_type_initiative = 1;  // 主动
 	cast_type_passivity = 2;  // 被动
@@ -10,7 +13,8 @@ enum cast_type {
 }
 
 
-enum effect_type {
+message effect_type
+{
 	effect_type_none = 0;  // 无
 	effect_type_general_harm = 1;  // 普通伤害
 	effect_type_harm = 2;  // 爆炸伤害
@@ -19,7 +23,8 @@ enum effect_type {
 }
 
 
-enum item_detail_type {
+message item_detail_type
+{
 	item_detail_type_none = 0;  // 无
 	item_detail_type_max_hp = 10001;  // 最大生命值
 	item_detail_type_cur_hp = 10002;  // 当前生命值
@@ -94,7 +99,8 @@ enum item_detail_type {
 }
 
 
-enum race {
+message race
+{
 	race_none = 0;  // 无
 	race_human = 1;  // 人类
 	race_zombie = 2;  // 僵尸
@@ -102,7 +108,8 @@ enum race {
 }
 
 
-enum target_select_type {
+message target_select_type
+{
 	target_select_type_none = 0;  // 无
 	target_select_type_nearest = 1;  // 最近
 	target_select_type_farthest = 2;  // 最远
@@ -112,7 +119,5 @@ enum target_select_type {
 	target_select_type_random = 6;  // 随机
 
 }
-
-
 
 

@@ -1,7 +1,7 @@
 # _*_coding:utf-8_*_
 
 import xlrd
-from SwapData import SwapData
+from SwapData import *
 
 class Excel:
     TYPE_ROW_ID = 0
@@ -24,7 +24,7 @@ class Excel:
         fields = sheet.row_values(Excel.FIELD_ROW_ID)
 
         # 生成数据类
-        sheetData = SwapData(name, types, notes, fields)
+        sheetData = get_swap_data(name, types, notes, fields)
 
         # 获需所有字段
         for row_index in range(Excel.FIELD_ROW_ID + 1, sheet.nrows):

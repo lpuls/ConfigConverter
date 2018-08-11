@@ -22,77 +22,113 @@ namespace Config {
     static DataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpEYXRhLnByb3RvKlIKCWNhc3RfdHlwZRISCg5jYXN0X3R5cGVfbm9uZRAA",
-            "EhgKFGNhc3RfdHlwZV9pbml0aWF0aXZlEAESFwoTY2FzdF90eXBlX3Bhc3Np",
-            "dml0eRACKm8KC2VmZmVjdF90eXBlEhQKEGVmZmVjdF90eXBlX25vbmUQABIc",
-            "ChhlZmZlY3RfdHlwZV9nZW5lcmFsX2hhcm0QARIUChBlZmZlY3RfdHlwZV9o",
-            "YXJtEAISFgoSZWZmZWN0X3R5cGVfZWZmZWN0EAMq0hMKEGl0ZW1fZGV0YWls",
-            "X3R5cGUSGQoVaXRlbV9kZXRhaWxfdHlwZV9ub25lEAASHAoXaXRlbV9kZXRh",
-            "aWxfdHlwZV9tYXhfaHAQkU4SHAoXaXRlbV9kZXRhaWxfdHlwZV9jdXJfaHAQ",
-            "kk4SHAoXaXRlbV9kZXRhaWxfdHlwZV9hdHRhY2sQk04SIgodaXRlbV9kZXRh",
-            "aWxfdHlwZV9hdHRhY2tfc3BlZWQQlE4SJQogaXRlbV9kZXRhaWxfdHlwZV9h",
-            "dHRhY2tfZGlzdGFuY2UQlU4SIgodaXRlbV9kZXRhaWxfdHlwZV9hdHRhY2tf",
-            "cmFuZ2UQlk4SIgodaXRlbV9kZXRhaWxfdHlwZV9hdHRhY2tfYW5nbGUQl04S",
-            "IgodaXRlbV9kZXRhaWxfdHlwZV9yZWxvYWRfc3BlZWQQmE4SGgoVaXRlbV9k",
-            "ZXRhaWxfdHlwZV9jbGlwEJlOEh8KGml0ZW1fZGV0YWlsX3R5cGVfY3JpdF9y",
-            "YXRlEJpOEiAKG2l0ZW1fZGV0YWlsX3R5cGVfY3JpdF9kYW1nZRCbThIeChlp",
-            "dGVtX2RldGFpbF90eXBlX2hpdF9yYXRlEJxOEhwKF2l0ZW1fZGV0YWlsX3R5",
-            "cGVfcGllcmNlEJ1OEhwKF2l0ZW1fZGV0YWlsX3R5cGVfZGVmZW5kEJ5OEhwK",
-            "F2l0ZW1fZGV0YWlsX3R5cGVfd2lsZnVsEJ9OEiYKIWl0ZW1fZGV0YWlsX3R5",
-            "cGVfZGFtYWdlX3JlZHVjdGlvbhCgThIaChVpdGVtX2RldGFpbF90eXBlX2Rv",
-            "Z2UQoU4SIAobaXRlbV9kZXRhaWxfdHlwZV9tb3ZlX3NwZWVkEKJOEhwKF2l0",
-            "ZW1fZGV0YWlsX3R5cGVfc3Ryb25nEKNOEh4KGWl0ZW1fZGV0YWlsX3R5cGVf",
-            "cGh5c2lxdWUQpE4SGQoUaXRlbV9kZXRhaWxfdHlwZV9hZ2wQpU4SGQoUaXRl",
-            "bV9kZXRhaWxfdHlwZV9pbnQQpk4SGwoWaXRlbV9kZXRhaWxfdHlwZV9sdWNr",
-            "eRCnThIdChhpdGVtX2RldGFpbF90eXBlX2V4cGxvZGUQqE4SGwoWaXRlbV9k",
-            "ZXRhaWxfdHlwZV90cmVhdBCpThIkCh9pdGVtX2RldGFpbF90eXBlX21lbGVl",
-            "X2hpdF90aW1lEKpOEh0KGGl0ZW1fZGV0YWlsX3R5cGVfZ3Jvd19ocBCrThIh",
-            "ChxpdGVtX2RldGFpbF90eXBlX2dyb3dfYXR0YWNrEKxOEiEKHGl0ZW1fZGV0",
-            "YWlsX3R5cGVfZ3Jvd19kZWZlbmQQrU4SHgoZaXRlbV9kZXRhaWxfdHlwZV9n",
-            "cm93X2hpdBCuThIfChppdGVtX2RldGFpbF90eXBlX2dyb3dfZG9nZRCvThIh",
-            "ChxpdGVtX2RldGFpbF90eXBlX2dyb3dfZXhwb2RlELBOEiAKG2l0ZW1fZGV0",
-            "YWlsX3R5cGVfZ3Jvd190cmVhdBCxThIkCh9pdGVtX2RldGFpbF90eXBlX2dy",
-            "b3dfY3JpdF9yYXRlELJOEiUKIGl0ZW1fZGV0YWlsX3R5cGVfZ3Jvd19jcml0",
-            "X2RhbWdlELNOEiIKHWl0ZW1fZGV0YWlsX3R5cGVfYXR0YWNrX3RpbWVzELRO",
-            "EiUKIGl0ZW1fZGV0YWlsX3R5cGVfYXR0YWNrX2ludGVydmFsELVOEiAKG2l0",
-            "ZW1fZGV0YWlsX3R5cGVfdmlld19yYW5nZRC2ThIiCh1pdGVtX2RldGFpbF90",
-            "eXBlX2Rhbmdlcl9yYW5nZRC3ThIgChtpdGVtX2RldGFpbF90eXBlX2RvZ2Vf",
-            "cmFuZ2UQuE4SJAofaXRlbV9kZXRhaWxfdHlwZV9yb3RhdGlvbl9zcGVlZBC5",
-            "ThIoCiNpdGVtX2RldGFpbF90eXBlX3dyZXN0bGVfdGVjaG5vbG9neRD5VRIk",
-            "Ch9pdGVtX2RldGFpbF90eXBlX2d1bl90ZWNobm9sb2d5EPpVEigKI2l0ZW1f",
-            "ZGV0YWlsX3R5cGVfZXhwbG9kZV90ZWNobm9sb2d5EPtVEiYKIWl0ZW1fZGV0",
-            "YWlsX3R5cGVfdHJlYXRfdGVjaG5vbG9neRD8VRIlCiBpdGVtX2RldGFpbF90",
-            "eXBlX2Nvb2tfdGVjaG5vbG9neRDhXRImCiFpdGVtX2RldGFpbF90eXBlX3By",
-            "b2JlX3RlY2hub2xvZ3kQ4l0SKgolaXRlbV9kZXRhaWxfdHlwZV9tYWNoaW5p",
-            "bmdfdGVjaG5vbG9neRDjXRIpCiRpdGVtX2RldGFpbF90eXBlX2VsZWN0cm9u",
-            "X3RlY2hub2xvZ3kQ5F0SJwoiaXRlbV9kZXRhaWxfdHlwZV9tZWRpY2FfdGVj",
-            "aG5vbG9neRDlXRIpCiRpdGVtX2RldGFpbF90eXBlX2NoZW1pY2FsX3RlY2hu",
-            "b2xvZ3kQ5l0SJwoiaXRlbV9kZXRhaWxfdHlwZV9zZXdpbmdfdGVjaG5vbG9n",
-            "eRDnXRIqCiVpdGVtX2RldGFpbF90eXBlX21lY2hhbmlzbV90ZWNobm9sb2d5",
-            "EOhdEiEKHGl0ZW1fZGV0YWlsX3R5cGVfZmlnaHRfbGV2ZWwQ6V0SHQoYaXRl",
-            "bV9kZXRhaWxfdHlwZV9zYXRpZXR5EMllEhoKFWl0ZW1fZGV0YWlsX3R5cGVf",
-            "Y2VsbBDKZRIdChhpdGVtX2RldGFpbF90eXBlX2RpYW1vbmQQy2USGgoVaXRl",
-            "bV9kZXRhaWxfdHlwZV9mdWVsEMxlEigKI2l0ZW1fZGV0YWlsX3R5cGVfZXF1",
-            "aXBtZW50X2NhcGFjaXR5ELFtEigKI2l0ZW1fZGV0YWlsX3R5cGVfd2FyZWhv",
-            "dXNlX2NhcGFjaXR5ELJtEiYKIWl0ZW1fZGV0YWlsX3R5cGVfY29ja3BpdF9j",
-            "YXBhY2l0eRCzbRIkCh9pdGVtX2RldGFpbF90eXBlX2hvcnNlcG93ZXJfbWF4",
-            "ELRtEigKI2l0ZW1fZGV0YWlsX3R5cGVfZnVlbF90YW5rX2NhcGFjaXR5ELVt",
-            "EiIKHWl0ZW1fZGV0YWlsX3R5cGVfcG93ZXJfc3VwcGx5ELZtEikKJGl0ZW1f",
-            "ZGV0YWlsX3R5cGVfd2FyZWhvdXNlX2NhcGFjaXR5MhC3bRIpCiRpdGVtX2Rl",
-            "dGFpbF90eXBlX3dhcmVob3VzZV9jYXBhY2l0eTMQuG0SKQokaXRlbV9kZXRh",
-            "aWxfdHlwZV93YXJlaG91c2VfY2FwYWNpdHk0ELltEikKJGl0ZW1fZGV0YWls",
-            "X3R5cGVfd2FyZWhvdXNlX2NhcGFjaXR5NRC6bRIpCiRpdGVtX2RldGFpbF90",
-            "eXBlX3dhcmVob3VzZV9jYXBhY2l0eTYQu20qNgoEcmFjZRINCglyYWNlX25v",
-            "bmUQABIOCgpyYWNlX2h1bWFuEAESDwoLcmFjZV96b21iaWUQAiqAAgoSdGFy",
-            "Z2V0X3NlbGVjdF90eXBlEhsKF3RhcmdldF9zZWxlY3RfdHlwZV9ub25lEAAS",
-            "HgoadGFyZ2V0X3NlbGVjdF90eXBlX25lYXJlc3QQARIfCht0YXJnZXRfc2Vs",
-            "ZWN0X3R5cGVfZmFydGhlc3QQAhIfCht0YXJnZXRfc2VsZWN0X3R5cGVfaHBf",
-            "bGVhc3QQAxIhCh10YXJnZXRfc2VsZWN0X3R5cGVfaHBfbWF4aW11bRAEEikK",
-            "JXRhcmdldF9zZWxlY3RfdHlwZV9iYXR0bGVfYWJpbGl0eV9tYXgQBRIdChl0",
-            "YXJnZXRfc2VsZWN0X3R5cGVfcmFuZG9tEAZCCaoCBkNvbmZpZ2IGcHJvdG8z"));
+            "CgpEYXRhLnByb3RvIqkJCgVza2lsbBIKCgJpZBgBIAEoBRIQCghuYW1lX2tl",
+            "eRgCIAEoCRIPCgduYW1lX2NuGAMgASgJEhEKCWludHJvX2tleRgEIAEoCRIQ",
+            "CghpbnRyb19jbhgFIAEoCRIdCgljYXN0X3R5cGUYBiABKA4yCi5jYXN0X3R5",
+            "cGUSDQoFbGV2ZWwYByABKAUSDAoEY29zdBgIIAEoBRIWCg5wZXJmb3JtYW5j",
+            "ZV9pZBgJIAEoBRIVCg1wcm9qZWN0aWxlX2lkGAogASgFEhoKEmhpdF9wZXJm",
+            "b3JtYW5jZV9pZBgLIAEoBRITCgtiZV9oaXRfdGltZRgMIAEoBRIZChFibG9v",
+            "ZF9wZXJmb3JtYW5jZRgNIAEoBRISCgpidWZmX2FycmF5GA4gAygFEhQKDHdl",
+            "YXBvbl9zaGFwZRgPIAEoBRIUCgxzdGFydHVwX3RpbWUYECABKAUSEwoLYWN0",
+            "aXZlX3RpbWUYESABKAUSEAoIaGl0X3RpbWUYEiADKAUSFAoMcmVjb3Zlcl90",
+            "aW1lGBMgASgFEhkKEXNraWxsX3JhbmdlX3ZhbHVlGBQgASgFEhUKDXRhcmdl",
+            "dF9hbW91bnQYFSABKAUSKwoQdGFyZ2V0X2NhbXBfdHlwZRgWIAEoDjIRLnRh",
+            "cmdldF9jYW1wX3R5cGUSLwoSdGFyZ2V0X3NlbGVjdF90eXBlGBcgASgOMhMu",
+            "dGFyZ2V0X3NlbGVjdF90eXBlEhMKC3RhcmdldF90eXBlGBggASgFEiIKE2lu",
+            "dmFsaWRfdGFyZ2V0X3R5cGUYGSABKA4yBS5yYWNlEhgKEHRyaWdnZXJfcG9z",
+            "X3R5cGUYGiABKAUSJwoSdHJpZ2dlcl9yYW5nZV90eXBlGBsgASgOMgsucmFu",
+            "Z2VfdHlwZRIbChN0cmlnZ2VyX3JhbmdlX3ZhbHVlGBwgAygFEhYKDmVmZmVj",
+            "dGl2ZV90aW1lGB0gASgFEhsKE3RyaWdnZXJfcGVyZm9ybWFuY2UYHiABKAUS",
+            "IAoYdHJpZ2dlcl91bml0X3BlcmZvcm1hbmNlGB8gASgFEiIKGnRyaWdnZXJf",
+            "c2luZ2xlX3BlcmZvcm1hbmNlGCAgASgFEhYKDnRyaWdnZXJfZHVyaW5nGCEg",
+            "ASgFEhQKDHRyaWdnZXJfdGljaxgiIAEoBRIUCgx0cmlnZ2VyX2J1ZmYYIyAD",
+            "KAUSEwoLY2FuY2VsX2J1ZmYYJCABKAgSKAoSZGFtYWdlX2VmZmVjdF90eXBl",
+            "GCUgASgOMgwuZWZmZWN0X3R5cGUSGwoTZGFtYWdlX2VmZmVjdF92YWx1ZRgm",
+            "IAEoBRI1ChphZGR0aXZlX2RhbWFnZV9lZmZlY3RfdHlwZRgnIAEoDjIRLml0",
+            "ZW1fZGV0YWlsX3R5cGUSJAocYWRkdGl2ZV9kYW1hZ2VfZWZmZWN0X2ZhY3Rv",
+            "chgoIAEoBRIlChZkZXNpZ25hdGVkX3RhcmdldF90eXBlGCkgASgOMgUucmFj",
+            "ZRIeChZkZXNpZ25hdGVkX2VmZmVjdF90eXBlGCogASgFEh8KF2Rlc2lnbmF0",
+            "ZWRfZWZmZWN0X3ZhbHVlGCsgASgFEg8KB2ljb25faWQYLCABKAUqUgoJY2Fz",
+            "dF90eXBlEhIKDmNhc3RfdHlwZV9ub25lEAASGAoUY2FzdF90eXBlX2luaXRp",
+            "YXRpdmUQARIXChNjYXN0X3R5cGVfcGFzc2l2aXR5EAIqbwoLZWZmZWN0X3R5",
+            "cGUSFAoQZWZmZWN0X3R5cGVfbm9uZRAAEhwKGGVmZmVjdF90eXBlX2dlbmVy",
+            "YWxfaGFybRABEhQKEGVmZmVjdF90eXBlX2hhcm0QAhIWChJlZmZlY3RfdHlw",
+            "ZV9lZmZlY3QQAyrSEwoQaXRlbV9kZXRhaWxfdHlwZRIZChVpdGVtX2RldGFp",
+            "bF90eXBlX25vbmUQABIcChdpdGVtX2RldGFpbF90eXBlX21heF9ocBCRThIc",
+            "ChdpdGVtX2RldGFpbF90eXBlX2N1cl9ocBCSThIcChdpdGVtX2RldGFpbF90",
+            "eXBlX2F0dGFjaxCTThIiCh1pdGVtX2RldGFpbF90eXBlX2F0dGFja19zcGVl",
+            "ZBCUThIlCiBpdGVtX2RldGFpbF90eXBlX2F0dGFja19kaXN0YW5jZRCVThIi",
+            "Ch1pdGVtX2RldGFpbF90eXBlX2F0dGFja19yYW5nZRCWThIiCh1pdGVtX2Rl",
+            "dGFpbF90eXBlX2F0dGFja19hbmdsZRCXThIiCh1pdGVtX2RldGFpbF90eXBl",
+            "X3JlbG9hZF9zcGVlZBCYThIaChVpdGVtX2RldGFpbF90eXBlX2NsaXAQmU4S",
+            "HwoaaXRlbV9kZXRhaWxfdHlwZV9jcml0X3JhdGUQmk4SIAobaXRlbV9kZXRh",
+            "aWxfdHlwZV9jcml0X2RhbWdlEJtOEh4KGWl0ZW1fZGV0YWlsX3R5cGVfaGl0",
+            "X3JhdGUQnE4SHAoXaXRlbV9kZXRhaWxfdHlwZV9waWVyY2UQnU4SHAoXaXRl",
+            "bV9kZXRhaWxfdHlwZV9kZWZlbmQQnk4SHAoXaXRlbV9kZXRhaWxfdHlwZV93",
+            "aWxmdWwQn04SJgohaXRlbV9kZXRhaWxfdHlwZV9kYW1hZ2VfcmVkdWN0aW9u",
+            "EKBOEhoKFWl0ZW1fZGV0YWlsX3R5cGVfZG9nZRChThIgChtpdGVtX2RldGFp",
+            "bF90eXBlX21vdmVfc3BlZWQQok4SHAoXaXRlbV9kZXRhaWxfdHlwZV9zdHJv",
+            "bmcQo04SHgoZaXRlbV9kZXRhaWxfdHlwZV9waHlzaXF1ZRCkThIZChRpdGVt",
+            "X2RldGFpbF90eXBlX2FnbBClThIZChRpdGVtX2RldGFpbF90eXBlX2ludBCm",
+            "ThIbChZpdGVtX2RldGFpbF90eXBlX2x1Y2t5EKdOEh0KGGl0ZW1fZGV0YWls",
+            "X3R5cGVfZXhwbG9kZRCoThIbChZpdGVtX2RldGFpbF90eXBlX3RyZWF0EKlO",
+            "EiQKH2l0ZW1fZGV0YWlsX3R5cGVfbWVsZWVfaGl0X3RpbWUQqk4SHQoYaXRl",
+            "bV9kZXRhaWxfdHlwZV9ncm93X2hwEKtOEiEKHGl0ZW1fZGV0YWlsX3R5cGVf",
+            "Z3Jvd19hdHRhY2sQrE4SIQocaXRlbV9kZXRhaWxfdHlwZV9ncm93X2RlZmVu",
+            "ZBCtThIeChlpdGVtX2RldGFpbF90eXBlX2dyb3dfaGl0EK5OEh8KGml0ZW1f",
+            "ZGV0YWlsX3R5cGVfZ3Jvd19kb2dlEK9OEiEKHGl0ZW1fZGV0YWlsX3R5cGVf",
+            "Z3Jvd19leHBvZGUQsE4SIAobaXRlbV9kZXRhaWxfdHlwZV9ncm93X3RyZWF0",
+            "ELFOEiQKH2l0ZW1fZGV0YWlsX3R5cGVfZ3Jvd19jcml0X3JhdGUQsk4SJQog",
+            "aXRlbV9kZXRhaWxfdHlwZV9ncm93X2NyaXRfZGFtZ2UQs04SIgodaXRlbV9k",
+            "ZXRhaWxfdHlwZV9hdHRhY2tfdGltZXMQtE4SJQogaXRlbV9kZXRhaWxfdHlw",
+            "ZV9hdHRhY2tfaW50ZXJ2YWwQtU4SIAobaXRlbV9kZXRhaWxfdHlwZV92aWV3",
+            "X3JhbmdlELZOEiIKHWl0ZW1fZGV0YWlsX3R5cGVfZGFuZ2VyX3JhbmdlELdO",
+            "EiAKG2l0ZW1fZGV0YWlsX3R5cGVfZG9nZV9yYW5nZRC4ThIkCh9pdGVtX2Rl",
+            "dGFpbF90eXBlX3JvdGF0aW9uX3NwZWVkELlOEigKI2l0ZW1fZGV0YWlsX3R5",
+            "cGVfd3Jlc3RsZV90ZWNobm9sb2d5EPlVEiQKH2l0ZW1fZGV0YWlsX3R5cGVf",
+            "Z3VuX3RlY2hub2xvZ3kQ+lUSKAojaXRlbV9kZXRhaWxfdHlwZV9leHBsb2Rl",
+            "X3RlY2hub2xvZ3kQ+1USJgohaXRlbV9kZXRhaWxfdHlwZV90cmVhdF90ZWNo",
+            "bm9sb2d5EPxVEiUKIGl0ZW1fZGV0YWlsX3R5cGVfY29va190ZWNobm9sb2d5",
+            "EOFdEiYKIWl0ZW1fZGV0YWlsX3R5cGVfcHJvYmVfdGVjaG5vbG9neRDiXRIq",
+            "CiVpdGVtX2RldGFpbF90eXBlX21hY2hpbmluZ190ZWNobm9sb2d5EONdEikK",
+            "JGl0ZW1fZGV0YWlsX3R5cGVfZWxlY3Ryb25fdGVjaG5vbG9neRDkXRInCiJp",
+            "dGVtX2RldGFpbF90eXBlX21lZGljYV90ZWNobm9sb2d5EOVdEikKJGl0ZW1f",
+            "ZGV0YWlsX3R5cGVfY2hlbWljYWxfdGVjaG5vbG9neRDmXRInCiJpdGVtX2Rl",
+            "dGFpbF90eXBlX3Nld2luZ190ZWNobm9sb2d5EOddEioKJWl0ZW1fZGV0YWls",
+            "X3R5cGVfbWVjaGFuaXNtX3RlY2hub2xvZ3kQ6F0SIQocaXRlbV9kZXRhaWxf",
+            "dHlwZV9maWdodF9sZXZlbBDpXRIdChhpdGVtX2RldGFpbF90eXBlX3NhdGll",
+            "dHkQyWUSGgoVaXRlbV9kZXRhaWxfdHlwZV9jZWxsEMplEh0KGGl0ZW1fZGV0",
+            "YWlsX3R5cGVfZGlhbW9uZBDLZRIaChVpdGVtX2RldGFpbF90eXBlX2Z1ZWwQ",
+            "zGUSKAojaXRlbV9kZXRhaWxfdHlwZV9lcXVpcG1lbnRfY2FwYWNpdHkQsW0S",
+            "KAojaXRlbV9kZXRhaWxfdHlwZV93YXJlaG91c2VfY2FwYWNpdHkQsm0SJgoh",
+            "aXRlbV9kZXRhaWxfdHlwZV9jb2NrcGl0X2NhcGFjaXR5ELNtEiQKH2l0ZW1f",
+            "ZGV0YWlsX3R5cGVfaG9yc2Vwb3dlcl9tYXgQtG0SKAojaXRlbV9kZXRhaWxf",
+            "dHlwZV9mdWVsX3RhbmtfY2FwYWNpdHkQtW0SIgodaXRlbV9kZXRhaWxfdHlw",
+            "ZV9wb3dlcl9zdXBwbHkQtm0SKQokaXRlbV9kZXRhaWxfdHlwZV93YXJlaG91",
+            "c2VfY2FwYWNpdHkyELdtEikKJGl0ZW1fZGV0YWlsX3R5cGVfd2FyZWhvdXNl",
+            "X2NhcGFjaXR5MxC4bRIpCiRpdGVtX2RldGFpbF90eXBlX3dhcmVob3VzZV9j",
+            "YXBhY2l0eTQQuW0SKQokaXRlbV9kZXRhaWxfdHlwZV93YXJlaG91c2VfY2Fw",
+            "YWNpdHk1ELptEikKJGl0ZW1fZGV0YWlsX3R5cGVfd2FyZWhvdXNlX2NhcGFj",
+            "aXR5NhC7bSo2CgRyYWNlEg0KCXJhY2Vfbm9uZRAAEg4KCnJhY2VfaHVtYW4Q",
+            "ARIPCgtyYWNlX3pvbWJpZRACKoACChJ0YXJnZXRfc2VsZWN0X3R5cGUSGwoX",
+            "dGFyZ2V0X3NlbGVjdF90eXBlX25vbmUQABIeChp0YXJnZXRfc2VsZWN0X3R5",
+            "cGVfbmVhcmVzdBABEh8KG3RhcmdldF9zZWxlY3RfdHlwZV9mYXJ0aGVzdBAC",
+            "Eh8KG3RhcmdldF9zZWxlY3RfdHlwZV9ocF9sZWFzdBADEiEKHXRhcmdldF9z",
+            "ZWxlY3RfdHlwZV9ocF9tYXhpbXVtEAQSKQoldGFyZ2V0X3NlbGVjdF90eXBl",
+            "X2JhdHRsZV9hYmlsaXR5X21heBAFEh0KGXRhcmdldF9zZWxlY3RfdHlwZV9y",
+            "YW5kb20QBiqaAQoQdGFyZ2V0X2NhbXBfdHlwZRIZChV0YXJnZXRfY2FtcF90",
+            "eXBlX25vbmUQABIXChN0YXJnZXRfY2FtcF90eXBlX3dlEAESGgoWdGFyZ2V0",
+            "X2NhbXBfdHlwZV9lbmVteRACEhwKGHRhcmdldF9jYW1wX3R5cGVfb25lc2Vs",
+            "ZhADEhgKFHRhcmdldF9jYW1wX3R5cGVfYWxsEAQqqQEKCnJhbmdlX3R5cGUS",
+            "EwoPcmFuZ2VfdHlwZV9ub25lEAASGwoXcmFuZ2VfdHlwZV9zdHJhaWdodGxp",
+            "bmUQARIVChFyYW5nZV90eXBlX3NlY3RvchACEhgKFHJhbmdlX3R5cGVfcm91",
+            "bmRuZXNzEAMSGAoUcmFuZ2VfdHlwZV9yZWN0YW5nbGUQBBIeChpyYW5nZV90",
+            "eXBlX211bHRpX2RpcmVjdGlvbhAFQgmqAgZDb25maWdiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Config.cast_type), typeof(global::Config.effect_type), typeof(global::Config.item_detail_type), typeof(global::Config.race), typeof(global::Config.target_select_type), }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Config.cast_type), typeof(global::Config.effect_type), typeof(global::Config.item_detail_type), typeof(global::Config.race), typeof(global::Config.target_select_type), typeof(global::Config.target_camp_type), typeof(global::Config.range_type), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.skill), global::Config.skill.Parser, new[]{ "Id", "NameKey", "NameCn", "IntroKey", "IntroCn", "CastType", "Level", "Cost", "PerformanceId", "ProjectileId", "HitPerformanceId", "BeHitTime", "BloodPerformance", "BuffArray", "WeaponShape", "StartupTime", "ActiveTime", "HitTime", "RecoverTime", "SkillRangeValue", "TargetAmount", "TargetCampType", "TargetSelectType", "TargetType", "InvalidTargetType", "TriggerPosType", "TriggerRangeType", "TriggerRangeValue", "EffectiveTime", "TriggerPerformance", "TriggerUnitPerformance", "TriggerSinglePerformance", "TriggerDuring", "TriggerTick", "TriggerBuff", "CancelBuff", "DamageEffectType", "DamageEffectValue", "AddtiveDamageEffectType", "AddtiveDamageEffectFactor", "DesignatedTargetType", "DesignatedEffectType", "DesignatedEffectValue", "IconId" }, null, null, null)
+          }));
     }
     #endregion
 
@@ -459,6 +495,1352 @@ namespace Config {
     /// 随机
     /// </summary>
     [pbr::OriginalName("target_select_type_random")] Random = 6,
+  }
+
+  public enum target_camp_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_none")] None = 0,
+    /// <summary>
+    /// 我方
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_we")] We = 1,
+    /// <summary>
+    /// 敌方
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_enemy")] Enemy = 2,
+    /// <summary>
+    /// 自身
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_oneself")] Oneself = 3,
+    /// <summary>
+    /// 全体
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_all")] All = 4,
+  }
+
+  public enum range_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("range_type_none")] None = 0,
+    /// <summary>
+    /// 直线(距离)
+    /// </summary>
+    [pbr::OriginalName("range_type_straightline")] Straightline = 1,
+    /// <summary>
+    /// 扇形(角度,半径)
+    /// </summary>
+    [pbr::OriginalName("range_type_sector")] Sector = 2,
+    /// <summary>
+    /// 圆形区域(半径)
+    /// </summary>
+    [pbr::OriginalName("range_type_roundness")] Roundness = 3,
+    /// <summary>
+    /// 矩形(长，宽)
+    /// </summary>
+    [pbr::OriginalName("range_type_rectangle")] Rectangle = 4,
+    /// <summary>
+    /// 多方向射击
+    /// </summary>
+    [pbr::OriginalName("range_type_multi_direction")] MultiDirection = 5,
+  }
+
+  #endregion
+
+  #region Messages
+  public sealed partial class skill : pb::IMessage<skill> {
+    private static readonly pb::MessageParser<skill> _parser = new pb::MessageParser<skill>(() => new skill());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<skill> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public skill() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public skill(skill other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      introKey_ = other.introKey_;
+      introCn_ = other.introCn_;
+      castType_ = other.castType_;
+      level_ = other.level_;
+      cost_ = other.cost_;
+      performanceId_ = other.performanceId_;
+      projectileId_ = other.projectileId_;
+      hitPerformanceId_ = other.hitPerformanceId_;
+      beHitTime_ = other.beHitTime_;
+      bloodPerformance_ = other.bloodPerformance_;
+      buffArray_ = other.buffArray_.Clone();
+      weaponShape_ = other.weaponShape_;
+      startupTime_ = other.startupTime_;
+      activeTime_ = other.activeTime_;
+      hitTime_ = other.hitTime_.Clone();
+      recoverTime_ = other.recoverTime_;
+      skillRangeValue_ = other.skillRangeValue_;
+      targetAmount_ = other.targetAmount_;
+      targetCampType_ = other.targetCampType_;
+      targetSelectType_ = other.targetSelectType_;
+      targetType_ = other.targetType_;
+      invalidTargetType_ = other.invalidTargetType_;
+      triggerPosType_ = other.triggerPosType_;
+      triggerRangeType_ = other.triggerRangeType_;
+      triggerRangeValue_ = other.triggerRangeValue_.Clone();
+      effectiveTime_ = other.effectiveTime_;
+      triggerPerformance_ = other.triggerPerformance_;
+      triggerUnitPerformance_ = other.triggerUnitPerformance_;
+      triggerSinglePerformance_ = other.triggerSinglePerformance_;
+      triggerDuring_ = other.triggerDuring_;
+      triggerTick_ = other.triggerTick_;
+      triggerBuff_ = other.triggerBuff_.Clone();
+      cancelBuff_ = other.cancelBuff_;
+      damageEffectType_ = other.damageEffectType_;
+      damageEffectValue_ = other.damageEffectValue_;
+      addtiveDamageEffectType_ = other.addtiveDamageEffectType_;
+      addtiveDamageEffectFactor_ = other.addtiveDamageEffectFactor_;
+      designatedTargetType_ = other.designatedTargetType_;
+      designatedEffectType_ = other.designatedEffectType_;
+      designatedEffectValue_ = other.designatedEffectValue_;
+      iconId_ = other.iconId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public skill Clone() {
+      return new skill(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_key" field.</summary>
+    public const int IntroKeyFieldNumber = 4;
+    private string introKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroKey {
+      get { return introKey_; }
+      set {
+        introKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_cn" field.</summary>
+    public const int IntroCnFieldNumber = 5;
+    private string introCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroCn {
+      get { return introCn_; }
+      set {
+        introCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "cast_type" field.</summary>
+    public const int CastTypeFieldNumber = 6;
+    private global::Config.cast_type castType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.cast_type CastType {
+      get { return castType_; }
+      set {
+        castType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 7;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost" field.</summary>
+    public const int CostFieldNumber = 8;
+    private int cost_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Cost {
+      get { return cost_; }
+      set {
+        cost_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "performance_id" field.</summary>
+    public const int PerformanceIdFieldNumber = 9;
+    private int performanceId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PerformanceId {
+      get { return performanceId_; }
+      set {
+        performanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "projectile_id" field.</summary>
+    public const int ProjectileIdFieldNumber = 10;
+    private int projectileId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ProjectileId {
+      get { return projectileId_; }
+      set {
+        projectileId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_performance_id" field.</summary>
+    public const int HitPerformanceIdFieldNumber = 11;
+    private int hitPerformanceId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitPerformanceId {
+      get { return hitPerformanceId_; }
+      set {
+        hitPerformanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "be_hit_time" field.</summary>
+    public const int BeHitTimeFieldNumber = 12;
+    private int beHitTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BeHitTime {
+      get { return beHitTime_; }
+      set {
+        beHitTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "blood_performance" field.</summary>
+    public const int BloodPerformanceFieldNumber = 13;
+    private int bloodPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BloodPerformance {
+      get { return bloodPerformance_; }
+      set {
+        bloodPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_array" field.</summary>
+    public const int BuffArrayFieldNumber = 14;
+    private static readonly pb::FieldCodec<int> _repeated_buffArray_codec
+        = pb::FieldCodec.ForInt32(114);
+    private readonly pbc::RepeatedField<int> buffArray_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> BuffArray {
+      get { return buffArray_; }
+    }
+
+    /// <summary>Field number for the "weapon_shape" field.</summary>
+    public const int WeaponShapeFieldNumber = 15;
+    private int weaponShape_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int WeaponShape {
+      get { return weaponShape_; }
+      set {
+        weaponShape_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "startup_time" field.</summary>
+    public const int StartupTimeFieldNumber = 16;
+    private int startupTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StartupTime {
+      get { return startupTime_; }
+      set {
+        startupTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "active_time" field.</summary>
+    public const int ActiveTimeFieldNumber = 17;
+    private int activeTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActiveTime {
+      get { return activeTime_; }
+      set {
+        activeTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_time" field.</summary>
+    public const int HitTimeFieldNumber = 18;
+    private static readonly pb::FieldCodec<int> _repeated_hitTime_codec
+        = pb::FieldCodec.ForInt32(146);
+    private readonly pbc::RepeatedField<int> hitTime_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HitTime {
+      get { return hitTime_; }
+    }
+
+    /// <summary>Field number for the "recover_time" field.</summary>
+    public const int RecoverTimeFieldNumber = 19;
+    private int recoverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RecoverTime {
+      get { return recoverTime_; }
+      set {
+        recoverTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_range_value" field.</summary>
+    public const int SkillRangeValueFieldNumber = 20;
+    private int skillRangeValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SkillRangeValue {
+      get { return skillRangeValue_; }
+      set {
+        skillRangeValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_amount" field.</summary>
+    public const int TargetAmountFieldNumber = 21;
+    private int targetAmount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TargetAmount {
+      get { return targetAmount_; }
+      set {
+        targetAmount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_camp_type" field.</summary>
+    public const int TargetCampTypeFieldNumber = 22;
+    private global::Config.target_camp_type targetCampType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.target_camp_type TargetCampType {
+      get { return targetCampType_; }
+      set {
+        targetCampType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_select_type" field.</summary>
+    public const int TargetSelectTypeFieldNumber = 23;
+    private global::Config.target_select_type targetSelectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.target_select_type TargetSelectType {
+      get { return targetSelectType_; }
+      set {
+        targetSelectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_type" field.</summary>
+    public const int TargetTypeFieldNumber = 24;
+    private int targetType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TargetType {
+      get { return targetType_; }
+      set {
+        targetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "invalid_target_type" field.</summary>
+    public const int InvalidTargetTypeFieldNumber = 25;
+    private global::Config.race invalidTargetType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race InvalidTargetType {
+      get { return invalidTargetType_; }
+      set {
+        invalidTargetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_pos_type" field.</summary>
+    public const int TriggerPosTypeFieldNumber = 26;
+    private int triggerPosType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerPosType {
+      get { return triggerPosType_; }
+      set {
+        triggerPosType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_range_type" field.</summary>
+    public const int TriggerRangeTypeFieldNumber = 27;
+    private global::Config.range_type triggerRangeType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.range_type TriggerRangeType {
+      get { return triggerRangeType_; }
+      set {
+        triggerRangeType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_range_value" field.</summary>
+    public const int TriggerRangeValueFieldNumber = 28;
+    private static readonly pb::FieldCodec<int> _repeated_triggerRangeValue_codec
+        = pb::FieldCodec.ForInt32(226);
+    private readonly pbc::RepeatedField<int> triggerRangeValue_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TriggerRangeValue {
+      get { return triggerRangeValue_; }
+    }
+
+    /// <summary>Field number for the "effective_time" field.</summary>
+    public const int EffectiveTimeFieldNumber = 29;
+    private int effectiveTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EffectiveTime {
+      get { return effectiveTime_; }
+      set {
+        effectiveTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_performance" field.</summary>
+    public const int TriggerPerformanceFieldNumber = 30;
+    private int triggerPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerPerformance {
+      get { return triggerPerformance_; }
+      set {
+        triggerPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_unit_performance" field.</summary>
+    public const int TriggerUnitPerformanceFieldNumber = 31;
+    private int triggerUnitPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerUnitPerformance {
+      get { return triggerUnitPerformance_; }
+      set {
+        triggerUnitPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_single_performance" field.</summary>
+    public const int TriggerSinglePerformanceFieldNumber = 32;
+    private int triggerSinglePerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerSinglePerformance {
+      get { return triggerSinglePerformance_; }
+      set {
+        triggerSinglePerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_during" field.</summary>
+    public const int TriggerDuringFieldNumber = 33;
+    private int triggerDuring_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerDuring {
+      get { return triggerDuring_; }
+      set {
+        triggerDuring_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_tick" field.</summary>
+    public const int TriggerTickFieldNumber = 34;
+    private int triggerTick_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerTick {
+      get { return triggerTick_; }
+      set {
+        triggerTick_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_buff" field.</summary>
+    public const int TriggerBuffFieldNumber = 35;
+    private static readonly pb::FieldCodec<int> _repeated_triggerBuff_codec
+        = pb::FieldCodec.ForInt32(282);
+    private readonly pbc::RepeatedField<int> triggerBuff_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TriggerBuff {
+      get { return triggerBuff_; }
+    }
+
+    /// <summary>Field number for the "cancel_buff" field.</summary>
+    public const int CancelBuffFieldNumber = 36;
+    private bool cancelBuff_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CancelBuff {
+      get { return cancelBuff_; }
+      set {
+        cancelBuff_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_effect_type" field.</summary>
+    public const int DamageEffectTypeFieldNumber = 37;
+    private global::Config.effect_type damageEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.effect_type DamageEffectType {
+      get { return damageEffectType_; }
+      set {
+        damageEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_effect_value" field.</summary>
+    public const int DamageEffectValueFieldNumber = 38;
+    private int damageEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DamageEffectValue {
+      get { return damageEffectValue_; }
+      set {
+        damageEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_damage_effect_type" field.</summary>
+    public const int AddtiveDamageEffectTypeFieldNumber = 39;
+    private global::Config.item_detail_type addtiveDamageEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.item_detail_type AddtiveDamageEffectType {
+      get { return addtiveDamageEffectType_; }
+      set {
+        addtiveDamageEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_damage_effect_factor" field.</summary>
+    public const int AddtiveDamageEffectFactorFieldNumber = 40;
+    private int addtiveDamageEffectFactor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AddtiveDamageEffectFactor {
+      get { return addtiveDamageEffectFactor_; }
+      set {
+        addtiveDamageEffectFactor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_target_type" field.</summary>
+    public const int DesignatedTargetTypeFieldNumber = 41;
+    private global::Config.race designatedTargetType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race DesignatedTargetType {
+      get { return designatedTargetType_; }
+      set {
+        designatedTargetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_effect_type" field.</summary>
+    public const int DesignatedEffectTypeFieldNumber = 42;
+    private int designatedEffectType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DesignatedEffectType {
+      get { return designatedEffectType_; }
+      set {
+        designatedEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_effect_value" field.</summary>
+    public const int DesignatedEffectValueFieldNumber = 43;
+    private int designatedEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DesignatedEffectValue {
+      get { return designatedEffectValue_; }
+      set {
+        designatedEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "icon_id" field.</summary>
+    public const int IconIdFieldNumber = 44;
+    private int iconId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IconId {
+      get { return iconId_; }
+      set {
+        iconId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as skill);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(skill other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (IntroKey != other.IntroKey) return false;
+      if (IntroCn != other.IntroCn) return false;
+      if (CastType != other.CastType) return false;
+      if (Level != other.Level) return false;
+      if (Cost != other.Cost) return false;
+      if (PerformanceId != other.PerformanceId) return false;
+      if (ProjectileId != other.ProjectileId) return false;
+      if (HitPerformanceId != other.HitPerformanceId) return false;
+      if (BeHitTime != other.BeHitTime) return false;
+      if (BloodPerformance != other.BloodPerformance) return false;
+      if(!buffArray_.Equals(other.buffArray_)) return false;
+      if (WeaponShape != other.WeaponShape) return false;
+      if (StartupTime != other.StartupTime) return false;
+      if (ActiveTime != other.ActiveTime) return false;
+      if(!hitTime_.Equals(other.hitTime_)) return false;
+      if (RecoverTime != other.RecoverTime) return false;
+      if (SkillRangeValue != other.SkillRangeValue) return false;
+      if (TargetAmount != other.TargetAmount) return false;
+      if (TargetCampType != other.TargetCampType) return false;
+      if (TargetSelectType != other.TargetSelectType) return false;
+      if (TargetType != other.TargetType) return false;
+      if (InvalidTargetType != other.InvalidTargetType) return false;
+      if (TriggerPosType != other.TriggerPosType) return false;
+      if (TriggerRangeType != other.TriggerRangeType) return false;
+      if(!triggerRangeValue_.Equals(other.triggerRangeValue_)) return false;
+      if (EffectiveTime != other.EffectiveTime) return false;
+      if (TriggerPerformance != other.TriggerPerformance) return false;
+      if (TriggerUnitPerformance != other.TriggerUnitPerformance) return false;
+      if (TriggerSinglePerformance != other.TriggerSinglePerformance) return false;
+      if (TriggerDuring != other.TriggerDuring) return false;
+      if (TriggerTick != other.TriggerTick) return false;
+      if(!triggerBuff_.Equals(other.triggerBuff_)) return false;
+      if (CancelBuff != other.CancelBuff) return false;
+      if (DamageEffectType != other.DamageEffectType) return false;
+      if (DamageEffectValue != other.DamageEffectValue) return false;
+      if (AddtiveDamageEffectType != other.AddtiveDamageEffectType) return false;
+      if (AddtiveDamageEffectFactor != other.AddtiveDamageEffectFactor) return false;
+      if (DesignatedTargetType != other.DesignatedTargetType) return false;
+      if (DesignatedEffectType != other.DesignatedEffectType) return false;
+      if (DesignatedEffectValue != other.DesignatedEffectValue) return false;
+      if (IconId != other.IconId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (IntroKey.Length != 0) hash ^= IntroKey.GetHashCode();
+      if (IntroCn.Length != 0) hash ^= IntroCn.GetHashCode();
+      if (CastType != 0) hash ^= CastType.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (Cost != 0) hash ^= Cost.GetHashCode();
+      if (PerformanceId != 0) hash ^= PerformanceId.GetHashCode();
+      if (ProjectileId != 0) hash ^= ProjectileId.GetHashCode();
+      if (HitPerformanceId != 0) hash ^= HitPerformanceId.GetHashCode();
+      if (BeHitTime != 0) hash ^= BeHitTime.GetHashCode();
+      if (BloodPerformance != 0) hash ^= BloodPerformance.GetHashCode();
+      hash ^= buffArray_.GetHashCode();
+      if (WeaponShape != 0) hash ^= WeaponShape.GetHashCode();
+      if (StartupTime != 0) hash ^= StartupTime.GetHashCode();
+      if (ActiveTime != 0) hash ^= ActiveTime.GetHashCode();
+      hash ^= hitTime_.GetHashCode();
+      if (RecoverTime != 0) hash ^= RecoverTime.GetHashCode();
+      if (SkillRangeValue != 0) hash ^= SkillRangeValue.GetHashCode();
+      if (TargetAmount != 0) hash ^= TargetAmount.GetHashCode();
+      if (TargetCampType != 0) hash ^= TargetCampType.GetHashCode();
+      if (TargetSelectType != 0) hash ^= TargetSelectType.GetHashCode();
+      if (TargetType != 0) hash ^= TargetType.GetHashCode();
+      if (InvalidTargetType != 0) hash ^= InvalidTargetType.GetHashCode();
+      if (TriggerPosType != 0) hash ^= TriggerPosType.GetHashCode();
+      if (TriggerRangeType != 0) hash ^= TriggerRangeType.GetHashCode();
+      hash ^= triggerRangeValue_.GetHashCode();
+      if (EffectiveTime != 0) hash ^= EffectiveTime.GetHashCode();
+      if (TriggerPerformance != 0) hash ^= TriggerPerformance.GetHashCode();
+      if (TriggerUnitPerformance != 0) hash ^= TriggerUnitPerformance.GetHashCode();
+      if (TriggerSinglePerformance != 0) hash ^= TriggerSinglePerformance.GetHashCode();
+      if (TriggerDuring != 0) hash ^= TriggerDuring.GetHashCode();
+      if (TriggerTick != 0) hash ^= TriggerTick.GetHashCode();
+      hash ^= triggerBuff_.GetHashCode();
+      if (CancelBuff != false) hash ^= CancelBuff.GetHashCode();
+      if (DamageEffectType != 0) hash ^= DamageEffectType.GetHashCode();
+      if (DamageEffectValue != 0) hash ^= DamageEffectValue.GetHashCode();
+      if (AddtiveDamageEffectType != 0) hash ^= AddtiveDamageEffectType.GetHashCode();
+      if (AddtiveDamageEffectFactor != 0) hash ^= AddtiveDamageEffectFactor.GetHashCode();
+      if (DesignatedTargetType != 0) hash ^= DesignatedTargetType.GetHashCode();
+      if (DesignatedEffectType != 0) hash ^= DesignatedEffectType.GetHashCode();
+      if (DesignatedEffectValue != 0) hash ^= DesignatedEffectValue.GetHashCode();
+      if (IconId != 0) hash ^= IconId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(IntroKey);
+      }
+      if (IntroCn.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(IntroCn);
+      }
+      if (CastType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) CastType);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Level);
+      }
+      if (Cost != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Cost);
+      }
+      if (PerformanceId != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(PerformanceId);
+      }
+      if (ProjectileId != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(ProjectileId);
+      }
+      if (HitPerformanceId != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(HitPerformanceId);
+      }
+      if (BeHitTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(BeHitTime);
+      }
+      if (BloodPerformance != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(BloodPerformance);
+      }
+      buffArray_.WriteTo(output, _repeated_buffArray_codec);
+      if (WeaponShape != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(WeaponShape);
+      }
+      if (StartupTime != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(StartupTime);
+      }
+      if (ActiveTime != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(ActiveTime);
+      }
+      hitTime_.WriteTo(output, _repeated_hitTime_codec);
+      if (RecoverTime != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(RecoverTime);
+      }
+      if (SkillRangeValue != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(SkillRangeValue);
+      }
+      if (TargetAmount != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(TargetAmount);
+      }
+      if (TargetCampType != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteEnum((int) TargetCampType);
+      }
+      if (TargetSelectType != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteEnum((int) TargetSelectType);
+      }
+      if (TargetType != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(TargetType);
+      }
+      if (InvalidTargetType != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteEnum((int) InvalidTargetType);
+      }
+      if (TriggerPosType != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(TriggerPosType);
+      }
+      if (TriggerRangeType != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteEnum((int) TriggerRangeType);
+      }
+      triggerRangeValue_.WriteTo(output, _repeated_triggerRangeValue_codec);
+      if (EffectiveTime != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(EffectiveTime);
+      }
+      if (TriggerPerformance != 0) {
+        output.WriteRawTag(240, 1);
+        output.WriteInt32(TriggerPerformance);
+      }
+      if (TriggerUnitPerformance != 0) {
+        output.WriteRawTag(248, 1);
+        output.WriteInt32(TriggerUnitPerformance);
+      }
+      if (TriggerSinglePerformance != 0) {
+        output.WriteRawTag(128, 2);
+        output.WriteInt32(TriggerSinglePerformance);
+      }
+      if (TriggerDuring != 0) {
+        output.WriteRawTag(136, 2);
+        output.WriteInt32(TriggerDuring);
+      }
+      if (TriggerTick != 0) {
+        output.WriteRawTag(144, 2);
+        output.WriteInt32(TriggerTick);
+      }
+      triggerBuff_.WriteTo(output, _repeated_triggerBuff_codec);
+      if (CancelBuff != false) {
+        output.WriteRawTag(160, 2);
+        output.WriteBool(CancelBuff);
+      }
+      if (DamageEffectType != 0) {
+        output.WriteRawTag(168, 2);
+        output.WriteEnum((int) DamageEffectType);
+      }
+      if (DamageEffectValue != 0) {
+        output.WriteRawTag(176, 2);
+        output.WriteInt32(DamageEffectValue);
+      }
+      if (AddtiveDamageEffectType != 0) {
+        output.WriteRawTag(184, 2);
+        output.WriteEnum((int) AddtiveDamageEffectType);
+      }
+      if (AddtiveDamageEffectFactor != 0) {
+        output.WriteRawTag(192, 2);
+        output.WriteInt32(AddtiveDamageEffectFactor);
+      }
+      if (DesignatedTargetType != 0) {
+        output.WriteRawTag(200, 2);
+        output.WriteEnum((int) DesignatedTargetType);
+      }
+      if (DesignatedEffectType != 0) {
+        output.WriteRawTag(208, 2);
+        output.WriteInt32(DesignatedEffectType);
+      }
+      if (DesignatedEffectValue != 0) {
+        output.WriteRawTag(216, 2);
+        output.WriteInt32(DesignatedEffectValue);
+      }
+      if (IconId != 0) {
+        output.WriteRawTag(224, 2);
+        output.WriteInt32(IconId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroKey);
+      }
+      if (IntroCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroCn);
+      }
+      if (CastType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CastType);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (Cost != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cost);
+      }
+      if (PerformanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PerformanceId);
+      }
+      if (ProjectileId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ProjectileId);
+      }
+      if (HitPerformanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitPerformanceId);
+      }
+      if (BeHitTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BeHitTime);
+      }
+      if (BloodPerformance != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BloodPerformance);
+      }
+      size += buffArray_.CalculateSize(_repeated_buffArray_codec);
+      if (WeaponShape != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeaponShape);
+      }
+      if (StartupTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(StartupTime);
+      }
+      if (ActiveTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ActiveTime);
+      }
+      size += hitTime_.CalculateSize(_repeated_hitTime_codec);
+      if (RecoverTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RecoverTime);
+      }
+      if (SkillRangeValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(SkillRangeValue);
+      }
+      if (TargetAmount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TargetAmount);
+      }
+      if (TargetCampType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) TargetCampType);
+      }
+      if (TargetSelectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) TargetSelectType);
+      }
+      if (TargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TargetType);
+      }
+      if (InvalidTargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) InvalidTargetType);
+      }
+      if (TriggerPosType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerPosType);
+      }
+      if (TriggerRangeType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) TriggerRangeType);
+      }
+      size += triggerRangeValue_.CalculateSize(_repeated_triggerRangeValue_codec);
+      if (EffectiveTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(EffectiveTime);
+      }
+      if (TriggerPerformance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerPerformance);
+      }
+      if (TriggerUnitPerformance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerUnitPerformance);
+      }
+      if (TriggerSinglePerformance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerSinglePerformance);
+      }
+      if (TriggerDuring != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerDuring);
+      }
+      if (TriggerTick != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerTick);
+      }
+      size += triggerBuff_.CalculateSize(_repeated_triggerBuff_codec);
+      if (CancelBuff != false) {
+        size += 2 + 1;
+      }
+      if (DamageEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DamageEffectType);
+      }
+      if (DamageEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DamageEffectValue);
+      }
+      if (AddtiveDamageEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) AddtiveDamageEffectType);
+      }
+      if (AddtiveDamageEffectFactor != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AddtiveDamageEffectFactor);
+      }
+      if (DesignatedTargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DesignatedTargetType);
+      }
+      if (DesignatedEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DesignatedEffectType);
+      }
+      if (DesignatedEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DesignatedEffectValue);
+      }
+      if (IconId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(IconId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(skill other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.IntroKey.Length != 0) {
+        IntroKey = other.IntroKey;
+      }
+      if (other.IntroCn.Length != 0) {
+        IntroCn = other.IntroCn;
+      }
+      if (other.CastType != 0) {
+        CastType = other.CastType;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.Cost != 0) {
+        Cost = other.Cost;
+      }
+      if (other.PerformanceId != 0) {
+        PerformanceId = other.PerformanceId;
+      }
+      if (other.ProjectileId != 0) {
+        ProjectileId = other.ProjectileId;
+      }
+      if (other.HitPerformanceId != 0) {
+        HitPerformanceId = other.HitPerformanceId;
+      }
+      if (other.BeHitTime != 0) {
+        BeHitTime = other.BeHitTime;
+      }
+      if (other.BloodPerformance != 0) {
+        BloodPerformance = other.BloodPerformance;
+      }
+      buffArray_.Add(other.buffArray_);
+      if (other.WeaponShape != 0) {
+        WeaponShape = other.WeaponShape;
+      }
+      if (other.StartupTime != 0) {
+        StartupTime = other.StartupTime;
+      }
+      if (other.ActiveTime != 0) {
+        ActiveTime = other.ActiveTime;
+      }
+      hitTime_.Add(other.hitTime_);
+      if (other.RecoverTime != 0) {
+        RecoverTime = other.RecoverTime;
+      }
+      if (other.SkillRangeValue != 0) {
+        SkillRangeValue = other.SkillRangeValue;
+      }
+      if (other.TargetAmount != 0) {
+        TargetAmount = other.TargetAmount;
+      }
+      if (other.TargetCampType != 0) {
+        TargetCampType = other.TargetCampType;
+      }
+      if (other.TargetSelectType != 0) {
+        TargetSelectType = other.TargetSelectType;
+      }
+      if (other.TargetType != 0) {
+        TargetType = other.TargetType;
+      }
+      if (other.InvalidTargetType != 0) {
+        InvalidTargetType = other.InvalidTargetType;
+      }
+      if (other.TriggerPosType != 0) {
+        TriggerPosType = other.TriggerPosType;
+      }
+      if (other.TriggerRangeType != 0) {
+        TriggerRangeType = other.TriggerRangeType;
+      }
+      triggerRangeValue_.Add(other.triggerRangeValue_);
+      if (other.EffectiveTime != 0) {
+        EffectiveTime = other.EffectiveTime;
+      }
+      if (other.TriggerPerformance != 0) {
+        TriggerPerformance = other.TriggerPerformance;
+      }
+      if (other.TriggerUnitPerformance != 0) {
+        TriggerUnitPerformance = other.TriggerUnitPerformance;
+      }
+      if (other.TriggerSinglePerformance != 0) {
+        TriggerSinglePerformance = other.TriggerSinglePerformance;
+      }
+      if (other.TriggerDuring != 0) {
+        TriggerDuring = other.TriggerDuring;
+      }
+      if (other.TriggerTick != 0) {
+        TriggerTick = other.TriggerTick;
+      }
+      triggerBuff_.Add(other.triggerBuff_);
+      if (other.CancelBuff != false) {
+        CancelBuff = other.CancelBuff;
+      }
+      if (other.DamageEffectType != 0) {
+        DamageEffectType = other.DamageEffectType;
+      }
+      if (other.DamageEffectValue != 0) {
+        DamageEffectValue = other.DamageEffectValue;
+      }
+      if (other.AddtiveDamageEffectType != 0) {
+        AddtiveDamageEffectType = other.AddtiveDamageEffectType;
+      }
+      if (other.AddtiveDamageEffectFactor != 0) {
+        AddtiveDamageEffectFactor = other.AddtiveDamageEffectFactor;
+      }
+      if (other.DesignatedTargetType != 0) {
+        DesignatedTargetType = other.DesignatedTargetType;
+      }
+      if (other.DesignatedEffectType != 0) {
+        DesignatedEffectType = other.DesignatedEffectType;
+      }
+      if (other.DesignatedEffectValue != 0) {
+        DesignatedEffectValue = other.DesignatedEffectValue;
+      }
+      if (other.IconId != 0) {
+        IconId = other.IconId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 34: {
+            IntroKey = input.ReadString();
+            break;
+          }
+          case 42: {
+            IntroCn = input.ReadString();
+            break;
+          }
+          case 48: {
+            castType_ = (global::Config.cast_type) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Cost = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            PerformanceId = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            ProjectileId = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            HitPerformanceId = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            BeHitTime = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            BloodPerformance = input.ReadInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            buffArray_.AddEntriesFrom(input, _repeated_buffArray_codec);
+            break;
+          }
+          case 120: {
+            WeaponShape = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            StartupTime = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            ActiveTime = input.ReadInt32();
+            break;
+          }
+          case 146:
+          case 144: {
+            hitTime_.AddEntriesFrom(input, _repeated_hitTime_codec);
+            break;
+          }
+          case 152: {
+            RecoverTime = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            SkillRangeValue = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            TargetAmount = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            targetCampType_ = (global::Config.target_camp_type) input.ReadEnum();
+            break;
+          }
+          case 184: {
+            targetSelectType_ = (global::Config.target_select_type) input.ReadEnum();
+            break;
+          }
+          case 192: {
+            TargetType = input.ReadInt32();
+            break;
+          }
+          case 200: {
+            invalidTargetType_ = (global::Config.race) input.ReadEnum();
+            break;
+          }
+          case 208: {
+            TriggerPosType = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            triggerRangeType_ = (global::Config.range_type) input.ReadEnum();
+            break;
+          }
+          case 226:
+          case 224: {
+            triggerRangeValue_.AddEntriesFrom(input, _repeated_triggerRangeValue_codec);
+            break;
+          }
+          case 232: {
+            EffectiveTime = input.ReadInt32();
+            break;
+          }
+          case 240: {
+            TriggerPerformance = input.ReadInt32();
+            break;
+          }
+          case 248: {
+            TriggerUnitPerformance = input.ReadInt32();
+            break;
+          }
+          case 256: {
+            TriggerSinglePerformance = input.ReadInt32();
+            break;
+          }
+          case 264: {
+            TriggerDuring = input.ReadInt32();
+            break;
+          }
+          case 272: {
+            TriggerTick = input.ReadInt32();
+            break;
+          }
+          case 282:
+          case 280: {
+            triggerBuff_.AddEntriesFrom(input, _repeated_triggerBuff_codec);
+            break;
+          }
+          case 288: {
+            CancelBuff = input.ReadBool();
+            break;
+          }
+          case 296: {
+            damageEffectType_ = (global::Config.effect_type) input.ReadEnum();
+            break;
+          }
+          case 304: {
+            DamageEffectValue = input.ReadInt32();
+            break;
+          }
+          case 312: {
+            addtiveDamageEffectType_ = (global::Config.item_detail_type) input.ReadEnum();
+            break;
+          }
+          case 320: {
+            AddtiveDamageEffectFactor = input.ReadInt32();
+            break;
+          }
+          case 328: {
+            designatedTargetType_ = (global::Config.race) input.ReadEnum();
+            break;
+          }
+          case 336: {
+            DesignatedEffectType = input.ReadInt32();
+            break;
+          }
+          case 344: {
+            DesignatedEffectValue = input.ReadInt32();
+            break;
+          }
+          case 352: {
+            IconId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
   }
 
   #endregion

@@ -7,6 +7,11 @@ class DataType:
     ARRAY_TYPE = "ARRAY"
     MAP_TYPE = "MAP"
 
+    PROTO_INT_TYPE = "int32"
+    PROTO_STR_TYPE = "string"
+    PROTO_BOOL_TYPE = "bool"
+    PROTO_ARRAY_TYPE = "repeated"
+
     def __init__(self, type_name):
         self.main_type = None
         self.key_type = None
@@ -18,7 +23,7 @@ class DataType:
         type_names = type_name.split(':')
         type_name_count = len(type_names)
 
-        assert type_name_count > 0, "[DataType] 无效的数据类型:" + type_name 
+        assert type_name_count > 0, "无效的数据类型:" + type_name 
         self.main_type = type_names[0]
 
         # 尝试直接从传放类型字符取出
@@ -27,49 +32,38 @@ class DataType:
         if type_name_count >= 3:
             self.value_type = type_names[2]
 
-    def check_proto_type():
-        pass
+        # 先尝试生成proto类型
+        self.main_type_proto = DataType.type_to_proto(self.main_type) 
+        self.key_type_proto = DataType.type_to_proto(self.key_type) 
+        self.value_type_proto = DataType.type_to_proto(self.value_type) 
 
-    @staticmethod
-    def __type_to_proto_type(type_name, key_type, value_type, data_value):
-        main_type_value = type_to_proto(type_name)
-        assert main_type_value, print("[DataType] 无法确定类型 " + type_name)
+    def set_key_type(self, key_type):
+        self.key_type = key_type
+        self.key_type_proto = DataType.type_to_proto(self.key_type) 
 
-        key_type_value = None
-        value_type_value = None
-        # 根据主类型决定子类型的proto类型
-        if DataType.ARRAY_TYPE == type_name:
-            # 直接转换
-            if None is key_type:
-               key_type_value = type_to_proto(key_type)
-            # 无法直接转换则需要根据数值来确定
-            if None is key_type_value:
-                key_type_value = check_data_type(data_value)
-            # 数据也无法确定，说明有错
-            assert key_type_value, "[DataType] 无法确定数组类型 %s, %s, %s, %s" % (type_name, key_type, value_type, data_value,)
-        elif DataType.MAP_TYPE == type_name:
-            pass
-        return main_type_value, key_type_value, value_type_value
+    def set_value_type(self, value_type):
+        self.value_type = value_type
+        self.value_type_proto = DataType.type_to_proto(self.value_type)
 
     @staticmethod
     def check_data_type(data):
-            temp = data.upper()
-            if temp.isdigit():
-                return DataType.INT_TYPE
-            elif "TRUE" == temp or "FALSE" == temp:
-                return DataType.BOOL_TYPE
-            else:
-                return DataType.STR_TYPE
+        temp = data.upper()
+        if temp.isdigit():
+            return DataType.INT_TYPE
+        elif "TRUE" == temp or "FALSE" == temp:
+            return DataType.BOOL_TYPE
+        else:
+            return DataType.STR_TYPE
 
     @staticmethod
     def type_to_proto(type_name):
           if DataType.INT_TYPE == type_name:
-                return "int32"
+                return DataType.PROTO_INT_TYPE
           elif DataType.BOOL_TYPE == type_name:
-                return "bool"
+                return DataType.PROTO_BOOL_TYPE
           elif DataType.STR_TYPE == type_name:
-                return "string"
+                return DataType.PROTO_STR_TYPE
           elif DataType.ARRAY_TYPE == type_name:
-                return "required"
+                return DataType.PROTO_ARRAY_TYPE
           elif DataType.MAP_TYPE == type_name:
-                return "required"
+                return DataType.ARRAY_TYPE

@@ -1,6 +1,16 @@
 # _*_coding:utf-8_*_ 
 
+from DataType import DataType
 from SwapData import SwapData
+
+
+def __convert_str__(str_value, type):
+    if DataType.INT_TYPE == type:
+        return int(str_value)
+    elif DataType.BOOL_TYPE == type:
+        return bool(str_value)
+    elif DataType.STR_TYPE == type:
+        return str_value
 
 
 def __str_to_array__(value, type):
@@ -9,9 +19,8 @@ def __str_to_array__(value, type):
 
     # 兼容旧格式
     value_data = value
-    value_data.replace('[', '')
-    value_data.replace(']', '')
-    value_length = len(value_data)
+    value_data = value_data.replace('[', '')
+    value_data = value_data.replace(']', '')
 
     # 在正式转换前先确认类型
     convert_type = type
@@ -21,14 +30,18 @@ def __str_to_array__(value, type):
     value_list = value_data.split(',')
     for item in value_list:
         if None is convert_type:
-            convert_type = __check_data_type__(item)
-        __convert_str__(item, convert_type) 
+            convert_type = DataType.check_data_type(item)
+        result.append(__convert_str__(item, convert_type))
+    return result, convert_type
 
 
 def __process_data_by_type__(value, type_data):
     main_type = type_data.main_type
     if DataType.ARRAY_TYPE == main_type:
-        return value
+        result, convert_type = __str_to_array__(value, type_data.key_type)
+        if None is type_data.key_type:
+            type_data.set_key_type(convert_type)
+        return result
     elif DataType.MAP_TYPE == main_type:
         pass
     else:
@@ -44,13 +57,13 @@ class MessageData(SwapData):
         SwapData.analyze(self)
 
         # 分析所有的数据
-        #for data in self.datas:
-        #    data_value = data.values()
-        #    for index in range(0, len(data_value)):
-        #        type_data = self.types[index]
-        #        value = data_value[index]
-        #        data_value[index] = __process_data_by_type__(value, type_data)
-        #        type_data.check_proto_type(value)
+        for data in self.datas:
+            index = 0
+            data_value = data.values()
+            for key in data:
+               type_data = self.types[index]
+               data[key] = __process_data_by_type__(data[key], type_data)
+               index += 1
 
     def to_proto(self):
         message_field = ""
@@ -69,9 +82,6 @@ class MessageData(SwapData):
         return message_field
     
     def __to_proto_type__(self, type_data):
-        """
-        data_value: 该字段的某个值，为了某些类型中能确认到具体的类型
-        """
         if DataType.INT_TYPE == type_data.main_type:  # int类型要判断一下是否为枚举
             if None is not type_data.key_type:
                 return type_data.key_type

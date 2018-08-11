@@ -1,5 +1,8 @@
 # _*_coding:utf-8_*_
 
+from SwapData import *
+from EnumData import *
+from MessageData import *
 from ProtoTemplate import *
 
 def write_message(message_name, message_fields):
@@ -42,7 +45,7 @@ def process_data_to_proto(path, datas):
     for data_name in datas:
         data = datas[data_name]
         result = data.to_proto()
-        if data.is_message:
+        if isinstance(data, MessageData):
             message_list.append(write_message(data.file_name, result))
         else:
             enum_list.append(write_enum(data.file_name, result))

@@ -26,7 +26,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataType.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumData.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ExcelHelper.py" />
+    <Compile Include="MessageData.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ProtoHelper.py">
       <SubType>Code</SubType>
     </Compile>

@@ -2,6 +2,15 @@
 
 import xlrd
 from SwapData import *
+from EnumData import *
+from MessageData import *
+
+
+def get_swap_data(file_name, types, notes, field):
+    if -1 == file_name.find('e_'):
+        return MessageData(file_name, types, notes, field)
+    else:
+        return EnumData(file_name[2:], types, notes, field)
 
 class Excel:
     TYPE_ROW_ID = 0

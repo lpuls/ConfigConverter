@@ -1,14 +1,19 @@
 # _*_coding:utf-8_*_
 
+import os
 from ProtoHelper import *
 from ExcelHelper import Excel
 
 EXCEL_NAME = [
-    "XX/e_cast_type.xlsx",
-    "XX/e_effect_type.xlsx",
-    "XX/e_item_detail_type.xlsx",
-    "XX/e_race.xlsx",
-    "XX/e_target_select_type.xlsx",
+    #"XX/e_cast_type.xlsx",
+    #"XX/e_effect_type.xlsx",
+    #"XX/e_item_detail_type.xlsx",
+    #"XX/e_race.xlsx",
+    #"XX/e_target_select_type.xlsx",
+    #"XX/e_target_camp_type.xlsx",
+    "XX/e_range_type.xlsx",
+    # "XX/skill.xlsx"
+    # "XX/skill2.xlsx"
     ]
 
 
@@ -22,18 +27,8 @@ if __name__ == "__main__":
     for sheet_name in sheets:
         print("Sheet Name: ", sheet_name)
         sheet = sheets[sheet_name]
-        if not sheet.analyze():
-            exit()
+        sheet.analyze()
 
-        # 打印一下测试数据
-        #print(sheet.types)
-        #print(sheet.notes)
-        #print(sheet.fields)
-        #for row_data in sheet.datas:
-        #    for field_name in row_data:
-        #        print(field_name, row_data[field_name], type(row_data[field_name]))
-        #    print("==============================")
-
-        # 尝试生成Proto文件
+    # 尝试生成Proto文件
     process_data_to_proto("XX/Data.proto", sheets)
 

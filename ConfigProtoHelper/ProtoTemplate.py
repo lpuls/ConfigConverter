@@ -5,7 +5,6 @@ PROTO_TEMPLATE = """
 syntax = "proto3";
 option csharp_namespace = "Config";
 %(enums)s
-
 %(messages)s
 """
 
@@ -14,12 +13,10 @@ message %(message_name)s
 {
 %(message_fields)s
 }
-
 """
 
 ENUM_TEMPLATE = """
 enum %(enum_name)s {
 %(enum_fields)s
 }
-
 """

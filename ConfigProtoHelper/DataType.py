@@ -10,7 +10,8 @@ class DataType:
     PROTO_INT_TYPE = "int32"
     PROTO_STR_TYPE = "string"
     PROTO_BOOL_TYPE = "bool"
-    PROTO_ARRAY_TYPE = "repeated"
+    PROTO_ARRAY_TYPE = "repeated %s"
+    PROTO_MAP_TYPE = "map<%s, %s>"
 
     def __init__(self, type_name):
         self.main_type = None
@@ -45,6 +46,35 @@ class DataType:
         self.value_type = value_type
         self.value_type_proto = DataType.type_to_proto(self.value_type)
 
+    def to_proto_type(self):
+        if DataType.INT_TYPE == self.main_type:  # int类型要判断一下是否为枚举
+            if None is not self.key_type:
+                return self.key_type
+            else:
+                return self.main_type_proto
+        elif DataType.ARRAY_TYPE == self.main_type:  # 数据类型要判断一下存储类型
+            return DataType.PROTO_ARRAY_TYPE % self.key_type_proto
+        elif DataType.MAP_TYPE == self.main_type:
+            return DataType.PROTO_MAP_TYPE % (self.key_type_proto, self.value_type_proto)
+        else:
+            return self.main_type_proto
+
+    def __repr__(self):
+        result = self.main_type
+        if None is not self.key_type:
+            result += (" %s" % self.key_type)
+        if None is not self.value_type:
+            result += (" %s" % self.value_type)
+        return result
+    
+    def __str__(self):
+        result = self.main_type
+        if None is not self.key_type:
+            result += (" %s" % self.key_type)
+        if None is not self.value_type:
+            result += (" %s" % self.value_type)
+        return result
+
     @staticmethod
     def check_data_type(data):
         temp = data.upper()
@@ -66,4 +96,4 @@ class DataType:
           elif DataType.ARRAY_TYPE == type_name:
                 return DataType.PROTO_ARRAY_TYPE
           elif DataType.MAP_TYPE == type_name:
-                return DataType.ARRAY_TYPE
+                return DataType.PROTO_MAP_TYPE

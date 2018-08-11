@@ -9,6 +9,7 @@ class SwapData:
         self.types = types
         self.notes = notes
         self.fields = field
+        self.field_to_type = dict()
         self.datas = list()
 
         # 根据名称前缀确定要生成什么类型的proto代码
@@ -31,3 +32,28 @@ class SwapData:
             field_name = self.fields[index]
             data_type = DataType(self.types[index])
             self.types[index] = data_type
+            self.field_to_type[field_name] = data_type
+
+    def __repr__(self):
+        result = ""
+        for type_value in self.types:
+            result += str(type_value)
+            result += "\t"
+        
+        result += "\n"
+        for field in self.fields:
+            result += field
+            result += "\t"
+
+        result += "\n"
+        for note in self.notes:
+            result += note
+            result += "\t"
+
+        result += "\n"
+        for data_value in self.datas:
+            for key in data_value:
+                data = data_value[key]
+                result = result + str(data) + "\t" + str(type(data)) + "\t"
+            result += "\n"
+        return result

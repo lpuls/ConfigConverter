@@ -5,18 +5,18 @@ from SwapData import SwapData
 
 
 def __convert_str__(str_value, type):
-    if DataType.INT_TYPE == type:
-        return int(str_value)
-    elif DataType.BOOL_TYPE == type:
-        return bool(str_value)
-    elif DataType.STR_TYPE == type:
-        return str_value
+    try:
+        if DataType.INT_TYPE == type:
+            return int(str_value)
+        elif DataType.BOOL_TYPE == type:
+            return bool(str_value)
+        elif DataType.STR_TYPE == type:
+            return str_value
+    except TypeError:
+        print("无效的类型转换%s, %s", str_value, type)
 
 
 def __str_to_array__(value, type):
-    value_length = len(value)
-    assert value_length > 0, "无法将%s转换为数组" % value
-
     # 兼容旧格式
     value_data = value
     value_data = value_data.replace('[', '')
@@ -29,10 +29,52 @@ def __str_to_array__(value, type):
     result = list()
     value_list = value_data.split(',')
     for item in value_list:
+        if '' == item:
+            continue
+
         if None is convert_type:
             convert_type = DataType.check_data_type(item)
+            assert convert_type, "无法确定类型的数值：" + item
         result.append(__convert_str__(item, convert_type))
     return result, convert_type
+
+
+def __str_to_map(value, key_type, value_type):
+    # 兼容旧格式
+    value_data = value
+    value_data = value_data.replace('{', '')
+    value_data = value_data.replace('}', '')
+    
+    convert_key_type = key_type
+    convert_value_type = value_type
+
+    # 数据字符串根据逗号进行分隔
+    result = dict()
+    value_list = value_data.split(',')
+    for item in value_list:
+        if '' == item:
+            continue
+
+        item_list = item.split(':')
+        assert len(item_list) > 0, "无效的字典内容" + value
+
+        key = item_list[0]
+        key = key.replace('"', '')  # 兼容旧格式
+        value = item_list[1]
+
+        # 根据内容推存一次类型
+        if None is convert_key_type:
+            convert_key_type = DataType.check_data_type(key)
+            assert convert_key_type, "无法确定类型的字典key：" + key
+        if None is convert_value_type:
+            convert_value_type = DataType.check_data_type(value)
+            assert convert_value_type, "无法确定类型的字典value：" + value
+
+        key = __convert_str__(key, convert_key_type)
+        value = __convert_str__(value, convert_value_type)
+        result[key] = value
+
+    return result, convert_key_type, convert_value_type
 
 
 def __process_data_by_type__(value, type_data):
@@ -43,9 +85,14 @@ def __process_data_by_type__(value, type_data):
             type_data.set_key_type(convert_type)
         return result
     elif DataType.MAP_TYPE == main_type:
-        pass
+        result, convert_key_type, convert_value_type = __str_to_map(value, type_data.key_type, type_data.value_type)
+        if None is type_data.key_type:
+            type_data.set_key_type(convert_key_type)
+        if None is type_data.value_type:
+            type_data.set_value_type(convert_value_type)
+        return result
     else:
-        return value
+        return __convert_str__(value, type_data.main_type)
 
 
 class MessageData(SwapData):
@@ -58,37 +105,23 @@ class MessageData(SwapData):
 
         # 分析所有的数据
         for data in self.datas:
-            index = 0
             data_value = data.values()
             for key in data:
-               type_data = self.types[index]
+               type_data = self.field_to_type.get(key, None)
+               assert type_data, "字段%s无对应的数据类型" % key
                data[key] = __process_data_by_type__(data[key], type_data)
-               index += 1
 
     def to_proto(self):
         message_field = ""
         for index in range(0, len(self.fields)):
             data_type = self.types[index]
             field_name = self.fields[index]
-            if None is data_type:
-                print("[SwapData] 无法找到%s对应的类型" % field_name)
-                return None
+            assert data_type, "无法找到%s对应的类型" % field_name
 
             message_field = message_field + "\t%(type_name)s %(field_name)s = %(index)d;\n" % {
-                    "type_name": self.__to_proto_type__(data_type),
+                    "type_name": DataType.to_proto_type(data_type),
                     "field_name": field_name,
                     "index": index + 1
                 }
         return message_field
-    
-    def __to_proto_type__(self, type_data):
-        if DataType.INT_TYPE == type_data.main_type:  # int类型要判断一下是否为枚举
-            if None is not type_data.key_type:
-                return type_data.key_type
-            else:
-                return type_data.main_type_proto
-        elif DataType.ARRAY_TYPE == type_data.main_type:  # 数据类型要判断一下存储类型
-            return "%s %s" % (type_data.main_type_proto, type_data.key_type_proto)
-        else:
-            return type_data.main_type_proto
 

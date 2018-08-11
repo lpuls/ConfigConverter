@@ -5,14 +5,15 @@ from ProtoHelper import *
 from ExcelHelper import Excel
 
 EXCEL_NAME = [
-    "XX/e_cast_type.xlsx",
-    "XX/e_effect_type.xlsx",
-    "XX/e_item_detail_type.xlsx",
-    "XX/e_race.xlsx",
-    "XX/e_target_select_type.xlsx",
-    "XX/e_target_camp_type.xlsx",
-    "XX/e_range_type.xlsx",
-     "XX/skill.xlsx"
+    #"XX/e_cast_type.xlsx",
+    #"XX/e_effect_type.xlsx",
+    #"XX/e_item_detail_type.xlsx",
+    #"XX/e_race.xlsx",
+    #"XX/e_target_select_type.xlsx",
+    #"XX/e_target_camp_type.xlsx",
+    #"XX/e_range_type.xlsx",
+    # "XX/skill.xlsx"
+    "XX/ToolTest.xlsx"
     ]
 
 
@@ -27,6 +28,7 @@ if __name__ == "__main__":
         print("Sheet Name: ", sheet_name)
         sheet = sheets[sheet_name]
         sheet.analyze()
+        print(sheet)
 
     # 尝试生成Proto文件
     process_data_to_proto("XX/Data.proto", sheets)

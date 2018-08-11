@@ -37,6 +37,7 @@
     <Compile Include="MessageData.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="pbjson.py" />
     <Compile Include="ProtoHelper.py">
       <SubType>Code</SubType>
     </Compile>

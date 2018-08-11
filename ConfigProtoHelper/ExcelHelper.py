@@ -22,8 +22,16 @@ class Excel:
 
         # 分析每张工作表的内容
         data = xlrd.open_workbook(path)
-        for sheet in data.sheets():
-            self.sheets[sheet.name] = self.__analyze_sheet__(sheet.name, sheet)
+        sheets = data.sheets()
+        assert len(sheets) > 0, "无可用的工作表"
+
+        # 如果有多个工作表则分别处理每个工作表，否则则以当前文件名做为读入工作表名
+        if 1 == len(sheets):
+            name = path[path.rfind('/') + 1: path.rfind('.')]
+            self.sheets[name] = self.__analyze_sheet__(name, sheets[0])
+        else:
+            for sheet in data.sheets():
+                self.sheets[sheet.name] = self.__analyze_sheet__(sheet.name, sheet)
     
     @staticmethod
     def __analyze_sheet__(name, sheet):

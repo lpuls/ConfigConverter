@@ -2,18 +2,179 @@
 syntax = "proto3";
 option csharp_namespace = "Config";
 
+enum target_select_type {
+	target_select_type_none = 0;  // 无
+	target_select_type_nearest = 1;  // 最近
+	target_select_type_farthest = 2;  // 最远
+	target_select_type_hp_least = 3;  // 最低血量
+	target_select_type_hp_maximum = 4;  // 最高血量
+	target_select_type_battle_ability_max = 5;  // 最高战力
+	target_select_type_random = 6;  // 随机
 
-message Sheet1
+}
+
+enum range_type {
+	range_type_none = 0;  // 无
+	range_type_straightline = 1;  // 直线(距离)
+	range_type_sector = 2;  // 扇形(角度,半径)
+	range_type_roundness = 3;  // 圆形区域(半径)
+	range_type_rectangle = 4;  // 矩形(长，宽)
+	range_type_multi_direction = 5;  // 多方向射击
+
+}
+
+enum effect_type {
+	effect_type_none = 0;  // 无
+	effect_type_general_harm = 1;  // 普通伤害
+	effect_type_harm = 2;  // 爆炸伤害
+	effect_type_effect = 3;  // 治疗效果
+
+}
+
+enum item_detail_type {
+	item_detail_type_none = 0;  // 无
+	item_detail_type_max_hp = 10001;  // 最大生命值
+	item_detail_type_cur_hp = 10002;  // 当前生命值
+	item_detail_type_attack = 10003;  // 攻击力
+	item_detail_type_attack_speed = 10004;  // 攻击速度
+	item_detail_type_attack_distance = 10005;  // 攻击距离
+	item_detail_type_attack_range = 10006;  // 攻击范围
+	item_detail_type_attack_angle = 10007;  // 攻击角度
+	item_detail_type_reload_speed = 10008;  // 换弹速度
+	item_detail_type_clip = 10009;  // 弹夹容量
+	item_detail_type_crit_rate = 10010;  // 暴击率
+	item_detail_type_crit_damge = 10011;  // 暴击伤害
+	item_detail_type_hit_rate = 10012;  // 命中率
+	item_detail_type_pierce = 10013;  // 穿透性
+	item_detail_type_defend = 10014;  // 防御力
+	item_detail_type_wilful = 10015;  // 韧性
+	item_detail_type_damage_reduction = 10016;  // 伤害减免
+	item_detail_type_doge = 10017;  // 闪躲
+	item_detail_type_move_speed = 10018;  // 移动速度
+	item_detail_type_strong = 10019;  // 强壮
+	item_detail_type_physique = 10020;  // 体质
+	item_detail_type_agl = 10021;  // 敏捷
+	item_detail_type_int = 10022;  // 智力
+	item_detail_type_lucky = 10023;  // 幸运
+	item_detail_type_explode = 10024;  // 爆炸效果
+	item_detail_type_treat = 10025;  // 医疗效果
+	item_detail_type_melee_hit_time = 10026;  // 近战命中判定时间
+	item_detail_type_grow_hp = 10027;  // 等级成长生命值
+	item_detail_type_grow_attack = 10028;  // 等级成长攻击力
+	item_detail_type_grow_defend = 10029;  // 等级成长防御力
+	item_detail_type_grow_hit = 10030;  // 等级成长命中率
+	item_detail_type_grow_doge = 10031;  // 等级成长躲闪
+	item_detail_type_grow_expode = 10032;  // 等级成长爆炸伤害
+	item_detail_type_grow_treat = 10033;  // 等级成长医疗效果
+	item_detail_type_grow_crit_rate = 10034;  // 等级成长暴击率
+	item_detail_type_grow_crit_damge = 10035;  // 等级成长暴击伤害
+	item_detail_type_attack_times = 10036;  // 攻击次数
+	item_detail_type_attack_interval = 10037;  // 攻击间隔
+	item_detail_type_view_range = 10038;  // 视野范围
+	item_detail_type_danger_range = 10039;  // 威胁距离
+	item_detail_type_doge_range = 10040;  // 躲避距离
+	item_detail_type_rotation_speed = 10041;  // 转身速度
+	item_detail_type_wrestle_technology = 11001;  // 格斗
+	item_detail_type_gun_technology = 11002;  // 枪械
+	item_detail_type_explode_technology = 11003;  // 爆炸
+	item_detail_type_treat_technology = 11004;  // 治疗
+	item_detail_type_cook_technology = 12001;  // 烹饪
+	item_detail_type_probe_technology = 12002;  // 探索
+	item_detail_type_machining_technology = 12003;  // 加工
+	item_detail_type_electron_technology = 12004;  // 电子
+	item_detail_type_medica_technology = 12005;  // 医药
+	item_detail_type_chemical_technology = 12006;  // 化工
+	item_detail_type_sewing_technology = 12007;  // 缝纫
+	item_detail_type_mechanism_technology = 12008;  // 机械
+	item_detail_type_fight_level = 12009;  // 战斗等级
+	item_detail_type_satiety = 13001;  // 饱食度
+	item_detail_type_cell = 13002;  // 电池
+	item_detail_type_diamond = 13003;  // 钻石
+	item_detail_type_fuel = 13004;  // 燃料
+	item_detail_type_equipment_capacity = 14001;  // 设备容量
+	item_detail_type_warehouse_capacity = 14002;  // 仓库容量
+	item_detail_type_cockpit_capacity = 14003;  // 座舱容量
+	item_detail_type_horsepower_max = 14004;  // 最大马力
+	item_detail_type_fuel_tank_capacity = 14005;  // 油箱容量
+	item_detail_type_power_supply = 14006;  // 提供电力
+	item_detail_type_warehouse_capacity2 = 14007;  // 仓库2容量
+	item_detail_type_warehouse_capacity3 = 14008;  // 仓库3容量
+	item_detail_type_warehouse_capacity4 = 14009;  // 仓库4容量
+	item_detail_type_warehouse_capacity5 = 14010;  // 仓库5容量
+	item_detail_type_warehouse_capacity6 = 14011;  // 仓库6容量
+
+}
+
+enum cast_type {
+	cast_type_none = 0;  // 无
+	cast_type_initiative = 1;  // 主动
+	cast_type_passivity = 2;  // 被动
+
+}
+
+enum target_camp_type {
+	target_camp_type_none = 0;  // 无
+	target_camp_type_we = 1;  // 我方
+	target_camp_type_enemy = 2;  // 敌方
+	target_camp_type_oneself = 3;  // 自身
+	target_camp_type_all = 4;  // 全体
+
+}
+
+enum race {
+	race_none = 0;  // 无
+	race_human = 1;  // 人类
+	race_zombie = 2;  // 僵尸
+
+}
+
+
+message skill
 {
-	int32 testA = 1;
-	string testB = 2;
-	bool testC = 3;
-	repeated int32 testD = 4;
-	repeated int32 testH = 5;
-	repeated int32 testI = 6;
-	repeated int32 testE = 7;
-	map<string, int32> testF = 8;
-	map<string, int32> testG = 9;
+	int32 id = 1;
+	string name_key = 2;
+	string name_cn = 3;
+	string intro_key = 4;
+	string intro_cn = 5;
+	cast_type cast_type = 6;
+	int32 level = 7;
+	int32 cost = 8;
+	int32 performance_id = 9;
+	int32 projectile_id = 10;
+	int32 hit_performance_id = 11;
+	int32 be_hit_time = 12;
+	int32 blood_performance = 13;
+	repeated int32 buff_array = 14;
+	int32 weapon_shape = 15;
+	int32 startup_time = 16;
+	int32 active_time = 17;
+	repeated int32 hit_time = 18;
+	int32 recover_time = 19;
+	int32 skill_range_value = 20;
+	int32 target_amount = 21;
+	target_camp_type target_camp_type = 22;
+	target_select_type target_select_type = 23;
+	int32 target_type = 24;
+	race invalid_target_type = 25;
+	int32 trigger_pos_type = 26;
+	range_type trigger_range_type = 27;
+	repeated int32 trigger_range_value = 28;
+	int32 effective_time = 29;
+	int32 trigger_performance = 30;
+	int32 trigger_unit_performance = 31;
+	int32 trigger_single_performance = 32;
+	int32 trigger_during = 33;
+	int32 trigger_tick = 34;
+	repeated int32 trigger_buff = 35;
+	bool cancel_buff = 36;
+	effect_type damage_effect_type = 37;
+	int32 damage_effect_value = 38;
+	item_detail_type addtive_damage_effect_type = 39;
+	int32 addtive_damage_effect_factor = 40;
+	race designated_target_type = 41;
+	int32 designated_effect_type = 42;
+	int32 designated_effect_value = 43;
+	int32 icon_id = 44;
 
 }
 

@@ -124,4 +124,3 @@ class MessageData(SwapData):
                     "index": index + 1
                 }
         return message_field
-

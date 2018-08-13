@@ -31,7 +31,7 @@ class SwapData:
             type_name = self.types[index]
             field_name = self.fields[index]
             data_type = DataType(self.types[index])
-            if None is data_type.main_type_proto:
+            if DataType.INVALD_TYPE_ERROR == data_type.is_valid:
                 return False
             self.types[index] = data_type
             self.field_to_type[field_name] = data_type

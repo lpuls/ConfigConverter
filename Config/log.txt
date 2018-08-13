@@ -1,1 +1,2 @@
-projectile.../Config/Excel/projectile.xlsx
+../Config/Excel/hero_effect.xlsx
+../Config/Excel/projectile.xlsx

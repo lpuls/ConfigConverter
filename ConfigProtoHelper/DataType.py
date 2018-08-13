@@ -13,7 +13,12 @@ class DataType:
     PROTO_ARRAY_TYPE = "repeated %s"
     PROTO_MAP_TYPE = "map<%s, %s>"
 
+    INVALD_TYPE_OK = 1
+    INVALD_TYPE_SKIP = 2
+    INVALD_TYPE_ERROR = 3
+
     def __init__(self, type_name):
+        self.is_valid = DataType.INVALD_TYPE_OK
         self.main_type = None
         self.key_type = None
         self.value_type = None
@@ -21,20 +26,29 @@ class DataType:
         self.key_type_proto = None
         self.value_type_proto = None
 
+        # 检查
+        if '' == type_name:
+            self.is_valid = DataType.INVALD_TYPE_SKIP
+            return
+
         # 分析转放类型
         self.__process_type_name__(type_name)
 
         # 先尝试生成proto类型
-        self.main_type_proto = DataType.type_to_proto(self.main_type) 
+        self.main_type_proto = DataType.type_to_proto(self.main_type)
         self.key_type_proto = DataType.type_to_proto(self.key_type) 
         self.value_type_proto = DataType.type_to_proto(self.value_type) 
 
     def __process_type_name__(self, type_name):
         type_names = type_name.split(':')
         type_name_count = len(type_names)
-        assert type_name_count > 0, "无效的数据类型:" + type_name 
+        assert type_name_count > 0, "无效的数据类型:" + type_name
         
         self.main_type = type_names[0]
+        if not DataType.__check_type_valid__(self.main_type):
+            self.is_valid = DataType.INVALD_TYPE_ERROR
+            return
+
         if type_name_count > 1:
             sub_type = type_names[1].split(',')
             sub_type_count = len(sub_type)
@@ -81,6 +95,12 @@ class DataType:
         if None is not self.value_type:
             result += (" %s" % self.value_type)
         return result
+
+    @staticmethod
+    def __check_type_valid__(type_name):
+        return type_name in (DataType.STR_TYPE, DataType.INT_TYPE, 
+                             DataType.BOOL_TYPE, DataType.ARRAY_TYPE, 
+                             DataType.MAP_TYPE)
 
     @staticmethod
     def check_data_type(data):

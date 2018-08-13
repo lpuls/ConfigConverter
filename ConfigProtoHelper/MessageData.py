@@ -104,20 +104,32 @@ class MessageData(SwapData):
         if not SwapData.analyze(self):
             return False
 
+        # 记录无效的字段名
+        invalid_field = dict()
+
         # 分析所有的数据
         for data in self.datas:
-            data_value = data.values()
             for key in data:
                type_data = self.field_to_type.get(key, None)
                assert type_data, "字段%s无对应的数据类型" % key
+               if DataType.INVALD_TYPE_SKIP == type_data.is_valid:
+                   invalid_field[key] = None
+                   continue
                data[key] = __process_data_by_type__(data[key], type_data)
+
+        # 将无效字段从所有数据中称除
+        for field in invalid_field:
+            self.fields.remove(field)
+            del self.field_to_type[field]
+            for data in self.datas:
+                del data[field]
         return True
 
     def to_proto(self):
         message_field = ""
         for index in range(0, len(self.fields)):
-            data_type = self.types[index]
             field_name = self.fields[index]
+            data_type = self.field_to_type.get(field_name, None)  # self.types[index]
             assert data_type, "无法找到%s对应的类型" % field_name
 
             message_field = message_field + "\t%(type_name)s %(field_name)s = %(index)d;\n" % {

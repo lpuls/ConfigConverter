@@ -5,24 +5,19 @@ from ProtoHelper import *
 from ExcelHelper import Excel
 
 EXCEL_NAME = [
-    "XX/e_task_goal_type.xlsx",
-    "XX/task_main.xlsx"
+    "../Config/Excel/buff.xlsx",
     ]
 
-EXCEL_PATH = "../Config/Excel/"
-OUT_PATH = "../Config/"
-PROTO_SAVE_PATH = "../Config/Data.proto"
-PROTO_MODULE = "..Config.Data_pb2"
-BINARY_SAVE_PATH = "../Config/Data.byte"
-LOG_PATH = "../Config/log.txt"
-PYTHON_PROTO_FILE = "./"
-SPWAN_CS_PROTO = "protoc --csharp_out=%s %s" % (OUT_PATH, PROTO_SAVE_PATH) 
-SPWAN_PY_PROTO = "protoc --python_out=%s %s" % (PYTHON_PROTO_FILE, PROTO_SAVE_PATH)
-PYTHON_PROTO_MODULE_PATH = "Data_pb2"
+EXCEL_PATH = "../Config/Excel/"             # excel所在路径
+OUT_PATH = "../Config/"                     # 结果输出路径
+PROTO_SAVE_PATH = "../Config/Data.proto"    # proto文件保存位置
+BINARY_SAVE_PATH = "../Config/Data.byte"    # 二进制文件保存位置
+LOG_PATH = "../Config/log.txt"              # 日志结果保存位置
+PYTHON_PROTO_MODULE_PATH = "Data_pb2"       # 生成二进制文件时，所需要的python proto类所在模块
 
 
 def write_log(context):
-    log = open(LOG_PATH, 'w+')
+    log = open(LOG_PATH, 'a')
     log.write(context)
     log.write('\n')
     log.close()
@@ -37,18 +32,18 @@ def process_config(path):
             print("Process %s" % sheet_name)
             sheet = excel.sheets[sheet_name]
             if not sheet.analyze():
-                print('%s不是有效的配置表' % (sheet_name,))
-                write_log('%s.%s' % (sheet_name, execl_name))
-            else:
-                print("Process %s [COMPLETE]\n" % (sheet_name,))
-                sheets[sheet_name] = sheet
+                print("Process %s [ERROR]\n" % (sheet_name,))
+                write_log('%s' % execl_name)
+                os.system('pause')
+                continue
+            print("Process %s [COMPLETE]\n" % (sheet_name,))
+            sheets[sheet_name] = sheet
     return sheets
 
 
 def to_binary(in_path, out_path, sheets):
-   # 尝试生成cs和py两份proto代码
-   os.system(SPWAN_PY_PROTO)
-   os.system(SPWAN_CS_PROTO)
+   # 生成proto文件
+   os.system("run.bat")
 
    # 将表格中的内容生成proto文件
    binary_context = data_to_binary(in_path, sheets)
@@ -77,18 +72,11 @@ if __name__ == "__main__":
     file_paths = search_file(EXCEL_PATH)
     
     # 分析二进制表格
-    sheets = process_config(EXCEL_NAME)
+    sheets = process_config(file_paths)
+    # sheets = process_config(EXCEL_NAME)
 
     # 尝试生成Proto文件
     process_data_to_proto(PROTO_SAVE_PATH, sheets)
     
     # 将excel表格生成二进制文件
     to_binary(PYTHON_PROTO_MODULE_PATH, BINARY_SAVE_PATH, sheets)
-
-    # 测试写成二进制文件的结果
-    #from Out.Data_pb2 import DataHelper
-    #result = read_binary('Out/Data.byte', DataHelper())
-    #test_dict = result.Test_list[0].TEST
-    #for k in test_dict:
-    #    print(k)
-    #    print(test_dict[k])

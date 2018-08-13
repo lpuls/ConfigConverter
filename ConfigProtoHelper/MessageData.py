@@ -11,7 +11,7 @@ def __convert_str__(str_value, type):
         elif DataType.BOOL_TYPE == type:
             return bool(str_value)
         elif DataType.STR_TYPE == type:
-            return str_value
+            return str(str_value)
     except TypeError:
         print("无效的类型转换%s, %s", str_value, type)
 

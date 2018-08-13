@@ -86,6 +86,7 @@ def data_to_binary(proto_module, datas):
     # 将数据写进DataHelper
     for data_key in datas:
         data = datas[data_key]
+        print(data_key)
         if isinstance(data, MessageData):
             # 获取DataHelper中对应类的列表
             data_list = getattr(dataHelper, data.file_name + "_list")

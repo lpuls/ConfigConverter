@@ -1,5 +1,6 @@
 # _*_coding:utf-8_*_
 
+import os
 import xlrd
 from SwapData import *
 from EnumData import *
@@ -7,7 +8,7 @@ from MessageData import *
 
 
 def get_swap_data(file_name, types, notes, field):
-    if -1 == file_name.find('e_'):
+    if 'e_' != file_name[:2]:
         return MessageData(file_name, types, notes, field)
     else:
         return EnumData(file_name[2:], types, notes, field)
@@ -20,6 +21,11 @@ class Excel:
     def __init__(self, path):
         self.sheets = dict()
 
+        # 检查可读与否
+        if not os.access(path, os.R_OK):
+            print("文件%s不可读" % path)
+            return
+
         # 分析每张工作表的内容
         data = xlrd.open_workbook(path)
         sheets = data.sheets()
@@ -28,13 +34,21 @@ class Excel:
         # 如果有多个工作表则分别处理每个工作表，否则则以当前文件名做为读入工作表名
         if 1 == len(sheets):
             name = path[path.rfind('/') + 1: path.rfind('.')]
-            self.sheets[name] = self.__analyze_sheet__(name, sheets[0])
+            sheet_obj = self.__analyze_sheet__(name, sheets[0])
+            if None is not sheet_obj:
+                self.sheets[name] = sheet_obj
         else:
             for sheet in data.sheets():
-                self.sheets[sheet.name] = self.__analyze_sheet__(sheet.name, sheet)
+                sheet_obj = self.__analyze_sheet__(sheet.name, sheet)
+                if None is not sheet_obj:
+                    self.sheets[sheet.name] = sheet_obj
     
     @staticmethod
     def __analyze_sheet__(name, sheet):
+        if sheet.nrows < 3: 
+            print("无效的表置表格式")
+            return None
+
         # 获取基本属性
         types = sheet.row_values(Excel.TYPE_ROW_ID)
         notes = sheet.row_values(Excel.NOTE_ROW_ID)

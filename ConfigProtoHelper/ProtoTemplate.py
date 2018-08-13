@@ -6,6 +6,11 @@ syntax = "proto3";
 option csharp_namespace = "Config";
 %(enums)s
 %(messages)s
+
+message DataHelper 
+{
+%(message_list)s
+}
 """
 
 MESSAGE_TEMPLATE = """

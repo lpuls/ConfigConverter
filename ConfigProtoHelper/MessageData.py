@@ -101,7 +101,8 @@ class MessageData(SwapData):
 
     def analyze(self):
         # 先分析所有的类型
-        SwapData.analyze(self)
+        if not SwapData.analyze(self):
+            return False
 
         # 分析所有的数据
         for data in self.datas:
@@ -110,6 +111,7 @@ class MessageData(SwapData):
                type_data = self.field_to_type.get(key, None)
                assert type_data, "字段%s无对应的数据类型" % key
                data[key] = __process_data_by_type__(data[key], type_data)
+        return True
 
     def to_proto(self):
         message_field = ""

@@ -19,7 +19,7 @@ class EnumData(SwapData):
             enum_field += "\t%(file_name)s_%(enum_name)s = %(enum_value)d;  // %(annotation)s\n" % {
                     "file_name": self.file_name,
                     "enum_name": name,
-                    "enum_value": value,
+                    "enum_value": int(value),
                     "annotation": annotation 
                 }
         return enum_field

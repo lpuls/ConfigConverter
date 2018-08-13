@@ -62,9 +62,16 @@ def dict2pb(cls, adict, strict=False):
         msg_type = field.message_type
         if field.label == FD.LABEL_REPEATED:
             if field.type == FD.TYPE_MESSAGE:
-                for sub_dict in adict[field.name]:
-                    item = getattr(obj, field.name).add()
-                    item.CopyFrom(dict2pb(msg_type._concrete_class, sub_dict))
+                sub_dict_value = adict[field.name]
+                if isinstance(sub_dict_value, dict):
+                    item = getattr(obj, field.name)
+                    for key in sub_dict_value:
+                        item[key] = sub_dict_value[key]
+                elif isinstance(sub_dict_value, list):
+                    for sub_dict in sub_dict_value:
+                        item = getattr(obj, field.name)
+                        item = item.add()
+                        item.CopyFrom(dict2pb(msg_type._concrete_class, sub_dict))
             else:
                 map(getattr(obj, field.name).append, adict[field.name])
         else:

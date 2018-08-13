@@ -14,10 +14,6 @@ def write_message(message_name, message_fields):
             }
 
 
-def write_message_helper(message_name):
-    return 
-
-
 def write_enum(enum_name, enum_fields):
     return ENUM_TEMPLATE % {
                 "enum_name": enum_name,
@@ -25,7 +21,7 @@ def write_enum(enum_name, enum_fields):
             }
 
 
-def write_proto(enum_list, message_list):
+def write_proto(enum_list, message_helper, message_list):
     enum_str = ""
     for enum in enum_list:
         enum_str += enum
@@ -35,7 +31,8 @@ def write_proto(enum_list, message_list):
         message_str += message
     return PROTO_TEMPLATE % { 
             "enums": enum_str, 
-            "messages": message_str 
+            "messages": message_str,
+            "message_list": message_helper 
         }
 
 
@@ -48,14 +45,22 @@ def write_to_file(path, context, modle='w'):
 def process_data_to_proto(path, datas):
     enum_list = list()
     message_list = list()
+    message_helper_list = list()
+    field_index = 1
+    message_helper = ""
     for data_name in datas:
         data = datas[data_name]
         result = data.to_proto()
         if isinstance(data, MessageData):
             message_list.append(write_message(data.file_name, result))
+            message_helper = message_helper + ("\trepeated %(message_name)s %(message_name)s_list = %(field_index)d;\n" % {
+                    "message_name": data.file_name,
+                    "field_index": field_index
+                })
+            field_index += 1
         else:
             enum_list.append(write_enum(data.file_name, result))
-    context = write_proto(enum_list, message_list)
+    context = write_proto(enum_list, message_helper, message_list)
     print(context)
     write_to_file(path, context)
 
@@ -71,39 +76,37 @@ def __load_module__(path):
     return module
 
 
-
 def data_to_binary(proto_module, datas):
     module = __load_module__(proto_module)
-    result = dict()
+
+    # 生成DataHelper
+    dataHelper = getattr(module, "DataHelper")
+    dataHelper = dataHelper()
+
+    # 将数据写进DataHelper
     for data_key in datas:
         data = datas[data_key]
         if isinstance(data, MessageData):
+            # 获取DataHelper中对应类的列表
+            data_list = getattr(dataHelper, data.file_name + "_list")
+            
+            # 将dict转为proto类
             pb_list = list()
             cls = getattr(module, data.file_name)
             for config_data in data.datas:
                 pb_obj = dict2pb(cls, config_data)
-                pb_list.append(pb_obj.SerializeToString())
-            result[data.file_name] = pb_list
-    return result
+                pb_list.append(pb_obj)
+            data_list.extend(pb_list)
+    return dataHelper
 
 
 def write_to_binary(path, context):
     binary_file = open(path, 'wb')
-    result = bytes()
-    binary_file.write(struct.pack('i', len(context)))
-    for binary_name in context:
-        binary_context = context[binary_name]
-        name_length = len(binary_name)
-        result += struct.pack('i%ssi' % name_length, name_length, binary_name.encode(), len(binary_context))
-        for item in binary_context:
-            item_length = len(item)
-            item_binary = struct.pack('i%ss' % item_length, item_length, item)
-            result += item_binary
-    binary_file.write(result)
+    binary_file.write(context.SerializeToString())
     binary_file.close()
 
 
-def read_binary(path):
+def read_binary(path, pb_obj):
     binary_file = open(path, 'rb')
     binary_context = binary_file.readlines()
     binary_file.close()
@@ -112,8 +115,5 @@ def read_binary(path):
     for context in binary_context:
         binary += context
 
-    file_count = struct.unpack('i', binary[:4])[0]
-    file_name_length = struct.unpack('i', binary[4:8])[0]
-    file_name = struct.unpack('%ss' % file_name_length, binary[8: 8 + file_name_length])[0]
-    print(file_count, file_name_length, file_name, file_context_count)
-    return binary
+    pb_obj.ParseFromString(binary)
+    return pb_obj

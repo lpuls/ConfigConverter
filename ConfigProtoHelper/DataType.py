@@ -21,22 +21,29 @@ class DataType:
         self.key_type_proto = None
         self.value_type_proto = None
 
-        type_names = type_name.split(':')
-        type_name_count = len(type_names)
-
-        assert type_name_count > 0, "无效的数据类型:" + type_name 
-        self.main_type = type_names[0]
-
-        # 尝试直接从传放类型字符取出
-        if type_name_count >= 2:
-            self.key_type = type_names[1]
-        if type_name_count >= 3:
-            self.value_type = type_names[2]
+        # 分析转放类型
+        self.__process_type_name__(type_name)
 
         # 先尝试生成proto类型
         self.main_type_proto = DataType.type_to_proto(self.main_type) 
         self.key_type_proto = DataType.type_to_proto(self.key_type) 
         self.value_type_proto = DataType.type_to_proto(self.value_type) 
+
+    def __process_type_name__(self, type_name):
+        type_names = type_name.split(':')
+        type_name_count = len(type_names)
+        assert type_name_count > 0, "无效的数据类型:" + type_name 
+        
+        self.main_type = type_names[0]
+        if type_name_count > 1:
+            sub_type = type_names[1].split(',')
+            sub_type_count = len(sub_type)
+            # key类型
+            if sub_type_count >= 1:
+                self.key_type = sub_type[0]
+            # value类型
+            if sub_type_count >= 2:
+                self.value_type = sub_type[1]
 
     def set_key_type(self, key_type):
         self.key_type = key_type

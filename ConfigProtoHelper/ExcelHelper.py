@@ -5,6 +5,7 @@ import xlrd
 from SwapData import *
 from EnumData import *
 from MessageData import *
+from TimeChecker import cal_run_time, cal_run_time_deco
 
 
 def get_swap_data(file_name, types, notes, field):
@@ -27,21 +28,9 @@ class Excel:
             return
 
         # 分析每张工作表的内容
-        data = xlrd.open_workbook(path)
+        data = cal_run_time(xlrd.open_workbook, "Load Excel %s " % path, (path))
         sheets = data.sheets()
         assert len(sheets) > 0, "无可用的工作表"
-
-        # 如果有多个工作表则分别处理每个工作表，否则则以当前文件名做为读入工作表名
-        #if 1 == len(sheets):
-        #   name = path[path.rfind('/') + 1: path.rfind('.')]
-        #   sheet_obj = self.__analyze_sheet__(name, sheets[0])
-        #   if None is not sheet_obj:
-        #       self.sheets[name] = sheet_obj
-        #else:
-        #    for sheet in data.sheets():
-        #        sheet_obj = self.__analyze_sheet__(sheet.name, sheet)
-        #        if None is not sheet_obj:
-        #            self.sheets[sheet.name] = sheet_obj
 
         # 暂时不支持多张sheet表了
         name = path[path.rfind('/') + 1: path.rfind('.')]

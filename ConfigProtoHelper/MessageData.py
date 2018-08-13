@@ -2,7 +2,10 @@
 
 from DataType import DataType
 from SwapData import SwapData
+from time import clock
+from TimeChecker import cal_run_time, cal_run_time_deco
 
+conver_time = 0
 
 def __convert_str__(str_value, type):
     try:
@@ -78,28 +81,33 @@ def __str_to_map(value, key_type, value_type):
 
 
 def __process_data_by_type__(value, type_data):
+    global conver_time
     main_type = type_data.main_type
     if DataType.ARRAY_TYPE == main_type:
-        result, convert_type = __str_to_array__(value, type_data.key_type)
+        temp, result, convert_type = __str_to_array__(value, type_data.key_type)
         if None is type_data.key_type:
             type_data.set_key_type(convert_type)
         return result
     elif DataType.MAP_TYPE == main_type:
-        result, convert_key_type, convert_value_type = __str_to_map(value, type_data.key_type, type_data.value_type)
+        temp, result, convert_key_type, convert_value_type = __str_to_map(value, type_data.key_type, type_data.value_type)
         if None is type_data.key_type:
             type_data.set_key_type(convert_key_type)
         if None is type_data.value_type:
             type_data.set_value_type(convert_value_type)
         return result
     else:
-        return __convert_str__(value, type_data.main_type)
+        b = clock()
+        result = __convert_str__(value, type_data.main_type)
+        conver_time = conver_time + (clock() - b)
+        return result
 
 
 class MessageData(SwapData):
     def __init__(self, file_name, types, notes, field):
         SwapData.__init__(self, file_name, types, notes, field)
-
+    
     def analyze(self):
+        global conver_time
         # 先分析所有的类型
         if not SwapData.analyze(self):
             return False
@@ -108,6 +116,7 @@ class MessageData(SwapData):
         invalid_field = dict()
 
         # 分析所有的数据
+        use_time = 0
         for data in self.datas:
             for key in data:
                type_data = self.field_to_type.get(key, None)
@@ -115,7 +124,10 @@ class MessageData(SwapData):
                if DataType.INVALD_TYPE_SKIP == type_data.is_valid:
                    invalid_field[key] = None
                    continue
+               b = clock()
                data[key] = __process_data_by_type__(data[key], type_data)
+               use_time += (clock() - b)
+        print("Process Data Use Time: %f, Conver Time: %f" % (use_time, conver_time,))
 
         # 将无效字段从所有数据中称除
         for field in invalid_field:

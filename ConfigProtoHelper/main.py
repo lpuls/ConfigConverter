@@ -3,9 +3,11 @@
 import os
 from ProtoHelper import *
 from ExcelHelper import Excel
+from TimeChecker import init_time, cal_run_time, cal_run_time_no_args
+
 
 EXCEL_NAME = [
-    "../Config/Excel/buff.xlsx",
+    "../Config/Excel/level_npc.xlsx",
     ]
 
 EXCEL_PATH = "../Config/Excel/"             # excel所在路径
@@ -31,10 +33,10 @@ def process_config(path):
         for sheet_name in excel.sheets:
             print("Process %s" % sheet_name)
             sheet = excel.sheets[sheet_name]
-            if not sheet.analyze():
+            if not cal_run_time_no_args(sheet.analyze, "Analyze "):
                 print("Process %s [ERROR]\n" % (sheet_name,))
                 write_log('%s' % execl_name)
-                os.system('pause')
+                #os.system('pause')
                 continue
             print("Process %s [COMPLETE]\n" % (sheet_name,))
             sheets[sheet_name] = sheet
@@ -69,11 +71,14 @@ def search_file(file_path):
 
 
 if __name__ == "__main__":
+    init_time()
+
+    # 找出所有的excel文件
     file_paths = search_file(EXCEL_PATH)
     
     # 分析二进制表格
-    sheets = process_config(file_paths)
-    # sheets = process_config(EXCEL_NAME)
+    # sheets = process_config(file_paths)
+    sheets = process_config(EXCEL_NAME)
 
     # 尝试生成Proto文件
     process_data_to_proto(PROTO_SAVE_PATH, sheets)

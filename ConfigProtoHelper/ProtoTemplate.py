@@ -1,6 +1,9 @@
 # _*_coding:utf-8_*_
 
 
+DEFAULT_KEY = "ID"
+DEFAULT_STRING_KEY = "KEY"
+
 PROTO_TEMPLATE = """
 syntax = "proto3";
 option csharp_namespace = "Config";
@@ -9,6 +12,7 @@ option csharp_namespace = "Config";
 
 message DataHelper 
 {
+    repeated string messageType = 1;
 %(message_list)s
 }
 """

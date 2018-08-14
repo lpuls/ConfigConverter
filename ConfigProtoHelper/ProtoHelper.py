@@ -1,10 +1,9 @@
 # _*_coding:utf-8_*_
 
-import struct
 from pbjson import *
-from SwapData import *
-from EnumData import *
-from MessageData import *
+from EnumData import EnumData
+from DataType import DataType
+from MessageData import MessageData
 from ProtoTemplate import *
 
 def write_message(message_name, message_fields):
@@ -46,14 +45,23 @@ def process_data_to_proto(path, datas):
     enum_list = list()
     message_list = list()
     message_helper_list = list()
-    field_index = 1
+    field_index = 2
     message_helper = ""
     for data_name in datas:
         data = datas[data_name]
+        
+        # 找出是否存在默认键
         result = data.to_proto()
         if isinstance(data, MessageData):
+            # 获取key的类型
+            key_type_name = data.get_key_type(DEFAULT_KEY, DEFAULT_STRING_KEY)
+            if not key_type_name:
+                print("config type neither id type nor key type , this config will be ignored : " + data_name)
+                continue
+
             message_list.append(write_message(data.file_name, result))
-            message_helper = message_helper + ("\trepeated %(message_name)s %(message_name)s_list = %(field_index)d;\n" % {
+            message_helper = message_helper + ("\tmap<%(message_key)s, %(message_name)s> %(message_name)s_dict = %(field_index)d;\n" % {
+                    "message_key": key_type_name,
                     "message_name": data.file_name,
                     "field_index": field_index
                 })
@@ -80,8 +88,9 @@ def data_to_binary(proto_module, datas):
     module = __load_module__(proto_module)
 
     # 生成DataHelper
-    dataHelper = getattr(module, "DataHelper")
-    dataHelper = dataHelper()
+    data_helper = getattr(module, "DataHelper")
+    data_helper = data_helper()
+    message_type_list = list()
 
     # 将数据写进DataHelper
     for data_key in datas:
@@ -89,16 +98,21 @@ def data_to_binary(proto_module, datas):
         print(data_key)
         if isinstance(data, MessageData):
             # 获取DataHelper中对应类的列表
-            data_list = getattr(dataHelper, data.file_name + "_list")
-            
+            if not data.key:
+                continue
+            message_type_list.append(data.file_name);
+            data_helper_field_name = data.file_name + "_dict"
+            data_dict = getattr(data_helper, data_helper_field_name)
+
             # 将dict转为proto类
-            pb_list = list()
+            pb_dict = dict()
             cls = getattr(module, data.file_name)
             for config_data in data.datas:
-                pb_obj = dict2pb(cls, config_data)
-                pb_list.append(pb_obj)
-            data_list.extend(pb_list)
-    return dataHelper
+                key = config_data[data.key]
+                dict2pbobj(data_dict[key], config_data)
+    message_types = getattr(data_helper, 'messageType')
+    message_types.extend(message_type_list)
+    return data_helper
 
 
 def write_to_binary(path, context):

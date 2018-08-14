@@ -1,13 +1,14 @@
 # _*_coding:utf-8_*_
 
 import os
+import json
 from ProtoHelper import *
 from ExcelHelper import Excel
 from TimeChecker import init_time, cal_run_time, cal_run_time_no_args
 
 
 EXCEL_NAME = [
-    "../Config/Excel/level_npc.xlsx",
+    "../Config/Excel/SkillPrefab.xlsx",
     ]
 
 EXCEL_PATH = "../Config/Excel/"             # excel所在路径
@@ -16,6 +17,22 @@ PROTO_SAVE_PATH = "../Config/Data.proto"    # proto文件保存位置
 BINARY_SAVE_PATH = "../Config/Data.byte"    # 二进制文件保存位置
 LOG_PATH = "../Config/log.txt"              # 日志结果保存位置
 PYTHON_PROTO_MODULE_PATH = "Data_pb2"       # 生成二进制文件时，所需要的python proto类所在模块
+
+
+def load_config(path):
+    result = ""
+    with open(path) as f:
+        config_text = f.readlines()
+        f.close()
+        for line in config_text:
+            result += line
+    config = json.loads(result)
+    EXCEL_PATH = config['EXCEL_PATH']
+    OUT_PATH = config['OUT_PATH']
+    PROTO_SAVE_PATH = config['PROTO_SAVE_PATH']
+    BINARY_SAVE_PATH = config['BINARY_SAVE_PATH']
+    LOG_PATH = config['LOG_PATH']
+    PYTHON_PROTO_MODULE_PATH = config['PYTHON_PROTO_MODULE_PATH']
 
 
 def write_log(context):
@@ -28,15 +45,14 @@ def write_log(context):
 def process_config(path):
     sheets = dict()
     for execl_name in path:
-        print(execl_name)
         excel = Excel(execl_name)
         for sheet_name in excel.sheets:
             print("Process %s" % sheet_name)
             sheet = excel.sheets[sheet_name]
-            if not cal_run_time_no_args(sheet.analyze, "Analyze "):
+            if not sheet.analyze():
                 print("Process %s [ERROR]\n" % (sheet_name,))
                 write_log('%s' % execl_name)
-                #os.system('pause')
+                os.system('pause')
                 continue
             print("Process %s [COMPLETE]\n" % (sheet_name,))
             sheets[sheet_name] = sheet
@@ -72,6 +88,7 @@ def search_file(file_path):
 
 if __name__ == "__main__":
     init_time()
+    load_config("Config.json");
 
     # 找出所有的excel文件
     file_paths = search_file(EXCEL_PATH)

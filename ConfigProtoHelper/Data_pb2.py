@@ -19,88 +19,78 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Data.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\nData.proto\"j\n\tlevel_npc\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04mark\x18\x02 \x01(\t\x12\x10\n\x08stage_id\x18\x03 \x01(\x05\x12\x0f\n\x07\x61rea_id\x18\x04 \x01(\x05\x12\x0f\n\x07hero_id\x18\x05 \x01(\x05\x12\x0f\n\x07hero_lv\x18\x06 \x01(\x05\"0\n\nDataHelper\x12\"\n\x0elevel_npc_list\x18\x01 \x03(\x0b\x32\n.level_npcB\t\xaa\x02\x06\x43onfigb\x06proto3')
+  serialized_pb=_b('\n\nData.proto\"\xc9\x01\n\x0bSkillPrefab\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x12\n\nActionName\x18\x02 \x01(\t\x12\x11\n\tTotalTime\x18\x03 \x01(\x05\x12\x18\n\x10StateChannelTime\x18\x04 \x01(\x05\x12\x19\n\x11SpellBackwingTime\x18\x05 \x01(\x05\x12\x13\n\x0bHitTimeList\x18\x06 \x03(\x05\x12\x16\n\x0eHeroOffsetTime\x18\x07 \x03(\x05\x12\x16\n\x0eHeroOffsetPosZ\x18\x08 \x03(\x05\x12\r\n\x05Speed\x18\t \x03(\x05\"\xa3\x01\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12:\n\x10SkillPrefab_dict\x18\x02 \x03(\x0b\x32 .DataHelper.SkillPrefabDictEntry\x1a\x44\n\x14SkillPrefabDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.SkillPrefab:\x02\x38\x01\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
 )
 
 
 
 
-_LEVEL_NPC = _descriptor.Descriptor(
-  name='level_npc',
-  full_name='level_npc',
+_SKILLPREFAB = _descriptor.Descriptor(
+  name='SkillPrefab',
+  full_name='SkillPrefab',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='level_npc.id', index=0,
+      name='ID', full_name='SkillPrefab.ID', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='mark', full_name='level_npc.mark', index=1,
+      name='ActionName', full_name='SkillPrefab.ActionName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='stage_id', full_name='level_npc.stage_id', index=2,
+      name='TotalTime', full_name='SkillPrefab.TotalTime', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='area_id', full_name='level_npc.area_id', index=3,
+      name='StateChannelTime', full_name='SkillPrefab.StateChannelTime', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='hero_id', full_name='level_npc.hero_id', index=4,
+      name='SpellBackwingTime', full_name='SkillPrefab.SpellBackwingTime', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='hero_lv', full_name='level_npc.hero_lv', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='HitTimeList', full_name='SkillPrefab.HitTimeList', index=5,
+      number=6, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=14,
-  serialized_end=120,
-)
-
-
-_DATAHELPER = _descriptor.Descriptor(
-  name='DataHelper',
-  full_name='DataHelper',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='level_npc_list', full_name='DataHelper.level_npc_list', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='HeroOffsetTime', full_name='SkillPrefab.HeroOffsetTime', index=6,
+      number=7, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='HeroOffsetPosZ', full_name='SkillPrefab.HeroOffsetPosZ', index=7,
+      number=8, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Speed', full_name='SkillPrefab.Speed', index=8,
+      number=9, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -117,30 +107,117 @@ _DATAHELPER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=122,
-  serialized_end=170,
+  serialized_start=15,
+  serialized_end=216,
 )
 
-_DATAHELPER.fields_by_name['level_npc_list'].message_type = _LEVEL_NPC
-DESCRIPTOR.message_types_by_name['level_npc'] = _LEVEL_NPC
+
+_DATAHELPER_SKILLPREFABDICTENTRY = _descriptor.Descriptor(
+  name='SkillPrefabDictEntry',
+  full_name='DataHelper.SkillPrefabDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.SkillPrefabDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.SkillPrefabDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=314,
+  serialized_end=382,
+)
+
+_DATAHELPER = _descriptor.Descriptor(
+  name='DataHelper',
+  full_name='DataHelper',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='messageType', full_name='DataHelper.messageType', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='SkillPrefab_dict', full_name='DataHelper.SkillPrefab_dict', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_DATAHELPER_SKILLPREFABDICTENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=219,
+  serialized_end=382,
+)
+
+_DATAHELPER_SKILLPREFABDICTENTRY.fields_by_name['value'].message_type = _SKILLPREFAB
+_DATAHELPER_SKILLPREFABDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER.fields_by_name['SkillPrefab_dict'].message_type = _DATAHELPER_SKILLPREFABDICTENTRY
+DESCRIPTOR.message_types_by_name['SkillPrefab'] = _SKILLPREFAB
 DESCRIPTOR.message_types_by_name['DataHelper'] = _DATAHELPER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-level_npc = _reflection.GeneratedProtocolMessageType('level_npc', (_message.Message,), dict(
-  DESCRIPTOR = _LEVEL_NPC,
+SkillPrefab = _reflection.GeneratedProtocolMessageType('SkillPrefab', (_message.Message,), dict(
+  DESCRIPTOR = _SKILLPREFAB,
   __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:level_npc)
+  # @@protoc_insertion_point(class_scope:SkillPrefab)
   ))
-_sym_db.RegisterMessage(level_npc)
+_sym_db.RegisterMessage(SkillPrefab)
 
 DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Message,), dict(
+
+  SkillPrefabDictEntry = _reflection.GeneratedProtocolMessageType('SkillPrefabDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_SKILLPREFABDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.SkillPrefabDictEntry)
+    ))
+  ,
   DESCRIPTOR = _DATAHELPER,
   __module__ = 'Data_pb2'
   # @@protoc_insertion_point(class_scope:DataHelper)
   ))
 _sym_db.RegisterMessage(DataHelper)
+_sym_db.RegisterMessage(DataHelper.SkillPrefabDictEntry)
 
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\252\002\006Config'))
+_DATAHELPER_SKILLPREFABDICTENTRY.has_options = True
+_DATAHELPER_SKILLPREFABDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

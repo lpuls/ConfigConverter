@@ -11,6 +11,7 @@ class SwapData:
         self.fields = field
         self.field_to_type = dict()
         self.datas = list()
+        self.key = None
 
         # 根据名称前缀确定要生成什么类型的proto代码
         self.is_message = True
@@ -36,6 +37,21 @@ class SwapData:
             self.types[index] = data_type
             self.field_to_type[field_name] = data_type
         return True
+
+    def get_key_type(self, key, str_key):
+        for field in self.fields:
+            upper = field.upper()
+            if upper == key:
+                type = self.field_to_type.get(field, None)
+                if None is not type:
+                    self.key = field
+                    return DataType.type_to_proto(type.main_type)
+            elif upper == str_key:
+               type = self.field_to_type.get(field, None)
+               if None is not type:
+                    self.key = field
+                    return DataType.type_to_proto(type.main_type)
+        return None
 
     def __repr__(self):
         result = ""

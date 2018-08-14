@@ -35,7 +35,7 @@ def cal_run_time(func, info, *args):
     start = clock()
     result = func(*args)
     time = clock() - start
-    __write_time__('"Func": "%s", "Time": %f, "Info": "%s"' % (func.__name__, time, info, ))
+    # __write_time__('"Func": "%s", "Time": %f, "Info": "%s"' % (func.__name__, time, info, ))
     print('"Func": "%s", "Time": %f, "Info": "%s"' % (func.__name__, time, info, ))
     return result
 
@@ -44,7 +44,7 @@ def cal_run_time_deco(func):
         start = clock()
         result = func(*args, **kwargs)
         time = clock() - start
-        __write_time__('"Func": "%s", "Time": %f, "Info": "%s"' % (func.__name__, time, info, ))
-        print(time)
+        # __write_time__('Execute Func: %s, Time: %f' % (func.__name__, time, ))
+        print("%s: %f" % (func.__name__, time, ))
         return result
     return wrapper

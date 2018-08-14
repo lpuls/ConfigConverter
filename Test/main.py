@@ -24,6 +24,12 @@ if __name__ == "__main__":
         print(field.name)
         for item in data_list:
             print(item)
+            data_obj = data_list[item]
+            print(data_obj.ID)
+            for v in data_obj.ARRAY_TEST:
+                print(v)
+            for k in data_obj.TEST:
+                print(k, data_obj.TEST[k])
         print('\n')
         pass
     

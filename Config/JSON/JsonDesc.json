@@ -1,0 +1,34 @@
+{
+    "Timeline": [
+        {
+            "Type": "INT",
+            "Field": "Duration",
+            "Note": "Timeline总时长"
+        },
+        {
+            "Type": "INT",
+            "Field": "RecoverTime",
+            "Note": "后摇时间"
+        },
+        {
+            "Type": "INT",
+            "Field": "PreInputStart",
+            "Note": "输入窗口开始时间"
+        },
+        {
+            "Type": "INT",
+            "Field": "PreInputEnd",
+            "Note": "输入窗口中结束时间"
+        },
+        {
+            "Type": "ARRAY:INT",
+            "Field": "AnimationMove",
+            "Note": "动画的位移"
+        },
+        {
+            "Type": "ARRAY:INT",
+            "Field": "HitTimes",
+            "Note": "受击时间点"
+        }
+    ]
+}

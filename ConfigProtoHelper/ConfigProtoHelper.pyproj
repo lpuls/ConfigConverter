@@ -37,6 +37,9 @@
     <Compile Include="JsonHelper.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="JsonSwapData.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MessageData.py">
       <SubType>Code</SubType>
     </Compile>

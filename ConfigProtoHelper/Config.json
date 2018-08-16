@@ -1,5 +1,5 @@
 {
-  "JSON_PATH": "../Config/JSON",
+  "JSON_PATH": "../Config/JSON/",
   "EXCEL_PATH": "../Config/Excel/",
   "OUT_PATH": "../Config/",
   "PROTO_SAVE_PATH": "../Config/Data.proto",

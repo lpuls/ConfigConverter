@@ -24,11 +24,13 @@ SPAWN_PYTHON_COMMAND = "protoc -I ../Config/ --python_out=./ ../Config/Data.prot
 
 
 def load_config(path):
-    global EXCEL_PATH
     global OUT_PATH
+    global LOG_PATH
+    global JSON_PATH
+    global JSON_DESC
+    global EXCEL_PATH
     global PROTO_SAVE_PATH
     global BINARY_SAVE_PATH
-    global LOG_PATH
     global PYTHON_PROTO_MODULE_PATH
     global SPAWN_CSHARP_COMMAND
     global SPAWN_PYTHON_COMMAND
@@ -36,15 +38,16 @@ def load_config(path):
     result = JsonHelper.load_json(path)
     config = json.loads(result)
 
+    OUT_PATH = config['OUT_PATH']
+    LOG_PATH = config['LOG_PATH']
     JSON_PATH = config['JSON_PATH']
     EXCEL_PATH = config['EXCEL_PATH']
-    OUT_PATH = config['OUT_PATH']
     PROTO_SAVE_PATH = config['PROTO_SAVE_PATH']
     BINARY_SAVE_PATH = config['BINARY_SAVE_PATH']
-    LOG_PATH = config['LOG_PATH']
     PYTHON_PROTO_MODULE_PATH = config['PYTHON_PROTO_MODULE_PATH']
     SPAWN_CSHARP_COMMAND = config['SPAWN_CSHARP_COMMAND']
     SPAWN_PYTHON_COMMAND = config['SPAWN_PYTHON_COMMAND']
+    print(config)
 
 
 def write_log(context):
@@ -65,27 +68,34 @@ def process_excel_config(path):
     for execl_name in path:
         excel = Excel(execl_name)
         for sheet_name in excel.sheets:
-            print("Process %s" % sheet_name)
-            sheet = excel.sheets[sheet_name]
-            if not sheet.analyze():
-                print("Process %s [ERROR]\n" % (sheet_name,))
-                write_log('%s' % execl_name)
-                os.system('pause')
-                continue
-            print("Process %s [COMPLETE]\n" % (sheet_name,))
-            sheets[sheet_name] = sheet
+            sheets[sheet_name] = excel.sheets[sheet_name]
     return sheets
 
 
 def process_json_config(path):
+    JsonHelper.initialize(JSON_PATH + "JsonDesc.json")
     for json_name in path:
         JsonHelper.load_json_config(json_name)
     return JsonHelper.MESSAGES
 
 
+def analyze_config(datas):
+    delete_config = list()
+    for data_name in datas:
+        data = datas[data_name]
+        print("Process %s" % data_name)
+        if not data.analyze():
+           print("Process %s [ERROR]\n" % (data_name,))
+           write_log('%s' % data_name)
+           delete_config.append(data_name)
+           continue
+        print("Process %s [SUCCESS]" % data_name)
+    for item in delete_config:
+        del datas[item]
+
+
 def to_binary(in_path, out_path, sheets):
    # 生成proto文件
-   # os.system("run.bat")
    os.system(SPAWN_PYTHON_COMMAND)
    os.system(SPAWN_CSHARP_COMMAND)
 
@@ -126,6 +136,9 @@ if __name__ == "__main__":
     file_paths = search_file(JSON_PATH, [".json", ".JSON"])
     json_sheets = process_json_config(file_paths)
     merge_dict(sheets, json_sheets)
+
+    # 生成proto文件前先分析一下
+    analyze_config(sheets)
 
     # 尝试生成Proto文件
     process_data_to_proto(PROTO_SAVE_PATH, sheets)

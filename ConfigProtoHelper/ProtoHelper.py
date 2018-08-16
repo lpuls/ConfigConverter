@@ -4,6 +4,7 @@ from pbjson import *
 from EnumData import EnumData
 from DataType import DataType
 from MessageData import MessageData
+from JsonSwapData import JsonSwapData
 from ProtoTemplate import *
 
 def write_message(message_name, message_fields):
@@ -52,7 +53,7 @@ def process_data_to_proto(path, datas):
         
         # 找出是否存在默认键
         result = data.to_proto()
-        if isinstance(data, MessageData):
+        if isinstance(data, MessageData) or isinstance(data, JsonSwapData):
             # 获取key的类型
             message_list.append(write_message(data.file_name, result))
 

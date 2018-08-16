@@ -25,7 +25,18 @@ class SwapData:
         self.datas.append(data)
 
     def to_proto(self):
-        return None
+        message_field = ""
+        for index in range(0, len(self.fields)):
+            field_name = self.fields[index]
+            data_type = self.field_to_type.get(field_name, None)  # self.types[index]
+            assert data_type, "无法找到%s对应的类型" % field_name
+
+            message_field = message_field + "\t%(type_name)s %(field_name)s = %(index)d;\n" % {
+                    "type_name": DataType.to_proto_type(data_type),
+                    "field_name": field_name,
+                    "index": index + 1
+                }
+        return message_field
 
     def get(self, index):
         if index >= 0 and index < len(self.datas):

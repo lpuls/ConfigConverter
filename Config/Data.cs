@@ -22,26 +22,14732 @@ namespace Config {
     static DataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpEYXRhLnByb3RvIskBCgtTa2lsbFByZWZhYhIKCgJJRBgBIAEoBRISCgpB",
-            "Y3Rpb25OYW1lGAIgASgJEhEKCVRvdGFsVGltZRgDIAEoBRIYChBTdGF0ZUNo",
-            "YW5uZWxUaW1lGAQgASgFEhkKEVNwZWxsQmFja3dpbmdUaW1lGAUgASgFEhMK",
-            "C0hpdFRpbWVMaXN0GAYgAygFEhYKDkhlcm9PZmZzZXRUaW1lGAcgAygFEhYK",
-            "Dkhlcm9PZmZzZXRQb3NaGAggAygFEg0KBVNwZWVkGAkgAygFIqMBCgpEYXRh",
-            "SGVscGVyEhMKC21lc3NhZ2VUeXBlGAEgAygJEjoKEFNraWxsUHJlZmFiX2Rp",
-            "Y3QYAiADKAsyIC5EYXRhSGVscGVyLlNraWxsUHJlZmFiRGljdEVudHJ5GkQK",
-            "FFNraWxsUHJlZmFiRGljdEVudHJ5EgsKA2tleRgBIAEoBRIbCgV2YWx1ZRgC",
-            "IAEoCzIMLlNraWxsUHJlZmFiOgI4AUIJqgIGQ29uZmlnYgZwcm90bzM="));
+            "CgpEYXRhLnByb3RvIqoCCg13ZWFwb25fZWZmZWN0EgoKAmlkGAEgASgFEgwK",
+            "BG1hcmsYAiABKAkSEQoJcHJlZmFiX2lkGAMgASgFEiUKBmFjdGlvbhgEIAEo",
+            "DjIVLndlYXBvbl9lZmZlY3RfYWN0aW9uEhgKEGNhc3RfcGVyZm9ybWFuY2UY",
+            "BSABKAUSFwoPaGl0X3BlcmZvcm1hbmNlGAYgASgFEhAKCGhpdF90aW1lGAcg",
+            "ASgFEhkKEWJsb29kX3BlcmZvcm1hbmNlGAggASgFEg4KBm11enpsZRgJIAEo",
+            "BRISCgpwcm9qZWN0aWxlGAogASgFEhEKCXNoZWxsY2FzZRgLIAEoBRIUCgVk",
+            "dW1teRgMIAEoDjIFLmhvb2sSGAoQYXR0YWNrX2NsaXBfdGltZRgNIAEoBSL4",
+            "AQoJdGFza19tYWluEgoKAmlkGAEgASgFEg8KB2NoYXB0ZXIYAiABKAUSEQoJ",
+            "dGFza190eXBlGAMgASgFEg8KB25hbWVfY24YBCABKAkSEAoIbmFtZV9rZXkY",
+            "BSABKAkSEwoLY2hhcHRlcl9kZXMYBiABKAUSDgoGZGVzX2NuGAcgASgJEg8K",
+            "B2Rlc19rZXkYCCABKAkSIgoJZ29hbF90eXBlGAkgASgOMg8udGFza19nb2Fs",
+            "X3R5cGUSDwoHZ29hbF9pZBgKIAEoBRIQCghnb2FsX251bRgLIAEoBRILCgNi",
+            "b3gYDCABKAUSDgoGZGlhbG9nGA0gAygFIr8BChJoZXJvX2JhdHRsZV9zdGF0",
+            "dXMSCgoCaWQYASABKAUSEAoIbmFtZV9rZXkYAiABKAkSDwoHZGVzX2tleRgD",
+            "IAEoCRImCgtzdGF0dXNfZW51bRgEIAEoDjIRLmhlcm9fc3RhdHVzX2VudW0S",
+            "EwoLc3RhdHVzX3R5cGUYBSABKAUSDAoEdGltZRgGIAEoBRIMCgRyYXRlGAcg",
+            "ASgFEgwKBGl0ZW0YCCADKAUSEwoLcmVjb3Zlcl9rZXkYCSABKAkiqQkKBXNr",
+            "aWxsEgoKAmlkGAEgASgFEhAKCG5hbWVfa2V5GAIgASgJEg8KB25hbWVfY24Y",
+            "AyABKAkSEQoJaW50cm9fa2V5GAQgASgJEhAKCGludHJvX2NuGAUgASgJEh0K",
+            "CWNhc3RfdHlwZRgGIAEoDjIKLmNhc3RfdHlwZRINCgVsZXZlbBgHIAEoBRIM",
+            "CgRjb3N0GAggASgFEhYKDnBlcmZvcm1hbmNlX2lkGAkgASgFEhUKDXByb2pl",
+            "Y3RpbGVfaWQYCiABKAUSGgoSaGl0X3BlcmZvcm1hbmNlX2lkGAsgASgFEhMK",
+            "C2JlX2hpdF90aW1lGAwgASgFEhkKEWJsb29kX3BlcmZvcm1hbmNlGA0gASgF",
+            "EhIKCmJ1ZmZfYXJyYXkYDiADKAUSFAoMd2VhcG9uX3NoYXBlGA8gASgFEhQK",
+            "DHN0YXJ0dXBfdGltZRgQIAEoBRITCgthY3RpdmVfdGltZRgRIAEoBRIQCgho",
+            "aXRfdGltZRgSIAMoBRIUCgxyZWNvdmVyX3RpbWUYEyABKAUSGQoRc2tpbGxf",
+            "cmFuZ2VfdmFsdWUYFCABKAUSFQoNdGFyZ2V0X2Ftb3VudBgVIAEoBRIrChB0",
+            "YXJnZXRfY2FtcF90eXBlGBYgASgOMhEudGFyZ2V0X2NhbXBfdHlwZRIvChJ0",
+            "YXJnZXRfc2VsZWN0X3R5cGUYFyABKA4yEy50YXJnZXRfc2VsZWN0X3R5cGUS",
+            "EwoLdGFyZ2V0X3R5cGUYGCABKAUSIgoTaW52YWxpZF90YXJnZXRfdHlwZRgZ",
+            "IAEoDjIFLnJhY2USGAoQdHJpZ2dlcl9wb3NfdHlwZRgaIAEoBRInChJ0cmln",
+            "Z2VyX3JhbmdlX3R5cGUYGyABKA4yCy5yYW5nZV90eXBlEhsKE3RyaWdnZXJf",
+            "cmFuZ2VfdmFsdWUYHCADKAUSFgoOZWZmZWN0aXZlX3RpbWUYHSABKAUSGwoT",
+            "dHJpZ2dlcl9wZXJmb3JtYW5jZRgeIAEoBRIgChh0cmlnZ2VyX3VuaXRfcGVy",
+            "Zm9ybWFuY2UYHyABKAUSIgoadHJpZ2dlcl9zaW5nbGVfcGVyZm9ybWFuY2UY",
+            "ICABKAUSFgoOdHJpZ2dlcl9kdXJpbmcYISABKAUSFAoMdHJpZ2dlcl90aWNr",
+            "GCIgASgFEhQKDHRyaWdnZXJfYnVmZhgjIAMoBRITCgtjYW5jZWxfYnVmZhgk",
+            "IAEoCBIoChJkYW1hZ2VfZWZmZWN0X3R5cGUYJSABKA4yDC5lZmZlY3RfdHlw",
+            "ZRIbChNkYW1hZ2VfZWZmZWN0X3ZhbHVlGCYgASgFEjUKGmFkZHRpdmVfZGFt",
+            "YWdlX2VmZmVjdF90eXBlGCcgASgOMhEuaXRlbV9kZXRhaWxfdHlwZRIkChxh",
+            "ZGR0aXZlX2RhbWFnZV9lZmZlY3RfZmFjdG9yGCggASgFEiUKFmRlc2lnbmF0",
+            "ZWRfdGFyZ2V0X3R5cGUYKSABKA4yBS5yYWNlEh4KFmRlc2lnbmF0ZWRfZWZm",
+            "ZWN0X3R5cGUYKiABKAUSHwoXZGVzaWduYXRlZF9lZmZlY3RfdmFsdWUYKyAB",
+            "KAUSDwoHaWNvbl9pZBgsIAEoBSLrAQoLcm9sZV9jb25maWcSCgoCaWQYASAB",
+            "KAUSFwoGZ2VuZGVyGAIgASgOMgcuZ2VuZGVyEh0KCWJvZHlfdHlwZRgDIAEo",
+            "DjIKLmJvZHlfdHlwZRIdCglyYWNlX3R5cGUYBCABKA4yCi5yYWNlX3R5cGUS",
+            "EAoIc291bmRfaWQYBSADKAUSDwoHaGVhZF9pZBgGIAMoBRIOCgZoYXRfaWQY",
+            "ByADKAUSDwoHaGFpcl9pZBgIIAMoBRISCgpjbG90aGVzX2lkGAkgAygFEhAK",
+            "CHBhbnRzX2lkGAogAygFEg8KB3Nob2VfaWQYCyADKAUi+gIKBGl0ZW0SCgoC",
+            "aWQYASABKAUSEAoIbmFtZV9rZXkYAiABKAkSDwoHbmFtZV9jbhgDIAEoCRIR",
+            "CglpbnRyb19rZXkYBCABKAkSEAoIaW50cm9fY24YBSABKAkSHQoJaXRlbV90",
+            "eXBlGAYgASgOMgouaXRlbV90eXBlEisKEGl0ZW1fZGV0YWlsX3R5cGUYByAB",
+            "KA4yES5pdGVtX2RldGFpbF90eXBlEhEKCWJsb2NrX251bRgIIAEoBRIOCgZp",
+            "bWdfaWQYCSABKAkSEAoIY2FwYWNpdHkYCiABKAUSEAoIY2FuX2Ryb3AYCyAB",
+            "KAgSEwoLZXhwaXJlX3RpbWUYDCABKAUSFgoOY29tYnVzdGliaWxpdHkYDSAB",
+            "KAUSEQoJY2F0YWxhc2lzGA4gASgFEg4KBm1vZF9pZBgPIAEoBRIVCg13ZWFw",
+            "b25fcHJvX2lkGBAgASgFEhQKDGFybW9yX3Byb19pZBgRIAEoBRIOCgZib3hf",
+            "aWQYEiABKAUi6gwKBGhlcm8SCgoCaWQYASABKAUSDgoGam9iX2lkGAIgASgF",
+            "Eh4KB3F1YWxpdHkYAyABKA4yDS5oZXJvX3F1YWxpdHkSDAoEbWFyaxgEIAEo",
+            "CRIlCgt3ZWFwb25fdHlwZRgFIAEoDjIQLndlYXBvbl9zdWJfdHlwZRIfCgph",
+            "cm1vcl90eXBlGAYgASgOMgsuYXJtb3JfdHlwZRIRCgl3ZWFwb25faWQYByAB",
+            "KAUSJgoJYWN0aW9uX2lkGAggAygLMhMuaGVyby5BY3Rpb25JZEVudHJ5EhYK",
+            "Dmhlcm9fZWZmZWN0X2lkGAkgASgFEhgKEGhlcm9fc2tpbGxfYXJyYXkYCiAD",
+            "KAUSEAoIYXR0cl9pZDEYCyABKAUSDwoHYXR0cl92MRgMIAMoBRIQCghhdHRy",
+            "X2lkMhgNIAEoBRIPCgdhdHRyX3YyGA4gAygFEhAKCGF0dHJfaWQzGA8gASgF",
+            "Eg8KB2F0dHJfdjMYECADKAUSEAoIYXR0cl9pZDQYESABKAUSDwoHYXR0cl92",
+            "NBgSIAMoBRIQCghhdHRyX2lkNRgTIAEoBRIPCgdhdHRyX3Y1GBQgAygFEhAK",
+            "CGF0dHJfaWQ2GBUgASgFEg8KB2F0dHJfdjYYFiADKAUSEAoIYXR0cl9pZDcY",
+            "FyABKAUSDwoHYXR0cl92NxgYIAMoBRIRCglhdHRyX2lkMTMYGSABKAUSEAoI",
+            "YXR0cl92MTMYGiADKAUSEQoJYXR0cl9pZDI2GBsgASgFEhAKCGF0dHJfdjI2",
+            "GBwgASgFEhEKCWF0dHJfaWQyNRgdIAEoBRIQCghhdHRyX3YyNRgeIAMoBRIQ",
+            "Cgh0ZWNoX2lkNRgfIAEoBRIPCgd0ZWNoX3Y1GCAgAygFEhAKCHRlY2hfaWQ2",
+            "GCEgASgFEg8KB3RlY2hfdjYYIiADKAUSEAoIdGVjaF9pZDcYIyABKAUSDwoH",
+            "dGVjaF92NxgkIAMoBRIQCgh0ZWNoX2lkOBglIAEoBRIPCgd0ZWNoX3Y4GCYg",
+            "AygFEhAKCHRlY2hfaWQ5GCcgASgFEg8KB3RlY2hfdjkYKCADKAUSEQoJdGVj",
+            "aF9pZDEwGCkgASgFEhAKCHRlY2hfdjEwGCogAygFEhEKCXRlY2hfaWQxMRgr",
+            "IAEoBRIQCgh0ZWNoX3YxMRgsIAMoBRIRCgl0ZWNoX2lkMTIYLSABKAUSEAoI",
+            "dGVjaF92MTIYLiADKAUSEQoJdGVjaF9pZDEzGC8gASgFEhAKCHRlY2hfdjEz",
+            "GDAgAygFEhEKCWF0dHJfaWQxNBgxIAEoBRIQCghhdHRyX3YxNBgyIAMoBRIR",
+            "CglhdHRyX2lkMTUYMyABKAUSEAoIYXR0cl92MTUYNCADKAUSEgoKbGV2ZWx1",
+            "cF9ocBg1IAEoBRIWCg5sZXZlbHVwX2hwX3Zhchg2IAEoBRISCgpsZXZlbHVw",
+            "X2F0GDcgASgFEhYKDmxldmVsdXBfYXRfdmFyGDggASgFEhMKC2xldmVsdXBf",
+            "ZGVmGDkgASgFEhcKD2xldmVsdXBfZGVmX3Zhchg6IAEoBRITCgtsZXZlbHVw",
+            "X2hpdBg7IAEoBRIXCg9sZXZlbHVwX2hpdF92YXIYPCABKAUSEwoLbGV2ZWx1",
+            "cF9kb2QYPSABKAUSFwoPbGV2ZWx1cF9kb2RfdmFyGD4gASgFEhcKD2xldmVs",
+            "dXBfZXhwbG9kZRg/IAEoBRIbChNsZXZlbHVwX2V4cGxvZGVfdmFyGEAgASgF",
+            "EhMKC2xldmVsdXBfbWVkGEEgASgFEhcKD2xldmVsdXBfbWVkX3ZhchhCIAEo",
+            "BRITCgtsZXZlbHVwX2NyaRhDIAEoBRIXCg9sZXZlbHVwX2NyaV92YXIYRCAB",
+            "KAUSFwoPbGV2ZWx1cF9jcmlodXJ0GEUgASgFEhsKE2xldmVsdXBfY3JpaHVy",
+            "dF92YXIYRiABKAUSGAoQdXBfbmVlZF9pdGVtX2lkMRhHIAEoBRIXCg91cF9u",
+            "ZWVkX2l0ZW1fdjEYSCABKAUSGAoQdXBfbmVlZF9pdGVtX2lkMhhJIAEoBRIX",
+            "Cg91cF9uZWVkX2l0ZW1fdjIYSiABKAUSGAoQdXBfbmVlZF9pdGVtX2lkMxhL",
+            "IAEoBRIXCg91cF9uZWVkX2l0ZW1fdjMYTCABKAUaLwoNQWN0aW9uSWRFbnRy",
+            "eRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBIqkBCg1leHBfc2tp",
+            "bGxfbWFwEgoKAmlkGAEgASgFEhEKCWl0ZW1fdHlwZRgCIAEoBRIKCgJsdhgD",
+            "IAEoBRILCgNleHAYBCABKAUSLwoJbmVlZF9pdGVtGAUgAygLMhwuZXhwX3Nr",
+            "aWxsX21hcC5OZWVkSXRlbUVudHJ5Gi8KDU5lZWRJdGVtRW50cnkSCwoDa2V5",
+            "GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ASKbAQoRcm9sZV9zb3VuZF9jb25m",
+            "aWcSCgoCaWQYASABKAUSEQoJYnJlYXRoaW5nGAIgASgFEgwKBGRlYWQYAyAB",
+            "KAUSDAoEaHVydBgEIAEoBRIZChFjbGFzc2ljdm9pY2VfZmlyZRgFIAEoBRIX",
+            "Cg9jbGFzc2ljdm9pY2VfZ28YBiABKAUSFwoPY2xhc3NpY3ZvaWNlX29rGAcg",
+            "ASgFItgBCgp0YXNrX2RhaWx5EgoKAmlkGAEgASgFEhAKCG5hbWVfa2V5GAIg",
+            "ASgJEg8KB25hbWVfY24YAyABKAkSDwoHZGVzX2tleRgEIAEoCRIOCgZkZXNf",
+            "Y24YBSABKAkSEQoJdGFza190eXBlGAYgASgFEhAKCGdvYWxfbnVtGAcgASgF",
+            "Eg0KBWl0ZW0xGAggASgFEgwKBG51bTEYCSABKAUSDQoFaXRlbTIYCiABKAUS",
+            "DAoEbnVtMhgLIAEoBRINCgVpdGVtMxgMIAEoBRIMCgRudW0zGA0gASgFIl0K",
+            "BmRpYWxvZxIKCgJJRBgBIAEoBRIRCglkaWFsb2dfaWQYAiABKAUSDgoGaW1n",
+            "X2lkGAMgASgFEhQKDGltZ19sb2NhdGlvbhgEIAEoBRIOCgZkaWFsb2cYBSAB",
+            "KAkikQEKCGJveF9kcm9wEgoKAmlkGAEgASgFEg4KBmJveF9pZBgCIAEoBRIP",
+            "CgdpdGVtX2lkGAMgASgFEhIKCml0ZW1fY291bnQYBCADKAUSDgoGd2VpZ2h0",
+            "GAUgASgFEhEKCW1hcmtfbmFtZRgGIAEoCRIhCglpdGVtX3R5cGUYByABKA4y",
+            "Di5ib3hfaXRlbV90eXBlIq4BCgNib3gSCgoCaWQYASABKAUSDAoEbWFyaxgC",
+            "IAEoCRIRCglkcm9wX3R5cGUYAyABKAUSEgoKY2hhcHRlcl9pZBgEIAEoBRIQ",
+            "Cghib3hfaWNvbhgFIAEoBRIRCglib3hfaW50cm8YBiABKAUSEwoLYm94X3F1",
+            "YWxpdHkYByABKAUSFgoOcmVsZXZhbmNlX3R5cGUYCCABKAUSFAoMcmVsZXZh",
+            "bmNlX2lkGAkgASgFInIKBFRlc3QSCgoCSUQYASABKAUSEgoKQVJSQVlfVEVT",
+            "VBgCIAMoBRIdCgRURVNUGAMgAygLMg8uVGVzdC5URVNURW50cnkaKwoJVEVT",
+            "VEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAEiUAoMcHJl",
+            "ZmFiX3NvdW5kEgoKAmlkGAEgASgFEhIKCnNvdW5kX25hbWUYAiABKAkSDAoE",
+            "bWFyaxgDIAEoCRISCgpzb3VuZF9wYXRoGAQgASgJIoMBCgdjaGFwdGVyEgoK",
+            "AmlkGAEgASgFEhAKCG5hbWVfa2V5GAIgASgJEg8KB25hbWVfY24YAyABKAkS",
+            "JwoKZGlmZmljdWx0eRgEIAEoDjITLmNoYXB0ZXJfZGlmZmljdWx0eRIRCglp",
+            "bnRyb19rZXkYBSABKAkSDQoFaW1naWQYBiABKAUitQQKBndlYXBvbhIKCgJp",
+            "ZBgBIAEoBRIMCgRtYXJrGAIgASgJEhsKCHdlYXJfcG9zGAMgASgOMgkud2Vh",
+            "cl9wb3MSIQoLd2VhcG9uX3R5cGUYBCABKA4yDC53ZWFwb25fdHlwZRIiCghz",
+            "dWJfdHlwZRgFIAEoDjIQLndlYXBvbl9zdWJfdHlwZRIOCgZlbmVyZ3kYBiAB",
+            "KAUSEAoIYXR0cl9pZDEYByABKAUSDwoHYXR0cl92MRgIIAEoBRIQCghhdHRy",
+            "X2lkMhgJIAEoBRIPCgdhdHRyX3YyGAogASgFEhAKCGF0dHJfaWQzGAsgASgF",
+            "Eg8KB2F0dHJfdjMYDCABKAUSEQoJYXR0cl9pZDEzGA0gASgFEhAKCGF0dHJf",
+            "djEzGA4gAygFEhAKCGF0dHJfaWQ0GA8gASgFEg8KB2F0dHJfdjQYECABKAUS",
+            "EAoIYXR0cl9pZDUYESABKAUSDwoHYXR0cl92NRgSIAEoBRIQCghhdHRyX2lk",
+            "NhgTIAEoBRIPCgdhdHRyX3Y2GBQgASgFEhAKCGF0dHJfaWQ3GBUgASgFEg8K",
+            "B2F0dHJfdjcYFiABKAUSEAoIYXR0cl9pZDgYFyABKAUSDwoHYXR0cl92OBgY",
+            "IAEoBRIQCghhdHRyX2lkORgZIAEoBRIPCgdhdHRyX3Y5GBogASgFEhEKCWF0",
+            "dHJfaWQxMhgbIAEoBRIQCghhdHRyX3YxMhgcIAEoBRIYChB3ZWFwb25fZWZm",
+            "ZWN0X2lkGB0gASgFIrQCCgdmb3JtdWxhEgoKAmlkGAEgASgFEg4KBmltZ19p",
+            "ZBgCIAEoBRIQCghuYW1lX2tleRgDIAEoCRIPCgduYW1lX2NuGAQgASgJEhEK",
+            "CWludHJvX2tleRgFIAEoCRIUCgxmb3JtdWxhX3R5cGUYBiABKAUSEQoJY29z",
+            "dF90aW1lGAcgASgFEiYKB3Byb2R1Y3QYCCADKAsyFS5mb3JtdWxhLlByb2R1",
+            "Y3RFbnRyeRImCgdjb25zdW1lGAkgAygLMhUuZm9ybXVsYS5Db25zdW1lRW50",
+            "cnkaLgoMUHJvZHVjdEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEo",
+            "BToCOAEaLgoMQ29uc3VtZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgC",
+            "IAEoBToCOAEiagoJbGV2ZWxfbnBjEgoKAmlkGAEgASgFEgwKBG1hcmsYAiAB",
+            "KAkSEAoIc3RhZ2VfaWQYAyABKAUSDwoHYXJlYV9pZBgEIAEoBRIPCgdoZXJv",
+            "X2lkGAUgASgFEg8KB2hlcm9fbHYYBiABKAUiPQoMcHJlZmFiX3NoYXBlEgoK",
+            "AmlkGAEgASgFEhMKC3ByZWZhYl9uYW1lGAIgASgJEgwKBG1hcmsYAyABKAki",
+            "vgQKBWFybW9yEgoKAmlkGAEgASgFEgwKBG1hcmsYAiABKAkSGwoId2Vhcl9w",
+            "b3MYAyABKA4yCS53ZWFyX3BvcxIfCgphcm1vcl90eXBlGAQgASgOMgsuYXJt",
+            "b3JfdHlwZRIOCgZtb2RfaWQYBSABKAUSEAoIYXR0cl9pZDEYBiABKAUSDwoH",
+            "YXR0cl92MRgHIAEoBRIQCghhdHRyX2lkMhgIIAEoBRIPCgdhdHRyX3YyGAkg",
+            "ASgFEhAKCGF0dHJfaWQzGAogASgFEg8KB2F0dHJfdjMYCyABKAUSEAoIYXR0",
+            "cl9pZDQYDCABKAUSDwoHYXR0cl92NBgNIAEoBRIQCghhdHRyX2lkNRgOIAEo",
+            "BRIPCgdhdHRyX3Y1GA8gASgFEhAKCGF0dHJfaWQ2GBAgASgFEg8KB2F0dHJf",
+            "djYYESABKAUSEAoIYXR0cl9pZDcYEiABKAUSDwoHYXR0cl92NxgTIAEoBRIQ",
+            "CghhdHRyX2lkOBgUIAEoBRIPCgdhdHRyX3Y4GBUgASgFEhAKCGF0dHJfaWQ5",
+            "GBYgASgFEg8KB2F0dHJfdjkYFyABKAUSEQoJYXR0cl9pZDEyGBggASgFEhAK",
+            "CGF0dHJfdjEyGBkgASgFEhEKCWF0dHJfaWQxMxgaIAEoBRIQCghhdHRyX3Yx",
+            "MxgbIAEoBRIRCglhdHRyX2lkMTQYHCABKAUSEAoIYXR0cl92MTQYHSABKAUS",
+            "EQoJYXR0cl9pZDE1GB4gASgFEhAKCGF0dHJfdjE1GB8gASgFIjsKCmdsb2Jh",
+            "bF92YXISCwoDa2V5GAEgASgJEhAKCHZfc3RyaW5nGAIgASgJEg4KBnJlbWFy",
+            "axgDIAEoCSI4CgVzdG9yeRIKCgJpZBgBIAEoBRIRCglzdG9yeV9rZXkYAiAB",
+            "KAkSEAoIc3RvcnlfY24YAyABKAkiQgoDbWFwEgoKAmlkGAEgASgFEgwKBG5h",
+            "bWUYAiABKAkSEgoKc2NlbmVfbmFtZRgDIAEoCRINCgVwYXRocxgEIAMoCSLJ",
+            "AQoLU2tpbGxQcmVmYWISCgoCSUQYASABKAUSEgoKQWN0aW9uTmFtZRgCIAEo",
+            "CRIRCglUb3RhbFRpbWUYAyABKAUSGAoQU3RhdGVDaGFubmVsVGltZRgEIAEo",
+            "BRIZChFTcGVsbEJhY2t3aW5nVGltZRgFIAEoBRITCgtIaXRUaW1lTGlzdBgG",
+            "IAMoBRIWCg5IZXJvT2Zmc2V0VGltZRgHIAMoBRIWCg5IZXJvT2Zmc2V0UG9z",
+            "WhgIIAMoBRINCgVTcGVlZBgJIAMoBSKjAQoLcGVyZm9ybWFuY2USCgoCaWQY",
+            "ASABKAUSEQoJbWFya19uYW1lGAIgASgJEhEKCWFjdGlvbl9pZBgDIAEoBRIR",
+            "CgllZmZlY3RfaWQYBCABKAUSEAoIc291bmRfaWQYBSADKAUSEgoKc2hha2Vf",
+            "dGltZRgGIAEoBRIUCgxzaGFrZV9mYWN0b3IYByABKAUSEwoLZWZmZWN0X3Rp",
+            "bWUYCCABKAUi6wEKC3N0YWdlX2xldmVsEgoKAmlkGAEgASgFEgwKBG5hbWUY",
+            "AiABKAkSEAoIc3RhZ2VfaWQYAyABKAUSHwoKc3RhZ2VfdHlwZRgEIAEoDjIL",
+            "LnN0YWdlX3R5cGUSCwoDYm94GAUgASgFEi0KCWRyb3BfaXRlbRgGIAMoCzIa",
+            "LnN0YWdlX2xldmVsLkRyb3BJdGVtRW50cnkSDgoGbWFwX2lkGAcgASgFEhIK",
+            "CnRyaWdnZXJfaWQYCCABKAUaLwoNRHJvcEl0ZW1FbnRyeRILCgNrZXkYASAB",
+            "KAUSDQoFdmFsdWUYAiABKAU6AjgBIscHCgRidWZmEgoKAmlkGAEgASgFEh0K",
+            "CWJ1ZmZfdHlwZRgCIAEoDjIKLmJ1ZmZfdHlwZRIhCgtzdGF0dXNfdHlwZRgD",
+            "IAEoDjIMLnN0YXR1c190eXBlEiYKC3RhcmdldF90eXBlGAQgASgOMhEudGFy",
+            "Z2V0X2NhbXBfdHlwZRIbChNpbnZhbGlkX3RhcmdldF90eXBlGAUgASgFEh8K",
+            "CnJhbmdlX3R5cGUYBiABKA4yCy5yYW5nZV90eXBlEhMKC3JhbmdlX3ZhbHVl",
+            "GAcgAygFEhUKDW92ZXJyaWRlX2J1ZmYYCCABKAUSGwoTb3ZlcnJpZGVfYnVm",
+            "Zl9sZXZlbBgJIAEoBRIaChJhZGR0aXZlX2J1ZmZfbGV2ZWwYCiABKAUSGAoQ",
+            "ZGVzdHJveV9vbl9kZWF0aBgLIAEoCBIYChByZW1vdmVfYnVmZl90eXBlGAwg",
+            "AygFEhoKEmNvbmZsaWN0X2J1ZmZfdHlwZRgNIAMoBRIYChBjb25mbGljdF9i",
+            "dWZmX2lkGA4gAygFEi0KEm1vZGlmeV9lZmZlY3RfdHlwZRgPIAEoDjIRLml0",
+            "ZW1fZGV0YWlsX3R5cGUSHAoUbW9kaWZ5X2VmZmVjdF9mYWN0b3IYECABKAUS",
+            "GwoTbW9kaWZ5X2VmZmVjdF92YWx1ZRgRIAEoBRImChFkYW1hZ2VfcmFuZ2Vf",
+            "dHlwZRgSIAEoDjILLnJhbmdlX3R5cGUSGgoSZGFtYWdlX3JhbmdlX3ZhbHVl",
+            "GBMgAygFEigKEmRhbWFnZV9lZmZlY3RfdHlwZRgUIAEoDjIMLmVmZmVjdF90",
+            "eXBlEhsKE2RhbWFnZV9lZmZlY3RfdmFsdWUYFSABKAUSLgoTYWRkdGl2ZV9l",
+            "ZmZlY3RfdHlwZRgWIAEoDjIRLml0ZW1fZGV0YWlsX3R5cGUSHQoVYWRkdGl2",
+            "ZV9lZmZlY3RfZmFjdG9yGBcgASgFEiUKFmRlc2lnbmF0ZWRfdGFyZ2V0X3R5",
+            "cGUYGCABKA4yBS5yYWNlEh4KFmRlc2lnbmF0ZWRfZWZmZWN0X3R5cGUYGSAB",
+            "KAUSHwoXZGVzaWduYXRlZF9lZmZlY3RfdmFsdWUYGiABKAUSDgoGZHVyaW5n",
+            "GBsgASgFEgwKBHRpY2sYHCABKAUSDQoFY291bnQYHSABKAUSDwoHaWNvbl9p",
+            "ZBgeIAEoBRIQCghidWZmX2hpdBgfIAEoBRIVCg1hcnRfZWZmZWN0X2lkGCAg",
+            "ASgFEhgKEGVmZmVjdF9zaW5nbGVfaWQYISABKAUSDwoHYnVmZl9pZBgiIAMo",
+            "BSJUCg1wcmVmYWJfYWN0aW9uEgoKAmlkGAEgASgFEhMKC2FjdGlvbl9uYW1l",
+            "GAIgASgJEg0KBWludHJvGAMgASgJEhMKC2FjdGlvbl90aW1lGAQgASgFIpoD",
+            "CgNqb2ISCgoCaWQYASABKAUSEAoIbmFtZV9rZXkYAiABKAkSDwoHbmFtZV9j",
+            "bhgDIAEoCRInCg5oZXJvX25hbWVfdHlwZRgEIAEoDjIPLmhlcm9fbmFtZV90",
+            "eXBlEhUKDWhlcm9fbmFtZV9rZXkYBSABKAkSFAoMaGVyb19uYW1lX2NuGAYg",
+            "ASgJEhYKBGNhbXAYByABKA4yCC5jYW1wX2lkEhMKBHJhY2UYCCABKA4yBS5y",
+            "YWNlEhIKCnN0YXJfbGV2ZWwYCSABKAUSFwoEdHlwZRgKIAEoDjIJLmpvYl90",
+            "eXBlEhAKCHN0b3J5X2lkGAsgASgFEg8KB3RhbGtfaWQYDCABKAUSEAoIdGFs",
+            "azJfaWQYDSABKAUSEwoLbWF4X3F1YWxpdHkYDiABKAUSEAoIdGFsazNfaWQY",
+            "DyABKAUSEAoIdGFsazRfaWQYECABKAUSEAoIdGFsazVfaWQYESABKAUSEAoI",
+            "dGFsazZfaWQYEiABKAUSEAoIdGFsazdfaWQYEyABKAUSEAoIdGFsazhfaWQY",
+            "FCABKAUipQIKCFRvb2xUZXN0EgoKAklEGAEgASgFEg0KBXRlc3RBGAIgASgF",
+            "Eg0KBXRlc3RCGAMgASgJEg0KBXRlc3RDGAQgASgIEg0KBXRlc3REGAUgAygF",
+            "Eg0KBXRlc3RIGAYgAygFEg0KBXRlc3RJGAcgAygFEg0KBXRlc3RFGAggAygF",
+            "EiMKBXRlc3RGGAkgAygLMhQuVG9vbFRlc3QuVGVzdEZFbnRyeRIjCgV0ZXN0",
+            "RxgKIAMoCzIULlRvb2xUZXN0LlRlc3RHRW50cnkaLAoKVGVzdEZFbnRyeRIL",
+            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAU6AjgBGiwKClRlc3RHRW50cnkS",
+            "CwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgFOgI4ASI/Cg1nbG9iYWxfc3Ry",
+            "aW5nEgsKA2tleRgBIAEoCRIQCghuYW1lX2tleRgCIAEoCRIPCgduYW1lX2Nu",
+            "GAMgASgJItQECghidWlsZGluZxIKCgJpZBgBIAEoBRIQCghuYW1lX2tleRgC",
+            "IAEoCRIPCgduYW1lX2NuGAMgASgJEg8KB2ljb25faWQYBCABKAUSFAoMdXBk",
+            "YXRlX2dyb3VwGAUgASgFEhYKDnRyYW5zZm9ybV90eXBlGAYgASgFEi0KEXN1",
+            "Yl9idWlsZGluZ190eXBlGAcgASgOMhIuc3ViX2J1aWxkaW5nX2VudW0SFQoN",
+            "YnVpbGRpbmdfdHlwZRgIIAEoBRIQCghwb3NpdGlvbhgJIAEoBRIVCg1uZWVk",
+            "X2NhcGFjaXR5GAogASgFEhIKCm5lZWRfcG93ZXIYCyABKAUSFQoNcHJlX2J1",
+            "aWxkaW5ncxgMIAEoBRINCgVsZXZlbBgNIAEoBRIYChBidWlsZGluZ19zdWJ0",
+            "eXBlGA4gASgFEjoKEWNvbnN1bWVfbWF0ZXJpYWxzGA8gAygLMh8uYnVpbGRp",
+            "bmcuQ29uc3VtZU1hdGVyaWFsc0VudHJ5EjoKEXByb2R1Y3RfbWF0ZXJpYWxz",
+            "GBAgAygLMh8uYnVpbGRpbmcuUHJvZHVjdE1hdGVyaWFsc0VudHJ5EhcKD2lu",
+            "aXRpYWxseV9vd25lZBgRIAEoBRIUCgxwcmVmYWJfc2hhcGUYEiABKAUaNwoV",
+            "Q29uc3VtZU1hdGVyaWFsc0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgC",
+            "IAEoBToCOAEaNwoVUHJvZHVjdE1hdGVyaWFsc0VudHJ5EgsKA2tleRgBIAEo",
+            "BRINCgV2YWx1ZRgCIAEoBToCOAEioQEKDXByZWZhYl9lZmZlY3QSCgoCaWQY",
+            "ASABKAUSEwoLcHJlZmFiX25hbWUYAiABKAkSDAoEbWFyaxgDIAEoCRIaCgth",
+            "dHRhY2hfcGF0aBgEIAEoDjIFLmhvb2sSFwoPZm9sbG93X3Bvc2l0aW9uGAUg",
+            "ASgFEhcKD2ZvbGxvd19yb3RhdGlvbhgGIAEoBRITCgtlZmZlY3RfcGF0aBgH",
+            "IAEoCSKSAQoIVGltZWxpbmUSCgoCSUQYASABKAUSEAoIRHVyYXRpb24YAiAB",
+            "KAUSEwoLUmVjb3ZlclRpbWUYAyABKAUSFQoNUHJlSW5wdXRTdGFydBgEIAEo",
+            "BRITCgtQcmVJbnB1dEVuZBgFIAEoBRIVCg1BbmltYXRpb25Nb3ZlGAYgAygF",
+            "EhAKCEhpdFRpbWVzGAcgAygFIvMCCgtoZWFkX2NvbmZpZxIKCgJpZBgBIAEo",
+            "BRIOCgZtb2RfaWQYAiABKAUSEAoIZXllX3NpemUYAyADKAkSDwoHZXllX2Rp",
+            "cxgEIAMoCRITCgtleWVfYnJvd2RpcxgFIAMoCRISCgpleWVfc29ja2V0GAYg",
+            "AygJEhIKCm5vc2Vfd2lkdGgYByADKAkSEwoLbm9zZV9sZW5ndGgYCCADKAkS",
+            "EgoKbm9zZV9oaWdodBgJIAMoCRIQCghlYXJfcGFydBgKIAMoCRIQCghlYXJf",
+            "c2l6ZRgLIAMoCRIQCghlYXJfZm9ybRgMIAMoCRISCgptb3V0aF9wYXJ0GA0g",
+            "AygJEhAKCG1vdXRoX3RoGA4gAygJEhIKCm1vdXRoX2J1bXAYDyADKAkSDgoG",
+            "amF3X3RoGBAgAygJEhIKCmphd19sZW5ndGgYESADKAkSDQoFY2hlZWsYEiAD",
+            "KAkSDAoEYnJvdxgTIAMoBRIOCgZnb2F0ZWUYFCADKAUicgoFc3RhZ2USCgoC",
+            "aWQYASABKAUSEAoIbmFtZV9rZXkYAiABKAkSDwoHaWNvbl9pZBgDIAEoBRIV",
+            "Cg1zdWdnZXN0X3Bvd2VyGAQgASgFEg8KB25hbWVfY24YBSABKAkSEgoKY2hh",
+            "cHRlcl9pZBgGIAEoBSJLCgplcnJvcl9jb2RlEgoKAklEGAEgASgFEgwKBG5h",
+            "bWUYAiABKAkSEQoJdmFsdWVfa2V5GAMgASgFEhAKCHZhbHVlX2NuGAQgASgJ",
+            "Il0KC3N5c3RlbV9uYW1lEgoKAmlkGAEgASgFEhgKEGZlbWFsZV9maXJzdG5h",
+            "bWUYAiABKAkSFgoObWFsZV9maXJzdG5hbWUYAyABKAkSEAoIbGFzdG5hbWUY",
+            "BCABKAki4yQKCkRhdGFIZWxwZXISEwoLbWVzc2FnZVR5cGUYASADKAkSPQoS",
+            "d2VhcG9uX2VmZmVjdF9kaWN0GAIgAygLMiEuRGF0YUhlbHBlci5XZWFwb25F",
+            "ZmZlY3REaWN0RW50cnkSNQoOdGFza19tYWluX2RpY3QYAyADKAsyHS5EYXRh",
+            "SGVscGVyLlRhc2tNYWluRGljdEVudHJ5EkYKF2hlcm9fYmF0dGxlX3N0YXR1",
+            "c19kaWN0GAQgAygLMiUuRGF0YUhlbHBlci5IZXJvQmF0dGxlU3RhdHVzRGlj",
+            "dEVudHJ5Ei4KCnNraWxsX2RpY3QYBSADKAsyGi5EYXRhSGVscGVyLlNraWxs",
+            "RGljdEVudHJ5EjkKEHJvbGVfY29uZmlnX2RpY3QYBiADKAsyHy5EYXRhSGVs",
+            "cGVyLlJvbGVDb25maWdEaWN0RW50cnkSLAoJaXRlbV9kaWN0GAcgAygLMhku",
+            "RGF0YUhlbHBlci5JdGVtRGljdEVudHJ5EiwKCWhlcm9fZGljdBgIIAMoCzIZ",
+            "LkRhdGFIZWxwZXIuSGVyb0RpY3RFbnRyeRI8ChJleHBfc2tpbGxfbWFwX2Rp",
+            "Y3QYCSADKAsyIC5EYXRhSGVscGVyLkV4cFNraWxsTWFwRGljdEVudHJ5EkQK",
+            "FnJvbGVfc291bmRfY29uZmlnX2RpY3QYCiADKAsyJC5EYXRhSGVscGVyLlJv",
+            "bGVTb3VuZENvbmZpZ0RpY3RFbnRyeRI3Cg90YXNrX2RhaWx5X2RpY3QYCyAD",
+            "KAsyHi5EYXRhSGVscGVyLlRhc2tEYWlseURpY3RFbnRyeRIwCgtkaWFsb2df",
+            "ZGljdBgMIAMoCzIbLkRhdGFIZWxwZXIuRGlhbG9nRGljdEVudHJ5EjMKDWJv",
+            "eF9kcm9wX2RpY3QYDSADKAsyHC5EYXRhSGVscGVyLkJveERyb3BEaWN0RW50",
+            "cnkSKgoIYm94X2RpY3QYDiADKAsyGC5EYXRhSGVscGVyLkJveERpY3RFbnRy",
+            "eRIsCglUZXN0X2RpY3QYDyADKAsyGS5EYXRhSGVscGVyLlRlc3REaWN0RW50",
+            "cnkSOwoRcHJlZmFiX3NvdW5kX2RpY3QYECADKAsyIC5EYXRhSGVscGVyLlBy",
+            "ZWZhYlNvdW5kRGljdEVudHJ5EjIKDGNoYXB0ZXJfZGljdBgRIAMoCzIcLkRh",
+            "dGFIZWxwZXIuQ2hhcHRlckRpY3RFbnRyeRIwCgt3ZWFwb25fZGljdBgSIAMo",
+            "CzIbLkRhdGFIZWxwZXIuV2VhcG9uRGljdEVudHJ5EjIKDGZvcm11bGFfZGlj",
+            "dBgTIAMoCzIcLkRhdGFIZWxwZXIuRm9ybXVsYURpY3RFbnRyeRI1Cg5sZXZl",
+            "bF9ucGNfZGljdBgUIAMoCzIdLkRhdGFIZWxwZXIuTGV2ZWxOcGNEaWN0RW50",
+            "cnkSOwoRcHJlZmFiX3NoYXBlX2RpY3QYFSADKAsyIC5EYXRhSGVscGVyLlBy",
+            "ZWZhYlNoYXBlRGljdEVudHJ5Ei4KCmFybW9yX2RpY3QYFiADKAsyGi5EYXRh",
+            "SGVscGVyLkFybW9yRGljdEVudHJ5EjcKD2dsb2JhbF92YXJfZGljdBgXIAMo",
+            "CzIeLkRhdGFIZWxwZXIuR2xvYmFsVmFyRGljdEVudHJ5Ei4KCnN0b3J5X2Rp",
+            "Y3QYGCADKAsyGi5EYXRhSGVscGVyLlN0b3J5RGljdEVudHJ5EioKCG1hcF9k",
+            "aWN0GBkgAygLMhguRGF0YUhlbHBlci5NYXBEaWN0RW50cnkSOgoQU2tpbGxQ",
+            "cmVmYWJfZGljdBgaIAMoCzIgLkRhdGFIZWxwZXIuU2tpbGxQcmVmYWJEaWN0",
+            "RW50cnkSOgoQcGVyZm9ybWFuY2VfZGljdBgbIAMoCzIgLkRhdGFIZWxwZXIu",
+            "UGVyZm9ybWFuY2VEaWN0RW50cnkSOQoQc3RhZ2VfbGV2ZWxfZGljdBgcIAMo",
+            "CzIfLkRhdGFIZWxwZXIuU3RhZ2VMZXZlbERpY3RFbnRyeRIsCglidWZmX2Rp",
+            "Y3QYHSADKAsyGS5EYXRhSGVscGVyLkJ1ZmZEaWN0RW50cnkSPQoScHJlZmFi",
+            "X2FjdGlvbl9kaWN0GB4gAygLMiEuRGF0YUhlbHBlci5QcmVmYWJBY3Rpb25E",
+            "aWN0RW50cnkSKgoIam9iX2RpY3QYHyADKAsyGC5EYXRhSGVscGVyLkpvYkRp",
+            "Y3RFbnRyeRI0Cg1Ub29sVGVzdF9kaWN0GCAgAygLMh0uRGF0YUhlbHBlci5U",
+            "b29sVGVzdERpY3RFbnRyeRI9ChJnbG9iYWxfc3RyaW5nX2RpY3QYISADKAsy",
+            "IS5EYXRhSGVscGVyLkdsb2JhbFN0cmluZ0RpY3RFbnRyeRI0Cg1idWlsZGlu",
+            "Z19kaWN0GCIgAygLMh0uRGF0YUhlbHBlci5CdWlsZGluZ0RpY3RFbnRyeRI9",
+            "ChJwcmVmYWJfZWZmZWN0X2RpY3QYIyADKAsyIS5EYXRhSGVscGVyLlByZWZh",
+            "YkVmZmVjdERpY3RFbnRyeRI0Cg1UaW1lbGluZV9kaWN0GCQgAygLMh0uRGF0",
+            "YUhlbHBlci5UaW1lbGluZURpY3RFbnRyeRI5ChBoZWFkX2NvbmZpZ19kaWN0",
+            "GCUgAygLMh8uRGF0YUhlbHBlci5IZWFkQ29uZmlnRGljdEVudHJ5Ei4KCnN0",
+            "YWdlX2RpY3QYJiADKAsyGi5EYXRhSGVscGVyLlN0YWdlRGljdEVudHJ5EjcK",
+            "D2Vycm9yX2NvZGVfZGljdBgnIAMoCzIeLkRhdGFIZWxwZXIuRXJyb3JDb2Rl",
+            "RGljdEVudHJ5EjkKEHN5c3RlbV9uYW1lX2RpY3QYKCADKAsyHy5EYXRhSGVs",
+            "cGVyLlN5c3RlbU5hbWVEaWN0RW50cnkaRwoVV2VhcG9uRWZmZWN0RGljdEVu",
+            "dHJ5EgsKA2tleRgBIAEoBRIdCgV2YWx1ZRgCIAEoCzIOLndlYXBvbl9lZmZl",
+            "Y3Q6AjgBGj8KEVRhc2tNYWluRGljdEVudHJ5EgsKA2tleRgBIAEoBRIZCgV2",
+            "YWx1ZRgCIAEoCzIKLnRhc2tfbWFpbjoCOAEaUAoZSGVyb0JhdHRsZVN0YXR1",
+            "c0RpY3RFbnRyeRILCgNrZXkYASABKAUSIgoFdmFsdWUYAiABKAsyEy5oZXJv",
+            "X2JhdHRsZV9zdGF0dXM6AjgBGjgKDlNraWxsRGljdEVudHJ5EgsKA2tleRgB",
+            "IAEoBRIVCgV2YWx1ZRgCIAEoCzIGLnNraWxsOgI4ARpDChNSb2xlQ29uZmln",
+            "RGljdEVudHJ5EgsKA2tleRgBIAEoBRIbCgV2YWx1ZRgCIAEoCzIMLnJvbGVf",
+            "Y29uZmlnOgI4ARo2Cg1JdGVtRGljdEVudHJ5EgsKA2tleRgBIAEoBRIUCgV2",
+            "YWx1ZRgCIAEoCzIFLml0ZW06AjgBGjYKDUhlcm9EaWN0RW50cnkSCwoDa2V5",
+            "GAEgASgFEhQKBXZhbHVlGAIgASgLMgUuaGVybzoCOAEaRgoURXhwU2tpbGxN",
+            "YXBEaWN0RW50cnkSCwoDa2V5GAEgASgFEh0KBXZhbHVlGAIgASgLMg4uZXhw",
+            "X3NraWxsX21hcDoCOAEaTgoYUm9sZVNvdW5kQ29uZmlnRGljdEVudHJ5EgsK",
+            "A2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnJvbGVfc291bmRfY29uZmln",
+            "OgI4ARpBChJUYXNrRGFpbHlEaWN0RW50cnkSCwoDa2V5GAEgASgFEhoKBXZh",
+            "bHVlGAIgASgLMgsudGFza19kYWlseToCOAEaOgoPRGlhbG9nRGljdEVudHJ5",
+            "EgsKA2tleRgBIAEoBRIWCgV2YWx1ZRgCIAEoCzIHLmRpYWxvZzoCOAEaPQoQ",
+            "Qm94RHJvcERpY3RFbnRyeRILCgNrZXkYASABKAUSGAoFdmFsdWUYAiABKAsy",
+            "CS5ib3hfZHJvcDoCOAEaNAoMQm94RGljdEVudHJ5EgsKA2tleRgBIAEoBRIT",
+            "CgV2YWx1ZRgCIAEoCzIELmJveDoCOAEaNgoNVGVzdERpY3RFbnRyeRILCgNr",
+            "ZXkYASABKAUSFAoFdmFsdWUYAiABKAsyBS5UZXN0OgI4ARpFChRQcmVmYWJT",
+            "b3VuZERpY3RFbnRyeRILCgNrZXkYASABKAUSHAoFdmFsdWUYAiABKAsyDS5w",
+            "cmVmYWJfc291bmQ6AjgBGjwKEENoYXB0ZXJEaWN0RW50cnkSCwoDa2V5GAEg",
+            "ASgFEhcKBXZhbHVlGAIgASgLMgguY2hhcHRlcjoCOAEaOgoPV2VhcG9uRGlj",
+            "dEVudHJ5EgsKA2tleRgBIAEoBRIWCgV2YWx1ZRgCIAEoCzIHLndlYXBvbjoC",
+            "OAEaPAoQRm9ybXVsYURpY3RFbnRyeRILCgNrZXkYASABKAUSFwoFdmFsdWUY",
+            "AiABKAsyCC5mb3JtdWxhOgI4ARo/ChFMZXZlbE5wY0RpY3RFbnRyeRILCgNr",
+            "ZXkYASABKAUSGQoFdmFsdWUYAiABKAsyCi5sZXZlbF9ucGM6AjgBGkUKFFBy",
+            "ZWZhYlNoYXBlRGljdEVudHJ5EgsKA2tleRgBIAEoBRIcCgV2YWx1ZRgCIAEo",
+            "CzINLnByZWZhYl9zaGFwZToCOAEaOAoOQXJtb3JEaWN0RW50cnkSCwoDa2V5",
+            "GAEgASgFEhUKBXZhbHVlGAIgASgLMgYuYXJtb3I6AjgBGkEKEkdsb2JhbFZh",
+            "ckRpY3RFbnRyeRILCgNrZXkYASABKAkSGgoFdmFsdWUYAiABKAsyCy5nbG9i",
+            "YWxfdmFyOgI4ARo4Cg5TdG9yeURpY3RFbnRyeRILCgNrZXkYASABKAUSFQoF",
+            "dmFsdWUYAiABKAsyBi5zdG9yeToCOAEaNAoMTWFwRGljdEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRITCgV2YWx1ZRgCIAEoCzIELm1hcDoCOAEaRAoUU2tpbGxQcmVm",
+            "YWJEaWN0RW50cnkSCwoDa2V5GAEgASgFEhsKBXZhbHVlGAIgASgLMgwuU2tp",
+            "bGxQcmVmYWI6AjgBGkQKFFBlcmZvcm1hbmNlRGljdEVudHJ5EgsKA2tleRgB",
+            "IAEoBRIbCgV2YWx1ZRgCIAEoCzIMLnBlcmZvcm1hbmNlOgI4ARpDChNTdGFn",
+            "ZUxldmVsRGljdEVudHJ5EgsKA2tleRgBIAEoBRIbCgV2YWx1ZRgCIAEoCzIM",
+            "LnN0YWdlX2xldmVsOgI4ARo2Cg1CdWZmRGljdEVudHJ5EgsKA2tleRgBIAEo",
+            "BRIUCgV2YWx1ZRgCIAEoCzIFLmJ1ZmY6AjgBGkcKFVByZWZhYkFjdGlvbkRp",
+            "Y3RFbnRyeRILCgNrZXkYASABKAUSHQoFdmFsdWUYAiABKAsyDi5wcmVmYWJf",
+            "YWN0aW9uOgI4ARo0CgxKb2JEaWN0RW50cnkSCwoDa2V5GAEgASgFEhMKBXZh",
+            "bHVlGAIgASgLMgQuam9iOgI4ARo+ChFUb29sVGVzdERpY3RFbnRyeRILCgNr",
+            "ZXkYASABKAUSGAoFdmFsdWUYAiABKAsyCS5Ub29sVGVzdDoCOAEaRwoVR2xv",
+            "YmFsU3RyaW5nRGljdEVudHJ5EgsKA2tleRgBIAEoCRIdCgV2YWx1ZRgCIAEo",
+            "CzIOLmdsb2JhbF9zdHJpbmc6AjgBGj4KEUJ1aWxkaW5nRGljdEVudHJ5EgsK",
+            "A2tleRgBIAEoBRIYCgV2YWx1ZRgCIAEoCzIJLmJ1aWxkaW5nOgI4ARpHChVQ",
+            "cmVmYWJFZmZlY3REaWN0RW50cnkSCwoDa2V5GAEgASgFEh0KBXZhbHVlGAIg",
+            "ASgLMg4ucHJlZmFiX2VmZmVjdDoCOAEaPgoRVGltZWxpbmVEaWN0RW50cnkS",
+            "CwoDa2V5GAEgASgFEhgKBXZhbHVlGAIgASgLMgkuVGltZWxpbmU6AjgBGkMK",
+            "E0hlYWRDb25maWdEaWN0RW50cnkSCwoDa2V5GAEgASgFEhsKBXZhbHVlGAIg",
+            "ASgLMgwuaGVhZF9jb25maWc6AjgBGjgKDlN0YWdlRGljdEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRIVCgV2YWx1ZRgCIAEoCzIGLnN0YWdlOgI4ARpBChJFcnJvckNv",
+            "ZGVEaWN0RW50cnkSCwoDa2V5GAEgASgFEhoKBXZhbHVlGAIgASgLMgsuZXJy",
+            "b3JfY29kZToCOAEaQwoTU3lzdGVtTmFtZURpY3RFbnRyeRILCgNrZXkYASAB",
+            "KAUSGwoFdmFsdWUYAiABKAsyDC5zeXN0ZW1fbmFtZToCOAEqqwEKF2hlcm9f",
+            "YmF0dGxlX3N0YXR1c190eXBlEicKI2hlcm9fYmF0dGxlX3N0YXR1c190eXBl",
+            "X0F1dG9TZXRaZXJvEAASMQotaGVyb19iYXR0bGVfc3RhdHVzX3R5cGVfc2V0",
+            "X29uX2JhdHRsZV9mYWlsdXJlEAESNAowaGVyb19iYXR0bGVfc3RhdHVzX3R5",
+            "cGVfc2V0X2J5X3JhdGVfcGVyaW9kaWNhbGx5EAIqYAoMc3BlZWR1cF90eXBl",
+            "EhwKGHNwZWVkdXBfdHlwZV9BdXRvU2V0WmVybxAAEhgKFHNwZWVkdXBfdHlw",
+            "ZV9CYXR0ZXJ5EAESGAoUc3BlZWR1cF90eXBlX0RpYW1vbmQQAir4BQoRc3Vi",
+            "X2J1aWxkaW5nX2VudW0SGgoWc3ViX2J1aWxkaW5nX2VudW1fbm9uZRAAEhkK",
+            "FXN1Yl9idWlsZGluZ19lbnVtX2NhchABEh0KGXN1Yl9idWlsZGluZ19lbnVt",
+            "X3N0b3JhZ2UQAhIdChlzdWJfYnVpbGRpbmdfZW51bV9jb2NrcGl0EAMSHAoY",
+            "c3ViX2J1aWxkaW5nX2VudW1fZHluYW1vEAQSHAoYc3ViX2J1aWxkaW5nX2Vu",
+            "dW1fZW5naW5lEAUSHQoZc3ViX2J1aWxkaW5nX2VudW1fb2lsdGFuaxAGEiQK",
+            "IHN1Yl9idWlsZGluZ19lbnVtX21hY2hpbmVwcm9kdWN0EAcSHQoZc3ViX2J1",
+            "aWxkaW5nX2VudW1fc21lbHRlchAIEh8KG3N1Yl9idWlsZGluZ19lbnVtX2N1",
+            "dHRlcmJhchAJEh0KGXN1Yl9idWlsZGluZ19lbnVtX21hY2hpbmUQChIhCh1z",
+            "dWJfYnVpbGRpbmdfZW51bV9tYWtlcHJvZHVjdBALEhwKGHN1Yl9idWlsZGlu",
+            "Z19lbnVtX3Nld2luZxAMEisKJ3N1Yl9idWlsZGluZ19lbnVtX2VsZWN0cmlj",
+            "U29sZGVyaW5nSXJvbhANEh0KGXN1Yl9idWlsZGluZ19lbnVtX3dlbGRpbmcQ",
+            "DhIkCiBzdWJfYnVpbGRpbmdfZW51bV9tZWRpY2FscHJvZHVjdBAPEh8KG3N1",
+            "Yl9idWlsZGluZ19lbnVtX2J1cm5pc2hlchAQEh8KG3N1Yl9idWlsZGluZ19l",
+            "bnVtX2Zlcm1lbnRvchAREh8KG3N1Yl9idWlsZGluZ19lbnVtX2Rpc3RpbGxl",
+            "chASEiEKHXN1Yl9idWlsZGluZ19lbnVtX2ZpcmVwcm9kdWN0EBMSHgoac3Vi",
+            "X2J1aWxkaW5nX2VudW1fZ3JpZGlyb24QFBIZChVzdWJfYnVpbGRpbmdfZW51",
+            "bV93b2sQFRIaChZzdWJfYnVpbGRpbmdfZW51bV9vdmVuEBYqVgoNYm94X2l0",
+            "ZW1fdHlwZRIWChJib3hfaXRlbV90eXBlX2l0ZW0QABIVChFib3hfaXRlbV90",
+            "eXBlX2JveBABEhYKEmJveF9pdGVtX3R5cGVfaGVybxACKpoBChB0YXJnZXRf",
+            "Y2FtcF90eXBlEhkKFXRhcmdldF9jYW1wX3R5cGVfbm9uZRAAEhcKE3Rhcmdl",
+            "dF9jYW1wX3R5cGVfd2UQARIaChZ0YXJnZXRfY2FtcF90eXBlX2VuZW15EAIS",
+            "HAoYdGFyZ2V0X2NhbXBfdHlwZV9vbmVzZWxmEAMSGAoUdGFyZ2V0X2NhbXBf",
+            "dHlwZV9hbGwQBCpsCglyYWNlX3R5cGUSEgoOcmFjZV90eXBlX25vbmUQABIY",
+            "ChRyYWNlX3R5cGVfeWVsbG93cmFjZRABEhcKE3JhY2VfdHlwZV9jYXVjYXNp",
+            "YW4QAhIYChRyYWNlX3R5cGVfbWVsYW5vZGVybRADKlIKCnN0YWdlX3R5cGUS",
+            "EwoPc3RhZ2VfdHlwZV9ub25lEAASGAoUc3RhZ2VfdHlwZV9jaGFsbGVuZ2UQ",
+            "ARIVChFzdGFnZV90eXBlX29uaG9vaxACKlIKCWNhc3RfdHlwZRISCg5jYXN0",
+            "X3R5cGVfbm9uZRAAEhgKFGNhc3RfdHlwZV9pbml0aWF0aXZlEAESFwoTY2Fz",
+            "dF90eXBlX3Bhc3Npdml0eRACKuABChBoZXJvX3N0YXR1c19lbnVtEhkKFWhl",
+            "cm9fc3RhdHVzX2VudW1fTm9uZRAAEh4KGmhlcm9fc3RhdHVzX2VudW1fSGVh",
+            "dnlIdXJ0EAESHgoaaGVyb19zdGF0dXNfZW51bV9Cb25lQnJlYWsQAhIcChho",
+            "ZXJvX3N0YXR1c19lbnVtX0JhZE1vb2QQBBIbChdoZXJvX3N0YXR1c19lbnVt",
+            "X0h1bmdyeRAIEhsKF2hlcm9fc3RhdHVzX2VudW1fUG9pc29uEBASGQoVaGVy",
+            "b19zdGF0dXNfZW51bV9TaWNrECAqOwoGZ2VuZGVyEg8KC2dlbmRlcl9ub25l",
+            "EAASDgoKZ2VuZGVyX21hbhABEhAKDGdlbmRlcl93b21hbhACKvkBCg50YXNr",
+            "X2dvYWxfdHlwZRIXChN0YXNrX2dvYWxfdHlwZV9ub25lEAASGAoUdGFza19n",
+            "b2FsX3R5cGVfYnVpbGQQARIZChV0YXNrX2dvYWxfdHlwZV9yZWNpcGUQAhIb",
+            "Chd0YXNrX2dvYWxfdHlwZV9oYXZlaXRlbRADEhwKGHRhc2tfZ29hbF90eXBl",
+            "X2NoYWxsZW5nZRAEEhoKFnRhc2tfZ29hbF90eXBlX3JlbGlldmUQBRIgChx0",
+            "YXNrX2dvYWxfdHlwZV9maW5pc2hlZG90aGVyEAYSIAocdGFza19nb2FsX3R5",
+            "cGVfc3RheW92ZXJuaWdodBAHKpQBCg5oZXJvX25hbWVfdHlwZRIeChpoZXJv",
+            "X25hbWVfdHlwZV9yYW5kb21fbmFtZRAAEiAKHGhlcm9fbmFtZV90eXBlX3Jh",
+            "bmRvbV9uYW1lX20QARIgChxoZXJvX25hbWVfdHlwZV9yYW5kb21fbmFtZV9m",
+            "EAISHgoaaGVyb19uYW1lX3R5cGVfYXNzaWduX25hbWUQAypJCglib2R5X3R5",
+            "cGUSEgoOYm9keV90eXBlX25vbmUQABIVChFib2R5X3R5cGVfZ2VuZXJhbBAB",
+            "EhEKDWJvZHlfdHlwZV9mYXQQAiqtAgoKYXJtb3JfdHlwZRITCg9hcm1vcl90",
+            "eXBlX25vbmUQABIWChJhcm1vcl90eXBlX2Nsb3RoZXMQARIUChBhcm1vcl90",
+            "eXBlX3BhbnRzEAISEwoPYXJtb3JfdHlwZV9zaG9lEAMSFAoQYXJtb3JfdHlw",
+            "ZV9wbGF0ZRAEEhcKE2FybW9yX3R5cGVfbGVnZ3VhcmQQBRIVChFhcm1vcl90",
+            "eXBlX2JhcmNlchAGEhIKDmFybW9yX3R5cGVfaGF0EAcSHAoYYXJtb3JfdHlw",
+            "ZV9vcm5hbWVudF9jdXJlEAgSHAoYYXJtb3JfdHlwZV9vcm5hbWVudF9ib29t",
+            "EAkSHQoZYXJtb3JfdHlwZV9vcm5hbWVudF9vdGhlchAKEhIKDmFybW9yX3R5",
+            "cGVfYmFnEAsqwwMKFHdlYXBvbl9lZmZlY3RfYWN0aW9uEh0KGXdlYXBvbl9l",
+            "ZmZlY3RfYWN0aW9uX251bGwQABImCiJ3ZWFwb25fZWZmZWN0X2FjdGlvbl9h",
+            "Y3Rpb25fc2luZ2xlEAESJAogd2VhcG9uX2VmZmVjdF9hY3Rpb25fYWN0aW9u",
+            "X2JvdGgQAhImCiJ3ZWFwb25fZWZmZWN0X2FjdGlvbl9hY3Rpb25fcGlzdG9s",
+            "EAMSJwojd2VhcG9uX2VmZmVjdF9hY3Rpb25fYWN0aW9uX2NhcmJpbmUQBBIn",
+            "CiN3ZWFwb25fZWZmZWN0X2FjdGlvbl9hY3Rpb25fc2hvdGd1bhAFEikKJXdl",
+            "YXBvbl9lZmZlY3RfYWN0aW9uX2FjdGlvbl9zbmlwZXJndW4QBhImCiJ3ZWFw",
+            "b25fZWZmZWN0X2FjdGlvbl9hY3Rpb25fZ2F0bGluEAcSJgoid2VhcG9uX2Vm",
+            "ZmVjdF9hY3Rpb25fYWN0aW9uX3JvY2tldBAIEiQKIHdlYXBvbl9lZmZlY3Rf",
+            "YWN0aW9uX2FjdGlvbl9jbGF3EAkSIwofd2VhcG9uX2VmZmVjdF9hY3Rpb25f",
+            "YWN0aW9uX3NhdxAKKjYKBHJhY2USDQoJcmFjZV9ub25lEAASDgoKcmFjZV9o",
+            "dW1hbhABEg8KC3JhY2Vfem9tYmllEAIqgAEKB2NhbXBfaWQSEAoMY2FtcF9p",
+            "ZF9ub25lEAASEwoPY2FtcF9pZF9jaXRpemVuEAESEwoPY2FtcF9pZF9hY2Fk",
+            "ZW15EAISEAoMY2FtcF9pZF9raXJrEAMSEAoMY2FtcF9pZF9mcmF0EAQSFQoR",
+            "Y2FtcF9pZF9ibG9vZHJvc2UQBSqeAwoJaXRlbV90eXBlEhIKDml0ZW1fdHlw",
+            "ZV9ub25lEAASFAoQaXRlbV90eXBlX3dlYXBvbhBkEhQKD2l0ZW1fdHlwZV9h",
+            "cm1vchDIARIaChVpdGVtX3R5cGVfY29uc3VtYWJsZXMQrAISEgoNaXRlbV90",
+            "eXBlX2JhZxCQAxIXChJpdGVtX3R5cGVfYnVpbGRpbmcQ2AQSGAoTaXRlbV90",
+            "eXBlX3dhcmVob3VzZRDZBBIbChZpdGVtX3R5cGVfcmVmcmlnZXJhdG9yENoE",
+            "EhYKEWl0ZW1fdHlwZV9jYW1wY2FyEOIEEhMKDml0ZW1fdHlwZV9oZXJvELwF",
+            "EhIKDWl0ZW1fdHlwZV9qb2IQoAYSGAoTaXRlbV90eXBlX2F0dHJpYnV0ZRCh",
+            "BhIaChVpdGVtX3R5cGVfYmF0dGxlX3RlY2gQhAcSGAoTaXRlbV90eXBlX2xp",
+            "dmVfdGVjaBCFBxIdChhpdGVtX3R5cGVfbGl2ZV9jb25kaXRpb24QhgcSIQoc",
+            "aXRlbV90eXBlX2J1aWxkaW5nX2F0dHJpYnV0ZRCHByqAAgoSdGFyZ2V0X3Nl",
+            "bGVjdF90eXBlEhsKF3RhcmdldF9zZWxlY3RfdHlwZV9ub25lEAASHgoadGFy",
+            "Z2V0X3NlbGVjdF90eXBlX25lYXJlc3QQARIfCht0YXJnZXRfc2VsZWN0X3R5",
+            "cGVfZmFydGhlc3QQAhIfCht0YXJnZXRfc2VsZWN0X3R5cGVfaHBfbGVhc3QQ",
+            "AxIhCh10YXJnZXRfc2VsZWN0X3R5cGVfaHBfbWF4aW11bRAEEikKJXRhcmdl",
+            "dF9zZWxlY3RfdHlwZV9iYXR0bGVfYWJpbGl0eV9tYXgQBRIdChl0YXJnZXRf",
+            "c2VsZWN0X3R5cGVfcmFuZG9tEAYq1wEKEmNoYXB0ZXJfZGlmZmljdWx0eRIb",
+            "ChdjaGFwdGVyX2RpZmZpY3VsdHlfbm9uZRAAEiMKH2NoYXB0ZXJfZGlmZmlj",
+            "dWx0eV9yZWNyZWF0aW9uYWwQARIeChpjaGFwdGVyX2RpZmZpY3VsdHlfZ2Vu",
+            "ZXJhbBACEiAKHGNoYXB0ZXJfZGlmZmljdWx0eV9uaWdodG1hcmUQAxIbChdj",
+            "aGFwdGVyX2RpZmZpY3VsdHlfaGVsbBAEEiAKHGNoYXB0ZXJfZGlmZmljdWx0",
+            "eV9wdXJnYXRvcnkQBSqpAQoKcmFuZ2VfdHlwZRITCg9yYW5nZV90eXBlX25v",
+            "bmUQABIbChdyYW5nZV90eXBlX3N0cmFpZ2h0bGluZRABEhUKEXJhbmdlX3R5",
+            "cGVfc2VjdG9yEAISGAoUcmFuZ2VfdHlwZV9yb3VuZG5lc3MQAxIYChRyYW5n",
+            "ZV90eXBlX3JlY3RhbmdsZRAEEh4KGnJhbmdlX3R5cGVfbXVsdGlfZGlyZWN0",
+            "aW9uEAUqqEIKCGl0ZW1fa2V5EhYKEml0ZW1fa2V5X2l0ZW1fbm9uZRAAEhQK",
+            "D2l0ZW1fa2V5X2UxMDAwMRCRThIUCg9pdGVtX2tleV9lMTAwMDIQkk4SFAoP",
+            "aXRlbV9rZXlfZTEwMDAzEJNOEhQKD2l0ZW1fa2V5X2UxMDAwNBCUThIUCg9p",
+            "dGVtX2tleV9lMTAwMDUQlU4SFAoPaXRlbV9rZXlfZTEwMTAxEPVOEhQKD2l0",
+            "ZW1fa2V5X2UxMDEwMhD2ThIUCg9pdGVtX2tleV9lMTAxMDMQ904SFAoPaXRl",
+            "bV9rZXlfZTEwMTA0EPhOEhQKD2l0ZW1fa2V5X2UxMDIwMRDZTxIUCg9pdGVt",
+            "X2tleV9lMTAyMDIQ2k8SFAoPaXRlbV9rZXlfZTEwMjAzENtPEhQKD2l0ZW1f",
+            "a2V5X2UxMDIwNBDcTxIdChhpdGVtX2tleV9TdG9yYWdlQm94U21hbGwQvVAS",
+            "HgoZaXRlbV9rZXlfU3RvcmFnZUJveE1lZGl1bRC+UBIdChhpdGVtX2tleV9T",
+            "dG9yYWdlQm94TGFyZ2UQv1ASHwoaaXRlbV9rZXlfUmVmcmlnZXJhdG9yU21h",
+            "bGwQyVASIAobaXRlbV9rZXlfUmVmcmlnZXJhdG9yTWVkaXVtEMpQEh8KGml0",
+            "ZW1fa2V5X1JlZnJpZ2VyYXRvckxhcmdlEMtQEhQKD2l0ZW1fa2V5X2UxMDQw",
+            "MRChURIUCg9pdGVtX2tleV9lMTA0MDIQolESFAoPaXRlbV9rZXlfZTEwNDAz",
+            "EKNREhQKD2l0ZW1fa2V5X2UxMDUwMRCFUhIUCg9pdGVtX2tleV9lMTA1MDIQ",
+            "hlISFAoPaXRlbV9rZXlfZTEwNTAzEIdSEhQKD2l0ZW1fa2V5X2UxMDUwNBCI",
+            "UhIUCg9pdGVtX2tleV9lMTA1MDUQiVISFAoPaXRlbV9rZXlfZTEwNTA2EIpS",
+            "Eh0KGGl0ZW1fa2V5X1Byb2Nlc3NQbGF0Zm9ybRDpUhIVChBpdGVtX2tleV9T",
+            "bWVsdGVyEOpSEhQKD2l0ZW1fa2V5X0N1dHRlchDrUhIZChRpdGVtX2tleV9N",
+            "YWNoaW5lVG9vbBDsUhIdChhpdGVtX2tleV9NZWRpY2FsUGxhdGZvcm0QzVMS",
+            "FQoQaXRlbV9rZXlfR3JpbmRlchDOUxIaChVpdGVtX2tleV9GZXJtZW50YXRp",
+            "b24Qz1MSFQoQaXRlbV9rZXlfRGlzdGlsbBDQUxIhChxpdGVtX2tleV9NYW51",
+            "ZmFjdHVyZVBsYXRmb3JtELFUEhEKDGl0ZW1fa2V5X1NldxCyVBIUCg9pdGVt",
+            "X2tleV9Tb2xkZXIQs1QSEgoNaXRlbV9rZXlfV2VsZBC0VBISCg1pdGVtX2tl",
+            "eV9GaXJlEJVVEhYKEWl0ZW1fa2V5X0dyaWRpcm9uEJZVEhEKDGl0ZW1fa2V5",
+            "X1BvdBCXVRISCg1pdGVtX2tleV9PdmVuEJhVEhQKD2l0ZW1fa2V5X2UxMTAw",
+            "MRD5VRIUCg9pdGVtX2tleV9lMTEwMDIQ+lUSFAoPaXRlbV9rZXlfZTExMDAz",
+            "EPtVEhQKD2l0ZW1fa2V5X2UxMTAwNBD8VRIUCg9pdGVtX2tleV9lMTEwMDUQ",
+            "/VUSFAoPaXRlbV9rZXlfZTExMDA2EP5VEhQKD2l0ZW1fa2V5X2UxMTEwMRDd",
+            "VhIUCg9pdGVtX2tleV9lMTExMDIQ3lYSFAoPaXRlbV9rZXlfZTExMTAzEN9W",
+            "EhQKD2l0ZW1fa2V5X2UxMTEwNBDgVhIUCg9pdGVtX2tleV9lMTExMDUQ4VYS",
+            "FAoPaXRlbV9rZXlfZTExMTA2EOJWEhQKD2l0ZW1fa2V5X2UxMTIwMRDBVxIU",
+            "Cg9pdGVtX2tleV9lMTEyMDIQwlcSFAoPaXRlbV9rZXlfZTExMjAzEMNXEhQK",
+            "D2l0ZW1fa2V5X2UxMTIwNBDEVxIUCg9pdGVtX2tleV9lMTEyMDUQxVcSFAoP",
+            "aXRlbV9rZXlfZTExMjA2EMZXEhQKD2l0ZW1fa2V5X2UxMTIwNxDHVxITCg1p",
+            "dGVtX2tleV9IZXJvEKGcARIXChFpdGVtX2tleV9DaGVtaWNhbBCinAESHgoY",
+            "aXRlbV9rZXlfaXRlbV9uYW1lXzEwMjAyEKOcARIaChRpdGVtX2tleV9UZWNo",
+            "V3Jlc3RsZRCx6gESFgoQaXRlbV9rZXlfVGVjaEd1bhCy6gESGgoUaXRlbV9r",
+            "ZXlfVGVjaEV4cGxvZGUQs+oBEhgKEml0ZW1fa2V5X1RlY2hUcmVhdBC06gES",
+            "FwoRaXRlbV9rZXlfVGVjaENvb2sQteoBEhgKEml0ZW1fa2V5X1RlY2hQcm9i",
+            "ZRC26gESHAoWaXRlbV9rZXlfVGVjaE1hY2hpbmluZxC36gESGwoVaXRlbV9r",
+            "ZXlfVGVjaEVsZWN0cm9uELjqARIZChNpdGVtX2tleV9UZWNoTWVkaWNhELnq",
+            "ARIbChVpdGVtX2tleV9UZWNoQ2hlbWljYWwQuuoBEhkKE2l0ZW1fa2V5X1Rl",
+            "Y2hTZXdpbmcQu+oBEhwKFml0ZW1fa2V5X1RlY2hNZWNoYW5pc20QvOoBEhYK",
+            "EGl0ZW1fa2V5X1NhdGlldHkQ0YYDEhYKEGl0ZW1fa2V5X0JhdHRlcnkQ0oYD",
+            "EhYKEGl0ZW1fa2V5X0RpYW1vbmQQ04YDEhMKDWl0ZW1fa2V5X0Z1ZWwQ1IYD",
+            "EhUKD2l0ZW1fa2V5X2U2MDAwMRDh1AMSFQoPaXRlbV9rZXlfZTYwMDAyEOLU",
+            "AxIVCg9pdGVtX2tleV9lNjAwMDMQ49QDEhUKD2l0ZW1fa2V5X2U2MDAwNBDk",
+            "1AMSFQoPaXRlbV9rZXlfZTYwMDA1EOXUAxIVCg9pdGVtX2tleV9lNjAwMDYQ",
+            "5tQDEhUKD2l0ZW1fa2V5X2U2MDAwNxDn1AMSFQoPaXRlbV9rZXlfZTYwMDA4",
+            "EOjUAxIVCg9pdGVtX2tleV9lNjAwMDkQ6dQDEhUKD2l0ZW1fa2V5X2U2MDAx",
+            "MBDq1AMSFQoPaXRlbV9rZXlfZTYwMDExEOvUAxIVCg9pdGVtX2tleV9lNjAw",
+            "MTIQ7NQDEhUKD2l0ZW1fa2V5X2U2MDAxMxDt1AMSFQoPaXRlbV9rZXlfZTYw",
+            "MDE0EO7UAxIVCg9pdGVtX2tleV9lNjAwMTUQ79QDEhUKD2l0ZW1fa2V5X2U2",
+            "MDAxNhDw1AMSFQoPaXRlbV9rZXlfZTYwMDE3EPHUAxIVCg9pdGVtX2tleV9l",
+            "NjAwMTgQ8tQDEhUKD2l0ZW1fa2V5X2U2MDAxORDz1AMSFQoPaXRlbV9rZXlf",
+            "ZTYwMDIwEPTUAxIVCg9pdGVtX2tleV9lNjAwMjEQ9dQDEhUKD2l0ZW1fa2V5",
+            "X2U2MDAyMhD21AMSFQoPaXRlbV9rZXlfZTYwMDIzEPfUAxIWChBpdGVtX2tl",
+            "eV9lMTAwMDEwEKqNBhIWChBpdGVtX2tleV9lMTAwMDIwELSNBhIWChBpdGVt",
+            "X2tleV9lMTAwMDMwEL6NBhIWChBpdGVtX2tleV9lMTAwMDQwEMiNBhIWChBp",
+            "dGVtX2tleV9lMTAwMDUwENKNBhIWChBpdGVtX2tleV9lMTAwMDYwENyNBhIW",
+            "ChBpdGVtX2tleV9lMTAwMDcwEOaNBhIWChBpdGVtX2tleV9lMTAwMDgwEPCN",
+            "BhIWChBpdGVtX2tleV9lMTAwMDkwEPqNBhIWChBpdGVtX2tleV9lMTAwMTAw",
+            "EISOBhIWChBpdGVtX2tleV9lMTAwMTEwEI6OBhIWChBpdGVtX2tleV9lMTAw",
+            "MTIwEJiOBhIWChBpdGVtX2tleV9lMTAwMTMwEKKOBhIWChBpdGVtX2tleV9l",
+            "MTAwMTQwEKyOBhIWChBpdGVtX2tleV9lMTAwMTUwELaOBhIWChBpdGVtX2tl",
+            "eV9lMTAwMTYwEMCOBhIWChBpdGVtX2tleV9lMTAwMTcwEMqOBhIWChBpdGVt",
+            "X2tleV9lMTAwMTgwENSOBhIWChBpdGVtX2tleV9lMTAwMTkwEN6OBhIWChBp",
+            "dGVtX2tleV9lMTAwMjAwEOiOBhIWChBpdGVtX2tleV9lMTAwMjEwEPKOBhIW",
+            "ChBpdGVtX2tleV9lMTAwMjIwEPyOBhIWChBpdGVtX2tleV9lMTAwMjMwEIaP",
+            "BhIWChBpdGVtX2tleV9lMTAwMjQwEJCPBhIWChBpdGVtX2tleV9lMTAxMDEw",
+            "EJKVBhIWChBpdGVtX2tleV9lMTAxMDIwEJyVBhIWChBpdGVtX2tleV9lMTAx",
+            "MDMwEKaVBhIWChBpdGVtX2tleV9lMTAxMDQwELCVBhIWChBpdGVtX2tleV9l",
+            "MTAxMDUwELqVBhIWChBpdGVtX2tleV9lMTAxMDYwEMSVBhIWChBpdGVtX2tl",
+            "eV9lMTAxMDcwEM6VBhIWChBpdGVtX2tleV9lMTAxMDgwENiVBhIWChBpdGVt",
+            "X2tleV9lMTAxMDkwEOKVBhIWChBpdGVtX2tleV9lMTAxMTAwEOyVBhIWChBp",
+            "dGVtX2tleV9lMTAxMTEwEPaVBhIWChBpdGVtX2tleV9lMTAxMTIwEICWBhIW",
+            "ChBpdGVtX2tleV9lMTAxMTMwEIqWBhIWChBpdGVtX2tleV9lMTAxMTQwEJSW",
+            "BhIWChBpdGVtX2tleV9lMTAxMTUwEJ6WBhIWChBpdGVtX2tleV9lMTAxMTYw",
+            "EKiWBhIWChBpdGVtX2tleV9lMjAwMDAwEMCaDBIWChBpdGVtX2tleV9lMjAw",
+            "MDEwEMqaDBIWChBpdGVtX2tleV9lMjAwMDIwENSaDBIWChBpdGVtX2tleV9l",
+            "MjAwMDMwEN6aDBIWChBpdGVtX2tleV9lMjAwMDQwEOiaDBIWChBpdGVtX2tl",
+            "eV9lMjAwMDUwEPKaDBIWChBpdGVtX2tleV9lMjAwMDYwEPyaDBIWChBpdGVt",
+            "X2tleV9lMjAwMDcwEIabDBIWChBpdGVtX2tleV9lMjAwMDgwEJCbDBIWChBp",
+            "dGVtX2tleV9lMjAwMDkwEJqbDBIWChBpdGVtX2tleV9lMjAwMTAwEKSbDBIW",
+            "ChBpdGVtX2tleV9lMjAwMTEwEK6bDBIWChBpdGVtX2tleV9lMjAwMTIwELib",
+            "DBIWChBpdGVtX2tleV9lMjAwMTMwEMKbDBIWChBpdGVtX2tleV9lMjAwMTQw",
+            "EMybDBIWChBpdGVtX2tleV9lMjAwMTUwENabDBIWChBpdGVtX2tleV9lMjAw",
+            "MTYwEOCbDBIWChBpdGVtX2tleV9lMjAwMTcwEOqbDBIWChBpdGVtX2tleV9l",
+            "MjAwMTgwEPSbDBIWChBpdGVtX2tleV9lMjAwMTkwEP6bDBIWChBpdGVtX2tl",
+            "eV9lMjAwMjAwEIicDBIWChBpdGVtX2tleV9lMjAwMjEwEJKcDBIWChBpdGVt",
+            "X2tleV9lMjAwMjIwEJycDBIWChBpdGVtX2tleV9lMjAwMjMwEKacDBIWChBp",
+            "dGVtX2tleV9lMjAwMjQwELCcDBIWChBpdGVtX2tleV9lMjAwMjUwELqcDBIW",
+            "ChBpdGVtX2tleV9lMjAwMjYwEMScDBIWChBpdGVtX2tleV9lMjAwMjcwEM6c",
+            "DBIWChBpdGVtX2tleV9lMjAwMjgwENicDBIWChBpdGVtX2tleV9lMjAwMjkw",
+            "EOKcDBIWChBpdGVtX2tleV9lMjAwMzAwEOycDBIWChBpdGVtX2tleV9lMjAw",
+            "MzEwEPacDBIWChBpdGVtX2tleV9lMjAwMzIwEICdDBIWChBpdGVtX2tleV9l",
+            "MjAwMzMwEIqdDBIWChBpdGVtX2tleV9lMjAwMzQwEJSdDBIWChBpdGVtX2tl",
+            "eV9lMjAwMzUwEJ6dDBIWChBpdGVtX2tleV9lMjAwMzYwEKidDBIWChBpdGVt",
+            "X2tleV9lMjAwMzcwELKdDBIWChBpdGVtX2tleV9lMjAwMzgwELydDBIWChBp",
+            "dGVtX2tleV9lMjAwMzkwEMadDBIWChBpdGVtX2tleV9lMjAwNDAwENCdDBIW",
+            "ChBpdGVtX2tleV9lMjAwNDEwENqdDBIWChBpdGVtX2tleV9lMjAwNDIwEOSd",
+            "DBIWChBpdGVtX2tleV9lMjAwNDMwEO6dDBIWChBpdGVtX2tleV9lMjAwNDQw",
+            "EPidDBIWChBpdGVtX2tleV9lMjAwNDUwEIKeDBIWChBpdGVtX2tleV9lMjAw",
+            "NDYwEIyeDBIWChBpdGVtX2tleV9lMjAwNDcwEJaeDBIWChBpdGVtX2tleV9l",
+            "MjAwNDgwEKCeDBIWChBpdGVtX2tleV9lMjAwNDkwEKqeDBIWChBpdGVtX2tl",
+            "eV9lMjAwNTAwELSeDBIWChBpdGVtX2tleV9lMjAwNTEwEL6eDBIWChBpdGVt",
+            "X2tleV9lMjAwNTIwEMieDBIWChBpdGVtX2tleV9lMjAwNTMwENKeDBIWChBp",
+            "dGVtX2tleV9lMjAwNTQwENyeDBIWChBpdGVtX2tleV9lMjAwNTUwEOaeDBIW",
+            "ChBpdGVtX2tleV9lMjAwNTYwEPCeDBIWChBpdGVtX2tleV9lMjAwNTcwEPqe",
+            "DBIWChBpdGVtX2tleV9lMjAwNTgwEISfDBIWChBpdGVtX2tleV9lMjAwNTkw",
+            "EI6fDBIWChBpdGVtX2tleV9lMjAwNjAwEJifDBIWChBpdGVtX2tleV9lMjAw",
+            "NjEwEKKfDBIWChBpdGVtX2tleV9lMjAwNjIwEKyfDBIWChBpdGVtX2tleV9l",
+            "MjAwNjMwELafDBIWChBpdGVtX2tleV9lMjAwNjQwEMCfDBIWChBpdGVtX2tl",
+            "eV9lMjAwNjUwEMqfDBIWChBpdGVtX2tleV9lMjAwNjYwENSfDBIWChBpdGVt",
+            "X2tleV9lMjAwNjcwEN6fDBIWChBpdGVtX2tleV9lMjAwNjgwEOifDBIWChBp",
+            "dGVtX2tleV9lMjAwNjkwEPKfDBIWChBpdGVtX2tleV9lMjAwNzAwEPyfDBIW",
+            "ChBpdGVtX2tleV9lMjAwNzEwEIagDBIWChBpdGVtX2tleV9lMjAwNzIwEJCg",
+            "DBIWChBpdGVtX2tleV9lMjAwNzMwEJqgDBIWChBpdGVtX2tleV9lMjAwNzQw",
+            "EKSgDBIWChBpdGVtX2tleV9lMjAwNzUwEK6gDBIWChBpdGVtX2tleV9lMjAw",
+            "NzYwELigDBIWChBpdGVtX2tleV9lMjAwNzcwEMKgDBIWChBpdGVtX2tleV9l",
+            "MjAwNzgwEMygDBIWChBpdGVtX2tleV9lMjAwNzkwENagDBIWChBpdGVtX2tl",
+            "eV9lMjAwODAwEOCgDBIWChBpdGVtX2tleV9lMjAwODEwEOqgDBIZChNpdGVt",
+            "X2tleV9SZXBlcnRvcnkxEJuqDBIZChNpdGVtX2tleV9SZXBlcnRvcnkyEJyq",
+            "DBIZChNpdGVtX2tleV9SZXBlcnRvcnkzEJ2qDBIZChNpdGVtX2tleV9SZXBl",
+            "cnRvcnk0EJ6qDBIZChNpdGVtX2tleV9SZXBlcnRvcnk1EJ+qDBIZChNpdGVt",
+            "X2tleV9SZXBlcnRvcnk2EKCqDBISCgxpdGVtX2tleV9CYWcQoaoMEhYKEGl0",
+            "ZW1fa2V5X2UzMDAwMTAQ6qcSEhYKEGl0ZW1fa2V5X2UzMDAwMjAQ9KcSEhYK",
+            "EGl0ZW1fa2V5X2UzMDAwMzAQ/qcSEhYKEGl0ZW1fa2V5X2UzMDAwNDAQiKgS",
+            "EhYKEGl0ZW1fa2V5X2UzMDAwNTAQkqgSEhYKEGl0ZW1fa2V5X2UzMDAwNjAQ",
+            "nKgSEhYKEGl0ZW1fa2V5X2UzMDAwNzAQpqgSEhYKEGl0ZW1fa2V5X2UzMDAw",
+            "ODAQsKgSEhYKEGl0ZW1fa2V5X2UzMDAwOTAQuqgSEhYKEGl0ZW1fa2V5X2Uz",
+            "MDAxMDAQxKgSEhYKEGl0ZW1fa2V5X2UzMDAxMTAQzqgSEhYKEGl0ZW1fa2V5",
+            "X2UzMDAxMjAQ2KgSEhYKEGl0ZW1fa2V5X2UzMDExMTAQtrASEhYKEGl0ZW1f",
+            "a2V5X2UzMDExMjAQwLASEhYKEGl0ZW1fa2V5X2UzMDExMzAQyrASEhYKEGl0",
+            "ZW1fa2V5X2UzMDExNDAQ1LASEhYKEGl0ZW1fa2V5X2UzMDExNTAQ3rASEhYK",
+            "EGl0ZW1fa2V5X2UzMDEyMTAQmrESEhYKEGl0ZW1fa2V5X2UzMDEyMjAQpLES",
+            "EhYKEGl0ZW1fa2V5X2UzMDEyMzAQrrESEhYKEGl0ZW1fa2V5X2UzMDEzMTAQ",
+            "/rESEhYKEGl0ZW1fa2V5X2UzMDEzMjAQiLISEhYKEGl0ZW1fa2V5X2UzMDEz",
+            "MzAQkrISEhYKEGl0ZW1fa2V5X2UzMDE0MTAQ4rISEhYKEGl0ZW1fa2V5X2Uz",
+            "MDE0MjAQ7LISEhYKEGl0ZW1fa2V5X2UzMDE0MzAQ9rISEhYKEGl0ZW1fa2V5",
+            "X2UzMDE0NDAQgLMSEhYKEGl0ZW1fa2V5X2UzMDIwMTAQurcSEhYKEGl0ZW1f",
+            "a2V5X2UzMDIwMjAQxLcSEhYKEGl0ZW1fa2V5X2UzMDIwMzAQzrcSEhYKEGl0",
+            "ZW1fa2V5X2UzMDIwNDAQ2LcSEhYKEGl0ZW1fa2V5X2UzMDIwNTAQ4rcSEhYK",
+            "EGl0ZW1fa2V5X2UzMDIwNjAQ7LcSEhYKEGl0ZW1fa2V5X2UzMDIwNzAQ9rcS",
+            "EhYKEGl0ZW1fa2V5X2UzMDIwODAQgLgSEhYKEGl0ZW1fa2V5X2UzMDIwOTAQ",
+            "irgSEhYKEGl0ZW1fa2V5X2UzMDMwMTAQor8SEhYKEGl0ZW1fa2V5X2UzMDMw",
+            "MjAQrL8SEhYKEGl0ZW1fa2V5X2UzMDMwMzAQtr8SEhYKEGl0ZW1fa2V5X2Uz",
+            "MDMwNDAQwL8SEhYKEGl0ZW1fa2V5X2UzMDMwNTAQyr8SEhYKEGl0ZW1fa2V5",
+            "X2UzMDMwNjAQ1L8SEhYKEGl0ZW1fa2V5X2UzMDMwNzAQ3r8SEhYKEGl0ZW1f",
+            "a2V5X2UzMDQwMTAQiscSEhYKEGl0ZW1fa2V5X2UzMDQwMjAQlMcSEhYKEGl0",
+            "ZW1fa2V5X2UzMDQwMzAQnscSEhYKEGl0ZW1fa2V5X2UzMDQwNDAQqMcSEhYK",
+            "EGl0ZW1fa2V5X2UzMDQwNTAQsscSEhYKEGl0ZW1fa2V5X2UzMDQwNjAQvMcS",
+            "EhYKEGl0ZW1fa2V5X2UzMDQwNzAQxscSEhYKEGl0ZW1fa2V5X2UzMDUwMTAQ",
+            "8s4SEhYKEGl0ZW1fa2V5X2UzMDUwMjAQ/M4SEhYKEGl0ZW1fa2V5X2UzMDUw",
+            "MzAQhs8SEhYKEGl0ZW1fa2V5X2UzMDUwNDAQkM8SEhYKEGl0ZW1fa2V5X2Uz",
+            "MDUwNTAQms8SEhYKEGl0ZW1fa2V5X2UzMDUwNjAQpM8SEhYKEGl0ZW1fa2V5",
+            "X2UzMDUwNzAQrs8SEhYKEGl0ZW1fa2V5X2UzMDYwMTAQ2tYSEhYKEGl0ZW1f",
+            "a2V5X2UzMDYwMjAQ5NYSEhYKEGl0ZW1fa2V5X2UzMDYwMzAQ7tYSEhYKEGl0",
+            "ZW1fa2V5X2UzMDYwNDAQ+NYSEhYKEGl0ZW1fa2V5X2UzMDgwMTAQquYSEhYK",
+            "EGl0ZW1fa2V5X2UzMDgwMjAQtOYSEhYKEGl0ZW1fa2V5X2UzMDgwMzAQvuYS",
+            "EhYKEGl0ZW1fa2V5X2UzMDgwNDAQyOYSEhYKEGl0ZW1fa2V5X2UzMDgwNTAQ",
+            "0uYSEhYKEGl0ZW1fa2V5X2UzMDgwNjAQ3OYSEhYKEGl0ZW1fa2V5X2UzMDgw",
+            "NzAQ5uYSEhYKEGl0ZW1fa2V5X2UzMDkwMTAQku4SEhYKEGl0ZW1fa2V5X2Uz",
+            "MDkwMjAQnO4SEhYKEGl0ZW1fa2V5X2UzMDkwMzAQpu4SEhYKEGl0ZW1fa2V5",
+            "X2UzMDkwNDAQsO4SEhYKEGl0ZW1fa2V5X2UzMDkwNTAQuu4SEhYKEGl0ZW1f",
+            "a2V5X2UzMDkwNjAQxO4SEhYKEGl0ZW1fa2V5X2UzMTAwMTAQ+vUSEhYKEGl0",
+            "ZW1fa2V5X2UzMTAwMjAQhPYSEhYKEGl0ZW1fa2V5X2UzMTAwMzAQjvYSEhYK",
+            "EGl0ZW1fa2V5X2UzMTAwNDAQmPYSEhYKEGl0ZW1fa2V5X2UzMTAwNTAQovYS",
+            "EhYKEGl0ZW1fa2V5X2UzMTEwMTAQ4v0SEhYKEGl0ZW1fa2V5X2UzMTEwMjAQ",
+            "7P0SEhYKEGl0ZW1fa2V5X2UzMTEwMzAQ9v0SEhYKEGl0ZW1fa2V5X2UzMTEw",
+            "NDAQgP4SEhYKEGl0ZW1fa2V5X2UzMTEwNTAQiv4SEhYKEGl0ZW1fa2V5X2U0",
+            "MDAwMTAQirUYEhYKEGl0ZW1fa2V5X2U0MDAwMjAQlLUYEhYKEGl0ZW1fa2V5",
+            "X2U0MDAwMzAQnrUYEhYKEGl0ZW1fa2V5X2U0MDAwNDAQqLUYEhYKEGl0ZW1f",
+            "a2V5X2U0MDEwMTAQ8rwYEhYKEGl0ZW1fa2V5X2U0MDEwMjAQ/LwYEhYKEGl0",
+            "ZW1fa2V5X2U0MDEwMzAQhr0YEhYKEGl0ZW1fa2V5X2U0MDEwNDAQkL0YEhYK",
+            "EGl0ZW1fa2V5X2U0MDEwNTAQmr0YEhYKEGl0ZW1fa2V5X2U0MDEwNjAQpL0Y",
+            "EhYKEGl0ZW1fa2V5X2U0MDEwNzAQrr0YEhYKEGl0ZW1fa2V5X2U0MDEwODAQ",
+            "uL0YEhYKEGl0ZW1fa2V5X2U0MDEwOTAQwr0YEhYKEGl0ZW1fa2V5X2U0MDEx",
+            "MDAQzL0YEhYKEGl0ZW1fa2V5X2U0MDExMTAQ1r0YEhYKEGl0ZW1fa2V5X2U0",
+            "MDExMjAQ4L0YEhYKEGl0ZW1fa2V5X2U0MDExMzAQ6r0YEhYKEGl0ZW1fa2V5",
+            "X2U0MDExNDAQ9L0YEhYKEGl0ZW1fa2V5X2U0MDExNTAQ/r0YEhYKEGl0ZW1f",
+            "a2V5X2U0MDExNjAQiL4YEhYKEGl0ZW1fa2V5X2U0MDIwMTAQ2sQYEhYKEGl0",
+            "ZW1fa2V5X2U0MDIwMjAQ5MQYEhYKEGl0ZW1fa2V5X2U0MDIwMzAQ7sQYEhYK",
+            "EGl0ZW1fa2V5X2U0MDIwNDAQ+MQYEhYKEGl0ZW1fa2V5X2U0MDIwNTAQgsUY",
+            "EhYKEGl0ZW1fa2V5X2U0MDIwNjAQjMUYEhYKEGl0ZW1fa2V5X2U0MDIwNzAQ",
+            "lsUYEhYKEGl0ZW1fa2V5X2U0MDIwODAQoMUYEhYKEGl0ZW1fa2V5X2U0MDIw",
+            "OTAQqsUYEhYKEGl0ZW1fa2V5X2U0MDIxMDAQtMUYEhYKEGl0ZW1fa2V5X2U0",
+            "MDMwMTAQwswYEhYKEGl0ZW1fa2V5X2U0MDMwMjAQzMwYEhYKEGl0ZW1fa2V5",
+            "X2U0MDMwMzAQ1swYEhYKEGl0ZW1fa2V5X2U0MDMwNDAQ4MwYKpYBCgtoZXJv",
+            "X3N0YXR1cxIUChBoZXJvX3N0YXR1c19pZGxlEAASFAoQaGVyb19zdGF0dXNf",
+            "aHVydBABEhMKD2hlcm9fc3RhdHVzX3NhZBACEhcKE2hlcm9fc3RhdHVzX3dv",
+            "cmtpbmcQAxITCg9oZXJvX3N0YXR1c19vdXQQBBIYChNoZXJvX3N0YXR1c19w",
+            "ZW5kaW5nEJFOKuwCCg9wcm9qZWN0aWxlX3R5cGUSGAoUcHJvamVjdGlsZV90",
+            "eXBlX251bGwQABIhCh1wcm9qZWN0aWxlX3R5cGVfYWN0aW9uX3Bpc3RvbBAB",
+            "EiIKHnByb2plY3RpbGVfdHlwZV9hY3Rpb25fY2FyYmluZRACEiIKHnByb2pl",
+            "Y3RpbGVfdHlwZV9hY3Rpb25fc2hvdGd1bhADEiQKIHByb2plY3RpbGVfdHlw",
+            "ZV9hY3Rpb25fc25pcGVyZ3VuEAQSIQodcHJvamVjdGlsZV90eXBlX2FjdGlv",
+            "bl9nYXRsaW4QBRIhCh1wcm9qZWN0aWxlX3R5cGVfYWN0aW9uX3JvY2tldBAG",
+            "EiIKHnByb2plY3RpbGVfdHlwZV9hY3Rpb25fZ3JlbmFkZRAHEh8KG3Byb2pl",
+            "Y3RpbGVfdHlwZV9hY3Rpb25fbGluZRAIEiMKH3Byb2plY3RpbGVfdHlwZV9h",
+            "Y3Rpb25fcGFyYWJvbGEQCSqUAQoIam9iX3R5cGUSEQoNam9iX3R5cGVfbm9u",
+            "ZRAAEhUKEWpvYl90eXBlX3N0cmVuZ3RoEAESGQoVam9iX3R5cGVfY29uc3Rp",
+            "dHV0aW9uEAISFAoQam9iX3R5cGVfYWdpbGl0eRADEhkKFWpvYl90eXBlX2lu",
+            "dGVsbGlnZW5jZRAEEhIKDmpvYl90eXBlX3NraWxsEAUq8AIKBGhvb2sSDgoK",
+            "aG9va193b3JsZBAAEhIKDmhvb2tfdXBwZXJib2R5EAESDQoJaG9va19oaXBz",
+            "EAISEgoOaG9va19yaWdodGhhbmQQAxIRCg1ob29rX2xlZnRoYW5kEAQSEgoO",
+            "aG9va19yaWdodGZvb3QQBRIRCg1ob29rX2xlZnRmb290EAYSFQoRaG9va19y",
+            "aWdodGNsYXZpY2UQBxIUChBob29rX2xlZnRjbGF2aWNlEAgSFAoQaG9va19y",
+            "aWdodGNyb3RjaBAJEhMKD2hvb2tfbGVmdGNyb3RjaBAKEg4KCmhvb2tfY2hl",
+            "c3QQCxINCglob29rX2hlYWQQDBIPCgtob29rX2JvdHRvbRANEg8KC2hvb2tf",
+            "d2VhcG9uEBMSDwoLaG9va19tdXp6bGUQFBIPCgtob29rX2JhcnJlbBAVEg0K",
+            "CWhvb2tfYnV0dBAWEg4KCmhvb2tfc2NvcGUQFxINCglob29rX2NsaXAQGCrK",
+            "AwoPd2VhcG9uX3N1Yl90eXBlEhgKFHdlYXBvbl9zdWJfdHlwZV9udWxsEAAS",
+            "Hwobd2VhcG9uX3N1Yl90eXBlX21lbGVlX2JsdW50EAESHgoad2VhcG9uX3N1",
+            "Yl90eXBlX21lbGVlX2VkZ2UQAhIfCht3ZWFwb25fc3ViX3R5cGVfbWVsZWVf",
+            "aGVhdnkQAxIhCh13ZWFwb25fc3ViX3R5cGVfcmVtb3RlX3Bpc3RvbBAEEiIK",
+            "HndlYXBvbl9zdWJfdHlwZV9yZW1vdGVfY2FyYmluZRAFEiIKHndlYXBvbl9z",
+            "dWJfdHlwZV9yZW1vdGVfc2hvdGd1bhAGEiQKIHdlYXBvbl9zdWJfdHlwZV9y",
+            "ZW1vdGVfc25pcGVyZ3VuEAcSIAocd2VhcG9uX3N1Yl90eXBlX3JlbW90ZV9o",
+            "ZWF2eRAIEiAKHHdlYXBvbl9zdWJfdHlwZV9yZW1vdGVfdHJlYXQQCRIgChx3",
+            "ZWFwb25fc3ViX3R5cGVfcmVtb3RlX2JsYXN0EAoSIQodd2VhcG9uX3N1Yl90",
+            "eXBlX3JlbW90ZV9nYXRsaW4QCxIhCh13ZWFwb25fc3ViX3R5cGVfcmVtb3Rl",
+            "X3JvY2tldBAMKrEDCgtzdGF0dXNfdHlwZRIUChBzdGF0dXNfdHlwZV9ub25l",
+            "EAASFQoRc3RhdHVzX3R5cGVfYmxlZWQQARIWChJzdGF0dXNfdHlwZV9maXJp",
+            "bmcQAhIYChRzdGF0dXNfdHlwZV9lbnRhbmdsZRADEhoKFnN0YXR1c190eXBl",
+            "X2ltbW9iaWxpemUQBBIUChBzdGF0dXNfdHlwZV9zdHVuEAUSFwoTc3RhdHVz",
+            "X3R5cGVfc2lsZW5jZRAGEhUKEXN0YXR1c190eXBlX3NsZWVwEAcSFAoQc3Rh",
+            "dHVzX3R5cGVfZmVhchAIEhkKFXN0YXR1c190eXBlX3BvaXNvbmluZxAJEhoK",
+            "FnN0YXR1c190eXBlX2ludmluY2libGUQChIZChVzdGF0dXNfdHlwZV9sb3dl",
+            "cl9kZWYQCxIeChpzdGF0dXNfdHlwZV9sb3dlcl9hY2N1cmFjeRAMEh8KG3N0",
+            "YXR1c190eXBlX2NvbnRpbnVlX3JlZ2FpbhANEhsKF3N0YXR1c190eXBlX2Vu",
+            "aGFuY2VfZGVmEA4SGwoXc3RhdHVzX3R5cGVfZW5oYW5jZV9hdGsQDyrcAgoQ",
+            "aXRlbV9wYXJlbnRfdHlwZRIgChxpdGVtX3BhcmVudF90eXBlX0F1dG9TZXRa",
+            "ZXJvEAASHgoaaXRlbV9wYXJlbnRfdHlwZV93YXJlaG91c2UQARIjCh9pdGVt",
+            "X3BhcmVudF90eXBlX3RyYW5zZm9ybV90b29sEAISHgoaaXRlbV9wYXJlbnRf",
+            "dHlwZV9oZXJvX2F0dHIQAxIdChlpdGVtX3BhcmVudF90eXBlX2hlcm9fYmFn",
+            "EAQSHwobaXRlbV9wYXJlbnRfdHlwZV9oZXJvX2VxdWlwEAUSKAokaXRlbV9w",
+            "YXJlbnRfdHlwZV9iYXR0bGVfZml4ZWRfcmV3YXJkEAYSLQopaXRlbV9wYXJl",
+            "bnRfdHlwZV9iYXR0bGVfYWRkaXRpb25hbF9yZXdhcmQQBxIoCiRpdGVtX3Bh",
+            "cmVudF90eXBlX25leHRfbGV2ZWxfY2FyX3VuaXQQCCpJCglidWZmX3R5cGUS",
+            "EgoOYnVmZl90eXBlX25vbmUQABISCg5idWZmX3R5cGVfZ2FpbhABEhQKEGJ1",
+            "ZmZfdHlwZV9kZWJ1ZmYQAipvCgtlZmZlY3RfdHlwZRIUChBlZmZlY3RfdHlw",
+            "ZV9ub25lEAASHAoYZWZmZWN0X3R5cGVfZ2VuZXJhbF9oYXJtEAESFAoQZWZm",
+            "ZWN0X3R5cGVfaGFybRACEhYKEmVmZmVjdF90eXBlX2VmZmVjdBADKuIBCgxo",
+            "ZXJvX3F1YWxpdHkSFQoRaGVyb19xdWFsaXR5X25vbmUQABIZChVoZXJvX3F1",
+            "YWxpdHlfcXVhbGl0eTEQARIZChVoZXJvX3F1YWxpdHlfcXVhbGl0eTIQAhIZ",
+            "ChVoZXJvX3F1YWxpdHlfcXVhbGl0eTMQAxIZChVoZXJvX3F1YWxpdHlfcXVh",
+            "bGl0eTQQBBIZChVoZXJvX3F1YWxpdHlfcXVhbGl0eTUQBRIZChVoZXJvX3F1",
+            "YWxpdHlfcXVhbGl0eTYQBhIZChVoZXJvX3F1YWxpdHlfcXVhbGl0eTcQBypy",
+            "Cg1ib3hfZHJvcF90eXBlEhgKFGJveF9kcm9wX3R5cGVfaWdub3JlEAASGAoU",
+            "Ym94X2Ryb3BfdHlwZV9hbHdheXMQARIWChJib3hfZHJvcF90eXBlX2VhY2gQ",
+            "AhIVChFib3hfZHJvcF90eXBlX29uZRADKtITChBpdGVtX2RldGFpbF90eXBl",
+            "EhkKFWl0ZW1fZGV0YWlsX3R5cGVfbm9uZRAAEhwKF2l0ZW1fZGV0YWlsX3R5",
+            "cGVfbWF4X2hwEJFOEhwKF2l0ZW1fZGV0YWlsX3R5cGVfY3VyX2hwEJJOEhwK",
+            "F2l0ZW1fZGV0YWlsX3R5cGVfYXR0YWNrEJNOEiIKHWl0ZW1fZGV0YWlsX3R5",
+            "cGVfYXR0YWNrX3NwZWVkEJROEiUKIGl0ZW1fZGV0YWlsX3R5cGVfYXR0YWNr",
+            "X2Rpc3RhbmNlEJVOEiIKHWl0ZW1fZGV0YWlsX3R5cGVfYXR0YWNrX3Jhbmdl",
+            "EJZOEiIKHWl0ZW1fZGV0YWlsX3R5cGVfYXR0YWNrX2FuZ2xlEJdOEiIKHWl0",
+            "ZW1fZGV0YWlsX3R5cGVfcmVsb2FkX3NwZWVkEJhOEhoKFWl0ZW1fZGV0YWls",
+            "X3R5cGVfY2xpcBCZThIfChppdGVtX2RldGFpbF90eXBlX2NyaXRfcmF0ZRCa",
+            "ThIgChtpdGVtX2RldGFpbF90eXBlX2NyaXRfZGFtZ2UQm04SHgoZaXRlbV9k",
+            "ZXRhaWxfdHlwZV9oaXRfcmF0ZRCcThIcChdpdGVtX2RldGFpbF90eXBlX3Bp",
+            "ZXJjZRCdThIcChdpdGVtX2RldGFpbF90eXBlX2RlZmVuZBCeThIcChdpdGVt",
+            "X2RldGFpbF90eXBlX3dpbGZ1bBCfThImCiFpdGVtX2RldGFpbF90eXBlX2Rh",
+            "bWFnZV9yZWR1Y3Rpb24QoE4SGgoVaXRlbV9kZXRhaWxfdHlwZV9kb2dlEKFO",
+            "EiAKG2l0ZW1fZGV0YWlsX3R5cGVfbW92ZV9zcGVlZBCiThIcChdpdGVtX2Rl",
+            "dGFpbF90eXBlX3N0cm9uZxCjThIeChlpdGVtX2RldGFpbF90eXBlX3BoeXNp",
+            "cXVlEKROEhkKFGl0ZW1fZGV0YWlsX3R5cGVfYWdsEKVOEhkKFGl0ZW1fZGV0",
+            "YWlsX3R5cGVfaW50EKZOEhsKFml0ZW1fZGV0YWlsX3R5cGVfbHVja3kQp04S",
+            "HQoYaXRlbV9kZXRhaWxfdHlwZV9leHBsb2RlEKhOEhsKFml0ZW1fZGV0YWls",
+            "X3R5cGVfdHJlYXQQqU4SJAofaXRlbV9kZXRhaWxfdHlwZV9tZWxlZV9oaXRf",
+            "dGltZRCqThIdChhpdGVtX2RldGFpbF90eXBlX2dyb3dfaHAQq04SIQocaXRl",
+            "bV9kZXRhaWxfdHlwZV9ncm93X2F0dGFjaxCsThIhChxpdGVtX2RldGFpbF90",
+            "eXBlX2dyb3dfZGVmZW5kEK1OEh4KGWl0ZW1fZGV0YWlsX3R5cGVfZ3Jvd19o",
+            "aXQQrk4SHwoaaXRlbV9kZXRhaWxfdHlwZV9ncm93X2RvZ2UQr04SIQocaXRl",
+            "bV9kZXRhaWxfdHlwZV9ncm93X2V4cG9kZRCwThIgChtpdGVtX2RldGFpbF90",
+            "eXBlX2dyb3dfdHJlYXQQsU4SJAofaXRlbV9kZXRhaWxfdHlwZV9ncm93X2Ny",
+            "aXRfcmF0ZRCyThIlCiBpdGVtX2RldGFpbF90eXBlX2dyb3dfY3JpdF9kYW1n",
+            "ZRCzThIiCh1pdGVtX2RldGFpbF90eXBlX2F0dGFja190aW1lcxC0ThIlCiBp",
+            "dGVtX2RldGFpbF90eXBlX2F0dGFja19pbnRlcnZhbBC1ThIgChtpdGVtX2Rl",
+            "dGFpbF90eXBlX3ZpZXdfcmFuZ2UQtk4SIgodaXRlbV9kZXRhaWxfdHlwZV9k",
+            "YW5nZXJfcmFuZ2UQt04SIAobaXRlbV9kZXRhaWxfdHlwZV9kb2dlX3Jhbmdl",
+            "ELhOEiQKH2l0ZW1fZGV0YWlsX3R5cGVfcm90YXRpb25fc3BlZWQQuU4SKAoj",
+            "aXRlbV9kZXRhaWxfdHlwZV93cmVzdGxlX3RlY2hub2xvZ3kQ+VUSJAofaXRl",
+            "bV9kZXRhaWxfdHlwZV9ndW5fdGVjaG5vbG9neRD6VRIoCiNpdGVtX2RldGFp",
+            "bF90eXBlX2V4cGxvZGVfdGVjaG5vbG9neRD7VRImCiFpdGVtX2RldGFpbF90",
+            "eXBlX3RyZWF0X3RlY2hub2xvZ3kQ/FUSJQogaXRlbV9kZXRhaWxfdHlwZV9j",
+            "b29rX3RlY2hub2xvZ3kQ4V0SJgohaXRlbV9kZXRhaWxfdHlwZV9wcm9iZV90",
+            "ZWNobm9sb2d5EOJdEioKJWl0ZW1fZGV0YWlsX3R5cGVfbWFjaGluaW5nX3Rl",
+            "Y2hub2xvZ3kQ410SKQokaXRlbV9kZXRhaWxfdHlwZV9lbGVjdHJvbl90ZWNo",
+            "bm9sb2d5EORdEicKIml0ZW1fZGV0YWlsX3R5cGVfbWVkaWNhX3RlY2hub2xv",
+            "Z3kQ5V0SKQokaXRlbV9kZXRhaWxfdHlwZV9jaGVtaWNhbF90ZWNobm9sb2d5",
+            "EOZdEicKIml0ZW1fZGV0YWlsX3R5cGVfc2V3aW5nX3RlY2hub2xvZ3kQ510S",
+            "KgolaXRlbV9kZXRhaWxfdHlwZV9tZWNoYW5pc21fdGVjaG5vbG9neRDoXRIh",
+            "ChxpdGVtX2RldGFpbF90eXBlX2ZpZ2h0X2xldmVsEOldEh0KGGl0ZW1fZGV0",
+            "YWlsX3R5cGVfc2F0aWV0eRDJZRIaChVpdGVtX2RldGFpbF90eXBlX2NlbGwQ",
+            "ymUSHQoYaXRlbV9kZXRhaWxfdHlwZV9kaWFtb25kEMtlEhoKFWl0ZW1fZGV0",
+            "YWlsX3R5cGVfZnVlbBDMZRIoCiNpdGVtX2RldGFpbF90eXBlX2VxdWlwbWVu",
+            "dF9jYXBhY2l0eRCxbRIoCiNpdGVtX2RldGFpbF90eXBlX3dhcmVob3VzZV9j",
+            "YXBhY2l0eRCybRImCiFpdGVtX2RldGFpbF90eXBlX2NvY2twaXRfY2FwYWNp",
+            "dHkQs20SJAofaXRlbV9kZXRhaWxfdHlwZV9ob3JzZXBvd2VyX21heBC0bRIo",
+            "CiNpdGVtX2RldGFpbF90eXBlX2Z1ZWxfdGFua19jYXBhY2l0eRC1bRIiCh1p",
+            "dGVtX2RldGFpbF90eXBlX3Bvd2VyX3N1cHBseRC2bRIpCiRpdGVtX2RldGFp",
+            "bF90eXBlX3dhcmVob3VzZV9jYXBhY2l0eTIQt20SKQokaXRlbV9kZXRhaWxf",
+            "dHlwZV93YXJlaG91c2VfY2FwYWNpdHkzELhtEikKJGl0ZW1fZGV0YWlsX3R5",
+            "cGVfd2FyZWhvdXNlX2NhcGFjaXR5NBC5bRIpCiRpdGVtX2RldGFpbF90eXBl",
+            "X3dhcmVob3VzZV9jYXBhY2l0eTUQum0SKQokaXRlbV9kZXRhaWxfdHlwZV93",
+            "YXJlaG91c2VfY2FwYWNpdHk2ELttKmcKC3dlYXBvbl90eXBlEhsKF3dlYXBv",
+            "bl90eXBlX3dlYXBvbl9ub25lEAASHAoYd2VhcG9uX3R5cGVfd2VhcG9uX21l",
+            "bGVlEAESHQoZd2VhcG9uX3R5cGVfd2VhcG9uX3JlbW90ZRACKusBCgh3ZWFy",
+            "X3BvcxIRCg13ZWFyX3Bvc19ub25lEAASEwoPd2Vhcl9wb3Nfd2VhcG9uEAES",
+            "FQoRd2Vhcl9wb3Nfb3JuYW1lbnQQAhIUChB3ZWFyX3Bvc19jbG90aGVzEAMS",
+            "EgoOd2Vhcl9wb3NfcGFudHMQBBIRCg13ZWFyX3Bvc19zaG9lEAUSEgoOd2Vh",
+            "cl9wb3NfcGxhdGUQBhIVChF3ZWFyX3Bvc19sZWdndWFyZBAHEhMKD3dlYXJf",
+            "cG9zX2JhcmNlchAIEhEKDXdlYXJfcG9zX2hlYWQQCRIQCgx3ZWFyX3Bvc19i",
+            "YWcQCkIJqgIGQ29uZmlnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Config.hero_battle_status_type), typeof(global::Config.speedup_type), typeof(global::Config.sub_building_enum), typeof(global::Config.box_item_type), typeof(global::Config.target_camp_type), typeof(global::Config.race_type), typeof(global::Config.stage_type), typeof(global::Config.cast_type), typeof(global::Config.hero_status_enum), typeof(global::Config.gender), typeof(global::Config.task_goal_type), typeof(global::Config.hero_name_type), typeof(global::Config.body_type), typeof(global::Config.armor_type), typeof(global::Config.weapon_effect_action), typeof(global::Config.race), typeof(global::Config.camp_id), typeof(global::Config.item_type), typeof(global::Config.target_select_type), typeof(global::Config.chapter_difficulty), typeof(global::Config.range_type), typeof(global::Config.item_key), typeof(global::Config.hero_status), typeof(global::Config.projectile_type), typeof(global::Config.job_type), typeof(global::Config.hook), typeof(global::Config.weapon_sub_type), typeof(global::Config.status_type), typeof(global::Config.item_parent_type), typeof(global::Config.buff_type), typeof(global::Config.effect_type), typeof(global::Config.hero_quality), typeof(global::Config.box_drop_type), typeof(global::Config.item_detail_type), typeof(global::Config.weapon_type), typeof(global::Config.wear_pos), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.weapon_effect), global::Config.weapon_effect.Parser, new[]{ "Id", "Mark", "PrefabId", "Action", "CastPerformance", "HitPerformance", "HitTime", "BloodPerformance", "Muzzle", "Projectile", "Shellcase", "Dummy", "AttackClipTime" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.task_main), global::Config.task_main.Parser, new[]{ "Id", "Chapter", "TaskType", "NameCn", "NameKey", "ChapterDes", "DesCn", "DesKey", "GoalType", "GoalId", "GoalNum", "Box", "Dialog" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.hero_battle_status), global::Config.hero_battle_status.Parser, new[]{ "Id", "NameKey", "DesKey", "StatusEnum", "StatusType", "Time", "Rate", "Item", "RecoverKey" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.skill), global::Config.skill.Parser, new[]{ "Id", "NameKey", "NameCn", "IntroKey", "IntroCn", "CastType", "Level", "Cost", "PerformanceId", "ProjectileId", "HitPerformanceId", "BeHitTime", "BloodPerformance", "BuffArray", "WeaponShape", "StartupTime", "ActiveTime", "HitTime", "RecoverTime", "SkillRangeValue", "TargetAmount", "TargetCampType", "TargetSelectType", "TargetType", "InvalidTargetType", "TriggerPosType", "TriggerRangeType", "TriggerRangeValue", "EffectiveTime", "TriggerPerformance", "TriggerUnitPerformance", "TriggerSinglePerformance", "TriggerDuring", "TriggerTick", "TriggerBuff", "CancelBuff", "DamageEffectType", "DamageEffectValue", "AddtiveDamageEffectType", "AddtiveDamageEffectFactor", "DesignatedTargetType", "DesignatedEffectType", "DesignatedEffectValue", "IconId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.role_config), global::Config.role_config.Parser, new[]{ "Id", "Gender", "BodyType", "RaceType", "SoundId", "HeadId", "HatId", "HairId", "ClothesId", "PantsId", "ShoeId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.item), global::Config.item.Parser, new[]{ "Id", "NameKey", "NameCn", "IntroKey", "IntroCn", "ItemType", "ItemDetailType", "BlockNum", "ImgId", "Capacity", "CanDrop", "ExpireTime", "Combustibility", "Catalasis", "ModId", "WeaponProId", "ArmorProId", "BoxId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.hero), global::Config.hero.Parser, new[]{ "Id", "JobId", "Quality", "Mark", "WeaponType", "ArmorType", "WeaponId", "ActionId", "HeroEffectId", "HeroSkillArray", "AttrId1", "AttrV1", "AttrId2", "AttrV2", "AttrId3", "AttrV3", "AttrId4", "AttrV4", "AttrId5", "AttrV5", "AttrId6", "AttrV6", "AttrId7", "AttrV7", "AttrId13", "AttrV13", "AttrId26", "AttrV26", "AttrId25", "AttrV25", "TechId5", "TechV5", "TechId6", "TechV6", "TechId7", "TechV7", "TechId8", "TechV8", "TechId9", "TechV9", "TechId10", "TechV10", "TechId11", "TechV11", "TechId12", "TechV12", "TechId13", "TechV13", "AttrId14", "AttrV14", "AttrId15", "AttrV15", "LevelupHp", "LevelupHpVar", "LevelupAt", "LevelupAtVar", "LevelupDef", "LevelupDefVar", "LevelupHit", "LevelupHitVar", "LevelupDod", "LevelupDodVar", "LevelupExplode", "LevelupExplodeVar", "LevelupMed", "LevelupMedVar", "LevelupCri", "LevelupCriVar", "LevelupCrihurt", "LevelupCrihurtVar", "UpNeedItemId1", "UpNeedItemV1", "UpNeedItemId2", "UpNeedItemV2", "UpNeedItemId3", "UpNeedItemV3" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.exp_skill_map), global::Config.exp_skill_map.Parser, new[]{ "Id", "ItemType", "Lv", "Exp", "NeedItem" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.role_sound_config), global::Config.role_sound_config.Parser, new[]{ "Id", "Breathing", "Dead", "Hurt", "ClassicvoiceFire", "ClassicvoiceGo", "ClassicvoiceOk" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.task_daily), global::Config.task_daily.Parser, new[]{ "Id", "NameKey", "NameCn", "DesKey", "DesCn", "TaskType", "GoalNum", "Item1", "Num1", "Item2", "Num2", "Item3", "Num3" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.dialog), global::Config.dialog.Parser, new[]{ "ID", "DialogId", "ImgId", "ImgLocation", "Dialog" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.box_drop), global::Config.box_drop.Parser, new[]{ "Id", "BoxId", "ItemId", "ItemCount", "Weight", "MarkName", "ItemType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.box), global::Config.box.Parser, new[]{ "Id", "Mark", "DropType", "ChapterId", "BoxIcon", "BoxIntro", "BoxQuality", "RelevanceType", "RelevanceId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.Test), global::Config.Test.Parser, new[]{ "ID", "ARRAYTEST", "TEST" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.prefab_sound), global::Config.prefab_sound.Parser, new[]{ "Id", "SoundName", "Mark", "SoundPath" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.chapter), global::Config.chapter.Parser, new[]{ "Id", "NameKey", "NameCn", "Difficulty", "IntroKey", "Imgid" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.weapon), global::Config.weapon.Parser, new[]{ "Id", "Mark", "WearPos", "WeaponType", "SubType", "Energy", "AttrId1", "AttrV1", "AttrId2", "AttrV2", "AttrId3", "AttrV3", "AttrId13", "AttrV13", "AttrId4", "AttrV4", "AttrId5", "AttrV5", "AttrId6", "AttrV6", "AttrId7", "AttrV7", "AttrId8", "AttrV8", "AttrId9", "AttrV9", "AttrId12", "AttrV12", "WeaponEffectId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.formula), global::Config.formula.Parser, new[]{ "Id", "ImgId", "NameKey", "NameCn", "IntroKey", "FormulaType", "CostTime", "Product", "Consume" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.level_npc), global::Config.level_npc.Parser, new[]{ "Id", "Mark", "StageId", "AreaId", "HeroId", "HeroLv" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.prefab_shape), global::Config.prefab_shape.Parser, new[]{ "Id", "PrefabName", "Mark" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.armor), global::Config.armor.Parser, new[]{ "Id", "Mark", "WearPos", "ArmorType", "ModId", "AttrId1", "AttrV1", "AttrId2", "AttrV2", "AttrId3", "AttrV3", "AttrId4", "AttrV4", "AttrId5", "AttrV5", "AttrId6", "AttrV6", "AttrId7", "AttrV7", "AttrId8", "AttrV8", "AttrId9", "AttrV9", "AttrId12", "AttrV12", "AttrId13", "AttrV13", "AttrId14", "AttrV14", "AttrId15", "AttrV15" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.global_var), global::Config.global_var.Parser, new[]{ "Key", "VString", "Remark" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.story), global::Config.story.Parser, new[]{ "Id", "StoryKey", "StoryCn" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.map), global::Config.map.Parser, new[]{ "Id", "Name", "SceneName", "Paths" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Config.SkillPrefab), global::Config.SkillPrefab.Parser, new[]{ "ID", "ActionName", "TotalTime", "StateChannelTime", "SpellBackwingTime", "HitTimeList", "HeroOffsetTime", "HeroOffsetPosZ", "Speed" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.DataHelper), global::Config.DataHelper.Parser, new[]{ "MessageType", "SkillPrefabDict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.performance), global::Config.performance.Parser, new[]{ "Id", "MarkName", "ActionId", "EffectId", "SoundId", "ShakeTime", "ShakeFactor", "EffectTime" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.stage_level), global::Config.stage_level.Parser, new[]{ "Id", "Name", "StageId", "StageType", "Box", "DropItem", "MapId", "TriggerId" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.buff), global::Config.buff.Parser, new[]{ "Id", "BuffType", "StatusType", "TargetType", "InvalidTargetType", "RangeType", "RangeValue", "OverrideBuff", "OverrideBuffLevel", "AddtiveBuffLevel", "DestroyOnDeath", "RemoveBuffType", "ConflictBuffType", "ConflictBuffId", "ModifyEffectType", "ModifyEffectFactor", "ModifyEffectValue", "DamageRangeType", "DamageRangeValue", "DamageEffectType", "DamageEffectValue", "AddtiveEffectType", "AddtiveEffectFactor", "DesignatedTargetType", "DesignatedEffectType", "DesignatedEffectValue", "During", "Tick", "Count", "IconId", "BuffHit", "ArtEffectId", "EffectSingleId", "BuffId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.prefab_action), global::Config.prefab_action.Parser, new[]{ "Id", "ActionName", "Intro", "ActionTime" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.job), global::Config.job.Parser, new[]{ "Id", "NameKey", "NameCn", "HeroNameType", "HeroNameKey", "HeroNameCn", "Camp", "Race", "StarLevel", "Type", "StoryId", "TalkId", "Talk2Id", "MaxQuality", "Talk3Id", "Talk4Id", "Talk5Id", "Talk6Id", "Talk7Id", "Talk8Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.ToolTest), global::Config.ToolTest.Parser, new[]{ "ID", "TestA", "TestB", "TestC", "TestD", "TestH", "TestI", "TestE", "TestF", "TestG" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.global_string), global::Config.global_string.Parser, new[]{ "Key", "NameKey", "NameCn" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.building), global::Config.building.Parser, new[]{ "Id", "NameKey", "NameCn", "IconId", "UpdateGroup", "TransformType", "SubBuildingType", "BuildingType", "Position", "NeedCapacity", "NeedPower", "PreBuildings", "Level", "BuildingSubtype", "ConsumeMaterials", "ProductMaterials", "InitiallyOwned", "PrefabShape" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.prefab_effect), global::Config.prefab_effect.Parser, new[]{ "Id", "PrefabName", "Mark", "AttachPath", "FollowPosition", "FollowRotation", "EffectPath" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.Timeline), global::Config.Timeline.Parser, new[]{ "ID", "Duration", "RecoverTime", "PreInputStart", "PreInputEnd", "AnimationMove", "HitTimes" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.head_config), global::Config.head_config.Parser, new[]{ "Id", "ModId", "EyeSize", "EyeDis", "EyeBrowdis", "EyeSocket", "NoseWidth", "NoseLength", "NoseHight", "EarPart", "EarSize", "EarForm", "MouthPart", "MouthTh", "MouthBump", "JawTh", "JawLength", "Cheek", "Brow", "Goatee" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.stage), global::Config.stage.Parser, new[]{ "Id", "NameKey", "IconId", "SuggestPower", "NameCn", "ChapterId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.error_code), global::Config.error_code.Parser, new[]{ "ID", "Name", "ValueKey", "ValueCn" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.system_name), global::Config.system_name.Parser, new[]{ "Id", "FemaleFirstname", "MaleFirstname", "Lastname" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.DataHelper), global::Config.DataHelper.Parser, new[]{ "MessageType", "WeaponEffectDict", "TaskMainDict", "HeroBattleStatusDict", "SkillDict", "RoleConfigDict", "ItemDict", "HeroDict", "ExpSkillMapDict", "RoleSoundConfigDict", "TaskDailyDict", "DialogDict", "BoxDropDict", "BoxDict", "TestDict", "PrefabSoundDict", "ChapterDict", "WeaponDict", "FormulaDict", "LevelNpcDict", "PrefabShapeDict", "ArmorDict", "GlobalVarDict", "StoryDict", "MapDict", "SkillPrefabDict", "PerformanceDict", "StageLevelDict", "BuffDict", "PrefabActionDict", "JobDict", "ToolTestDict", "GlobalStringDict", "BuildingDict", "PrefabEffectDict", "TimelineDict", "HeadConfigDict", "StageDict", "ErrorCodeDict", "SystemNameDict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, })
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum hero_battle_status_type {
+    /// <summary>
+    /// // protobuf的枚举首值必然要为0，因此这里必需检查如果在没有设置值为零的情况下，要添加一个为零的值
+    /// </summary>
+    [pbr::OriginalName("hero_battle_status_type_AutoSetZero")] AutoSetZero = 0,
+    /// <summary>
+    /// 战斗失败时设置
+    /// </summary>
+    [pbr::OriginalName("hero_battle_status_type_set_on_battle_failure")] SetOnBattleFailure = 1,
+    /// <summary>
+    /// 定时设置
+    /// </summary>
+    [pbr::OriginalName("hero_battle_status_type_set_by_rate_periodically")] SetByRatePeriodically = 2,
+  }
+
+  public enum speedup_type {
+    /// <summary>
+    /// // protobuf的枚举首值必然要为0，因此这里必需检查如果在没有设置值为零的情况下，要添加一个为零的值
+    /// </summary>
+    [pbr::OriginalName("speedup_type_AutoSetZero")] AutoSetZero = 0,
+    /// <summary>
+    /// 电池加速15分钟
+    /// </summary>
+    [pbr::OriginalName("speedup_type_Battery")] Battery = 1,
+    /// <summary>
+    /// 钻石加速至当前这一份完成
+    /// </summary>
+    [pbr::OriginalName("speedup_type_Diamond")] Diamond = 2,
+  }
+
+  public enum sub_building_enum {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_none")] None = 0,
+    /// <summary>
+    /// 车
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_car")] Car = 1,
+    /// <summary>
+    /// 仓库
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_storage")] Storage = 2,
+    /// <summary>
+    /// 座舱
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_cockpit")] Cockpit = 3,
+    /// <summary>
+    /// 发电机
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_dynamo")] Dynamo = 4,
+    /// <summary>
+    /// 引擎
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_engine")] Engine = 5,
+    /// <summary>
+    /// 油箱
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_oiltank")] Oiltank = 6,
+    /// <summary>
+    /// 加工台生产
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_machineproduct")] Machineproduct = 7,
+    /// <summary>
+    /// 加工台熔炉
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_smelter")] Smelter = 8,
+    /// <summary>
+    /// 加工台切割机
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_cutterbar")] Cutterbar = 9,
+    /// <summary>
+    /// 加工台机床
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_machine")] Machine = 10,
+    /// <summary>
+    /// 制造台生产
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_makeproduct")] Makeproduct = 11,
+    /// <summary>
+    /// 制造台缝纫机
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_sewing")] Sewing = 12,
+    /// <summary>
+    /// 制造台电烙铁
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_electricSolderingIron")] ElectricSolderingIron = 13,
+    /// <summary>
+    /// 制造台焊切机
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_welding")] Welding = 14,
+    /// <summary>
+    /// 化工台生产
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_medicalproduct")] Medicalproduct = 15,
+    /// <summary>
+    /// 化工台碾磨器
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_burnisher")] Burnisher = 16,
+    /// <summary>
+    /// 化工台发酵器
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_fermentor")] Fermentor = 17,
+    /// <summary>
+    /// 化工台蒸馏器
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_distiller")] Distiller = 18,
+    /// <summary>
+    /// 火堆生产
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_fireproduct")] Fireproduct = 19,
+    /// <summary>
+    /// 火堆架子
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_gridiron")] Gridiron = 20,
+    /// <summary>
+    /// 火堆锅子
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_wok")] Wok = 21,
+    /// <summary>
+    /// 火堆烤箱
+    /// </summary>
+    [pbr::OriginalName("sub_building_enum_oven")] Oven = 22,
+  }
+
+  public enum box_item_type {
+    /// <summary>
+    /// 普通物品
+    /// </summary>
+    [pbr::OriginalName("box_item_type_item")] Item = 0,
+    /// <summary>
+    /// 子宝箱
+    /// </summary>
+    [pbr::OriginalName("box_item_type_box")] Box = 1,
+    /// <summary>
+    /// 英雄
+    /// </summary>
+    [pbr::OriginalName("box_item_type_hero")] Hero = 2,
+  }
+
+  public enum target_camp_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_none")] None = 0,
+    /// <summary>
+    /// 我方
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_we")] We = 1,
+    /// <summary>
+    /// 敌方
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_enemy")] Enemy = 2,
+    /// <summary>
+    /// 自身
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_oneself")] Oneself = 3,
+    /// <summary>
+    /// 全体
+    /// </summary>
+    [pbr::OriginalName("target_camp_type_all")] All = 4,
+  }
+
+  public enum race_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("race_type_none")] None = 0,
+    /// <summary>
+    /// 黄种人
+    /// </summary>
+    [pbr::OriginalName("race_type_yellowrace")] Yellowrace = 1,
+    /// <summary>
+    /// 白种人
+    /// </summary>
+    [pbr::OriginalName("race_type_caucasian")] Caucasian = 2,
+    /// <summary>
+    /// 黑人
+    /// </summary>
+    [pbr::OriginalName("race_type_melanoderm")] Melanoderm = 3,
+  }
+
+  public enum stage_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("stage_type_none")] None = 0,
+    /// <summary>
+    /// 挑战
+    /// </summary>
+    [pbr::OriginalName("stage_type_challenge")] Challenge = 1,
+    /// <summary>
+    /// 挂机
+    /// </summary>
+    [pbr::OriginalName("stage_type_onhook")] Onhook = 2,
+  }
+
+  public enum cast_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("cast_type_none")] None = 0,
+    /// <summary>
+    /// 主动
+    /// </summary>
+    [pbr::OriginalName("cast_type_initiative")] Initiative = 1,
+    /// <summary>
+    /// 被动
+    /// </summary>
+    [pbr::OriginalName("cast_type_passivity")] Passivity = 2,
+  }
+
+  public enum hero_status_enum {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_None")] None = 0,
+    /// <summary>
+    /// 重伤
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_HeavyHurt")] HeavyHurt = 1,
+    /// <summary>
+    /// 骨折
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_BoneBreak")] BoneBreak = 2,
+    /// <summary>
+    /// 沮丧
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_BadMood")] BadMood = 4,
+    /// <summary>
+    /// 饥饿
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_Hungry")] Hungry = 8,
+    /// <summary>
+    /// 中毒
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_Poison")] Poison = 16,
+    /// <summary>
+    /// 生病
+    /// </summary>
+    [pbr::OriginalName("hero_status_enum_Sick")] Sick = 32,
+  }
+
+  public enum gender {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("gender_none")] None = 0,
+    /// <summary>
+    /// 男
+    /// </summary>
+    [pbr::OriginalName("gender_man")] Man = 1,
+    /// <summary>
+    /// 女
+    /// </summary>
+    [pbr::OriginalName("gender_woman")] Woman = 2,
+  }
+
+  public enum task_goal_type {
+    /// <summary>
+    /// 0=
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_none")] None = 0,
+    /// <summary>
+    /// 1=建设建筑
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_build")] Build = 1,
+    /// <summary>
+    /// 2=制造配方
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_recipe")] Recipe = 2,
+    /// <summary>
+    /// 3=拥有物品
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_haveitem")] Haveitem = 3,
+    /// <summary>
+    /// 4=挑战完成关卡
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_challenge")] Challenge = 4,
+    /// <summary>
+    /// 5=解除状态
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_relieve")] Relieve = 5,
+    /// <summary>
+    /// 6=完成该章节其它任务
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_finishedother")] Finishedother = 6,
+    /// <summary>
+    /// 7=休息过夜
+    /// </summary>
+    [pbr::OriginalName("task_goal_type_stayovernight")] Stayovernight = 7,
+  }
+
+  public enum hero_name_type {
+    /// <summary>
+    /// 随机名字
+    /// </summary>
+    [pbr::OriginalName("hero_name_type_random_name")] RandomName = 0,
+    /// <summary>
+    /// 随机男名
+    /// </summary>
+    [pbr::OriginalName("hero_name_type_random_name_m")] RandomNameM = 1,
+    /// <summary>
+    /// 随机女名
+    /// </summary>
+    [pbr::OriginalName("hero_name_type_random_name_f")] RandomNameF = 2,
+    /// <summary>
+    /// 固定名字
+    /// </summary>
+    [pbr::OriginalName("hero_name_type_assign_name")] AssignName = 3,
+  }
+
+  public enum body_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("body_type_none")] None = 0,
+    /// <summary>
+    /// 标准
+    /// </summary>
+    [pbr::OriginalName("body_type_general")] General = 1,
+    /// <summary>
+    /// 壮硕
+    /// </summary>
+    [pbr::OriginalName("body_type_fat")] Fat = 2,
+  }
+
+  public enum armor_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("armor_type_none")] None = 0,
+    /// <summary>
+    /// 时装-衣服
+    /// </summary>
+    [pbr::OriginalName("armor_type_clothes")] Clothes = 1,
+    /// <summary>
+    /// 时装-裤子
+    /// </summary>
+    [pbr::OriginalName("armor_type_pants")] Pants = 2,
+    /// <summary>
+    /// 时装-鞋子
+    /// </summary>
+    [pbr::OriginalName("armor_type_shoe")] Shoe = 3,
+    /// <summary>
+    /// 装备-护胸
+    /// </summary>
+    [pbr::OriginalName("armor_type_plate")] Plate = 4,
+    /// <summary>
+    /// 装备-护腿
+    /// </summary>
+    [pbr::OriginalName("armor_type_legguard")] Legguard = 5,
+    /// <summary>
+    /// 装备-护臂
+    /// </summary>
+    [pbr::OriginalName("armor_type_barcer")] Barcer = 6,
+    /// <summary>
+    /// 帽子
+    /// </summary>
+    [pbr::OriginalName("armor_type_hat")] Hat = 7,
+    /// <summary>
+    /// 爆炸副武器
+    /// </summary>
+    [pbr::OriginalName("armor_type_ornament_cure")] OrnamentCure = 8,
+    /// <summary>
+    /// 医疗副武器
+    /// </summary>
+    [pbr::OriginalName("armor_type_ornament_boom")] OrnamentBoom = 9,
+    /// <summary>
+    /// 其他副武器
+    /// </summary>
+    [pbr::OriginalName("armor_type_ornament_other")] OrnamentOther = 10,
+    /// <summary>
+    /// 背包
+    /// </summary>
+    [pbr::OriginalName("armor_type_bag")] Bag = 11,
+  }
+
+  public enum weapon_effect_action {
+    /// <summary>
+    /// 空
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_null")] Null = 0,
+    /// <summary>
+    /// 单手挥砍
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_single")] ActionSingle = 1,
+    /// <summary>
+    /// 双手挥砍
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_both")] ActionBoth = 2,
+    /// <summary>
+    /// 手枪
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_pistol")] ActionPistol = 3,
+    /// <summary>
+    /// 冲锋枪
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_carbine")] ActionCarbine = 4,
+    /// <summary>
+    /// 散弹枪
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_shotgun")] ActionShotgun = 5,
+    /// <summary>
+    /// 狙击枪
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_snipergun")] ActionSnipergun = 6,
+    /// <summary>
+    /// 加特林
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_gatlin")] ActionGatlin = 7,
+    /// <summary>
+    /// 火箭筒
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_rocket")] ActionRocket = 8,
+    /// <summary>
+    /// 爪击
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_claw")] ActionClaw = 9,
+    /// <summary>
+    /// 电锯
+    /// </summary>
+    [pbr::OriginalName("weapon_effect_action_action_saw")] ActionSaw = 10,
+  }
+
+  public enum race {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("race_none")] None = 0,
+    /// <summary>
+    /// 人类
+    /// </summary>
+    [pbr::OriginalName("race_human")] Human = 1,
+    /// <summary>
+    /// 僵尸
+    /// </summary>
+    [pbr::OriginalName("race_zombie")] Zombie = 2,
+  }
+
+  public enum camp_id {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("camp_id_none")] None = 0,
+    /// <summary>
+    /// 自救联盟
+    /// </summary>
+    [pbr::OriginalName("camp_id_citizen")] Citizen = 1,
+    /// <summary>
+    /// 学院
+    /// </summary>
+    [pbr::OriginalName("camp_id_academy")] Academy = 2,
+    /// <summary>
+    /// 浮世会
+    /// </summary>
+    [pbr::OriginalName("camp_id_kirk")] Kirk = 3,
+    /// <summary>
+    /// 兄弟会
+    /// </summary>
+    [pbr::OriginalName("camp_id_frat")] Frat = 4,
+    /// <summary>
+    /// 鲜血蔷薇
+    /// </summary>
+    [pbr::OriginalName("camp_id_bloodrose")] Bloodrose = 5,
+  }
+
+  public enum item_type {
+    /// <summary>
+    /// 0=
+    /// </summary>
+    [pbr::OriginalName("item_type_none")] None = 0,
+    /// <summary>
+    /// 100=武器
+    /// </summary>
+    [pbr::OriginalName("item_type_weapon")] Weapon = 100,
+    /// <summary>
+    /// 200=防具
+    /// </summary>
+    [pbr::OriginalName("item_type_armor")] Armor = 200,
+    /// <summary>
+    /// 300=消耗品
+    /// </summary>
+    [pbr::OriginalName("item_type_consumables")] Consumables = 300,
+    /// <summary>
+    /// 400=背包
+    /// </summary>
+    [pbr::OriginalName("item_type_bag")] Bag = 400,
+    /// <summary>
+    /// 600=建筑
+    /// </summary>
+    [pbr::OriginalName("item_type_building")] Building = 600,
+    /// <summary>
+    /// 601=仓库
+    /// </summary>
+    [pbr::OriginalName("item_type_warehouse")] Warehouse = 601,
+    /// <summary>
+    /// 冰箱
+    /// </summary>
+    [pbr::OriginalName("item_type_refrigerator")] Refrigerator = 602,
+    /// <summary>
+    /// 营车
+    /// </summary>
+    [pbr::OriginalName("item_type_campcar")] Campcar = 610,
+    /// <summary>
+    /// 700=英雄
+    /// </summary>
+    [pbr::OriginalName("item_type_hero")] Hero = 700,
+    /// <summary>
+    /// 800=职业
+    /// </summary>
+    [pbr::OriginalName("item_type_job")] Job = 800,
+    /// <summary>
+    /// 801=属性
+    /// </summary>
+    [pbr::OriginalName("item_type_attribute")] Attribute = 801,
+    /// <summary>
+    /// 战斗技术
+    /// </summary>
+    [pbr::OriginalName("item_type_battle_tech")] BattleTech = 900,
+    /// <summary>
+    /// 生存技术
+    /// </summary>
+    [pbr::OriginalName("item_type_live_tech")] LiveTech = 901,
+    /// <summary>
+    /// 生存条件
+    /// </summary>
+    [pbr::OriginalName("item_type_live_condition")] LiveCondition = 902,
+    /// <summary>
+    /// 建筑属性
+    /// </summary>
+    [pbr::OriginalName("item_type_building_attribute")] BuildingAttribute = 903,
+  }
+
+  public enum target_select_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("target_select_type_none")] None = 0,
+    /// <summary>
+    /// 最近
+    /// </summary>
+    [pbr::OriginalName("target_select_type_nearest")] Nearest = 1,
+    /// <summary>
+    /// 最远
+    /// </summary>
+    [pbr::OriginalName("target_select_type_farthest")] Farthest = 2,
+    /// <summary>
+    /// 最低血量
+    /// </summary>
+    [pbr::OriginalName("target_select_type_hp_least")] HpLeast = 3,
+    /// <summary>
+    /// 最高血量
+    /// </summary>
+    [pbr::OriginalName("target_select_type_hp_maximum")] HpMaximum = 4,
+    /// <summary>
+    /// 最高战力
+    /// </summary>
+    [pbr::OriginalName("target_select_type_battle_ability_max")] BattleAbilityMax = 5,
+    /// <summary>
+    /// 随机
+    /// </summary>
+    [pbr::OriginalName("target_select_type_random")] Random = 6,
+  }
+
+  public enum chapter_difficulty {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("chapter_difficulty_none")] None = 0,
+    /// <summary>
+    /// 休闲
+    /// </summary>
+    [pbr::OriginalName("chapter_difficulty_recreational")] Recreational = 1,
+    /// <summary>
+    /// 普通
+    /// </summary>
+    [pbr::OriginalName("chapter_difficulty_general")] General = 2,
+    /// <summary>
+    /// 噩梦
+    /// </summary>
+    [pbr::OriginalName("chapter_difficulty_nightmare")] Nightmare = 3,
+    /// <summary>
+    /// 地狱
+    /// </summary>
+    [pbr::OriginalName("chapter_difficulty_hell")] Hell = 4,
+    /// <summary>
+    /// 炼狱
+    /// </summary>
+    [pbr::OriginalName("chapter_difficulty_purgatory")] Purgatory = 5,
+  }
+
+  public enum range_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("range_type_none")] None = 0,
+    /// <summary>
+    /// 直线(距离)
+    /// </summary>
+    [pbr::OriginalName("range_type_straightline")] Straightline = 1,
+    /// <summary>
+    /// 扇形(角度,半径)
+    /// </summary>
+    [pbr::OriginalName("range_type_sector")] Sector = 2,
+    /// <summary>
+    /// 圆形区域(半径)
+    /// </summary>
+    [pbr::OriginalName("range_type_roundness")] Roundness = 3,
+    /// <summary>
+    /// 矩形(长，宽)
+    /// </summary>
+    [pbr::OriginalName("range_type_rectangle")] Rectangle = 4,
+    /// <summary>
+    /// 多方向射击
+    /// </summary>
+    [pbr::OriginalName("range_type_multi_direction")] MultiDirection = 5,
+  }
+
+  public enum item_key {
+    /// <summary>
+    /// 空
+    /// </summary>
+    [pbr::OriginalName("item_key_item_none")] ItemNone = 0,
+    /// <summary>
+    /// 冒烟车辆
+    /// </summary>
+    [pbr::OriginalName("item_key_e10001")] E10001 = 10001,
+    /// <summary>
+    /// 小车
+    /// </summary>
+    [pbr::OriginalName("item_key_e10002")] E10002 = 10002,
+    /// <summary>
+    /// 面包车
+    /// </summary>
+    [pbr::OriginalName("item_key_e10003")] E10003 = 10003,
+    /// <summary>
+    /// 房车
+    /// </summary>
+    [pbr::OriginalName("item_key_e10004")] E10004 = 10004,
+    /// <summary>
+    /// 大房车
+    /// </summary>
+    [pbr::OriginalName("item_key_e10005")] E10005 = 10005,
+    /// <summary>
+    /// V22引擎
+    /// </summary>
+    [pbr::OriginalName("item_key_e10101")] E10101 = 10101,
+    /// <summary>
+    /// V100引擎
+    /// </summary>
+    [pbr::OriginalName("item_key_e10102")] E10102 = 10102,
+    /// <summary>
+    /// B46引擎
+    /// </summary>
+    [pbr::OriginalName("item_key_e10103")] E10103 = 10103,
+    /// <summary>
+    /// F115引擎
+    /// </summary>
+    [pbr::OriginalName("item_key_e10104")] E10104 = 10104,
+    /// <summary>
+    /// 座舱1
+    /// </summary>
+    [pbr::OriginalName("item_key_e10201")] E10201 = 10201,
+    /// <summary>
+    /// 座舱2
+    /// </summary>
+    [pbr::OriginalName("item_key_e10202")] E10202 = 10202,
+    /// <summary>
+    /// 座舱3
+    /// </summary>
+    [pbr::OriginalName("item_key_e10203")] E10203 = 10203,
+    /// <summary>
+    /// 座舱4
+    /// </summary>
+    [pbr::OriginalName("item_key_e10204")] E10204 = 10204,
+    /// <summary>
+    /// 小储物箱
+    /// </summary>
+    [pbr::OriginalName("item_key_StorageBoxSmall")] StorageBoxSmall = 10301,
+    /// <summary>
+    /// 中储物箱
+    /// </summary>
+    [pbr::OriginalName("item_key_StorageBoxMedium")] StorageBoxMedium = 10302,
+    /// <summary>
+    /// 大储物箱
+    /// </summary>
+    [pbr::OriginalName("item_key_StorageBoxLarge")] StorageBoxLarge = 10303,
+    /// <summary>
+    /// 小冰箱
+    /// </summary>
+    [pbr::OriginalName("item_key_RefrigeratorSmall")] RefrigeratorSmall = 10313,
+    /// <summary>
+    /// 中冰箱
+    /// </summary>
+    [pbr::OriginalName("item_key_RefrigeratorMedium")] RefrigeratorMedium = 10314,
+    /// <summary>
+    /// 大冰箱
+    /// </summary>
+    [pbr::OriginalName("item_key_RefrigeratorLarge")] RefrigeratorLarge = 10315,
+    /// <summary>
+    /// 油箱
+    /// </summary>
+    [pbr::OriginalName("item_key_e10401")] E10401 = 10401,
+    /// <summary>
+    /// 大油箱
+    /// </summary>
+    [pbr::OriginalName("item_key_e10402")] E10402 = 10402,
+    /// <summary>
+    /// 加大油箱
+    /// </summary>
+    [pbr::OriginalName("item_key_e10403")] E10403 = 10403,
+    /// <summary>
+    /// 100kv发电机
+    /// </summary>
+    [pbr::OriginalName("item_key_e10501")] E10501 = 10501,
+    /// <summary>
+    /// 200kv发电机
+    /// </summary>
+    [pbr::OriginalName("item_key_e10502")] E10502 = 10502,
+    /// <summary>
+    /// 300kv发电机
+    /// </summary>
+    [pbr::OriginalName("item_key_e10503")] E10503 = 10503,
+    /// <summary>
+    /// 指挥台
+    /// </summary>
+    [pbr::OriginalName("item_key_e10504")] E10504 = 10504,
+    /// <summary>
+    /// 电台
+    /// </summary>
+    [pbr::OriginalName("item_key_e10505")] E10505 = 10505,
+    /// <summary>
+    /// 收音机
+    /// </summary>
+    [pbr::OriginalName("item_key_e10506")] E10506 = 10506,
+    /// <summary>
+    /// 加工台
+    /// </summary>
+    [pbr::OriginalName("item_key_ProcessPlatform")] ProcessPlatform = 10601,
+    /// <summary>
+    /// 熔炉
+    /// </summary>
+    [pbr::OriginalName("item_key_Smelter")] Smelter = 10602,
+    /// <summary>
+    /// 切割机
+    /// </summary>
+    [pbr::OriginalName("item_key_Cutter")] Cutter = 10603,
+    /// <summary>
+    /// 机床
+    /// </summary>
+    [pbr::OriginalName("item_key_MachineTool")] MachineTool = 10604,
+    /// <summary>
+    /// 化工台
+    /// </summary>
+    [pbr::OriginalName("item_key_MedicalPlatform")] MedicalPlatform = 10701,
+    /// <summary>
+    /// 碾磨器
+    /// </summary>
+    [pbr::OriginalName("item_key_Grinder")] Grinder = 10702,
+    /// <summary>
+    /// 发酵器
+    /// </summary>
+    [pbr::OriginalName("item_key_Fermentation")] Fermentation = 10703,
+    /// <summary>
+    /// 蒸馏器
+    /// </summary>
+    [pbr::OriginalName("item_key_Distill")] Distill = 10704,
+    /// <summary>
+    /// 制造台
+    /// </summary>
+    [pbr::OriginalName("item_key_ManufacturePlatform")] ManufacturePlatform = 10801,
+    /// <summary>
+    /// 缝纫机
+    /// </summary>
+    [pbr::OriginalName("item_key_Sew")] Sew = 10802,
+    /// <summary>
+    /// 电络铁
+    /// </summary>
+    [pbr::OriginalName("item_key_Solder")] Solder = 10803,
+    /// <summary>
+    /// 焊接机
+    /// </summary>
+    [pbr::OriginalName("item_key_Weld")] Weld = 10804,
+    /// <summary>
+    /// 火堆
+    /// </summary>
+    [pbr::OriginalName("item_key_Fire")] Fire = 10901,
+    /// <summary>
+    /// 架子
+    /// </summary>
+    [pbr::OriginalName("item_key_Gridiron")] Gridiron = 10902,
+    /// <summary>
+    /// 锅子
+    /// </summary>
+    [pbr::OriginalName("item_key_Pot")] Pot = 10903,
+    /// <summary>
+    /// 烤箱
+    /// </summary>
+    [pbr::OriginalName("item_key_Oven")] Oven = 10904,
+    /// <summary>
+    /// 摩托车
+    /// </summary>
+    [pbr::OriginalName("item_key_e11001")] E11001 = 11001,
+    /// <summary>
+    /// 吉普车
+    /// </summary>
+    [pbr::OriginalName("item_key_e11002")] E11002 = 11002,
+    /// <summary>
+    /// 坦克
+    /// </summary>
+    [pbr::OriginalName("item_key_e11003")] E11003 = 11003,
+    /// <summary>
+    /// BTR装甲车
+    /// </summary>
+    [pbr::OriginalName("item_key_e11004")] E11004 = 11004,
+    /// <summary>
+    /// R22直升机
+    /// </summary>
+    [pbr::OriginalName("item_key_e11005")] E11005 = 11005,
+    /// <summary>
+    /// 彩虹无人机
+    /// </summary>
+    [pbr::OriginalName("item_key_e11006")] E11006 = 11006,
+    /// <summary>
+    /// 医疗帐篷
+    /// </summary>
+    [pbr::OriginalName("item_key_e11101")] E11101 = 11101,
+    /// <summary>
+    /// 哨塔
+    /// </summary>
+    [pbr::OriginalName("item_key_e11102")] E11102 = 11102,
+    /// <summary>
+    /// 通讯塔
+    /// </summary>
+    [pbr::OriginalName("item_key_e11103")] E11103 = 11103,
+    /// <summary>
+    /// 锅盖天线
+    /// </summary>
+    [pbr::OriginalName("item_key_e11104")] E11104 = 11104,
+    /// <summary>
+    /// 围墙
+    /// </summary>
+    [pbr::OriginalName("item_key_e11105")] E11105 = 11105,
+    /// <summary>
+    /// 望远镜
+    /// </summary>
+    [pbr::OriginalName("item_key_e11106")] E11106 = 11106,
+    /// <summary>
+    /// 健身器材
+    /// </summary>
+    [pbr::OriginalName("item_key_e11201")] E11201 = 11201,
+    /// <summary>
+    /// 体检设施
+    /// </summary>
+    [pbr::OriginalName("item_key_e11202")] E11202 = 11202,
+    /// <summary>
+    /// 书报架
+    /// </summary>
+    [pbr::OriginalName("item_key_e11203")] E11203 = 11203,
+    /// <summary>
+    /// 射击假人
+    /// </summary>
+    [pbr::OriginalName("item_key_e11204")] E11204 = 11204,
+    /// <summary>
+    /// 盆栽
+    /// </summary>
+    [pbr::OriginalName("item_key_e11205")] E11205 = 11205,
+    /// <summary>
+    /// 餐桌
+    /// </summary>
+    [pbr::OriginalName("item_key_e11206")] E11206 = 11206,
+    /// <summary>
+    /// 沙发
+    /// </summary>
+    [pbr::OriginalName("item_key_e11207")] E11207 = 11207,
+    /// <summary>
+    /// 英雄
+    /// </summary>
+    [pbr::OriginalName("item_key_Hero")] Hero = 20001,
+    /// <summary>
+    /// 机械师
+    /// </summary>
+    [pbr::OriginalName("item_key_Chemical")] Chemical = 20002,
+    /// <summary>
+    /// 厨师
+    /// </summary>
+    [pbr::OriginalName("item_key_item_name_10202")] ItemName10202 = 20003,
+    /// <summary>
+    /// 格斗
+    /// </summary>
+    [pbr::OriginalName("item_key_TechWrestle")] TechWrestle = 30001,
+    /// <summary>
+    /// 枪械
+    /// </summary>
+    [pbr::OriginalName("item_key_TechGun")] TechGun = 30002,
+    /// <summary>
+    /// 爆炸
+    /// </summary>
+    [pbr::OriginalName("item_key_TechExplode")] TechExplode = 30003,
+    /// <summary>
+    /// 治疗
+    /// </summary>
+    [pbr::OriginalName("item_key_TechTreat")] TechTreat = 30004,
+    /// <summary>
+    /// 烹饪
+    /// </summary>
+    [pbr::OriginalName("item_key_TechCook")] TechCook = 30005,
+    /// <summary>
+    /// 探索
+    /// </summary>
+    [pbr::OriginalName("item_key_TechProbe")] TechProbe = 30006,
+    /// <summary>
+    /// 加工
+    /// </summary>
+    [pbr::OriginalName("item_key_TechMachining")] TechMachining = 30007,
+    /// <summary>
+    /// 电子
+    /// </summary>
+    [pbr::OriginalName("item_key_TechElectron")] TechElectron = 30008,
+    /// <summary>
+    /// 医药
+    /// </summary>
+    [pbr::OriginalName("item_key_TechMedica")] TechMedica = 30009,
+    /// <summary>
+    /// 化工
+    /// </summary>
+    [pbr::OriginalName("item_key_TechChemical")] TechChemical = 30010,
+    /// <summary>
+    /// 缝纫
+    /// </summary>
+    [pbr::OriginalName("item_key_TechSewing")] TechSewing = 30011,
+    /// <summary>
+    /// 机械
+    /// </summary>
+    [pbr::OriginalName("item_key_TechMechanism")] TechMechanism = 30012,
+    /// <summary>
+    /// 饱食度
+    /// </summary>
+    [pbr::OriginalName("item_key_Satiety")] Satiety = 50001,
+    /// <summary>
+    /// 电池
+    /// </summary>
+    [pbr::OriginalName("item_key_Battery")] Battery = 50002,
+    /// <summary>
+    /// 钻石
+    /// </summary>
+    [pbr::OriginalName("item_key_Diamond")] Diamond = 50003,
+    /// <summary>
+    /// 燃料
+    /// </summary>
+    [pbr::OriginalName("item_key_Fuel")] Fuel = 50004,
+    /// <summary>
+    /// 最大生命值
+    /// </summary>
+    [pbr::OriginalName("item_key_e60001")] E60001 = 60001,
+    /// <summary>
+    /// 当前生命值
+    /// </summary>
+    [pbr::OriginalName("item_key_e60002")] E60002 = 60002,
+    /// <summary>
+    /// 攻击力
+    /// </summary>
+    [pbr::OriginalName("item_key_e60003")] E60003 = 60003,
+    /// <summary>
+    /// 攻击速度
+    /// </summary>
+    [pbr::OriginalName("item_key_e60004")] E60004 = 60004,
+    /// <summary>
+    /// 攻击距离
+    /// </summary>
+    [pbr::OriginalName("item_key_e60005")] E60005 = 60005,
+    /// <summary>
+    /// 攻击范围
+    /// </summary>
+    [pbr::OriginalName("item_key_e60006")] E60006 = 60006,
+    /// <summary>
+    /// 攻击角度
+    /// </summary>
+    [pbr::OriginalName("item_key_e60007")] E60007 = 60007,
+    /// <summary>
+    /// 换弹速度
+    /// </summary>
+    [pbr::OriginalName("item_key_e60008")] E60008 = 60008,
+    /// <summary>
+    /// 弹夹容量
+    /// </summary>
+    [pbr::OriginalName("item_key_e60009")] E60009 = 60009,
+    /// <summary>
+    /// 暴击率
+    /// </summary>
+    [pbr::OriginalName("item_key_e60010")] E60010 = 60010,
+    /// <summary>
+    /// 暴击伤害
+    /// </summary>
+    [pbr::OriginalName("item_key_e60011")] E60011 = 60011,
+    /// <summary>
+    /// 命中率
+    /// </summary>
+    [pbr::OriginalName("item_key_e60012")] E60012 = 60012,
+    /// <summary>
+    /// 穿透性
+    /// </summary>
+    [pbr::OriginalName("item_key_e60013")] E60013 = 60013,
+    /// <summary>
+    /// 防御力
+    /// </summary>
+    [pbr::OriginalName("item_key_e60014")] E60014 = 60014,
+    /// <summary>
+    /// 韧性
+    /// </summary>
+    [pbr::OriginalName("item_key_e60015")] E60015 = 60015,
+    /// <summary>
+    /// 伤害减免
+    /// </summary>
+    [pbr::OriginalName("item_key_e60016")] E60016 = 60016,
+    /// <summary>
+    /// 闪躲
+    /// </summary>
+    [pbr::OriginalName("item_key_e60017")] E60017 = 60017,
+    /// <summary>
+    /// 移动速度
+    /// </summary>
+    [pbr::OriginalName("item_key_e60018")] E60018 = 60018,
+    /// <summary>
+    /// 强壮
+    /// </summary>
+    [pbr::OriginalName("item_key_e60019")] E60019 = 60019,
+    /// <summary>
+    /// 体质
+    /// </summary>
+    [pbr::OriginalName("item_key_e60020")] E60020 = 60020,
+    /// <summary>
+    /// 敏捷
+    /// </summary>
+    [pbr::OriginalName("item_key_e60021")] E60021 = 60021,
+    /// <summary>
+    /// 智力
+    /// </summary>
+    [pbr::OriginalName("item_key_e60022")] E60022 = 60022,
+    /// <summary>
+    /// 幸运
+    /// </summary>
+    [pbr::OriginalName("item_key_e60023")] E60023 = 60023,
+    /// <summary>
+    /// 木材
+    /// </summary>
+    [pbr::OriginalName("item_key_e100010")] E100010 = 100010,
+    /// <summary>
+    /// 石头
+    /// </summary>
+    [pbr::OriginalName("item_key_e100020")] E100020 = 100020,
+    /// <summary>
+    /// 铁矿石
+    /// </summary>
+    [pbr::OriginalName("item_key_e100030")] E100030 = 100030,
+    /// <summary>
+    /// 铜矿石
+    /// </summary>
+    [pbr::OriginalName("item_key_e100040")] E100040 = 100040,
+    /// <summary>
+    /// 铝矿石
+    /// </summary>
+    [pbr::OriginalName("item_key_e100050")] E100050 = 100050,
+    /// <summary>
+    /// 金矿石
+    /// </summary>
+    [pbr::OriginalName("item_key_e100060")] E100060 = 100060,
+    /// <summary>
+    /// 硝石
+    /// </summary>
+    [pbr::OriginalName("item_key_e100070")] E100070 = 100070,
+    /// <summary>
+    /// 硫磺
+    /// </summary>
+    [pbr::OriginalName("item_key_e100080")] E100080 = 100080,
+    /// <summary>
+    /// 水银
+    /// </summary>
+    [pbr::OriginalName("item_key_e100090")] E100090 = 100090,
+    /// <summary>
+    /// 布片
+    /// </summary>
+    [pbr::OriginalName("item_key_e100100")] E100100 = 100100,
+    /// <summary>
+    /// 毛皮
+    /// </summary>
+    [pbr::OriginalName("item_key_e100110")] E100110 = 100110,
+    /// <summary>
+    /// 复合材料
+    /// </summary>
+    [pbr::OriginalName("item_key_e100120")] E100120 = 100120,
+    /// <summary>
+    /// 橡胶
+    /// </summary>
+    [pbr::OriginalName("item_key_e100130")] E100130 = 100130,
+    /// <summary>
+    /// 宝石
+    /// </summary>
+    [pbr::OriginalName("item_key_e100140")] E100140 = 100140,
+    /// <summary>
+    /// 电脑主板
+    /// </summary>
+    [pbr::OriginalName("item_key_e100150")] E100150 = 100150,
+    /// <summary>
+    /// 手机
+    /// </summary>
+    [pbr::OriginalName("item_key_e100160")] E100160 = 100160,
+    /// <summary>
+    /// 电视机
+    /// </summary>
+    [pbr::OriginalName("item_key_e100170")] E100170 = 100170,
+    /// <summary>
+    /// 保险箱
+    /// </summary>
+    [pbr::OriginalName("item_key_e100180")] E100180 = 100180,
+    /// <summary>
+    /// 冰箱
+    /// </summary>
+    [pbr::OriginalName("item_key_e100190")] E100190 = 100190,
+    /// <summary>
+    /// 洗衣机
+    /// </summary>
+    [pbr::OriginalName("item_key_e100200")] E100200 = 100200,
+    /// <summary>
+    /// 金表
+    /// </summary>
+    [pbr::OriginalName("item_key_e100210")] E100210 = 100210,
+    /// <summary>
+    /// 电风扇
+    /// </summary>
+    [pbr::OriginalName("item_key_e100220")] E100220 = 100220,
+    /// <summary>
+    /// 空塑料桶
+    /// </summary>
+    [pbr::OriginalName("item_key_e100230")] E100230 = 100230,
+    /// <summary>
+    /// 香烟
+    /// </summary>
+    [pbr::OriginalName("item_key_e100240")] E100240 = 100240,
+    /// <summary>
+    /// 麦子
+    /// </summary>
+    [pbr::OriginalName("item_key_e101010")] E101010 = 101010,
+    /// <summary>
+    /// 面粉
+    /// </summary>
+    [pbr::OriginalName("item_key_e101020")] E101020 = 101020,
+    /// <summary>
+    /// 肥肉
+    /// </summary>
+    [pbr::OriginalName("item_key_e101030")] E101030 = 101030,
+    /// <summary>
+    /// 肉
+    /// </summary>
+    [pbr::OriginalName("item_key_e101040")] E101040 = 101040,
+    /// <summary>
+    /// 土豆
+    /// </summary>
+    [pbr::OriginalName("item_key_e101050")] E101050 = 101050,
+    /// <summary>
+    /// 鸡蛋
+    /// </summary>
+    [pbr::OriginalName("item_key_e101060")] E101060 = 101060,
+    /// <summary>
+    /// 西红柿
+    /// </summary>
+    [pbr::OriginalName("item_key_e101070")] E101070 = 101070,
+    /// <summary>
+    /// 鱼
+    /// </summary>
+    [pbr::OriginalName("item_key_e101080")] E101080 = 101080,
+    /// <summary>
+    /// 草莓
+    /// </summary>
+    [pbr::OriginalName("item_key_e101090")] E101090 = 101090,
+    /// <summary>
+    /// 生菜
+    /// </summary>
+    [pbr::OriginalName("item_key_e101100")] E101100 = 101100,
+    /// <summary>
+    /// 胡萝卜
+    /// </summary>
+    [pbr::OriginalName("item_key_e101110")] E101110 = 101110,
+    /// <summary>
+    /// 香辛料
+    /// </summary>
+    [pbr::OriginalName("item_key_e101120")] E101120 = 101120,
+    /// <summary>
+    /// 石灰
+    /// </summary>
+    [pbr::OriginalName("item_key_e101130")] E101130 = 101130,
+    /// <summary>
+    /// 发霉的食物
+    /// </summary>
+    [pbr::OriginalName("item_key_e101140")] E101140 = 101140,
+    /// <summary>
+    /// 青蒿
+    /// </summary>
+    [pbr::OriginalName("item_key_e101150")] E101150 = 101150,
+    /// <summary>
+    /// 奎灵
+    /// </summary>
+    [pbr::OriginalName("item_key_e101160")] E101160 = 101160,
+    /// <summary>
+    /// 木板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200000")] E200000 = 200000,
+    /// <summary>
+    /// 石板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200010")] E200010 = 200010,
+    /// <summary>
+    /// 粉末
+    /// </summary>
+    [pbr::OriginalName("item_key_e200020")] E200020 = 200020,
+    /// <summary>
+    /// 木屑
+    /// </summary>
+    [pbr::OriginalName("item_key_e200030")] E200030 = 200030,
+    /// <summary>
+    /// 木炭
+    /// </summary>
+    [pbr::OriginalName("item_key_e200040")] E200040 = 200040,
+    /// <summary>
+    /// 燃料
+    /// </summary>
+    [pbr::OriginalName("item_key_e200050")] E200050 = 200050,
+    /// <summary>
+    /// 木制零件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200060")] E200060 = 200060,
+    /// <summary>
+    /// 铁块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200070")] E200070 = 200070,
+    /// <summary>
+    /// 钢块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200080")] E200080 = 200080,
+    /// <summary>
+    /// 高碳钢块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200090")] E200090 = 200090,
+    /// <summary>
+    /// 铝块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200100")] E200100 = 200100,
+    /// <summary>
+    /// 铜块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200110")] E200110 = 200110,
+    /// <summary>
+    /// 金块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200120")] E200120 = 200120,
+    /// <summary>
+    /// 铁板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200130")] E200130 = 200130,
+    /// <summary>
+    /// 钢板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200140")] E200140 = 200140,
+    /// <summary>
+    /// 高碳钢板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200150")] E200150 = 200150,
+    /// <summary>
+    /// 厚铁板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200160")] E200160 = 200160,
+    /// <summary>
+    /// 厚钢板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200170")] E200170 = 200170,
+    /// <summary>
+    /// 厚高碳钢板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200180")] E200180 = 200180,
+    /// <summary>
+    /// 铁部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200190")] E200190 = 200190,
+    /// <summary>
+    /// 钢部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200200")] E200200 = 200200,
+    /// <summary>
+    /// 高碳钢部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200210")] E200210 = 200210,
+    /// <summary>
+    /// 铝部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200220")] E200220 = 200220,
+    /// <summary>
+    /// 铜部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200230")] E200230 = 200230,
+    /// <summary>
+    /// 硝石粉
+    /// </summary>
+    [pbr::OriginalName("item_key_e200240")] E200240 = 200240,
+    /// <summary>
+    /// 硫磺粉
+    /// </summary>
+    [pbr::OriginalName("item_key_e200250")] E200250 = 200250,
+    /// <summary>
+    /// 强酸
+    /// </summary>
+    [pbr::OriginalName("item_key_e200260")] E200260 = 200260,
+    /// <summary>
+    /// 甘油
+    /// </summary>
+    [pbr::OriginalName("item_key_e200270")] E200270 = 200270,
+    /// <summary>
+    /// 酒精
+    /// </summary>
+    [pbr::OriginalName("item_key_e200280")] E200280 = 200280,
+    /// <summary>
+    /// 雷火
+    /// </summary>
+    [pbr::OriginalName("item_key_e200290")] E200290 = 200290,
+    /// <summary>
+    /// 黑火药
+    /// </summary>
+    [pbr::OriginalName("item_key_e200300")] E200300 = 200300,
+    /// <summary>
+    /// 炸药
+    /// </summary>
+    [pbr::OriginalName("item_key_e200310")] E200310 = 200310,
+    /// <summary>
+    /// 高爆炸药
+    /// </summary>
+    [pbr::OriginalName("item_key_e200320")] E200320 = 200320,
+    /// <summary>
+    /// 布
+    /// </summary>
+    [pbr::OriginalName("item_key_e200330")] E200330 = 200330,
+    /// <summary>
+    /// 厚布
+    /// </summary>
+    [pbr::OriginalName("item_key_e200340")] E200340 = 200340,
+    /// <summary>
+    /// 皮革
+    /// </summary>
+    [pbr::OriginalName("item_key_e200350")] E200350 = 200350,
+    /// <summary>
+    /// 厚皮革
+    /// </summary>
+    [pbr::OriginalName("item_key_e200360")] E200360 = 200360,
+    /// <summary>
+    /// 斯拉夫板材
+    /// </summary>
+    [pbr::OriginalName("item_key_e200370")] E200370 = 200370,
+    /// <summary>
+    /// 复合板材
+    /// </summary>
+    [pbr::OriginalName("item_key_e200380")] E200380 = 200380,
+    /// <summary>
+    /// 复合装甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e200390")] E200390 = 200390,
+    /// <summary>
+    /// 橡胶块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200400")] E200400 = 200400,
+    /// <summary>
+    /// 橡胶部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200410")] E200410 = 200410,
+    /// <summary>
+    /// 镜片
+    /// </summary>
+    [pbr::OriginalName("item_key_e200420")] E200420 = 200420,
+    /// <summary>
+    /// 稀有金属
+    /// </summary>
+    [pbr::OriginalName("item_key_e200430")] E200430 = 200430,
+    /// <summary>
+    /// 颜料
+    /// </summary>
+    [pbr::OriginalName("item_key_e200440")] E200440 = 200440,
+    /// <summary>
+    /// 打开的保险箱
+    /// </summary>
+    [pbr::OriginalName("item_key_e200450")] E200450 = 200450,
+    /// <summary>
+    /// 电子元件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200460")] E200460 = 200460,
+    /// <summary>
+    /// 集成电路
+    /// </summary>
+    [pbr::OriginalName("item_key_e200470")] E200470 = 200470,
+    /// <summary>
+    /// 锂电池
+    /// </summary>
+    [pbr::OriginalName("item_key_e200480")] E200480 = 200480,
+    /// <summary>
+    /// 液晶面板
+    /// </summary>
+    [pbr::OriginalName("item_key_e200490")] E200490 = 200490,
+    /// <summary>
+    /// 轴承
+    /// </summary>
+    [pbr::OriginalName("item_key_e200500")] E200500 = 200500,
+    /// <summary>
+    /// 电动机
+    /// </summary>
+    [pbr::OriginalName("item_key_e200510")] E200510 = 200510,
+    /// <summary>
+    /// 啤酒
+    /// </summary>
+    [pbr::OriginalName("item_key_e200520")] E200520 = 200520,
+    /// <summary>
+    /// 酒
+    /// </summary>
+    [pbr::OriginalName("item_key_e200530")] E200530 = 200530,
+    /// <summary>
+    /// 果酒
+    /// </summary>
+    [pbr::OriginalName("item_key_e200540")] E200540 = 200540,
+    /// <summary>
+    /// 食用油
+    /// </summary>
+    [pbr::OriginalName("item_key_e200550")] E200550 = 200550,
+    /// <summary>
+    /// 水杨酸
+    /// </summary>
+    [pbr::OriginalName("item_key_e200560")] E200560 = 200560,
+    /// <summary>
+    /// 石膏
+    /// </summary>
+    [pbr::OriginalName("item_key_e200570")] E200570 = 200570,
+    /// <summary>
+    /// 盘尼西林
+    /// </summary>
+    [pbr::OriginalName("item_key_e200580")] E200580 = 200580,
+    /// <summary>
+    /// 青蒿素
+    /// </summary>
+    [pbr::OriginalName("item_key_e200590")] E200590 = 200590,
+    /// <summary>
+    /// 金鸡纳霜
+    /// </summary>
+    [pbr::OriginalName("item_key_e200600")] E200600 = 200600,
+    /// <summary>
+    /// 熟肉
+    /// </summary>
+    [pbr::OriginalName("item_key_e200610")] E200610 = 200610,
+    /// <summary>
+    /// 粥
+    /// </summary>
+    [pbr::OriginalName("item_key_e200620")] E200620 = 200620,
+    /// <summary>
+    /// 牛排
+    /// </summary>
+    [pbr::OriginalName("item_key_e200630")] E200630 = 200630,
+    /// <summary>
+    /// 沙拉
+    /// </summary>
+    [pbr::OriginalName("item_key_e200640")] E200640 = 200640,
+    /// <summary>
+    /// 腌肉
+    /// </summary>
+    [pbr::OriginalName("item_key_e200650")] E200650 = 200650,
+    /// <summary>
+    /// 腌鱼
+    /// </summary>
+    [pbr::OriginalName("item_key_e200660")] E200660 = 200660,
+    /// <summary>
+    /// 炒蛋
+    /// </summary>
+    [pbr::OriginalName("item_key_e200670")] E200670 = 200670,
+    /// <summary>
+    /// 薯片
+    /// </summary>
+    [pbr::OriginalName("item_key_e200680")] E200680 = 200680,
+    /// <summary>
+    /// 鱼汤
+    /// </summary>
+    [pbr::OriginalName("item_key_e200690")] E200690 = 200690,
+    /// <summary>
+    /// 烤鱼
+    /// </summary>
+    [pbr::OriginalName("item_key_e200700")] E200700 = 200700,
+    /// <summary>
+    /// 炒蔬菜
+    /// </summary>
+    [pbr::OriginalName("item_key_e200710")] E200710 = 200710,
+    /// <summary>
+    /// 蓄电池
+    /// </summary>
+    [pbr::OriginalName("item_key_e200720")] E200720 = 200720,
+    /// <summary>
+    /// 精密部件
+    /// </summary>
+    [pbr::OriginalName("item_key_e200730")] E200730 = 200730,
+    /// <summary>
+    /// 精密电路
+    /// </summary>
+    [pbr::OriginalName("item_key_e200740")] E200740 = 200740,
+    /// <summary>
+    /// 发条
+    /// </summary>
+    [pbr::OriginalName("item_key_e200750")] E200750 = 200750,
+    /// <summary>
+    /// 松脂
+    /// </summary>
+    [pbr::OriginalName("item_key_e200760")] E200760 = 200760,
+    /// <summary>
+    /// 锡块
+    /// </summary>
+    [pbr::OriginalName("item_key_e200770")] E200770 = 200770,
+    /// <summary>
+    /// 面包
+    /// </summary>
+    [pbr::OriginalName("item_key_e200780")] E200780 = 200780,
+    /// <summary>
+    /// 石斧
+    /// </summary>
+    [pbr::OriginalName("item_key_e200790")] E200790 = 200790,
+    /// <summary>
+    /// 铁镐
+    /// </summary>
+    [pbr::OriginalName("item_key_e200800")] E200800 = 200800,
+    /// <summary>
+    /// 金属探测器
+    /// </summary>
+    [pbr::OriginalName("item_key_e200810")] E200810 = 200810,
+    /// <summary>
+    /// 1号仓库
+    /// </summary>
+    [pbr::OriginalName("item_key_Repertory1")] Repertory1 = 202011,
+    /// <summary>
+    /// 2号仓库
+    /// </summary>
+    [pbr::OriginalName("item_key_Repertory2")] Repertory2 = 202012,
+    /// <summary>
+    /// 3号仓库
+    /// </summary>
+    [pbr::OriginalName("item_key_Repertory3")] Repertory3 = 202013,
+    /// <summary>
+    /// 4号仓库
+    /// </summary>
+    [pbr::OriginalName("item_key_Repertory4")] Repertory4 = 202014,
+    /// <summary>
+    /// 5号仓库
+    /// </summary>
+    [pbr::OriginalName("item_key_Repertory5")] Repertory5 = 202015,
+    /// <summary>
+    /// 6号仓库(冰箱)
+    /// </summary>
+    [pbr::OriginalName("item_key_Repertory6")] Repertory6 = 202016,
+    /// <summary>
+    /// 小型背包
+    /// </summary>
+    [pbr::OriginalName("item_key_Bag")] Bag = 202017,
+    /// <summary>
+    /// 木棒
+    /// </summary>
+    [pbr::OriginalName("item_key_e300010")] E300010 = 300010,
+    /// <summary>
+    /// 棒球棒
+    /// </summary>
+    [pbr::OriginalName("item_key_e300020")] E300020 = 300020,
+    /// <summary>
+    /// 铁棒
+    /// </summary>
+    [pbr::OriginalName("item_key_e300030")] E300030 = 300030,
+    /// <summary>
+    /// 菜刀
+    /// </summary>
+    [pbr::OriginalName("item_key_e300040")] E300040 = 300040,
+    /// <summary>
+    /// 撬棍
+    /// </summary>
+    [pbr::OriginalName("item_key_e300050")] E300050 = 300050,
+    /// <summary>
+    /// 大刀
+    /// </summary>
+    [pbr::OriginalName("item_key_e300060")] E300060 = 300060,
+    /// <summary>
+    /// 武士刀
+    /// </summary>
+    [pbr::OriginalName("item_key_e300070")] E300070 = 300070,
+    /// <summary>
+    /// 大马士革刀
+    /// </summary>
+    [pbr::OriginalName("item_key_e300080")] E300080 = 300080,
+    /// <summary>
+    /// 火焰刀
+    /// </summary>
+    [pbr::OriginalName("item_key_e300090")] E300090 = 300090,
+    /// <summary>
+    /// 电锯
+    /// </summary>
+    [pbr::OriginalName("item_key_e300100")] E300100 = 300100,
+    /// <summary>
+    /// 大锤
+    /// </summary>
+    [pbr::OriginalName("item_key_e300110")] E300110 = 300110,
+    /// <summary>
+    /// 狼牙棒
+    /// </summary>
+    [pbr::OriginalName("item_key_e300120")] E300120 = 300120,
+    /// <summary>
+    /// 土手枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301110")] E301110 = 301110,
+    /// <summary>
+    /// 毛瑟
+    /// </summary>
+    [pbr::OriginalName("item_key_e301120")] E301120 = 301120,
+    /// <summary>
+    /// 手枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301130")] E301130 = 301130,
+    /// <summary>
+    /// 沙漠之鹰
+    /// </summary>
+    [pbr::OriginalName("item_key_e301140")] E301140 = 301140,
+    /// <summary>
+    /// 左轮
+    /// </summary>
+    [pbr::OriginalName("item_key_e301150")] E301150 = 301150,
+    /// <summary>
+    /// 火绳枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301210")] E301210 = 301210,
+    /// <summary>
+    /// 火枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301220")] E301220 = 301220,
+    /// <summary>
+    /// 步枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301230")] E301230 = 301230,
+    /// <summary>
+    /// 自制散弹枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301310")] E301310 = 301310,
+    /// <summary>
+    /// 90散弹枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301320")] E301320 = 301320,
+    /// <summary>
+    /// 九头蛇
+    /// </summary>
+    [pbr::OriginalName("item_key_e301330")] E301330 = 301330,
+    /// <summary>
+    /// 卡列士尼科夫冲锋枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301410")] E301410 = 301410,
+    /// <summary>
+    /// M4卡宾枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301420")] E301420 = 301420,
+    /// <summary>
+    /// 加特林机枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e301430")] E301430 = 301430,
+    /// <summary>
+    /// RPG火箭筒
+    /// </summary>
+    [pbr::OriginalName("item_key_e301440")] E301440 = 301440,
+    /// <summary>
+    /// 布帽
+    /// </summary>
+    [pbr::OriginalName("item_key_e302010")] E302010 = 302010,
+    /// <summary>
+    /// 厚布帽
+    /// </summary>
+    [pbr::OriginalName("item_key_e302020")] E302020 = 302020,
+    /// <summary>
+    /// 皮帽
+    /// </summary>
+    [pbr::OriginalName("item_key_e302030")] E302030 = 302030,
+    /// <summary>
+    /// 铁盔
+    /// </summary>
+    [pbr::OriginalName("item_key_e302040")] E302040 = 302040,
+    /// <summary>
+    /// 钢盔
+    /// </summary>
+    [pbr::OriginalName("item_key_e302050")] E302050 = 302050,
+    /// <summary>
+    /// 高碳钢盔
+    /// </summary>
+    [pbr::OriginalName("item_key_e302060")] E302060 = 302060,
+    /// <summary>
+    /// 斯拉夫头盔
+    /// </summary>
+    [pbr::OriginalName("item_key_e302070")] E302070 = 302070,
+    /// <summary>
+    /// 复合材料头盔
+    /// </summary>
+    [pbr::OriginalName("item_key_e302080")] E302080 = 302080,
+    /// <summary>
+    /// 合金头盔
+    /// </summary>
+    [pbr::OriginalName("item_key_e302090")] E302090 = 302090,
+    /// <summary>
+    /// 皮甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303010")] E303010 = 303010,
+    /// <summary>
+    /// 铁甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303020")] E303020 = 303020,
+    /// <summary>
+    /// 钢甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303030")] E303030 = 303030,
+    /// <summary>
+    /// 高碳钢胸甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303040")] E303040 = 303040,
+    /// <summary>
+    /// 斯拉夫胸甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303050")] E303050 = 303050,
+    /// <summary>
+    /// 复合材料胸甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303060")] E303060 = 303060,
+    /// <summary>
+    /// 合金胸甲
+    /// </summary>
+    [pbr::OriginalName("item_key_e303070")] E303070 = 303070,
+    /// <summary>
+    /// 皮护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304010")] E304010 = 304010,
+    /// <summary>
+    /// 铁护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304020")] E304020 = 304020,
+    /// <summary>
+    /// 钢护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304030")] E304030 = 304030,
+    /// <summary>
+    /// 高碳钢护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304040")] E304040 = 304040,
+    /// <summary>
+    /// 斯拉夫护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304050")] E304050 = 304050,
+    /// <summary>
+    /// 复合材料护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304060")] E304060 = 304060,
+    /// <summary>
+    /// 合金护腕
+    /// </summary>
+    [pbr::OriginalName("item_key_e304070")] E304070 = 304070,
+    /// <summary>
+    /// 皮护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305010")] E305010 = 305010,
+    /// <summary>
+    /// 铁护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305020")] E305020 = 305020,
+    /// <summary>
+    /// 钢护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305030")] E305030 = 305030,
+    /// <summary>
+    /// 高碳钢护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305040")] E305040 = 305040,
+    /// <summary>
+    /// 斯拉夫护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305050")] E305050 = 305050,
+    /// <summary>
+    /// 复合材料护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305060")] E305060 = 305060,
+    /// <summary>
+    /// 合金护膝
+    /// </summary>
+    [pbr::OriginalName("item_key_e305070")] E305070 = 305070,
+    /// <summary>
+    /// 布背包
+    /// </summary>
+    [pbr::OriginalName("item_key_e306010")] E306010 = 306010,
+    /// <summary>
+    /// 皮革背包
+    /// </summary>
+    [pbr::OriginalName("item_key_e306020")] E306020 = 306020,
+    /// <summary>
+    /// 大背包
+    /// </summary>
+    [pbr::OriginalName("item_key_e306030")] E306030 = 306030,
+    /// <summary>
+    /// 负重大背包
+    /// </summary>
+    [pbr::OriginalName("item_key_e306040")] E306040 = 306040,
+    /// <summary>
+    /// 燃烧瓶
+    /// </summary>
+    [pbr::OriginalName("item_key_e308010")] E308010 = 308010,
+    /// <summary>
+    /// 土雷
+    /// </summary>
+    [pbr::OriginalName("item_key_e308020")] E308020 = 308020,
+    /// <summary>
+    /// 木柄手榴弹
+    /// </summary>
+    [pbr::OriginalName("item_key_e308030")] E308030 = 308030,
+    /// <summary>
+    /// 炸药包
+    /// </summary>
+    [pbr::OriginalName("item_key_e308040")] E308040 = 308040,
+    /// <summary>
+    /// 手雷
+    /// </summary>
+    [pbr::OriginalName("item_key_e308050")] E308050 = 308050,
+    /// <summary>
+    /// 反坦克雷
+    /// </summary>
+    [pbr::OriginalName("item_key_e308060")] E308060 = 308060,
+    /// <summary>
+    /// 胖子
+    /// </summary>
+    [pbr::OriginalName("item_key_e308070")] E308070 = 308070,
+    /// <summary>
+    /// 白T恤
+    /// </summary>
+    [pbr::OriginalName("item_key_e309010")] E309010 = 309010,
+    /// <summary>
+    /// 白衬衣
+    /// </summary>
+    [pbr::OriginalName("item_key_e309020")] E309020 = 309020,
+    /// <summary>
+    /// 夹克
+    /// </summary>
+    [pbr::OriginalName("item_key_e309030")] E309030 = 309030,
+    /// <summary>
+    /// 皮夹克
+    /// </summary>
+    [pbr::OriginalName("item_key_e309040")] E309040 = 309040,
+    /// <summary>
+    /// 警服
+    /// </summary>
+    [pbr::OriginalName("item_key_e309050")] E309050 = 309050,
+    /// <summary>
+    /// 防爆服
+    /// </summary>
+    [pbr::OriginalName("item_key_e309060")] E309060 = 309060,
+    /// <summary>
+    /// 布裤子
+    /// </summary>
+    [pbr::OriginalName("item_key_e310010")] E310010 = 310010,
+    /// <summary>
+    /// 休闲裤
+    /// </summary>
+    [pbr::OriginalName("item_key_e310020")] E310020 = 310020,
+    /// <summary>
+    /// 牛仔裤
+    /// </summary>
+    [pbr::OriginalName("item_key_e310030")] E310030 = 310030,
+    /// <summary>
+    /// 皮裤
+    /// </summary>
+    [pbr::OriginalName("item_key_e310040")] E310040 = 310040,
+    /// <summary>
+    /// 警服裤
+    /// </summary>
+    [pbr::OriginalName("item_key_e310050")] E310050 = 310050,
+    /// <summary>
+    /// 帆布鞋
+    /// </summary>
+    [pbr::OriginalName("item_key_e311010")] E311010 = 311010,
+    /// <summary>
+    /// 休闲鞋
+    /// </summary>
+    [pbr::OriginalName("item_key_e311020")] E311020 = 311020,
+    /// <summary>
+    /// 登山鞋
+    /// </summary>
+    [pbr::OriginalName("item_key_e311030")] E311030 = 311030,
+    /// <summary>
+    /// 皮鞋
+    /// </summary>
+    [pbr::OriginalName("item_key_e311040")] E311040 = 311040,
+    /// <summary>
+    /// 军靴
+    /// </summary>
+    [pbr::OriginalName("item_key_e311050")] E311050 = 311050,
+    /// <summary>
+    /// 午餐肉罐头
+    /// </summary>
+    [pbr::OriginalName("item_key_e400010")] E400010 = 400010,
+    /// <summary>
+    /// 水果罐头
+    /// </summary>
+    [pbr::OriginalName("item_key_e400020")] E400020 = 400020,
+    /// <summary>
+    /// 蔬菜罐头
+    /// </summary>
+    [pbr::OriginalName("item_key_e400030")] E400030 = 400030,
+    /// <summary>
+    /// 肉罐头
+    /// </summary>
+    [pbr::OriginalName("item_key_e400040")] E400040 = 400040,
+    /// <summary>
+    /// 意大利肉酱面
+    /// </summary>
+    [pbr::OriginalName("item_key_e401010")] E401010 = 401010,
+    /// <summary>
+    /// 港式煲仔饭
+    /// </summary>
+    [pbr::OriginalName("item_key_e401020")] E401020 = 401020,
+    /// <summary>
+    /// 红酒烩牛肉
+    /// </summary>
+    [pbr::OriginalName("item_key_e401030")] E401030 = 401030,
+    /// <summary>
+    /// 炸鱼薯条
+    /// </summary>
+    [pbr::OriginalName("item_key_e401040")] E401040 = 401040,
+    /// <summary>
+    /// 麻辣炖锅
+    /// </summary>
+    [pbr::OriginalName("item_key_e401050")] E401050 = 401050,
+    /// <summary>
+    /// 香辣烤肉串
+    /// </summary>
+    [pbr::OriginalName("item_key_e401060")] E401060 = 401060,
+    /// <summary>
+    /// 烤培根蔬菜卷
+    /// </summary>
+    [pbr::OriginalName("item_key_e401070")] E401070 = 401070,
+    /// <summary>
+    /// 德式烤香肠
+    /// </summary>
+    [pbr::OriginalName("item_key_e401080")] E401080 = 401080,
+    /// <summary>
+    /// 什锦烤串
+    /// </summary>
+    [pbr::OriginalName("item_key_e401090")] E401090 = 401090,
+    /// <summary>
+    /// 麻辣烤鱼
+    /// </summary>
+    [pbr::OriginalName("item_key_e401100")] E401100 = 401100,
+    /// <summary>
+    /// 草莓蛋糕
+    /// </summary>
+    [pbr::OriginalName("item_key_e401110")] E401110 = 401110,
+    /// <summary>
+    /// 英式早餐盘
+    /// </summary>
+    [pbr::OriginalName("item_key_e401120")] E401120 = 401120,
+    /// <summary>
+    /// 土豆牛肉闷罐
+    /// </summary>
+    [pbr::OriginalName("item_key_e401130")] E401130 = 401130,
+    /// <summary>
+    /// 德克萨斯牛排
+    /// </summary>
+    [pbr::OriginalName("item_key_e401140")] E401140 = 401140,
+    /// <summary>
+    /// 牛肉海鲜披萨
+    /// </summary>
+    [pbr::OriginalName("item_key_e401150")] E401150 = 401150,
+    /// <summary>
+    /// 凯撒莎拉
+    /// </summary>
+    [pbr::OriginalName("item_key_e401160")] E401160 = 401160,
+    /// <summary>
+    /// 绷带
+    /// </summary>
+    [pbr::OriginalName("item_key_e402010")] E402010 = 402010,
+    /// <summary>
+    /// 夹骨板
+    /// </summary>
+    [pbr::OriginalName("item_key_e402020")] E402020 = 402020,
+    /// <summary>
+    /// 止血带
+    /// </summary>
+    [pbr::OriginalName("item_key_e402030")] E402030 = 402030,
+    /// <summary>
+    /// 肥皂
+    /// </summary>
+    [pbr::OriginalName("item_key_e402040")] E402040 = 402040,
+    /// <summary>
+    /// 消毒液
+    /// </summary>
+    [pbr::OriginalName("item_key_e402050")] E402050 = 402050,
+    /// <summary>
+    /// 消毒绷带
+    /// </summary>
+    [pbr::OriginalName("item_key_e402060")] E402060 = 402060,
+    /// <summary>
+    /// 石膏模具
+    /// </summary>
+    [pbr::OriginalName("item_key_e402070")] E402070 = 402070,
+    /// <summary>
+    /// 消炎药
+    /// </summary>
+    [pbr::OriginalName("item_key_e402080")] E402080 = 402080,
+    /// <summary>
+    /// 处方药
+    /// </summary>
+    [pbr::OriginalName("item_key_e402090")] E402090 = 402090,
+    /// <summary>
+    /// 输液瓶
+    /// </summary>
+    [pbr::OriginalName("item_key_e402100")] E402100 = 402100,
+    /// <summary>
+    /// 治疗针
+    /// </summary>
+    [pbr::OriginalName("item_key_e403010")] E403010 = 403010,
+    /// <summary>
+    /// 急救喷雾
+    /// </summary>
+    [pbr::OriginalName("item_key_e403020")] E403020 = 403020,
+    /// <summary>
+    /// 注射枪
+    /// </summary>
+    [pbr::OriginalName("item_key_e403030")] E403030 = 403030,
+    /// <summary>
+    /// 医疗包
+    /// </summary>
+    [pbr::OriginalName("item_key_e403040")] E403040 = 403040,
+  }
+
+  public enum hero_status {
+    /// <summary>
+    /// 空闲
+    /// </summary>
+    [pbr::OriginalName("hero_status_idle")] Idle = 0,
+    /// <summary>
+    /// 重伤
+    /// </summary>
+    [pbr::OriginalName("hero_status_hurt")] Hurt = 1,
+    /// <summary>
+    /// 沮丧
+    /// </summary>
+    [pbr::OriginalName("hero_status_sad")] Sad = 2,
+    /// <summary>
+    /// 工作中
+    /// </summary>
+    [pbr::OriginalName("hero_status_working")] Working = 3,
+    /// <summary>
+    /// 外出中
+    /// </summary>
+    [pbr::OriginalName("hero_status_out")] Out = 4,
+    /// <summary>
+    /// 待招募
+    /// </summary>
+    [pbr::OriginalName("hero_status_pending")] Pending = 10001,
+  }
+
+  public enum projectile_type {
+    /// <summary>
+    /// 空
+    /// </summary>
+    [pbr::OriginalName("projectile_type_null")] Null = 0,
+    /// <summary>
+    /// 手枪
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_pistol")] ActionPistol = 1,
+    /// <summary>
+    /// 冲锋枪
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_carbine")] ActionCarbine = 2,
+    /// <summary>
+    /// 散弹枪
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_shotgun")] ActionShotgun = 3,
+    /// <summary>
+    /// 狙击枪
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_snipergun")] ActionSnipergun = 4,
+    /// <summary>
+    /// 加特林
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_gatlin")] ActionGatlin = 5,
+    /// <summary>
+    /// 火箭筒
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_rocket")] ActionRocket = 6,
+    /// <summary>
+    /// 手雷
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_grenade")] ActionGrenade = 7,
+    /// <summary>
+    /// 普通直线
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_line")] ActionLine = 8,
+    /// <summary>
+    /// 普通抛物线
+    /// </summary>
+    [pbr::OriginalName("projectile_type_action_parabola")] ActionParabola = 9,
+  }
+
+  public enum job_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("job_type_none")] None = 0,
+    /// <summary>
+    /// 力量
+    /// </summary>
+    [pbr::OriginalName("job_type_strength")] Strength = 1,
+    /// <summary>
+    /// 体质
+    /// </summary>
+    [pbr::OriginalName("job_type_constitution")] Constitution = 2,
+    /// <summary>
+    /// 敏捷
+    /// </summary>
+    [pbr::OriginalName("job_type_agility")] Agility = 3,
+    /// <summary>
+    /// 智力
+    /// </summary>
+    [pbr::OriginalName("job_type_intelligence")] Intelligence = 4,
+    /// <summary>
+    /// 技巧
+    /// </summary>
+    [pbr::OriginalName("job_type_skill")] Skill = 5,
+  }
+
+  public enum hook {
+    /// <summary>
+    /// 场景
+    /// </summary>
+    [pbr::OriginalName("hook_world")] World = 0,
+    /// <summary>
+    /// 上半身
+    /// </summary>
+    [pbr::OriginalName("hook_upperbody")] Upperbody = 1,
+    /// <summary>
+    /// 腰部
+    /// </summary>
+    [pbr::OriginalName("hook_hips")] Hips = 2,
+    /// <summary>
+    /// 右手
+    /// </summary>
+    [pbr::OriginalName("hook_righthand")] Righthand = 3,
+    /// <summary>
+    /// 左手
+    /// </summary>
+    [pbr::OriginalName("hook_lefthand")] Lefthand = 4,
+    /// <summary>
+    /// 右脚
+    /// </summary>
+    [pbr::OriginalName("hook_rightfoot")] Rightfoot = 5,
+    /// <summary>
+    /// 左脚
+    /// </summary>
+    [pbr::OriginalName("hook_leftfoot")] Leftfoot = 6,
+    /// <summary>
+    /// 右锁骨
+    /// </summary>
+    [pbr::OriginalName("hook_rightclavice")] Rightclavice = 7,
+    /// <summary>
+    /// 左锁骨
+    /// </summary>
+    [pbr::OriginalName("hook_leftclavice")] Leftclavice = 8,
+    /// <summary>
+    /// 右胯
+    /// </summary>
+    [pbr::OriginalName("hook_rightcrotch")] Rightcrotch = 9,
+    /// <summary>
+    /// 左胯
+    /// </summary>
+    [pbr::OriginalName("hook_leftcrotch")] Leftcrotch = 10,
+    /// <summary>
+    /// 胸部
+    /// </summary>
+    [pbr::OriginalName("hook_chest")] Chest = 11,
+    /// <summary>
+    /// 头部
+    /// </summary>
+    [pbr::OriginalName("hook_head")] Head = 12,
+    /// <summary>
+    /// 脚底
+    /// </summary>
+    [pbr::OriginalName("hook_bottom")] Bottom = 13,
+    /// <summary>
+    /// 武器原点
+    /// </summary>
+    [pbr::OriginalName("hook_weapon")] Weapon = 19,
+    /// <summary>
+    /// 枪口
+    /// </summary>
+    [pbr::OriginalName("hook_muzzle")] Muzzle = 20,
+    /// <summary>
+    /// 枪身
+    /// </summary>
+    [pbr::OriginalName("hook_barrel")] Barrel = 21,
+    /// <summary>
+    /// 枪托
+    /// </summary>
+    [pbr::OriginalName("hook_butt")] Butt = 22,
+    /// <summary>
+    /// 瞄准镜
+    /// </summary>
+    [pbr::OriginalName("hook_scope")] Scope = 23,
+    /// <summary>
+    /// 弹匣
+    /// </summary>
+    [pbr::OriginalName("hook_clip")] Clip = 24,
+  }
+
+  public enum weapon_sub_type {
+    /// <summary>
+    /// 空
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_null")] Null = 0,
+    /// <summary>
+    /// 钝器
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_melee_blunt")] MeleeBlunt = 1,
+    /// <summary>
+    /// 利器
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_melee_edge")] MeleeEdge = 2,
+    /// <summary>
+    /// 近战重武器
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_melee_heavy")] MeleeHeavy = 3,
+    /// <summary>
+    /// 手枪
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_pistol")] RemotePistol = 4,
+    /// <summary>
+    /// 冲锋枪
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_carbine")] RemoteCarbine = 5,
+    /// <summary>
+    /// 散弹枪
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_shotgun")] RemoteShotgun = 6,
+    /// <summary>
+    /// 狙击枪
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_snipergun")] RemoteSnipergun = 7,
+    /// <summary>
+    /// 远程重武器
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_heavy")] RemoteHeavy = 8,
+    /// <summary>
+    /// 治疗装饰
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_treat")] RemoteTreat = 9,
+    /// <summary>
+    /// 爆炸装饰
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_blast")] RemoteBlast = 10,
+    /// <summary>
+    /// 加特林
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_gatlin")] RemoteGatlin = 11,
+    /// <summary>
+    /// 火箭筒
+    /// </summary>
+    [pbr::OriginalName("weapon_sub_type_remote_rocket")] RemoteRocket = 12,
+  }
+
+  public enum status_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("status_type_none")] None = 0,
+    /// <summary>
+    /// 流血
+    /// </summary>
+    [pbr::OriginalName("status_type_bleed")] Bleed = 1,
+    /// <summary>
+    /// 灼烧
+    /// </summary>
+    [pbr::OriginalName("status_type_firing")] Firing = 2,
+    /// <summary>
+    /// 减速
+    /// </summary>
+    [pbr::OriginalName("status_type_entangle")] Entangle = 3,
+    /// <summary>
+    /// 定身
+    /// </summary>
+    [pbr::OriginalName("status_type_immobilize")] Immobilize = 4,
+    /// <summary>
+    /// 晕眩
+    /// </summary>
+    [pbr::OriginalName("status_type_stun")] Stun = 5,
+    /// <summary>
+    /// 沉默
+    /// </summary>
+    [pbr::OriginalName("status_type_silence")] Silence = 6,
+    /// <summary>
+    /// 睡眠
+    /// </summary>
+    [pbr::OriginalName("status_type_sleep")] Sleep = 7,
+    /// <summary>
+    /// 恐惧
+    /// </summary>
+    [pbr::OriginalName("status_type_fear")] Fear = 8,
+    /// <summary>
+    /// 中毒
+    /// </summary>
+    [pbr::OriginalName("status_type_poisoning")] Poisoning = 9,
+    /// <summary>
+    /// 无敌
+    /// </summary>
+    [pbr::OriginalName("status_type_invincible")] Invincible = 10,
+    /// <summary>
+    /// 降低防御力
+    /// </summary>
+    [pbr::OriginalName("status_type_lower_def")] LowerDef = 11,
+    /// <summary>
+    /// 降低命中率
+    /// </summary>
+    [pbr::OriginalName("status_type_lower_accuracy")] LowerAccuracy = 12,
+    /// <summary>
+    /// 持续恢复
+    /// </summary>
+    [pbr::OriginalName("status_type_continue_regain")] ContinueRegain = 13,
+    /// <summary>
+    /// 增加防御力
+    /// </summary>
+    [pbr::OriginalName("status_type_enhance_def")] EnhanceDef = 14,
+    /// <summary>
+    /// 增加攻击力
+    /// </summary>
+    [pbr::OriginalName("status_type_enhance_atk")] EnhanceAtk = 15,
+  }
+
+  public enum item_parent_type {
+    /// <summary>
+    /// // protobuf的枚举首值必然要为0，因此这里必需检查如果在没有设置值为零的情况下，要添加一个为零的值
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_AutoSetZero")] AutoSetZero = 0,
+    /// <summary>
+    /// 仓库
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_warehouse")] Warehouse = 1,
+    /// <summary>
+    /// 加工工具
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_transform_tool")] TransformTool = 2,
+    /// <summary>
+    /// 英雄属性
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_hero_attr")] HeroAttr = 3,
+    /// <summary>
+    /// 英雄背包
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_hero_bag")] HeroBag = 4,
+    /// <summary>
+    /// 英雄装备
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_hero_equip")] HeroEquip = 5,
+    /// <summary>
+    /// 挂机固定奖励
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_battle_fixed_reward")] BattleFixedReward = 6,
+    /// <summary>
+    /// 挂机额外奖励
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_battle_additional_reward")] BattleAdditionalReward = 7,
+    /// <summary>
+    /// 下一个可建造等级的营车部件, item_parent_id为building.update_group
+    /// </summary>
+    [pbr::OriginalName("item_parent_type_next_level_car_unit")] NextLevelCarUnit = 8,
+  }
+
+  public enum buff_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("buff_type_none")] None = 0,
+    /// <summary>
+    /// 增益
+    /// </summary>
+    [pbr::OriginalName("buff_type_gain")] Gain = 1,
+    /// <summary>
+    /// 减益
+    /// </summary>
+    [pbr::OriginalName("buff_type_debuff")] Debuff = 2,
+  }
+
+  public enum effect_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("effect_type_none")] None = 0,
+    /// <summary>
+    /// 普通伤害
+    /// </summary>
+    [pbr::OriginalName("effect_type_general_harm")] GeneralHarm = 1,
+    /// <summary>
+    /// 爆炸伤害
+    /// </summary>
+    [pbr::OriginalName("effect_type_harm")] Harm = 2,
+    /// <summary>
+    /// 治疗效果
+    /// </summary>
+    [pbr::OriginalName("effect_type_effect")] Effect = 3,
+  }
+
+  public enum hero_quality {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("hero_quality_none")] None = 0,
+    /// <summary>
+    /// 1星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality1")] Quality1 = 1,
+    /// <summary>
+    /// 2星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality2")] Quality2 = 2,
+    /// <summary>
+    /// 3星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality3")] Quality3 = 3,
+    /// <summary>
+    /// 4星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality4")] Quality4 = 4,
+    /// <summary>
+    /// 5星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality5")] Quality5 = 5,
+    /// <summary>
+    /// 6星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality6")] Quality6 = 6,
+    /// <summary>
+    /// 7星
+    /// </summary>
+    [pbr::OriginalName("hero_quality_quality7")] Quality7 = 7,
+  }
+
+  public enum box_drop_type {
+    /// <summary>
+    /// 不掉落
+    /// </summary>
+    [pbr::OriginalName("box_drop_type_ignore")] Ignore = 0,
+    /// <summary>
+    /// 必定掉落
+    /// </summary>
+    [pbr::OriginalName("box_drop_type_always")] Always = 1,
+    /// <summary>
+    /// 每一项都是weight/10000的掉落几率
+    /// </summary>
+    [pbr::OriginalName("box_drop_type_each")] Each = 2,
+    /// <summary>
+    /// 相同box_id的box_drop记录, 根据weight权重掉落一项
+    /// </summary>
+    [pbr::OriginalName("box_drop_type_one")] One = 3,
+  }
+
+  public enum item_detail_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_none")] None = 0,
+    /// <summary>
+    /// 最大生命值
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_max_hp")] MaxHp = 10001,
+    /// <summary>
+    /// 当前生命值
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_cur_hp")] CurHp = 10002,
+    /// <summary>
+    /// 攻击力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack")] Attack = 10003,
+    /// <summary>
+    /// 攻击速度
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack_speed")] AttackSpeed = 10004,
+    /// <summary>
+    /// 攻击距离
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack_distance")] AttackDistance = 10005,
+    /// <summary>
+    /// 攻击范围
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack_range")] AttackRange = 10006,
+    /// <summary>
+    /// 攻击角度
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack_angle")] AttackAngle = 10007,
+    /// <summary>
+    /// 换弹速度
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_reload_speed")] ReloadSpeed = 10008,
+    /// <summary>
+    /// 弹夹容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_clip")] Clip = 10009,
+    /// <summary>
+    /// 暴击率
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_crit_rate")] CritRate = 10010,
+    /// <summary>
+    /// 暴击伤害
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_crit_damge")] CritDamge = 10011,
+    /// <summary>
+    /// 命中率
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_hit_rate")] HitRate = 10012,
+    /// <summary>
+    /// 穿透性
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_pierce")] Pierce = 10013,
+    /// <summary>
+    /// 防御力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_defend")] Defend = 10014,
+    /// <summary>
+    /// 韧性
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_wilful")] Wilful = 10015,
+    /// <summary>
+    /// 伤害减免
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_damage_reduction")] DamageReduction = 10016,
+    /// <summary>
+    /// 闪躲
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_doge")] Doge = 10017,
+    /// <summary>
+    /// 移动速度
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_move_speed")] MoveSpeed = 10018,
+    /// <summary>
+    /// 强壮
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_strong")] Strong = 10019,
+    /// <summary>
+    /// 体质
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_physique")] Physique = 10020,
+    /// <summary>
+    /// 敏捷
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_agl")] Agl = 10021,
+    /// <summary>
+    /// 智力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_int")] Int = 10022,
+    /// <summary>
+    /// 幸运
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_lucky")] Lucky = 10023,
+    /// <summary>
+    /// 爆炸效果
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_explode")] Explode = 10024,
+    /// <summary>
+    /// 医疗效果
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_treat")] Treat = 10025,
+    /// <summary>
+    /// 近战命中判定时间
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_melee_hit_time")] MeleeHitTime = 10026,
+    /// <summary>
+    /// 等级成长生命值
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_hp")] GrowHp = 10027,
+    /// <summary>
+    /// 等级成长攻击力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_attack")] GrowAttack = 10028,
+    /// <summary>
+    /// 等级成长防御力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_defend")] GrowDefend = 10029,
+    /// <summary>
+    /// 等级成长命中率
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_hit")] GrowHit = 10030,
+    /// <summary>
+    /// 等级成长躲闪
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_doge")] GrowDoge = 10031,
+    /// <summary>
+    /// 等级成长爆炸伤害
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_expode")] GrowExpode = 10032,
+    /// <summary>
+    /// 等级成长医疗效果
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_treat")] GrowTreat = 10033,
+    /// <summary>
+    /// 等级成长暴击率
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_crit_rate")] GrowCritRate = 10034,
+    /// <summary>
+    /// 等级成长暴击伤害
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_grow_crit_damge")] GrowCritDamge = 10035,
+    /// <summary>
+    /// 攻击次数
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack_times")] AttackTimes = 10036,
+    /// <summary>
+    /// 攻击间隔
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_attack_interval")] AttackInterval = 10037,
+    /// <summary>
+    /// 视野范围
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_view_range")] ViewRange = 10038,
+    /// <summary>
+    /// 威胁距离
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_danger_range")] DangerRange = 10039,
+    /// <summary>
+    /// 躲避距离
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_doge_range")] DogeRange = 10040,
+    /// <summary>
+    /// 转身速度
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_rotation_speed")] RotationSpeed = 10041,
+    /// <summary>
+    /// 格斗
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_wrestle_technology")] WrestleTechnology = 11001,
+    /// <summary>
+    /// 枪械
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_gun_technology")] GunTechnology = 11002,
+    /// <summary>
+    /// 爆炸
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_explode_technology")] ExplodeTechnology = 11003,
+    /// <summary>
+    /// 治疗
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_treat_technology")] TreatTechnology = 11004,
+    /// <summary>
+    /// 烹饪
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_cook_technology")] CookTechnology = 12001,
+    /// <summary>
+    /// 探索
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_probe_technology")] ProbeTechnology = 12002,
+    /// <summary>
+    /// 加工
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_machining_technology")] MachiningTechnology = 12003,
+    /// <summary>
+    /// 电子
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_electron_technology")] ElectronTechnology = 12004,
+    /// <summary>
+    /// 医药
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_medica_technology")] MedicaTechnology = 12005,
+    /// <summary>
+    /// 化工
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_chemical_technology")] ChemicalTechnology = 12006,
+    /// <summary>
+    /// 缝纫
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_sewing_technology")] SewingTechnology = 12007,
+    /// <summary>
+    /// 机械
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_mechanism_technology")] MechanismTechnology = 12008,
+    /// <summary>
+    /// 战斗等级
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_fight_level")] FightLevel = 12009,
+    /// <summary>
+    /// 饱食度
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_satiety")] Satiety = 13001,
+    /// <summary>
+    /// 电池
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_cell")] Cell = 13002,
+    /// <summary>
+    /// 钻石
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_diamond")] Diamond = 13003,
+    /// <summary>
+    /// 燃料
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_fuel")] Fuel = 13004,
+    /// <summary>
+    /// 设备容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_equipment_capacity")] EquipmentCapacity = 14001,
+    /// <summary>
+    /// 仓库容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_warehouse_capacity")] WarehouseCapacity = 14002,
+    /// <summary>
+    /// 座舱容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_cockpit_capacity")] CockpitCapacity = 14003,
+    /// <summary>
+    /// 最大马力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_horsepower_max")] HorsepowerMax = 14004,
+    /// <summary>
+    /// 油箱容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_fuel_tank_capacity")] FuelTankCapacity = 14005,
+    /// <summary>
+    /// 提供电力
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_power_supply")] PowerSupply = 14006,
+    /// <summary>
+    /// 仓库2容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_warehouse_capacity2")] WarehouseCapacity2 = 14007,
+    /// <summary>
+    /// 仓库3容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_warehouse_capacity3")] WarehouseCapacity3 = 14008,
+    /// <summary>
+    /// 仓库4容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_warehouse_capacity4")] WarehouseCapacity4 = 14009,
+    /// <summary>
+    /// 仓库5容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_warehouse_capacity5")] WarehouseCapacity5 = 14010,
+    /// <summary>
+    /// 仓库6容量
+    /// </summary>
+    [pbr::OriginalName("item_detail_type_warehouse_capacity6")] WarehouseCapacity6 = 14011,
+  }
+
+  public enum weapon_type {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("weapon_type_weapon_none")] WeaponNone = 0,
+    /// <summary>
+    /// 近战武器
+    /// </summary>
+    [pbr::OriginalName("weapon_type_weapon_melee")] WeaponMelee = 1,
+    /// <summary>
+    /// 远程武器
+    /// </summary>
+    [pbr::OriginalName("weapon_type_weapon_remote")] WeaponRemote = 2,
+  }
+
+  public enum wear_pos {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("wear_pos_none")] None = 0,
+    /// <summary>
+    /// 武器
+    /// </summary>
+    [pbr::OriginalName("wear_pos_weapon")] Weapon = 1,
+    /// <summary>
+    /// 饰品（副手）
+    /// </summary>
+    [pbr::OriginalName("wear_pos_ornament")] Ornament = 2,
+    /// <summary>
+    /// 时装-衣服
+    /// </summary>
+    [pbr::OriginalName("wear_pos_clothes")] Clothes = 3,
+    /// <summary>
+    /// 时装-裤子
+    /// </summary>
+    [pbr::OriginalName("wear_pos_pants")] Pants = 4,
+    /// <summary>
+    /// 时装-鞋子
+    /// </summary>
+    [pbr::OriginalName("wear_pos_shoe")] Shoe = 5,
+    /// <summary>
+    /// 装备-护胸
+    /// </summary>
+    [pbr::OriginalName("wear_pos_plate")] Plate = 6,
+    /// <summary>
+    /// 装备-护腿
+    /// </summary>
+    [pbr::OriginalName("wear_pos_legguard")] Legguard = 7,
+    /// <summary>
+    /// 装备-护臂
+    /// </summary>
+    [pbr::OriginalName("wear_pos_barcer")] Barcer = 8,
+    /// <summary>
+    /// 头部
+    /// </summary>
+    [pbr::OriginalName("wear_pos_head")] Head = 9,
+    /// <summary>
+    /// 背包
+    /// </summary>
+    [pbr::OriginalName("wear_pos_bag")] Bag = 10,
+  }
+
+  #endregion
+
   #region Messages
+  public sealed partial class weapon_effect : pb::IMessage<weapon_effect> {
+    private static readonly pb::MessageParser<weapon_effect> _parser = new pb::MessageParser<weapon_effect>(() => new weapon_effect());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<weapon_effect> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public weapon_effect() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public weapon_effect(weapon_effect other) : this() {
+      id_ = other.id_;
+      mark_ = other.mark_;
+      prefabId_ = other.prefabId_;
+      action_ = other.action_;
+      castPerformance_ = other.castPerformance_;
+      hitPerformance_ = other.hitPerformance_;
+      hitTime_ = other.hitTime_;
+      bloodPerformance_ = other.bloodPerformance_;
+      muzzle_ = other.muzzle_;
+      projectile_ = other.projectile_;
+      shellcase_ = other.shellcase_;
+      dummy_ = other.dummy_;
+      attackClipTime_ = other.attackClipTime_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public weapon_effect Clone() {
+      return new weapon_effect(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 2;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "prefab_id" field.</summary>
+    public const int PrefabIdFieldNumber = 3;
+    private int prefabId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PrefabId {
+      get { return prefabId_; }
+      set {
+        prefabId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "action" field.</summary>
+    public const int ActionFieldNumber = 4;
+    private global::Config.weapon_effect_action action_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.weapon_effect_action Action {
+      get { return action_; }
+      set {
+        action_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cast_performance" field.</summary>
+    public const int CastPerformanceFieldNumber = 5;
+    private int castPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CastPerformance {
+      get { return castPerformance_; }
+      set {
+        castPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_performance" field.</summary>
+    public const int HitPerformanceFieldNumber = 6;
+    private int hitPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitPerformance {
+      get { return hitPerformance_; }
+      set {
+        hitPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_time" field.</summary>
+    public const int HitTimeFieldNumber = 7;
+    private int hitTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitTime {
+      get { return hitTime_; }
+      set {
+        hitTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "blood_performance" field.</summary>
+    public const int BloodPerformanceFieldNumber = 8;
+    private int bloodPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BloodPerformance {
+      get { return bloodPerformance_; }
+      set {
+        bloodPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "muzzle" field.</summary>
+    public const int MuzzleFieldNumber = 9;
+    private int muzzle_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Muzzle {
+      get { return muzzle_; }
+      set {
+        muzzle_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "projectile" field.</summary>
+    public const int ProjectileFieldNumber = 10;
+    private int projectile_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Projectile {
+      get { return projectile_; }
+      set {
+        projectile_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "shellcase" field.</summary>
+    public const int ShellcaseFieldNumber = 11;
+    private int shellcase_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Shellcase {
+      get { return shellcase_; }
+      set {
+        shellcase_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dummy" field.</summary>
+    public const int DummyFieldNumber = 12;
+    private global::Config.hook dummy_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.hook Dummy {
+      get { return dummy_; }
+      set {
+        dummy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attack_clip_time" field.</summary>
+    public const int AttackClipTimeFieldNumber = 13;
+    private int attackClipTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttackClipTime {
+      get { return attackClipTime_; }
+      set {
+        attackClipTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as weapon_effect);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(weapon_effect other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Mark != other.Mark) return false;
+      if (PrefabId != other.PrefabId) return false;
+      if (Action != other.Action) return false;
+      if (CastPerformance != other.CastPerformance) return false;
+      if (HitPerformance != other.HitPerformance) return false;
+      if (HitTime != other.HitTime) return false;
+      if (BloodPerformance != other.BloodPerformance) return false;
+      if (Muzzle != other.Muzzle) return false;
+      if (Projectile != other.Projectile) return false;
+      if (Shellcase != other.Shellcase) return false;
+      if (Dummy != other.Dummy) return false;
+      if (AttackClipTime != other.AttackClipTime) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (PrefabId != 0) hash ^= PrefabId.GetHashCode();
+      if (Action != 0) hash ^= Action.GetHashCode();
+      if (CastPerformance != 0) hash ^= CastPerformance.GetHashCode();
+      if (HitPerformance != 0) hash ^= HitPerformance.GetHashCode();
+      if (HitTime != 0) hash ^= HitTime.GetHashCode();
+      if (BloodPerformance != 0) hash ^= BloodPerformance.GetHashCode();
+      if (Muzzle != 0) hash ^= Muzzle.GetHashCode();
+      if (Projectile != 0) hash ^= Projectile.GetHashCode();
+      if (Shellcase != 0) hash ^= Shellcase.GetHashCode();
+      if (Dummy != 0) hash ^= Dummy.GetHashCode();
+      if (AttackClipTime != 0) hash ^= AttackClipTime.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Mark);
+      }
+      if (PrefabId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PrefabId);
+      }
+      if (Action != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Action);
+      }
+      if (CastPerformance != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(CastPerformance);
+      }
+      if (HitPerformance != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(HitPerformance);
+      }
+      if (HitTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(HitTime);
+      }
+      if (BloodPerformance != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(BloodPerformance);
+      }
+      if (Muzzle != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Muzzle);
+      }
+      if (Projectile != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Projectile);
+      }
+      if (Shellcase != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Shellcase);
+      }
+      if (Dummy != 0) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Dummy);
+      }
+      if (AttackClipTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(AttackClipTime);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (PrefabId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PrefabId);
+      }
+      if (Action != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Action);
+      }
+      if (CastPerformance != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CastPerformance);
+      }
+      if (HitPerformance != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitPerformance);
+      }
+      if (HitTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitTime);
+      }
+      if (BloodPerformance != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BloodPerformance);
+      }
+      if (Muzzle != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Muzzle);
+      }
+      if (Projectile != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Projectile);
+      }
+      if (Shellcase != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Shellcase);
+      }
+      if (Dummy != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Dummy);
+      }
+      if (AttackClipTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttackClipTime);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(weapon_effect other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.PrefabId != 0) {
+        PrefabId = other.PrefabId;
+      }
+      if (other.Action != 0) {
+        Action = other.Action;
+      }
+      if (other.CastPerformance != 0) {
+        CastPerformance = other.CastPerformance;
+      }
+      if (other.HitPerformance != 0) {
+        HitPerformance = other.HitPerformance;
+      }
+      if (other.HitTime != 0) {
+        HitTime = other.HitTime;
+      }
+      if (other.BloodPerformance != 0) {
+        BloodPerformance = other.BloodPerformance;
+      }
+      if (other.Muzzle != 0) {
+        Muzzle = other.Muzzle;
+      }
+      if (other.Projectile != 0) {
+        Projectile = other.Projectile;
+      }
+      if (other.Shellcase != 0) {
+        Shellcase = other.Shellcase;
+      }
+      if (other.Dummy != 0) {
+        Dummy = other.Dummy;
+      }
+      if (other.AttackClipTime != 0) {
+        AttackClipTime = other.AttackClipTime;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 24: {
+            PrefabId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            action_ = (global::Config.weapon_effect_action) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            CastPerformance = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            HitPerformance = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            HitTime = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            BloodPerformance = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Muzzle = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Projectile = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Shellcase = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            dummy_ = (global::Config.hook) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            AttackClipTime = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class task_main : pb::IMessage<task_main> {
+    private static readonly pb::MessageParser<task_main> _parser = new pb::MessageParser<task_main>(() => new task_main());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<task_main> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public task_main() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public task_main(task_main other) : this() {
+      id_ = other.id_;
+      chapter_ = other.chapter_;
+      taskType_ = other.taskType_;
+      nameCn_ = other.nameCn_;
+      nameKey_ = other.nameKey_;
+      chapterDes_ = other.chapterDes_;
+      desCn_ = other.desCn_;
+      desKey_ = other.desKey_;
+      goalType_ = other.goalType_;
+      goalId_ = other.goalId_;
+      goalNum_ = other.goalNum_;
+      box_ = other.box_;
+      dialog_ = other.dialog_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public task_main Clone() {
+      return new task_main(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "chapter" field.</summary>
+    public const int ChapterFieldNumber = 2;
+    private int chapter_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Chapter {
+      get { return chapter_; }
+      set {
+        chapter_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "task_type" field.</summary>
+    public const int TaskTypeFieldNumber = 3;
+    private int taskType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TaskType {
+      get { return taskType_; }
+      set {
+        taskType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 4;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 5;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "chapter_des" field.</summary>
+    public const int ChapterDesFieldNumber = 6;
+    private int chapterDes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ChapterDes {
+      get { return chapterDes_; }
+      set {
+        chapterDes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "des_cn" field.</summary>
+    public const int DesCnFieldNumber = 7;
+    private string desCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DesCn {
+      get { return desCn_; }
+      set {
+        desCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "des_key" field.</summary>
+    public const int DesKeyFieldNumber = 8;
+    private string desKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DesKey {
+      get { return desKey_; }
+      set {
+        desKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "goal_type" field.</summary>
+    public const int GoalTypeFieldNumber = 9;
+    private global::Config.task_goal_type goalType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.task_goal_type GoalType {
+      get { return goalType_; }
+      set {
+        goalType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "goal_id" field.</summary>
+    public const int GoalIdFieldNumber = 10;
+    private int goalId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int GoalId {
+      get { return goalId_; }
+      set {
+        goalId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "goal_num" field.</summary>
+    public const int GoalNumFieldNumber = 11;
+    private int goalNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int GoalNum {
+      get { return goalNum_; }
+      set {
+        goalNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box" field.</summary>
+    public const int BoxFieldNumber = 12;
+    private int box_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Box {
+      get { return box_; }
+      set {
+        box_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dialog" field.</summary>
+    public const int DialogFieldNumber = 13;
+    private static readonly pb::FieldCodec<int> _repeated_dialog_codec
+        = pb::FieldCodec.ForInt32(106);
+    private readonly pbc::RepeatedField<int> dialog_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Dialog {
+      get { return dialog_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as task_main);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(task_main other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Chapter != other.Chapter) return false;
+      if (TaskType != other.TaskType) return false;
+      if (NameCn != other.NameCn) return false;
+      if (NameKey != other.NameKey) return false;
+      if (ChapterDes != other.ChapterDes) return false;
+      if (DesCn != other.DesCn) return false;
+      if (DesKey != other.DesKey) return false;
+      if (GoalType != other.GoalType) return false;
+      if (GoalId != other.GoalId) return false;
+      if (GoalNum != other.GoalNum) return false;
+      if (Box != other.Box) return false;
+      if(!dialog_.Equals(other.dialog_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Chapter != 0) hash ^= Chapter.GetHashCode();
+      if (TaskType != 0) hash ^= TaskType.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (ChapterDes != 0) hash ^= ChapterDes.GetHashCode();
+      if (DesCn.Length != 0) hash ^= DesCn.GetHashCode();
+      if (DesKey.Length != 0) hash ^= DesKey.GetHashCode();
+      if (GoalType != 0) hash ^= GoalType.GetHashCode();
+      if (GoalId != 0) hash ^= GoalId.GetHashCode();
+      if (GoalNum != 0) hash ^= GoalNum.GetHashCode();
+      if (Box != 0) hash ^= Box.GetHashCode();
+      hash ^= dialog_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Chapter != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Chapter);
+      }
+      if (TaskType != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(TaskType);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(NameCn);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(NameKey);
+      }
+      if (ChapterDes != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(ChapterDes);
+      }
+      if (DesCn.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(DesCn);
+      }
+      if (DesKey.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(DesKey);
+      }
+      if (GoalType != 0) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) GoalType);
+      }
+      if (GoalId != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(GoalId);
+      }
+      if (GoalNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(GoalNum);
+      }
+      if (Box != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Box);
+      }
+      dialog_.WriteTo(output, _repeated_dialog_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Chapter != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Chapter);
+      }
+      if (TaskType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TaskType);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (ChapterDes != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChapterDes);
+      }
+      if (DesCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DesCn);
+      }
+      if (DesKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DesKey);
+      }
+      if (GoalType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GoalType);
+      }
+      if (GoalId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GoalId);
+      }
+      if (GoalNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GoalNum);
+      }
+      if (Box != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Box);
+      }
+      size += dialog_.CalculateSize(_repeated_dialog_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(task_main other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Chapter != 0) {
+        Chapter = other.Chapter;
+      }
+      if (other.TaskType != 0) {
+        TaskType = other.TaskType;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.ChapterDes != 0) {
+        ChapterDes = other.ChapterDes;
+      }
+      if (other.DesCn.Length != 0) {
+        DesCn = other.DesCn;
+      }
+      if (other.DesKey.Length != 0) {
+        DesKey = other.DesKey;
+      }
+      if (other.GoalType != 0) {
+        GoalType = other.GoalType;
+      }
+      if (other.GoalId != 0) {
+        GoalId = other.GoalId;
+      }
+      if (other.GoalNum != 0) {
+        GoalNum = other.GoalNum;
+      }
+      if (other.Box != 0) {
+        Box = other.Box;
+      }
+      dialog_.Add(other.dialog_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Chapter = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            TaskType = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 42: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 48: {
+            ChapterDes = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            DesCn = input.ReadString();
+            break;
+          }
+          case 66: {
+            DesKey = input.ReadString();
+            break;
+          }
+          case 72: {
+            goalType_ = (global::Config.task_goal_type) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            GoalId = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            GoalNum = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Box = input.ReadInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            dialog_.AddEntriesFrom(input, _repeated_dialog_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class hero_battle_status : pb::IMessage<hero_battle_status> {
+    private static readonly pb::MessageParser<hero_battle_status> _parser = new pb::MessageParser<hero_battle_status>(() => new hero_battle_status());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<hero_battle_status> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public hero_battle_status() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public hero_battle_status(hero_battle_status other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      desKey_ = other.desKey_;
+      statusEnum_ = other.statusEnum_;
+      statusType_ = other.statusType_;
+      time_ = other.time_;
+      rate_ = other.rate_;
+      item_ = other.item_.Clone();
+      recoverKey_ = other.recoverKey_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public hero_battle_status Clone() {
+      return new hero_battle_status(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "des_key" field.</summary>
+    public const int DesKeyFieldNumber = 3;
+    private string desKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DesKey {
+      get { return desKey_; }
+      set {
+        desKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "status_enum" field.</summary>
+    public const int StatusEnumFieldNumber = 4;
+    private global::Config.hero_status_enum statusEnum_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.hero_status_enum StatusEnum {
+      get { return statusEnum_; }
+      set {
+        statusEnum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "status_type" field.</summary>
+    public const int StatusTypeFieldNumber = 5;
+    private int statusType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StatusType {
+      get { return statusType_; }
+      set {
+        statusType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "time" field.</summary>
+    public const int TimeFieldNumber = 6;
+    private int time_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rate" field.</summary>
+    public const int RateFieldNumber = 7;
+    private int rate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Rate {
+      get { return rate_; }
+      set {
+        rate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item" field.</summary>
+    public const int ItemFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_item_codec
+        = pb::FieldCodec.ForInt32(66);
+    private readonly pbc::RepeatedField<int> item_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Item {
+      get { return item_; }
+    }
+
+    /// <summary>Field number for the "recover_key" field.</summary>
+    public const int RecoverKeyFieldNumber = 9;
+    private string recoverKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string RecoverKey {
+      get { return recoverKey_; }
+      set {
+        recoverKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as hero_battle_status);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(hero_battle_status other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (DesKey != other.DesKey) return false;
+      if (StatusEnum != other.StatusEnum) return false;
+      if (StatusType != other.StatusType) return false;
+      if (Time != other.Time) return false;
+      if (Rate != other.Rate) return false;
+      if(!item_.Equals(other.item_)) return false;
+      if (RecoverKey != other.RecoverKey) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (DesKey.Length != 0) hash ^= DesKey.GetHashCode();
+      if (StatusEnum != 0) hash ^= StatusEnum.GetHashCode();
+      if (StatusType != 0) hash ^= StatusType.GetHashCode();
+      if (Time != 0) hash ^= Time.GetHashCode();
+      if (Rate != 0) hash ^= Rate.GetHashCode();
+      hash ^= item_.GetHashCode();
+      if (RecoverKey.Length != 0) hash ^= RecoverKey.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (DesKey.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(DesKey);
+      }
+      if (StatusEnum != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) StatusEnum);
+      }
+      if (StatusType != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(StatusType);
+      }
+      if (Time != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Time);
+      }
+      if (Rate != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Rate);
+      }
+      item_.WriteTo(output, _repeated_item_codec);
+      if (RecoverKey.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(RecoverKey);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (DesKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DesKey);
+      }
+      if (StatusEnum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StatusEnum);
+      }
+      if (StatusType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StatusType);
+      }
+      if (Time != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Time);
+      }
+      if (Rate != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Rate);
+      }
+      size += item_.CalculateSize(_repeated_item_codec);
+      if (RecoverKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RecoverKey);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(hero_battle_status other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.DesKey.Length != 0) {
+        DesKey = other.DesKey;
+      }
+      if (other.StatusEnum != 0) {
+        StatusEnum = other.StatusEnum;
+      }
+      if (other.StatusType != 0) {
+        StatusType = other.StatusType;
+      }
+      if (other.Time != 0) {
+        Time = other.Time;
+      }
+      if (other.Rate != 0) {
+        Rate = other.Rate;
+      }
+      item_.Add(other.item_);
+      if (other.RecoverKey.Length != 0) {
+        RecoverKey = other.RecoverKey;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            DesKey = input.ReadString();
+            break;
+          }
+          case 32: {
+            statusEnum_ = (global::Config.hero_status_enum) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            StatusType = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Time = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            Rate = input.ReadInt32();
+            break;
+          }
+          case 66:
+          case 64: {
+            item_.AddEntriesFrom(input, _repeated_item_codec);
+            break;
+          }
+          case 74: {
+            RecoverKey = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class skill : pb::IMessage<skill> {
+    private static readonly pb::MessageParser<skill> _parser = new pb::MessageParser<skill>(() => new skill());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<skill> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public skill() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public skill(skill other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      introKey_ = other.introKey_;
+      introCn_ = other.introCn_;
+      castType_ = other.castType_;
+      level_ = other.level_;
+      cost_ = other.cost_;
+      performanceId_ = other.performanceId_;
+      projectileId_ = other.projectileId_;
+      hitPerformanceId_ = other.hitPerformanceId_;
+      beHitTime_ = other.beHitTime_;
+      bloodPerformance_ = other.bloodPerformance_;
+      buffArray_ = other.buffArray_.Clone();
+      weaponShape_ = other.weaponShape_;
+      startupTime_ = other.startupTime_;
+      activeTime_ = other.activeTime_;
+      hitTime_ = other.hitTime_.Clone();
+      recoverTime_ = other.recoverTime_;
+      skillRangeValue_ = other.skillRangeValue_;
+      targetAmount_ = other.targetAmount_;
+      targetCampType_ = other.targetCampType_;
+      targetSelectType_ = other.targetSelectType_;
+      targetType_ = other.targetType_;
+      invalidTargetType_ = other.invalidTargetType_;
+      triggerPosType_ = other.triggerPosType_;
+      triggerRangeType_ = other.triggerRangeType_;
+      triggerRangeValue_ = other.triggerRangeValue_.Clone();
+      effectiveTime_ = other.effectiveTime_;
+      triggerPerformance_ = other.triggerPerformance_;
+      triggerUnitPerformance_ = other.triggerUnitPerformance_;
+      triggerSinglePerformance_ = other.triggerSinglePerformance_;
+      triggerDuring_ = other.triggerDuring_;
+      triggerTick_ = other.triggerTick_;
+      triggerBuff_ = other.triggerBuff_.Clone();
+      cancelBuff_ = other.cancelBuff_;
+      damageEffectType_ = other.damageEffectType_;
+      damageEffectValue_ = other.damageEffectValue_;
+      addtiveDamageEffectType_ = other.addtiveDamageEffectType_;
+      addtiveDamageEffectFactor_ = other.addtiveDamageEffectFactor_;
+      designatedTargetType_ = other.designatedTargetType_;
+      designatedEffectType_ = other.designatedEffectType_;
+      designatedEffectValue_ = other.designatedEffectValue_;
+      iconId_ = other.iconId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public skill Clone() {
+      return new skill(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_key" field.</summary>
+    public const int IntroKeyFieldNumber = 4;
+    private string introKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroKey {
+      get { return introKey_; }
+      set {
+        introKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_cn" field.</summary>
+    public const int IntroCnFieldNumber = 5;
+    private string introCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroCn {
+      get { return introCn_; }
+      set {
+        introCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "cast_type" field.</summary>
+    public const int CastTypeFieldNumber = 6;
+    private global::Config.cast_type castType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.cast_type CastType {
+      get { return castType_; }
+      set {
+        castType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 7;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost" field.</summary>
+    public const int CostFieldNumber = 8;
+    private int cost_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Cost {
+      get { return cost_; }
+      set {
+        cost_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "performance_id" field.</summary>
+    public const int PerformanceIdFieldNumber = 9;
+    private int performanceId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PerformanceId {
+      get { return performanceId_; }
+      set {
+        performanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "projectile_id" field.</summary>
+    public const int ProjectileIdFieldNumber = 10;
+    private int projectileId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ProjectileId {
+      get { return projectileId_; }
+      set {
+        projectileId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_performance_id" field.</summary>
+    public const int HitPerformanceIdFieldNumber = 11;
+    private int hitPerformanceId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitPerformanceId {
+      get { return hitPerformanceId_; }
+      set {
+        hitPerformanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "be_hit_time" field.</summary>
+    public const int BeHitTimeFieldNumber = 12;
+    private int beHitTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BeHitTime {
+      get { return beHitTime_; }
+      set {
+        beHitTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "blood_performance" field.</summary>
+    public const int BloodPerformanceFieldNumber = 13;
+    private int bloodPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BloodPerformance {
+      get { return bloodPerformance_; }
+      set {
+        bloodPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_array" field.</summary>
+    public const int BuffArrayFieldNumber = 14;
+    private static readonly pb::FieldCodec<int> _repeated_buffArray_codec
+        = pb::FieldCodec.ForInt32(114);
+    private readonly pbc::RepeatedField<int> buffArray_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> BuffArray {
+      get { return buffArray_; }
+    }
+
+    /// <summary>Field number for the "weapon_shape" field.</summary>
+    public const int WeaponShapeFieldNumber = 15;
+    private int weaponShape_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int WeaponShape {
+      get { return weaponShape_; }
+      set {
+        weaponShape_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "startup_time" field.</summary>
+    public const int StartupTimeFieldNumber = 16;
+    private int startupTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StartupTime {
+      get { return startupTime_; }
+      set {
+        startupTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "active_time" field.</summary>
+    public const int ActiveTimeFieldNumber = 17;
+    private int activeTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActiveTime {
+      get { return activeTime_; }
+      set {
+        activeTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_time" field.</summary>
+    public const int HitTimeFieldNumber = 18;
+    private static readonly pb::FieldCodec<int> _repeated_hitTime_codec
+        = pb::FieldCodec.ForInt32(146);
+    private readonly pbc::RepeatedField<int> hitTime_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HitTime {
+      get { return hitTime_; }
+    }
+
+    /// <summary>Field number for the "recover_time" field.</summary>
+    public const int RecoverTimeFieldNumber = 19;
+    private int recoverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RecoverTime {
+      get { return recoverTime_; }
+      set {
+        recoverTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_range_value" field.</summary>
+    public const int SkillRangeValueFieldNumber = 20;
+    private int skillRangeValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SkillRangeValue {
+      get { return skillRangeValue_; }
+      set {
+        skillRangeValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_amount" field.</summary>
+    public const int TargetAmountFieldNumber = 21;
+    private int targetAmount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TargetAmount {
+      get { return targetAmount_; }
+      set {
+        targetAmount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_camp_type" field.</summary>
+    public const int TargetCampTypeFieldNumber = 22;
+    private global::Config.target_camp_type targetCampType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.target_camp_type TargetCampType {
+      get { return targetCampType_; }
+      set {
+        targetCampType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_select_type" field.</summary>
+    public const int TargetSelectTypeFieldNumber = 23;
+    private global::Config.target_select_type targetSelectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.target_select_type TargetSelectType {
+      get { return targetSelectType_; }
+      set {
+        targetSelectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_type" field.</summary>
+    public const int TargetTypeFieldNumber = 24;
+    private int targetType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TargetType {
+      get { return targetType_; }
+      set {
+        targetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "invalid_target_type" field.</summary>
+    public const int InvalidTargetTypeFieldNumber = 25;
+    private global::Config.race invalidTargetType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race InvalidTargetType {
+      get { return invalidTargetType_; }
+      set {
+        invalidTargetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_pos_type" field.</summary>
+    public const int TriggerPosTypeFieldNumber = 26;
+    private int triggerPosType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerPosType {
+      get { return triggerPosType_; }
+      set {
+        triggerPosType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_range_type" field.</summary>
+    public const int TriggerRangeTypeFieldNumber = 27;
+    private global::Config.range_type triggerRangeType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.range_type TriggerRangeType {
+      get { return triggerRangeType_; }
+      set {
+        triggerRangeType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_range_value" field.</summary>
+    public const int TriggerRangeValueFieldNumber = 28;
+    private static readonly pb::FieldCodec<int> _repeated_triggerRangeValue_codec
+        = pb::FieldCodec.ForInt32(226);
+    private readonly pbc::RepeatedField<int> triggerRangeValue_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TriggerRangeValue {
+      get { return triggerRangeValue_; }
+    }
+
+    /// <summary>Field number for the "effective_time" field.</summary>
+    public const int EffectiveTimeFieldNumber = 29;
+    private int effectiveTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EffectiveTime {
+      get { return effectiveTime_; }
+      set {
+        effectiveTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_performance" field.</summary>
+    public const int TriggerPerformanceFieldNumber = 30;
+    private int triggerPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerPerformance {
+      get { return triggerPerformance_; }
+      set {
+        triggerPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_unit_performance" field.</summary>
+    public const int TriggerUnitPerformanceFieldNumber = 31;
+    private int triggerUnitPerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerUnitPerformance {
+      get { return triggerUnitPerformance_; }
+      set {
+        triggerUnitPerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_single_performance" field.</summary>
+    public const int TriggerSinglePerformanceFieldNumber = 32;
+    private int triggerSinglePerformance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerSinglePerformance {
+      get { return triggerSinglePerformance_; }
+      set {
+        triggerSinglePerformance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_during" field.</summary>
+    public const int TriggerDuringFieldNumber = 33;
+    private int triggerDuring_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerDuring {
+      get { return triggerDuring_; }
+      set {
+        triggerDuring_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_tick" field.</summary>
+    public const int TriggerTickFieldNumber = 34;
+    private int triggerTick_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerTick {
+      get { return triggerTick_; }
+      set {
+        triggerTick_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_buff" field.</summary>
+    public const int TriggerBuffFieldNumber = 35;
+    private static readonly pb::FieldCodec<int> _repeated_triggerBuff_codec
+        = pb::FieldCodec.ForInt32(282);
+    private readonly pbc::RepeatedField<int> triggerBuff_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TriggerBuff {
+      get { return triggerBuff_; }
+    }
+
+    /// <summary>Field number for the "cancel_buff" field.</summary>
+    public const int CancelBuffFieldNumber = 36;
+    private bool cancelBuff_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CancelBuff {
+      get { return cancelBuff_; }
+      set {
+        cancelBuff_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_effect_type" field.</summary>
+    public const int DamageEffectTypeFieldNumber = 37;
+    private global::Config.effect_type damageEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.effect_type DamageEffectType {
+      get { return damageEffectType_; }
+      set {
+        damageEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_effect_value" field.</summary>
+    public const int DamageEffectValueFieldNumber = 38;
+    private int damageEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DamageEffectValue {
+      get { return damageEffectValue_; }
+      set {
+        damageEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_damage_effect_type" field.</summary>
+    public const int AddtiveDamageEffectTypeFieldNumber = 39;
+    private global::Config.item_detail_type addtiveDamageEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.item_detail_type AddtiveDamageEffectType {
+      get { return addtiveDamageEffectType_; }
+      set {
+        addtiveDamageEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_damage_effect_factor" field.</summary>
+    public const int AddtiveDamageEffectFactorFieldNumber = 40;
+    private int addtiveDamageEffectFactor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AddtiveDamageEffectFactor {
+      get { return addtiveDamageEffectFactor_; }
+      set {
+        addtiveDamageEffectFactor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_target_type" field.</summary>
+    public const int DesignatedTargetTypeFieldNumber = 41;
+    private global::Config.race designatedTargetType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race DesignatedTargetType {
+      get { return designatedTargetType_; }
+      set {
+        designatedTargetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_effect_type" field.</summary>
+    public const int DesignatedEffectTypeFieldNumber = 42;
+    private int designatedEffectType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DesignatedEffectType {
+      get { return designatedEffectType_; }
+      set {
+        designatedEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_effect_value" field.</summary>
+    public const int DesignatedEffectValueFieldNumber = 43;
+    private int designatedEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DesignatedEffectValue {
+      get { return designatedEffectValue_; }
+      set {
+        designatedEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "icon_id" field.</summary>
+    public const int IconIdFieldNumber = 44;
+    private int iconId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IconId {
+      get { return iconId_; }
+      set {
+        iconId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as skill);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(skill other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (IntroKey != other.IntroKey) return false;
+      if (IntroCn != other.IntroCn) return false;
+      if (CastType != other.CastType) return false;
+      if (Level != other.Level) return false;
+      if (Cost != other.Cost) return false;
+      if (PerformanceId != other.PerformanceId) return false;
+      if (ProjectileId != other.ProjectileId) return false;
+      if (HitPerformanceId != other.HitPerformanceId) return false;
+      if (BeHitTime != other.BeHitTime) return false;
+      if (BloodPerformance != other.BloodPerformance) return false;
+      if(!buffArray_.Equals(other.buffArray_)) return false;
+      if (WeaponShape != other.WeaponShape) return false;
+      if (StartupTime != other.StartupTime) return false;
+      if (ActiveTime != other.ActiveTime) return false;
+      if(!hitTime_.Equals(other.hitTime_)) return false;
+      if (RecoverTime != other.RecoverTime) return false;
+      if (SkillRangeValue != other.SkillRangeValue) return false;
+      if (TargetAmount != other.TargetAmount) return false;
+      if (TargetCampType != other.TargetCampType) return false;
+      if (TargetSelectType != other.TargetSelectType) return false;
+      if (TargetType != other.TargetType) return false;
+      if (InvalidTargetType != other.InvalidTargetType) return false;
+      if (TriggerPosType != other.TriggerPosType) return false;
+      if (TriggerRangeType != other.TriggerRangeType) return false;
+      if(!triggerRangeValue_.Equals(other.triggerRangeValue_)) return false;
+      if (EffectiveTime != other.EffectiveTime) return false;
+      if (TriggerPerformance != other.TriggerPerformance) return false;
+      if (TriggerUnitPerformance != other.TriggerUnitPerformance) return false;
+      if (TriggerSinglePerformance != other.TriggerSinglePerformance) return false;
+      if (TriggerDuring != other.TriggerDuring) return false;
+      if (TriggerTick != other.TriggerTick) return false;
+      if(!triggerBuff_.Equals(other.triggerBuff_)) return false;
+      if (CancelBuff != other.CancelBuff) return false;
+      if (DamageEffectType != other.DamageEffectType) return false;
+      if (DamageEffectValue != other.DamageEffectValue) return false;
+      if (AddtiveDamageEffectType != other.AddtiveDamageEffectType) return false;
+      if (AddtiveDamageEffectFactor != other.AddtiveDamageEffectFactor) return false;
+      if (DesignatedTargetType != other.DesignatedTargetType) return false;
+      if (DesignatedEffectType != other.DesignatedEffectType) return false;
+      if (DesignatedEffectValue != other.DesignatedEffectValue) return false;
+      if (IconId != other.IconId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (IntroKey.Length != 0) hash ^= IntroKey.GetHashCode();
+      if (IntroCn.Length != 0) hash ^= IntroCn.GetHashCode();
+      if (CastType != 0) hash ^= CastType.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (Cost != 0) hash ^= Cost.GetHashCode();
+      if (PerformanceId != 0) hash ^= PerformanceId.GetHashCode();
+      if (ProjectileId != 0) hash ^= ProjectileId.GetHashCode();
+      if (HitPerformanceId != 0) hash ^= HitPerformanceId.GetHashCode();
+      if (BeHitTime != 0) hash ^= BeHitTime.GetHashCode();
+      if (BloodPerformance != 0) hash ^= BloodPerformance.GetHashCode();
+      hash ^= buffArray_.GetHashCode();
+      if (WeaponShape != 0) hash ^= WeaponShape.GetHashCode();
+      if (StartupTime != 0) hash ^= StartupTime.GetHashCode();
+      if (ActiveTime != 0) hash ^= ActiveTime.GetHashCode();
+      hash ^= hitTime_.GetHashCode();
+      if (RecoverTime != 0) hash ^= RecoverTime.GetHashCode();
+      if (SkillRangeValue != 0) hash ^= SkillRangeValue.GetHashCode();
+      if (TargetAmount != 0) hash ^= TargetAmount.GetHashCode();
+      if (TargetCampType != 0) hash ^= TargetCampType.GetHashCode();
+      if (TargetSelectType != 0) hash ^= TargetSelectType.GetHashCode();
+      if (TargetType != 0) hash ^= TargetType.GetHashCode();
+      if (InvalidTargetType != 0) hash ^= InvalidTargetType.GetHashCode();
+      if (TriggerPosType != 0) hash ^= TriggerPosType.GetHashCode();
+      if (TriggerRangeType != 0) hash ^= TriggerRangeType.GetHashCode();
+      hash ^= triggerRangeValue_.GetHashCode();
+      if (EffectiveTime != 0) hash ^= EffectiveTime.GetHashCode();
+      if (TriggerPerformance != 0) hash ^= TriggerPerformance.GetHashCode();
+      if (TriggerUnitPerformance != 0) hash ^= TriggerUnitPerformance.GetHashCode();
+      if (TriggerSinglePerformance != 0) hash ^= TriggerSinglePerformance.GetHashCode();
+      if (TriggerDuring != 0) hash ^= TriggerDuring.GetHashCode();
+      if (TriggerTick != 0) hash ^= TriggerTick.GetHashCode();
+      hash ^= triggerBuff_.GetHashCode();
+      if (CancelBuff != false) hash ^= CancelBuff.GetHashCode();
+      if (DamageEffectType != 0) hash ^= DamageEffectType.GetHashCode();
+      if (DamageEffectValue != 0) hash ^= DamageEffectValue.GetHashCode();
+      if (AddtiveDamageEffectType != 0) hash ^= AddtiveDamageEffectType.GetHashCode();
+      if (AddtiveDamageEffectFactor != 0) hash ^= AddtiveDamageEffectFactor.GetHashCode();
+      if (DesignatedTargetType != 0) hash ^= DesignatedTargetType.GetHashCode();
+      if (DesignatedEffectType != 0) hash ^= DesignatedEffectType.GetHashCode();
+      if (DesignatedEffectValue != 0) hash ^= DesignatedEffectValue.GetHashCode();
+      if (IconId != 0) hash ^= IconId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(IntroKey);
+      }
+      if (IntroCn.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(IntroCn);
+      }
+      if (CastType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) CastType);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Level);
+      }
+      if (Cost != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Cost);
+      }
+      if (PerformanceId != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(PerformanceId);
+      }
+      if (ProjectileId != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(ProjectileId);
+      }
+      if (HitPerformanceId != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(HitPerformanceId);
+      }
+      if (BeHitTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(BeHitTime);
+      }
+      if (BloodPerformance != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(BloodPerformance);
+      }
+      buffArray_.WriteTo(output, _repeated_buffArray_codec);
+      if (WeaponShape != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(WeaponShape);
+      }
+      if (StartupTime != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(StartupTime);
+      }
+      if (ActiveTime != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(ActiveTime);
+      }
+      hitTime_.WriteTo(output, _repeated_hitTime_codec);
+      if (RecoverTime != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(RecoverTime);
+      }
+      if (SkillRangeValue != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(SkillRangeValue);
+      }
+      if (TargetAmount != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(TargetAmount);
+      }
+      if (TargetCampType != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteEnum((int) TargetCampType);
+      }
+      if (TargetSelectType != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteEnum((int) TargetSelectType);
+      }
+      if (TargetType != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(TargetType);
+      }
+      if (InvalidTargetType != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteEnum((int) InvalidTargetType);
+      }
+      if (TriggerPosType != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(TriggerPosType);
+      }
+      if (TriggerRangeType != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteEnum((int) TriggerRangeType);
+      }
+      triggerRangeValue_.WriteTo(output, _repeated_triggerRangeValue_codec);
+      if (EffectiveTime != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(EffectiveTime);
+      }
+      if (TriggerPerformance != 0) {
+        output.WriteRawTag(240, 1);
+        output.WriteInt32(TriggerPerformance);
+      }
+      if (TriggerUnitPerformance != 0) {
+        output.WriteRawTag(248, 1);
+        output.WriteInt32(TriggerUnitPerformance);
+      }
+      if (TriggerSinglePerformance != 0) {
+        output.WriteRawTag(128, 2);
+        output.WriteInt32(TriggerSinglePerformance);
+      }
+      if (TriggerDuring != 0) {
+        output.WriteRawTag(136, 2);
+        output.WriteInt32(TriggerDuring);
+      }
+      if (TriggerTick != 0) {
+        output.WriteRawTag(144, 2);
+        output.WriteInt32(TriggerTick);
+      }
+      triggerBuff_.WriteTo(output, _repeated_triggerBuff_codec);
+      if (CancelBuff != false) {
+        output.WriteRawTag(160, 2);
+        output.WriteBool(CancelBuff);
+      }
+      if (DamageEffectType != 0) {
+        output.WriteRawTag(168, 2);
+        output.WriteEnum((int) DamageEffectType);
+      }
+      if (DamageEffectValue != 0) {
+        output.WriteRawTag(176, 2);
+        output.WriteInt32(DamageEffectValue);
+      }
+      if (AddtiveDamageEffectType != 0) {
+        output.WriteRawTag(184, 2);
+        output.WriteEnum((int) AddtiveDamageEffectType);
+      }
+      if (AddtiveDamageEffectFactor != 0) {
+        output.WriteRawTag(192, 2);
+        output.WriteInt32(AddtiveDamageEffectFactor);
+      }
+      if (DesignatedTargetType != 0) {
+        output.WriteRawTag(200, 2);
+        output.WriteEnum((int) DesignatedTargetType);
+      }
+      if (DesignatedEffectType != 0) {
+        output.WriteRawTag(208, 2);
+        output.WriteInt32(DesignatedEffectType);
+      }
+      if (DesignatedEffectValue != 0) {
+        output.WriteRawTag(216, 2);
+        output.WriteInt32(DesignatedEffectValue);
+      }
+      if (IconId != 0) {
+        output.WriteRawTag(224, 2);
+        output.WriteInt32(IconId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroKey);
+      }
+      if (IntroCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroCn);
+      }
+      if (CastType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CastType);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (Cost != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cost);
+      }
+      if (PerformanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PerformanceId);
+      }
+      if (ProjectileId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ProjectileId);
+      }
+      if (HitPerformanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitPerformanceId);
+      }
+      if (BeHitTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BeHitTime);
+      }
+      if (BloodPerformance != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BloodPerformance);
+      }
+      size += buffArray_.CalculateSize(_repeated_buffArray_codec);
+      if (WeaponShape != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeaponShape);
+      }
+      if (StartupTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(StartupTime);
+      }
+      if (ActiveTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ActiveTime);
+      }
+      size += hitTime_.CalculateSize(_repeated_hitTime_codec);
+      if (RecoverTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RecoverTime);
+      }
+      if (SkillRangeValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(SkillRangeValue);
+      }
+      if (TargetAmount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TargetAmount);
+      }
+      if (TargetCampType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) TargetCampType);
+      }
+      if (TargetSelectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) TargetSelectType);
+      }
+      if (TargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TargetType);
+      }
+      if (InvalidTargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) InvalidTargetType);
+      }
+      if (TriggerPosType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerPosType);
+      }
+      if (TriggerRangeType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) TriggerRangeType);
+      }
+      size += triggerRangeValue_.CalculateSize(_repeated_triggerRangeValue_codec);
+      if (EffectiveTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(EffectiveTime);
+      }
+      if (TriggerPerformance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerPerformance);
+      }
+      if (TriggerUnitPerformance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerUnitPerformance);
+      }
+      if (TriggerSinglePerformance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerSinglePerformance);
+      }
+      if (TriggerDuring != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerDuring);
+      }
+      if (TriggerTick != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TriggerTick);
+      }
+      size += triggerBuff_.CalculateSize(_repeated_triggerBuff_codec);
+      if (CancelBuff != false) {
+        size += 2 + 1;
+      }
+      if (DamageEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DamageEffectType);
+      }
+      if (DamageEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DamageEffectValue);
+      }
+      if (AddtiveDamageEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) AddtiveDamageEffectType);
+      }
+      if (AddtiveDamageEffectFactor != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AddtiveDamageEffectFactor);
+      }
+      if (DesignatedTargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DesignatedTargetType);
+      }
+      if (DesignatedEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DesignatedEffectType);
+      }
+      if (DesignatedEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DesignatedEffectValue);
+      }
+      if (IconId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(IconId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(skill other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.IntroKey.Length != 0) {
+        IntroKey = other.IntroKey;
+      }
+      if (other.IntroCn.Length != 0) {
+        IntroCn = other.IntroCn;
+      }
+      if (other.CastType != 0) {
+        CastType = other.CastType;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.Cost != 0) {
+        Cost = other.Cost;
+      }
+      if (other.PerformanceId != 0) {
+        PerformanceId = other.PerformanceId;
+      }
+      if (other.ProjectileId != 0) {
+        ProjectileId = other.ProjectileId;
+      }
+      if (other.HitPerformanceId != 0) {
+        HitPerformanceId = other.HitPerformanceId;
+      }
+      if (other.BeHitTime != 0) {
+        BeHitTime = other.BeHitTime;
+      }
+      if (other.BloodPerformance != 0) {
+        BloodPerformance = other.BloodPerformance;
+      }
+      buffArray_.Add(other.buffArray_);
+      if (other.WeaponShape != 0) {
+        WeaponShape = other.WeaponShape;
+      }
+      if (other.StartupTime != 0) {
+        StartupTime = other.StartupTime;
+      }
+      if (other.ActiveTime != 0) {
+        ActiveTime = other.ActiveTime;
+      }
+      hitTime_.Add(other.hitTime_);
+      if (other.RecoverTime != 0) {
+        RecoverTime = other.RecoverTime;
+      }
+      if (other.SkillRangeValue != 0) {
+        SkillRangeValue = other.SkillRangeValue;
+      }
+      if (other.TargetAmount != 0) {
+        TargetAmount = other.TargetAmount;
+      }
+      if (other.TargetCampType != 0) {
+        TargetCampType = other.TargetCampType;
+      }
+      if (other.TargetSelectType != 0) {
+        TargetSelectType = other.TargetSelectType;
+      }
+      if (other.TargetType != 0) {
+        TargetType = other.TargetType;
+      }
+      if (other.InvalidTargetType != 0) {
+        InvalidTargetType = other.InvalidTargetType;
+      }
+      if (other.TriggerPosType != 0) {
+        TriggerPosType = other.TriggerPosType;
+      }
+      if (other.TriggerRangeType != 0) {
+        TriggerRangeType = other.TriggerRangeType;
+      }
+      triggerRangeValue_.Add(other.triggerRangeValue_);
+      if (other.EffectiveTime != 0) {
+        EffectiveTime = other.EffectiveTime;
+      }
+      if (other.TriggerPerformance != 0) {
+        TriggerPerformance = other.TriggerPerformance;
+      }
+      if (other.TriggerUnitPerformance != 0) {
+        TriggerUnitPerformance = other.TriggerUnitPerformance;
+      }
+      if (other.TriggerSinglePerformance != 0) {
+        TriggerSinglePerformance = other.TriggerSinglePerformance;
+      }
+      if (other.TriggerDuring != 0) {
+        TriggerDuring = other.TriggerDuring;
+      }
+      if (other.TriggerTick != 0) {
+        TriggerTick = other.TriggerTick;
+      }
+      triggerBuff_.Add(other.triggerBuff_);
+      if (other.CancelBuff != false) {
+        CancelBuff = other.CancelBuff;
+      }
+      if (other.DamageEffectType != 0) {
+        DamageEffectType = other.DamageEffectType;
+      }
+      if (other.DamageEffectValue != 0) {
+        DamageEffectValue = other.DamageEffectValue;
+      }
+      if (other.AddtiveDamageEffectType != 0) {
+        AddtiveDamageEffectType = other.AddtiveDamageEffectType;
+      }
+      if (other.AddtiveDamageEffectFactor != 0) {
+        AddtiveDamageEffectFactor = other.AddtiveDamageEffectFactor;
+      }
+      if (other.DesignatedTargetType != 0) {
+        DesignatedTargetType = other.DesignatedTargetType;
+      }
+      if (other.DesignatedEffectType != 0) {
+        DesignatedEffectType = other.DesignatedEffectType;
+      }
+      if (other.DesignatedEffectValue != 0) {
+        DesignatedEffectValue = other.DesignatedEffectValue;
+      }
+      if (other.IconId != 0) {
+        IconId = other.IconId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 34: {
+            IntroKey = input.ReadString();
+            break;
+          }
+          case 42: {
+            IntroCn = input.ReadString();
+            break;
+          }
+          case 48: {
+            castType_ = (global::Config.cast_type) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Cost = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            PerformanceId = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            ProjectileId = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            HitPerformanceId = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            BeHitTime = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            BloodPerformance = input.ReadInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            buffArray_.AddEntriesFrom(input, _repeated_buffArray_codec);
+            break;
+          }
+          case 120: {
+            WeaponShape = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            StartupTime = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            ActiveTime = input.ReadInt32();
+            break;
+          }
+          case 146:
+          case 144: {
+            hitTime_.AddEntriesFrom(input, _repeated_hitTime_codec);
+            break;
+          }
+          case 152: {
+            RecoverTime = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            SkillRangeValue = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            TargetAmount = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            targetCampType_ = (global::Config.target_camp_type) input.ReadEnum();
+            break;
+          }
+          case 184: {
+            targetSelectType_ = (global::Config.target_select_type) input.ReadEnum();
+            break;
+          }
+          case 192: {
+            TargetType = input.ReadInt32();
+            break;
+          }
+          case 200: {
+            invalidTargetType_ = (global::Config.race) input.ReadEnum();
+            break;
+          }
+          case 208: {
+            TriggerPosType = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            triggerRangeType_ = (global::Config.range_type) input.ReadEnum();
+            break;
+          }
+          case 226:
+          case 224: {
+            triggerRangeValue_.AddEntriesFrom(input, _repeated_triggerRangeValue_codec);
+            break;
+          }
+          case 232: {
+            EffectiveTime = input.ReadInt32();
+            break;
+          }
+          case 240: {
+            TriggerPerformance = input.ReadInt32();
+            break;
+          }
+          case 248: {
+            TriggerUnitPerformance = input.ReadInt32();
+            break;
+          }
+          case 256: {
+            TriggerSinglePerformance = input.ReadInt32();
+            break;
+          }
+          case 264: {
+            TriggerDuring = input.ReadInt32();
+            break;
+          }
+          case 272: {
+            TriggerTick = input.ReadInt32();
+            break;
+          }
+          case 282:
+          case 280: {
+            triggerBuff_.AddEntriesFrom(input, _repeated_triggerBuff_codec);
+            break;
+          }
+          case 288: {
+            CancelBuff = input.ReadBool();
+            break;
+          }
+          case 296: {
+            damageEffectType_ = (global::Config.effect_type) input.ReadEnum();
+            break;
+          }
+          case 304: {
+            DamageEffectValue = input.ReadInt32();
+            break;
+          }
+          case 312: {
+            addtiveDamageEffectType_ = (global::Config.item_detail_type) input.ReadEnum();
+            break;
+          }
+          case 320: {
+            AddtiveDamageEffectFactor = input.ReadInt32();
+            break;
+          }
+          case 328: {
+            designatedTargetType_ = (global::Config.race) input.ReadEnum();
+            break;
+          }
+          case 336: {
+            DesignatedEffectType = input.ReadInt32();
+            break;
+          }
+          case 344: {
+            DesignatedEffectValue = input.ReadInt32();
+            break;
+          }
+          case 352: {
+            IconId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class role_config : pb::IMessage<role_config> {
+    private static readonly pb::MessageParser<role_config> _parser = new pb::MessageParser<role_config>(() => new role_config());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<role_config> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public role_config() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public role_config(role_config other) : this() {
+      id_ = other.id_;
+      gender_ = other.gender_;
+      bodyType_ = other.bodyType_;
+      raceType_ = other.raceType_;
+      soundId_ = other.soundId_.Clone();
+      headId_ = other.headId_.Clone();
+      hatId_ = other.hatId_.Clone();
+      hairId_ = other.hairId_.Clone();
+      clothesId_ = other.clothesId_.Clone();
+      pantsId_ = other.pantsId_.Clone();
+      shoeId_ = other.shoeId_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public role_config Clone() {
+      return new role_config(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gender" field.</summary>
+    public const int GenderFieldNumber = 2;
+    private global::Config.gender gender_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.gender Gender {
+      get { return gender_; }
+      set {
+        gender_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "body_type" field.</summary>
+    public const int BodyTypeFieldNumber = 3;
+    private global::Config.body_type bodyType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.body_type BodyType {
+      get { return bodyType_; }
+      set {
+        bodyType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "race_type" field.</summary>
+    public const int RaceTypeFieldNumber = 4;
+    private global::Config.race_type raceType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race_type RaceType {
+      get { return raceType_; }
+      set {
+        raceType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sound_id" field.</summary>
+    public const int SoundIdFieldNumber = 5;
+    private static readonly pb::FieldCodec<int> _repeated_soundId_codec
+        = pb::FieldCodec.ForInt32(42);
+    private readonly pbc::RepeatedField<int> soundId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> SoundId {
+      get { return soundId_; }
+    }
+
+    /// <summary>Field number for the "head_id" field.</summary>
+    public const int HeadIdFieldNumber = 6;
+    private static readonly pb::FieldCodec<int> _repeated_headId_codec
+        = pb::FieldCodec.ForInt32(50);
+    private readonly pbc::RepeatedField<int> headId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HeadId {
+      get { return headId_; }
+    }
+
+    /// <summary>Field number for the "hat_id" field.</summary>
+    public const int HatIdFieldNumber = 7;
+    private static readonly pb::FieldCodec<int> _repeated_hatId_codec
+        = pb::FieldCodec.ForInt32(58);
+    private readonly pbc::RepeatedField<int> hatId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HatId {
+      get { return hatId_; }
+    }
+
+    /// <summary>Field number for the "hair_id" field.</summary>
+    public const int HairIdFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_hairId_codec
+        = pb::FieldCodec.ForInt32(66);
+    private readonly pbc::RepeatedField<int> hairId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HairId {
+      get { return hairId_; }
+    }
+
+    /// <summary>Field number for the "clothes_id" field.</summary>
+    public const int ClothesIdFieldNumber = 9;
+    private static readonly pb::FieldCodec<int> _repeated_clothesId_codec
+        = pb::FieldCodec.ForInt32(74);
+    private readonly pbc::RepeatedField<int> clothesId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> ClothesId {
+      get { return clothesId_; }
+    }
+
+    /// <summary>Field number for the "pants_id" field.</summary>
+    public const int PantsIdFieldNumber = 10;
+    private static readonly pb::FieldCodec<int> _repeated_pantsId_codec
+        = pb::FieldCodec.ForInt32(82);
+    private readonly pbc::RepeatedField<int> pantsId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> PantsId {
+      get { return pantsId_; }
+    }
+
+    /// <summary>Field number for the "shoe_id" field.</summary>
+    public const int ShoeIdFieldNumber = 11;
+    private static readonly pb::FieldCodec<int> _repeated_shoeId_codec
+        = pb::FieldCodec.ForInt32(90);
+    private readonly pbc::RepeatedField<int> shoeId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> ShoeId {
+      get { return shoeId_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as role_config);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(role_config other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Gender != other.Gender) return false;
+      if (BodyType != other.BodyType) return false;
+      if (RaceType != other.RaceType) return false;
+      if(!soundId_.Equals(other.soundId_)) return false;
+      if(!headId_.Equals(other.headId_)) return false;
+      if(!hatId_.Equals(other.hatId_)) return false;
+      if(!hairId_.Equals(other.hairId_)) return false;
+      if(!clothesId_.Equals(other.clothesId_)) return false;
+      if(!pantsId_.Equals(other.pantsId_)) return false;
+      if(!shoeId_.Equals(other.shoeId_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Gender != 0) hash ^= Gender.GetHashCode();
+      if (BodyType != 0) hash ^= BodyType.GetHashCode();
+      if (RaceType != 0) hash ^= RaceType.GetHashCode();
+      hash ^= soundId_.GetHashCode();
+      hash ^= headId_.GetHashCode();
+      hash ^= hatId_.GetHashCode();
+      hash ^= hairId_.GetHashCode();
+      hash ^= clothesId_.GetHashCode();
+      hash ^= pantsId_.GetHashCode();
+      hash ^= shoeId_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Gender != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Gender);
+      }
+      if (BodyType != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) BodyType);
+      }
+      if (RaceType != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) RaceType);
+      }
+      soundId_.WriteTo(output, _repeated_soundId_codec);
+      headId_.WriteTo(output, _repeated_headId_codec);
+      hatId_.WriteTo(output, _repeated_hatId_codec);
+      hairId_.WriteTo(output, _repeated_hairId_codec);
+      clothesId_.WriteTo(output, _repeated_clothesId_codec);
+      pantsId_.WriteTo(output, _repeated_pantsId_codec);
+      shoeId_.WriteTo(output, _repeated_shoeId_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Gender != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Gender);
+      }
+      if (BodyType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BodyType);
+      }
+      if (RaceType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RaceType);
+      }
+      size += soundId_.CalculateSize(_repeated_soundId_codec);
+      size += headId_.CalculateSize(_repeated_headId_codec);
+      size += hatId_.CalculateSize(_repeated_hatId_codec);
+      size += hairId_.CalculateSize(_repeated_hairId_codec);
+      size += clothesId_.CalculateSize(_repeated_clothesId_codec);
+      size += pantsId_.CalculateSize(_repeated_pantsId_codec);
+      size += shoeId_.CalculateSize(_repeated_shoeId_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(role_config other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Gender != 0) {
+        Gender = other.Gender;
+      }
+      if (other.BodyType != 0) {
+        BodyType = other.BodyType;
+      }
+      if (other.RaceType != 0) {
+        RaceType = other.RaceType;
+      }
+      soundId_.Add(other.soundId_);
+      headId_.Add(other.headId_);
+      hatId_.Add(other.hatId_);
+      hairId_.Add(other.hairId_);
+      clothesId_.Add(other.clothesId_);
+      pantsId_.Add(other.pantsId_);
+      shoeId_.Add(other.shoeId_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            gender_ = (global::Config.gender) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            bodyType_ = (global::Config.body_type) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            raceType_ = (global::Config.race_type) input.ReadEnum();
+            break;
+          }
+          case 42:
+          case 40: {
+            soundId_.AddEntriesFrom(input, _repeated_soundId_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            headId_.AddEntriesFrom(input, _repeated_headId_codec);
+            break;
+          }
+          case 58:
+          case 56: {
+            hatId_.AddEntriesFrom(input, _repeated_hatId_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            hairId_.AddEntriesFrom(input, _repeated_hairId_codec);
+            break;
+          }
+          case 74:
+          case 72: {
+            clothesId_.AddEntriesFrom(input, _repeated_clothesId_codec);
+            break;
+          }
+          case 82:
+          case 80: {
+            pantsId_.AddEntriesFrom(input, _repeated_pantsId_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            shoeId_.AddEntriesFrom(input, _repeated_shoeId_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class item : pb::IMessage<item> {
+    private static readonly pb::MessageParser<item> _parser = new pb::MessageParser<item>(() => new item());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<item> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public item() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public item(item other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      introKey_ = other.introKey_;
+      introCn_ = other.introCn_;
+      itemType_ = other.itemType_;
+      itemDetailType_ = other.itemDetailType_;
+      blockNum_ = other.blockNum_;
+      imgId_ = other.imgId_;
+      capacity_ = other.capacity_;
+      canDrop_ = other.canDrop_;
+      expireTime_ = other.expireTime_;
+      combustibility_ = other.combustibility_;
+      catalasis_ = other.catalasis_;
+      modId_ = other.modId_;
+      weaponProId_ = other.weaponProId_;
+      armorProId_ = other.armorProId_;
+      boxId_ = other.boxId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public item Clone() {
+      return new item(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_key" field.</summary>
+    public const int IntroKeyFieldNumber = 4;
+    private string introKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroKey {
+      get { return introKey_; }
+      set {
+        introKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_cn" field.</summary>
+    public const int IntroCnFieldNumber = 5;
+    private string introCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroCn {
+      get { return introCn_; }
+      set {
+        introCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "item_type" field.</summary>
+    public const int ItemTypeFieldNumber = 6;
+    private global::Config.item_type itemType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.item_type ItemType {
+      get { return itemType_; }
+      set {
+        itemType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_detail_type" field.</summary>
+    public const int ItemDetailTypeFieldNumber = 7;
+    private global::Config.item_detail_type itemDetailType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.item_detail_type ItemDetailType {
+      get { return itemDetailType_; }
+      set {
+        itemDetailType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "block_num" field.</summary>
+    public const int BlockNumFieldNumber = 8;
+    private int blockNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BlockNum {
+      get { return blockNum_; }
+      set {
+        blockNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "img_id" field.</summary>
+    public const int ImgIdFieldNumber = 9;
+    private string imgId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ImgId {
+      get { return imgId_; }
+      set {
+        imgId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "capacity" field.</summary>
+    public const int CapacityFieldNumber = 10;
+    private int capacity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Capacity {
+      get { return capacity_; }
+      set {
+        capacity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "can_drop" field.</summary>
+    public const int CanDropFieldNumber = 11;
+    private bool canDrop_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanDrop {
+      get { return canDrop_; }
+      set {
+        canDrop_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "expire_time" field.</summary>
+    public const int ExpireTimeFieldNumber = 12;
+    private int expireTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ExpireTime {
+      get { return expireTime_; }
+      set {
+        expireTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "combustibility" field.</summary>
+    public const int CombustibilityFieldNumber = 13;
+    private int combustibility_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Combustibility {
+      get { return combustibility_; }
+      set {
+        combustibility_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "catalasis" field.</summary>
+    public const int CatalasisFieldNumber = 14;
+    private int catalasis_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Catalasis {
+      get { return catalasis_; }
+      set {
+        catalasis_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mod_id" field.</summary>
+    public const int ModIdFieldNumber = 15;
+    private int modId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ModId {
+      get { return modId_; }
+      set {
+        modId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_pro_id" field.</summary>
+    public const int WeaponProIdFieldNumber = 16;
+    private int weaponProId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int WeaponProId {
+      get { return weaponProId_; }
+      set {
+        weaponProId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "armor_pro_id" field.</summary>
+    public const int ArmorProIdFieldNumber = 17;
+    private int armorProId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ArmorProId {
+      get { return armorProId_; }
+      set {
+        armorProId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box_id" field.</summary>
+    public const int BoxIdFieldNumber = 18;
+    private int boxId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BoxId {
+      get { return boxId_; }
+      set {
+        boxId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as item);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(item other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (IntroKey != other.IntroKey) return false;
+      if (IntroCn != other.IntroCn) return false;
+      if (ItemType != other.ItemType) return false;
+      if (ItemDetailType != other.ItemDetailType) return false;
+      if (BlockNum != other.BlockNum) return false;
+      if (ImgId != other.ImgId) return false;
+      if (Capacity != other.Capacity) return false;
+      if (CanDrop != other.CanDrop) return false;
+      if (ExpireTime != other.ExpireTime) return false;
+      if (Combustibility != other.Combustibility) return false;
+      if (Catalasis != other.Catalasis) return false;
+      if (ModId != other.ModId) return false;
+      if (WeaponProId != other.WeaponProId) return false;
+      if (ArmorProId != other.ArmorProId) return false;
+      if (BoxId != other.BoxId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (IntroKey.Length != 0) hash ^= IntroKey.GetHashCode();
+      if (IntroCn.Length != 0) hash ^= IntroCn.GetHashCode();
+      if (ItemType != 0) hash ^= ItemType.GetHashCode();
+      if (ItemDetailType != 0) hash ^= ItemDetailType.GetHashCode();
+      if (BlockNum != 0) hash ^= BlockNum.GetHashCode();
+      if (ImgId.Length != 0) hash ^= ImgId.GetHashCode();
+      if (Capacity != 0) hash ^= Capacity.GetHashCode();
+      if (CanDrop != false) hash ^= CanDrop.GetHashCode();
+      if (ExpireTime != 0) hash ^= ExpireTime.GetHashCode();
+      if (Combustibility != 0) hash ^= Combustibility.GetHashCode();
+      if (Catalasis != 0) hash ^= Catalasis.GetHashCode();
+      if (ModId != 0) hash ^= ModId.GetHashCode();
+      if (WeaponProId != 0) hash ^= WeaponProId.GetHashCode();
+      if (ArmorProId != 0) hash ^= ArmorProId.GetHashCode();
+      if (BoxId != 0) hash ^= BoxId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(IntroKey);
+      }
+      if (IntroCn.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(IntroCn);
+      }
+      if (ItemType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) ItemType);
+      }
+      if (ItemDetailType != 0) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) ItemDetailType);
+      }
+      if (BlockNum != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(BlockNum);
+      }
+      if (ImgId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(ImgId);
+      }
+      if (Capacity != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Capacity);
+      }
+      if (CanDrop != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(CanDrop);
+      }
+      if (ExpireTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(ExpireTime);
+      }
+      if (Combustibility != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Combustibility);
+      }
+      if (Catalasis != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Catalasis);
+      }
+      if (ModId != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(ModId);
+      }
+      if (WeaponProId != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(WeaponProId);
+      }
+      if (ArmorProId != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(ArmorProId);
+      }
+      if (BoxId != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(BoxId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroKey);
+      }
+      if (IntroCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroCn);
+      }
+      if (ItemType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ItemType);
+      }
+      if (ItemDetailType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ItemDetailType);
+      }
+      if (BlockNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BlockNum);
+      }
+      if (ImgId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ImgId);
+      }
+      if (Capacity != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Capacity);
+      }
+      if (CanDrop != false) {
+        size += 1 + 1;
+      }
+      if (ExpireTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ExpireTime);
+      }
+      if (Combustibility != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Combustibility);
+      }
+      if (Catalasis != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Catalasis);
+      }
+      if (ModId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ModId);
+      }
+      if (WeaponProId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(WeaponProId);
+      }
+      if (ArmorProId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ArmorProId);
+      }
+      if (BoxId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(BoxId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(item other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.IntroKey.Length != 0) {
+        IntroKey = other.IntroKey;
+      }
+      if (other.IntroCn.Length != 0) {
+        IntroCn = other.IntroCn;
+      }
+      if (other.ItemType != 0) {
+        ItemType = other.ItemType;
+      }
+      if (other.ItemDetailType != 0) {
+        ItemDetailType = other.ItemDetailType;
+      }
+      if (other.BlockNum != 0) {
+        BlockNum = other.BlockNum;
+      }
+      if (other.ImgId.Length != 0) {
+        ImgId = other.ImgId;
+      }
+      if (other.Capacity != 0) {
+        Capacity = other.Capacity;
+      }
+      if (other.CanDrop != false) {
+        CanDrop = other.CanDrop;
+      }
+      if (other.ExpireTime != 0) {
+        ExpireTime = other.ExpireTime;
+      }
+      if (other.Combustibility != 0) {
+        Combustibility = other.Combustibility;
+      }
+      if (other.Catalasis != 0) {
+        Catalasis = other.Catalasis;
+      }
+      if (other.ModId != 0) {
+        ModId = other.ModId;
+      }
+      if (other.WeaponProId != 0) {
+        WeaponProId = other.WeaponProId;
+      }
+      if (other.ArmorProId != 0) {
+        ArmorProId = other.ArmorProId;
+      }
+      if (other.BoxId != 0) {
+        BoxId = other.BoxId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 34: {
+            IntroKey = input.ReadString();
+            break;
+          }
+          case 42: {
+            IntroCn = input.ReadString();
+            break;
+          }
+          case 48: {
+            itemType_ = (global::Config.item_type) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            itemDetailType_ = (global::Config.item_detail_type) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            BlockNum = input.ReadInt32();
+            break;
+          }
+          case 74: {
+            ImgId = input.ReadString();
+            break;
+          }
+          case 80: {
+            Capacity = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            CanDrop = input.ReadBool();
+            break;
+          }
+          case 96: {
+            ExpireTime = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Combustibility = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            Catalasis = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            ModId = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            WeaponProId = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            ArmorProId = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            BoxId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class hero : pb::IMessage<hero> {
+    private static readonly pb::MessageParser<hero> _parser = new pb::MessageParser<hero>(() => new hero());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<hero> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public hero() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public hero(hero other) : this() {
+      id_ = other.id_;
+      jobId_ = other.jobId_;
+      quality_ = other.quality_;
+      mark_ = other.mark_;
+      weaponType_ = other.weaponType_;
+      armorType_ = other.armorType_;
+      weaponId_ = other.weaponId_;
+      actionId_ = other.actionId_.Clone();
+      heroEffectId_ = other.heroEffectId_;
+      heroSkillArray_ = other.heroSkillArray_.Clone();
+      attrId1_ = other.attrId1_;
+      attrV1_ = other.attrV1_.Clone();
+      attrId2_ = other.attrId2_;
+      attrV2_ = other.attrV2_.Clone();
+      attrId3_ = other.attrId3_;
+      attrV3_ = other.attrV3_.Clone();
+      attrId4_ = other.attrId4_;
+      attrV4_ = other.attrV4_.Clone();
+      attrId5_ = other.attrId5_;
+      attrV5_ = other.attrV5_.Clone();
+      attrId6_ = other.attrId6_;
+      attrV6_ = other.attrV6_.Clone();
+      attrId7_ = other.attrId7_;
+      attrV7_ = other.attrV7_.Clone();
+      attrId13_ = other.attrId13_;
+      attrV13_ = other.attrV13_.Clone();
+      attrId26_ = other.attrId26_;
+      attrV26_ = other.attrV26_;
+      attrId25_ = other.attrId25_;
+      attrV25_ = other.attrV25_.Clone();
+      techId5_ = other.techId5_;
+      techV5_ = other.techV5_.Clone();
+      techId6_ = other.techId6_;
+      techV6_ = other.techV6_.Clone();
+      techId7_ = other.techId7_;
+      techV7_ = other.techV7_.Clone();
+      techId8_ = other.techId8_;
+      techV8_ = other.techV8_.Clone();
+      techId9_ = other.techId9_;
+      techV9_ = other.techV9_.Clone();
+      techId10_ = other.techId10_;
+      techV10_ = other.techV10_.Clone();
+      techId11_ = other.techId11_;
+      techV11_ = other.techV11_.Clone();
+      techId12_ = other.techId12_;
+      techV12_ = other.techV12_.Clone();
+      techId13_ = other.techId13_;
+      techV13_ = other.techV13_.Clone();
+      attrId14_ = other.attrId14_;
+      attrV14_ = other.attrV14_.Clone();
+      attrId15_ = other.attrId15_;
+      attrV15_ = other.attrV15_.Clone();
+      levelupHp_ = other.levelupHp_;
+      levelupHpVar_ = other.levelupHpVar_;
+      levelupAt_ = other.levelupAt_;
+      levelupAtVar_ = other.levelupAtVar_;
+      levelupDef_ = other.levelupDef_;
+      levelupDefVar_ = other.levelupDefVar_;
+      levelupHit_ = other.levelupHit_;
+      levelupHitVar_ = other.levelupHitVar_;
+      levelupDod_ = other.levelupDod_;
+      levelupDodVar_ = other.levelupDodVar_;
+      levelupExplode_ = other.levelupExplode_;
+      levelupExplodeVar_ = other.levelupExplodeVar_;
+      levelupMed_ = other.levelupMed_;
+      levelupMedVar_ = other.levelupMedVar_;
+      levelupCri_ = other.levelupCri_;
+      levelupCriVar_ = other.levelupCriVar_;
+      levelupCrihurt_ = other.levelupCrihurt_;
+      levelupCrihurtVar_ = other.levelupCrihurtVar_;
+      upNeedItemId1_ = other.upNeedItemId1_;
+      upNeedItemV1_ = other.upNeedItemV1_;
+      upNeedItemId2_ = other.upNeedItemId2_;
+      upNeedItemV2_ = other.upNeedItemV2_;
+      upNeedItemId3_ = other.upNeedItemId3_;
+      upNeedItemV3_ = other.upNeedItemV3_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public hero Clone() {
+      return new hero(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "job_id" field.</summary>
+    public const int JobIdFieldNumber = 2;
+    private int jobId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int JobId {
+      get { return jobId_; }
+      set {
+        jobId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "quality" field.</summary>
+    public const int QualityFieldNumber = 3;
+    private global::Config.hero_quality quality_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.hero_quality Quality {
+      get { return quality_; }
+      set {
+        quality_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 4;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "weapon_type" field.</summary>
+    public const int WeaponTypeFieldNumber = 5;
+    private global::Config.weapon_sub_type weaponType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.weapon_sub_type WeaponType {
+      get { return weaponType_; }
+      set {
+        weaponType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "armor_type" field.</summary>
+    public const int ArmorTypeFieldNumber = 6;
+    private global::Config.armor_type armorType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.armor_type ArmorType {
+      get { return armorType_; }
+      set {
+        armorType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_id" field.</summary>
+    public const int WeaponIdFieldNumber = 7;
+    private int weaponId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int WeaponId {
+      get { return weaponId_; }
+      set {
+        weaponId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "action_id" field.</summary>
+    public const int ActionIdFieldNumber = 8;
+    private static readonly pbc::MapField<int, int>.Codec _map_actionId_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 66);
+    private readonly pbc::MapField<int, int> actionId_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> ActionId {
+      get { return actionId_; }
+    }
+
+    /// <summary>Field number for the "hero_effect_id" field.</summary>
+    public const int HeroEffectIdFieldNumber = 9;
+    private int heroEffectId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HeroEffectId {
+      get { return heroEffectId_; }
+      set {
+        heroEffectId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hero_skill_array" field.</summary>
+    public const int HeroSkillArrayFieldNumber = 10;
+    private static readonly pb::FieldCodec<int> _repeated_heroSkillArray_codec
+        = pb::FieldCodec.ForInt32(82);
+    private readonly pbc::RepeatedField<int> heroSkillArray_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HeroSkillArray {
+      get { return heroSkillArray_; }
+    }
+
+    /// <summary>Field number for the "attr_id1" field.</summary>
+    public const int AttrId1FieldNumber = 11;
+    private int attrId1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId1 {
+      get { return attrId1_; }
+      set {
+        attrId1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v1" field.</summary>
+    public const int AttrV1FieldNumber = 12;
+    private static readonly pb::FieldCodec<int> _repeated_attrV1_codec
+        = pb::FieldCodec.ForInt32(98);
+    private readonly pbc::RepeatedField<int> attrV1_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV1 {
+      get { return attrV1_; }
+    }
+
+    /// <summary>Field number for the "attr_id2" field.</summary>
+    public const int AttrId2FieldNumber = 13;
+    private int attrId2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId2 {
+      get { return attrId2_; }
+      set {
+        attrId2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v2" field.</summary>
+    public const int AttrV2FieldNumber = 14;
+    private static readonly pb::FieldCodec<int> _repeated_attrV2_codec
+        = pb::FieldCodec.ForInt32(114);
+    private readonly pbc::RepeatedField<int> attrV2_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV2 {
+      get { return attrV2_; }
+    }
+
+    /// <summary>Field number for the "attr_id3" field.</summary>
+    public const int AttrId3FieldNumber = 15;
+    private int attrId3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId3 {
+      get { return attrId3_; }
+      set {
+        attrId3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v3" field.</summary>
+    public const int AttrV3FieldNumber = 16;
+    private static readonly pb::FieldCodec<int> _repeated_attrV3_codec
+        = pb::FieldCodec.ForInt32(130);
+    private readonly pbc::RepeatedField<int> attrV3_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV3 {
+      get { return attrV3_; }
+    }
+
+    /// <summary>Field number for the "attr_id4" field.</summary>
+    public const int AttrId4FieldNumber = 17;
+    private int attrId4_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId4 {
+      get { return attrId4_; }
+      set {
+        attrId4_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v4" field.</summary>
+    public const int AttrV4FieldNumber = 18;
+    private static readonly pb::FieldCodec<int> _repeated_attrV4_codec
+        = pb::FieldCodec.ForInt32(146);
+    private readonly pbc::RepeatedField<int> attrV4_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV4 {
+      get { return attrV4_; }
+    }
+
+    /// <summary>Field number for the "attr_id5" field.</summary>
+    public const int AttrId5FieldNumber = 19;
+    private int attrId5_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId5 {
+      get { return attrId5_; }
+      set {
+        attrId5_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v5" field.</summary>
+    public const int AttrV5FieldNumber = 20;
+    private static readonly pb::FieldCodec<int> _repeated_attrV5_codec
+        = pb::FieldCodec.ForInt32(162);
+    private readonly pbc::RepeatedField<int> attrV5_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV5 {
+      get { return attrV5_; }
+    }
+
+    /// <summary>Field number for the "attr_id6" field.</summary>
+    public const int AttrId6FieldNumber = 21;
+    private int attrId6_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId6 {
+      get { return attrId6_; }
+      set {
+        attrId6_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v6" field.</summary>
+    public const int AttrV6FieldNumber = 22;
+    private static readonly pb::FieldCodec<int> _repeated_attrV6_codec
+        = pb::FieldCodec.ForInt32(178);
+    private readonly pbc::RepeatedField<int> attrV6_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV6 {
+      get { return attrV6_; }
+    }
+
+    /// <summary>Field number for the "attr_id7" field.</summary>
+    public const int AttrId7FieldNumber = 23;
+    private int attrId7_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId7 {
+      get { return attrId7_; }
+      set {
+        attrId7_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v7" field.</summary>
+    public const int AttrV7FieldNumber = 24;
+    private static readonly pb::FieldCodec<int> _repeated_attrV7_codec
+        = pb::FieldCodec.ForInt32(194);
+    private readonly pbc::RepeatedField<int> attrV7_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV7 {
+      get { return attrV7_; }
+    }
+
+    /// <summary>Field number for the "attr_id13" field.</summary>
+    public const int AttrId13FieldNumber = 25;
+    private int attrId13_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId13 {
+      get { return attrId13_; }
+      set {
+        attrId13_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v13" field.</summary>
+    public const int AttrV13FieldNumber = 26;
+    private static readonly pb::FieldCodec<int> _repeated_attrV13_codec
+        = pb::FieldCodec.ForInt32(210);
+    private readonly pbc::RepeatedField<int> attrV13_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV13 {
+      get { return attrV13_; }
+    }
+
+    /// <summary>Field number for the "attr_id26" field.</summary>
+    public const int AttrId26FieldNumber = 27;
+    private int attrId26_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId26 {
+      get { return attrId26_; }
+      set {
+        attrId26_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v26" field.</summary>
+    public const int AttrV26FieldNumber = 28;
+    private int attrV26_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV26 {
+      get { return attrV26_; }
+      set {
+        attrV26_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id25" field.</summary>
+    public const int AttrId25FieldNumber = 29;
+    private int attrId25_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId25 {
+      get { return attrId25_; }
+      set {
+        attrId25_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v25" field.</summary>
+    public const int AttrV25FieldNumber = 30;
+    private static readonly pb::FieldCodec<int> _repeated_attrV25_codec
+        = pb::FieldCodec.ForInt32(242);
+    private readonly pbc::RepeatedField<int> attrV25_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV25 {
+      get { return attrV25_; }
+    }
+
+    /// <summary>Field number for the "tech_id5" field.</summary>
+    public const int TechId5FieldNumber = 31;
+    private int techId5_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId5 {
+      get { return techId5_; }
+      set {
+        techId5_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v5" field.</summary>
+    public const int TechV5FieldNumber = 32;
+    private static readonly pb::FieldCodec<int> _repeated_techV5_codec
+        = pb::FieldCodec.ForInt32(258);
+    private readonly pbc::RepeatedField<int> techV5_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV5 {
+      get { return techV5_; }
+    }
+
+    /// <summary>Field number for the "tech_id6" field.</summary>
+    public const int TechId6FieldNumber = 33;
+    private int techId6_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId6 {
+      get { return techId6_; }
+      set {
+        techId6_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v6" field.</summary>
+    public const int TechV6FieldNumber = 34;
+    private static readonly pb::FieldCodec<int> _repeated_techV6_codec
+        = pb::FieldCodec.ForInt32(274);
+    private readonly pbc::RepeatedField<int> techV6_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV6 {
+      get { return techV6_; }
+    }
+
+    /// <summary>Field number for the "tech_id7" field.</summary>
+    public const int TechId7FieldNumber = 35;
+    private int techId7_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId7 {
+      get { return techId7_; }
+      set {
+        techId7_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v7" field.</summary>
+    public const int TechV7FieldNumber = 36;
+    private static readonly pb::FieldCodec<int> _repeated_techV7_codec
+        = pb::FieldCodec.ForInt32(290);
+    private readonly pbc::RepeatedField<int> techV7_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV7 {
+      get { return techV7_; }
+    }
+
+    /// <summary>Field number for the "tech_id8" field.</summary>
+    public const int TechId8FieldNumber = 37;
+    private int techId8_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId8 {
+      get { return techId8_; }
+      set {
+        techId8_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v8" field.</summary>
+    public const int TechV8FieldNumber = 38;
+    private static readonly pb::FieldCodec<int> _repeated_techV8_codec
+        = pb::FieldCodec.ForInt32(306);
+    private readonly pbc::RepeatedField<int> techV8_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV8 {
+      get { return techV8_; }
+    }
+
+    /// <summary>Field number for the "tech_id9" field.</summary>
+    public const int TechId9FieldNumber = 39;
+    private int techId9_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId9 {
+      get { return techId9_; }
+      set {
+        techId9_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v9" field.</summary>
+    public const int TechV9FieldNumber = 40;
+    private static readonly pb::FieldCodec<int> _repeated_techV9_codec
+        = pb::FieldCodec.ForInt32(322);
+    private readonly pbc::RepeatedField<int> techV9_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV9 {
+      get { return techV9_; }
+    }
+
+    /// <summary>Field number for the "tech_id10" field.</summary>
+    public const int TechId10FieldNumber = 41;
+    private int techId10_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId10 {
+      get { return techId10_; }
+      set {
+        techId10_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v10" field.</summary>
+    public const int TechV10FieldNumber = 42;
+    private static readonly pb::FieldCodec<int> _repeated_techV10_codec
+        = pb::FieldCodec.ForInt32(338);
+    private readonly pbc::RepeatedField<int> techV10_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV10 {
+      get { return techV10_; }
+    }
+
+    /// <summary>Field number for the "tech_id11" field.</summary>
+    public const int TechId11FieldNumber = 43;
+    private int techId11_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId11 {
+      get { return techId11_; }
+      set {
+        techId11_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v11" field.</summary>
+    public const int TechV11FieldNumber = 44;
+    private static readonly pb::FieldCodec<int> _repeated_techV11_codec
+        = pb::FieldCodec.ForInt32(354);
+    private readonly pbc::RepeatedField<int> techV11_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV11 {
+      get { return techV11_; }
+    }
+
+    /// <summary>Field number for the "tech_id12" field.</summary>
+    public const int TechId12FieldNumber = 45;
+    private int techId12_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId12 {
+      get { return techId12_; }
+      set {
+        techId12_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v12" field.</summary>
+    public const int TechV12FieldNumber = 46;
+    private static readonly pb::FieldCodec<int> _repeated_techV12_codec
+        = pb::FieldCodec.ForInt32(370);
+    private readonly pbc::RepeatedField<int> techV12_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV12 {
+      get { return techV12_; }
+    }
+
+    /// <summary>Field number for the "tech_id13" field.</summary>
+    public const int TechId13FieldNumber = 47;
+    private int techId13_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TechId13 {
+      get { return techId13_; }
+      set {
+        techId13_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tech_v13" field.</summary>
+    public const int TechV13FieldNumber = 48;
+    private static readonly pb::FieldCodec<int> _repeated_techV13_codec
+        = pb::FieldCodec.ForInt32(386);
+    private readonly pbc::RepeatedField<int> techV13_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TechV13 {
+      get { return techV13_; }
+    }
+
+    /// <summary>Field number for the "attr_id14" field.</summary>
+    public const int AttrId14FieldNumber = 49;
+    private int attrId14_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId14 {
+      get { return attrId14_; }
+      set {
+        attrId14_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v14" field.</summary>
+    public const int AttrV14FieldNumber = 50;
+    private static readonly pb::FieldCodec<int> _repeated_attrV14_codec
+        = pb::FieldCodec.ForInt32(402);
+    private readonly pbc::RepeatedField<int> attrV14_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV14 {
+      get { return attrV14_; }
+    }
+
+    /// <summary>Field number for the "attr_id15" field.</summary>
+    public const int AttrId15FieldNumber = 51;
+    private int attrId15_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId15 {
+      get { return attrId15_; }
+      set {
+        attrId15_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v15" field.</summary>
+    public const int AttrV15FieldNumber = 52;
+    private static readonly pb::FieldCodec<int> _repeated_attrV15_codec
+        = pb::FieldCodec.ForInt32(418);
+    private readonly pbc::RepeatedField<int> attrV15_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV15 {
+      get { return attrV15_; }
+    }
+
+    /// <summary>Field number for the "levelup_hp" field.</summary>
+    public const int LevelupHpFieldNumber = 53;
+    private int levelupHp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupHp {
+      get { return levelupHp_; }
+      set {
+        levelupHp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_hp_var" field.</summary>
+    public const int LevelupHpVarFieldNumber = 54;
+    private int levelupHpVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupHpVar {
+      get { return levelupHpVar_; }
+      set {
+        levelupHpVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_at" field.</summary>
+    public const int LevelupAtFieldNumber = 55;
+    private int levelupAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupAt {
+      get { return levelupAt_; }
+      set {
+        levelupAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_at_var" field.</summary>
+    public const int LevelupAtVarFieldNumber = 56;
+    private int levelupAtVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupAtVar {
+      get { return levelupAtVar_; }
+      set {
+        levelupAtVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_def" field.</summary>
+    public const int LevelupDefFieldNumber = 57;
+    private int levelupDef_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupDef {
+      get { return levelupDef_; }
+      set {
+        levelupDef_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_def_var" field.</summary>
+    public const int LevelupDefVarFieldNumber = 58;
+    private int levelupDefVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupDefVar {
+      get { return levelupDefVar_; }
+      set {
+        levelupDefVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_hit" field.</summary>
+    public const int LevelupHitFieldNumber = 59;
+    private int levelupHit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupHit {
+      get { return levelupHit_; }
+      set {
+        levelupHit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_hit_var" field.</summary>
+    public const int LevelupHitVarFieldNumber = 60;
+    private int levelupHitVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupHitVar {
+      get { return levelupHitVar_; }
+      set {
+        levelupHitVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_dod" field.</summary>
+    public const int LevelupDodFieldNumber = 61;
+    private int levelupDod_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupDod {
+      get { return levelupDod_; }
+      set {
+        levelupDod_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_dod_var" field.</summary>
+    public const int LevelupDodVarFieldNumber = 62;
+    private int levelupDodVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupDodVar {
+      get { return levelupDodVar_; }
+      set {
+        levelupDodVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_explode" field.</summary>
+    public const int LevelupExplodeFieldNumber = 63;
+    private int levelupExplode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupExplode {
+      get { return levelupExplode_; }
+      set {
+        levelupExplode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_explode_var" field.</summary>
+    public const int LevelupExplodeVarFieldNumber = 64;
+    private int levelupExplodeVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupExplodeVar {
+      get { return levelupExplodeVar_; }
+      set {
+        levelupExplodeVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_med" field.</summary>
+    public const int LevelupMedFieldNumber = 65;
+    private int levelupMed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupMed {
+      get { return levelupMed_; }
+      set {
+        levelupMed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_med_var" field.</summary>
+    public const int LevelupMedVarFieldNumber = 66;
+    private int levelupMedVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupMedVar {
+      get { return levelupMedVar_; }
+      set {
+        levelupMedVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_cri" field.</summary>
+    public const int LevelupCriFieldNumber = 67;
+    private int levelupCri_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupCri {
+      get { return levelupCri_; }
+      set {
+        levelupCri_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_cri_var" field.</summary>
+    public const int LevelupCriVarFieldNumber = 68;
+    private int levelupCriVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupCriVar {
+      get { return levelupCriVar_; }
+      set {
+        levelupCriVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_crihurt" field.</summary>
+    public const int LevelupCrihurtFieldNumber = 69;
+    private int levelupCrihurt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupCrihurt {
+      get { return levelupCrihurt_; }
+      set {
+        levelupCrihurt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "levelup_crihurt_var" field.</summary>
+    public const int LevelupCrihurtVarFieldNumber = 70;
+    private int levelupCrihurtVar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LevelupCrihurtVar {
+      get { return levelupCrihurtVar_; }
+      set {
+        levelupCrihurtVar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "up_need_item_id1" field.</summary>
+    public const int UpNeedItemId1FieldNumber = 71;
+    private int upNeedItemId1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpNeedItemId1 {
+      get { return upNeedItemId1_; }
+      set {
+        upNeedItemId1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "up_need_item_v1" field.</summary>
+    public const int UpNeedItemV1FieldNumber = 72;
+    private int upNeedItemV1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpNeedItemV1 {
+      get { return upNeedItemV1_; }
+      set {
+        upNeedItemV1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "up_need_item_id2" field.</summary>
+    public const int UpNeedItemId2FieldNumber = 73;
+    private int upNeedItemId2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpNeedItemId2 {
+      get { return upNeedItemId2_; }
+      set {
+        upNeedItemId2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "up_need_item_v2" field.</summary>
+    public const int UpNeedItemV2FieldNumber = 74;
+    private int upNeedItemV2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpNeedItemV2 {
+      get { return upNeedItemV2_; }
+      set {
+        upNeedItemV2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "up_need_item_id3" field.</summary>
+    public const int UpNeedItemId3FieldNumber = 75;
+    private int upNeedItemId3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpNeedItemId3 {
+      get { return upNeedItemId3_; }
+      set {
+        upNeedItemId3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "up_need_item_v3" field.</summary>
+    public const int UpNeedItemV3FieldNumber = 76;
+    private int upNeedItemV3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpNeedItemV3 {
+      get { return upNeedItemV3_; }
+      set {
+        upNeedItemV3_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as hero);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(hero other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (JobId != other.JobId) return false;
+      if (Quality != other.Quality) return false;
+      if (Mark != other.Mark) return false;
+      if (WeaponType != other.WeaponType) return false;
+      if (ArmorType != other.ArmorType) return false;
+      if (WeaponId != other.WeaponId) return false;
+      if (!ActionId.Equals(other.ActionId)) return false;
+      if (HeroEffectId != other.HeroEffectId) return false;
+      if(!heroSkillArray_.Equals(other.heroSkillArray_)) return false;
+      if (AttrId1 != other.AttrId1) return false;
+      if(!attrV1_.Equals(other.attrV1_)) return false;
+      if (AttrId2 != other.AttrId2) return false;
+      if(!attrV2_.Equals(other.attrV2_)) return false;
+      if (AttrId3 != other.AttrId3) return false;
+      if(!attrV3_.Equals(other.attrV3_)) return false;
+      if (AttrId4 != other.AttrId4) return false;
+      if(!attrV4_.Equals(other.attrV4_)) return false;
+      if (AttrId5 != other.AttrId5) return false;
+      if(!attrV5_.Equals(other.attrV5_)) return false;
+      if (AttrId6 != other.AttrId6) return false;
+      if(!attrV6_.Equals(other.attrV6_)) return false;
+      if (AttrId7 != other.AttrId7) return false;
+      if(!attrV7_.Equals(other.attrV7_)) return false;
+      if (AttrId13 != other.AttrId13) return false;
+      if(!attrV13_.Equals(other.attrV13_)) return false;
+      if (AttrId26 != other.AttrId26) return false;
+      if (AttrV26 != other.AttrV26) return false;
+      if (AttrId25 != other.AttrId25) return false;
+      if(!attrV25_.Equals(other.attrV25_)) return false;
+      if (TechId5 != other.TechId5) return false;
+      if(!techV5_.Equals(other.techV5_)) return false;
+      if (TechId6 != other.TechId6) return false;
+      if(!techV6_.Equals(other.techV6_)) return false;
+      if (TechId7 != other.TechId7) return false;
+      if(!techV7_.Equals(other.techV7_)) return false;
+      if (TechId8 != other.TechId8) return false;
+      if(!techV8_.Equals(other.techV8_)) return false;
+      if (TechId9 != other.TechId9) return false;
+      if(!techV9_.Equals(other.techV9_)) return false;
+      if (TechId10 != other.TechId10) return false;
+      if(!techV10_.Equals(other.techV10_)) return false;
+      if (TechId11 != other.TechId11) return false;
+      if(!techV11_.Equals(other.techV11_)) return false;
+      if (TechId12 != other.TechId12) return false;
+      if(!techV12_.Equals(other.techV12_)) return false;
+      if (TechId13 != other.TechId13) return false;
+      if(!techV13_.Equals(other.techV13_)) return false;
+      if (AttrId14 != other.AttrId14) return false;
+      if(!attrV14_.Equals(other.attrV14_)) return false;
+      if (AttrId15 != other.AttrId15) return false;
+      if(!attrV15_.Equals(other.attrV15_)) return false;
+      if (LevelupHp != other.LevelupHp) return false;
+      if (LevelupHpVar != other.LevelupHpVar) return false;
+      if (LevelupAt != other.LevelupAt) return false;
+      if (LevelupAtVar != other.LevelupAtVar) return false;
+      if (LevelupDef != other.LevelupDef) return false;
+      if (LevelupDefVar != other.LevelupDefVar) return false;
+      if (LevelupHit != other.LevelupHit) return false;
+      if (LevelupHitVar != other.LevelupHitVar) return false;
+      if (LevelupDod != other.LevelupDod) return false;
+      if (LevelupDodVar != other.LevelupDodVar) return false;
+      if (LevelupExplode != other.LevelupExplode) return false;
+      if (LevelupExplodeVar != other.LevelupExplodeVar) return false;
+      if (LevelupMed != other.LevelupMed) return false;
+      if (LevelupMedVar != other.LevelupMedVar) return false;
+      if (LevelupCri != other.LevelupCri) return false;
+      if (LevelupCriVar != other.LevelupCriVar) return false;
+      if (LevelupCrihurt != other.LevelupCrihurt) return false;
+      if (LevelupCrihurtVar != other.LevelupCrihurtVar) return false;
+      if (UpNeedItemId1 != other.UpNeedItemId1) return false;
+      if (UpNeedItemV1 != other.UpNeedItemV1) return false;
+      if (UpNeedItemId2 != other.UpNeedItemId2) return false;
+      if (UpNeedItemV2 != other.UpNeedItemV2) return false;
+      if (UpNeedItemId3 != other.UpNeedItemId3) return false;
+      if (UpNeedItemV3 != other.UpNeedItemV3) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (JobId != 0) hash ^= JobId.GetHashCode();
+      if (Quality != 0) hash ^= Quality.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (WeaponType != 0) hash ^= WeaponType.GetHashCode();
+      if (ArmorType != 0) hash ^= ArmorType.GetHashCode();
+      if (WeaponId != 0) hash ^= WeaponId.GetHashCode();
+      hash ^= ActionId.GetHashCode();
+      if (HeroEffectId != 0) hash ^= HeroEffectId.GetHashCode();
+      hash ^= heroSkillArray_.GetHashCode();
+      if (AttrId1 != 0) hash ^= AttrId1.GetHashCode();
+      hash ^= attrV1_.GetHashCode();
+      if (AttrId2 != 0) hash ^= AttrId2.GetHashCode();
+      hash ^= attrV2_.GetHashCode();
+      if (AttrId3 != 0) hash ^= AttrId3.GetHashCode();
+      hash ^= attrV3_.GetHashCode();
+      if (AttrId4 != 0) hash ^= AttrId4.GetHashCode();
+      hash ^= attrV4_.GetHashCode();
+      if (AttrId5 != 0) hash ^= AttrId5.GetHashCode();
+      hash ^= attrV5_.GetHashCode();
+      if (AttrId6 != 0) hash ^= AttrId6.GetHashCode();
+      hash ^= attrV6_.GetHashCode();
+      if (AttrId7 != 0) hash ^= AttrId7.GetHashCode();
+      hash ^= attrV7_.GetHashCode();
+      if (AttrId13 != 0) hash ^= AttrId13.GetHashCode();
+      hash ^= attrV13_.GetHashCode();
+      if (AttrId26 != 0) hash ^= AttrId26.GetHashCode();
+      if (AttrV26 != 0) hash ^= AttrV26.GetHashCode();
+      if (AttrId25 != 0) hash ^= AttrId25.GetHashCode();
+      hash ^= attrV25_.GetHashCode();
+      if (TechId5 != 0) hash ^= TechId5.GetHashCode();
+      hash ^= techV5_.GetHashCode();
+      if (TechId6 != 0) hash ^= TechId6.GetHashCode();
+      hash ^= techV6_.GetHashCode();
+      if (TechId7 != 0) hash ^= TechId7.GetHashCode();
+      hash ^= techV7_.GetHashCode();
+      if (TechId8 != 0) hash ^= TechId8.GetHashCode();
+      hash ^= techV8_.GetHashCode();
+      if (TechId9 != 0) hash ^= TechId9.GetHashCode();
+      hash ^= techV9_.GetHashCode();
+      if (TechId10 != 0) hash ^= TechId10.GetHashCode();
+      hash ^= techV10_.GetHashCode();
+      if (TechId11 != 0) hash ^= TechId11.GetHashCode();
+      hash ^= techV11_.GetHashCode();
+      if (TechId12 != 0) hash ^= TechId12.GetHashCode();
+      hash ^= techV12_.GetHashCode();
+      if (TechId13 != 0) hash ^= TechId13.GetHashCode();
+      hash ^= techV13_.GetHashCode();
+      if (AttrId14 != 0) hash ^= AttrId14.GetHashCode();
+      hash ^= attrV14_.GetHashCode();
+      if (AttrId15 != 0) hash ^= AttrId15.GetHashCode();
+      hash ^= attrV15_.GetHashCode();
+      if (LevelupHp != 0) hash ^= LevelupHp.GetHashCode();
+      if (LevelupHpVar != 0) hash ^= LevelupHpVar.GetHashCode();
+      if (LevelupAt != 0) hash ^= LevelupAt.GetHashCode();
+      if (LevelupAtVar != 0) hash ^= LevelupAtVar.GetHashCode();
+      if (LevelupDef != 0) hash ^= LevelupDef.GetHashCode();
+      if (LevelupDefVar != 0) hash ^= LevelupDefVar.GetHashCode();
+      if (LevelupHit != 0) hash ^= LevelupHit.GetHashCode();
+      if (LevelupHitVar != 0) hash ^= LevelupHitVar.GetHashCode();
+      if (LevelupDod != 0) hash ^= LevelupDod.GetHashCode();
+      if (LevelupDodVar != 0) hash ^= LevelupDodVar.GetHashCode();
+      if (LevelupExplode != 0) hash ^= LevelupExplode.GetHashCode();
+      if (LevelupExplodeVar != 0) hash ^= LevelupExplodeVar.GetHashCode();
+      if (LevelupMed != 0) hash ^= LevelupMed.GetHashCode();
+      if (LevelupMedVar != 0) hash ^= LevelupMedVar.GetHashCode();
+      if (LevelupCri != 0) hash ^= LevelupCri.GetHashCode();
+      if (LevelupCriVar != 0) hash ^= LevelupCriVar.GetHashCode();
+      if (LevelupCrihurt != 0) hash ^= LevelupCrihurt.GetHashCode();
+      if (LevelupCrihurtVar != 0) hash ^= LevelupCrihurtVar.GetHashCode();
+      if (UpNeedItemId1 != 0) hash ^= UpNeedItemId1.GetHashCode();
+      if (UpNeedItemV1 != 0) hash ^= UpNeedItemV1.GetHashCode();
+      if (UpNeedItemId2 != 0) hash ^= UpNeedItemId2.GetHashCode();
+      if (UpNeedItemV2 != 0) hash ^= UpNeedItemV2.GetHashCode();
+      if (UpNeedItemId3 != 0) hash ^= UpNeedItemId3.GetHashCode();
+      if (UpNeedItemV3 != 0) hash ^= UpNeedItemV3.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (JobId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(JobId);
+      }
+      if (Quality != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Quality);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Mark);
+      }
+      if (WeaponType != 0) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) WeaponType);
+      }
+      if (ArmorType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) ArmorType);
+      }
+      if (WeaponId != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(WeaponId);
+      }
+      actionId_.WriteTo(output, _map_actionId_codec);
+      if (HeroEffectId != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(HeroEffectId);
+      }
+      heroSkillArray_.WriteTo(output, _repeated_heroSkillArray_codec);
+      if (AttrId1 != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(AttrId1);
+      }
+      attrV1_.WriteTo(output, _repeated_attrV1_codec);
+      if (AttrId2 != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(AttrId2);
+      }
+      attrV2_.WriteTo(output, _repeated_attrV2_codec);
+      if (AttrId3 != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(AttrId3);
+      }
+      attrV3_.WriteTo(output, _repeated_attrV3_codec);
+      if (AttrId4 != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(AttrId4);
+      }
+      attrV4_.WriteTo(output, _repeated_attrV4_codec);
+      if (AttrId5 != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(AttrId5);
+      }
+      attrV5_.WriteTo(output, _repeated_attrV5_codec);
+      if (AttrId6 != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(AttrId6);
+      }
+      attrV6_.WriteTo(output, _repeated_attrV6_codec);
+      if (AttrId7 != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(AttrId7);
+      }
+      attrV7_.WriteTo(output, _repeated_attrV7_codec);
+      if (AttrId13 != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteInt32(AttrId13);
+      }
+      attrV13_.WriteTo(output, _repeated_attrV13_codec);
+      if (AttrId26 != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(AttrId26);
+      }
+      if (AttrV26 != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(AttrV26);
+      }
+      if (AttrId25 != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(AttrId25);
+      }
+      attrV25_.WriteTo(output, _repeated_attrV25_codec);
+      if (TechId5 != 0) {
+        output.WriteRawTag(248, 1);
+        output.WriteInt32(TechId5);
+      }
+      techV5_.WriteTo(output, _repeated_techV5_codec);
+      if (TechId6 != 0) {
+        output.WriteRawTag(136, 2);
+        output.WriteInt32(TechId6);
+      }
+      techV6_.WriteTo(output, _repeated_techV6_codec);
+      if (TechId7 != 0) {
+        output.WriteRawTag(152, 2);
+        output.WriteInt32(TechId7);
+      }
+      techV7_.WriteTo(output, _repeated_techV7_codec);
+      if (TechId8 != 0) {
+        output.WriteRawTag(168, 2);
+        output.WriteInt32(TechId8);
+      }
+      techV8_.WriteTo(output, _repeated_techV8_codec);
+      if (TechId9 != 0) {
+        output.WriteRawTag(184, 2);
+        output.WriteInt32(TechId9);
+      }
+      techV9_.WriteTo(output, _repeated_techV9_codec);
+      if (TechId10 != 0) {
+        output.WriteRawTag(200, 2);
+        output.WriteInt32(TechId10);
+      }
+      techV10_.WriteTo(output, _repeated_techV10_codec);
+      if (TechId11 != 0) {
+        output.WriteRawTag(216, 2);
+        output.WriteInt32(TechId11);
+      }
+      techV11_.WriteTo(output, _repeated_techV11_codec);
+      if (TechId12 != 0) {
+        output.WriteRawTag(232, 2);
+        output.WriteInt32(TechId12);
+      }
+      techV12_.WriteTo(output, _repeated_techV12_codec);
+      if (TechId13 != 0) {
+        output.WriteRawTag(248, 2);
+        output.WriteInt32(TechId13);
+      }
+      techV13_.WriteTo(output, _repeated_techV13_codec);
+      if (AttrId14 != 0) {
+        output.WriteRawTag(136, 3);
+        output.WriteInt32(AttrId14);
+      }
+      attrV14_.WriteTo(output, _repeated_attrV14_codec);
+      if (AttrId15 != 0) {
+        output.WriteRawTag(152, 3);
+        output.WriteInt32(AttrId15);
+      }
+      attrV15_.WriteTo(output, _repeated_attrV15_codec);
+      if (LevelupHp != 0) {
+        output.WriteRawTag(168, 3);
+        output.WriteInt32(LevelupHp);
+      }
+      if (LevelupHpVar != 0) {
+        output.WriteRawTag(176, 3);
+        output.WriteInt32(LevelupHpVar);
+      }
+      if (LevelupAt != 0) {
+        output.WriteRawTag(184, 3);
+        output.WriteInt32(LevelupAt);
+      }
+      if (LevelupAtVar != 0) {
+        output.WriteRawTag(192, 3);
+        output.WriteInt32(LevelupAtVar);
+      }
+      if (LevelupDef != 0) {
+        output.WriteRawTag(200, 3);
+        output.WriteInt32(LevelupDef);
+      }
+      if (LevelupDefVar != 0) {
+        output.WriteRawTag(208, 3);
+        output.WriteInt32(LevelupDefVar);
+      }
+      if (LevelupHit != 0) {
+        output.WriteRawTag(216, 3);
+        output.WriteInt32(LevelupHit);
+      }
+      if (LevelupHitVar != 0) {
+        output.WriteRawTag(224, 3);
+        output.WriteInt32(LevelupHitVar);
+      }
+      if (LevelupDod != 0) {
+        output.WriteRawTag(232, 3);
+        output.WriteInt32(LevelupDod);
+      }
+      if (LevelupDodVar != 0) {
+        output.WriteRawTag(240, 3);
+        output.WriteInt32(LevelupDodVar);
+      }
+      if (LevelupExplode != 0) {
+        output.WriteRawTag(248, 3);
+        output.WriteInt32(LevelupExplode);
+      }
+      if (LevelupExplodeVar != 0) {
+        output.WriteRawTag(128, 4);
+        output.WriteInt32(LevelupExplodeVar);
+      }
+      if (LevelupMed != 0) {
+        output.WriteRawTag(136, 4);
+        output.WriteInt32(LevelupMed);
+      }
+      if (LevelupMedVar != 0) {
+        output.WriteRawTag(144, 4);
+        output.WriteInt32(LevelupMedVar);
+      }
+      if (LevelupCri != 0) {
+        output.WriteRawTag(152, 4);
+        output.WriteInt32(LevelupCri);
+      }
+      if (LevelupCriVar != 0) {
+        output.WriteRawTag(160, 4);
+        output.WriteInt32(LevelupCriVar);
+      }
+      if (LevelupCrihurt != 0) {
+        output.WriteRawTag(168, 4);
+        output.WriteInt32(LevelupCrihurt);
+      }
+      if (LevelupCrihurtVar != 0) {
+        output.WriteRawTag(176, 4);
+        output.WriteInt32(LevelupCrihurtVar);
+      }
+      if (UpNeedItemId1 != 0) {
+        output.WriteRawTag(184, 4);
+        output.WriteInt32(UpNeedItemId1);
+      }
+      if (UpNeedItemV1 != 0) {
+        output.WriteRawTag(192, 4);
+        output.WriteInt32(UpNeedItemV1);
+      }
+      if (UpNeedItemId2 != 0) {
+        output.WriteRawTag(200, 4);
+        output.WriteInt32(UpNeedItemId2);
+      }
+      if (UpNeedItemV2 != 0) {
+        output.WriteRawTag(208, 4);
+        output.WriteInt32(UpNeedItemV2);
+      }
+      if (UpNeedItemId3 != 0) {
+        output.WriteRawTag(216, 4);
+        output.WriteInt32(UpNeedItemId3);
+      }
+      if (UpNeedItemV3 != 0) {
+        output.WriteRawTag(224, 4);
+        output.WriteInt32(UpNeedItemV3);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (JobId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(JobId);
+      }
+      if (Quality != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Quality);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (WeaponType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WeaponType);
+      }
+      if (ArmorType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArmorType);
+      }
+      if (WeaponId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeaponId);
+      }
+      size += actionId_.CalculateSize(_map_actionId_codec);
+      if (HeroEffectId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HeroEffectId);
+      }
+      size += heroSkillArray_.CalculateSize(_repeated_heroSkillArray_codec);
+      if (AttrId1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId1);
+      }
+      size += attrV1_.CalculateSize(_repeated_attrV1_codec);
+      if (AttrId2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId2);
+      }
+      size += attrV2_.CalculateSize(_repeated_attrV2_codec);
+      if (AttrId3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId3);
+      }
+      size += attrV3_.CalculateSize(_repeated_attrV3_codec);
+      if (AttrId4 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId4);
+      }
+      size += attrV4_.CalculateSize(_repeated_attrV4_codec);
+      if (AttrId5 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId5);
+      }
+      size += attrV5_.CalculateSize(_repeated_attrV5_codec);
+      if (AttrId6 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId6);
+      }
+      size += attrV6_.CalculateSize(_repeated_attrV6_codec);
+      if (AttrId7 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId7);
+      }
+      size += attrV7_.CalculateSize(_repeated_attrV7_codec);
+      if (AttrId13 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId13);
+      }
+      size += attrV13_.CalculateSize(_repeated_attrV13_codec);
+      if (AttrId26 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId26);
+      }
+      if (AttrV26 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV26);
+      }
+      if (AttrId25 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId25);
+      }
+      size += attrV25_.CalculateSize(_repeated_attrV25_codec);
+      if (TechId5 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId5);
+      }
+      size += techV5_.CalculateSize(_repeated_techV5_codec);
+      if (TechId6 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId6);
+      }
+      size += techV6_.CalculateSize(_repeated_techV6_codec);
+      if (TechId7 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId7);
+      }
+      size += techV7_.CalculateSize(_repeated_techV7_codec);
+      if (TechId8 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId8);
+      }
+      size += techV8_.CalculateSize(_repeated_techV8_codec);
+      if (TechId9 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId9);
+      }
+      size += techV9_.CalculateSize(_repeated_techV9_codec);
+      if (TechId10 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId10);
+      }
+      size += techV10_.CalculateSize(_repeated_techV10_codec);
+      if (TechId11 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId11);
+      }
+      size += techV11_.CalculateSize(_repeated_techV11_codec);
+      if (TechId12 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId12);
+      }
+      size += techV12_.CalculateSize(_repeated_techV12_codec);
+      if (TechId13 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(TechId13);
+      }
+      size += techV13_.CalculateSize(_repeated_techV13_codec);
+      if (AttrId14 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId14);
+      }
+      size += attrV14_.CalculateSize(_repeated_attrV14_codec);
+      if (AttrId15 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId15);
+      }
+      size += attrV15_.CalculateSize(_repeated_attrV15_codec);
+      if (LevelupHp != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupHp);
+      }
+      if (LevelupHpVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupHpVar);
+      }
+      if (LevelupAt != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupAt);
+      }
+      if (LevelupAtVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupAtVar);
+      }
+      if (LevelupDef != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupDef);
+      }
+      if (LevelupDefVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupDefVar);
+      }
+      if (LevelupHit != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupHit);
+      }
+      if (LevelupHitVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupHitVar);
+      }
+      if (LevelupDod != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupDod);
+      }
+      if (LevelupDodVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupDodVar);
+      }
+      if (LevelupExplode != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupExplode);
+      }
+      if (LevelupExplodeVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupExplodeVar);
+      }
+      if (LevelupMed != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupMed);
+      }
+      if (LevelupMedVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupMedVar);
+      }
+      if (LevelupCri != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupCri);
+      }
+      if (LevelupCriVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupCriVar);
+      }
+      if (LevelupCrihurt != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupCrihurt);
+      }
+      if (LevelupCrihurtVar != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelupCrihurtVar);
+      }
+      if (UpNeedItemId1 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(UpNeedItemId1);
+      }
+      if (UpNeedItemV1 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(UpNeedItemV1);
+      }
+      if (UpNeedItemId2 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(UpNeedItemId2);
+      }
+      if (UpNeedItemV2 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(UpNeedItemV2);
+      }
+      if (UpNeedItemId3 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(UpNeedItemId3);
+      }
+      if (UpNeedItemV3 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(UpNeedItemV3);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(hero other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.JobId != 0) {
+        JobId = other.JobId;
+      }
+      if (other.Quality != 0) {
+        Quality = other.Quality;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.WeaponType != 0) {
+        WeaponType = other.WeaponType;
+      }
+      if (other.ArmorType != 0) {
+        ArmorType = other.ArmorType;
+      }
+      if (other.WeaponId != 0) {
+        WeaponId = other.WeaponId;
+      }
+      actionId_.Add(other.actionId_);
+      if (other.HeroEffectId != 0) {
+        HeroEffectId = other.HeroEffectId;
+      }
+      heroSkillArray_.Add(other.heroSkillArray_);
+      if (other.AttrId1 != 0) {
+        AttrId1 = other.AttrId1;
+      }
+      attrV1_.Add(other.attrV1_);
+      if (other.AttrId2 != 0) {
+        AttrId2 = other.AttrId2;
+      }
+      attrV2_.Add(other.attrV2_);
+      if (other.AttrId3 != 0) {
+        AttrId3 = other.AttrId3;
+      }
+      attrV3_.Add(other.attrV3_);
+      if (other.AttrId4 != 0) {
+        AttrId4 = other.AttrId4;
+      }
+      attrV4_.Add(other.attrV4_);
+      if (other.AttrId5 != 0) {
+        AttrId5 = other.AttrId5;
+      }
+      attrV5_.Add(other.attrV5_);
+      if (other.AttrId6 != 0) {
+        AttrId6 = other.AttrId6;
+      }
+      attrV6_.Add(other.attrV6_);
+      if (other.AttrId7 != 0) {
+        AttrId7 = other.AttrId7;
+      }
+      attrV7_.Add(other.attrV7_);
+      if (other.AttrId13 != 0) {
+        AttrId13 = other.AttrId13;
+      }
+      attrV13_.Add(other.attrV13_);
+      if (other.AttrId26 != 0) {
+        AttrId26 = other.AttrId26;
+      }
+      if (other.AttrV26 != 0) {
+        AttrV26 = other.AttrV26;
+      }
+      if (other.AttrId25 != 0) {
+        AttrId25 = other.AttrId25;
+      }
+      attrV25_.Add(other.attrV25_);
+      if (other.TechId5 != 0) {
+        TechId5 = other.TechId5;
+      }
+      techV5_.Add(other.techV5_);
+      if (other.TechId6 != 0) {
+        TechId6 = other.TechId6;
+      }
+      techV6_.Add(other.techV6_);
+      if (other.TechId7 != 0) {
+        TechId7 = other.TechId7;
+      }
+      techV7_.Add(other.techV7_);
+      if (other.TechId8 != 0) {
+        TechId8 = other.TechId8;
+      }
+      techV8_.Add(other.techV8_);
+      if (other.TechId9 != 0) {
+        TechId9 = other.TechId9;
+      }
+      techV9_.Add(other.techV9_);
+      if (other.TechId10 != 0) {
+        TechId10 = other.TechId10;
+      }
+      techV10_.Add(other.techV10_);
+      if (other.TechId11 != 0) {
+        TechId11 = other.TechId11;
+      }
+      techV11_.Add(other.techV11_);
+      if (other.TechId12 != 0) {
+        TechId12 = other.TechId12;
+      }
+      techV12_.Add(other.techV12_);
+      if (other.TechId13 != 0) {
+        TechId13 = other.TechId13;
+      }
+      techV13_.Add(other.techV13_);
+      if (other.AttrId14 != 0) {
+        AttrId14 = other.AttrId14;
+      }
+      attrV14_.Add(other.attrV14_);
+      if (other.AttrId15 != 0) {
+        AttrId15 = other.AttrId15;
+      }
+      attrV15_.Add(other.attrV15_);
+      if (other.LevelupHp != 0) {
+        LevelupHp = other.LevelupHp;
+      }
+      if (other.LevelupHpVar != 0) {
+        LevelupHpVar = other.LevelupHpVar;
+      }
+      if (other.LevelupAt != 0) {
+        LevelupAt = other.LevelupAt;
+      }
+      if (other.LevelupAtVar != 0) {
+        LevelupAtVar = other.LevelupAtVar;
+      }
+      if (other.LevelupDef != 0) {
+        LevelupDef = other.LevelupDef;
+      }
+      if (other.LevelupDefVar != 0) {
+        LevelupDefVar = other.LevelupDefVar;
+      }
+      if (other.LevelupHit != 0) {
+        LevelupHit = other.LevelupHit;
+      }
+      if (other.LevelupHitVar != 0) {
+        LevelupHitVar = other.LevelupHitVar;
+      }
+      if (other.LevelupDod != 0) {
+        LevelupDod = other.LevelupDod;
+      }
+      if (other.LevelupDodVar != 0) {
+        LevelupDodVar = other.LevelupDodVar;
+      }
+      if (other.LevelupExplode != 0) {
+        LevelupExplode = other.LevelupExplode;
+      }
+      if (other.LevelupExplodeVar != 0) {
+        LevelupExplodeVar = other.LevelupExplodeVar;
+      }
+      if (other.LevelupMed != 0) {
+        LevelupMed = other.LevelupMed;
+      }
+      if (other.LevelupMedVar != 0) {
+        LevelupMedVar = other.LevelupMedVar;
+      }
+      if (other.LevelupCri != 0) {
+        LevelupCri = other.LevelupCri;
+      }
+      if (other.LevelupCriVar != 0) {
+        LevelupCriVar = other.LevelupCriVar;
+      }
+      if (other.LevelupCrihurt != 0) {
+        LevelupCrihurt = other.LevelupCrihurt;
+      }
+      if (other.LevelupCrihurtVar != 0) {
+        LevelupCrihurtVar = other.LevelupCrihurtVar;
+      }
+      if (other.UpNeedItemId1 != 0) {
+        UpNeedItemId1 = other.UpNeedItemId1;
+      }
+      if (other.UpNeedItemV1 != 0) {
+        UpNeedItemV1 = other.UpNeedItemV1;
+      }
+      if (other.UpNeedItemId2 != 0) {
+        UpNeedItemId2 = other.UpNeedItemId2;
+      }
+      if (other.UpNeedItemV2 != 0) {
+        UpNeedItemV2 = other.UpNeedItemV2;
+      }
+      if (other.UpNeedItemId3 != 0) {
+        UpNeedItemId3 = other.UpNeedItemId3;
+      }
+      if (other.UpNeedItemV3 != 0) {
+        UpNeedItemV3 = other.UpNeedItemV3;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            JobId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            quality_ = (global::Config.hero_quality) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 40: {
+            weaponType_ = (global::Config.weapon_sub_type) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            armorType_ = (global::Config.armor_type) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            WeaponId = input.ReadInt32();
+            break;
+          }
+          case 66: {
+            actionId_.AddEntriesFrom(input, _map_actionId_codec);
+            break;
+          }
+          case 72: {
+            HeroEffectId = input.ReadInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            heroSkillArray_.AddEntriesFrom(input, _repeated_heroSkillArray_codec);
+            break;
+          }
+          case 88: {
+            AttrId1 = input.ReadInt32();
+            break;
+          }
+          case 98:
+          case 96: {
+            attrV1_.AddEntriesFrom(input, _repeated_attrV1_codec);
+            break;
+          }
+          case 104: {
+            AttrId2 = input.ReadInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            attrV2_.AddEntriesFrom(input, _repeated_attrV2_codec);
+            break;
+          }
+          case 120: {
+            AttrId3 = input.ReadInt32();
+            break;
+          }
+          case 130:
+          case 128: {
+            attrV3_.AddEntriesFrom(input, _repeated_attrV3_codec);
+            break;
+          }
+          case 136: {
+            AttrId4 = input.ReadInt32();
+            break;
+          }
+          case 146:
+          case 144: {
+            attrV4_.AddEntriesFrom(input, _repeated_attrV4_codec);
+            break;
+          }
+          case 152: {
+            AttrId5 = input.ReadInt32();
+            break;
+          }
+          case 162:
+          case 160: {
+            attrV5_.AddEntriesFrom(input, _repeated_attrV5_codec);
+            break;
+          }
+          case 168: {
+            AttrId6 = input.ReadInt32();
+            break;
+          }
+          case 178:
+          case 176: {
+            attrV6_.AddEntriesFrom(input, _repeated_attrV6_codec);
+            break;
+          }
+          case 184: {
+            AttrId7 = input.ReadInt32();
+            break;
+          }
+          case 194:
+          case 192: {
+            attrV7_.AddEntriesFrom(input, _repeated_attrV7_codec);
+            break;
+          }
+          case 200: {
+            AttrId13 = input.ReadInt32();
+            break;
+          }
+          case 210:
+          case 208: {
+            attrV13_.AddEntriesFrom(input, _repeated_attrV13_codec);
+            break;
+          }
+          case 216: {
+            AttrId26 = input.ReadInt32();
+            break;
+          }
+          case 224: {
+            AttrV26 = input.ReadInt32();
+            break;
+          }
+          case 232: {
+            AttrId25 = input.ReadInt32();
+            break;
+          }
+          case 242:
+          case 240: {
+            attrV25_.AddEntriesFrom(input, _repeated_attrV25_codec);
+            break;
+          }
+          case 248: {
+            TechId5 = input.ReadInt32();
+            break;
+          }
+          case 258:
+          case 256: {
+            techV5_.AddEntriesFrom(input, _repeated_techV5_codec);
+            break;
+          }
+          case 264: {
+            TechId6 = input.ReadInt32();
+            break;
+          }
+          case 274:
+          case 272: {
+            techV6_.AddEntriesFrom(input, _repeated_techV6_codec);
+            break;
+          }
+          case 280: {
+            TechId7 = input.ReadInt32();
+            break;
+          }
+          case 290:
+          case 288: {
+            techV7_.AddEntriesFrom(input, _repeated_techV7_codec);
+            break;
+          }
+          case 296: {
+            TechId8 = input.ReadInt32();
+            break;
+          }
+          case 306:
+          case 304: {
+            techV8_.AddEntriesFrom(input, _repeated_techV8_codec);
+            break;
+          }
+          case 312: {
+            TechId9 = input.ReadInt32();
+            break;
+          }
+          case 322:
+          case 320: {
+            techV9_.AddEntriesFrom(input, _repeated_techV9_codec);
+            break;
+          }
+          case 328: {
+            TechId10 = input.ReadInt32();
+            break;
+          }
+          case 338:
+          case 336: {
+            techV10_.AddEntriesFrom(input, _repeated_techV10_codec);
+            break;
+          }
+          case 344: {
+            TechId11 = input.ReadInt32();
+            break;
+          }
+          case 354:
+          case 352: {
+            techV11_.AddEntriesFrom(input, _repeated_techV11_codec);
+            break;
+          }
+          case 360: {
+            TechId12 = input.ReadInt32();
+            break;
+          }
+          case 370:
+          case 368: {
+            techV12_.AddEntriesFrom(input, _repeated_techV12_codec);
+            break;
+          }
+          case 376: {
+            TechId13 = input.ReadInt32();
+            break;
+          }
+          case 386:
+          case 384: {
+            techV13_.AddEntriesFrom(input, _repeated_techV13_codec);
+            break;
+          }
+          case 392: {
+            AttrId14 = input.ReadInt32();
+            break;
+          }
+          case 402:
+          case 400: {
+            attrV14_.AddEntriesFrom(input, _repeated_attrV14_codec);
+            break;
+          }
+          case 408: {
+            AttrId15 = input.ReadInt32();
+            break;
+          }
+          case 418:
+          case 416: {
+            attrV15_.AddEntriesFrom(input, _repeated_attrV15_codec);
+            break;
+          }
+          case 424: {
+            LevelupHp = input.ReadInt32();
+            break;
+          }
+          case 432: {
+            LevelupHpVar = input.ReadInt32();
+            break;
+          }
+          case 440: {
+            LevelupAt = input.ReadInt32();
+            break;
+          }
+          case 448: {
+            LevelupAtVar = input.ReadInt32();
+            break;
+          }
+          case 456: {
+            LevelupDef = input.ReadInt32();
+            break;
+          }
+          case 464: {
+            LevelupDefVar = input.ReadInt32();
+            break;
+          }
+          case 472: {
+            LevelupHit = input.ReadInt32();
+            break;
+          }
+          case 480: {
+            LevelupHitVar = input.ReadInt32();
+            break;
+          }
+          case 488: {
+            LevelupDod = input.ReadInt32();
+            break;
+          }
+          case 496: {
+            LevelupDodVar = input.ReadInt32();
+            break;
+          }
+          case 504: {
+            LevelupExplode = input.ReadInt32();
+            break;
+          }
+          case 512: {
+            LevelupExplodeVar = input.ReadInt32();
+            break;
+          }
+          case 520: {
+            LevelupMed = input.ReadInt32();
+            break;
+          }
+          case 528: {
+            LevelupMedVar = input.ReadInt32();
+            break;
+          }
+          case 536: {
+            LevelupCri = input.ReadInt32();
+            break;
+          }
+          case 544: {
+            LevelupCriVar = input.ReadInt32();
+            break;
+          }
+          case 552: {
+            LevelupCrihurt = input.ReadInt32();
+            break;
+          }
+          case 560: {
+            LevelupCrihurtVar = input.ReadInt32();
+            break;
+          }
+          case 568: {
+            UpNeedItemId1 = input.ReadInt32();
+            break;
+          }
+          case 576: {
+            UpNeedItemV1 = input.ReadInt32();
+            break;
+          }
+          case 584: {
+            UpNeedItemId2 = input.ReadInt32();
+            break;
+          }
+          case 592: {
+            UpNeedItemV2 = input.ReadInt32();
+            break;
+          }
+          case 600: {
+            UpNeedItemId3 = input.ReadInt32();
+            break;
+          }
+          case 608: {
+            UpNeedItemV3 = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class exp_skill_map : pb::IMessage<exp_skill_map> {
+    private static readonly pb::MessageParser<exp_skill_map> _parser = new pb::MessageParser<exp_skill_map>(() => new exp_skill_map());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<exp_skill_map> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public exp_skill_map() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public exp_skill_map(exp_skill_map other) : this() {
+      id_ = other.id_;
+      itemType_ = other.itemType_;
+      lv_ = other.lv_;
+      exp_ = other.exp_;
+      needItem_ = other.needItem_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public exp_skill_map Clone() {
+      return new exp_skill_map(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_type" field.</summary>
+    public const int ItemTypeFieldNumber = 2;
+    private int itemType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ItemType {
+      get { return itemType_; }
+      set {
+        itemType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lv" field.</summary>
+    public const int LvFieldNumber = 3;
+    private int lv_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Lv {
+      get { return lv_; }
+      set {
+        lv_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 4;
+    private int exp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Exp {
+      get { return exp_; }
+      set {
+        exp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "need_item" field.</summary>
+    public const int NeedItemFieldNumber = 5;
+    private static readonly pbc::MapField<int, int>.Codec _map_needItem_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 42);
+    private readonly pbc::MapField<int, int> needItem_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> NeedItem {
+      get { return needItem_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as exp_skill_map);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(exp_skill_map other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (ItemType != other.ItemType) return false;
+      if (Lv != other.Lv) return false;
+      if (Exp != other.Exp) return false;
+      if (!NeedItem.Equals(other.NeedItem)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (ItemType != 0) hash ^= ItemType.GetHashCode();
+      if (Lv != 0) hash ^= Lv.GetHashCode();
+      if (Exp != 0) hash ^= Exp.GetHashCode();
+      hash ^= NeedItem.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (ItemType != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ItemType);
+      }
+      if (Lv != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Lv);
+      }
+      if (Exp != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Exp);
+      }
+      needItem_.WriteTo(output, _map_needItem_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (ItemType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ItemType);
+      }
+      if (Lv != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Lv);
+      }
+      if (Exp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Exp);
+      }
+      size += needItem_.CalculateSize(_map_needItem_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(exp_skill_map other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.ItemType != 0) {
+        ItemType = other.ItemType;
+      }
+      if (other.Lv != 0) {
+        Lv = other.Lv;
+      }
+      if (other.Exp != 0) {
+        Exp = other.Exp;
+      }
+      needItem_.Add(other.needItem_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            ItemType = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Lv = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Exp = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            needItem_.AddEntriesFrom(input, _map_needItem_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class role_sound_config : pb::IMessage<role_sound_config> {
+    private static readonly pb::MessageParser<role_sound_config> _parser = new pb::MessageParser<role_sound_config>(() => new role_sound_config());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<role_sound_config> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public role_sound_config() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public role_sound_config(role_sound_config other) : this() {
+      id_ = other.id_;
+      breathing_ = other.breathing_;
+      dead_ = other.dead_;
+      hurt_ = other.hurt_;
+      classicvoiceFire_ = other.classicvoiceFire_;
+      classicvoiceGo_ = other.classicvoiceGo_;
+      classicvoiceOk_ = other.classicvoiceOk_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public role_sound_config Clone() {
+      return new role_sound_config(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "breathing" field.</summary>
+    public const int BreathingFieldNumber = 2;
+    private int breathing_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Breathing {
+      get { return breathing_; }
+      set {
+        breathing_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dead" field.</summary>
+    public const int DeadFieldNumber = 3;
+    private int dead_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Dead {
+      get { return dead_; }
+      set {
+        dead_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hurt" field.</summary>
+    public const int HurtFieldNumber = 4;
+    private int hurt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Hurt {
+      get { return hurt_; }
+      set {
+        hurt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "classicvoice_fire" field.</summary>
+    public const int ClassicvoiceFireFieldNumber = 5;
+    private int classicvoiceFire_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ClassicvoiceFire {
+      get { return classicvoiceFire_; }
+      set {
+        classicvoiceFire_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "classicvoice_go" field.</summary>
+    public const int ClassicvoiceGoFieldNumber = 6;
+    private int classicvoiceGo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ClassicvoiceGo {
+      get { return classicvoiceGo_; }
+      set {
+        classicvoiceGo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "classicvoice_ok" field.</summary>
+    public const int ClassicvoiceOkFieldNumber = 7;
+    private int classicvoiceOk_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ClassicvoiceOk {
+      get { return classicvoiceOk_; }
+      set {
+        classicvoiceOk_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as role_sound_config);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(role_sound_config other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Breathing != other.Breathing) return false;
+      if (Dead != other.Dead) return false;
+      if (Hurt != other.Hurt) return false;
+      if (ClassicvoiceFire != other.ClassicvoiceFire) return false;
+      if (ClassicvoiceGo != other.ClassicvoiceGo) return false;
+      if (ClassicvoiceOk != other.ClassicvoiceOk) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Breathing != 0) hash ^= Breathing.GetHashCode();
+      if (Dead != 0) hash ^= Dead.GetHashCode();
+      if (Hurt != 0) hash ^= Hurt.GetHashCode();
+      if (ClassicvoiceFire != 0) hash ^= ClassicvoiceFire.GetHashCode();
+      if (ClassicvoiceGo != 0) hash ^= ClassicvoiceGo.GetHashCode();
+      if (ClassicvoiceOk != 0) hash ^= ClassicvoiceOk.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Breathing != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Breathing);
+      }
+      if (Dead != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Dead);
+      }
+      if (Hurt != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Hurt);
+      }
+      if (ClassicvoiceFire != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(ClassicvoiceFire);
+      }
+      if (ClassicvoiceGo != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(ClassicvoiceGo);
+      }
+      if (ClassicvoiceOk != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(ClassicvoiceOk);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Breathing != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Breathing);
+      }
+      if (Dead != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Dead);
+      }
+      if (Hurt != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Hurt);
+      }
+      if (ClassicvoiceFire != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ClassicvoiceFire);
+      }
+      if (ClassicvoiceGo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ClassicvoiceGo);
+      }
+      if (ClassicvoiceOk != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ClassicvoiceOk);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(role_sound_config other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Breathing != 0) {
+        Breathing = other.Breathing;
+      }
+      if (other.Dead != 0) {
+        Dead = other.Dead;
+      }
+      if (other.Hurt != 0) {
+        Hurt = other.Hurt;
+      }
+      if (other.ClassicvoiceFire != 0) {
+        ClassicvoiceFire = other.ClassicvoiceFire;
+      }
+      if (other.ClassicvoiceGo != 0) {
+        ClassicvoiceGo = other.ClassicvoiceGo;
+      }
+      if (other.ClassicvoiceOk != 0) {
+        ClassicvoiceOk = other.ClassicvoiceOk;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Breathing = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Dead = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Hurt = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            ClassicvoiceFire = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            ClassicvoiceGo = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            ClassicvoiceOk = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class task_daily : pb::IMessage<task_daily> {
+    private static readonly pb::MessageParser<task_daily> _parser = new pb::MessageParser<task_daily>(() => new task_daily());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<task_daily> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public task_daily() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public task_daily(task_daily other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      desKey_ = other.desKey_;
+      desCn_ = other.desCn_;
+      taskType_ = other.taskType_;
+      goalNum_ = other.goalNum_;
+      item1_ = other.item1_;
+      num1_ = other.num1_;
+      item2_ = other.item2_;
+      num2_ = other.num2_;
+      item3_ = other.item3_;
+      num3_ = other.num3_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public task_daily Clone() {
+      return new task_daily(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "des_key" field.</summary>
+    public const int DesKeyFieldNumber = 4;
+    private string desKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DesKey {
+      get { return desKey_; }
+      set {
+        desKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "des_cn" field.</summary>
+    public const int DesCnFieldNumber = 5;
+    private string desCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DesCn {
+      get { return desCn_; }
+      set {
+        desCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "task_type" field.</summary>
+    public const int TaskTypeFieldNumber = 6;
+    private int taskType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TaskType {
+      get { return taskType_; }
+      set {
+        taskType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "goal_num" field.</summary>
+    public const int GoalNumFieldNumber = 7;
+    private int goalNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int GoalNum {
+      get { return goalNum_; }
+      set {
+        goalNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item1" field.</summary>
+    public const int Item1FieldNumber = 8;
+    private int item1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Item1 {
+      get { return item1_; }
+      set {
+        item1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "num1" field.</summary>
+    public const int Num1FieldNumber = 9;
+    private int num1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Num1 {
+      get { return num1_; }
+      set {
+        num1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item2" field.</summary>
+    public const int Item2FieldNumber = 10;
+    private int item2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Item2 {
+      get { return item2_; }
+      set {
+        item2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "num2" field.</summary>
+    public const int Num2FieldNumber = 11;
+    private int num2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Num2 {
+      get { return num2_; }
+      set {
+        num2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item3" field.</summary>
+    public const int Item3FieldNumber = 12;
+    private int item3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Item3 {
+      get { return item3_; }
+      set {
+        item3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "num3" field.</summary>
+    public const int Num3FieldNumber = 13;
+    private int num3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Num3 {
+      get { return num3_; }
+      set {
+        num3_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as task_daily);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(task_daily other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (DesKey != other.DesKey) return false;
+      if (DesCn != other.DesCn) return false;
+      if (TaskType != other.TaskType) return false;
+      if (GoalNum != other.GoalNum) return false;
+      if (Item1 != other.Item1) return false;
+      if (Num1 != other.Num1) return false;
+      if (Item2 != other.Item2) return false;
+      if (Num2 != other.Num2) return false;
+      if (Item3 != other.Item3) return false;
+      if (Num3 != other.Num3) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (DesKey.Length != 0) hash ^= DesKey.GetHashCode();
+      if (DesCn.Length != 0) hash ^= DesCn.GetHashCode();
+      if (TaskType != 0) hash ^= TaskType.GetHashCode();
+      if (GoalNum != 0) hash ^= GoalNum.GetHashCode();
+      if (Item1 != 0) hash ^= Item1.GetHashCode();
+      if (Num1 != 0) hash ^= Num1.GetHashCode();
+      if (Item2 != 0) hash ^= Item2.GetHashCode();
+      if (Num2 != 0) hash ^= Num2.GetHashCode();
+      if (Item3 != 0) hash ^= Item3.GetHashCode();
+      if (Num3 != 0) hash ^= Num3.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (DesKey.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DesKey);
+      }
+      if (DesCn.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(DesCn);
+      }
+      if (TaskType != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(TaskType);
+      }
+      if (GoalNum != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(GoalNum);
+      }
+      if (Item1 != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Item1);
+      }
+      if (Num1 != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Num1);
+      }
+      if (Item2 != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Item2);
+      }
+      if (Num2 != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Num2);
+      }
+      if (Item3 != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Item3);
+      }
+      if (Num3 != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Num3);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (DesKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DesKey);
+      }
+      if (DesCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DesCn);
+      }
+      if (TaskType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TaskType);
+      }
+      if (GoalNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GoalNum);
+      }
+      if (Item1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Item1);
+      }
+      if (Num1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Num1);
+      }
+      if (Item2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Item2);
+      }
+      if (Num2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Num2);
+      }
+      if (Item3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Item3);
+      }
+      if (Num3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Num3);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(task_daily other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.DesKey.Length != 0) {
+        DesKey = other.DesKey;
+      }
+      if (other.DesCn.Length != 0) {
+        DesCn = other.DesCn;
+      }
+      if (other.TaskType != 0) {
+        TaskType = other.TaskType;
+      }
+      if (other.GoalNum != 0) {
+        GoalNum = other.GoalNum;
+      }
+      if (other.Item1 != 0) {
+        Item1 = other.Item1;
+      }
+      if (other.Num1 != 0) {
+        Num1 = other.Num1;
+      }
+      if (other.Item2 != 0) {
+        Item2 = other.Item2;
+      }
+      if (other.Num2 != 0) {
+        Num2 = other.Num2;
+      }
+      if (other.Item3 != 0) {
+        Item3 = other.Item3;
+      }
+      if (other.Num3 != 0) {
+        Num3 = other.Num3;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 34: {
+            DesKey = input.ReadString();
+            break;
+          }
+          case 42: {
+            DesCn = input.ReadString();
+            break;
+          }
+          case 48: {
+            TaskType = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            GoalNum = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Item1 = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Num1 = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Item2 = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Num2 = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Item3 = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Num3 = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class dialog : pb::IMessage<dialog> {
+    private static readonly pb::MessageParser<dialog> _parser = new pb::MessageParser<dialog>(() => new dialog());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<dialog> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public dialog() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public dialog(dialog other) : this() {
+      iD_ = other.iD_;
+      dialogId_ = other.dialogId_;
+      imgId_ = other.imgId_;
+      imgLocation_ = other.imgLocation_;
+      dialog_ = other.dialog_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public dialog Clone() {
+      return new dialog(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dialog_id" field.</summary>
+    public const int DialogIdFieldNumber = 2;
+    private int dialogId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DialogId {
+      get { return dialogId_; }
+      set {
+        dialogId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "img_id" field.</summary>
+    public const int ImgIdFieldNumber = 3;
+    private int imgId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ImgId {
+      get { return imgId_; }
+      set {
+        imgId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "img_location" field.</summary>
+    public const int ImgLocationFieldNumber = 4;
+    private int imgLocation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ImgLocation {
+      get { return imgLocation_; }
+      set {
+        imgLocation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dialog" field.</summary>
+    public const int DialogFieldNumber = 5;
+    private string dialog_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Dialog {
+      get { return dialog_; }
+      set {
+        dialog_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as dialog);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(dialog other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (DialogId != other.DialogId) return false;
+      if (ImgId != other.ImgId) return false;
+      if (ImgLocation != other.ImgLocation) return false;
+      if (Dialog != other.Dialog) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (DialogId != 0) hash ^= DialogId.GetHashCode();
+      if (ImgId != 0) hash ^= ImgId.GetHashCode();
+      if (ImgLocation != 0) hash ^= ImgLocation.GetHashCode();
+      if (Dialog.Length != 0) hash ^= Dialog.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (DialogId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(DialogId);
+      }
+      if (ImgId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ImgId);
+      }
+      if (ImgLocation != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(ImgLocation);
+      }
+      if (Dialog.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Dialog);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (DialogId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DialogId);
+      }
+      if (ImgId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ImgId);
+      }
+      if (ImgLocation != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ImgLocation);
+      }
+      if (Dialog.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Dialog);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(dialog other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.DialogId != 0) {
+        DialogId = other.DialogId;
+      }
+      if (other.ImgId != 0) {
+        ImgId = other.ImgId;
+      }
+      if (other.ImgLocation != 0) {
+        ImgLocation = other.ImgLocation;
+      }
+      if (other.Dialog.Length != 0) {
+        Dialog = other.Dialog;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            DialogId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            ImgId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            ImgLocation = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            Dialog = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class box_drop : pb::IMessage<box_drop> {
+    private static readonly pb::MessageParser<box_drop> _parser = new pb::MessageParser<box_drop>(() => new box_drop());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<box_drop> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public box_drop() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public box_drop(box_drop other) : this() {
+      id_ = other.id_;
+      boxId_ = other.boxId_;
+      itemId_ = other.itemId_;
+      itemCount_ = other.itemCount_.Clone();
+      weight_ = other.weight_;
+      markName_ = other.markName_;
+      itemType_ = other.itemType_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public box_drop Clone() {
+      return new box_drop(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box_id" field.</summary>
+    public const int BoxIdFieldNumber = 2;
+    private int boxId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BoxId {
+      get { return boxId_; }
+      set {
+        boxId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_id" field.</summary>
+    public const int ItemIdFieldNumber = 3;
+    private int itemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ItemId {
+      get { return itemId_; }
+      set {
+        itemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_count" field.</summary>
+    public const int ItemCountFieldNumber = 4;
+    private static readonly pb::FieldCodec<int> _repeated_itemCount_codec
+        = pb::FieldCodec.ForInt32(34);
+    private readonly pbc::RepeatedField<int> itemCount_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> ItemCount {
+      get { return itemCount_; }
+    }
+
+    /// <summary>Field number for the "weight" field.</summary>
+    public const int WeightFieldNumber = 5;
+    private int weight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Weight {
+      get { return weight_; }
+      set {
+        weight_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark_name" field.</summary>
+    public const int MarkNameFieldNumber = 6;
+    private string markName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MarkName {
+      get { return markName_; }
+      set {
+        markName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "item_type" field.</summary>
+    public const int ItemTypeFieldNumber = 7;
+    private global::Config.box_item_type itemType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.box_item_type ItemType {
+      get { return itemType_; }
+      set {
+        itemType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as box_drop);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(box_drop other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (BoxId != other.BoxId) return false;
+      if (ItemId != other.ItemId) return false;
+      if(!itemCount_.Equals(other.itemCount_)) return false;
+      if (Weight != other.Weight) return false;
+      if (MarkName != other.MarkName) return false;
+      if (ItemType != other.ItemType) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (BoxId != 0) hash ^= BoxId.GetHashCode();
+      if (ItemId != 0) hash ^= ItemId.GetHashCode();
+      hash ^= itemCount_.GetHashCode();
+      if (Weight != 0) hash ^= Weight.GetHashCode();
+      if (MarkName.Length != 0) hash ^= MarkName.GetHashCode();
+      if (ItemType != 0) hash ^= ItemType.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (BoxId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BoxId);
+      }
+      if (ItemId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ItemId);
+      }
+      itemCount_.WriteTo(output, _repeated_itemCount_codec);
+      if (Weight != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Weight);
+      }
+      if (MarkName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(MarkName);
+      }
+      if (ItemType != 0) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) ItemType);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (BoxId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BoxId);
+      }
+      if (ItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ItemId);
+      }
+      size += itemCount_.CalculateSize(_repeated_itemCount_codec);
+      if (Weight != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Weight);
+      }
+      if (MarkName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MarkName);
+      }
+      if (ItemType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ItemType);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(box_drop other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.BoxId != 0) {
+        BoxId = other.BoxId;
+      }
+      if (other.ItemId != 0) {
+        ItemId = other.ItemId;
+      }
+      itemCount_.Add(other.itemCount_);
+      if (other.Weight != 0) {
+        Weight = other.Weight;
+      }
+      if (other.MarkName.Length != 0) {
+        MarkName = other.MarkName;
+      }
+      if (other.ItemType != 0) {
+        ItemType = other.ItemType;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            BoxId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            ItemId = input.ReadInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            itemCount_.AddEntriesFrom(input, _repeated_itemCount_codec);
+            break;
+          }
+          case 40: {
+            Weight = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            MarkName = input.ReadString();
+            break;
+          }
+          case 56: {
+            itemType_ = (global::Config.box_item_type) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class box : pb::IMessage<box> {
+    private static readonly pb::MessageParser<box> _parser = new pb::MessageParser<box>(() => new box());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<box> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public box() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public box(box other) : this() {
+      id_ = other.id_;
+      mark_ = other.mark_;
+      dropType_ = other.dropType_;
+      chapterId_ = other.chapterId_;
+      boxIcon_ = other.boxIcon_;
+      boxIntro_ = other.boxIntro_;
+      boxQuality_ = other.boxQuality_;
+      relevanceType_ = other.relevanceType_;
+      relevanceId_ = other.relevanceId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public box Clone() {
+      return new box(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 2;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "drop_type" field.</summary>
+    public const int DropTypeFieldNumber = 3;
+    private int dropType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DropType {
+      get { return dropType_; }
+      set {
+        dropType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "chapter_id" field.</summary>
+    public const int ChapterIdFieldNumber = 4;
+    private int chapterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ChapterId {
+      get { return chapterId_; }
+      set {
+        chapterId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box_icon" field.</summary>
+    public const int BoxIconFieldNumber = 5;
+    private int boxIcon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BoxIcon {
+      get { return boxIcon_; }
+      set {
+        boxIcon_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box_intro" field.</summary>
+    public const int BoxIntroFieldNumber = 6;
+    private int boxIntro_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BoxIntro {
+      get { return boxIntro_; }
+      set {
+        boxIntro_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box_quality" field.</summary>
+    public const int BoxQualityFieldNumber = 7;
+    private int boxQuality_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BoxQuality {
+      get { return boxQuality_; }
+      set {
+        boxQuality_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "relevance_type" field.</summary>
+    public const int RelevanceTypeFieldNumber = 8;
+    private int relevanceType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RelevanceType {
+      get { return relevanceType_; }
+      set {
+        relevanceType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "relevance_id" field.</summary>
+    public const int RelevanceIdFieldNumber = 9;
+    private int relevanceId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RelevanceId {
+      get { return relevanceId_; }
+      set {
+        relevanceId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as box);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(box other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Mark != other.Mark) return false;
+      if (DropType != other.DropType) return false;
+      if (ChapterId != other.ChapterId) return false;
+      if (BoxIcon != other.BoxIcon) return false;
+      if (BoxIntro != other.BoxIntro) return false;
+      if (BoxQuality != other.BoxQuality) return false;
+      if (RelevanceType != other.RelevanceType) return false;
+      if (RelevanceId != other.RelevanceId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (DropType != 0) hash ^= DropType.GetHashCode();
+      if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
+      if (BoxIcon != 0) hash ^= BoxIcon.GetHashCode();
+      if (BoxIntro != 0) hash ^= BoxIntro.GetHashCode();
+      if (BoxQuality != 0) hash ^= BoxQuality.GetHashCode();
+      if (RelevanceType != 0) hash ^= RelevanceType.GetHashCode();
+      if (RelevanceId != 0) hash ^= RelevanceId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Mark);
+      }
+      if (DropType != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(DropType);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(ChapterId);
+      }
+      if (BoxIcon != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(BoxIcon);
+      }
+      if (BoxIntro != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(BoxIntro);
+      }
+      if (BoxQuality != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(BoxQuality);
+      }
+      if (RelevanceType != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(RelevanceType);
+      }
+      if (RelevanceId != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(RelevanceId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (DropType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DropType);
+      }
+      if (ChapterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChapterId);
+      }
+      if (BoxIcon != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BoxIcon);
+      }
+      if (BoxIntro != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BoxIntro);
+      }
+      if (BoxQuality != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BoxQuality);
+      }
+      if (RelevanceType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RelevanceType);
+      }
+      if (RelevanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RelevanceId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(box other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.DropType != 0) {
+        DropType = other.DropType;
+      }
+      if (other.ChapterId != 0) {
+        ChapterId = other.ChapterId;
+      }
+      if (other.BoxIcon != 0) {
+        BoxIcon = other.BoxIcon;
+      }
+      if (other.BoxIntro != 0) {
+        BoxIntro = other.BoxIntro;
+      }
+      if (other.BoxQuality != 0) {
+        BoxQuality = other.BoxQuality;
+      }
+      if (other.RelevanceType != 0) {
+        RelevanceType = other.RelevanceType;
+      }
+      if (other.RelevanceId != 0) {
+        RelevanceId = other.RelevanceId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 24: {
+            DropType = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            ChapterId = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            BoxIcon = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            BoxIntro = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            BoxQuality = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            RelevanceType = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            RelevanceId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Test : pb::IMessage<Test> {
+    private static readonly pb::MessageParser<Test> _parser = new pb::MessageParser<Test>(() => new Test());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Test> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Test() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Test(Test other) : this() {
+      iD_ = other.iD_;
+      aRRAYTEST_ = other.aRRAYTEST_.Clone();
+      tEST_ = other.tEST_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Test Clone() {
+      return new Test(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ARRAY_TEST" field.</summary>
+    public const int ARRAYTESTFieldNumber = 2;
+    private static readonly pb::FieldCodec<int> _repeated_aRRAYTEST_codec
+        = pb::FieldCodec.ForInt32(18);
+    private readonly pbc::RepeatedField<int> aRRAYTEST_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> ARRAYTEST {
+      get { return aRRAYTEST_; }
+    }
+
+    /// <summary>Field number for the "TEST" field.</summary>
+    public const int TESTFieldNumber = 3;
+    private static readonly pbc::MapField<int, int>.Codec _map_tEST_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 26);
+    private readonly pbc::MapField<int, int> tEST_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> TEST {
+      get { return tEST_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Test);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Test other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if(!aRRAYTEST_.Equals(other.aRRAYTEST_)) return false;
+      if (!TEST.Equals(other.TEST)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      hash ^= aRRAYTEST_.GetHashCode();
+      hash ^= TEST.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      aRRAYTEST_.WriteTo(output, _repeated_aRRAYTEST_codec);
+      tEST_.WriteTo(output, _map_tEST_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      size += aRRAYTEST_.CalculateSize(_repeated_aRRAYTEST_codec);
+      size += tEST_.CalculateSize(_map_tEST_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Test other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      aRRAYTEST_.Add(other.aRRAYTEST_);
+      tEST_.Add(other.tEST_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 18:
+          case 16: {
+            aRRAYTEST_.AddEntriesFrom(input, _repeated_aRRAYTEST_codec);
+            break;
+          }
+          case 26: {
+            tEST_.AddEntriesFrom(input, _map_tEST_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class prefab_sound : pb::IMessage<prefab_sound> {
+    private static readonly pb::MessageParser<prefab_sound> _parser = new pb::MessageParser<prefab_sound>(() => new prefab_sound());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<prefab_sound> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_sound() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_sound(prefab_sound other) : this() {
+      id_ = other.id_;
+      soundName_ = other.soundName_;
+      mark_ = other.mark_;
+      soundPath_ = other.soundPath_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_sound Clone() {
+      return new prefab_sound(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sound_name" field.</summary>
+    public const int SoundNameFieldNumber = 2;
+    private string soundName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SoundName {
+      get { return soundName_; }
+      set {
+        soundName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 3;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sound_path" field.</summary>
+    public const int SoundPathFieldNumber = 4;
+    private string soundPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SoundPath {
+      get { return soundPath_; }
+      set {
+        soundPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as prefab_sound);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(prefab_sound other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (SoundName != other.SoundName) return false;
+      if (Mark != other.Mark) return false;
+      if (SoundPath != other.SoundPath) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (SoundName.Length != 0) hash ^= SoundName.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (SoundPath.Length != 0) hash ^= SoundPath.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (SoundName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(SoundName);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Mark);
+      }
+      if (SoundPath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(SoundPath);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (SoundName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SoundName);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (SoundPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SoundPath);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(prefab_sound other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.SoundName.Length != 0) {
+        SoundName = other.SoundName;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.SoundPath.Length != 0) {
+        SoundPath = other.SoundPath;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            SoundName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 34: {
+            SoundPath = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class chapter : pb::IMessage<chapter> {
+    private static readonly pb::MessageParser<chapter> _parser = new pb::MessageParser<chapter>(() => new chapter());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<chapter> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public chapter() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public chapter(chapter other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      difficulty_ = other.difficulty_;
+      introKey_ = other.introKey_;
+      imgid_ = other.imgid_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public chapter Clone() {
+      return new chapter(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "difficulty" field.</summary>
+    public const int DifficultyFieldNumber = 4;
+    private global::Config.chapter_difficulty difficulty_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.chapter_difficulty Difficulty {
+      get { return difficulty_; }
+      set {
+        difficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "intro_key" field.</summary>
+    public const int IntroKeyFieldNumber = 5;
+    private string introKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroKey {
+      get { return introKey_; }
+      set {
+        introKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "imgid" field.</summary>
+    public const int ImgidFieldNumber = 6;
+    private int imgid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Imgid {
+      get { return imgid_; }
+      set {
+        imgid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as chapter);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(chapter other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (Difficulty != other.Difficulty) return false;
+      if (IntroKey != other.IntroKey) return false;
+      if (Imgid != other.Imgid) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
+      if (IntroKey.Length != 0) hash ^= IntroKey.GetHashCode();
+      if (Imgid != 0) hash ^= Imgid.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (Difficulty != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Difficulty);
+      }
+      if (IntroKey.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(IntroKey);
+      }
+      if (Imgid != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Imgid);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (Difficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Difficulty);
+      }
+      if (IntroKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroKey);
+      }
+      if (Imgid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Imgid);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(chapter other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.Difficulty != 0) {
+        Difficulty = other.Difficulty;
+      }
+      if (other.IntroKey.Length != 0) {
+        IntroKey = other.IntroKey;
+      }
+      if (other.Imgid != 0) {
+        Imgid = other.Imgid;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 32: {
+            difficulty_ = (global::Config.chapter_difficulty) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            IntroKey = input.ReadString();
+            break;
+          }
+          case 48: {
+            Imgid = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class weapon : pb::IMessage<weapon> {
+    private static readonly pb::MessageParser<weapon> _parser = new pb::MessageParser<weapon>(() => new weapon());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<weapon> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public weapon() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public weapon(weapon other) : this() {
+      id_ = other.id_;
+      mark_ = other.mark_;
+      wearPos_ = other.wearPos_;
+      weaponType_ = other.weaponType_;
+      subType_ = other.subType_;
+      energy_ = other.energy_;
+      attrId1_ = other.attrId1_;
+      attrV1_ = other.attrV1_;
+      attrId2_ = other.attrId2_;
+      attrV2_ = other.attrV2_;
+      attrId3_ = other.attrId3_;
+      attrV3_ = other.attrV3_;
+      attrId13_ = other.attrId13_;
+      attrV13_ = other.attrV13_.Clone();
+      attrId4_ = other.attrId4_;
+      attrV4_ = other.attrV4_;
+      attrId5_ = other.attrId5_;
+      attrV5_ = other.attrV5_;
+      attrId6_ = other.attrId6_;
+      attrV6_ = other.attrV6_;
+      attrId7_ = other.attrId7_;
+      attrV7_ = other.attrV7_;
+      attrId8_ = other.attrId8_;
+      attrV8_ = other.attrV8_;
+      attrId9_ = other.attrId9_;
+      attrV9_ = other.attrV9_;
+      attrId12_ = other.attrId12_;
+      attrV12_ = other.attrV12_;
+      weaponEffectId_ = other.weaponEffectId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public weapon Clone() {
+      return new weapon(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 2;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "wear_pos" field.</summary>
+    public const int WearPosFieldNumber = 3;
+    private global::Config.wear_pos wearPos_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.wear_pos WearPos {
+      get { return wearPos_; }
+      set {
+        wearPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_type" field.</summary>
+    public const int WeaponTypeFieldNumber = 4;
+    private global::Config.weapon_type weaponType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.weapon_type WeaponType {
+      get { return weaponType_; }
+      set {
+        weaponType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sub_type" field.</summary>
+    public const int SubTypeFieldNumber = 5;
+    private global::Config.weapon_sub_type subType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.weapon_sub_type SubType {
+      get { return subType_; }
+      set {
+        subType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "energy" field.</summary>
+    public const int EnergyFieldNumber = 6;
+    private int energy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Energy {
+      get { return energy_; }
+      set {
+        energy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id1" field.</summary>
+    public const int AttrId1FieldNumber = 7;
+    private int attrId1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId1 {
+      get { return attrId1_; }
+      set {
+        attrId1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v1" field.</summary>
+    public const int AttrV1FieldNumber = 8;
+    private int attrV1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV1 {
+      get { return attrV1_; }
+      set {
+        attrV1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id2" field.</summary>
+    public const int AttrId2FieldNumber = 9;
+    private int attrId2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId2 {
+      get { return attrId2_; }
+      set {
+        attrId2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v2" field.</summary>
+    public const int AttrV2FieldNumber = 10;
+    private int attrV2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV2 {
+      get { return attrV2_; }
+      set {
+        attrV2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id3" field.</summary>
+    public const int AttrId3FieldNumber = 11;
+    private int attrId3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId3 {
+      get { return attrId3_; }
+      set {
+        attrId3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v3" field.</summary>
+    public const int AttrV3FieldNumber = 12;
+    private int attrV3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV3 {
+      get { return attrV3_; }
+      set {
+        attrV3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id13" field.</summary>
+    public const int AttrId13FieldNumber = 13;
+    private int attrId13_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId13 {
+      get { return attrId13_; }
+      set {
+        attrId13_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v13" field.</summary>
+    public const int AttrV13FieldNumber = 14;
+    private static readonly pb::FieldCodec<int> _repeated_attrV13_codec
+        = pb::FieldCodec.ForInt32(114);
+    private readonly pbc::RepeatedField<int> attrV13_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AttrV13 {
+      get { return attrV13_; }
+    }
+
+    /// <summary>Field number for the "attr_id4" field.</summary>
+    public const int AttrId4FieldNumber = 15;
+    private int attrId4_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId4 {
+      get { return attrId4_; }
+      set {
+        attrId4_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v4" field.</summary>
+    public const int AttrV4FieldNumber = 16;
+    private int attrV4_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV4 {
+      get { return attrV4_; }
+      set {
+        attrV4_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id5" field.</summary>
+    public const int AttrId5FieldNumber = 17;
+    private int attrId5_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId5 {
+      get { return attrId5_; }
+      set {
+        attrId5_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v5" field.</summary>
+    public const int AttrV5FieldNumber = 18;
+    private int attrV5_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV5 {
+      get { return attrV5_; }
+      set {
+        attrV5_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id6" field.</summary>
+    public const int AttrId6FieldNumber = 19;
+    private int attrId6_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId6 {
+      get { return attrId6_; }
+      set {
+        attrId6_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v6" field.</summary>
+    public const int AttrV6FieldNumber = 20;
+    private int attrV6_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV6 {
+      get { return attrV6_; }
+      set {
+        attrV6_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id7" field.</summary>
+    public const int AttrId7FieldNumber = 21;
+    private int attrId7_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId7 {
+      get { return attrId7_; }
+      set {
+        attrId7_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v7" field.</summary>
+    public const int AttrV7FieldNumber = 22;
+    private int attrV7_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV7 {
+      get { return attrV7_; }
+      set {
+        attrV7_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id8" field.</summary>
+    public const int AttrId8FieldNumber = 23;
+    private int attrId8_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId8 {
+      get { return attrId8_; }
+      set {
+        attrId8_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v8" field.</summary>
+    public const int AttrV8FieldNumber = 24;
+    private int attrV8_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV8 {
+      get { return attrV8_; }
+      set {
+        attrV8_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id9" field.</summary>
+    public const int AttrId9FieldNumber = 25;
+    private int attrId9_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId9 {
+      get { return attrId9_; }
+      set {
+        attrId9_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v9" field.</summary>
+    public const int AttrV9FieldNumber = 26;
+    private int attrV9_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV9 {
+      get { return attrV9_; }
+      set {
+        attrV9_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id12" field.</summary>
+    public const int AttrId12FieldNumber = 27;
+    private int attrId12_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId12 {
+      get { return attrId12_; }
+      set {
+        attrId12_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v12" field.</summary>
+    public const int AttrV12FieldNumber = 28;
+    private int attrV12_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV12 {
+      get { return attrV12_; }
+      set {
+        attrV12_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_effect_id" field.</summary>
+    public const int WeaponEffectIdFieldNumber = 29;
+    private int weaponEffectId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int WeaponEffectId {
+      get { return weaponEffectId_; }
+      set {
+        weaponEffectId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as weapon);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(weapon other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Mark != other.Mark) return false;
+      if (WearPos != other.WearPos) return false;
+      if (WeaponType != other.WeaponType) return false;
+      if (SubType != other.SubType) return false;
+      if (Energy != other.Energy) return false;
+      if (AttrId1 != other.AttrId1) return false;
+      if (AttrV1 != other.AttrV1) return false;
+      if (AttrId2 != other.AttrId2) return false;
+      if (AttrV2 != other.AttrV2) return false;
+      if (AttrId3 != other.AttrId3) return false;
+      if (AttrV3 != other.AttrV3) return false;
+      if (AttrId13 != other.AttrId13) return false;
+      if(!attrV13_.Equals(other.attrV13_)) return false;
+      if (AttrId4 != other.AttrId4) return false;
+      if (AttrV4 != other.AttrV4) return false;
+      if (AttrId5 != other.AttrId5) return false;
+      if (AttrV5 != other.AttrV5) return false;
+      if (AttrId6 != other.AttrId6) return false;
+      if (AttrV6 != other.AttrV6) return false;
+      if (AttrId7 != other.AttrId7) return false;
+      if (AttrV7 != other.AttrV7) return false;
+      if (AttrId8 != other.AttrId8) return false;
+      if (AttrV8 != other.AttrV8) return false;
+      if (AttrId9 != other.AttrId9) return false;
+      if (AttrV9 != other.AttrV9) return false;
+      if (AttrId12 != other.AttrId12) return false;
+      if (AttrV12 != other.AttrV12) return false;
+      if (WeaponEffectId != other.WeaponEffectId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (WearPos != 0) hash ^= WearPos.GetHashCode();
+      if (WeaponType != 0) hash ^= WeaponType.GetHashCode();
+      if (SubType != 0) hash ^= SubType.GetHashCode();
+      if (Energy != 0) hash ^= Energy.GetHashCode();
+      if (AttrId1 != 0) hash ^= AttrId1.GetHashCode();
+      if (AttrV1 != 0) hash ^= AttrV1.GetHashCode();
+      if (AttrId2 != 0) hash ^= AttrId2.GetHashCode();
+      if (AttrV2 != 0) hash ^= AttrV2.GetHashCode();
+      if (AttrId3 != 0) hash ^= AttrId3.GetHashCode();
+      if (AttrV3 != 0) hash ^= AttrV3.GetHashCode();
+      if (AttrId13 != 0) hash ^= AttrId13.GetHashCode();
+      hash ^= attrV13_.GetHashCode();
+      if (AttrId4 != 0) hash ^= AttrId4.GetHashCode();
+      if (AttrV4 != 0) hash ^= AttrV4.GetHashCode();
+      if (AttrId5 != 0) hash ^= AttrId5.GetHashCode();
+      if (AttrV5 != 0) hash ^= AttrV5.GetHashCode();
+      if (AttrId6 != 0) hash ^= AttrId6.GetHashCode();
+      if (AttrV6 != 0) hash ^= AttrV6.GetHashCode();
+      if (AttrId7 != 0) hash ^= AttrId7.GetHashCode();
+      if (AttrV7 != 0) hash ^= AttrV7.GetHashCode();
+      if (AttrId8 != 0) hash ^= AttrId8.GetHashCode();
+      if (AttrV8 != 0) hash ^= AttrV8.GetHashCode();
+      if (AttrId9 != 0) hash ^= AttrId9.GetHashCode();
+      if (AttrV9 != 0) hash ^= AttrV9.GetHashCode();
+      if (AttrId12 != 0) hash ^= AttrId12.GetHashCode();
+      if (AttrV12 != 0) hash ^= AttrV12.GetHashCode();
+      if (WeaponEffectId != 0) hash ^= WeaponEffectId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Mark);
+      }
+      if (WearPos != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) WearPos);
+      }
+      if (WeaponType != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) WeaponType);
+      }
+      if (SubType != 0) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) SubType);
+      }
+      if (Energy != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Energy);
+      }
+      if (AttrId1 != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(AttrId1);
+      }
+      if (AttrV1 != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(AttrV1);
+      }
+      if (AttrId2 != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(AttrId2);
+      }
+      if (AttrV2 != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(AttrV2);
+      }
+      if (AttrId3 != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(AttrId3);
+      }
+      if (AttrV3 != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(AttrV3);
+      }
+      if (AttrId13 != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(AttrId13);
+      }
+      attrV13_.WriteTo(output, _repeated_attrV13_codec);
+      if (AttrId4 != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(AttrId4);
+      }
+      if (AttrV4 != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(AttrV4);
+      }
+      if (AttrId5 != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(AttrId5);
+      }
+      if (AttrV5 != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(AttrV5);
+      }
+      if (AttrId6 != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(AttrId6);
+      }
+      if (AttrV6 != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(AttrV6);
+      }
+      if (AttrId7 != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(AttrId7);
+      }
+      if (AttrV7 != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(AttrV7);
+      }
+      if (AttrId8 != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(AttrId8);
+      }
+      if (AttrV8 != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(AttrV8);
+      }
+      if (AttrId9 != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteInt32(AttrId9);
+      }
+      if (AttrV9 != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(AttrV9);
+      }
+      if (AttrId12 != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(AttrId12);
+      }
+      if (AttrV12 != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(AttrV12);
+      }
+      if (WeaponEffectId != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(WeaponEffectId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (WearPos != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WearPos);
+      }
+      if (WeaponType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WeaponType);
+      }
+      if (SubType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SubType);
+      }
+      if (Energy != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Energy);
+      }
+      if (AttrId1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId1);
+      }
+      if (AttrV1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV1);
+      }
+      if (AttrId2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId2);
+      }
+      if (AttrV2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV2);
+      }
+      if (AttrId3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId3);
+      }
+      if (AttrV3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV3);
+      }
+      if (AttrId13 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId13);
+      }
+      size += attrV13_.CalculateSize(_repeated_attrV13_codec);
+      if (AttrId4 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId4);
+      }
+      if (AttrV4 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV4);
+      }
+      if (AttrId5 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId5);
+      }
+      if (AttrV5 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV5);
+      }
+      if (AttrId6 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId6);
+      }
+      if (AttrV6 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV6);
+      }
+      if (AttrId7 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId7);
+      }
+      if (AttrV7 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV7);
+      }
+      if (AttrId8 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId8);
+      }
+      if (AttrV8 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV8);
+      }
+      if (AttrId9 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId9);
+      }
+      if (AttrV9 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV9);
+      }
+      if (AttrId12 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId12);
+      }
+      if (AttrV12 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV12);
+      }
+      if (WeaponEffectId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(WeaponEffectId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(weapon other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.WearPos != 0) {
+        WearPos = other.WearPos;
+      }
+      if (other.WeaponType != 0) {
+        WeaponType = other.WeaponType;
+      }
+      if (other.SubType != 0) {
+        SubType = other.SubType;
+      }
+      if (other.Energy != 0) {
+        Energy = other.Energy;
+      }
+      if (other.AttrId1 != 0) {
+        AttrId1 = other.AttrId1;
+      }
+      if (other.AttrV1 != 0) {
+        AttrV1 = other.AttrV1;
+      }
+      if (other.AttrId2 != 0) {
+        AttrId2 = other.AttrId2;
+      }
+      if (other.AttrV2 != 0) {
+        AttrV2 = other.AttrV2;
+      }
+      if (other.AttrId3 != 0) {
+        AttrId3 = other.AttrId3;
+      }
+      if (other.AttrV3 != 0) {
+        AttrV3 = other.AttrV3;
+      }
+      if (other.AttrId13 != 0) {
+        AttrId13 = other.AttrId13;
+      }
+      attrV13_.Add(other.attrV13_);
+      if (other.AttrId4 != 0) {
+        AttrId4 = other.AttrId4;
+      }
+      if (other.AttrV4 != 0) {
+        AttrV4 = other.AttrV4;
+      }
+      if (other.AttrId5 != 0) {
+        AttrId5 = other.AttrId5;
+      }
+      if (other.AttrV5 != 0) {
+        AttrV5 = other.AttrV5;
+      }
+      if (other.AttrId6 != 0) {
+        AttrId6 = other.AttrId6;
+      }
+      if (other.AttrV6 != 0) {
+        AttrV6 = other.AttrV6;
+      }
+      if (other.AttrId7 != 0) {
+        AttrId7 = other.AttrId7;
+      }
+      if (other.AttrV7 != 0) {
+        AttrV7 = other.AttrV7;
+      }
+      if (other.AttrId8 != 0) {
+        AttrId8 = other.AttrId8;
+      }
+      if (other.AttrV8 != 0) {
+        AttrV8 = other.AttrV8;
+      }
+      if (other.AttrId9 != 0) {
+        AttrId9 = other.AttrId9;
+      }
+      if (other.AttrV9 != 0) {
+        AttrV9 = other.AttrV9;
+      }
+      if (other.AttrId12 != 0) {
+        AttrId12 = other.AttrId12;
+      }
+      if (other.AttrV12 != 0) {
+        AttrV12 = other.AttrV12;
+      }
+      if (other.WeaponEffectId != 0) {
+        WeaponEffectId = other.WeaponEffectId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 24: {
+            wearPos_ = (global::Config.wear_pos) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            weaponType_ = (global::Config.weapon_type) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            subType_ = (global::Config.weapon_sub_type) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Energy = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            AttrId1 = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            AttrV1 = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            AttrId2 = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            AttrV2 = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            AttrId3 = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            AttrV3 = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            AttrId13 = input.ReadInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            attrV13_.AddEntriesFrom(input, _repeated_attrV13_codec);
+            break;
+          }
+          case 120: {
+            AttrId4 = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            AttrV4 = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            AttrId5 = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            AttrV5 = input.ReadInt32();
+            break;
+          }
+          case 152: {
+            AttrId6 = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            AttrV6 = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            AttrId7 = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            AttrV7 = input.ReadInt32();
+            break;
+          }
+          case 184: {
+            AttrId8 = input.ReadInt32();
+            break;
+          }
+          case 192: {
+            AttrV8 = input.ReadInt32();
+            break;
+          }
+          case 200: {
+            AttrId9 = input.ReadInt32();
+            break;
+          }
+          case 208: {
+            AttrV9 = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            AttrId12 = input.ReadInt32();
+            break;
+          }
+          case 224: {
+            AttrV12 = input.ReadInt32();
+            break;
+          }
+          case 232: {
+            WeaponEffectId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class formula : pb::IMessage<formula> {
+    private static readonly pb::MessageParser<formula> _parser = new pb::MessageParser<formula>(() => new formula());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<formula> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public formula() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public formula(formula other) : this() {
+      id_ = other.id_;
+      imgId_ = other.imgId_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      introKey_ = other.introKey_;
+      formulaType_ = other.formulaType_;
+      costTime_ = other.costTime_;
+      product_ = other.product_.Clone();
+      consume_ = other.consume_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public formula Clone() {
+      return new formula(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "img_id" field.</summary>
+    public const int ImgIdFieldNumber = 2;
+    private int imgId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ImgId {
+      get { return imgId_; }
+      set {
+        imgId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 3;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 4;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro_key" field.</summary>
+    public const int IntroKeyFieldNumber = 5;
+    private string introKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntroKey {
+      get { return introKey_; }
+      set {
+        introKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "formula_type" field.</summary>
+    public const int FormulaTypeFieldNumber = 6;
+    private int formulaType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int FormulaType {
+      get { return formulaType_; }
+      set {
+        formulaType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost_time" field.</summary>
+    public const int CostTimeFieldNumber = 7;
+    private int costTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CostTime {
+      get { return costTime_; }
+      set {
+        costTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "product" field.</summary>
+    public const int ProductFieldNumber = 8;
+    private static readonly pbc::MapField<int, int>.Codec _map_product_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 66);
+    private readonly pbc::MapField<int, int> product_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> Product {
+      get { return product_; }
+    }
+
+    /// <summary>Field number for the "consume" field.</summary>
+    public const int ConsumeFieldNumber = 9;
+    private static readonly pbc::MapField<int, int>.Codec _map_consume_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 74);
+    private readonly pbc::MapField<int, int> consume_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> Consume {
+      get { return consume_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as formula);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(formula other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (ImgId != other.ImgId) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (IntroKey != other.IntroKey) return false;
+      if (FormulaType != other.FormulaType) return false;
+      if (CostTime != other.CostTime) return false;
+      if (!Product.Equals(other.Product)) return false;
+      if (!Consume.Equals(other.Consume)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (ImgId != 0) hash ^= ImgId.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (IntroKey.Length != 0) hash ^= IntroKey.GetHashCode();
+      if (FormulaType != 0) hash ^= FormulaType.GetHashCode();
+      if (CostTime != 0) hash ^= CostTime.GetHashCode();
+      hash ^= Product.GetHashCode();
+      hash ^= Consume.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (ImgId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ImgId);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(IntroKey);
+      }
+      if (FormulaType != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(FormulaType);
+      }
+      if (CostTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(CostTime);
+      }
+      product_.WriteTo(output, _map_product_codec);
+      consume_.WriteTo(output, _map_consume_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (ImgId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ImgId);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (IntroKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntroKey);
+      }
+      if (FormulaType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FormulaType);
+      }
+      if (CostTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CostTime);
+      }
+      size += product_.CalculateSize(_map_product_codec);
+      size += consume_.CalculateSize(_map_consume_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(formula other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.ImgId != 0) {
+        ImgId = other.ImgId;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.IntroKey.Length != 0) {
+        IntroKey = other.IntroKey;
+      }
+      if (other.FormulaType != 0) {
+        FormulaType = other.FormulaType;
+      }
+      if (other.CostTime != 0) {
+        CostTime = other.CostTime;
+      }
+      product_.Add(other.product_);
+      consume_.Add(other.consume_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            ImgId = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 34: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 42: {
+            IntroKey = input.ReadString();
+            break;
+          }
+          case 48: {
+            FormulaType = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            CostTime = input.ReadInt32();
+            break;
+          }
+          case 66: {
+            product_.AddEntriesFrom(input, _map_product_codec);
+            break;
+          }
+          case 74: {
+            consume_.AddEntriesFrom(input, _map_consume_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class level_npc : pb::IMessage<level_npc> {
+    private static readonly pb::MessageParser<level_npc> _parser = new pb::MessageParser<level_npc>(() => new level_npc());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<level_npc> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public level_npc() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public level_npc(level_npc other) : this() {
+      id_ = other.id_;
+      mark_ = other.mark_;
+      stageId_ = other.stageId_;
+      areaId_ = other.areaId_;
+      heroId_ = other.heroId_;
+      heroLv_ = other.heroLv_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public level_npc Clone() {
+      return new level_npc(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 2;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 3;
+    private int stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "area_id" field.</summary>
+    public const int AreaIdFieldNumber = 4;
+    private int areaId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AreaId {
+      get { return areaId_; }
+      set {
+        areaId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hero_id" field.</summary>
+    public const int HeroIdFieldNumber = 5;
+    private int heroId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HeroId {
+      get { return heroId_; }
+      set {
+        heroId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hero_lv" field.</summary>
+    public const int HeroLvFieldNumber = 6;
+    private int heroLv_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HeroLv {
+      get { return heroLv_; }
+      set {
+        heroLv_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as level_npc);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(level_npc other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Mark != other.Mark) return false;
+      if (StageId != other.StageId) return false;
+      if (AreaId != other.AreaId) return false;
+      if (HeroId != other.HeroId) return false;
+      if (HeroLv != other.HeroLv) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (AreaId != 0) hash ^= AreaId.GetHashCode();
+      if (HeroId != 0) hash ^= HeroId.GetHashCode();
+      if (HeroLv != 0) hash ^= HeroLv.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Mark);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(StageId);
+      }
+      if (AreaId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(AreaId);
+      }
+      if (HeroId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(HeroId);
+      }
+      if (HeroLv != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(HeroLv);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StageId);
+      }
+      if (AreaId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AreaId);
+      }
+      if (HeroId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HeroId);
+      }
+      if (HeroLv != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HeroLv);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(level_npc other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.AreaId != 0) {
+        AreaId = other.AreaId;
+      }
+      if (other.HeroId != 0) {
+        HeroId = other.HeroId;
+      }
+      if (other.HeroLv != 0) {
+        HeroLv = other.HeroLv;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 24: {
+            StageId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            AreaId = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            HeroId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            HeroLv = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class prefab_shape : pb::IMessage<prefab_shape> {
+    private static readonly pb::MessageParser<prefab_shape> _parser = new pb::MessageParser<prefab_shape>(() => new prefab_shape());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<prefab_shape> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_shape() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_shape(prefab_shape other) : this() {
+      id_ = other.id_;
+      prefabName_ = other.prefabName_;
+      mark_ = other.mark_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_shape Clone() {
+      return new prefab_shape(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prefab_name" field.</summary>
+    public const int PrefabNameFieldNumber = 2;
+    private string prefabName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PrefabName {
+      get { return prefabName_; }
+      set {
+        prefabName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 3;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as prefab_shape);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(prefab_shape other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (PrefabName != other.PrefabName) return false;
+      if (Mark != other.Mark) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (PrefabName.Length != 0) hash ^= PrefabName.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (PrefabName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PrefabName);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Mark);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (PrefabName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabName);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(prefab_shape other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.PrefabName.Length != 0) {
+        PrefabName = other.PrefabName;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            PrefabName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Mark = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class armor : pb::IMessage<armor> {
+    private static readonly pb::MessageParser<armor> _parser = new pb::MessageParser<armor>(() => new armor());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<armor> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public armor() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public armor(armor other) : this() {
+      id_ = other.id_;
+      mark_ = other.mark_;
+      wearPos_ = other.wearPos_;
+      armorType_ = other.armorType_;
+      modId_ = other.modId_;
+      attrId1_ = other.attrId1_;
+      attrV1_ = other.attrV1_;
+      attrId2_ = other.attrId2_;
+      attrV2_ = other.attrV2_;
+      attrId3_ = other.attrId3_;
+      attrV3_ = other.attrV3_;
+      attrId4_ = other.attrId4_;
+      attrV4_ = other.attrV4_;
+      attrId5_ = other.attrId5_;
+      attrV5_ = other.attrV5_;
+      attrId6_ = other.attrId6_;
+      attrV6_ = other.attrV6_;
+      attrId7_ = other.attrId7_;
+      attrV7_ = other.attrV7_;
+      attrId8_ = other.attrId8_;
+      attrV8_ = other.attrV8_;
+      attrId9_ = other.attrId9_;
+      attrV9_ = other.attrV9_;
+      attrId12_ = other.attrId12_;
+      attrV12_ = other.attrV12_;
+      attrId13_ = other.attrId13_;
+      attrV13_ = other.attrV13_;
+      attrId14_ = other.attrId14_;
+      attrV14_ = other.attrV14_;
+      attrId15_ = other.attrId15_;
+      attrV15_ = other.attrV15_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public armor Clone() {
+      return new armor(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 2;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "wear_pos" field.</summary>
+    public const int WearPosFieldNumber = 3;
+    private global::Config.wear_pos wearPos_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.wear_pos WearPos {
+      get { return wearPos_; }
+      set {
+        wearPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "armor_type" field.</summary>
+    public const int ArmorTypeFieldNumber = 4;
+    private global::Config.armor_type armorType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.armor_type ArmorType {
+      get { return armorType_; }
+      set {
+        armorType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mod_id" field.</summary>
+    public const int ModIdFieldNumber = 5;
+    private int modId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ModId {
+      get { return modId_; }
+      set {
+        modId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id1" field.</summary>
+    public const int AttrId1FieldNumber = 6;
+    private int attrId1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId1 {
+      get { return attrId1_; }
+      set {
+        attrId1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v1" field.</summary>
+    public const int AttrV1FieldNumber = 7;
+    private int attrV1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV1 {
+      get { return attrV1_; }
+      set {
+        attrV1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id2" field.</summary>
+    public const int AttrId2FieldNumber = 8;
+    private int attrId2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId2 {
+      get { return attrId2_; }
+      set {
+        attrId2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v2" field.</summary>
+    public const int AttrV2FieldNumber = 9;
+    private int attrV2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV2 {
+      get { return attrV2_; }
+      set {
+        attrV2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id3" field.</summary>
+    public const int AttrId3FieldNumber = 10;
+    private int attrId3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId3 {
+      get { return attrId3_; }
+      set {
+        attrId3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v3" field.</summary>
+    public const int AttrV3FieldNumber = 11;
+    private int attrV3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV3 {
+      get { return attrV3_; }
+      set {
+        attrV3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id4" field.</summary>
+    public const int AttrId4FieldNumber = 12;
+    private int attrId4_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId4 {
+      get { return attrId4_; }
+      set {
+        attrId4_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v4" field.</summary>
+    public const int AttrV4FieldNumber = 13;
+    private int attrV4_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV4 {
+      get { return attrV4_; }
+      set {
+        attrV4_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id5" field.</summary>
+    public const int AttrId5FieldNumber = 14;
+    private int attrId5_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId5 {
+      get { return attrId5_; }
+      set {
+        attrId5_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v5" field.</summary>
+    public const int AttrV5FieldNumber = 15;
+    private int attrV5_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV5 {
+      get { return attrV5_; }
+      set {
+        attrV5_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id6" field.</summary>
+    public const int AttrId6FieldNumber = 16;
+    private int attrId6_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId6 {
+      get { return attrId6_; }
+      set {
+        attrId6_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v6" field.</summary>
+    public const int AttrV6FieldNumber = 17;
+    private int attrV6_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV6 {
+      get { return attrV6_; }
+      set {
+        attrV6_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id7" field.</summary>
+    public const int AttrId7FieldNumber = 18;
+    private int attrId7_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId7 {
+      get { return attrId7_; }
+      set {
+        attrId7_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v7" field.</summary>
+    public const int AttrV7FieldNumber = 19;
+    private int attrV7_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV7 {
+      get { return attrV7_; }
+      set {
+        attrV7_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id8" field.</summary>
+    public const int AttrId8FieldNumber = 20;
+    private int attrId8_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId8 {
+      get { return attrId8_; }
+      set {
+        attrId8_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v8" field.</summary>
+    public const int AttrV8FieldNumber = 21;
+    private int attrV8_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV8 {
+      get { return attrV8_; }
+      set {
+        attrV8_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id9" field.</summary>
+    public const int AttrId9FieldNumber = 22;
+    private int attrId9_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId9 {
+      get { return attrId9_; }
+      set {
+        attrId9_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v9" field.</summary>
+    public const int AttrV9FieldNumber = 23;
+    private int attrV9_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV9 {
+      get { return attrV9_; }
+      set {
+        attrV9_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id12" field.</summary>
+    public const int AttrId12FieldNumber = 24;
+    private int attrId12_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId12 {
+      get { return attrId12_; }
+      set {
+        attrId12_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v12" field.</summary>
+    public const int AttrV12FieldNumber = 25;
+    private int attrV12_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV12 {
+      get { return attrV12_; }
+      set {
+        attrV12_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id13" field.</summary>
+    public const int AttrId13FieldNumber = 26;
+    private int attrId13_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId13 {
+      get { return attrId13_; }
+      set {
+        attrId13_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v13" field.</summary>
+    public const int AttrV13FieldNumber = 27;
+    private int attrV13_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV13 {
+      get { return attrV13_; }
+      set {
+        attrV13_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id14" field.</summary>
+    public const int AttrId14FieldNumber = 28;
+    private int attrId14_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId14 {
+      get { return attrId14_; }
+      set {
+        attrId14_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v14" field.</summary>
+    public const int AttrV14FieldNumber = 29;
+    private int attrV14_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV14 {
+      get { return attrV14_; }
+      set {
+        attrV14_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_id15" field.</summary>
+    public const int AttrId15FieldNumber = 30;
+    private int attrId15_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrId15 {
+      get { return attrId15_; }
+      set {
+        attrId15_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attr_v15" field.</summary>
+    public const int AttrV15FieldNumber = 31;
+    private int attrV15_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttrV15 {
+      get { return attrV15_; }
+      set {
+        attrV15_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as armor);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(armor other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Mark != other.Mark) return false;
+      if (WearPos != other.WearPos) return false;
+      if (ArmorType != other.ArmorType) return false;
+      if (ModId != other.ModId) return false;
+      if (AttrId1 != other.AttrId1) return false;
+      if (AttrV1 != other.AttrV1) return false;
+      if (AttrId2 != other.AttrId2) return false;
+      if (AttrV2 != other.AttrV2) return false;
+      if (AttrId3 != other.AttrId3) return false;
+      if (AttrV3 != other.AttrV3) return false;
+      if (AttrId4 != other.AttrId4) return false;
+      if (AttrV4 != other.AttrV4) return false;
+      if (AttrId5 != other.AttrId5) return false;
+      if (AttrV5 != other.AttrV5) return false;
+      if (AttrId6 != other.AttrId6) return false;
+      if (AttrV6 != other.AttrV6) return false;
+      if (AttrId7 != other.AttrId7) return false;
+      if (AttrV7 != other.AttrV7) return false;
+      if (AttrId8 != other.AttrId8) return false;
+      if (AttrV8 != other.AttrV8) return false;
+      if (AttrId9 != other.AttrId9) return false;
+      if (AttrV9 != other.AttrV9) return false;
+      if (AttrId12 != other.AttrId12) return false;
+      if (AttrV12 != other.AttrV12) return false;
+      if (AttrId13 != other.AttrId13) return false;
+      if (AttrV13 != other.AttrV13) return false;
+      if (AttrId14 != other.AttrId14) return false;
+      if (AttrV14 != other.AttrV14) return false;
+      if (AttrId15 != other.AttrId15) return false;
+      if (AttrV15 != other.AttrV15) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (WearPos != 0) hash ^= WearPos.GetHashCode();
+      if (ArmorType != 0) hash ^= ArmorType.GetHashCode();
+      if (ModId != 0) hash ^= ModId.GetHashCode();
+      if (AttrId1 != 0) hash ^= AttrId1.GetHashCode();
+      if (AttrV1 != 0) hash ^= AttrV1.GetHashCode();
+      if (AttrId2 != 0) hash ^= AttrId2.GetHashCode();
+      if (AttrV2 != 0) hash ^= AttrV2.GetHashCode();
+      if (AttrId3 != 0) hash ^= AttrId3.GetHashCode();
+      if (AttrV3 != 0) hash ^= AttrV3.GetHashCode();
+      if (AttrId4 != 0) hash ^= AttrId4.GetHashCode();
+      if (AttrV4 != 0) hash ^= AttrV4.GetHashCode();
+      if (AttrId5 != 0) hash ^= AttrId5.GetHashCode();
+      if (AttrV5 != 0) hash ^= AttrV5.GetHashCode();
+      if (AttrId6 != 0) hash ^= AttrId6.GetHashCode();
+      if (AttrV6 != 0) hash ^= AttrV6.GetHashCode();
+      if (AttrId7 != 0) hash ^= AttrId7.GetHashCode();
+      if (AttrV7 != 0) hash ^= AttrV7.GetHashCode();
+      if (AttrId8 != 0) hash ^= AttrId8.GetHashCode();
+      if (AttrV8 != 0) hash ^= AttrV8.GetHashCode();
+      if (AttrId9 != 0) hash ^= AttrId9.GetHashCode();
+      if (AttrV9 != 0) hash ^= AttrV9.GetHashCode();
+      if (AttrId12 != 0) hash ^= AttrId12.GetHashCode();
+      if (AttrV12 != 0) hash ^= AttrV12.GetHashCode();
+      if (AttrId13 != 0) hash ^= AttrId13.GetHashCode();
+      if (AttrV13 != 0) hash ^= AttrV13.GetHashCode();
+      if (AttrId14 != 0) hash ^= AttrId14.GetHashCode();
+      if (AttrV14 != 0) hash ^= AttrV14.GetHashCode();
+      if (AttrId15 != 0) hash ^= AttrId15.GetHashCode();
+      if (AttrV15 != 0) hash ^= AttrV15.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Mark);
+      }
+      if (WearPos != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) WearPos);
+      }
+      if (ArmorType != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) ArmorType);
+      }
+      if (ModId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(ModId);
+      }
+      if (AttrId1 != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(AttrId1);
+      }
+      if (AttrV1 != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(AttrV1);
+      }
+      if (AttrId2 != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(AttrId2);
+      }
+      if (AttrV2 != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(AttrV2);
+      }
+      if (AttrId3 != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(AttrId3);
+      }
+      if (AttrV3 != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(AttrV3);
+      }
+      if (AttrId4 != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(AttrId4);
+      }
+      if (AttrV4 != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(AttrV4);
+      }
+      if (AttrId5 != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(AttrId5);
+      }
+      if (AttrV5 != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(AttrV5);
+      }
+      if (AttrId6 != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(AttrId6);
+      }
+      if (AttrV6 != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(AttrV6);
+      }
+      if (AttrId7 != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(AttrId7);
+      }
+      if (AttrV7 != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(AttrV7);
+      }
+      if (AttrId8 != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(AttrId8);
+      }
+      if (AttrV8 != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(AttrV8);
+      }
+      if (AttrId9 != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(AttrId9);
+      }
+      if (AttrV9 != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(AttrV9);
+      }
+      if (AttrId12 != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(AttrId12);
+      }
+      if (AttrV12 != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteInt32(AttrV12);
+      }
+      if (AttrId13 != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(AttrId13);
+      }
+      if (AttrV13 != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(AttrV13);
+      }
+      if (AttrId14 != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(AttrId14);
+      }
+      if (AttrV14 != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(AttrV14);
+      }
+      if (AttrId15 != 0) {
+        output.WriteRawTag(240, 1);
+        output.WriteInt32(AttrId15);
+      }
+      if (AttrV15 != 0) {
+        output.WriteRawTag(248, 1);
+        output.WriteInt32(AttrV15);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (WearPos != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WearPos);
+      }
+      if (ArmorType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArmorType);
+      }
+      if (ModId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ModId);
+      }
+      if (AttrId1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId1);
+      }
+      if (AttrV1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV1);
+      }
+      if (AttrId2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId2);
+      }
+      if (AttrV2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV2);
+      }
+      if (AttrId3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId3);
+      }
+      if (AttrV3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV3);
+      }
+      if (AttrId4 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId4);
+      }
+      if (AttrV4 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV4);
+      }
+      if (AttrId5 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrId5);
+      }
+      if (AttrV5 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttrV5);
+      }
+      if (AttrId6 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId6);
+      }
+      if (AttrV6 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV6);
+      }
+      if (AttrId7 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId7);
+      }
+      if (AttrV7 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV7);
+      }
+      if (AttrId8 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId8);
+      }
+      if (AttrV8 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV8);
+      }
+      if (AttrId9 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId9);
+      }
+      if (AttrV9 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV9);
+      }
+      if (AttrId12 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId12);
+      }
+      if (AttrV12 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV12);
+      }
+      if (AttrId13 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId13);
+      }
+      if (AttrV13 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV13);
+      }
+      if (AttrId14 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId14);
+      }
+      if (AttrV14 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV14);
+      }
+      if (AttrId15 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrId15);
+      }
+      if (AttrV15 != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AttrV15);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(armor other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.WearPos != 0) {
+        WearPos = other.WearPos;
+      }
+      if (other.ArmorType != 0) {
+        ArmorType = other.ArmorType;
+      }
+      if (other.ModId != 0) {
+        ModId = other.ModId;
+      }
+      if (other.AttrId1 != 0) {
+        AttrId1 = other.AttrId1;
+      }
+      if (other.AttrV1 != 0) {
+        AttrV1 = other.AttrV1;
+      }
+      if (other.AttrId2 != 0) {
+        AttrId2 = other.AttrId2;
+      }
+      if (other.AttrV2 != 0) {
+        AttrV2 = other.AttrV2;
+      }
+      if (other.AttrId3 != 0) {
+        AttrId3 = other.AttrId3;
+      }
+      if (other.AttrV3 != 0) {
+        AttrV3 = other.AttrV3;
+      }
+      if (other.AttrId4 != 0) {
+        AttrId4 = other.AttrId4;
+      }
+      if (other.AttrV4 != 0) {
+        AttrV4 = other.AttrV4;
+      }
+      if (other.AttrId5 != 0) {
+        AttrId5 = other.AttrId5;
+      }
+      if (other.AttrV5 != 0) {
+        AttrV5 = other.AttrV5;
+      }
+      if (other.AttrId6 != 0) {
+        AttrId6 = other.AttrId6;
+      }
+      if (other.AttrV6 != 0) {
+        AttrV6 = other.AttrV6;
+      }
+      if (other.AttrId7 != 0) {
+        AttrId7 = other.AttrId7;
+      }
+      if (other.AttrV7 != 0) {
+        AttrV7 = other.AttrV7;
+      }
+      if (other.AttrId8 != 0) {
+        AttrId8 = other.AttrId8;
+      }
+      if (other.AttrV8 != 0) {
+        AttrV8 = other.AttrV8;
+      }
+      if (other.AttrId9 != 0) {
+        AttrId9 = other.AttrId9;
+      }
+      if (other.AttrV9 != 0) {
+        AttrV9 = other.AttrV9;
+      }
+      if (other.AttrId12 != 0) {
+        AttrId12 = other.AttrId12;
+      }
+      if (other.AttrV12 != 0) {
+        AttrV12 = other.AttrV12;
+      }
+      if (other.AttrId13 != 0) {
+        AttrId13 = other.AttrId13;
+      }
+      if (other.AttrV13 != 0) {
+        AttrV13 = other.AttrV13;
+      }
+      if (other.AttrId14 != 0) {
+        AttrId14 = other.AttrId14;
+      }
+      if (other.AttrV14 != 0) {
+        AttrV14 = other.AttrV14;
+      }
+      if (other.AttrId15 != 0) {
+        AttrId15 = other.AttrId15;
+      }
+      if (other.AttrV15 != 0) {
+        AttrV15 = other.AttrV15;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 24: {
+            wearPos_ = (global::Config.wear_pos) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            armorType_ = (global::Config.armor_type) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            ModId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            AttrId1 = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            AttrV1 = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            AttrId2 = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            AttrV2 = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            AttrId3 = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            AttrV3 = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            AttrId4 = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            AttrV4 = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            AttrId5 = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            AttrV5 = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            AttrId6 = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            AttrV6 = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            AttrId7 = input.ReadInt32();
+            break;
+          }
+          case 152: {
+            AttrV7 = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            AttrId8 = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            AttrV8 = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            AttrId9 = input.ReadInt32();
+            break;
+          }
+          case 184: {
+            AttrV9 = input.ReadInt32();
+            break;
+          }
+          case 192: {
+            AttrId12 = input.ReadInt32();
+            break;
+          }
+          case 200: {
+            AttrV12 = input.ReadInt32();
+            break;
+          }
+          case 208: {
+            AttrId13 = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            AttrV13 = input.ReadInt32();
+            break;
+          }
+          case 224: {
+            AttrId14 = input.ReadInt32();
+            break;
+          }
+          case 232: {
+            AttrV14 = input.ReadInt32();
+            break;
+          }
+          case 240: {
+            AttrId15 = input.ReadInt32();
+            break;
+          }
+          case 248: {
+            AttrV15 = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class global_var : pb::IMessage<global_var> {
+    private static readonly pb::MessageParser<global_var> _parser = new pb::MessageParser<global_var>(() => new global_var());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<global_var> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global_var() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global_var(global_var other) : this() {
+      key_ = other.key_;
+      vString_ = other.vString_;
+      remark_ = other.remark_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global_var Clone() {
+      return new global_var(this);
+    }
+
+    /// <summary>Field number for the "key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private string key_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Key {
+      get { return key_; }
+      set {
+        key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "v_string" field.</summary>
+    public const int VStringFieldNumber = 2;
+    private string vString_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string VString {
+      get { return vString_; }
+      set {
+        vString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "remark" field.</summary>
+    public const int RemarkFieldNumber = 3;
+    private string remark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Remark {
+      get { return remark_; }
+      set {
+        remark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as global_var);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(global_var other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (VString != other.VString) return false;
+      if (Remark != other.Remark) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key.Length != 0) hash ^= Key.GetHashCode();
+      if (VString.Length != 0) hash ^= VString.GetHashCode();
+      if (Remark.Length != 0) hash ^= Remark.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Key);
+      }
+      if (VString.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(VString);
+      }
+      if (Remark.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Remark);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      if (VString.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VString);
+      }
+      if (Remark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Remark);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(global_var other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key.Length != 0) {
+        Key = other.Key;
+      }
+      if (other.VString.Length != 0) {
+        VString = other.VString;
+      }
+      if (other.Remark.Length != 0) {
+        Remark = other.Remark;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Key = input.ReadString();
+            break;
+          }
+          case 18: {
+            VString = input.ReadString();
+            break;
+          }
+          case 26: {
+            Remark = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class story : pb::IMessage<story> {
+    private static readonly pb::MessageParser<story> _parser = new pb::MessageParser<story>(() => new story());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<story> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public story() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public story(story other) : this() {
+      id_ = other.id_;
+      storyKey_ = other.storyKey_;
+      storyCn_ = other.storyCn_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public story Clone() {
+      return new story(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "story_key" field.</summary>
+    public const int StoryKeyFieldNumber = 2;
+    private string storyKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StoryKey {
+      get { return storyKey_; }
+      set {
+        storyKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "story_cn" field.</summary>
+    public const int StoryCnFieldNumber = 3;
+    private string storyCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StoryCn {
+      get { return storyCn_; }
+      set {
+        storyCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as story);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(story other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StoryKey != other.StoryKey) return false;
+      if (StoryCn != other.StoryCn) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StoryKey.Length != 0) hash ^= StoryKey.GetHashCode();
+      if (StoryCn.Length != 0) hash ^= StoryCn.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StoryKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StoryKey);
+      }
+      if (StoryCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StoryCn);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StoryKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StoryKey);
+      }
+      if (StoryCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StoryCn);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(story other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StoryKey.Length != 0) {
+        StoryKey = other.StoryKey;
+      }
+      if (other.StoryCn.Length != 0) {
+        StoryCn = other.StoryCn;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StoryKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            StoryCn = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class map : pb::IMessage<map> {
+    private static readonly pb::MessageParser<map> _parser = new pb::MessageParser<map>(() => new map());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<map> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[23]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public map() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public map(map other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      sceneName_ = other.sceneName_;
+      paths_ = other.paths_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public map Clone() {
+      return new map(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "scene_name" field.</summary>
+    public const int SceneNameFieldNumber = 3;
+    private string sceneName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SceneName {
+      get { return sceneName_; }
+      set {
+        sceneName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "paths" field.</summary>
+    public const int PathsFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_paths_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> paths_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Paths {
+      get { return paths_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as map);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(map other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (SceneName != other.SceneName) return false;
+      if(!paths_.Equals(other.paths_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (SceneName.Length != 0) hash ^= SceneName.GetHashCode();
+      hash ^= paths_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (SceneName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(SceneName);
+      }
+      paths_.WriteTo(output, _repeated_paths_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (SceneName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SceneName);
+      }
+      size += paths_.CalculateSize(_repeated_paths_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(map other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.SceneName.Length != 0) {
+        SceneName = other.SceneName;
+      }
+      paths_.Add(other.paths_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            SceneName = input.ReadString();
+            break;
+          }
+          case 34: {
+            paths_.AddEntriesFrom(input, _repeated_paths_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class SkillPrefab : pb::IMessage<SkillPrefab> {
     private static readonly pb::MessageParser<SkillPrefab> _parser = new pb::MessageParser<SkillPrefab>(() => new SkillPrefab());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -49,7 +14755,7 @@ namespace Config {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -355,6 +15061,5263 @@ namespace Config {
 
   }
 
+  public sealed partial class performance : pb::IMessage<performance> {
+    private static readonly pb::MessageParser<performance> _parser = new pb::MessageParser<performance>(() => new performance());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<performance> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public performance() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public performance(performance other) : this() {
+      id_ = other.id_;
+      markName_ = other.markName_;
+      actionId_ = other.actionId_;
+      effectId_ = other.effectId_;
+      soundId_ = other.soundId_.Clone();
+      shakeTime_ = other.shakeTime_;
+      shakeFactor_ = other.shakeFactor_;
+      effectTime_ = other.effectTime_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public performance Clone() {
+      return new performance(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mark_name" field.</summary>
+    public const int MarkNameFieldNumber = 2;
+    private string markName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MarkName {
+      get { return markName_; }
+      set {
+        markName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "action_id" field.</summary>
+    public const int ActionIdFieldNumber = 3;
+    private int actionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActionId {
+      get { return actionId_; }
+      set {
+        actionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "effect_id" field.</summary>
+    public const int EffectIdFieldNumber = 4;
+    private int effectId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EffectId {
+      get { return effectId_; }
+      set {
+        effectId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sound_id" field.</summary>
+    public const int SoundIdFieldNumber = 5;
+    private static readonly pb::FieldCodec<int> _repeated_soundId_codec
+        = pb::FieldCodec.ForInt32(42);
+    private readonly pbc::RepeatedField<int> soundId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> SoundId {
+      get { return soundId_; }
+    }
+
+    /// <summary>Field number for the "shake_time" field.</summary>
+    public const int ShakeTimeFieldNumber = 6;
+    private int shakeTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ShakeTime {
+      get { return shakeTime_; }
+      set {
+        shakeTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "shake_factor" field.</summary>
+    public const int ShakeFactorFieldNumber = 7;
+    private int shakeFactor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ShakeFactor {
+      get { return shakeFactor_; }
+      set {
+        shakeFactor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "effect_time" field.</summary>
+    public const int EffectTimeFieldNumber = 8;
+    private int effectTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EffectTime {
+      get { return effectTime_; }
+      set {
+        effectTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as performance);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(performance other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (MarkName != other.MarkName) return false;
+      if (ActionId != other.ActionId) return false;
+      if (EffectId != other.EffectId) return false;
+      if(!soundId_.Equals(other.soundId_)) return false;
+      if (ShakeTime != other.ShakeTime) return false;
+      if (ShakeFactor != other.ShakeFactor) return false;
+      if (EffectTime != other.EffectTime) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (MarkName.Length != 0) hash ^= MarkName.GetHashCode();
+      if (ActionId != 0) hash ^= ActionId.GetHashCode();
+      if (EffectId != 0) hash ^= EffectId.GetHashCode();
+      hash ^= soundId_.GetHashCode();
+      if (ShakeTime != 0) hash ^= ShakeTime.GetHashCode();
+      if (ShakeFactor != 0) hash ^= ShakeFactor.GetHashCode();
+      if (EffectTime != 0) hash ^= EffectTime.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (MarkName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(MarkName);
+      }
+      if (ActionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ActionId);
+      }
+      if (EffectId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(EffectId);
+      }
+      soundId_.WriteTo(output, _repeated_soundId_codec);
+      if (ShakeTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(ShakeTime);
+      }
+      if (ShakeFactor != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(ShakeFactor);
+      }
+      if (EffectTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(EffectTime);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (MarkName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MarkName);
+      }
+      if (ActionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ActionId);
+      }
+      if (EffectId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EffectId);
+      }
+      size += soundId_.CalculateSize(_repeated_soundId_codec);
+      if (ShakeTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ShakeTime);
+      }
+      if (ShakeFactor != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ShakeFactor);
+      }
+      if (EffectTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EffectTime);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(performance other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.MarkName.Length != 0) {
+        MarkName = other.MarkName;
+      }
+      if (other.ActionId != 0) {
+        ActionId = other.ActionId;
+      }
+      if (other.EffectId != 0) {
+        EffectId = other.EffectId;
+      }
+      soundId_.Add(other.soundId_);
+      if (other.ShakeTime != 0) {
+        ShakeTime = other.ShakeTime;
+      }
+      if (other.ShakeFactor != 0) {
+        ShakeFactor = other.ShakeFactor;
+      }
+      if (other.EffectTime != 0) {
+        EffectTime = other.EffectTime;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            MarkName = input.ReadString();
+            break;
+          }
+          case 24: {
+            ActionId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            EffectId = input.ReadInt32();
+            break;
+          }
+          case 42:
+          case 40: {
+            soundId_.AddEntriesFrom(input, _repeated_soundId_codec);
+            break;
+          }
+          case 48: {
+            ShakeTime = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            ShakeFactor = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            EffectTime = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class stage_level : pb::IMessage<stage_level> {
+    private static readonly pb::MessageParser<stage_level> _parser = new pb::MessageParser<stage_level>(() => new stage_level());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<stage_level> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public stage_level() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public stage_level(stage_level other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      stageId_ = other.stageId_;
+      stageType_ = other.stageType_;
+      box_ = other.box_;
+      dropItem_ = other.dropItem_.Clone();
+      mapId_ = other.mapId_;
+      triggerId_ = other.triggerId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public stage_level Clone() {
+      return new stage_level(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 3;
+    private int stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_type" field.</summary>
+    public const int StageTypeFieldNumber = 4;
+    private global::Config.stage_type stageType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.stage_type StageType {
+      get { return stageType_; }
+      set {
+        stageType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "box" field.</summary>
+    public const int BoxFieldNumber = 5;
+    private int box_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Box {
+      get { return box_; }
+      set {
+        box_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "drop_item" field.</summary>
+    public const int DropItemFieldNumber = 6;
+    private static readonly pbc::MapField<int, int>.Codec _map_dropItem_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 50);
+    private readonly pbc::MapField<int, int> dropItem_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> DropItem {
+      get { return dropItem_; }
+    }
+
+    /// <summary>Field number for the "map_id" field.</summary>
+    public const int MapIdFieldNumber = 7;
+    private int mapId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MapId {
+      get { return mapId_; }
+      set {
+        mapId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trigger_id" field.</summary>
+    public const int TriggerIdFieldNumber = 8;
+    private int triggerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TriggerId {
+      get { return triggerId_; }
+      set {
+        triggerId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as stage_level);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(stage_level other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (StageId != other.StageId) return false;
+      if (StageType != other.StageType) return false;
+      if (Box != other.Box) return false;
+      if (!DropItem.Equals(other.DropItem)) return false;
+      if (MapId != other.MapId) return false;
+      if (TriggerId != other.TriggerId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (StageType != 0) hash ^= StageType.GetHashCode();
+      if (Box != 0) hash ^= Box.GetHashCode();
+      hash ^= DropItem.GetHashCode();
+      if (MapId != 0) hash ^= MapId.GetHashCode();
+      if (TriggerId != 0) hash ^= TriggerId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(StageId);
+      }
+      if (StageType != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) StageType);
+      }
+      if (Box != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Box);
+      }
+      dropItem_.WriteTo(output, _map_dropItem_codec);
+      if (MapId != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(MapId);
+      }
+      if (TriggerId != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(TriggerId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StageId);
+      }
+      if (StageType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StageType);
+      }
+      if (Box != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Box);
+      }
+      size += dropItem_.CalculateSize(_map_dropItem_codec);
+      if (MapId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MapId);
+      }
+      if (TriggerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TriggerId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(stage_level other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.StageType != 0) {
+        StageType = other.StageType;
+      }
+      if (other.Box != 0) {
+        Box = other.Box;
+      }
+      dropItem_.Add(other.dropItem_);
+      if (other.MapId != 0) {
+        MapId = other.MapId;
+      }
+      if (other.TriggerId != 0) {
+        TriggerId = other.TriggerId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 24: {
+            StageId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            stageType_ = (global::Config.stage_type) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            Box = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            dropItem_.AddEntriesFrom(input, _map_dropItem_codec);
+            break;
+          }
+          case 56: {
+            MapId = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            TriggerId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class buff : pb::IMessage<buff> {
+    private static readonly pb::MessageParser<buff> _parser = new pb::MessageParser<buff>(() => new buff());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<buff> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[27]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public buff() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public buff(buff other) : this() {
+      id_ = other.id_;
+      buffType_ = other.buffType_;
+      statusType_ = other.statusType_;
+      targetType_ = other.targetType_;
+      invalidTargetType_ = other.invalidTargetType_;
+      rangeType_ = other.rangeType_;
+      rangeValue_ = other.rangeValue_.Clone();
+      overrideBuff_ = other.overrideBuff_;
+      overrideBuffLevel_ = other.overrideBuffLevel_;
+      addtiveBuffLevel_ = other.addtiveBuffLevel_;
+      destroyOnDeath_ = other.destroyOnDeath_;
+      removeBuffType_ = other.removeBuffType_.Clone();
+      conflictBuffType_ = other.conflictBuffType_.Clone();
+      conflictBuffId_ = other.conflictBuffId_.Clone();
+      modifyEffectType_ = other.modifyEffectType_;
+      modifyEffectFactor_ = other.modifyEffectFactor_;
+      modifyEffectValue_ = other.modifyEffectValue_;
+      damageRangeType_ = other.damageRangeType_;
+      damageRangeValue_ = other.damageRangeValue_.Clone();
+      damageEffectType_ = other.damageEffectType_;
+      damageEffectValue_ = other.damageEffectValue_;
+      addtiveEffectType_ = other.addtiveEffectType_;
+      addtiveEffectFactor_ = other.addtiveEffectFactor_;
+      designatedTargetType_ = other.designatedTargetType_;
+      designatedEffectType_ = other.designatedEffectType_;
+      designatedEffectValue_ = other.designatedEffectValue_;
+      during_ = other.during_;
+      tick_ = other.tick_;
+      count_ = other.count_;
+      iconId_ = other.iconId_;
+      buffHit_ = other.buffHit_;
+      artEffectId_ = other.artEffectId_;
+      effectSingleId_ = other.effectSingleId_;
+      buffId_ = other.buffId_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public buff Clone() {
+      return new buff(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_type" field.</summary>
+    public const int BuffTypeFieldNumber = 2;
+    private global::Config.buff_type buffType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.buff_type BuffType {
+      get { return buffType_; }
+      set {
+        buffType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "status_type" field.</summary>
+    public const int StatusTypeFieldNumber = 3;
+    private global::Config.status_type statusType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.status_type StatusType {
+      get { return statusType_; }
+      set {
+        statusType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_type" field.</summary>
+    public const int TargetTypeFieldNumber = 4;
+    private global::Config.target_camp_type targetType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.target_camp_type TargetType {
+      get { return targetType_; }
+      set {
+        targetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "invalid_target_type" field.</summary>
+    public const int InvalidTargetTypeFieldNumber = 5;
+    private int invalidTargetType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int InvalidTargetType {
+      get { return invalidTargetType_; }
+      set {
+        invalidTargetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "range_type" field.</summary>
+    public const int RangeTypeFieldNumber = 6;
+    private global::Config.range_type rangeType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.range_type RangeType {
+      get { return rangeType_; }
+      set {
+        rangeType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "range_value" field.</summary>
+    public const int RangeValueFieldNumber = 7;
+    private static readonly pb::FieldCodec<int> _repeated_rangeValue_codec
+        = pb::FieldCodec.ForInt32(58);
+    private readonly pbc::RepeatedField<int> rangeValue_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> RangeValue {
+      get { return rangeValue_; }
+    }
+
+    /// <summary>Field number for the "override_buff" field.</summary>
+    public const int OverrideBuffFieldNumber = 8;
+    private int overrideBuff_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int OverrideBuff {
+      get { return overrideBuff_; }
+      set {
+        overrideBuff_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "override_buff_level" field.</summary>
+    public const int OverrideBuffLevelFieldNumber = 9;
+    private int overrideBuffLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int OverrideBuffLevel {
+      get { return overrideBuffLevel_; }
+      set {
+        overrideBuffLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_buff_level" field.</summary>
+    public const int AddtiveBuffLevelFieldNumber = 10;
+    private int addtiveBuffLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AddtiveBuffLevel {
+      get { return addtiveBuffLevel_; }
+      set {
+        addtiveBuffLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "destroy_on_death" field.</summary>
+    public const int DestroyOnDeathFieldNumber = 11;
+    private bool destroyOnDeath_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool DestroyOnDeath {
+      get { return destroyOnDeath_; }
+      set {
+        destroyOnDeath_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "remove_buff_type" field.</summary>
+    public const int RemoveBuffTypeFieldNumber = 12;
+    private static readonly pb::FieldCodec<int> _repeated_removeBuffType_codec
+        = pb::FieldCodec.ForInt32(98);
+    private readonly pbc::RepeatedField<int> removeBuffType_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> RemoveBuffType {
+      get { return removeBuffType_; }
+    }
+
+    /// <summary>Field number for the "conflict_buff_type" field.</summary>
+    public const int ConflictBuffTypeFieldNumber = 13;
+    private static readonly pb::FieldCodec<int> _repeated_conflictBuffType_codec
+        = pb::FieldCodec.ForInt32(106);
+    private readonly pbc::RepeatedField<int> conflictBuffType_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> ConflictBuffType {
+      get { return conflictBuffType_; }
+    }
+
+    /// <summary>Field number for the "conflict_buff_id" field.</summary>
+    public const int ConflictBuffIdFieldNumber = 14;
+    private static readonly pb::FieldCodec<int> _repeated_conflictBuffId_codec
+        = pb::FieldCodec.ForInt32(114);
+    private readonly pbc::RepeatedField<int> conflictBuffId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> ConflictBuffId {
+      get { return conflictBuffId_; }
+    }
+
+    /// <summary>Field number for the "modify_effect_type" field.</summary>
+    public const int ModifyEffectTypeFieldNumber = 15;
+    private global::Config.item_detail_type modifyEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.item_detail_type ModifyEffectType {
+      get { return modifyEffectType_; }
+      set {
+        modifyEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "modify_effect_factor" field.</summary>
+    public const int ModifyEffectFactorFieldNumber = 16;
+    private int modifyEffectFactor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ModifyEffectFactor {
+      get { return modifyEffectFactor_; }
+      set {
+        modifyEffectFactor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "modify_effect_value" field.</summary>
+    public const int ModifyEffectValueFieldNumber = 17;
+    private int modifyEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ModifyEffectValue {
+      get { return modifyEffectValue_; }
+      set {
+        modifyEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_range_type" field.</summary>
+    public const int DamageRangeTypeFieldNumber = 18;
+    private global::Config.range_type damageRangeType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.range_type DamageRangeType {
+      get { return damageRangeType_; }
+      set {
+        damageRangeType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_range_value" field.</summary>
+    public const int DamageRangeValueFieldNumber = 19;
+    private static readonly pb::FieldCodec<int> _repeated_damageRangeValue_codec
+        = pb::FieldCodec.ForInt32(154);
+    private readonly pbc::RepeatedField<int> damageRangeValue_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> DamageRangeValue {
+      get { return damageRangeValue_; }
+    }
+
+    /// <summary>Field number for the "damage_effect_type" field.</summary>
+    public const int DamageEffectTypeFieldNumber = 20;
+    private global::Config.effect_type damageEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.effect_type DamageEffectType {
+      get { return damageEffectType_; }
+      set {
+        damageEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage_effect_value" field.</summary>
+    public const int DamageEffectValueFieldNumber = 21;
+    private int damageEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DamageEffectValue {
+      get { return damageEffectValue_; }
+      set {
+        damageEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_effect_type" field.</summary>
+    public const int AddtiveEffectTypeFieldNumber = 22;
+    private global::Config.item_detail_type addtiveEffectType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.item_detail_type AddtiveEffectType {
+      get { return addtiveEffectType_; }
+      set {
+        addtiveEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addtive_effect_factor" field.</summary>
+    public const int AddtiveEffectFactorFieldNumber = 23;
+    private int addtiveEffectFactor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AddtiveEffectFactor {
+      get { return addtiveEffectFactor_; }
+      set {
+        addtiveEffectFactor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_target_type" field.</summary>
+    public const int DesignatedTargetTypeFieldNumber = 24;
+    private global::Config.race designatedTargetType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race DesignatedTargetType {
+      get { return designatedTargetType_; }
+      set {
+        designatedTargetType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_effect_type" field.</summary>
+    public const int DesignatedEffectTypeFieldNumber = 25;
+    private int designatedEffectType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DesignatedEffectType {
+      get { return designatedEffectType_; }
+      set {
+        designatedEffectType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "designated_effect_value" field.</summary>
+    public const int DesignatedEffectValueFieldNumber = 26;
+    private int designatedEffectValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DesignatedEffectValue {
+      get { return designatedEffectValue_; }
+      set {
+        designatedEffectValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "during" field.</summary>
+    public const int DuringFieldNumber = 27;
+    private int during_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int During {
+      get { return during_; }
+      set {
+        during_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tick" field.</summary>
+    public const int TickFieldNumber = 28;
+    private int tick_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tick {
+      get { return tick_; }
+      set {
+        tick_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "count" field.</summary>
+    public const int CountFieldNumber = 29;
+    private int count_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Count {
+      get { return count_; }
+      set {
+        count_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "icon_id" field.</summary>
+    public const int IconIdFieldNumber = 30;
+    private int iconId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IconId {
+      get { return iconId_; }
+      set {
+        iconId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_hit" field.</summary>
+    public const int BuffHitFieldNumber = 31;
+    private int buffHit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BuffHit {
+      get { return buffHit_; }
+      set {
+        buffHit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "art_effect_id" field.</summary>
+    public const int ArtEffectIdFieldNumber = 32;
+    private int artEffectId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ArtEffectId {
+      get { return artEffectId_; }
+      set {
+        artEffectId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "effect_single_id" field.</summary>
+    public const int EffectSingleIdFieldNumber = 33;
+    private int effectSingleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EffectSingleId {
+      get { return effectSingleId_; }
+      set {
+        effectSingleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_id" field.</summary>
+    public const int BuffIdFieldNumber = 34;
+    private static readonly pb::FieldCodec<int> _repeated_buffId_codec
+        = pb::FieldCodec.ForInt32(274);
+    private readonly pbc::RepeatedField<int> buffId_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> BuffId {
+      get { return buffId_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as buff);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(buff other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (BuffType != other.BuffType) return false;
+      if (StatusType != other.StatusType) return false;
+      if (TargetType != other.TargetType) return false;
+      if (InvalidTargetType != other.InvalidTargetType) return false;
+      if (RangeType != other.RangeType) return false;
+      if(!rangeValue_.Equals(other.rangeValue_)) return false;
+      if (OverrideBuff != other.OverrideBuff) return false;
+      if (OverrideBuffLevel != other.OverrideBuffLevel) return false;
+      if (AddtiveBuffLevel != other.AddtiveBuffLevel) return false;
+      if (DestroyOnDeath != other.DestroyOnDeath) return false;
+      if(!removeBuffType_.Equals(other.removeBuffType_)) return false;
+      if(!conflictBuffType_.Equals(other.conflictBuffType_)) return false;
+      if(!conflictBuffId_.Equals(other.conflictBuffId_)) return false;
+      if (ModifyEffectType != other.ModifyEffectType) return false;
+      if (ModifyEffectFactor != other.ModifyEffectFactor) return false;
+      if (ModifyEffectValue != other.ModifyEffectValue) return false;
+      if (DamageRangeType != other.DamageRangeType) return false;
+      if(!damageRangeValue_.Equals(other.damageRangeValue_)) return false;
+      if (DamageEffectType != other.DamageEffectType) return false;
+      if (DamageEffectValue != other.DamageEffectValue) return false;
+      if (AddtiveEffectType != other.AddtiveEffectType) return false;
+      if (AddtiveEffectFactor != other.AddtiveEffectFactor) return false;
+      if (DesignatedTargetType != other.DesignatedTargetType) return false;
+      if (DesignatedEffectType != other.DesignatedEffectType) return false;
+      if (DesignatedEffectValue != other.DesignatedEffectValue) return false;
+      if (During != other.During) return false;
+      if (Tick != other.Tick) return false;
+      if (Count != other.Count) return false;
+      if (IconId != other.IconId) return false;
+      if (BuffHit != other.BuffHit) return false;
+      if (ArtEffectId != other.ArtEffectId) return false;
+      if (EffectSingleId != other.EffectSingleId) return false;
+      if(!buffId_.Equals(other.buffId_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (BuffType != 0) hash ^= BuffType.GetHashCode();
+      if (StatusType != 0) hash ^= StatusType.GetHashCode();
+      if (TargetType != 0) hash ^= TargetType.GetHashCode();
+      if (InvalidTargetType != 0) hash ^= InvalidTargetType.GetHashCode();
+      if (RangeType != 0) hash ^= RangeType.GetHashCode();
+      hash ^= rangeValue_.GetHashCode();
+      if (OverrideBuff != 0) hash ^= OverrideBuff.GetHashCode();
+      if (OverrideBuffLevel != 0) hash ^= OverrideBuffLevel.GetHashCode();
+      if (AddtiveBuffLevel != 0) hash ^= AddtiveBuffLevel.GetHashCode();
+      if (DestroyOnDeath != false) hash ^= DestroyOnDeath.GetHashCode();
+      hash ^= removeBuffType_.GetHashCode();
+      hash ^= conflictBuffType_.GetHashCode();
+      hash ^= conflictBuffId_.GetHashCode();
+      if (ModifyEffectType != 0) hash ^= ModifyEffectType.GetHashCode();
+      if (ModifyEffectFactor != 0) hash ^= ModifyEffectFactor.GetHashCode();
+      if (ModifyEffectValue != 0) hash ^= ModifyEffectValue.GetHashCode();
+      if (DamageRangeType != 0) hash ^= DamageRangeType.GetHashCode();
+      hash ^= damageRangeValue_.GetHashCode();
+      if (DamageEffectType != 0) hash ^= DamageEffectType.GetHashCode();
+      if (DamageEffectValue != 0) hash ^= DamageEffectValue.GetHashCode();
+      if (AddtiveEffectType != 0) hash ^= AddtiveEffectType.GetHashCode();
+      if (AddtiveEffectFactor != 0) hash ^= AddtiveEffectFactor.GetHashCode();
+      if (DesignatedTargetType != 0) hash ^= DesignatedTargetType.GetHashCode();
+      if (DesignatedEffectType != 0) hash ^= DesignatedEffectType.GetHashCode();
+      if (DesignatedEffectValue != 0) hash ^= DesignatedEffectValue.GetHashCode();
+      if (During != 0) hash ^= During.GetHashCode();
+      if (Tick != 0) hash ^= Tick.GetHashCode();
+      if (Count != 0) hash ^= Count.GetHashCode();
+      if (IconId != 0) hash ^= IconId.GetHashCode();
+      if (BuffHit != 0) hash ^= BuffHit.GetHashCode();
+      if (ArtEffectId != 0) hash ^= ArtEffectId.GetHashCode();
+      if (EffectSingleId != 0) hash ^= EffectSingleId.GetHashCode();
+      hash ^= buffId_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (BuffType != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) BuffType);
+      }
+      if (StatusType != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) StatusType);
+      }
+      if (TargetType != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) TargetType);
+      }
+      if (InvalidTargetType != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(InvalidTargetType);
+      }
+      if (RangeType != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) RangeType);
+      }
+      rangeValue_.WriteTo(output, _repeated_rangeValue_codec);
+      if (OverrideBuff != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(OverrideBuff);
+      }
+      if (OverrideBuffLevel != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(OverrideBuffLevel);
+      }
+      if (AddtiveBuffLevel != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(AddtiveBuffLevel);
+      }
+      if (DestroyOnDeath != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(DestroyOnDeath);
+      }
+      removeBuffType_.WriteTo(output, _repeated_removeBuffType_codec);
+      conflictBuffType_.WriteTo(output, _repeated_conflictBuffType_codec);
+      conflictBuffId_.WriteTo(output, _repeated_conflictBuffId_codec);
+      if (ModifyEffectType != 0) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) ModifyEffectType);
+      }
+      if (ModifyEffectFactor != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(ModifyEffectFactor);
+      }
+      if (ModifyEffectValue != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(ModifyEffectValue);
+      }
+      if (DamageRangeType != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteEnum((int) DamageRangeType);
+      }
+      damageRangeValue_.WriteTo(output, _repeated_damageRangeValue_codec);
+      if (DamageEffectType != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteEnum((int) DamageEffectType);
+      }
+      if (DamageEffectValue != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(DamageEffectValue);
+      }
+      if (AddtiveEffectType != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteEnum((int) AddtiveEffectType);
+      }
+      if (AddtiveEffectFactor != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(AddtiveEffectFactor);
+      }
+      if (DesignatedTargetType != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteEnum((int) DesignatedTargetType);
+      }
+      if (DesignatedEffectType != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteInt32(DesignatedEffectType);
+      }
+      if (DesignatedEffectValue != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(DesignatedEffectValue);
+      }
+      if (During != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(During);
+      }
+      if (Tick != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(Tick);
+      }
+      if (Count != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(Count);
+      }
+      if (IconId != 0) {
+        output.WriteRawTag(240, 1);
+        output.WriteInt32(IconId);
+      }
+      if (BuffHit != 0) {
+        output.WriteRawTag(248, 1);
+        output.WriteInt32(BuffHit);
+      }
+      if (ArtEffectId != 0) {
+        output.WriteRawTag(128, 2);
+        output.WriteInt32(ArtEffectId);
+      }
+      if (EffectSingleId != 0) {
+        output.WriteRawTag(136, 2);
+        output.WriteInt32(EffectSingleId);
+      }
+      buffId_.WriteTo(output, _repeated_buffId_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (BuffType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BuffType);
+      }
+      if (StatusType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StatusType);
+      }
+      if (TargetType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TargetType);
+      }
+      if (InvalidTargetType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(InvalidTargetType);
+      }
+      if (RangeType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RangeType);
+      }
+      size += rangeValue_.CalculateSize(_repeated_rangeValue_codec);
+      if (OverrideBuff != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(OverrideBuff);
+      }
+      if (OverrideBuffLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(OverrideBuffLevel);
+      }
+      if (AddtiveBuffLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AddtiveBuffLevel);
+      }
+      if (DestroyOnDeath != false) {
+        size += 1 + 1;
+      }
+      size += removeBuffType_.CalculateSize(_repeated_removeBuffType_codec);
+      size += conflictBuffType_.CalculateSize(_repeated_conflictBuffType_codec);
+      size += conflictBuffId_.CalculateSize(_repeated_conflictBuffId_codec);
+      if (ModifyEffectType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ModifyEffectType);
+      }
+      if (ModifyEffectFactor != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ModifyEffectFactor);
+      }
+      if (ModifyEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ModifyEffectValue);
+      }
+      if (DamageRangeType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DamageRangeType);
+      }
+      size += damageRangeValue_.CalculateSize(_repeated_damageRangeValue_codec);
+      if (DamageEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DamageEffectType);
+      }
+      if (DamageEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DamageEffectValue);
+      }
+      if (AddtiveEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) AddtiveEffectType);
+      }
+      if (AddtiveEffectFactor != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AddtiveEffectFactor);
+      }
+      if (DesignatedTargetType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) DesignatedTargetType);
+      }
+      if (DesignatedEffectType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DesignatedEffectType);
+      }
+      if (DesignatedEffectValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(DesignatedEffectValue);
+      }
+      if (During != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(During);
+      }
+      if (Tick != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tick);
+      }
+      if (Count != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Count);
+      }
+      if (IconId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(IconId);
+      }
+      if (BuffHit != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(BuffHit);
+      }
+      if (ArtEffectId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ArtEffectId);
+      }
+      if (EffectSingleId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(EffectSingleId);
+      }
+      size += buffId_.CalculateSize(_repeated_buffId_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(buff other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.BuffType != 0) {
+        BuffType = other.BuffType;
+      }
+      if (other.StatusType != 0) {
+        StatusType = other.StatusType;
+      }
+      if (other.TargetType != 0) {
+        TargetType = other.TargetType;
+      }
+      if (other.InvalidTargetType != 0) {
+        InvalidTargetType = other.InvalidTargetType;
+      }
+      if (other.RangeType != 0) {
+        RangeType = other.RangeType;
+      }
+      rangeValue_.Add(other.rangeValue_);
+      if (other.OverrideBuff != 0) {
+        OverrideBuff = other.OverrideBuff;
+      }
+      if (other.OverrideBuffLevel != 0) {
+        OverrideBuffLevel = other.OverrideBuffLevel;
+      }
+      if (other.AddtiveBuffLevel != 0) {
+        AddtiveBuffLevel = other.AddtiveBuffLevel;
+      }
+      if (other.DestroyOnDeath != false) {
+        DestroyOnDeath = other.DestroyOnDeath;
+      }
+      removeBuffType_.Add(other.removeBuffType_);
+      conflictBuffType_.Add(other.conflictBuffType_);
+      conflictBuffId_.Add(other.conflictBuffId_);
+      if (other.ModifyEffectType != 0) {
+        ModifyEffectType = other.ModifyEffectType;
+      }
+      if (other.ModifyEffectFactor != 0) {
+        ModifyEffectFactor = other.ModifyEffectFactor;
+      }
+      if (other.ModifyEffectValue != 0) {
+        ModifyEffectValue = other.ModifyEffectValue;
+      }
+      if (other.DamageRangeType != 0) {
+        DamageRangeType = other.DamageRangeType;
+      }
+      damageRangeValue_.Add(other.damageRangeValue_);
+      if (other.DamageEffectType != 0) {
+        DamageEffectType = other.DamageEffectType;
+      }
+      if (other.DamageEffectValue != 0) {
+        DamageEffectValue = other.DamageEffectValue;
+      }
+      if (other.AddtiveEffectType != 0) {
+        AddtiveEffectType = other.AddtiveEffectType;
+      }
+      if (other.AddtiveEffectFactor != 0) {
+        AddtiveEffectFactor = other.AddtiveEffectFactor;
+      }
+      if (other.DesignatedTargetType != 0) {
+        DesignatedTargetType = other.DesignatedTargetType;
+      }
+      if (other.DesignatedEffectType != 0) {
+        DesignatedEffectType = other.DesignatedEffectType;
+      }
+      if (other.DesignatedEffectValue != 0) {
+        DesignatedEffectValue = other.DesignatedEffectValue;
+      }
+      if (other.During != 0) {
+        During = other.During;
+      }
+      if (other.Tick != 0) {
+        Tick = other.Tick;
+      }
+      if (other.Count != 0) {
+        Count = other.Count;
+      }
+      if (other.IconId != 0) {
+        IconId = other.IconId;
+      }
+      if (other.BuffHit != 0) {
+        BuffHit = other.BuffHit;
+      }
+      if (other.ArtEffectId != 0) {
+        ArtEffectId = other.ArtEffectId;
+      }
+      if (other.EffectSingleId != 0) {
+        EffectSingleId = other.EffectSingleId;
+      }
+      buffId_.Add(other.buffId_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            buffType_ = (global::Config.buff_type) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            statusType_ = (global::Config.status_type) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            targetType_ = (global::Config.target_camp_type) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            InvalidTargetType = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            rangeType_ = (global::Config.range_type) input.ReadEnum();
+            break;
+          }
+          case 58:
+          case 56: {
+            rangeValue_.AddEntriesFrom(input, _repeated_rangeValue_codec);
+            break;
+          }
+          case 64: {
+            OverrideBuff = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            OverrideBuffLevel = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            AddtiveBuffLevel = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            DestroyOnDeath = input.ReadBool();
+            break;
+          }
+          case 98:
+          case 96: {
+            removeBuffType_.AddEntriesFrom(input, _repeated_removeBuffType_codec);
+            break;
+          }
+          case 106:
+          case 104: {
+            conflictBuffType_.AddEntriesFrom(input, _repeated_conflictBuffType_codec);
+            break;
+          }
+          case 114:
+          case 112: {
+            conflictBuffId_.AddEntriesFrom(input, _repeated_conflictBuffId_codec);
+            break;
+          }
+          case 120: {
+            modifyEffectType_ = (global::Config.item_detail_type) input.ReadEnum();
+            break;
+          }
+          case 128: {
+            ModifyEffectFactor = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            ModifyEffectValue = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            damageRangeType_ = (global::Config.range_type) input.ReadEnum();
+            break;
+          }
+          case 154:
+          case 152: {
+            damageRangeValue_.AddEntriesFrom(input, _repeated_damageRangeValue_codec);
+            break;
+          }
+          case 160: {
+            damageEffectType_ = (global::Config.effect_type) input.ReadEnum();
+            break;
+          }
+          case 168: {
+            DamageEffectValue = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            addtiveEffectType_ = (global::Config.item_detail_type) input.ReadEnum();
+            break;
+          }
+          case 184: {
+            AddtiveEffectFactor = input.ReadInt32();
+            break;
+          }
+          case 192: {
+            designatedTargetType_ = (global::Config.race) input.ReadEnum();
+            break;
+          }
+          case 200: {
+            DesignatedEffectType = input.ReadInt32();
+            break;
+          }
+          case 208: {
+            DesignatedEffectValue = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            During = input.ReadInt32();
+            break;
+          }
+          case 224: {
+            Tick = input.ReadInt32();
+            break;
+          }
+          case 232: {
+            Count = input.ReadInt32();
+            break;
+          }
+          case 240: {
+            IconId = input.ReadInt32();
+            break;
+          }
+          case 248: {
+            BuffHit = input.ReadInt32();
+            break;
+          }
+          case 256: {
+            ArtEffectId = input.ReadInt32();
+            break;
+          }
+          case 264: {
+            EffectSingleId = input.ReadInt32();
+            break;
+          }
+          case 274:
+          case 272: {
+            buffId_.AddEntriesFrom(input, _repeated_buffId_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class prefab_action : pb::IMessage<prefab_action> {
+    private static readonly pb::MessageParser<prefab_action> _parser = new pb::MessageParser<prefab_action>(() => new prefab_action());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<prefab_action> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[28]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_action() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_action(prefab_action other) : this() {
+      id_ = other.id_;
+      actionName_ = other.actionName_;
+      intro_ = other.intro_;
+      actionTime_ = other.actionTime_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_action Clone() {
+      return new prefab_action(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "action_name" field.</summary>
+    public const int ActionNameFieldNumber = 2;
+    private string actionName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ActionName {
+      get { return actionName_; }
+      set {
+        actionName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intro" field.</summary>
+    public const int IntroFieldNumber = 3;
+    private string intro_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Intro {
+      get { return intro_; }
+      set {
+        intro_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "action_time" field.</summary>
+    public const int ActionTimeFieldNumber = 4;
+    private int actionTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActionTime {
+      get { return actionTime_; }
+      set {
+        actionTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as prefab_action);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(prefab_action other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (ActionName != other.ActionName) return false;
+      if (Intro != other.Intro) return false;
+      if (ActionTime != other.ActionTime) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (ActionName.Length != 0) hash ^= ActionName.GetHashCode();
+      if (Intro.Length != 0) hash ^= Intro.GetHashCode();
+      if (ActionTime != 0) hash ^= ActionTime.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (ActionName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ActionName);
+      }
+      if (Intro.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Intro);
+      }
+      if (ActionTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(ActionTime);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (ActionName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ActionName);
+      }
+      if (Intro.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Intro);
+      }
+      if (ActionTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ActionTime);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(prefab_action other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.ActionName.Length != 0) {
+        ActionName = other.ActionName;
+      }
+      if (other.Intro.Length != 0) {
+        Intro = other.Intro;
+      }
+      if (other.ActionTime != 0) {
+        ActionTime = other.ActionTime;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            ActionName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Intro = input.ReadString();
+            break;
+          }
+          case 32: {
+            ActionTime = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class job : pb::IMessage<job> {
+    private static readonly pb::MessageParser<job> _parser = new pb::MessageParser<job>(() => new job());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<job> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[29]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public job() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public job(job other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      heroNameType_ = other.heroNameType_;
+      heroNameKey_ = other.heroNameKey_;
+      heroNameCn_ = other.heroNameCn_;
+      camp_ = other.camp_;
+      race_ = other.race_;
+      starLevel_ = other.starLevel_;
+      type_ = other.type_;
+      storyId_ = other.storyId_;
+      talkId_ = other.talkId_;
+      talk2Id_ = other.talk2Id_;
+      maxQuality_ = other.maxQuality_;
+      talk3Id_ = other.talk3Id_;
+      talk4Id_ = other.talk4Id_;
+      talk5Id_ = other.talk5Id_;
+      talk6Id_ = other.talk6Id_;
+      talk7Id_ = other.talk7Id_;
+      talk8Id_ = other.talk8Id_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public job Clone() {
+      return new job(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "hero_name_type" field.</summary>
+    public const int HeroNameTypeFieldNumber = 4;
+    private global::Config.hero_name_type heroNameType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.hero_name_type HeroNameType {
+      get { return heroNameType_; }
+      set {
+        heroNameType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hero_name_key" field.</summary>
+    public const int HeroNameKeyFieldNumber = 5;
+    private string heroNameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HeroNameKey {
+      get { return heroNameKey_; }
+      set {
+        heroNameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "hero_name_cn" field.</summary>
+    public const int HeroNameCnFieldNumber = 6;
+    private string heroNameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HeroNameCn {
+      get { return heroNameCn_; }
+      set {
+        heroNameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "camp" field.</summary>
+    public const int CampFieldNumber = 7;
+    private global::Config.camp_id camp_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.camp_id Camp {
+      get { return camp_; }
+      set {
+        camp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "race" field.</summary>
+    public const int RaceFieldNumber = 8;
+    private global::Config.race race_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.race Race {
+      get { return race_; }
+      set {
+        race_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "star_level" field.</summary>
+    public const int StarLevelFieldNumber = 9;
+    private int starLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StarLevel {
+      get { return starLevel_; }
+      set {
+        starLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 10;
+    private global::Config.job_type type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.job_type Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "story_id" field.</summary>
+    public const int StoryIdFieldNumber = 11;
+    private int storyId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StoryId {
+      get { return storyId_; }
+      set {
+        storyId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk_id" field.</summary>
+    public const int TalkIdFieldNumber = 12;
+    private int talkId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TalkId {
+      get { return talkId_; }
+      set {
+        talkId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk2_id" field.</summary>
+    public const int Talk2IdFieldNumber = 13;
+    private int talk2Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk2Id {
+      get { return talk2Id_; }
+      set {
+        talk2Id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_quality" field.</summary>
+    public const int MaxQualityFieldNumber = 14;
+    private int maxQuality_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxQuality {
+      get { return maxQuality_; }
+      set {
+        maxQuality_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk3_id" field.</summary>
+    public const int Talk3IdFieldNumber = 15;
+    private int talk3Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk3Id {
+      get { return talk3Id_; }
+      set {
+        talk3Id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk4_id" field.</summary>
+    public const int Talk4IdFieldNumber = 16;
+    private int talk4Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk4Id {
+      get { return talk4Id_; }
+      set {
+        talk4Id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk5_id" field.</summary>
+    public const int Talk5IdFieldNumber = 17;
+    private int talk5Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk5Id {
+      get { return talk5Id_; }
+      set {
+        talk5Id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk6_id" field.</summary>
+    public const int Talk6IdFieldNumber = 18;
+    private int talk6Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk6Id {
+      get { return talk6Id_; }
+      set {
+        talk6Id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk7_id" field.</summary>
+    public const int Talk7IdFieldNumber = 19;
+    private int talk7Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk7Id {
+      get { return talk7Id_; }
+      set {
+        talk7Id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talk8_id" field.</summary>
+    public const int Talk8IdFieldNumber = 20;
+    private int talk8Id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Talk8Id {
+      get { return talk8Id_; }
+      set {
+        talk8Id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as job);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(job other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (HeroNameType != other.HeroNameType) return false;
+      if (HeroNameKey != other.HeroNameKey) return false;
+      if (HeroNameCn != other.HeroNameCn) return false;
+      if (Camp != other.Camp) return false;
+      if (Race != other.Race) return false;
+      if (StarLevel != other.StarLevel) return false;
+      if (Type != other.Type) return false;
+      if (StoryId != other.StoryId) return false;
+      if (TalkId != other.TalkId) return false;
+      if (Talk2Id != other.Talk2Id) return false;
+      if (MaxQuality != other.MaxQuality) return false;
+      if (Talk3Id != other.Talk3Id) return false;
+      if (Talk4Id != other.Talk4Id) return false;
+      if (Talk5Id != other.Talk5Id) return false;
+      if (Talk6Id != other.Talk6Id) return false;
+      if (Talk7Id != other.Talk7Id) return false;
+      if (Talk8Id != other.Talk8Id) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (HeroNameType != 0) hash ^= HeroNameType.GetHashCode();
+      if (HeroNameKey.Length != 0) hash ^= HeroNameKey.GetHashCode();
+      if (HeroNameCn.Length != 0) hash ^= HeroNameCn.GetHashCode();
+      if (Camp != 0) hash ^= Camp.GetHashCode();
+      if (Race != 0) hash ^= Race.GetHashCode();
+      if (StarLevel != 0) hash ^= StarLevel.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (StoryId != 0) hash ^= StoryId.GetHashCode();
+      if (TalkId != 0) hash ^= TalkId.GetHashCode();
+      if (Talk2Id != 0) hash ^= Talk2Id.GetHashCode();
+      if (MaxQuality != 0) hash ^= MaxQuality.GetHashCode();
+      if (Talk3Id != 0) hash ^= Talk3Id.GetHashCode();
+      if (Talk4Id != 0) hash ^= Talk4Id.GetHashCode();
+      if (Talk5Id != 0) hash ^= Talk5Id.GetHashCode();
+      if (Talk6Id != 0) hash ^= Talk6Id.GetHashCode();
+      if (Talk7Id != 0) hash ^= Talk7Id.GetHashCode();
+      if (Talk8Id != 0) hash ^= Talk8Id.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (HeroNameType != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) HeroNameType);
+      }
+      if (HeroNameKey.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(HeroNameKey);
+      }
+      if (HeroNameCn.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(HeroNameCn);
+      }
+      if (Camp != 0) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Camp);
+      }
+      if (Race != 0) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) Race);
+      }
+      if (StarLevel != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(StarLevel);
+      }
+      if (Type != 0) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Type);
+      }
+      if (StoryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(StoryId);
+      }
+      if (TalkId != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(TalkId);
+      }
+      if (Talk2Id != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Talk2Id);
+      }
+      if (MaxQuality != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(MaxQuality);
+      }
+      if (Talk3Id != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Talk3Id);
+      }
+      if (Talk4Id != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(Talk4Id);
+      }
+      if (Talk5Id != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(Talk5Id);
+      }
+      if (Talk6Id != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(Talk6Id);
+      }
+      if (Talk7Id != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(Talk7Id);
+      }
+      if (Talk8Id != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(Talk8Id);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (HeroNameType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HeroNameType);
+      }
+      if (HeroNameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeroNameKey);
+      }
+      if (HeroNameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeroNameCn);
+      }
+      if (Camp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Camp);
+      }
+      if (Race != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Race);
+      }
+      if (StarLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StarLevel);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (StoryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StoryId);
+      }
+      if (TalkId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TalkId);
+      }
+      if (Talk2Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Talk2Id);
+      }
+      if (MaxQuality != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxQuality);
+      }
+      if (Talk3Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Talk3Id);
+      }
+      if (Talk4Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Talk4Id);
+      }
+      if (Talk5Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Talk5Id);
+      }
+      if (Talk6Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Talk6Id);
+      }
+      if (Talk7Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Talk7Id);
+      }
+      if (Talk8Id != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Talk8Id);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(job other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.HeroNameType != 0) {
+        HeroNameType = other.HeroNameType;
+      }
+      if (other.HeroNameKey.Length != 0) {
+        HeroNameKey = other.HeroNameKey;
+      }
+      if (other.HeroNameCn.Length != 0) {
+        HeroNameCn = other.HeroNameCn;
+      }
+      if (other.Camp != 0) {
+        Camp = other.Camp;
+      }
+      if (other.Race != 0) {
+        Race = other.Race;
+      }
+      if (other.StarLevel != 0) {
+        StarLevel = other.StarLevel;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      if (other.StoryId != 0) {
+        StoryId = other.StoryId;
+      }
+      if (other.TalkId != 0) {
+        TalkId = other.TalkId;
+      }
+      if (other.Talk2Id != 0) {
+        Talk2Id = other.Talk2Id;
+      }
+      if (other.MaxQuality != 0) {
+        MaxQuality = other.MaxQuality;
+      }
+      if (other.Talk3Id != 0) {
+        Talk3Id = other.Talk3Id;
+      }
+      if (other.Talk4Id != 0) {
+        Talk4Id = other.Talk4Id;
+      }
+      if (other.Talk5Id != 0) {
+        Talk5Id = other.Talk5Id;
+      }
+      if (other.Talk6Id != 0) {
+        Talk6Id = other.Talk6Id;
+      }
+      if (other.Talk7Id != 0) {
+        Talk7Id = other.Talk7Id;
+      }
+      if (other.Talk8Id != 0) {
+        Talk8Id = other.Talk8Id;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 32: {
+            heroNameType_ = (global::Config.hero_name_type) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            HeroNameKey = input.ReadString();
+            break;
+          }
+          case 50: {
+            HeroNameCn = input.ReadString();
+            break;
+          }
+          case 56: {
+            camp_ = (global::Config.camp_id) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            race_ = (global::Config.race) input.ReadEnum();
+            break;
+          }
+          case 72: {
+            StarLevel = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            type_ = (global::Config.job_type) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            StoryId = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            TalkId = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Talk2Id = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            MaxQuality = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Talk3Id = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            Talk4Id = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            Talk5Id = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            Talk6Id = input.ReadInt32();
+            break;
+          }
+          case 152: {
+            Talk7Id = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            Talk8Id = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ToolTest : pb::IMessage<ToolTest> {
+    private static readonly pb::MessageParser<ToolTest> _parser = new pb::MessageParser<ToolTest>(() => new ToolTest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ToolTest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ToolTest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ToolTest(ToolTest other) : this() {
+      iD_ = other.iD_;
+      testA_ = other.testA_;
+      testB_ = other.testB_;
+      testC_ = other.testC_;
+      testD_ = other.testD_.Clone();
+      testH_ = other.testH_.Clone();
+      testI_ = other.testI_.Clone();
+      testE_ = other.testE_.Clone();
+      testF_ = other.testF_.Clone();
+      testG_ = other.testG_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ToolTest Clone() {
+      return new ToolTest(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "testA" field.</summary>
+    public const int TestAFieldNumber = 2;
+    private int testA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TestA {
+      get { return testA_; }
+      set {
+        testA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "testB" field.</summary>
+    public const int TestBFieldNumber = 3;
+    private string testB_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TestB {
+      get { return testB_; }
+      set {
+        testB_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "testC" field.</summary>
+    public const int TestCFieldNumber = 4;
+    private bool testC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool TestC {
+      get { return testC_; }
+      set {
+        testC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "testD" field.</summary>
+    public const int TestDFieldNumber = 5;
+    private static readonly pb::FieldCodec<int> _repeated_testD_codec
+        = pb::FieldCodec.ForInt32(42);
+    private readonly pbc::RepeatedField<int> testD_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TestD {
+      get { return testD_; }
+    }
+
+    /// <summary>Field number for the "testH" field.</summary>
+    public const int TestHFieldNumber = 6;
+    private static readonly pb::FieldCodec<int> _repeated_testH_codec
+        = pb::FieldCodec.ForInt32(50);
+    private readonly pbc::RepeatedField<int> testH_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TestH {
+      get { return testH_; }
+    }
+
+    /// <summary>Field number for the "testI" field.</summary>
+    public const int TestIFieldNumber = 7;
+    private static readonly pb::FieldCodec<int> _repeated_testI_codec
+        = pb::FieldCodec.ForInt32(58);
+    private readonly pbc::RepeatedField<int> testI_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TestI {
+      get { return testI_; }
+    }
+
+    /// <summary>Field number for the "testE" field.</summary>
+    public const int TestEFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_testE_codec
+        = pb::FieldCodec.ForInt32(66);
+    private readonly pbc::RepeatedField<int> testE_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> TestE {
+      get { return testE_; }
+    }
+
+    /// <summary>Field number for the "testF" field.</summary>
+    public const int TestFFieldNumber = 9;
+    private static readonly pbc::MapField<string, int>.Codec _map_testF_codec
+        = new pbc::MapField<string, int>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForInt32(16), 74);
+    private readonly pbc::MapField<string, int> testF_ = new pbc::MapField<string, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, int> TestF {
+      get { return testF_; }
+    }
+
+    /// <summary>Field number for the "testG" field.</summary>
+    public const int TestGFieldNumber = 10;
+    private static readonly pbc::MapField<string, int>.Codec _map_testG_codec
+        = new pbc::MapField<string, int>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForInt32(16), 82);
+    private readonly pbc::MapField<string, int> testG_ = new pbc::MapField<string, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, int> TestG {
+      get { return testG_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ToolTest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ToolTest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (TestA != other.TestA) return false;
+      if (TestB != other.TestB) return false;
+      if (TestC != other.TestC) return false;
+      if(!testD_.Equals(other.testD_)) return false;
+      if(!testH_.Equals(other.testH_)) return false;
+      if(!testI_.Equals(other.testI_)) return false;
+      if(!testE_.Equals(other.testE_)) return false;
+      if (!TestF.Equals(other.TestF)) return false;
+      if (!TestG.Equals(other.TestG)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (TestA != 0) hash ^= TestA.GetHashCode();
+      if (TestB.Length != 0) hash ^= TestB.GetHashCode();
+      if (TestC != false) hash ^= TestC.GetHashCode();
+      hash ^= testD_.GetHashCode();
+      hash ^= testH_.GetHashCode();
+      hash ^= testI_.GetHashCode();
+      hash ^= testE_.GetHashCode();
+      hash ^= TestF.GetHashCode();
+      hash ^= TestG.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (TestA != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(TestA);
+      }
+      if (TestB.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TestB);
+      }
+      if (TestC != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(TestC);
+      }
+      testD_.WriteTo(output, _repeated_testD_codec);
+      testH_.WriteTo(output, _repeated_testH_codec);
+      testI_.WriteTo(output, _repeated_testI_codec);
+      testE_.WriteTo(output, _repeated_testE_codec);
+      testF_.WriteTo(output, _map_testF_codec);
+      testG_.WriteTo(output, _map_testG_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (TestA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TestA);
+      }
+      if (TestB.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TestB);
+      }
+      if (TestC != false) {
+        size += 1 + 1;
+      }
+      size += testD_.CalculateSize(_repeated_testD_codec);
+      size += testH_.CalculateSize(_repeated_testH_codec);
+      size += testI_.CalculateSize(_repeated_testI_codec);
+      size += testE_.CalculateSize(_repeated_testE_codec);
+      size += testF_.CalculateSize(_map_testF_codec);
+      size += testG_.CalculateSize(_map_testG_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ToolTest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.TestA != 0) {
+        TestA = other.TestA;
+      }
+      if (other.TestB.Length != 0) {
+        TestB = other.TestB;
+      }
+      if (other.TestC != false) {
+        TestC = other.TestC;
+      }
+      testD_.Add(other.testD_);
+      testH_.Add(other.testH_);
+      testI_.Add(other.testI_);
+      testE_.Add(other.testE_);
+      testF_.Add(other.testF_);
+      testG_.Add(other.testG_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            TestA = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            TestB = input.ReadString();
+            break;
+          }
+          case 32: {
+            TestC = input.ReadBool();
+            break;
+          }
+          case 42:
+          case 40: {
+            testD_.AddEntriesFrom(input, _repeated_testD_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            testH_.AddEntriesFrom(input, _repeated_testH_codec);
+            break;
+          }
+          case 58:
+          case 56: {
+            testI_.AddEntriesFrom(input, _repeated_testI_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            testE_.AddEntriesFrom(input, _repeated_testE_codec);
+            break;
+          }
+          case 74: {
+            testF_.AddEntriesFrom(input, _map_testF_codec);
+            break;
+          }
+          case 82: {
+            testG_.AddEntriesFrom(input, _map_testG_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class global_string : pb::IMessage<global_string> {
+    private static readonly pb::MessageParser<global_string> _parser = new pb::MessageParser<global_string>(() => new global_string());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<global_string> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[31]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global_string() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global_string(global_string other) : this() {
+      key_ = other.key_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global_string Clone() {
+      return new global_string(this);
+    }
+
+    /// <summary>Field number for the "key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private string key_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Key {
+      get { return key_; }
+      set {
+        key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as global_string);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(global_string other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key.Length != 0) hash ^= Key.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Key);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(global_string other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key.Length != 0) {
+        Key = other.Key;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Key = input.ReadString();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class building : pb::IMessage<building> {
+    private static readonly pb::MessageParser<building> _parser = new pb::MessageParser<building>(() => new building());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<building> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[32]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public building() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public building(building other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      nameCn_ = other.nameCn_;
+      iconId_ = other.iconId_;
+      updateGroup_ = other.updateGroup_;
+      transformType_ = other.transformType_;
+      subBuildingType_ = other.subBuildingType_;
+      buildingType_ = other.buildingType_;
+      position_ = other.position_;
+      needCapacity_ = other.needCapacity_;
+      needPower_ = other.needPower_;
+      preBuildings_ = other.preBuildings_;
+      level_ = other.level_;
+      buildingSubtype_ = other.buildingSubtype_;
+      consumeMaterials_ = other.consumeMaterials_.Clone();
+      productMaterials_ = other.productMaterials_.Clone();
+      initiallyOwned_ = other.initiallyOwned_;
+      prefabShape_ = other.prefabShape_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public building Clone() {
+      return new building(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 3;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon_id" field.</summary>
+    public const int IconIdFieldNumber = 4;
+    private int iconId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IconId {
+      get { return iconId_; }
+      set {
+        iconId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "update_group" field.</summary>
+    public const int UpdateGroupFieldNumber = 5;
+    private int updateGroup_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UpdateGroup {
+      get { return updateGroup_; }
+      set {
+        updateGroup_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "transform_type" field.</summary>
+    public const int TransformTypeFieldNumber = 6;
+    private int transformType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TransformType {
+      get { return transformType_; }
+      set {
+        transformType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sub_building_type" field.</summary>
+    public const int SubBuildingTypeFieldNumber = 7;
+    private global::Config.sub_building_enum subBuildingType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.sub_building_enum SubBuildingType {
+      get { return subBuildingType_; }
+      set {
+        subBuildingType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "building_type" field.</summary>
+    public const int BuildingTypeFieldNumber = 8;
+    private int buildingType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BuildingType {
+      get { return buildingType_; }
+      set {
+        buildingType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 9;
+    private int position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Position {
+      get { return position_; }
+      set {
+        position_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "need_capacity" field.</summary>
+    public const int NeedCapacityFieldNumber = 10;
+    private int needCapacity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NeedCapacity {
+      get { return needCapacity_; }
+      set {
+        needCapacity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "need_power" field.</summary>
+    public const int NeedPowerFieldNumber = 11;
+    private int needPower_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NeedPower {
+      get { return needPower_; }
+      set {
+        needPower_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pre_buildings" field.</summary>
+    public const int PreBuildingsFieldNumber = 12;
+    private int preBuildings_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PreBuildings {
+      get { return preBuildings_; }
+      set {
+        preBuildings_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 13;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "building_subtype" field.</summary>
+    public const int BuildingSubtypeFieldNumber = 14;
+    private int buildingSubtype_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BuildingSubtype {
+      get { return buildingSubtype_; }
+      set {
+        buildingSubtype_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "consume_materials" field.</summary>
+    public const int ConsumeMaterialsFieldNumber = 15;
+    private static readonly pbc::MapField<int, int>.Codec _map_consumeMaterials_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 122);
+    private readonly pbc::MapField<int, int> consumeMaterials_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> ConsumeMaterials {
+      get { return consumeMaterials_; }
+    }
+
+    /// <summary>Field number for the "product_materials" field.</summary>
+    public const int ProductMaterialsFieldNumber = 16;
+    private static readonly pbc::MapField<int, int>.Codec _map_productMaterials_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 130);
+    private readonly pbc::MapField<int, int> productMaterials_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> ProductMaterials {
+      get { return productMaterials_; }
+    }
+
+    /// <summary>Field number for the "initially_owned" field.</summary>
+    public const int InitiallyOwnedFieldNumber = 17;
+    private int initiallyOwned_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int InitiallyOwned {
+      get { return initiallyOwned_; }
+      set {
+        initiallyOwned_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prefab_shape" field.</summary>
+    public const int PrefabShapeFieldNumber = 18;
+    private int prefabShape_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PrefabShape {
+      get { return prefabShape_; }
+      set {
+        prefabShape_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as building);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(building other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (NameCn != other.NameCn) return false;
+      if (IconId != other.IconId) return false;
+      if (UpdateGroup != other.UpdateGroup) return false;
+      if (TransformType != other.TransformType) return false;
+      if (SubBuildingType != other.SubBuildingType) return false;
+      if (BuildingType != other.BuildingType) return false;
+      if (Position != other.Position) return false;
+      if (NeedCapacity != other.NeedCapacity) return false;
+      if (NeedPower != other.NeedPower) return false;
+      if (PreBuildings != other.PreBuildings) return false;
+      if (Level != other.Level) return false;
+      if (BuildingSubtype != other.BuildingSubtype) return false;
+      if (!ConsumeMaterials.Equals(other.ConsumeMaterials)) return false;
+      if (!ProductMaterials.Equals(other.ProductMaterials)) return false;
+      if (InitiallyOwned != other.InitiallyOwned) return false;
+      if (PrefabShape != other.PrefabShape) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (IconId != 0) hash ^= IconId.GetHashCode();
+      if (UpdateGroup != 0) hash ^= UpdateGroup.GetHashCode();
+      if (TransformType != 0) hash ^= TransformType.GetHashCode();
+      if (SubBuildingType != 0) hash ^= SubBuildingType.GetHashCode();
+      if (BuildingType != 0) hash ^= BuildingType.GetHashCode();
+      if (Position != 0) hash ^= Position.GetHashCode();
+      if (NeedCapacity != 0) hash ^= NeedCapacity.GetHashCode();
+      if (NeedPower != 0) hash ^= NeedPower.GetHashCode();
+      if (PreBuildings != 0) hash ^= PreBuildings.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (BuildingSubtype != 0) hash ^= BuildingSubtype.GetHashCode();
+      hash ^= ConsumeMaterials.GetHashCode();
+      hash ^= ProductMaterials.GetHashCode();
+      if (InitiallyOwned != 0) hash ^= InitiallyOwned.GetHashCode();
+      if (PrefabShape != 0) hash ^= PrefabShape.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NameCn);
+      }
+      if (IconId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(IconId);
+      }
+      if (UpdateGroup != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(UpdateGroup);
+      }
+      if (TransformType != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(TransformType);
+      }
+      if (SubBuildingType != 0) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) SubBuildingType);
+      }
+      if (BuildingType != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(BuildingType);
+      }
+      if (Position != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Position);
+      }
+      if (NeedCapacity != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(NeedCapacity);
+      }
+      if (NeedPower != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(NeedPower);
+      }
+      if (PreBuildings != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(PreBuildings);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Level);
+      }
+      if (BuildingSubtype != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(BuildingSubtype);
+      }
+      consumeMaterials_.WriteTo(output, _map_consumeMaterials_codec);
+      productMaterials_.WriteTo(output, _map_productMaterials_codec);
+      if (InitiallyOwned != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(InitiallyOwned);
+      }
+      if (PrefabShape != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(PrefabShape);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (IconId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IconId);
+      }
+      if (UpdateGroup != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(UpdateGroup);
+      }
+      if (TransformType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TransformType);
+      }
+      if (SubBuildingType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SubBuildingType);
+      }
+      if (BuildingType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BuildingType);
+      }
+      if (Position != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Position);
+      }
+      if (NeedCapacity != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NeedCapacity);
+      }
+      if (NeedPower != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NeedPower);
+      }
+      if (PreBuildings != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PreBuildings);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (BuildingSubtype != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BuildingSubtype);
+      }
+      size += consumeMaterials_.CalculateSize(_map_consumeMaterials_codec);
+      size += productMaterials_.CalculateSize(_map_productMaterials_codec);
+      if (InitiallyOwned != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(InitiallyOwned);
+      }
+      if (PrefabShape != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PrefabShape);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(building other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.IconId != 0) {
+        IconId = other.IconId;
+      }
+      if (other.UpdateGroup != 0) {
+        UpdateGroup = other.UpdateGroup;
+      }
+      if (other.TransformType != 0) {
+        TransformType = other.TransformType;
+      }
+      if (other.SubBuildingType != 0) {
+        SubBuildingType = other.SubBuildingType;
+      }
+      if (other.BuildingType != 0) {
+        BuildingType = other.BuildingType;
+      }
+      if (other.Position != 0) {
+        Position = other.Position;
+      }
+      if (other.NeedCapacity != 0) {
+        NeedCapacity = other.NeedCapacity;
+      }
+      if (other.NeedPower != 0) {
+        NeedPower = other.NeedPower;
+      }
+      if (other.PreBuildings != 0) {
+        PreBuildings = other.PreBuildings;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.BuildingSubtype != 0) {
+        BuildingSubtype = other.BuildingSubtype;
+      }
+      consumeMaterials_.Add(other.consumeMaterials_);
+      productMaterials_.Add(other.productMaterials_);
+      if (other.InitiallyOwned != 0) {
+        InitiallyOwned = other.InitiallyOwned;
+      }
+      if (other.PrefabShape != 0) {
+        PrefabShape = other.PrefabShape;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 26: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 32: {
+            IconId = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            UpdateGroup = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            TransformType = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            subBuildingType_ = (global::Config.sub_building_enum) input.ReadEnum();
+            break;
+          }
+          case 64: {
+            BuildingType = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Position = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            NeedCapacity = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            NeedPower = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            PreBuildings = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            BuildingSubtype = input.ReadInt32();
+            break;
+          }
+          case 122: {
+            consumeMaterials_.AddEntriesFrom(input, _map_consumeMaterials_codec);
+            break;
+          }
+          case 130: {
+            productMaterials_.AddEntriesFrom(input, _map_productMaterials_codec);
+            break;
+          }
+          case 136: {
+            InitiallyOwned = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            PrefabShape = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class prefab_effect : pb::IMessage<prefab_effect> {
+    private static readonly pb::MessageParser<prefab_effect> _parser = new pb::MessageParser<prefab_effect>(() => new prefab_effect());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<prefab_effect> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_effect() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_effect(prefab_effect other) : this() {
+      id_ = other.id_;
+      prefabName_ = other.prefabName_;
+      mark_ = other.mark_;
+      attachPath_ = other.attachPath_;
+      followPosition_ = other.followPosition_;
+      followRotation_ = other.followRotation_;
+      effectPath_ = other.effectPath_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public prefab_effect Clone() {
+      return new prefab_effect(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prefab_name" field.</summary>
+    public const int PrefabNameFieldNumber = 2;
+    private string prefabName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PrefabName {
+      get { return prefabName_; }
+      set {
+        prefabName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 3;
+    private string mark_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mark {
+      get { return mark_; }
+      set {
+        mark_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "attach_path" field.</summary>
+    public const int AttachPathFieldNumber = 4;
+    private global::Config.hook attachPath_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.hook AttachPath {
+      get { return attachPath_; }
+      set {
+        attachPath_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "follow_position" field.</summary>
+    public const int FollowPositionFieldNumber = 5;
+    private int followPosition_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int FollowPosition {
+      get { return followPosition_; }
+      set {
+        followPosition_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "follow_rotation" field.</summary>
+    public const int FollowRotationFieldNumber = 6;
+    private int followRotation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int FollowRotation {
+      get { return followRotation_; }
+      set {
+        followRotation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "effect_path" field.</summary>
+    public const int EffectPathFieldNumber = 7;
+    private string effectPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string EffectPath {
+      get { return effectPath_; }
+      set {
+        effectPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as prefab_effect);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(prefab_effect other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (PrefabName != other.PrefabName) return false;
+      if (Mark != other.Mark) return false;
+      if (AttachPath != other.AttachPath) return false;
+      if (FollowPosition != other.FollowPosition) return false;
+      if (FollowRotation != other.FollowRotation) return false;
+      if (EffectPath != other.EffectPath) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (PrefabName.Length != 0) hash ^= PrefabName.GetHashCode();
+      if (Mark.Length != 0) hash ^= Mark.GetHashCode();
+      if (AttachPath != 0) hash ^= AttachPath.GetHashCode();
+      if (FollowPosition != 0) hash ^= FollowPosition.GetHashCode();
+      if (FollowRotation != 0) hash ^= FollowRotation.GetHashCode();
+      if (EffectPath.Length != 0) hash ^= EffectPath.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (PrefabName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PrefabName);
+      }
+      if (Mark.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Mark);
+      }
+      if (AttachPath != 0) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) AttachPath);
+      }
+      if (FollowPosition != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(FollowPosition);
+      }
+      if (FollowRotation != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(FollowRotation);
+      }
+      if (EffectPath.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(EffectPath);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (PrefabName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabName);
+      }
+      if (Mark.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mark);
+      }
+      if (AttachPath != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AttachPath);
+      }
+      if (FollowPosition != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FollowPosition);
+      }
+      if (FollowRotation != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FollowRotation);
+      }
+      if (EffectPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EffectPath);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(prefab_effect other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.PrefabName.Length != 0) {
+        PrefabName = other.PrefabName;
+      }
+      if (other.Mark.Length != 0) {
+        Mark = other.Mark;
+      }
+      if (other.AttachPath != 0) {
+        AttachPath = other.AttachPath;
+      }
+      if (other.FollowPosition != 0) {
+        FollowPosition = other.FollowPosition;
+      }
+      if (other.FollowRotation != 0) {
+        FollowRotation = other.FollowRotation;
+      }
+      if (other.EffectPath.Length != 0) {
+        EffectPath = other.EffectPath;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            PrefabName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Mark = input.ReadString();
+            break;
+          }
+          case 32: {
+            attachPath_ = (global::Config.hook) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            FollowPosition = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            FollowRotation = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            EffectPath = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Timeline : pb::IMessage<Timeline> {
+    private static readonly pb::MessageParser<Timeline> _parser = new pb::MessageParser<Timeline>(() => new Timeline());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Timeline> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[34]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Timeline() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Timeline(Timeline other) : this() {
+      iD_ = other.iD_;
+      duration_ = other.duration_;
+      recoverTime_ = other.recoverTime_;
+      preInputStart_ = other.preInputStart_;
+      preInputEnd_ = other.preInputEnd_;
+      animationMove_ = other.animationMove_.Clone();
+      hitTimes_ = other.hitTimes_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Timeline Clone() {
+      return new Timeline(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Duration" field.</summary>
+    public const int DurationFieldNumber = 2;
+    private int duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RecoverTime" field.</summary>
+    public const int RecoverTimeFieldNumber = 3;
+    private int recoverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RecoverTime {
+      get { return recoverTime_; }
+      set {
+        recoverTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PreInputStart" field.</summary>
+    public const int PreInputStartFieldNumber = 4;
+    private int preInputStart_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PreInputStart {
+      get { return preInputStart_; }
+      set {
+        preInputStart_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PreInputEnd" field.</summary>
+    public const int PreInputEndFieldNumber = 5;
+    private int preInputEnd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PreInputEnd {
+      get { return preInputEnd_; }
+      set {
+        preInputEnd_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "AnimationMove" field.</summary>
+    public const int AnimationMoveFieldNumber = 6;
+    private static readonly pb::FieldCodec<int> _repeated_animationMove_codec
+        = pb::FieldCodec.ForInt32(50);
+    private readonly pbc::RepeatedField<int> animationMove_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AnimationMove {
+      get { return animationMove_; }
+    }
+
+    /// <summary>Field number for the "HitTimes" field.</summary>
+    public const int HitTimesFieldNumber = 7;
+    private static readonly pb::FieldCodec<int> _repeated_hitTimes_codec
+        = pb::FieldCodec.ForInt32(58);
+    private readonly pbc::RepeatedField<int> hitTimes_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> HitTimes {
+      get { return hitTimes_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Timeline);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Timeline other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Duration != other.Duration) return false;
+      if (RecoverTime != other.RecoverTime) return false;
+      if (PreInputStart != other.PreInputStart) return false;
+      if (PreInputEnd != other.PreInputEnd) return false;
+      if(!animationMove_.Equals(other.animationMove_)) return false;
+      if(!hitTimes_.Equals(other.hitTimes_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Duration != 0) hash ^= Duration.GetHashCode();
+      if (RecoverTime != 0) hash ^= RecoverTime.GetHashCode();
+      if (PreInputStart != 0) hash ^= PreInputStart.GetHashCode();
+      if (PreInputEnd != 0) hash ^= PreInputEnd.GetHashCode();
+      hash ^= animationMove_.GetHashCode();
+      hash ^= hitTimes_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Duration != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Duration);
+      }
+      if (RecoverTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(RecoverTime);
+      }
+      if (PreInputStart != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(PreInputStart);
+      }
+      if (PreInputEnd != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(PreInputEnd);
+      }
+      animationMove_.WriteTo(output, _repeated_animationMove_codec);
+      hitTimes_.WriteTo(output, _repeated_hitTimes_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      if (RecoverTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RecoverTime);
+      }
+      if (PreInputStart != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PreInputStart);
+      }
+      if (PreInputEnd != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PreInputEnd);
+      }
+      size += animationMove_.CalculateSize(_repeated_animationMove_codec);
+      size += hitTimes_.CalculateSize(_repeated_hitTimes_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Timeline other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Duration != 0) {
+        Duration = other.Duration;
+      }
+      if (other.RecoverTime != 0) {
+        RecoverTime = other.RecoverTime;
+      }
+      if (other.PreInputStart != 0) {
+        PreInputStart = other.PreInputStart;
+      }
+      if (other.PreInputEnd != 0) {
+        PreInputEnd = other.PreInputEnd;
+      }
+      animationMove_.Add(other.animationMove_);
+      hitTimes_.Add(other.hitTimes_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Duration = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            RecoverTime = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            PreInputStart = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            PreInputEnd = input.ReadInt32();
+            break;
+          }
+          case 50:
+          case 48: {
+            animationMove_.AddEntriesFrom(input, _repeated_animationMove_codec);
+            break;
+          }
+          case 58:
+          case 56: {
+            hitTimes_.AddEntriesFrom(input, _repeated_hitTimes_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class head_config : pb::IMessage<head_config> {
+    private static readonly pb::MessageParser<head_config> _parser = new pb::MessageParser<head_config>(() => new head_config());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<head_config> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[35]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public head_config() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public head_config(head_config other) : this() {
+      id_ = other.id_;
+      modId_ = other.modId_;
+      eyeSize_ = other.eyeSize_.Clone();
+      eyeDis_ = other.eyeDis_.Clone();
+      eyeBrowdis_ = other.eyeBrowdis_.Clone();
+      eyeSocket_ = other.eyeSocket_.Clone();
+      noseWidth_ = other.noseWidth_.Clone();
+      noseLength_ = other.noseLength_.Clone();
+      noseHight_ = other.noseHight_.Clone();
+      earPart_ = other.earPart_.Clone();
+      earSize_ = other.earSize_.Clone();
+      earForm_ = other.earForm_.Clone();
+      mouthPart_ = other.mouthPart_.Clone();
+      mouthTh_ = other.mouthTh_.Clone();
+      mouthBump_ = other.mouthBump_.Clone();
+      jawTh_ = other.jawTh_.Clone();
+      jawLength_ = other.jawLength_.Clone();
+      cheek_ = other.cheek_.Clone();
+      brow_ = other.brow_.Clone();
+      goatee_ = other.goatee_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public head_config Clone() {
+      return new head_config(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mod_id" field.</summary>
+    public const int ModIdFieldNumber = 2;
+    private int modId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ModId {
+      get { return modId_; }
+      set {
+        modId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "eye_size" field.</summary>
+    public const int EyeSizeFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_eyeSize_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> eyeSize_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EyeSize {
+      get { return eyeSize_; }
+    }
+
+    /// <summary>Field number for the "eye_dis" field.</summary>
+    public const int EyeDisFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_eyeDis_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> eyeDis_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EyeDis {
+      get { return eyeDis_; }
+    }
+
+    /// <summary>Field number for the "eye_browdis" field.</summary>
+    public const int EyeBrowdisFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_eyeBrowdis_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> eyeBrowdis_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EyeBrowdis {
+      get { return eyeBrowdis_; }
+    }
+
+    /// <summary>Field number for the "eye_socket" field.</summary>
+    public const int EyeSocketFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_eyeSocket_codec
+        = pb::FieldCodec.ForString(50);
+    private readonly pbc::RepeatedField<string> eyeSocket_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EyeSocket {
+      get { return eyeSocket_; }
+    }
+
+    /// <summary>Field number for the "nose_width" field.</summary>
+    public const int NoseWidthFieldNumber = 7;
+    private static readonly pb::FieldCodec<string> _repeated_noseWidth_codec
+        = pb::FieldCodec.ForString(58);
+    private readonly pbc::RepeatedField<string> noseWidth_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> NoseWidth {
+      get { return noseWidth_; }
+    }
+
+    /// <summary>Field number for the "nose_length" field.</summary>
+    public const int NoseLengthFieldNumber = 8;
+    private static readonly pb::FieldCodec<string> _repeated_noseLength_codec
+        = pb::FieldCodec.ForString(66);
+    private readonly pbc::RepeatedField<string> noseLength_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> NoseLength {
+      get { return noseLength_; }
+    }
+
+    /// <summary>Field number for the "nose_hight" field.</summary>
+    public const int NoseHightFieldNumber = 9;
+    private static readonly pb::FieldCodec<string> _repeated_noseHight_codec
+        = pb::FieldCodec.ForString(74);
+    private readonly pbc::RepeatedField<string> noseHight_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> NoseHight {
+      get { return noseHight_; }
+    }
+
+    /// <summary>Field number for the "ear_part" field.</summary>
+    public const int EarPartFieldNumber = 10;
+    private static readonly pb::FieldCodec<string> _repeated_earPart_codec
+        = pb::FieldCodec.ForString(82);
+    private readonly pbc::RepeatedField<string> earPart_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EarPart {
+      get { return earPart_; }
+    }
+
+    /// <summary>Field number for the "ear_size" field.</summary>
+    public const int EarSizeFieldNumber = 11;
+    private static readonly pb::FieldCodec<string> _repeated_earSize_codec
+        = pb::FieldCodec.ForString(90);
+    private readonly pbc::RepeatedField<string> earSize_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EarSize {
+      get { return earSize_; }
+    }
+
+    /// <summary>Field number for the "ear_form" field.</summary>
+    public const int EarFormFieldNumber = 12;
+    private static readonly pb::FieldCodec<string> _repeated_earForm_codec
+        = pb::FieldCodec.ForString(98);
+    private readonly pbc::RepeatedField<string> earForm_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> EarForm {
+      get { return earForm_; }
+    }
+
+    /// <summary>Field number for the "mouth_part" field.</summary>
+    public const int MouthPartFieldNumber = 13;
+    private static readonly pb::FieldCodec<string> _repeated_mouthPart_codec
+        = pb::FieldCodec.ForString(106);
+    private readonly pbc::RepeatedField<string> mouthPart_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> MouthPart {
+      get { return mouthPart_; }
+    }
+
+    /// <summary>Field number for the "mouth_th" field.</summary>
+    public const int MouthThFieldNumber = 14;
+    private static readonly pb::FieldCodec<string> _repeated_mouthTh_codec
+        = pb::FieldCodec.ForString(114);
+    private readonly pbc::RepeatedField<string> mouthTh_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> MouthTh {
+      get { return mouthTh_; }
+    }
+
+    /// <summary>Field number for the "mouth_bump" field.</summary>
+    public const int MouthBumpFieldNumber = 15;
+    private static readonly pb::FieldCodec<string> _repeated_mouthBump_codec
+        = pb::FieldCodec.ForString(122);
+    private readonly pbc::RepeatedField<string> mouthBump_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> MouthBump {
+      get { return mouthBump_; }
+    }
+
+    /// <summary>Field number for the "jaw_th" field.</summary>
+    public const int JawThFieldNumber = 16;
+    private static readonly pb::FieldCodec<string> _repeated_jawTh_codec
+        = pb::FieldCodec.ForString(130);
+    private readonly pbc::RepeatedField<string> jawTh_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> JawTh {
+      get { return jawTh_; }
+    }
+
+    /// <summary>Field number for the "jaw_length" field.</summary>
+    public const int JawLengthFieldNumber = 17;
+    private static readonly pb::FieldCodec<string> _repeated_jawLength_codec
+        = pb::FieldCodec.ForString(138);
+    private readonly pbc::RepeatedField<string> jawLength_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> JawLength {
+      get { return jawLength_; }
+    }
+
+    /// <summary>Field number for the "cheek" field.</summary>
+    public const int CheekFieldNumber = 18;
+    private static readonly pb::FieldCodec<string> _repeated_cheek_codec
+        = pb::FieldCodec.ForString(146);
+    private readonly pbc::RepeatedField<string> cheek_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Cheek {
+      get { return cheek_; }
+    }
+
+    /// <summary>Field number for the "brow" field.</summary>
+    public const int BrowFieldNumber = 19;
+    private static readonly pb::FieldCodec<int> _repeated_brow_codec
+        = pb::FieldCodec.ForInt32(154);
+    private readonly pbc::RepeatedField<int> brow_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Brow {
+      get { return brow_; }
+    }
+
+    /// <summary>Field number for the "goatee" field.</summary>
+    public const int GoateeFieldNumber = 20;
+    private static readonly pb::FieldCodec<int> _repeated_goatee_codec
+        = pb::FieldCodec.ForInt32(162);
+    private readonly pbc::RepeatedField<int> goatee_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Goatee {
+      get { return goatee_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as head_config);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(head_config other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (ModId != other.ModId) return false;
+      if(!eyeSize_.Equals(other.eyeSize_)) return false;
+      if(!eyeDis_.Equals(other.eyeDis_)) return false;
+      if(!eyeBrowdis_.Equals(other.eyeBrowdis_)) return false;
+      if(!eyeSocket_.Equals(other.eyeSocket_)) return false;
+      if(!noseWidth_.Equals(other.noseWidth_)) return false;
+      if(!noseLength_.Equals(other.noseLength_)) return false;
+      if(!noseHight_.Equals(other.noseHight_)) return false;
+      if(!earPart_.Equals(other.earPart_)) return false;
+      if(!earSize_.Equals(other.earSize_)) return false;
+      if(!earForm_.Equals(other.earForm_)) return false;
+      if(!mouthPart_.Equals(other.mouthPart_)) return false;
+      if(!mouthTh_.Equals(other.mouthTh_)) return false;
+      if(!mouthBump_.Equals(other.mouthBump_)) return false;
+      if(!jawTh_.Equals(other.jawTh_)) return false;
+      if(!jawLength_.Equals(other.jawLength_)) return false;
+      if(!cheek_.Equals(other.cheek_)) return false;
+      if(!brow_.Equals(other.brow_)) return false;
+      if(!goatee_.Equals(other.goatee_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (ModId != 0) hash ^= ModId.GetHashCode();
+      hash ^= eyeSize_.GetHashCode();
+      hash ^= eyeDis_.GetHashCode();
+      hash ^= eyeBrowdis_.GetHashCode();
+      hash ^= eyeSocket_.GetHashCode();
+      hash ^= noseWidth_.GetHashCode();
+      hash ^= noseLength_.GetHashCode();
+      hash ^= noseHight_.GetHashCode();
+      hash ^= earPart_.GetHashCode();
+      hash ^= earSize_.GetHashCode();
+      hash ^= earForm_.GetHashCode();
+      hash ^= mouthPart_.GetHashCode();
+      hash ^= mouthTh_.GetHashCode();
+      hash ^= mouthBump_.GetHashCode();
+      hash ^= jawTh_.GetHashCode();
+      hash ^= jawLength_.GetHashCode();
+      hash ^= cheek_.GetHashCode();
+      hash ^= brow_.GetHashCode();
+      hash ^= goatee_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (ModId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ModId);
+      }
+      eyeSize_.WriteTo(output, _repeated_eyeSize_codec);
+      eyeDis_.WriteTo(output, _repeated_eyeDis_codec);
+      eyeBrowdis_.WriteTo(output, _repeated_eyeBrowdis_codec);
+      eyeSocket_.WriteTo(output, _repeated_eyeSocket_codec);
+      noseWidth_.WriteTo(output, _repeated_noseWidth_codec);
+      noseLength_.WriteTo(output, _repeated_noseLength_codec);
+      noseHight_.WriteTo(output, _repeated_noseHight_codec);
+      earPart_.WriteTo(output, _repeated_earPart_codec);
+      earSize_.WriteTo(output, _repeated_earSize_codec);
+      earForm_.WriteTo(output, _repeated_earForm_codec);
+      mouthPart_.WriteTo(output, _repeated_mouthPart_codec);
+      mouthTh_.WriteTo(output, _repeated_mouthTh_codec);
+      mouthBump_.WriteTo(output, _repeated_mouthBump_codec);
+      jawTh_.WriteTo(output, _repeated_jawTh_codec);
+      jawLength_.WriteTo(output, _repeated_jawLength_codec);
+      cheek_.WriteTo(output, _repeated_cheek_codec);
+      brow_.WriteTo(output, _repeated_brow_codec);
+      goatee_.WriteTo(output, _repeated_goatee_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (ModId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ModId);
+      }
+      size += eyeSize_.CalculateSize(_repeated_eyeSize_codec);
+      size += eyeDis_.CalculateSize(_repeated_eyeDis_codec);
+      size += eyeBrowdis_.CalculateSize(_repeated_eyeBrowdis_codec);
+      size += eyeSocket_.CalculateSize(_repeated_eyeSocket_codec);
+      size += noseWidth_.CalculateSize(_repeated_noseWidth_codec);
+      size += noseLength_.CalculateSize(_repeated_noseLength_codec);
+      size += noseHight_.CalculateSize(_repeated_noseHight_codec);
+      size += earPart_.CalculateSize(_repeated_earPart_codec);
+      size += earSize_.CalculateSize(_repeated_earSize_codec);
+      size += earForm_.CalculateSize(_repeated_earForm_codec);
+      size += mouthPart_.CalculateSize(_repeated_mouthPart_codec);
+      size += mouthTh_.CalculateSize(_repeated_mouthTh_codec);
+      size += mouthBump_.CalculateSize(_repeated_mouthBump_codec);
+      size += jawTh_.CalculateSize(_repeated_jawTh_codec);
+      size += jawLength_.CalculateSize(_repeated_jawLength_codec);
+      size += cheek_.CalculateSize(_repeated_cheek_codec);
+      size += brow_.CalculateSize(_repeated_brow_codec);
+      size += goatee_.CalculateSize(_repeated_goatee_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(head_config other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.ModId != 0) {
+        ModId = other.ModId;
+      }
+      eyeSize_.Add(other.eyeSize_);
+      eyeDis_.Add(other.eyeDis_);
+      eyeBrowdis_.Add(other.eyeBrowdis_);
+      eyeSocket_.Add(other.eyeSocket_);
+      noseWidth_.Add(other.noseWidth_);
+      noseLength_.Add(other.noseLength_);
+      noseHight_.Add(other.noseHight_);
+      earPart_.Add(other.earPart_);
+      earSize_.Add(other.earSize_);
+      earForm_.Add(other.earForm_);
+      mouthPart_.Add(other.mouthPart_);
+      mouthTh_.Add(other.mouthTh_);
+      mouthBump_.Add(other.mouthBump_);
+      jawTh_.Add(other.jawTh_);
+      jawLength_.Add(other.jawLength_);
+      cheek_.Add(other.cheek_);
+      brow_.Add(other.brow_);
+      goatee_.Add(other.goatee_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            ModId = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            eyeSize_.AddEntriesFrom(input, _repeated_eyeSize_codec);
+            break;
+          }
+          case 34: {
+            eyeDis_.AddEntriesFrom(input, _repeated_eyeDis_codec);
+            break;
+          }
+          case 42: {
+            eyeBrowdis_.AddEntriesFrom(input, _repeated_eyeBrowdis_codec);
+            break;
+          }
+          case 50: {
+            eyeSocket_.AddEntriesFrom(input, _repeated_eyeSocket_codec);
+            break;
+          }
+          case 58: {
+            noseWidth_.AddEntriesFrom(input, _repeated_noseWidth_codec);
+            break;
+          }
+          case 66: {
+            noseLength_.AddEntriesFrom(input, _repeated_noseLength_codec);
+            break;
+          }
+          case 74: {
+            noseHight_.AddEntriesFrom(input, _repeated_noseHight_codec);
+            break;
+          }
+          case 82: {
+            earPart_.AddEntriesFrom(input, _repeated_earPart_codec);
+            break;
+          }
+          case 90: {
+            earSize_.AddEntriesFrom(input, _repeated_earSize_codec);
+            break;
+          }
+          case 98: {
+            earForm_.AddEntriesFrom(input, _repeated_earForm_codec);
+            break;
+          }
+          case 106: {
+            mouthPart_.AddEntriesFrom(input, _repeated_mouthPart_codec);
+            break;
+          }
+          case 114: {
+            mouthTh_.AddEntriesFrom(input, _repeated_mouthTh_codec);
+            break;
+          }
+          case 122: {
+            mouthBump_.AddEntriesFrom(input, _repeated_mouthBump_codec);
+            break;
+          }
+          case 130: {
+            jawTh_.AddEntriesFrom(input, _repeated_jawTh_codec);
+            break;
+          }
+          case 138: {
+            jawLength_.AddEntriesFrom(input, _repeated_jawLength_codec);
+            break;
+          }
+          case 146: {
+            cheek_.AddEntriesFrom(input, _repeated_cheek_codec);
+            break;
+          }
+          case 154:
+          case 152: {
+            brow_.AddEntriesFrom(input, _repeated_brow_codec);
+            break;
+          }
+          case 162:
+          case 160: {
+            goatee_.AddEntriesFrom(input, _repeated_goatee_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class stage : pb::IMessage<stage> {
+    private static readonly pb::MessageParser<stage> _parser = new pb::MessageParser<stage>(() => new stage());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<stage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[36]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public stage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public stage(stage other) : this() {
+      id_ = other.id_;
+      nameKey_ = other.nameKey_;
+      iconId_ = other.iconId_;
+      suggestPower_ = other.suggestPower_;
+      nameCn_ = other.nameCn_;
+      chapterId_ = other.chapterId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public stage Clone() {
+      return new stage(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_key" field.</summary>
+    public const int NameKeyFieldNumber = 2;
+    private string nameKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameKey {
+      get { return nameKey_; }
+      set {
+        nameKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon_id" field.</summary>
+    public const int IconIdFieldNumber = 3;
+    private int iconId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IconId {
+      get { return iconId_; }
+      set {
+        iconId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "suggest_power" field.</summary>
+    public const int SuggestPowerFieldNumber = 4;
+    private int suggestPower_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SuggestPower {
+      get { return suggestPower_; }
+      set {
+        suggestPower_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_cn" field.</summary>
+    public const int NameCnFieldNumber = 5;
+    private string nameCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NameCn {
+      get { return nameCn_; }
+      set {
+        nameCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "chapter_id" field.</summary>
+    public const int ChapterIdFieldNumber = 6;
+    private int chapterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ChapterId {
+      get { return chapterId_; }
+      set {
+        chapterId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as stage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(stage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (NameKey != other.NameKey) return false;
+      if (IconId != other.IconId) return false;
+      if (SuggestPower != other.SuggestPower) return false;
+      if (NameCn != other.NameCn) return false;
+      if (ChapterId != other.ChapterId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (NameKey.Length != 0) hash ^= NameKey.GetHashCode();
+      if (IconId != 0) hash ^= IconId.GetHashCode();
+      if (SuggestPower != 0) hash ^= SuggestPower.GetHashCode();
+      if (NameCn.Length != 0) hash ^= NameCn.GetHashCode();
+      if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (NameKey.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NameKey);
+      }
+      if (IconId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IconId);
+      }
+      if (SuggestPower != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(SuggestPower);
+      }
+      if (NameCn.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(NameCn);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(ChapterId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (NameKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameKey);
+      }
+      if (IconId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IconId);
+      }
+      if (SuggestPower != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SuggestPower);
+      }
+      if (NameCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NameCn);
+      }
+      if (ChapterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChapterId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(stage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.NameKey.Length != 0) {
+        NameKey = other.NameKey;
+      }
+      if (other.IconId != 0) {
+        IconId = other.IconId;
+      }
+      if (other.SuggestPower != 0) {
+        SuggestPower = other.SuggestPower;
+      }
+      if (other.NameCn.Length != 0) {
+        NameCn = other.NameCn;
+      }
+      if (other.ChapterId != 0) {
+        ChapterId = other.ChapterId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            NameKey = input.ReadString();
+            break;
+          }
+          case 24: {
+            IconId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            SuggestPower = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            NameCn = input.ReadString();
+            break;
+          }
+          case 48: {
+            ChapterId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class error_code : pb::IMessage<error_code> {
+    private static readonly pb::MessageParser<error_code> _parser = new pb::MessageParser<error_code>(() => new error_code());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<error_code> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[37]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public error_code() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public error_code(error_code other) : this() {
+      iD_ = other.iD_;
+      name_ = other.name_;
+      valueKey_ = other.valueKey_;
+      valueCn_ = other.valueCn_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public error_code Clone() {
+      return new error_code(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value_key" field.</summary>
+    public const int ValueKeyFieldNumber = 3;
+    private int valueKey_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ValueKey {
+      get { return valueKey_; }
+      set {
+        valueKey_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value_cn" field.</summary>
+    public const int ValueCnFieldNumber = 4;
+    private string valueCn_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ValueCn {
+      get { return valueCn_; }
+      set {
+        valueCn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as error_code);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(error_code other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Name != other.Name) return false;
+      if (ValueKey != other.ValueKey) return false;
+      if (ValueCn != other.ValueCn) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ValueKey != 0) hash ^= ValueKey.GetHashCode();
+      if (ValueCn.Length != 0) hash ^= ValueCn.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (ValueKey != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ValueKey);
+      }
+      if (ValueCn.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ValueCn);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ValueKey != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ValueKey);
+      }
+      if (ValueCn.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValueCn);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(error_code other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.ValueKey != 0) {
+        ValueKey = other.ValueKey;
+      }
+      if (other.ValueCn.Length != 0) {
+        ValueCn = other.ValueCn;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 24: {
+            ValueKey = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            ValueCn = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class system_name : pb::IMessage<system_name> {
+    private static readonly pb::MessageParser<system_name> _parser = new pb::MessageParser<system_name>(() => new system_name());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<system_name> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[38]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public system_name() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public system_name(system_name other) : this() {
+      id_ = other.id_;
+      femaleFirstname_ = other.femaleFirstname_;
+      maleFirstname_ = other.maleFirstname_;
+      lastname_ = other.lastname_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public system_name Clone() {
+      return new system_name(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "female_firstname" field.</summary>
+    public const int FemaleFirstnameFieldNumber = 2;
+    private string femaleFirstname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FemaleFirstname {
+      get { return femaleFirstname_; }
+      set {
+        femaleFirstname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "male_firstname" field.</summary>
+    public const int MaleFirstnameFieldNumber = 3;
+    private string maleFirstname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MaleFirstname {
+      get { return maleFirstname_; }
+      set {
+        maleFirstname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "lastname" field.</summary>
+    public const int LastnameFieldNumber = 4;
+    private string lastname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Lastname {
+      get { return lastname_; }
+      set {
+        lastname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as system_name);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(system_name other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (FemaleFirstname != other.FemaleFirstname) return false;
+      if (MaleFirstname != other.MaleFirstname) return false;
+      if (Lastname != other.Lastname) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (FemaleFirstname.Length != 0) hash ^= FemaleFirstname.GetHashCode();
+      if (MaleFirstname.Length != 0) hash ^= MaleFirstname.GetHashCode();
+      if (Lastname.Length != 0) hash ^= Lastname.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (FemaleFirstname.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FemaleFirstname);
+      }
+      if (MaleFirstname.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(MaleFirstname);
+      }
+      if (Lastname.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Lastname);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (FemaleFirstname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FemaleFirstname);
+      }
+      if (MaleFirstname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MaleFirstname);
+      }
+      if (Lastname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Lastname);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(system_name other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.FemaleFirstname.Length != 0) {
+        FemaleFirstname = other.FemaleFirstname;
+      }
+      if (other.MaleFirstname.Length != 0) {
+        MaleFirstname = other.MaleFirstname;
+      }
+      if (other.Lastname.Length != 0) {
+        Lastname = other.Lastname;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            FemaleFirstname = input.ReadString();
+            break;
+          }
+          case 26: {
+            MaleFirstname = input.ReadString();
+            break;
+          }
+          case 34: {
+            Lastname = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class DataHelper : pb::IMessage<DataHelper> {
     private static readonly pb::MessageParser<DataHelper> _parser = new pb::MessageParser<DataHelper>(() => new DataHelper());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -362,7 +20325,7 @@ namespace Config {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -380,7 +20343,45 @@ namespace Config {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DataHelper(DataHelper other) : this() {
       messageType_ = other.messageType_.Clone();
+      weaponEffectDict_ = other.weaponEffectDict_.Clone();
+      taskMainDict_ = other.taskMainDict_.Clone();
+      heroBattleStatusDict_ = other.heroBattleStatusDict_.Clone();
+      skillDict_ = other.skillDict_.Clone();
+      roleConfigDict_ = other.roleConfigDict_.Clone();
+      itemDict_ = other.itemDict_.Clone();
+      heroDict_ = other.heroDict_.Clone();
+      expSkillMapDict_ = other.expSkillMapDict_.Clone();
+      roleSoundConfigDict_ = other.roleSoundConfigDict_.Clone();
+      taskDailyDict_ = other.taskDailyDict_.Clone();
+      dialogDict_ = other.dialogDict_.Clone();
+      boxDropDict_ = other.boxDropDict_.Clone();
+      boxDict_ = other.boxDict_.Clone();
+      testDict_ = other.testDict_.Clone();
+      prefabSoundDict_ = other.prefabSoundDict_.Clone();
+      chapterDict_ = other.chapterDict_.Clone();
+      weaponDict_ = other.weaponDict_.Clone();
+      formulaDict_ = other.formulaDict_.Clone();
+      levelNpcDict_ = other.levelNpcDict_.Clone();
+      prefabShapeDict_ = other.prefabShapeDict_.Clone();
+      armorDict_ = other.armorDict_.Clone();
+      globalVarDict_ = other.globalVarDict_.Clone();
+      storyDict_ = other.storyDict_.Clone();
+      mapDict_ = other.mapDict_.Clone();
       skillPrefabDict_ = other.skillPrefabDict_.Clone();
+      performanceDict_ = other.performanceDict_.Clone();
+      stageLevelDict_ = other.stageLevelDict_.Clone();
+      buffDict_ = other.buffDict_.Clone();
+      prefabActionDict_ = other.prefabActionDict_.Clone();
+      jobDict_ = other.jobDict_.Clone();
+      toolTestDict_ = other.toolTestDict_.Clone();
+      globalStringDict_ = other.globalStringDict_.Clone();
+      buildingDict_ = other.buildingDict_.Clone();
+      prefabEffectDict_ = other.prefabEffectDict_.Clone();
+      timelineDict_ = other.timelineDict_.Clone();
+      headConfigDict_ = other.headConfigDict_.Clone();
+      stageDict_ = other.stageDict_.Clone();
+      errorCodeDict_ = other.errorCodeDict_.Clone();
+      systemNameDict_ = other.systemNameDict_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -398,14 +20399,394 @@ namespace Config {
       get { return messageType_; }
     }
 
+    /// <summary>Field number for the "weapon_effect_dict" field.</summary>
+    public const int WeaponEffectDictFieldNumber = 2;
+    private static readonly pbc::MapField<int, global::Config.weapon_effect>.Codec _map_weaponEffectDict_codec
+        = new pbc::MapField<int, global::Config.weapon_effect>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.weapon_effect.Parser), 18);
+    private readonly pbc::MapField<int, global::Config.weapon_effect> weaponEffectDict_ = new pbc::MapField<int, global::Config.weapon_effect>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.weapon_effect> WeaponEffectDict {
+      get { return weaponEffectDict_; }
+    }
+
+    /// <summary>Field number for the "task_main_dict" field.</summary>
+    public const int TaskMainDictFieldNumber = 3;
+    private static readonly pbc::MapField<int, global::Config.task_main>.Codec _map_taskMainDict_codec
+        = new pbc::MapField<int, global::Config.task_main>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.task_main.Parser), 26);
+    private readonly pbc::MapField<int, global::Config.task_main> taskMainDict_ = new pbc::MapField<int, global::Config.task_main>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.task_main> TaskMainDict {
+      get { return taskMainDict_; }
+    }
+
+    /// <summary>Field number for the "hero_battle_status_dict" field.</summary>
+    public const int HeroBattleStatusDictFieldNumber = 4;
+    private static readonly pbc::MapField<int, global::Config.hero_battle_status>.Codec _map_heroBattleStatusDict_codec
+        = new pbc::MapField<int, global::Config.hero_battle_status>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.hero_battle_status.Parser), 34);
+    private readonly pbc::MapField<int, global::Config.hero_battle_status> heroBattleStatusDict_ = new pbc::MapField<int, global::Config.hero_battle_status>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.hero_battle_status> HeroBattleStatusDict {
+      get { return heroBattleStatusDict_; }
+    }
+
+    /// <summary>Field number for the "skill_dict" field.</summary>
+    public const int SkillDictFieldNumber = 5;
+    private static readonly pbc::MapField<int, global::Config.skill>.Codec _map_skillDict_codec
+        = new pbc::MapField<int, global::Config.skill>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.skill.Parser), 42);
+    private readonly pbc::MapField<int, global::Config.skill> skillDict_ = new pbc::MapField<int, global::Config.skill>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.skill> SkillDict {
+      get { return skillDict_; }
+    }
+
+    /// <summary>Field number for the "role_config_dict" field.</summary>
+    public const int RoleConfigDictFieldNumber = 6;
+    private static readonly pbc::MapField<int, global::Config.role_config>.Codec _map_roleConfigDict_codec
+        = new pbc::MapField<int, global::Config.role_config>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.role_config.Parser), 50);
+    private readonly pbc::MapField<int, global::Config.role_config> roleConfigDict_ = new pbc::MapField<int, global::Config.role_config>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.role_config> RoleConfigDict {
+      get { return roleConfigDict_; }
+    }
+
+    /// <summary>Field number for the "item_dict" field.</summary>
+    public const int ItemDictFieldNumber = 7;
+    private static readonly pbc::MapField<int, global::Config.item>.Codec _map_itemDict_codec
+        = new pbc::MapField<int, global::Config.item>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.item.Parser), 58);
+    private readonly pbc::MapField<int, global::Config.item> itemDict_ = new pbc::MapField<int, global::Config.item>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.item> ItemDict {
+      get { return itemDict_; }
+    }
+
+    /// <summary>Field number for the "hero_dict" field.</summary>
+    public const int HeroDictFieldNumber = 8;
+    private static readonly pbc::MapField<int, global::Config.hero>.Codec _map_heroDict_codec
+        = new pbc::MapField<int, global::Config.hero>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.hero.Parser), 66);
+    private readonly pbc::MapField<int, global::Config.hero> heroDict_ = new pbc::MapField<int, global::Config.hero>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.hero> HeroDict {
+      get { return heroDict_; }
+    }
+
+    /// <summary>Field number for the "exp_skill_map_dict" field.</summary>
+    public const int ExpSkillMapDictFieldNumber = 9;
+    private static readonly pbc::MapField<int, global::Config.exp_skill_map>.Codec _map_expSkillMapDict_codec
+        = new pbc::MapField<int, global::Config.exp_skill_map>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.exp_skill_map.Parser), 74);
+    private readonly pbc::MapField<int, global::Config.exp_skill_map> expSkillMapDict_ = new pbc::MapField<int, global::Config.exp_skill_map>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.exp_skill_map> ExpSkillMapDict {
+      get { return expSkillMapDict_; }
+    }
+
+    /// <summary>Field number for the "role_sound_config_dict" field.</summary>
+    public const int RoleSoundConfigDictFieldNumber = 10;
+    private static readonly pbc::MapField<int, global::Config.role_sound_config>.Codec _map_roleSoundConfigDict_codec
+        = new pbc::MapField<int, global::Config.role_sound_config>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.role_sound_config.Parser), 82);
+    private readonly pbc::MapField<int, global::Config.role_sound_config> roleSoundConfigDict_ = new pbc::MapField<int, global::Config.role_sound_config>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.role_sound_config> RoleSoundConfigDict {
+      get { return roleSoundConfigDict_; }
+    }
+
+    /// <summary>Field number for the "task_daily_dict" field.</summary>
+    public const int TaskDailyDictFieldNumber = 11;
+    private static readonly pbc::MapField<int, global::Config.task_daily>.Codec _map_taskDailyDict_codec
+        = new pbc::MapField<int, global::Config.task_daily>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.task_daily.Parser), 90);
+    private readonly pbc::MapField<int, global::Config.task_daily> taskDailyDict_ = new pbc::MapField<int, global::Config.task_daily>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.task_daily> TaskDailyDict {
+      get { return taskDailyDict_; }
+    }
+
+    /// <summary>Field number for the "dialog_dict" field.</summary>
+    public const int DialogDictFieldNumber = 12;
+    private static readonly pbc::MapField<int, global::Config.dialog>.Codec _map_dialogDict_codec
+        = new pbc::MapField<int, global::Config.dialog>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.dialog.Parser), 98);
+    private readonly pbc::MapField<int, global::Config.dialog> dialogDict_ = new pbc::MapField<int, global::Config.dialog>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.dialog> DialogDict {
+      get { return dialogDict_; }
+    }
+
+    /// <summary>Field number for the "box_drop_dict" field.</summary>
+    public const int BoxDropDictFieldNumber = 13;
+    private static readonly pbc::MapField<int, global::Config.box_drop>.Codec _map_boxDropDict_codec
+        = new pbc::MapField<int, global::Config.box_drop>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.box_drop.Parser), 106);
+    private readonly pbc::MapField<int, global::Config.box_drop> boxDropDict_ = new pbc::MapField<int, global::Config.box_drop>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.box_drop> BoxDropDict {
+      get { return boxDropDict_; }
+    }
+
+    /// <summary>Field number for the "box_dict" field.</summary>
+    public const int BoxDictFieldNumber = 14;
+    private static readonly pbc::MapField<int, global::Config.box>.Codec _map_boxDict_codec
+        = new pbc::MapField<int, global::Config.box>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.box.Parser), 114);
+    private readonly pbc::MapField<int, global::Config.box> boxDict_ = new pbc::MapField<int, global::Config.box>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.box> BoxDict {
+      get { return boxDict_; }
+    }
+
+    /// <summary>Field number for the "Test_dict" field.</summary>
+    public const int TestDictFieldNumber = 15;
+    private static readonly pbc::MapField<int, global::Config.Test>.Codec _map_testDict_codec
+        = new pbc::MapField<int, global::Config.Test>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.Test.Parser), 122);
+    private readonly pbc::MapField<int, global::Config.Test> testDict_ = new pbc::MapField<int, global::Config.Test>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.Test> TestDict {
+      get { return testDict_; }
+    }
+
+    /// <summary>Field number for the "prefab_sound_dict" field.</summary>
+    public const int PrefabSoundDictFieldNumber = 16;
+    private static readonly pbc::MapField<int, global::Config.prefab_sound>.Codec _map_prefabSoundDict_codec
+        = new pbc::MapField<int, global::Config.prefab_sound>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.prefab_sound.Parser), 130);
+    private readonly pbc::MapField<int, global::Config.prefab_sound> prefabSoundDict_ = new pbc::MapField<int, global::Config.prefab_sound>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.prefab_sound> PrefabSoundDict {
+      get { return prefabSoundDict_; }
+    }
+
+    /// <summary>Field number for the "chapter_dict" field.</summary>
+    public const int ChapterDictFieldNumber = 17;
+    private static readonly pbc::MapField<int, global::Config.chapter>.Codec _map_chapterDict_codec
+        = new pbc::MapField<int, global::Config.chapter>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.chapter.Parser), 138);
+    private readonly pbc::MapField<int, global::Config.chapter> chapterDict_ = new pbc::MapField<int, global::Config.chapter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.chapter> ChapterDict {
+      get { return chapterDict_; }
+    }
+
+    /// <summary>Field number for the "weapon_dict" field.</summary>
+    public const int WeaponDictFieldNumber = 18;
+    private static readonly pbc::MapField<int, global::Config.weapon>.Codec _map_weaponDict_codec
+        = new pbc::MapField<int, global::Config.weapon>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.weapon.Parser), 146);
+    private readonly pbc::MapField<int, global::Config.weapon> weaponDict_ = new pbc::MapField<int, global::Config.weapon>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.weapon> WeaponDict {
+      get { return weaponDict_; }
+    }
+
+    /// <summary>Field number for the "formula_dict" field.</summary>
+    public const int FormulaDictFieldNumber = 19;
+    private static readonly pbc::MapField<int, global::Config.formula>.Codec _map_formulaDict_codec
+        = new pbc::MapField<int, global::Config.formula>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.formula.Parser), 154);
+    private readonly pbc::MapField<int, global::Config.formula> formulaDict_ = new pbc::MapField<int, global::Config.formula>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.formula> FormulaDict {
+      get { return formulaDict_; }
+    }
+
+    /// <summary>Field number for the "level_npc_dict" field.</summary>
+    public const int LevelNpcDictFieldNumber = 20;
+    private static readonly pbc::MapField<int, global::Config.level_npc>.Codec _map_levelNpcDict_codec
+        = new pbc::MapField<int, global::Config.level_npc>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.level_npc.Parser), 162);
+    private readonly pbc::MapField<int, global::Config.level_npc> levelNpcDict_ = new pbc::MapField<int, global::Config.level_npc>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.level_npc> LevelNpcDict {
+      get { return levelNpcDict_; }
+    }
+
+    /// <summary>Field number for the "prefab_shape_dict" field.</summary>
+    public const int PrefabShapeDictFieldNumber = 21;
+    private static readonly pbc::MapField<int, global::Config.prefab_shape>.Codec _map_prefabShapeDict_codec
+        = new pbc::MapField<int, global::Config.prefab_shape>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.prefab_shape.Parser), 170);
+    private readonly pbc::MapField<int, global::Config.prefab_shape> prefabShapeDict_ = new pbc::MapField<int, global::Config.prefab_shape>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.prefab_shape> PrefabShapeDict {
+      get { return prefabShapeDict_; }
+    }
+
+    /// <summary>Field number for the "armor_dict" field.</summary>
+    public const int ArmorDictFieldNumber = 22;
+    private static readonly pbc::MapField<int, global::Config.armor>.Codec _map_armorDict_codec
+        = new pbc::MapField<int, global::Config.armor>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.armor.Parser), 178);
+    private readonly pbc::MapField<int, global::Config.armor> armorDict_ = new pbc::MapField<int, global::Config.armor>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.armor> ArmorDict {
+      get { return armorDict_; }
+    }
+
+    /// <summary>Field number for the "global_var_dict" field.</summary>
+    public const int GlobalVarDictFieldNumber = 23;
+    private static readonly pbc::MapField<string, global::Config.global_var>.Codec _map_globalVarDict_codec
+        = new pbc::MapField<string, global::Config.global_var>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Config.global_var.Parser), 186);
+    private readonly pbc::MapField<string, global::Config.global_var> globalVarDict_ = new pbc::MapField<string, global::Config.global_var>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, global::Config.global_var> GlobalVarDict {
+      get { return globalVarDict_; }
+    }
+
+    /// <summary>Field number for the "story_dict" field.</summary>
+    public const int StoryDictFieldNumber = 24;
+    private static readonly pbc::MapField<int, global::Config.story>.Codec _map_storyDict_codec
+        = new pbc::MapField<int, global::Config.story>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.story.Parser), 194);
+    private readonly pbc::MapField<int, global::Config.story> storyDict_ = new pbc::MapField<int, global::Config.story>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.story> StoryDict {
+      get { return storyDict_; }
+    }
+
+    /// <summary>Field number for the "map_dict" field.</summary>
+    public const int MapDictFieldNumber = 25;
+    private static readonly pbc::MapField<int, global::Config.map>.Codec _map_mapDict_codec
+        = new pbc::MapField<int, global::Config.map>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.map.Parser), 202);
+    private readonly pbc::MapField<int, global::Config.map> mapDict_ = new pbc::MapField<int, global::Config.map>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.map> MapDict {
+      get { return mapDict_; }
+    }
+
     /// <summary>Field number for the "SkillPrefab_dict" field.</summary>
-    public const int SkillPrefabDictFieldNumber = 2;
+    public const int SkillPrefabDictFieldNumber = 26;
     private static readonly pbc::MapField<int, global::Config.SkillPrefab>.Codec _map_skillPrefabDict_codec
-        = new pbc::MapField<int, global::Config.SkillPrefab>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.SkillPrefab.Parser), 18);
+        = new pbc::MapField<int, global::Config.SkillPrefab>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.SkillPrefab.Parser), 210);
     private readonly pbc::MapField<int, global::Config.SkillPrefab> skillPrefabDict_ = new pbc::MapField<int, global::Config.SkillPrefab>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Config.SkillPrefab> SkillPrefabDict {
       get { return skillPrefabDict_; }
+    }
+
+    /// <summary>Field number for the "performance_dict" field.</summary>
+    public const int PerformanceDictFieldNumber = 27;
+    private static readonly pbc::MapField<int, global::Config.performance>.Codec _map_performanceDict_codec
+        = new pbc::MapField<int, global::Config.performance>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.performance.Parser), 218);
+    private readonly pbc::MapField<int, global::Config.performance> performanceDict_ = new pbc::MapField<int, global::Config.performance>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.performance> PerformanceDict {
+      get { return performanceDict_; }
+    }
+
+    /// <summary>Field number for the "stage_level_dict" field.</summary>
+    public const int StageLevelDictFieldNumber = 28;
+    private static readonly pbc::MapField<int, global::Config.stage_level>.Codec _map_stageLevelDict_codec
+        = new pbc::MapField<int, global::Config.stage_level>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.stage_level.Parser), 226);
+    private readonly pbc::MapField<int, global::Config.stage_level> stageLevelDict_ = new pbc::MapField<int, global::Config.stage_level>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.stage_level> StageLevelDict {
+      get { return stageLevelDict_; }
+    }
+
+    /// <summary>Field number for the "buff_dict" field.</summary>
+    public const int BuffDictFieldNumber = 29;
+    private static readonly pbc::MapField<int, global::Config.buff>.Codec _map_buffDict_codec
+        = new pbc::MapField<int, global::Config.buff>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.buff.Parser), 234);
+    private readonly pbc::MapField<int, global::Config.buff> buffDict_ = new pbc::MapField<int, global::Config.buff>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.buff> BuffDict {
+      get { return buffDict_; }
+    }
+
+    /// <summary>Field number for the "prefab_action_dict" field.</summary>
+    public const int PrefabActionDictFieldNumber = 30;
+    private static readonly pbc::MapField<int, global::Config.prefab_action>.Codec _map_prefabActionDict_codec
+        = new pbc::MapField<int, global::Config.prefab_action>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.prefab_action.Parser), 242);
+    private readonly pbc::MapField<int, global::Config.prefab_action> prefabActionDict_ = new pbc::MapField<int, global::Config.prefab_action>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.prefab_action> PrefabActionDict {
+      get { return prefabActionDict_; }
+    }
+
+    /// <summary>Field number for the "job_dict" field.</summary>
+    public const int JobDictFieldNumber = 31;
+    private static readonly pbc::MapField<int, global::Config.job>.Codec _map_jobDict_codec
+        = new pbc::MapField<int, global::Config.job>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.job.Parser), 250);
+    private readonly pbc::MapField<int, global::Config.job> jobDict_ = new pbc::MapField<int, global::Config.job>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.job> JobDict {
+      get { return jobDict_; }
+    }
+
+    /// <summary>Field number for the "ToolTest_dict" field.</summary>
+    public const int ToolTestDictFieldNumber = 32;
+    private static readonly pbc::MapField<int, global::Config.ToolTest>.Codec _map_toolTestDict_codec
+        = new pbc::MapField<int, global::Config.ToolTest>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.ToolTest.Parser), 258);
+    private readonly pbc::MapField<int, global::Config.ToolTest> toolTestDict_ = new pbc::MapField<int, global::Config.ToolTest>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.ToolTest> ToolTestDict {
+      get { return toolTestDict_; }
+    }
+
+    /// <summary>Field number for the "global_string_dict" field.</summary>
+    public const int GlobalStringDictFieldNumber = 33;
+    private static readonly pbc::MapField<string, global::Config.global_string>.Codec _map_globalStringDict_codec
+        = new pbc::MapField<string, global::Config.global_string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Config.global_string.Parser), 266);
+    private readonly pbc::MapField<string, global::Config.global_string> globalStringDict_ = new pbc::MapField<string, global::Config.global_string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, global::Config.global_string> GlobalStringDict {
+      get { return globalStringDict_; }
+    }
+
+    /// <summary>Field number for the "building_dict" field.</summary>
+    public const int BuildingDictFieldNumber = 34;
+    private static readonly pbc::MapField<int, global::Config.building>.Codec _map_buildingDict_codec
+        = new pbc::MapField<int, global::Config.building>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.building.Parser), 274);
+    private readonly pbc::MapField<int, global::Config.building> buildingDict_ = new pbc::MapField<int, global::Config.building>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.building> BuildingDict {
+      get { return buildingDict_; }
+    }
+
+    /// <summary>Field number for the "prefab_effect_dict" field.</summary>
+    public const int PrefabEffectDictFieldNumber = 35;
+    private static readonly pbc::MapField<int, global::Config.prefab_effect>.Codec _map_prefabEffectDict_codec
+        = new pbc::MapField<int, global::Config.prefab_effect>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.prefab_effect.Parser), 282);
+    private readonly pbc::MapField<int, global::Config.prefab_effect> prefabEffectDict_ = new pbc::MapField<int, global::Config.prefab_effect>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.prefab_effect> PrefabEffectDict {
+      get { return prefabEffectDict_; }
+    }
+
+    /// <summary>Field number for the "Timeline_dict" field.</summary>
+    public const int TimelineDictFieldNumber = 36;
+    private static readonly pbc::MapField<int, global::Config.Timeline>.Codec _map_timelineDict_codec
+        = new pbc::MapField<int, global::Config.Timeline>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.Timeline.Parser), 290);
+    private readonly pbc::MapField<int, global::Config.Timeline> timelineDict_ = new pbc::MapField<int, global::Config.Timeline>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.Timeline> TimelineDict {
+      get { return timelineDict_; }
+    }
+
+    /// <summary>Field number for the "head_config_dict" field.</summary>
+    public const int HeadConfigDictFieldNumber = 37;
+    private static readonly pbc::MapField<int, global::Config.head_config>.Codec _map_headConfigDict_codec
+        = new pbc::MapField<int, global::Config.head_config>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.head_config.Parser), 298);
+    private readonly pbc::MapField<int, global::Config.head_config> headConfigDict_ = new pbc::MapField<int, global::Config.head_config>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.head_config> HeadConfigDict {
+      get { return headConfigDict_; }
+    }
+
+    /// <summary>Field number for the "stage_dict" field.</summary>
+    public const int StageDictFieldNumber = 38;
+    private static readonly pbc::MapField<int, global::Config.stage>.Codec _map_stageDict_codec
+        = new pbc::MapField<int, global::Config.stage>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.stage.Parser), 306);
+    private readonly pbc::MapField<int, global::Config.stage> stageDict_ = new pbc::MapField<int, global::Config.stage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.stage> StageDict {
+      get { return stageDict_; }
+    }
+
+    /// <summary>Field number for the "error_code_dict" field.</summary>
+    public const int ErrorCodeDictFieldNumber = 39;
+    private static readonly pbc::MapField<int, global::Config.error_code>.Codec _map_errorCodeDict_codec
+        = new pbc::MapField<int, global::Config.error_code>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.error_code.Parser), 314);
+    private readonly pbc::MapField<int, global::Config.error_code> errorCodeDict_ = new pbc::MapField<int, global::Config.error_code>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.error_code> ErrorCodeDict {
+      get { return errorCodeDict_; }
+    }
+
+    /// <summary>Field number for the "system_name_dict" field.</summary>
+    public const int SystemNameDictFieldNumber = 40;
+    private static readonly pbc::MapField<int, global::Config.system_name>.Codec _map_systemNameDict_codec
+        = new pbc::MapField<int, global::Config.system_name>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.system_name.Parser), 322);
+    private readonly pbc::MapField<int, global::Config.system_name> systemNameDict_ = new pbc::MapField<int, global::Config.system_name>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.system_name> SystemNameDict {
+      get { return systemNameDict_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -422,7 +20803,45 @@ namespace Config {
         return true;
       }
       if(!messageType_.Equals(other.messageType_)) return false;
+      if (!WeaponEffectDict.Equals(other.WeaponEffectDict)) return false;
+      if (!TaskMainDict.Equals(other.TaskMainDict)) return false;
+      if (!HeroBattleStatusDict.Equals(other.HeroBattleStatusDict)) return false;
+      if (!SkillDict.Equals(other.SkillDict)) return false;
+      if (!RoleConfigDict.Equals(other.RoleConfigDict)) return false;
+      if (!ItemDict.Equals(other.ItemDict)) return false;
+      if (!HeroDict.Equals(other.HeroDict)) return false;
+      if (!ExpSkillMapDict.Equals(other.ExpSkillMapDict)) return false;
+      if (!RoleSoundConfigDict.Equals(other.RoleSoundConfigDict)) return false;
+      if (!TaskDailyDict.Equals(other.TaskDailyDict)) return false;
+      if (!DialogDict.Equals(other.DialogDict)) return false;
+      if (!BoxDropDict.Equals(other.BoxDropDict)) return false;
+      if (!BoxDict.Equals(other.BoxDict)) return false;
+      if (!TestDict.Equals(other.TestDict)) return false;
+      if (!PrefabSoundDict.Equals(other.PrefabSoundDict)) return false;
+      if (!ChapterDict.Equals(other.ChapterDict)) return false;
+      if (!WeaponDict.Equals(other.WeaponDict)) return false;
+      if (!FormulaDict.Equals(other.FormulaDict)) return false;
+      if (!LevelNpcDict.Equals(other.LevelNpcDict)) return false;
+      if (!PrefabShapeDict.Equals(other.PrefabShapeDict)) return false;
+      if (!ArmorDict.Equals(other.ArmorDict)) return false;
+      if (!GlobalVarDict.Equals(other.GlobalVarDict)) return false;
+      if (!StoryDict.Equals(other.StoryDict)) return false;
+      if (!MapDict.Equals(other.MapDict)) return false;
       if (!SkillPrefabDict.Equals(other.SkillPrefabDict)) return false;
+      if (!PerformanceDict.Equals(other.PerformanceDict)) return false;
+      if (!StageLevelDict.Equals(other.StageLevelDict)) return false;
+      if (!BuffDict.Equals(other.BuffDict)) return false;
+      if (!PrefabActionDict.Equals(other.PrefabActionDict)) return false;
+      if (!JobDict.Equals(other.JobDict)) return false;
+      if (!ToolTestDict.Equals(other.ToolTestDict)) return false;
+      if (!GlobalStringDict.Equals(other.GlobalStringDict)) return false;
+      if (!BuildingDict.Equals(other.BuildingDict)) return false;
+      if (!PrefabEffectDict.Equals(other.PrefabEffectDict)) return false;
+      if (!TimelineDict.Equals(other.TimelineDict)) return false;
+      if (!HeadConfigDict.Equals(other.HeadConfigDict)) return false;
+      if (!StageDict.Equals(other.StageDict)) return false;
+      if (!ErrorCodeDict.Equals(other.ErrorCodeDict)) return false;
+      if (!SystemNameDict.Equals(other.SystemNameDict)) return false;
       return true;
     }
 
@@ -430,7 +20849,45 @@ namespace Config {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= messageType_.GetHashCode();
+      hash ^= WeaponEffectDict.GetHashCode();
+      hash ^= TaskMainDict.GetHashCode();
+      hash ^= HeroBattleStatusDict.GetHashCode();
+      hash ^= SkillDict.GetHashCode();
+      hash ^= RoleConfigDict.GetHashCode();
+      hash ^= ItemDict.GetHashCode();
+      hash ^= HeroDict.GetHashCode();
+      hash ^= ExpSkillMapDict.GetHashCode();
+      hash ^= RoleSoundConfigDict.GetHashCode();
+      hash ^= TaskDailyDict.GetHashCode();
+      hash ^= DialogDict.GetHashCode();
+      hash ^= BoxDropDict.GetHashCode();
+      hash ^= BoxDict.GetHashCode();
+      hash ^= TestDict.GetHashCode();
+      hash ^= PrefabSoundDict.GetHashCode();
+      hash ^= ChapterDict.GetHashCode();
+      hash ^= WeaponDict.GetHashCode();
+      hash ^= FormulaDict.GetHashCode();
+      hash ^= LevelNpcDict.GetHashCode();
+      hash ^= PrefabShapeDict.GetHashCode();
+      hash ^= ArmorDict.GetHashCode();
+      hash ^= GlobalVarDict.GetHashCode();
+      hash ^= StoryDict.GetHashCode();
+      hash ^= MapDict.GetHashCode();
       hash ^= SkillPrefabDict.GetHashCode();
+      hash ^= PerformanceDict.GetHashCode();
+      hash ^= StageLevelDict.GetHashCode();
+      hash ^= BuffDict.GetHashCode();
+      hash ^= PrefabActionDict.GetHashCode();
+      hash ^= JobDict.GetHashCode();
+      hash ^= ToolTestDict.GetHashCode();
+      hash ^= GlobalStringDict.GetHashCode();
+      hash ^= BuildingDict.GetHashCode();
+      hash ^= PrefabEffectDict.GetHashCode();
+      hash ^= TimelineDict.GetHashCode();
+      hash ^= HeadConfigDict.GetHashCode();
+      hash ^= StageDict.GetHashCode();
+      hash ^= ErrorCodeDict.GetHashCode();
+      hash ^= SystemNameDict.GetHashCode();
       return hash;
     }
 
@@ -442,14 +20899,90 @@ namespace Config {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       messageType_.WriteTo(output, _repeated_messageType_codec);
+      weaponEffectDict_.WriteTo(output, _map_weaponEffectDict_codec);
+      taskMainDict_.WriteTo(output, _map_taskMainDict_codec);
+      heroBattleStatusDict_.WriteTo(output, _map_heroBattleStatusDict_codec);
+      skillDict_.WriteTo(output, _map_skillDict_codec);
+      roleConfigDict_.WriteTo(output, _map_roleConfigDict_codec);
+      itemDict_.WriteTo(output, _map_itemDict_codec);
+      heroDict_.WriteTo(output, _map_heroDict_codec);
+      expSkillMapDict_.WriteTo(output, _map_expSkillMapDict_codec);
+      roleSoundConfigDict_.WriteTo(output, _map_roleSoundConfigDict_codec);
+      taskDailyDict_.WriteTo(output, _map_taskDailyDict_codec);
+      dialogDict_.WriteTo(output, _map_dialogDict_codec);
+      boxDropDict_.WriteTo(output, _map_boxDropDict_codec);
+      boxDict_.WriteTo(output, _map_boxDict_codec);
+      testDict_.WriteTo(output, _map_testDict_codec);
+      prefabSoundDict_.WriteTo(output, _map_prefabSoundDict_codec);
+      chapterDict_.WriteTo(output, _map_chapterDict_codec);
+      weaponDict_.WriteTo(output, _map_weaponDict_codec);
+      formulaDict_.WriteTo(output, _map_formulaDict_codec);
+      levelNpcDict_.WriteTo(output, _map_levelNpcDict_codec);
+      prefabShapeDict_.WriteTo(output, _map_prefabShapeDict_codec);
+      armorDict_.WriteTo(output, _map_armorDict_codec);
+      globalVarDict_.WriteTo(output, _map_globalVarDict_codec);
+      storyDict_.WriteTo(output, _map_storyDict_codec);
+      mapDict_.WriteTo(output, _map_mapDict_codec);
       skillPrefabDict_.WriteTo(output, _map_skillPrefabDict_codec);
+      performanceDict_.WriteTo(output, _map_performanceDict_codec);
+      stageLevelDict_.WriteTo(output, _map_stageLevelDict_codec);
+      buffDict_.WriteTo(output, _map_buffDict_codec);
+      prefabActionDict_.WriteTo(output, _map_prefabActionDict_codec);
+      jobDict_.WriteTo(output, _map_jobDict_codec);
+      toolTestDict_.WriteTo(output, _map_toolTestDict_codec);
+      globalStringDict_.WriteTo(output, _map_globalStringDict_codec);
+      buildingDict_.WriteTo(output, _map_buildingDict_codec);
+      prefabEffectDict_.WriteTo(output, _map_prefabEffectDict_codec);
+      timelineDict_.WriteTo(output, _map_timelineDict_codec);
+      headConfigDict_.WriteTo(output, _map_headConfigDict_codec);
+      stageDict_.WriteTo(output, _map_stageDict_codec);
+      errorCodeDict_.WriteTo(output, _map_errorCodeDict_codec);
+      systemNameDict_.WriteTo(output, _map_systemNameDict_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += messageType_.CalculateSize(_repeated_messageType_codec);
+      size += weaponEffectDict_.CalculateSize(_map_weaponEffectDict_codec);
+      size += taskMainDict_.CalculateSize(_map_taskMainDict_codec);
+      size += heroBattleStatusDict_.CalculateSize(_map_heroBattleStatusDict_codec);
+      size += skillDict_.CalculateSize(_map_skillDict_codec);
+      size += roleConfigDict_.CalculateSize(_map_roleConfigDict_codec);
+      size += itemDict_.CalculateSize(_map_itemDict_codec);
+      size += heroDict_.CalculateSize(_map_heroDict_codec);
+      size += expSkillMapDict_.CalculateSize(_map_expSkillMapDict_codec);
+      size += roleSoundConfigDict_.CalculateSize(_map_roleSoundConfigDict_codec);
+      size += taskDailyDict_.CalculateSize(_map_taskDailyDict_codec);
+      size += dialogDict_.CalculateSize(_map_dialogDict_codec);
+      size += boxDropDict_.CalculateSize(_map_boxDropDict_codec);
+      size += boxDict_.CalculateSize(_map_boxDict_codec);
+      size += testDict_.CalculateSize(_map_testDict_codec);
+      size += prefabSoundDict_.CalculateSize(_map_prefabSoundDict_codec);
+      size += chapterDict_.CalculateSize(_map_chapterDict_codec);
+      size += weaponDict_.CalculateSize(_map_weaponDict_codec);
+      size += formulaDict_.CalculateSize(_map_formulaDict_codec);
+      size += levelNpcDict_.CalculateSize(_map_levelNpcDict_codec);
+      size += prefabShapeDict_.CalculateSize(_map_prefabShapeDict_codec);
+      size += armorDict_.CalculateSize(_map_armorDict_codec);
+      size += globalVarDict_.CalculateSize(_map_globalVarDict_codec);
+      size += storyDict_.CalculateSize(_map_storyDict_codec);
+      size += mapDict_.CalculateSize(_map_mapDict_codec);
       size += skillPrefabDict_.CalculateSize(_map_skillPrefabDict_codec);
+      size += performanceDict_.CalculateSize(_map_performanceDict_codec);
+      size += stageLevelDict_.CalculateSize(_map_stageLevelDict_codec);
+      size += buffDict_.CalculateSize(_map_buffDict_codec);
+      size += prefabActionDict_.CalculateSize(_map_prefabActionDict_codec);
+      size += jobDict_.CalculateSize(_map_jobDict_codec);
+      size += toolTestDict_.CalculateSize(_map_toolTestDict_codec);
+      size += globalStringDict_.CalculateSize(_map_globalStringDict_codec);
+      size += buildingDict_.CalculateSize(_map_buildingDict_codec);
+      size += prefabEffectDict_.CalculateSize(_map_prefabEffectDict_codec);
+      size += timelineDict_.CalculateSize(_map_timelineDict_codec);
+      size += headConfigDict_.CalculateSize(_map_headConfigDict_codec);
+      size += stageDict_.CalculateSize(_map_stageDict_codec);
+      size += errorCodeDict_.CalculateSize(_map_errorCodeDict_codec);
+      size += systemNameDict_.CalculateSize(_map_systemNameDict_codec);
       return size;
     }
 
@@ -459,7 +20992,45 @@ namespace Config {
         return;
       }
       messageType_.Add(other.messageType_);
+      weaponEffectDict_.Add(other.weaponEffectDict_);
+      taskMainDict_.Add(other.taskMainDict_);
+      heroBattleStatusDict_.Add(other.heroBattleStatusDict_);
+      skillDict_.Add(other.skillDict_);
+      roleConfigDict_.Add(other.roleConfigDict_);
+      itemDict_.Add(other.itemDict_);
+      heroDict_.Add(other.heroDict_);
+      expSkillMapDict_.Add(other.expSkillMapDict_);
+      roleSoundConfigDict_.Add(other.roleSoundConfigDict_);
+      taskDailyDict_.Add(other.taskDailyDict_);
+      dialogDict_.Add(other.dialogDict_);
+      boxDropDict_.Add(other.boxDropDict_);
+      boxDict_.Add(other.boxDict_);
+      testDict_.Add(other.testDict_);
+      prefabSoundDict_.Add(other.prefabSoundDict_);
+      chapterDict_.Add(other.chapterDict_);
+      weaponDict_.Add(other.weaponDict_);
+      formulaDict_.Add(other.formulaDict_);
+      levelNpcDict_.Add(other.levelNpcDict_);
+      prefabShapeDict_.Add(other.prefabShapeDict_);
+      armorDict_.Add(other.armorDict_);
+      globalVarDict_.Add(other.globalVarDict_);
+      storyDict_.Add(other.storyDict_);
+      mapDict_.Add(other.mapDict_);
       skillPrefabDict_.Add(other.skillPrefabDict_);
+      performanceDict_.Add(other.performanceDict_);
+      stageLevelDict_.Add(other.stageLevelDict_);
+      buffDict_.Add(other.buffDict_);
+      prefabActionDict_.Add(other.prefabActionDict_);
+      jobDict_.Add(other.jobDict_);
+      toolTestDict_.Add(other.toolTestDict_);
+      globalStringDict_.Add(other.globalStringDict_);
+      buildingDict_.Add(other.buildingDict_);
+      prefabEffectDict_.Add(other.prefabEffectDict_);
+      timelineDict_.Add(other.timelineDict_);
+      headConfigDict_.Add(other.headConfigDict_);
+      stageDict_.Add(other.stageDict_);
+      errorCodeDict_.Add(other.errorCodeDict_);
+      systemNameDict_.Add(other.systemNameDict_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -475,7 +21046,159 @@ namespace Config {
             break;
           }
           case 18: {
+            weaponEffectDict_.AddEntriesFrom(input, _map_weaponEffectDict_codec);
+            break;
+          }
+          case 26: {
+            taskMainDict_.AddEntriesFrom(input, _map_taskMainDict_codec);
+            break;
+          }
+          case 34: {
+            heroBattleStatusDict_.AddEntriesFrom(input, _map_heroBattleStatusDict_codec);
+            break;
+          }
+          case 42: {
+            skillDict_.AddEntriesFrom(input, _map_skillDict_codec);
+            break;
+          }
+          case 50: {
+            roleConfigDict_.AddEntriesFrom(input, _map_roleConfigDict_codec);
+            break;
+          }
+          case 58: {
+            itemDict_.AddEntriesFrom(input, _map_itemDict_codec);
+            break;
+          }
+          case 66: {
+            heroDict_.AddEntriesFrom(input, _map_heroDict_codec);
+            break;
+          }
+          case 74: {
+            expSkillMapDict_.AddEntriesFrom(input, _map_expSkillMapDict_codec);
+            break;
+          }
+          case 82: {
+            roleSoundConfigDict_.AddEntriesFrom(input, _map_roleSoundConfigDict_codec);
+            break;
+          }
+          case 90: {
+            taskDailyDict_.AddEntriesFrom(input, _map_taskDailyDict_codec);
+            break;
+          }
+          case 98: {
+            dialogDict_.AddEntriesFrom(input, _map_dialogDict_codec);
+            break;
+          }
+          case 106: {
+            boxDropDict_.AddEntriesFrom(input, _map_boxDropDict_codec);
+            break;
+          }
+          case 114: {
+            boxDict_.AddEntriesFrom(input, _map_boxDict_codec);
+            break;
+          }
+          case 122: {
+            testDict_.AddEntriesFrom(input, _map_testDict_codec);
+            break;
+          }
+          case 130: {
+            prefabSoundDict_.AddEntriesFrom(input, _map_prefabSoundDict_codec);
+            break;
+          }
+          case 138: {
+            chapterDict_.AddEntriesFrom(input, _map_chapterDict_codec);
+            break;
+          }
+          case 146: {
+            weaponDict_.AddEntriesFrom(input, _map_weaponDict_codec);
+            break;
+          }
+          case 154: {
+            formulaDict_.AddEntriesFrom(input, _map_formulaDict_codec);
+            break;
+          }
+          case 162: {
+            levelNpcDict_.AddEntriesFrom(input, _map_levelNpcDict_codec);
+            break;
+          }
+          case 170: {
+            prefabShapeDict_.AddEntriesFrom(input, _map_prefabShapeDict_codec);
+            break;
+          }
+          case 178: {
+            armorDict_.AddEntriesFrom(input, _map_armorDict_codec);
+            break;
+          }
+          case 186: {
+            globalVarDict_.AddEntriesFrom(input, _map_globalVarDict_codec);
+            break;
+          }
+          case 194: {
+            storyDict_.AddEntriesFrom(input, _map_storyDict_codec);
+            break;
+          }
+          case 202: {
+            mapDict_.AddEntriesFrom(input, _map_mapDict_codec);
+            break;
+          }
+          case 210: {
             skillPrefabDict_.AddEntriesFrom(input, _map_skillPrefabDict_codec);
+            break;
+          }
+          case 218: {
+            performanceDict_.AddEntriesFrom(input, _map_performanceDict_codec);
+            break;
+          }
+          case 226: {
+            stageLevelDict_.AddEntriesFrom(input, _map_stageLevelDict_codec);
+            break;
+          }
+          case 234: {
+            buffDict_.AddEntriesFrom(input, _map_buffDict_codec);
+            break;
+          }
+          case 242: {
+            prefabActionDict_.AddEntriesFrom(input, _map_prefabActionDict_codec);
+            break;
+          }
+          case 250: {
+            jobDict_.AddEntriesFrom(input, _map_jobDict_codec);
+            break;
+          }
+          case 258: {
+            toolTestDict_.AddEntriesFrom(input, _map_toolTestDict_codec);
+            break;
+          }
+          case 266: {
+            globalStringDict_.AddEntriesFrom(input, _map_globalStringDict_codec);
+            break;
+          }
+          case 274: {
+            buildingDict_.AddEntriesFrom(input, _map_buildingDict_codec);
+            break;
+          }
+          case 282: {
+            prefabEffectDict_.AddEntriesFrom(input, _map_prefabEffectDict_codec);
+            break;
+          }
+          case 290: {
+            timelineDict_.AddEntriesFrom(input, _map_timelineDict_codec);
+            break;
+          }
+          case 298: {
+            headConfigDict_.AddEntriesFrom(input, _map_headConfigDict_codec);
+            break;
+          }
+          case 306: {
+            stageDict_.AddEntriesFrom(input, _map_stageDict_codec);
+            break;
+          }
+          case 314: {
+            errorCodeDict_.AddEntriesFrom(input, _map_errorCodeDict_codec);
+            break;
+          }
+          case 322: {
+            systemNameDict_.AddEntriesFrom(input, _map_systemNameDict_codec);
             break;
           }
         }

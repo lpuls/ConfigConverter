@@ -54,12 +54,15 @@ def process_data_to_proto(path, datas):
         result = data.to_proto()
         if isinstance(data, MessageData):
             # 获取key的类型
-            key_type_name = data.get_key_type(DEFAULT_KEY, DEFAULT_STRING_KEY)
-            if not key_type_name:
+            message_list.append(write_message(data.file_name, result))
+
+            # 获取key来生成最后的DataHelper
+            key_type_name = None
+            if not data.key_type:
                 print("config type neither id type nor key type , this config will be ignored : " + data_name)
                 continue
+            key_type_name = DataType.type_to_proto(data.key_type.main_type)
 
-            message_list.append(write_message(data.file_name, result))
             message_helper = message_helper + ("\tmap<%(message_key)s, %(message_name)s> %(message_name)s_dict = %(field_index)d;\n" % {
                     "message_key": key_type_name,
                     "message_name": data.file_name,

@@ -114,13 +114,14 @@ class DataType:
 
     @staticmethod
     def type_to_proto(type_name):
-          if DataType.INT_TYPE == type_name:
-                return DataType.PROTO_INT_TYPE
-          elif DataType.BOOL_TYPE == type_name:
-                return DataType.PROTO_BOOL_TYPE
-          elif DataType.STR_TYPE == type_name:
-                return DataType.PROTO_STR_TYPE
-          elif DataType.ARRAY_TYPE == type_name:
-                return DataType.PROTO_ARRAY_TYPE
-          elif DataType.MAP_TYPE == type_name:
-                return DataType.PROTO_MAP_TYPE
+        if DataType.INT_TYPE == type_name:
+            return DataType.PROTO_INT_TYPE
+        elif DataType.BOOL_TYPE == type_name:
+            return DataType.PROTO_BOOL_TYPE
+        elif DataType.STR_TYPE == type_name:
+            return DataType.PROTO_STR_TYPE
+        elif DataType.ARRAY_TYPE == type_name:
+            return DataType.PROTO_ARRAY_TYPE
+        elif DataType.MAP_TYPE == type_name:
+            return DataType.PROTO_MAP_TYPE
+        

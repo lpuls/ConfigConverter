@@ -3,6 +3,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -19,10 +20,7937 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Data.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\nData.proto\"\xc9\x01\n\x0bSkillPrefab\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x12\n\nActionName\x18\x02 \x01(\t\x12\x11\n\tTotalTime\x18\x03 \x01(\x05\x12\x18\n\x10StateChannelTime\x18\x04 \x01(\x05\x12\x19\n\x11SpellBackwingTime\x18\x05 \x01(\x05\x12\x13\n\x0bHitTimeList\x18\x06 \x03(\x05\x12\x16\n\x0eHeroOffsetTime\x18\x07 \x03(\x05\x12\x16\n\x0eHeroOffsetPosZ\x18\x08 \x03(\x05\x12\r\n\x05Speed\x18\t \x03(\x05\"\xa3\x01\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12:\n\x10SkillPrefab_dict\x18\x02 \x03(\x0b\x32 .DataHelper.SkillPrefabDictEntry\x1a\x44\n\x14SkillPrefabDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.SkillPrefab:\x02\x38\x01\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
+  serialized_pb=_b('\n\nData.proto\"\xa5\x02\n\x08ToolTest\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05testA\x18\x02 \x01(\x05\x12\r\n\x05testB\x18\x03 \x01(\t\x12\r\n\x05testC\x18\x04 \x01(\x08\x12\r\n\x05testD\x18\x05 \x03(\x05\x12\r\n\x05testH\x18\x06 \x03(\x05\x12\r\n\x05testI\x18\x07 \x03(\x05\x12\r\n\x05testE\x18\x08 \x03(\x05\x12#\n\x05testF\x18\t \x03(\x0b\x32\x14.ToolTest.TestFEntry\x12#\n\x05testG\x18\n \x03(\x0b\x32\x14.ToolTest.TestGEntry\x1a,\n\nTestFEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a,\n\nTestGEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\xbe\x04\n\x05\x61rmor\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04mark\x18\x02 \x01(\t\x12\x1b\n\x08wear_pos\x18\x03 \x01(\x0e\x32\t.wear_pos\x12\x1f\n\narmor_type\x18\x04 \x01(\x0e\x32\x0b.armor_type\x12\x0e\n\x06mod_id\x18\x05 \x01(\x05\x12\x10\n\x08\x61ttr_id1\x18\x06 \x01(\x05\x12\x0f\n\x07\x61ttr_v1\x18\x07 \x01(\x05\x12\x10\n\x08\x61ttr_id2\x18\x08 \x01(\x05\x12\x0f\n\x07\x61ttr_v2\x18\t \x01(\x05\x12\x10\n\x08\x61ttr_id3\x18\n \x01(\x05\x12\x0f\n\x07\x61ttr_v3\x18\x0b \x01(\x05\x12\x10\n\x08\x61ttr_id4\x18\x0c \x01(\x05\x12\x0f\n\x07\x61ttr_v4\x18\r \x01(\x05\x12\x10\n\x08\x61ttr_id5\x18\x0e \x01(\x05\x12\x0f\n\x07\x61ttr_v5\x18\x0f \x01(\x05\x12\x10\n\x08\x61ttr_id6\x18\x10 \x01(\x05\x12\x0f\n\x07\x61ttr_v6\x18\x11 \x01(\x05\x12\x10\n\x08\x61ttr_id7\x18\x12 \x01(\x05\x12\x0f\n\x07\x61ttr_v7\x18\x13 \x01(\x05\x12\x10\n\x08\x61ttr_id8\x18\x14 \x01(\x05\x12\x0f\n\x07\x61ttr_v8\x18\x15 \x01(\x05\x12\x10\n\x08\x61ttr_id9\x18\x16 \x01(\x05\x12\x0f\n\x07\x61ttr_v9\x18\x17 \x01(\x05\x12\x11\n\tattr_id12\x18\x18 \x01(\x05\x12\x10\n\x08\x61ttr_v12\x18\x19 \x01(\x05\x12\x11\n\tattr_id13\x18\x1a \x01(\x05\x12\x10\n\x08\x61ttr_v13\x18\x1b \x01(\x05\x12\x11\n\tattr_id14\x18\x1c \x01(\x05\x12\x10\n\x08\x61ttr_v14\x18\x1d \x01(\x05\x12\x11\n\tattr_id15\x18\x1e \x01(\x05\x12\x10\n\x08\x61ttr_v15\x18\x1f \x01(\x05\"P\n\x0cprefab_sound\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x12\n\nsound_name\x18\x02 \x01(\t\x12\x0c\n\x04mark\x18\x03 \x01(\t\x12\x12\n\nsound_path\x18\x04 \x01(\t\"\xa9\x01\n\rexp_skill_map\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\titem_type\x18\x02 \x01(\x05\x12\n\n\x02lv\x18\x03 \x01(\x05\x12\x0b\n\x03\x65xp\x18\x04 \x01(\x05\x12/\n\tneed_item\x18\x05 \x03(\x0b\x32\x1c.exp_skill_map.NeedItemEntry\x1a/\n\rNeedItemEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"j\n\tlevel_npc\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04mark\x18\x02 \x01(\t\x12\x10\n\x08stage_id\x18\x03 \x01(\x05\x12\x0f\n\x07\x61rea_id\x18\x04 \x01(\x05\x12\x0f\n\x07hero_id\x18\x05 \x01(\x05\x12\x0f\n\x07hero_lv\x18\x06 \x01(\x05\"\x9a\x03\n\x03job\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\x12\'\n\x0ehero_name_type\x18\x04 \x01(\x0e\x32\x0f.hero_name_type\x12\x15\n\rhero_name_key\x18\x05 \x01(\t\x12\x14\n\x0chero_name_cn\x18\x06 \x01(\t\x12\x16\n\x04\x63\x61mp\x18\x07 \x01(\x0e\x32\x08.camp_id\x12\x13\n\x04race\x18\x08 \x01(\x0e\x32\x05.race\x12\x12\n\nstar_level\x18\t \x01(\x05\x12\x17\n\x04type\x18\n \x01(\x0e\x32\t.job_type\x12\x10\n\x08story_id\x18\x0b \x01(\x05\x12\x0f\n\x07talk_id\x18\x0c \x01(\x05\x12\x10\n\x08talk2_id\x18\r \x01(\x05\x12\x13\n\x0bmax_quality\x18\x0e \x01(\x05\x12\x10\n\x08talk3_id\x18\x0f \x01(\x05\x12\x10\n\x08talk4_id\x18\x10 \x01(\x05\x12\x10\n\x08talk5_id\x18\x11 \x01(\x05\x12\x10\n\x08talk6_id\x18\x12 \x01(\x05\x12\x10\n\x08talk7_id\x18\x13 \x01(\x05\x12\x10\n\x08talk8_id\x18\x14 \x01(\x05\";\n\nglobal_var\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08v_string\x18\x02 \x01(\t\x12\x0e\n\x06remark\x18\x03 \x01(\t\"K\n\nerror_code\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tvalue_key\x18\x03 \x01(\x05\x12\x10\n\x08value_cn\x18\x04 \x01(\t\"\xc7\x07\n\x04\x62uff\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x1d\n\tbuff_type\x18\x02 \x01(\x0e\x32\n.buff_type\x12!\n\x0bstatus_type\x18\x03 \x01(\x0e\x32\x0c.status_type\x12&\n\x0btarget_type\x18\x04 \x01(\x0e\x32\x11.target_camp_type\x12\x1b\n\x13invalid_target_type\x18\x05 \x01(\x05\x12\x1f\n\nrange_type\x18\x06 \x01(\x0e\x32\x0b.range_type\x12\x13\n\x0brange_value\x18\x07 \x03(\x05\x12\x15\n\roverride_buff\x18\x08 \x01(\x05\x12\x1b\n\x13override_buff_level\x18\t \x01(\x05\x12\x1a\n\x12\x61\x64\x64tive_buff_level\x18\n \x01(\x05\x12\x18\n\x10\x64\x65stroy_on_death\x18\x0b \x01(\x08\x12\x18\n\x10remove_buff_type\x18\x0c \x03(\x05\x12\x1a\n\x12\x63onflict_buff_type\x18\r \x03(\x05\x12\x18\n\x10\x63onflict_buff_id\x18\x0e \x03(\x05\x12-\n\x12modify_effect_type\x18\x0f \x01(\x0e\x32\x11.item_detail_type\x12\x1c\n\x14modify_effect_factor\x18\x10 \x01(\x05\x12\x1b\n\x13modify_effect_value\x18\x11 \x01(\x05\x12&\n\x11\x64\x61mage_range_type\x18\x12 \x01(\x0e\x32\x0b.range_type\x12\x1a\n\x12\x64\x61mage_range_value\x18\x13 \x03(\x05\x12(\n\x12\x64\x61mage_effect_type\x18\x14 \x01(\x0e\x32\x0c.effect_type\x12\x1b\n\x13\x64\x61mage_effect_value\x18\x15 \x01(\x05\x12.\n\x13\x61\x64\x64tive_effect_type\x18\x16 \x01(\x0e\x32\x11.item_detail_type\x12\x1d\n\x15\x61\x64\x64tive_effect_factor\x18\x17 \x01(\x05\x12%\n\x16\x64\x65signated_target_type\x18\x18 \x01(\x0e\x32\x05.race\x12\x1e\n\x16\x64\x65signated_effect_type\x18\x19 \x01(\x05\x12\x1f\n\x17\x64\x65signated_effect_value\x18\x1a \x01(\x05\x12\x0e\n\x06\x64uring\x18\x1b \x01(\x05\x12\x0c\n\x04tick\x18\x1c \x01(\x05\x12\r\n\x05\x63ount\x18\x1d \x01(\x05\x12\x0f\n\x07icon_id\x18\x1e \x01(\x05\x12\x10\n\x08\x62uff_hit\x18\x1f \x01(\x05\x12\x15\n\rart_effect_id\x18  \x01(\x05\x12\x18\n\x10\x65\x66\x66\x65\x63t_single_id\x18! \x01(\x05\x12\x0f\n\x07\x62uff_id\x18\" \x03(\x05\"\xae\x01\n\x03\x62ox\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04mark\x18\x02 \x01(\t\x12\x11\n\tdrop_type\x18\x03 \x01(\x05\x12\x12\n\nchapter_id\x18\x04 \x01(\x05\x12\x10\n\x08\x62ox_icon\x18\x05 \x01(\x05\x12\x11\n\tbox_intro\x18\x06 \x01(\x05\x12\x13\n\x0b\x62ox_quality\x18\x07 \x01(\x05\x12\x16\n\x0erelevance_type\x18\x08 \x01(\x05\x12\x14\n\x0crelevance_id\x18\t \x01(\x05\"B\n\x03map\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nscene_name\x18\x03 \x01(\t\x12\r\n\x05paths\x18\x04 \x03(\t\"?\n\rglobal_string\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\"\xa9\t\n\x05skill\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\x12\x11\n\tintro_key\x18\x04 \x01(\t\x12\x10\n\x08intro_cn\x18\x05 \x01(\t\x12\x1d\n\tcast_type\x18\x06 \x01(\x0e\x32\n.cast_type\x12\r\n\x05level\x18\x07 \x01(\x05\x12\x0c\n\x04\x63ost\x18\x08 \x01(\x05\x12\x16\n\x0eperformance_id\x18\t \x01(\x05\x12\x15\n\rprojectile_id\x18\n \x01(\x05\x12\x1a\n\x12hit_performance_id\x18\x0b \x01(\x05\x12\x13\n\x0b\x62\x65_hit_time\x18\x0c \x01(\x05\x12\x19\n\x11\x62lood_performance\x18\r \x01(\x05\x12\x12\n\nbuff_array\x18\x0e \x03(\x05\x12\x14\n\x0cweapon_shape\x18\x0f \x01(\x05\x12\x14\n\x0cstartup_time\x18\x10 \x01(\x05\x12\x13\n\x0b\x61\x63tive_time\x18\x11 \x01(\x05\x12\x10\n\x08hit_time\x18\x12 \x03(\x05\x12\x14\n\x0crecover_time\x18\x13 \x01(\x05\x12\x19\n\x11skill_range_value\x18\x14 \x01(\x05\x12\x15\n\rtarget_amount\x18\x15 \x01(\x05\x12+\n\x10target_camp_type\x18\x16 \x01(\x0e\x32\x11.target_camp_type\x12/\n\x12target_select_type\x18\x17 \x01(\x0e\x32\x13.target_select_type\x12\x13\n\x0btarget_type\x18\x18 \x01(\x05\x12\"\n\x13invalid_target_type\x18\x19 \x01(\x0e\x32\x05.race\x12\x18\n\x10trigger_pos_type\x18\x1a \x01(\x05\x12\'\n\x12trigger_range_type\x18\x1b \x01(\x0e\x32\x0b.range_type\x12\x1b\n\x13trigger_range_value\x18\x1c \x03(\x05\x12\x16\n\x0e\x65\x66\x66\x65\x63tive_time\x18\x1d \x01(\x05\x12\x1b\n\x13trigger_performance\x18\x1e \x01(\x05\x12 \n\x18trigger_unit_performance\x18\x1f \x01(\x05\x12\"\n\x1atrigger_single_performance\x18  \x01(\x05\x12\x16\n\x0etrigger_during\x18! \x01(\x05\x12\x14\n\x0ctrigger_tick\x18\" \x01(\x05\x12\x14\n\x0ctrigger_buff\x18# \x03(\x05\x12\x13\n\x0b\x63\x61ncel_buff\x18$ \x01(\x08\x12(\n\x12\x64\x61mage_effect_type\x18% \x01(\x0e\x32\x0c.effect_type\x12\x1b\n\x13\x64\x61mage_effect_value\x18& \x01(\x05\x12\x35\n\x1a\x61\x64\x64tive_damage_effect_type\x18\' \x01(\x0e\x32\x11.item_detail_type\x12$\n\x1c\x61\x64\x64tive_damage_effect_factor\x18( \x01(\x05\x12%\n\x16\x64\x65signated_target_type\x18) \x01(\x0e\x32\x05.race\x12\x1e\n\x16\x64\x65signated_effect_type\x18* \x01(\x05\x12\x1f\n\x17\x64\x65signated_effect_value\x18+ \x01(\x05\x12\x0f\n\x07icon_id\x18, \x01(\x05\"r\n\x04Test\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x12\n\nARRAY_TEST\x18\x02 \x03(\x05\x12\x1d\n\x04TEST\x18\x03 \x03(\x0b\x32\x0f.Test.TESTEntry\x1a+\n\tTESTEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\xbf\x01\n\x12hero_battle_status\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x65s_key\x18\x03 \x01(\t\x12&\n\x0bstatus_enum\x18\x04 \x01(\x0e\x32\x11.hero_status_enum\x12\x13\n\x0bstatus_type\x18\x05 \x01(\x05\x12\x0c\n\x04time\x18\x06 \x01(\x05\x12\x0c\n\x04rate\x18\x07 \x01(\x05\x12\x0c\n\x04item\x18\x08 \x03(\x05\x12\x13\n\x0brecover_key\x18\t \x01(\t\"\x93\x02\n\x0cTimelineInfo\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x10\n\x08\x64uration\x18\x02 \x01(\x05\x12+\n\x07Recover\x18\x03 \x03(\x0b\x32\x1a.TimelineInfo.RecoverEntry\x12-\n\x08PreInput\x18\x04 \x03(\x0b\x32\x1b.TimelineInfo.PreInputEntry\x12\x16\n\x0e\x41nimationClips\x18\x05 \x03(\x05\x12\x10\n\x08hitTimes\x18\x06 \x03(\x05\x1a.\n\x0cRecoverEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a/\n\rPreInputEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\xf8\x01\n\ttask_main\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0f\n\x07\x63hapter\x18\x02 \x01(\x05\x12\x11\n\ttask_type\x18\x03 \x01(\x05\x12\x0f\n\x07name_cn\x18\x04 \x01(\t\x12\x10\n\x08name_key\x18\x05 \x01(\t\x12\x13\n\x0b\x63hapter_des\x18\x06 \x01(\x05\x12\x0e\n\x06\x64\x65s_cn\x18\x07 \x01(\t\x12\x0f\n\x07\x64\x65s_key\x18\x08 \x01(\t\x12\"\n\tgoal_type\x18\t \x01(\x0e\x32\x0f.task_goal_type\x12\x0f\n\x07goal_id\x18\n \x01(\x05\x12\x10\n\x08goal_num\x18\x0b \x01(\x05\x12\x0b\n\x03\x62ox\x18\x0c \x01(\x05\x12\x0e\n\x06\x64ialog\x18\r \x03(\x05\"\xa1\x01\n\rprefab_effect\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0bprefab_name\x18\x02 \x01(\t\x12\x0c\n\x04mark\x18\x03 \x01(\t\x12\x1a\n\x0b\x61ttach_path\x18\x04 \x01(\x0e\x32\x05.hook\x12\x17\n\x0f\x66ollow_position\x18\x05 \x01(\x05\x12\x17\n\x0f\x66ollow_rotation\x18\x06 \x01(\x05\x12\x13\n\x0b\x65\x66\x66\x65\x63t_path\x18\x07 \x01(\t\"r\n\x05stage\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07icon_id\x18\x03 \x01(\x05\x12\x15\n\rsuggest_power\x18\x04 \x01(\x05\x12\x0f\n\x07name_cn\x18\x05 \x01(\t\x12\x12\n\nchapter_id\x18\x06 \x01(\x05\"\xf3\x02\n\x0bhead_config\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06mod_id\x18\x02 \x01(\x05\x12\x10\n\x08\x65ye_size\x18\x03 \x03(\t\x12\x0f\n\x07\x65ye_dis\x18\x04 \x03(\t\x12\x13\n\x0b\x65ye_browdis\x18\x05 \x03(\t\x12\x12\n\neye_socket\x18\x06 \x03(\t\x12\x12\n\nnose_width\x18\x07 \x03(\t\x12\x13\n\x0bnose_length\x18\x08 \x03(\t\x12\x12\n\nnose_hight\x18\t \x03(\t\x12\x10\n\x08\x65\x61r_part\x18\n \x03(\t\x12\x10\n\x08\x65\x61r_size\x18\x0b \x03(\t\x12\x10\n\x08\x65\x61r_form\x18\x0c \x03(\t\x12\x12\n\nmouth_part\x18\r \x03(\t\x12\x10\n\x08mouth_th\x18\x0e \x03(\t\x12\x12\n\nmouth_bump\x18\x0f \x03(\t\x12\x0e\n\x06jaw_th\x18\x10 \x03(\t\x12\x12\n\njaw_length\x18\x11 \x03(\t\x12\r\n\x05\x63heek\x18\x12 \x03(\t\x12\x0c\n\x04\x62row\x18\x13 \x03(\x05\x12\x0e\n\x06goatee\x18\x14 \x03(\x05\"\xeb\x01\n\x0brole_config\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x17\n\x06gender\x18\x02 \x01(\x0e\x32\x07.gender\x12\x1d\n\tbody_type\x18\x03 \x01(\x0e\x32\n.body_type\x12\x1d\n\trace_type\x18\x04 \x01(\x0e\x32\n.race_type\x12\x10\n\x08sound_id\x18\x05 \x03(\x05\x12\x0f\n\x07head_id\x18\x06 \x03(\x05\x12\x0e\n\x06hat_id\x18\x07 \x03(\x05\x12\x0f\n\x07hair_id\x18\x08 \x03(\x05\x12\x12\n\nclothes_id\x18\t \x03(\x05\x12\x10\n\x08pants_id\x18\n \x03(\x05\x12\x0f\n\x07shoe_id\x18\x0b \x03(\x05\"\xeb\x01\n\x0bstage_level\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08stage_id\x18\x03 \x01(\x05\x12\x1f\n\nstage_type\x18\x04 \x01(\x0e\x32\x0b.stage_type\x12\x0b\n\x03\x62ox\x18\x05 \x01(\x05\x12-\n\tdrop_item\x18\x06 \x03(\x0b\x32\x1a.stage_level.DropItemEntry\x12\x0e\n\x06map_id\x18\x07 \x01(\x05\x12\x12\n\ntrigger_id\x18\x08 \x01(\x05\x1a/\n\rDropItemEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"]\n\x06\x64ialog\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x11\n\tdialog_id\x18\x02 \x01(\x05\x12\x0e\n\x06img_id\x18\x03 \x01(\x05\x12\x14\n\x0cimg_location\x18\x04 \x01(\x05\x12\x0e\n\x06\x64ialog\x18\x05 \x01(\t\"\xea\x0c\n\x04hero\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06job_id\x18\x02 \x01(\x05\x12\x1e\n\x07quality\x18\x03 \x01(\x0e\x32\r.hero_quality\x12\x0c\n\x04mark\x18\x04 \x01(\t\x12%\n\x0bweapon_type\x18\x05 \x01(\x0e\x32\x10.weapon_sub_type\x12\x1f\n\narmor_type\x18\x06 \x01(\x0e\x32\x0b.armor_type\x12\x11\n\tweapon_id\x18\x07 \x01(\x05\x12&\n\taction_id\x18\x08 \x03(\x0b\x32\x13.hero.ActionIdEntry\x12\x16\n\x0ehero_effect_id\x18\t \x01(\x05\x12\x18\n\x10hero_skill_array\x18\n \x03(\x05\x12\x10\n\x08\x61ttr_id1\x18\x0b \x01(\x05\x12\x0f\n\x07\x61ttr_v1\x18\x0c \x03(\x05\x12\x10\n\x08\x61ttr_id2\x18\r \x01(\x05\x12\x0f\n\x07\x61ttr_v2\x18\x0e \x03(\x05\x12\x10\n\x08\x61ttr_id3\x18\x0f \x01(\x05\x12\x0f\n\x07\x61ttr_v3\x18\x10 \x03(\x05\x12\x10\n\x08\x61ttr_id4\x18\x11 \x01(\x05\x12\x0f\n\x07\x61ttr_v4\x18\x12 \x03(\x05\x12\x10\n\x08\x61ttr_id5\x18\x13 \x01(\x05\x12\x0f\n\x07\x61ttr_v5\x18\x14 \x03(\x05\x12\x10\n\x08\x61ttr_id6\x18\x15 \x01(\x05\x12\x0f\n\x07\x61ttr_v6\x18\x16 \x03(\x05\x12\x10\n\x08\x61ttr_id7\x18\x17 \x01(\x05\x12\x0f\n\x07\x61ttr_v7\x18\x18 \x03(\x05\x12\x11\n\tattr_id13\x18\x19 \x01(\x05\x12\x10\n\x08\x61ttr_v13\x18\x1a \x03(\x05\x12\x11\n\tattr_id26\x18\x1b \x01(\x05\x12\x10\n\x08\x61ttr_v26\x18\x1c \x01(\x05\x12\x11\n\tattr_id25\x18\x1d \x01(\x05\x12\x10\n\x08\x61ttr_v25\x18\x1e \x03(\x05\x12\x10\n\x08tech_id5\x18\x1f \x01(\x05\x12\x0f\n\x07tech_v5\x18  \x03(\x05\x12\x10\n\x08tech_id6\x18! \x01(\x05\x12\x0f\n\x07tech_v6\x18\" \x03(\x05\x12\x10\n\x08tech_id7\x18# \x01(\x05\x12\x0f\n\x07tech_v7\x18$ \x03(\x05\x12\x10\n\x08tech_id8\x18% \x01(\x05\x12\x0f\n\x07tech_v8\x18& \x03(\x05\x12\x10\n\x08tech_id9\x18\' \x01(\x05\x12\x0f\n\x07tech_v9\x18( \x03(\x05\x12\x11\n\ttech_id10\x18) \x01(\x05\x12\x10\n\x08tech_v10\x18* \x03(\x05\x12\x11\n\ttech_id11\x18+ \x01(\x05\x12\x10\n\x08tech_v11\x18, \x03(\x05\x12\x11\n\ttech_id12\x18- \x01(\x05\x12\x10\n\x08tech_v12\x18. \x03(\x05\x12\x11\n\ttech_id13\x18/ \x01(\x05\x12\x10\n\x08tech_v13\x18\x30 \x03(\x05\x12\x11\n\tattr_id14\x18\x31 \x01(\x05\x12\x10\n\x08\x61ttr_v14\x18\x32 \x03(\x05\x12\x11\n\tattr_id15\x18\x33 \x01(\x05\x12\x10\n\x08\x61ttr_v15\x18\x34 \x03(\x05\x12\x12\n\nlevelup_hp\x18\x35 \x01(\x05\x12\x16\n\x0elevelup_hp_var\x18\x36 \x01(\x05\x12\x12\n\nlevelup_at\x18\x37 \x01(\x05\x12\x16\n\x0elevelup_at_var\x18\x38 \x01(\x05\x12\x13\n\x0blevelup_def\x18\x39 \x01(\x05\x12\x17\n\x0flevelup_def_var\x18: \x01(\x05\x12\x13\n\x0blevelup_hit\x18; \x01(\x05\x12\x17\n\x0flevelup_hit_var\x18< \x01(\x05\x12\x13\n\x0blevelup_dod\x18= \x01(\x05\x12\x17\n\x0flevelup_dod_var\x18> \x01(\x05\x12\x17\n\x0flevelup_explode\x18? \x01(\x05\x12\x1b\n\x13levelup_explode_var\x18@ \x01(\x05\x12\x13\n\x0blevelup_med\x18\x41 \x01(\x05\x12\x17\n\x0flevelup_med_var\x18\x42 \x01(\x05\x12\x13\n\x0blevelup_cri\x18\x43 \x01(\x05\x12\x17\n\x0flevelup_cri_var\x18\x44 \x01(\x05\x12\x17\n\x0flevelup_crihurt\x18\x45 \x01(\x05\x12\x1b\n\x13levelup_crihurt_var\x18\x46 \x01(\x05\x12\x18\n\x10up_need_item_id1\x18G \x01(\x05\x12\x17\n\x0fup_need_item_v1\x18H \x01(\x05\x12\x18\n\x10up_need_item_id2\x18I \x01(\x05\x12\x17\n\x0fup_need_item_v2\x18J \x01(\x05\x12\x18\n\x10up_need_item_id3\x18K \x01(\x05\x12\x17\n\x0fup_need_item_v3\x18L \x01(\x05\x1a/\n\rActionIdEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\xfa\x02\n\x04item\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\x12\x11\n\tintro_key\x18\x04 \x01(\t\x12\x10\n\x08intro_cn\x18\x05 \x01(\t\x12\x1d\n\titem_type\x18\x06 \x01(\x0e\x32\n.item_type\x12+\n\x10item_detail_type\x18\x07 \x01(\x0e\x32\x11.item_detail_type\x12\x11\n\tblock_num\x18\x08 \x01(\x05\x12\x0e\n\x06img_id\x18\t \x01(\t\x12\x10\n\x08\x63\x61pacity\x18\n \x01(\x05\x12\x10\n\x08\x63\x61n_drop\x18\x0b \x01(\x08\x12\x13\n\x0b\x65xpire_time\x18\x0c \x01(\x05\x12\x16\n\x0e\x63ombustibility\x18\r \x01(\x05\x12\x11\n\tcatalasis\x18\x0e \x01(\x05\x12\x0e\n\x06mod_id\x18\x0f \x01(\x05\x12\x15\n\rweapon_pro_id\x18\x10 \x01(\x05\x12\x14\n\x0c\x61rmor_pro_id\x18\x11 \x01(\x05\x12\x0e\n\x06\x62ox_id\x18\x12 \x01(\x05\"\x83\x01\n\x07\x63hapter\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\x12\'\n\ndifficulty\x18\x04 \x01(\x0e\x32\x13.chapter_difficulty\x12\x11\n\tintro_key\x18\x05 \x01(\t\x12\r\n\x05imgid\x18\x06 \x01(\x05\"\xd4\x04\n\x08\x62uilding\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\x12\x0f\n\x07icon_id\x18\x04 \x01(\x05\x12\x14\n\x0cupdate_group\x18\x05 \x01(\x05\x12\x16\n\x0etransform_type\x18\x06 \x01(\x05\x12-\n\x11sub_building_type\x18\x07 \x01(\x0e\x32\x12.sub_building_enum\x12\x15\n\rbuilding_type\x18\x08 \x01(\x05\x12\x10\n\x08position\x18\t \x01(\x05\x12\x15\n\rneed_capacity\x18\n \x01(\x05\x12\x12\n\nneed_power\x18\x0b \x01(\x05\x12\x15\n\rpre_buildings\x18\x0c \x01(\x05\x12\r\n\x05level\x18\r \x01(\x05\x12\x18\n\x10\x62uilding_subtype\x18\x0e \x01(\x05\x12:\n\x11\x63onsume_materials\x18\x0f \x03(\x0b\x32\x1f.building.ConsumeMaterialsEntry\x12:\n\x11product_materials\x18\x10 \x03(\x0b\x32\x1f.building.ProductMaterialsEntry\x12\x17\n\x0finitially_owned\x18\x11 \x01(\x05\x12\x14\n\x0cprefab_shape\x18\x12 \x01(\x05\x1a\x37\n\x15\x43onsumeMaterialsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a\x37\n\x15ProductMaterialsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\x9b\x01\n\x11role_sound_config\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\tbreathing\x18\x02 \x01(\x05\x12\x0c\n\x04\x64\x65\x61\x64\x18\x03 \x01(\x05\x12\x0c\n\x04hurt\x18\x04 \x01(\x05\x12\x19\n\x11\x63lassicvoice_fire\x18\x05 \x01(\x05\x12\x17\n\x0f\x63lassicvoice_go\x18\x06 \x01(\x05\x12\x17\n\x0f\x63lassicvoice_ok\x18\x07 \x01(\x05\"\xa3\x01\n\x0bperformance\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\tmark_name\x18\x02 \x01(\t\x12\x11\n\taction_id\x18\x03 \x01(\x05\x12\x11\n\teffect_id\x18\x04 \x01(\x05\x12\x10\n\x08sound_id\x18\x05 \x03(\x05\x12\x12\n\nshake_time\x18\x06 \x01(\x05\x12\x14\n\x0cshake_factor\x18\x07 \x01(\x05\x12\x13\n\x0b\x65\x66\x66\x65\x63t_time\x18\x08 \x01(\x05\"8\n\x05story\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\tstory_key\x18\x02 \x01(\t\x12\x10\n\x08story_cn\x18\x03 \x01(\t\"\xd8\x01\n\ntask_daily\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08name_key\x18\x02 \x01(\t\x12\x0f\n\x07name_cn\x18\x03 \x01(\t\x12\x0f\n\x07\x64\x65s_key\x18\x04 \x01(\t\x12\x0e\n\x06\x64\x65s_cn\x18\x05 \x01(\t\x12\x11\n\ttask_type\x18\x06 \x01(\x05\x12\x10\n\x08goal_num\x18\x07 \x01(\x05\x12\r\n\x05item1\x18\x08 \x01(\x05\x12\x0c\n\x04num1\x18\t \x01(\x05\x12\r\n\x05item2\x18\n \x01(\x05\x12\x0c\n\x04num2\x18\x0b \x01(\x05\x12\r\n\x05item3\x18\x0c \x01(\x05\x12\x0c\n\x04num3\x18\r \x01(\x05\"\xc9\x01\n\x0bSkillPrefab\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x12\n\nActionName\x18\x02 \x01(\t\x12\x11\n\tTotalTime\x18\x03 \x01(\x05\x12\x18\n\x10StateChannelTime\x18\x04 \x01(\x05\x12\x19\n\x11SpellBackwingTime\x18\x05 \x01(\x05\x12\x13\n\x0bHitTimeList\x18\x06 \x03(\x05\x12\x16\n\x0eHeroOffsetTime\x18\x07 \x03(\x05\x12\x16\n\x0eHeroOffsetPosZ\x18\x08 \x03(\x05\x12\r\n\x05Speed\x18\t \x03(\x05\"\xb4\x02\n\x07\x66ormula\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06img_id\x18\x02 \x01(\x05\x12\x10\n\x08name_key\x18\x03 \x01(\t\x12\x0f\n\x07name_cn\x18\x04 \x01(\t\x12\x11\n\tintro_key\x18\x05 \x01(\t\x12\x14\n\x0c\x66ormula_type\x18\x06 \x01(\x05\x12\x11\n\tcost_time\x18\x07 \x01(\x05\x12&\n\x07product\x18\x08 \x03(\x0b\x32\x15.formula.ProductEntry\x12&\n\x07\x63onsume\x18\t \x03(\x0b\x32\x15.formula.ConsumeEntry\x1a.\n\x0cProductEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a.\n\x0c\x43onsumeEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"]\n\x0bsystem_name\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x18\n\x10\x66\x65male_firstname\x18\x02 \x01(\t\x12\x16\n\x0emale_firstname\x18\x03 \x01(\t\x12\x10\n\x08lastname\x18\x04 \x01(\t\"T\n\rprefab_action\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0b\x61\x63tion_name\x18\x02 \x01(\t\x12\r\n\x05intro\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tion_time\x18\x04 \x01(\x05\"\x91\x01\n\x08\x62ox_drop\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06\x62ox_id\x18\x02 \x01(\x05\x12\x0f\n\x07item_id\x18\x03 \x01(\x05\x12\x12\n\nitem_count\x18\x04 \x03(\x05\x12\x0e\n\x06weight\x18\x05 \x01(\x05\x12\x11\n\tmark_name\x18\x06 \x01(\t\x12!\n\titem_type\x18\x07 \x01(\x0e\x32\x0e.box_item_type\"=\n\x0cprefab_shape\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x13\n\x0bprefab_name\x18\x02 \x01(\t\x12\x0c\n\x04mark\x18\x03 \x01(\t\"\xb5\x04\n\x06weapon\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04mark\x18\x02 \x01(\t\x12\x1b\n\x08wear_pos\x18\x03 \x01(\x0e\x32\t.wear_pos\x12!\n\x0bweapon_type\x18\x04 \x01(\x0e\x32\x0c.weapon_type\x12\"\n\x08sub_type\x18\x05 \x01(\x0e\x32\x10.weapon_sub_type\x12\x0e\n\x06\x65nergy\x18\x06 \x01(\x05\x12\x10\n\x08\x61ttr_id1\x18\x07 \x01(\x05\x12\x0f\n\x07\x61ttr_v1\x18\x08 \x01(\x05\x12\x10\n\x08\x61ttr_id2\x18\t \x01(\x05\x12\x0f\n\x07\x61ttr_v2\x18\n \x01(\x05\x12\x10\n\x08\x61ttr_id3\x18\x0b \x01(\x05\x12\x0f\n\x07\x61ttr_v3\x18\x0c \x01(\x05\x12\x11\n\tattr_id13\x18\r \x01(\x05\x12\x10\n\x08\x61ttr_v13\x18\x0e \x03(\x05\x12\x10\n\x08\x61ttr_id4\x18\x0f \x01(\x05\x12\x0f\n\x07\x61ttr_v4\x18\x10 \x01(\x05\x12\x10\n\x08\x61ttr_id5\x18\x11 \x01(\x05\x12\x0f\n\x07\x61ttr_v5\x18\x12 \x01(\x05\x12\x10\n\x08\x61ttr_id6\x18\x13 \x01(\x05\x12\x0f\n\x07\x61ttr_v6\x18\x14 \x01(\x05\x12\x10\n\x08\x61ttr_id7\x18\x15 \x01(\x05\x12\x0f\n\x07\x61ttr_v7\x18\x16 \x01(\x05\x12\x10\n\x08\x61ttr_id8\x18\x17 \x01(\x05\x12\x0f\n\x07\x61ttr_v8\x18\x18 \x01(\x05\x12\x10\n\x08\x61ttr_id9\x18\x19 \x01(\x05\x12\x0f\n\x07\x61ttr_v9\x18\x1a \x01(\x05\x12\x11\n\tattr_id12\x18\x1b \x01(\x05\x12\x10\n\x08\x61ttr_v12\x18\x1c \x01(\x05\x12\x18\n\x10weapon_effect_id\x18\x1d \x01(\x05\"\xaa\x02\n\rweapon_effect\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04mark\x18\x02 \x01(\t\x12\x11\n\tprefab_id\x18\x03 \x01(\x05\x12%\n\x06\x61\x63tion\x18\x04 \x01(\x0e\x32\x15.weapon_effect_action\x12\x18\n\x10\x63\x61st_performance\x18\x05 \x01(\x05\x12\x17\n\x0fhit_performance\x18\x06 \x01(\x05\x12\x10\n\x08hit_time\x18\x07 \x01(\x05\x12\x19\n\x11\x62lood_performance\x18\x08 \x01(\x05\x12\x0e\n\x06muzzle\x18\t \x01(\x05\x12\x12\n\nprojectile\x18\n \x01(\x05\x12\x11\n\tshellcase\x18\x0b \x01(\x05\x12\x14\n\x05\x64ummy\x18\x0c \x01(\x0e\x32\x05.hook\x12\x18\n\x10\x61ttack_clip_time\x18\r \x01(\x05\"\xf3$\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12\x34\n\rToolTest_dict\x18\x02 \x03(\x0b\x32\x1d.DataHelper.ToolTestDictEntry\x12.\n\narmor_dict\x18\x03 \x03(\x0b\x32\x1a.DataHelper.ArmorDictEntry\x12;\n\x11prefab_sound_dict\x18\x04 \x03(\x0b\x32 .DataHelper.PrefabSoundDictEntry\x12<\n\x12\x65xp_skill_map_dict\x18\x05 \x03(\x0b\x32 .DataHelper.ExpSkillMapDictEntry\x12\x35\n\x0elevel_npc_dict\x18\x06 \x03(\x0b\x32\x1d.DataHelper.LevelNpcDictEntry\x12*\n\x08job_dict\x18\x07 \x03(\x0b\x32\x18.DataHelper.JobDictEntry\x12\x37\n\x0fglobal_var_dict\x18\x08 \x03(\x0b\x32\x1e.DataHelper.GlobalVarDictEntry\x12\x37\n\x0f\x65rror_code_dict\x18\t \x03(\x0b\x32\x1e.DataHelper.ErrorCodeDictEntry\x12,\n\tbuff_dict\x18\n \x03(\x0b\x32\x19.DataHelper.BuffDictEntry\x12*\n\x08\x62ox_dict\x18\x0b \x03(\x0b\x32\x18.DataHelper.BoxDictEntry\x12*\n\x08map_dict\x18\x0c \x03(\x0b\x32\x18.DataHelper.MapDictEntry\x12=\n\x12global_string_dict\x18\r \x03(\x0b\x32!.DataHelper.GlobalStringDictEntry\x12.\n\nskill_dict\x18\x0e \x03(\x0b\x32\x1a.DataHelper.SkillDictEntry\x12,\n\tTest_dict\x18\x0f \x03(\x0b\x32\x19.DataHelper.TestDictEntry\x12\x46\n\x17hero_battle_status_dict\x18\x10 \x03(\x0b\x32%.DataHelper.HeroBattleStatusDictEntry\x12<\n\x11TimelineInfo_dict\x18\x11 \x03(\x0b\x32!.DataHelper.TimelineInfoDictEntry\x12\x35\n\x0etask_main_dict\x18\x12 \x03(\x0b\x32\x1d.DataHelper.TaskMainDictEntry\x12=\n\x12prefab_effect_dict\x18\x13 \x03(\x0b\x32!.DataHelper.PrefabEffectDictEntry\x12.\n\nstage_dict\x18\x14 \x03(\x0b\x32\x1a.DataHelper.StageDictEntry\x12\x39\n\x10head_config_dict\x18\x15 \x03(\x0b\x32\x1f.DataHelper.HeadConfigDictEntry\x12\x39\n\x10role_config_dict\x18\x16 \x03(\x0b\x32\x1f.DataHelper.RoleConfigDictEntry\x12\x39\n\x10stage_level_dict\x18\x17 \x03(\x0b\x32\x1f.DataHelper.StageLevelDictEntry\x12\x30\n\x0b\x64ialog_dict\x18\x18 \x03(\x0b\x32\x1b.DataHelper.DialogDictEntry\x12,\n\thero_dict\x18\x19 \x03(\x0b\x32\x19.DataHelper.HeroDictEntry\x12,\n\titem_dict\x18\x1a \x03(\x0b\x32\x19.DataHelper.ItemDictEntry\x12\x32\n\x0c\x63hapter_dict\x18\x1b \x03(\x0b\x32\x1c.DataHelper.ChapterDictEntry\x12\x34\n\rbuilding_dict\x18\x1c \x03(\x0b\x32\x1d.DataHelper.BuildingDictEntry\x12\x44\n\x16role_sound_config_dict\x18\x1d \x03(\x0b\x32$.DataHelper.RoleSoundConfigDictEntry\x12:\n\x10performance_dict\x18\x1e \x03(\x0b\x32 .DataHelper.PerformanceDictEntry\x12.\n\nstory_dict\x18\x1f \x03(\x0b\x32\x1a.DataHelper.StoryDictEntry\x12\x37\n\x0ftask_daily_dict\x18  \x03(\x0b\x32\x1e.DataHelper.TaskDailyDictEntry\x12:\n\x10SkillPrefab_dict\x18! \x03(\x0b\x32 .DataHelper.SkillPrefabDictEntry\x12\x32\n\x0c\x66ormula_dict\x18\" \x03(\x0b\x32\x1c.DataHelper.FormulaDictEntry\x12\x39\n\x10system_name_dict\x18# \x03(\x0b\x32\x1f.DataHelper.SystemNameDictEntry\x12=\n\x12prefab_action_dict\x18$ \x03(\x0b\x32!.DataHelper.PrefabActionDictEntry\x12\x33\n\rbox_drop_dict\x18% \x03(\x0b\x32\x1c.DataHelper.BoxDropDictEntry\x12;\n\x11prefab_shape_dict\x18& \x03(\x0b\x32 .DataHelper.PrefabShapeDictEntry\x12\x30\n\x0bweapon_dict\x18\' \x03(\x0b\x32\x1b.DataHelper.WeaponDictEntry\x12=\n\x12weapon_effect_dict\x18( \x03(\x0b\x32!.DataHelper.WeaponEffectDictEntry\x1a>\n\x11ToolTestDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.ToolTest:\x02\x38\x01\x1a\x38\n\x0e\x41rmorDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x15\n\x05value\x18\x02 \x01(\x0b\x32\x06.armor:\x02\x38\x01\x1a\x45\n\x14PrefabSoundDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.prefab_sound:\x02\x38\x01\x1a\x46\n\x14\x45xpSkillMapDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.exp_skill_map:\x02\x38\x01\x1a?\n\x11LevelNpcDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x19\n\x05value\x18\x02 \x01(\x0b\x32\n.level_npc:\x02\x38\x01\x1a\x34\n\x0cJobDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x13\n\x05value\x18\x02 \x01(\x0b\x32\x04.job:\x02\x38\x01\x1a\x41\n\x12GlobalVarDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.global_var:\x02\x38\x01\x1a\x41\n\x12\x45rrorCodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.error_code:\x02\x38\x01\x1a\x36\n\rBuffDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x14\n\x05value\x18\x02 \x01(\x0b\x32\x05.buff:\x02\x38\x01\x1a\x34\n\x0c\x42oxDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x13\n\x05value\x18\x02 \x01(\x0b\x32\x04.box:\x02\x38\x01\x1a\x34\n\x0cMapDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x13\n\x05value\x18\x02 \x01(\x0b\x32\x04.map:\x02\x38\x01\x1aG\n\x15GlobalStringDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.global_string:\x02\x38\x01\x1a\x38\n\x0eSkillDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x15\n\x05value\x18\x02 \x01(\x0b\x32\x06.skill:\x02\x38\x01\x1a\x36\n\rTestDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x14\n\x05value\x18\x02 \x01(\x0b\x32\x05.Test:\x02\x38\x01\x1aP\n\x19HeroBattleStatusDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.hero_battle_status:\x02\x38\x01\x1a\x46\n\x15TimelineInfoDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.TimelineInfo:\x02\x38\x01\x1a?\n\x11TaskMainDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x19\n\x05value\x18\x02 \x01(\x0b\x32\n.task_main:\x02\x38\x01\x1aG\n\x15PrefabEffectDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.prefab_effect:\x02\x38\x01\x1a\x38\n\x0eStageDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x15\n\x05value\x18\x02 \x01(\x0b\x32\x06.stage:\x02\x38\x01\x1a\x43\n\x13HeadConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.head_config:\x02\x38\x01\x1a\x43\n\x13RoleConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.role_config:\x02\x38\x01\x1a\x43\n\x13StageLevelDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.stage_level:\x02\x38\x01\x1a:\n\x0f\x44ialogDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x16\n\x05value\x18\x02 \x01(\x0b\x32\x07.dialog:\x02\x38\x01\x1a\x36\n\rHeroDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x14\n\x05value\x18\x02 \x01(\x0b\x32\x05.hero:\x02\x38\x01\x1a\x36\n\rItemDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x14\n\x05value\x18\x02 \x01(\x0b\x32\x05.item:\x02\x38\x01\x1a<\n\x10\x43hapterDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x17\n\x05value\x18\x02 \x01(\x0b\x32\x08.chapter:\x02\x38\x01\x1a>\n\x11\x42uildingDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.building:\x02\x38\x01\x1aN\n\x18RoleSoundConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12!\n\x05value\x18\x02 \x01(\x0b\x32\x12.role_sound_config:\x02\x38\x01\x1a\x44\n\x14PerformanceDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.performance:\x02\x38\x01\x1a\x38\n\x0eStoryDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x15\n\x05value\x18\x02 \x01(\x0b\x32\x06.story:\x02\x38\x01\x1a\x41\n\x12TaskDailyDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.task_daily:\x02\x38\x01\x1a\x44\n\x14SkillPrefabDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.SkillPrefab:\x02\x38\x01\x1a<\n\x10\x46ormulaDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x17\n\x05value\x18\x02 \x01(\x0b\x32\x08.formula:\x02\x38\x01\x1a\x43\n\x13SystemNameDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.system_name:\x02\x38\x01\x1aG\n\x15PrefabActionDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.prefab_action:\x02\x38\x01\x1a=\n\x10\x42oxDropDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.box_drop:\x02\x38\x01\x1a\x45\n\x14PrefabShapeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.prefab_shape:\x02\x38\x01\x1a:\n\x0fWeaponDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x16\n\x05value\x18\x02 \x01(\x0b\x32\x07.weapon:\x02\x38\x01\x1aG\n\x15WeaponEffectDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.weapon_effect:\x02\x38\x01*\x9e\x03\n\titem_type\x12\x12\n\x0eitem_type_none\x10\x00\x12\x14\n\x10item_type_weapon\x10\x64\x12\x14\n\x0fitem_type_armor\x10\xc8\x01\x12\x1a\n\x15item_type_consumables\x10\xac\x02\x12\x12\n\ritem_type_bag\x10\x90\x03\x12\x17\n\x12item_type_building\x10\xd8\x04\x12\x18\n\x13item_type_warehouse\x10\xd9\x04\x12\x1b\n\x16item_type_refrigerator\x10\xda\x04\x12\x16\n\x11item_type_campcar\x10\xe2\x04\x12\x13\n\x0eitem_type_hero\x10\xbc\x05\x12\x12\n\ritem_type_job\x10\xa0\x06\x12\x18\n\x13item_type_attribute\x10\xa1\x06\x12\x1a\n\x15item_type_battle_tech\x10\x84\x07\x12\x18\n\x13item_type_live_tech\x10\x85\x07\x12\x1d\n\x18item_type_live_condition\x10\x86\x07\x12!\n\x1citem_type_building_attribute\x10\x87\x07*\x94\x01\n\x08job_type\x12\x11\n\rjob_type_none\x10\x00\x12\x15\n\x11job_type_strength\x10\x01\x12\x19\n\x15job_type_constitution\x10\x02\x12\x14\n\x10job_type_agility\x10\x03\x12\x19\n\x15job_type_intelligence\x10\x04\x12\x12\n\x0ejob_type_skill\x10\x05*I\n\tbuff_type\x12\x12\n\x0e\x62uff_type_none\x10\x00\x12\x12\n\x0e\x62uff_type_gain\x10\x01\x12\x14\n\x10\x62uff_type_debuff\x10\x02*V\n\rbox_item_type\x12\x16\n\x12\x62ox_item_type_item\x10\x00\x12\x15\n\x11\x62ox_item_type_box\x10\x01\x12\x16\n\x12\x62ox_item_type_hero\x10\x02*\xab\x01\n\x17hero_battle_status_type\x12\'\n#hero_battle_status_type_AutoSetZero\x10\x00\x12\x31\n-hero_battle_status_type_set_on_battle_failure\x10\x01\x12\x34\n0hero_battle_status_type_set_by_rate_periodically\x10\x02*o\n\x0b\x65\x66\x66\x65\x63t_type\x12\x14\n\x10\x65\x66\x66\x65\x63t_type_none\x10\x00\x12\x1c\n\x18\x65\x66\x66\x65\x63t_type_general_harm\x10\x01\x12\x14\n\x10\x65\x66\x66\x65\x63t_type_harm\x10\x02\x12\x16\n\x12\x65\x66\x66\x65\x63t_type_effect\x10\x03*\xad\x02\n\narmor_type\x12\x13\n\x0f\x61rmor_type_none\x10\x00\x12\x16\n\x12\x61rmor_type_clothes\x10\x01\x12\x14\n\x10\x61rmor_type_pants\x10\x02\x12\x13\n\x0f\x61rmor_type_shoe\x10\x03\x12\x14\n\x10\x61rmor_type_plate\x10\x04\x12\x17\n\x13\x61rmor_type_legguard\x10\x05\x12\x15\n\x11\x61rmor_type_barcer\x10\x06\x12\x12\n\x0e\x61rmor_type_hat\x10\x07\x12\x1c\n\x18\x61rmor_type_ornament_cure\x10\x08\x12\x1c\n\x18\x61rmor_type_ornament_boom\x10\t\x12\x1d\n\x19\x61rmor_type_ornament_other\x10\n\x12\x12\n\x0e\x61rmor_type_bag\x10\x0b*\xe2\x01\n\x0chero_quality\x12\x15\n\x11hero_quality_none\x10\x00\x12\x19\n\x15hero_quality_quality1\x10\x01\x12\x19\n\x15hero_quality_quality2\x10\x02\x12\x19\n\x15hero_quality_quality3\x10\x03\x12\x19\n\x15hero_quality_quality4\x10\x04\x12\x19\n\x15hero_quality_quality5\x10\x05\x12\x19\n\x15hero_quality_quality6\x10\x06\x12\x19\n\x15hero_quality_quality7\x10\x07*\xb1\x03\n\x0bstatus_type\x12\x14\n\x10status_type_none\x10\x00\x12\x15\n\x11status_type_bleed\x10\x01\x12\x16\n\x12status_type_firing\x10\x02\x12\x18\n\x14status_type_entangle\x10\x03\x12\x1a\n\x16status_type_immobilize\x10\x04\x12\x14\n\x10status_type_stun\x10\x05\x12\x17\n\x13status_type_silence\x10\x06\x12\x15\n\x11status_type_sleep\x10\x07\x12\x14\n\x10status_type_fear\x10\x08\x12\x19\n\x15status_type_poisoning\x10\t\x12\x1a\n\x16status_type_invincible\x10\n\x12\x19\n\x15status_type_lower_def\x10\x0b\x12\x1e\n\x1astatus_type_lower_accuracy\x10\x0c\x12\x1f\n\x1bstatus_type_continue_regain\x10\r\x12\x1b\n\x17status_type_enhance_def\x10\x0e\x12\x1b\n\x17status_type_enhance_atk\x10\x0f*I\n\tbody_type\x12\x12\n\x0e\x62ody_type_none\x10\x00\x12\x15\n\x11\x62ody_type_general\x10\x01\x12\x11\n\rbody_type_fat\x10\x02*\xca\x03\n\x0fweapon_sub_type\x12\x18\n\x14weapon_sub_type_null\x10\x00\x12\x1f\n\x1bweapon_sub_type_melee_blunt\x10\x01\x12\x1e\n\x1aweapon_sub_type_melee_edge\x10\x02\x12\x1f\n\x1bweapon_sub_type_melee_heavy\x10\x03\x12!\n\x1dweapon_sub_type_remote_pistol\x10\x04\x12\"\n\x1eweapon_sub_type_remote_carbine\x10\x05\x12\"\n\x1eweapon_sub_type_remote_shotgun\x10\x06\x12$\n weapon_sub_type_remote_snipergun\x10\x07\x12 \n\x1cweapon_sub_type_remote_heavy\x10\x08\x12 \n\x1cweapon_sub_type_remote_treat\x10\t\x12 \n\x1cweapon_sub_type_remote_blast\x10\n\x12!\n\x1dweapon_sub_type_remote_gatlin\x10\x0b\x12!\n\x1dweapon_sub_type_remote_rocket\x10\x0c*\xc3\x03\n\x14weapon_effect_action\x12\x1d\n\x19weapon_effect_action_null\x10\x00\x12&\n\"weapon_effect_action_action_single\x10\x01\x12$\n weapon_effect_action_action_both\x10\x02\x12&\n\"weapon_effect_action_action_pistol\x10\x03\x12\'\n#weapon_effect_action_action_carbine\x10\x04\x12\'\n#weapon_effect_action_action_shotgun\x10\x05\x12)\n%weapon_effect_action_action_snipergun\x10\x06\x12&\n\"weapon_effect_action_action_gatlin\x10\x07\x12&\n\"weapon_effect_action_action_rocket\x10\x08\x12$\n weapon_effect_action_action_claw\x10\t\x12#\n\x1fweapon_effect_action_action_saw\x10\n*R\n\nstage_type\x12\x13\n\x0fstage_type_none\x10\x00\x12\x18\n\x14stage_type_challenge\x10\x01\x12\x15\n\x11stage_type_onhook\x10\x02*\xe0\x01\n\x10hero_status_enum\x12\x19\n\x15hero_status_enum_None\x10\x00\x12\x1e\n\x1ahero_status_enum_HeavyHurt\x10\x01\x12\x1e\n\x1ahero_status_enum_BoneBreak\x10\x02\x12\x1c\n\x18hero_status_enum_BadMood\x10\x04\x12\x1b\n\x17hero_status_enum_Hungry\x10\x08\x12\x1b\n\x17hero_status_enum_Poison\x10\x10\x12\x19\n\x15hero_status_enum_Sick\x10 *\xf9\x01\n\x0etask_goal_type\x12\x17\n\x13task_goal_type_none\x10\x00\x12\x18\n\x14task_goal_type_build\x10\x01\x12\x19\n\x15task_goal_type_recipe\x10\x02\x12\x1b\n\x17task_goal_type_haveitem\x10\x03\x12\x1c\n\x18task_goal_type_challenge\x10\x04\x12\x1a\n\x16task_goal_type_relieve\x10\x05\x12 \n\x1ctask_goal_type_finishedother\x10\x06\x12 \n\x1ctask_goal_type_stayovernight\x10\x07*\xa9\x01\n\nrange_type\x12\x13\n\x0frange_type_none\x10\x00\x12\x1b\n\x17range_type_straightline\x10\x01\x12\x15\n\x11range_type_sector\x10\x02\x12\x18\n\x14range_type_roundness\x10\x03\x12\x18\n\x14range_type_rectangle\x10\x04\x12\x1e\n\x1arange_type_multi_direction\x10\x05*\xd2\x13\n\x10item_detail_type\x12\x19\n\x15item_detail_type_none\x10\x00\x12\x1c\n\x17item_detail_type_max_hp\x10\x91N\x12\x1c\n\x17item_detail_type_cur_hp\x10\x92N\x12\x1c\n\x17item_detail_type_attack\x10\x93N\x12\"\n\x1ditem_detail_type_attack_speed\x10\x94N\x12%\n item_detail_type_attack_distance\x10\x95N\x12\"\n\x1ditem_detail_type_attack_range\x10\x96N\x12\"\n\x1ditem_detail_type_attack_angle\x10\x97N\x12\"\n\x1ditem_detail_type_reload_speed\x10\x98N\x12\x1a\n\x15item_detail_type_clip\x10\x99N\x12\x1f\n\x1aitem_detail_type_crit_rate\x10\x9aN\x12 \n\x1bitem_detail_type_crit_damge\x10\x9bN\x12\x1e\n\x19item_detail_type_hit_rate\x10\x9cN\x12\x1c\n\x17item_detail_type_pierce\x10\x9dN\x12\x1c\n\x17item_detail_type_defend\x10\x9eN\x12\x1c\n\x17item_detail_type_wilful\x10\x9fN\x12&\n!item_detail_type_damage_reduction\x10\xa0N\x12\x1a\n\x15item_detail_type_doge\x10\xa1N\x12 \n\x1bitem_detail_type_move_speed\x10\xa2N\x12\x1c\n\x17item_detail_type_strong\x10\xa3N\x12\x1e\n\x19item_detail_type_physique\x10\xa4N\x12\x19\n\x14item_detail_type_agl\x10\xa5N\x12\x19\n\x14item_detail_type_int\x10\xa6N\x12\x1b\n\x16item_detail_type_lucky\x10\xa7N\x12\x1d\n\x18item_detail_type_explode\x10\xa8N\x12\x1b\n\x16item_detail_type_treat\x10\xa9N\x12$\n\x1fitem_detail_type_melee_hit_time\x10\xaaN\x12\x1d\n\x18item_detail_type_grow_hp\x10\xabN\x12!\n\x1citem_detail_type_grow_attack\x10\xacN\x12!\n\x1citem_detail_type_grow_defend\x10\xadN\x12\x1e\n\x19item_detail_type_grow_hit\x10\xaeN\x12\x1f\n\x1aitem_detail_type_grow_doge\x10\xafN\x12!\n\x1citem_detail_type_grow_expode\x10\xb0N\x12 \n\x1bitem_detail_type_grow_treat\x10\xb1N\x12$\n\x1fitem_detail_type_grow_crit_rate\x10\xb2N\x12%\n item_detail_type_grow_crit_damge\x10\xb3N\x12\"\n\x1ditem_detail_type_attack_times\x10\xb4N\x12%\n item_detail_type_attack_interval\x10\xb5N\x12 \n\x1bitem_detail_type_view_range\x10\xb6N\x12\"\n\x1ditem_detail_type_danger_range\x10\xb7N\x12 \n\x1bitem_detail_type_doge_range\x10\xb8N\x12$\n\x1fitem_detail_type_rotation_speed\x10\xb9N\x12(\n#item_detail_type_wrestle_technology\x10\xf9U\x12$\n\x1fitem_detail_type_gun_technology\x10\xfaU\x12(\n#item_detail_type_explode_technology\x10\xfbU\x12&\n!item_detail_type_treat_technology\x10\xfcU\x12%\n item_detail_type_cook_technology\x10\xe1]\x12&\n!item_detail_type_probe_technology\x10\xe2]\x12*\n%item_detail_type_machining_technology\x10\xe3]\x12)\n$item_detail_type_electron_technology\x10\xe4]\x12\'\n\"item_detail_type_medica_technology\x10\xe5]\x12)\n$item_detail_type_chemical_technology\x10\xe6]\x12\'\n\"item_detail_type_sewing_technology\x10\xe7]\x12*\n%item_detail_type_mechanism_technology\x10\xe8]\x12!\n\x1citem_detail_type_fight_level\x10\xe9]\x12\x1d\n\x18item_detail_type_satiety\x10\xc9\x65\x12\x1a\n\x15item_detail_type_cell\x10\xca\x65\x12\x1d\n\x18item_detail_type_diamond\x10\xcb\x65\x12\x1a\n\x15item_detail_type_fuel\x10\xcc\x65\x12(\n#item_detail_type_equipment_capacity\x10\xb1m\x12(\n#item_detail_type_warehouse_capacity\x10\xb2m\x12&\n!item_detail_type_cockpit_capacity\x10\xb3m\x12$\n\x1fitem_detail_type_horsepower_max\x10\xb4m\x12(\n#item_detail_type_fuel_tank_capacity\x10\xb5m\x12\"\n\x1ditem_detail_type_power_supply\x10\xb6m\x12)\n$item_detail_type_warehouse_capacity2\x10\xb7m\x12)\n$item_detail_type_warehouse_capacity3\x10\xb8m\x12)\n$item_detail_type_warehouse_capacity4\x10\xb9m\x12)\n$item_detail_type_warehouse_capacity5\x10\xbam\x12)\n$item_detail_type_warehouse_capacity6\x10\xbbm*\xdc\x02\n\x10item_parent_type\x12 \n\x1citem_parent_type_AutoSetZero\x10\x00\x12\x1e\n\x1aitem_parent_type_warehouse\x10\x01\x12#\n\x1fitem_parent_type_transform_tool\x10\x02\x12\x1e\n\x1aitem_parent_type_hero_attr\x10\x03\x12\x1d\n\x19item_parent_type_hero_bag\x10\x04\x12\x1f\n\x1bitem_parent_type_hero_equip\x10\x05\x12(\n$item_parent_type_battle_fixed_reward\x10\x06\x12-\n)item_parent_type_battle_additional_reward\x10\x07\x12(\n$item_parent_type_next_level_car_unit\x10\x08*\x9a\x01\n\x10target_camp_type\x12\x19\n\x15target_camp_type_none\x10\x00\x12\x17\n\x13target_camp_type_we\x10\x01\x12\x1a\n\x16target_camp_type_enemy\x10\x02\x12\x1c\n\x18target_camp_type_oneself\x10\x03\x12\x18\n\x14target_camp_type_all\x10\x04*\xa8\x42\n\x08item_key\x12\x16\n\x12item_key_item_none\x10\x00\x12\x14\n\x0fitem_key_e10001\x10\x91N\x12\x14\n\x0fitem_key_e10002\x10\x92N\x12\x14\n\x0fitem_key_e10003\x10\x93N\x12\x14\n\x0fitem_key_e10004\x10\x94N\x12\x14\n\x0fitem_key_e10005\x10\x95N\x12\x14\n\x0fitem_key_e10101\x10\xf5N\x12\x14\n\x0fitem_key_e10102\x10\xf6N\x12\x14\n\x0fitem_key_e10103\x10\xf7N\x12\x14\n\x0fitem_key_e10104\x10\xf8N\x12\x14\n\x0fitem_key_e10201\x10\xd9O\x12\x14\n\x0fitem_key_e10202\x10\xdaO\x12\x14\n\x0fitem_key_e10203\x10\xdbO\x12\x14\n\x0fitem_key_e10204\x10\xdcO\x12\x1d\n\x18item_key_StorageBoxSmall\x10\xbdP\x12\x1e\n\x19item_key_StorageBoxMedium\x10\xbeP\x12\x1d\n\x18item_key_StorageBoxLarge\x10\xbfP\x12\x1f\n\x1aitem_key_RefrigeratorSmall\x10\xc9P\x12 \n\x1bitem_key_RefrigeratorMedium\x10\xcaP\x12\x1f\n\x1aitem_key_RefrigeratorLarge\x10\xcbP\x12\x14\n\x0fitem_key_e10401\x10\xa1Q\x12\x14\n\x0fitem_key_e10402\x10\xa2Q\x12\x14\n\x0fitem_key_e10403\x10\xa3Q\x12\x14\n\x0fitem_key_e10501\x10\x85R\x12\x14\n\x0fitem_key_e10502\x10\x86R\x12\x14\n\x0fitem_key_e10503\x10\x87R\x12\x14\n\x0fitem_key_e10504\x10\x88R\x12\x14\n\x0fitem_key_e10505\x10\x89R\x12\x14\n\x0fitem_key_e10506\x10\x8aR\x12\x1d\n\x18item_key_ProcessPlatform\x10\xe9R\x12\x15\n\x10item_key_Smelter\x10\xeaR\x12\x14\n\x0fitem_key_Cutter\x10\xebR\x12\x19\n\x14item_key_MachineTool\x10\xecR\x12\x1d\n\x18item_key_MedicalPlatform\x10\xcdS\x12\x15\n\x10item_key_Grinder\x10\xceS\x12\x1a\n\x15item_key_Fermentation\x10\xcfS\x12\x15\n\x10item_key_Distill\x10\xd0S\x12!\n\x1citem_key_ManufacturePlatform\x10\xb1T\x12\x11\n\x0citem_key_Sew\x10\xb2T\x12\x14\n\x0fitem_key_Solder\x10\xb3T\x12\x12\n\ritem_key_Weld\x10\xb4T\x12\x12\n\ritem_key_Fire\x10\x95U\x12\x16\n\x11item_key_Gridiron\x10\x96U\x12\x11\n\x0citem_key_Pot\x10\x97U\x12\x12\n\ritem_key_Oven\x10\x98U\x12\x14\n\x0fitem_key_e11001\x10\xf9U\x12\x14\n\x0fitem_key_e11002\x10\xfaU\x12\x14\n\x0fitem_key_e11003\x10\xfbU\x12\x14\n\x0fitem_key_e11004\x10\xfcU\x12\x14\n\x0fitem_key_e11005\x10\xfdU\x12\x14\n\x0fitem_key_e11006\x10\xfeU\x12\x14\n\x0fitem_key_e11101\x10\xddV\x12\x14\n\x0fitem_key_e11102\x10\xdeV\x12\x14\n\x0fitem_key_e11103\x10\xdfV\x12\x14\n\x0fitem_key_e11104\x10\xe0V\x12\x14\n\x0fitem_key_e11105\x10\xe1V\x12\x14\n\x0fitem_key_e11106\x10\xe2V\x12\x14\n\x0fitem_key_e11201\x10\xc1W\x12\x14\n\x0fitem_key_e11202\x10\xc2W\x12\x14\n\x0fitem_key_e11203\x10\xc3W\x12\x14\n\x0fitem_key_e11204\x10\xc4W\x12\x14\n\x0fitem_key_e11205\x10\xc5W\x12\x14\n\x0fitem_key_e11206\x10\xc6W\x12\x14\n\x0fitem_key_e11207\x10\xc7W\x12\x13\n\ritem_key_Hero\x10\xa1\x9c\x01\x12\x17\n\x11item_key_Chemical\x10\xa2\x9c\x01\x12\x1e\n\x18item_key_item_name_10202\x10\xa3\x9c\x01\x12\x1a\n\x14item_key_TechWrestle\x10\xb1\xea\x01\x12\x16\n\x10item_key_TechGun\x10\xb2\xea\x01\x12\x1a\n\x14item_key_TechExplode\x10\xb3\xea\x01\x12\x18\n\x12item_key_TechTreat\x10\xb4\xea\x01\x12\x17\n\x11item_key_TechCook\x10\xb5\xea\x01\x12\x18\n\x12item_key_TechProbe\x10\xb6\xea\x01\x12\x1c\n\x16item_key_TechMachining\x10\xb7\xea\x01\x12\x1b\n\x15item_key_TechElectron\x10\xb8\xea\x01\x12\x19\n\x13item_key_TechMedica\x10\xb9\xea\x01\x12\x1b\n\x15item_key_TechChemical\x10\xba\xea\x01\x12\x19\n\x13item_key_TechSewing\x10\xbb\xea\x01\x12\x1c\n\x16item_key_TechMechanism\x10\xbc\xea\x01\x12\x16\n\x10item_key_Satiety\x10\xd1\x86\x03\x12\x16\n\x10item_key_Battery\x10\xd2\x86\x03\x12\x16\n\x10item_key_Diamond\x10\xd3\x86\x03\x12\x13\n\ritem_key_Fuel\x10\xd4\x86\x03\x12\x15\n\x0fitem_key_e60001\x10\xe1\xd4\x03\x12\x15\n\x0fitem_key_e60002\x10\xe2\xd4\x03\x12\x15\n\x0fitem_key_e60003\x10\xe3\xd4\x03\x12\x15\n\x0fitem_key_e60004\x10\xe4\xd4\x03\x12\x15\n\x0fitem_key_e60005\x10\xe5\xd4\x03\x12\x15\n\x0fitem_key_e60006\x10\xe6\xd4\x03\x12\x15\n\x0fitem_key_e60007\x10\xe7\xd4\x03\x12\x15\n\x0fitem_key_e60008\x10\xe8\xd4\x03\x12\x15\n\x0fitem_key_e60009\x10\xe9\xd4\x03\x12\x15\n\x0fitem_key_e60010\x10\xea\xd4\x03\x12\x15\n\x0fitem_key_e60011\x10\xeb\xd4\x03\x12\x15\n\x0fitem_key_e60012\x10\xec\xd4\x03\x12\x15\n\x0fitem_key_e60013\x10\xed\xd4\x03\x12\x15\n\x0fitem_key_e60014\x10\xee\xd4\x03\x12\x15\n\x0fitem_key_e60015\x10\xef\xd4\x03\x12\x15\n\x0fitem_key_e60016\x10\xf0\xd4\x03\x12\x15\n\x0fitem_key_e60017\x10\xf1\xd4\x03\x12\x15\n\x0fitem_key_e60018\x10\xf2\xd4\x03\x12\x15\n\x0fitem_key_e60019\x10\xf3\xd4\x03\x12\x15\n\x0fitem_key_e60020\x10\xf4\xd4\x03\x12\x15\n\x0fitem_key_e60021\x10\xf5\xd4\x03\x12\x15\n\x0fitem_key_e60022\x10\xf6\xd4\x03\x12\x15\n\x0fitem_key_e60023\x10\xf7\xd4\x03\x12\x16\n\x10item_key_e100010\x10\xaa\x8d\x06\x12\x16\n\x10item_key_e100020\x10\xb4\x8d\x06\x12\x16\n\x10item_key_e100030\x10\xbe\x8d\x06\x12\x16\n\x10item_key_e100040\x10\xc8\x8d\x06\x12\x16\n\x10item_key_e100050\x10\xd2\x8d\x06\x12\x16\n\x10item_key_e100060\x10\xdc\x8d\x06\x12\x16\n\x10item_key_e100070\x10\xe6\x8d\x06\x12\x16\n\x10item_key_e100080\x10\xf0\x8d\x06\x12\x16\n\x10item_key_e100090\x10\xfa\x8d\x06\x12\x16\n\x10item_key_e100100\x10\x84\x8e\x06\x12\x16\n\x10item_key_e100110\x10\x8e\x8e\x06\x12\x16\n\x10item_key_e100120\x10\x98\x8e\x06\x12\x16\n\x10item_key_e100130\x10\xa2\x8e\x06\x12\x16\n\x10item_key_e100140\x10\xac\x8e\x06\x12\x16\n\x10item_key_e100150\x10\xb6\x8e\x06\x12\x16\n\x10item_key_e100160\x10\xc0\x8e\x06\x12\x16\n\x10item_key_e100170\x10\xca\x8e\x06\x12\x16\n\x10item_key_e100180\x10\xd4\x8e\x06\x12\x16\n\x10item_key_e100190\x10\xde\x8e\x06\x12\x16\n\x10item_key_e100200\x10\xe8\x8e\x06\x12\x16\n\x10item_key_e100210\x10\xf2\x8e\x06\x12\x16\n\x10item_key_e100220\x10\xfc\x8e\x06\x12\x16\n\x10item_key_e100230\x10\x86\x8f\x06\x12\x16\n\x10item_key_e100240\x10\x90\x8f\x06\x12\x16\n\x10item_key_e101010\x10\x92\x95\x06\x12\x16\n\x10item_key_e101020\x10\x9c\x95\x06\x12\x16\n\x10item_key_e101030\x10\xa6\x95\x06\x12\x16\n\x10item_key_e101040\x10\xb0\x95\x06\x12\x16\n\x10item_key_e101050\x10\xba\x95\x06\x12\x16\n\x10item_key_e101060\x10\xc4\x95\x06\x12\x16\n\x10item_key_e101070\x10\xce\x95\x06\x12\x16\n\x10item_key_e101080\x10\xd8\x95\x06\x12\x16\n\x10item_key_e101090\x10\xe2\x95\x06\x12\x16\n\x10item_key_e101100\x10\xec\x95\x06\x12\x16\n\x10item_key_e101110\x10\xf6\x95\x06\x12\x16\n\x10item_key_e101120\x10\x80\x96\x06\x12\x16\n\x10item_key_e101130\x10\x8a\x96\x06\x12\x16\n\x10item_key_e101140\x10\x94\x96\x06\x12\x16\n\x10item_key_e101150\x10\x9e\x96\x06\x12\x16\n\x10item_key_e101160\x10\xa8\x96\x06\x12\x16\n\x10item_key_e200000\x10\xc0\x9a\x0c\x12\x16\n\x10item_key_e200010\x10\xca\x9a\x0c\x12\x16\n\x10item_key_e200020\x10\xd4\x9a\x0c\x12\x16\n\x10item_key_e200030\x10\xde\x9a\x0c\x12\x16\n\x10item_key_e200040\x10\xe8\x9a\x0c\x12\x16\n\x10item_key_e200050\x10\xf2\x9a\x0c\x12\x16\n\x10item_key_e200060\x10\xfc\x9a\x0c\x12\x16\n\x10item_key_e200070\x10\x86\x9b\x0c\x12\x16\n\x10item_key_e200080\x10\x90\x9b\x0c\x12\x16\n\x10item_key_e200090\x10\x9a\x9b\x0c\x12\x16\n\x10item_key_e200100\x10\xa4\x9b\x0c\x12\x16\n\x10item_key_e200110\x10\xae\x9b\x0c\x12\x16\n\x10item_key_e200120\x10\xb8\x9b\x0c\x12\x16\n\x10item_key_e200130\x10\xc2\x9b\x0c\x12\x16\n\x10item_key_e200140\x10\xcc\x9b\x0c\x12\x16\n\x10item_key_e200150\x10\xd6\x9b\x0c\x12\x16\n\x10item_key_e200160\x10\xe0\x9b\x0c\x12\x16\n\x10item_key_e200170\x10\xea\x9b\x0c\x12\x16\n\x10item_key_e200180\x10\xf4\x9b\x0c\x12\x16\n\x10item_key_e200190\x10\xfe\x9b\x0c\x12\x16\n\x10item_key_e200200\x10\x88\x9c\x0c\x12\x16\n\x10item_key_e200210\x10\x92\x9c\x0c\x12\x16\n\x10item_key_e200220\x10\x9c\x9c\x0c\x12\x16\n\x10item_key_e200230\x10\xa6\x9c\x0c\x12\x16\n\x10item_key_e200240\x10\xb0\x9c\x0c\x12\x16\n\x10item_key_e200250\x10\xba\x9c\x0c\x12\x16\n\x10item_key_e200260\x10\xc4\x9c\x0c\x12\x16\n\x10item_key_e200270\x10\xce\x9c\x0c\x12\x16\n\x10item_key_e200280\x10\xd8\x9c\x0c\x12\x16\n\x10item_key_e200290\x10\xe2\x9c\x0c\x12\x16\n\x10item_key_e200300\x10\xec\x9c\x0c\x12\x16\n\x10item_key_e200310\x10\xf6\x9c\x0c\x12\x16\n\x10item_key_e200320\x10\x80\x9d\x0c\x12\x16\n\x10item_key_e200330\x10\x8a\x9d\x0c\x12\x16\n\x10item_key_e200340\x10\x94\x9d\x0c\x12\x16\n\x10item_key_e200350\x10\x9e\x9d\x0c\x12\x16\n\x10item_key_e200360\x10\xa8\x9d\x0c\x12\x16\n\x10item_key_e200370\x10\xb2\x9d\x0c\x12\x16\n\x10item_key_e200380\x10\xbc\x9d\x0c\x12\x16\n\x10item_key_e200390\x10\xc6\x9d\x0c\x12\x16\n\x10item_key_e200400\x10\xd0\x9d\x0c\x12\x16\n\x10item_key_e200410\x10\xda\x9d\x0c\x12\x16\n\x10item_key_e200420\x10\xe4\x9d\x0c\x12\x16\n\x10item_key_e200430\x10\xee\x9d\x0c\x12\x16\n\x10item_key_e200440\x10\xf8\x9d\x0c\x12\x16\n\x10item_key_e200450\x10\x82\x9e\x0c\x12\x16\n\x10item_key_e200460\x10\x8c\x9e\x0c\x12\x16\n\x10item_key_e200470\x10\x96\x9e\x0c\x12\x16\n\x10item_key_e200480\x10\xa0\x9e\x0c\x12\x16\n\x10item_key_e200490\x10\xaa\x9e\x0c\x12\x16\n\x10item_key_e200500\x10\xb4\x9e\x0c\x12\x16\n\x10item_key_e200510\x10\xbe\x9e\x0c\x12\x16\n\x10item_key_e200520\x10\xc8\x9e\x0c\x12\x16\n\x10item_key_e200530\x10\xd2\x9e\x0c\x12\x16\n\x10item_key_e200540\x10\xdc\x9e\x0c\x12\x16\n\x10item_key_e200550\x10\xe6\x9e\x0c\x12\x16\n\x10item_key_e200560\x10\xf0\x9e\x0c\x12\x16\n\x10item_key_e200570\x10\xfa\x9e\x0c\x12\x16\n\x10item_key_e200580\x10\x84\x9f\x0c\x12\x16\n\x10item_key_e200590\x10\x8e\x9f\x0c\x12\x16\n\x10item_key_e200600\x10\x98\x9f\x0c\x12\x16\n\x10item_key_e200610\x10\xa2\x9f\x0c\x12\x16\n\x10item_key_e200620\x10\xac\x9f\x0c\x12\x16\n\x10item_key_e200630\x10\xb6\x9f\x0c\x12\x16\n\x10item_key_e200640\x10\xc0\x9f\x0c\x12\x16\n\x10item_key_e200650\x10\xca\x9f\x0c\x12\x16\n\x10item_key_e200660\x10\xd4\x9f\x0c\x12\x16\n\x10item_key_e200670\x10\xde\x9f\x0c\x12\x16\n\x10item_key_e200680\x10\xe8\x9f\x0c\x12\x16\n\x10item_key_e200690\x10\xf2\x9f\x0c\x12\x16\n\x10item_key_e200700\x10\xfc\x9f\x0c\x12\x16\n\x10item_key_e200710\x10\x86\xa0\x0c\x12\x16\n\x10item_key_e200720\x10\x90\xa0\x0c\x12\x16\n\x10item_key_e200730\x10\x9a\xa0\x0c\x12\x16\n\x10item_key_e200740\x10\xa4\xa0\x0c\x12\x16\n\x10item_key_e200750\x10\xae\xa0\x0c\x12\x16\n\x10item_key_e200760\x10\xb8\xa0\x0c\x12\x16\n\x10item_key_e200770\x10\xc2\xa0\x0c\x12\x16\n\x10item_key_e200780\x10\xcc\xa0\x0c\x12\x16\n\x10item_key_e200790\x10\xd6\xa0\x0c\x12\x16\n\x10item_key_e200800\x10\xe0\xa0\x0c\x12\x16\n\x10item_key_e200810\x10\xea\xa0\x0c\x12\x19\n\x13item_key_Repertory1\x10\x9b\xaa\x0c\x12\x19\n\x13item_key_Repertory2\x10\x9c\xaa\x0c\x12\x19\n\x13item_key_Repertory3\x10\x9d\xaa\x0c\x12\x19\n\x13item_key_Repertory4\x10\x9e\xaa\x0c\x12\x19\n\x13item_key_Repertory5\x10\x9f\xaa\x0c\x12\x19\n\x13item_key_Repertory6\x10\xa0\xaa\x0c\x12\x12\n\x0citem_key_Bag\x10\xa1\xaa\x0c\x12\x16\n\x10item_key_e300010\x10\xea\xa7\x12\x12\x16\n\x10item_key_e300020\x10\xf4\xa7\x12\x12\x16\n\x10item_key_e300030\x10\xfe\xa7\x12\x12\x16\n\x10item_key_e300040\x10\x88\xa8\x12\x12\x16\n\x10item_key_e300050\x10\x92\xa8\x12\x12\x16\n\x10item_key_e300060\x10\x9c\xa8\x12\x12\x16\n\x10item_key_e300070\x10\xa6\xa8\x12\x12\x16\n\x10item_key_e300080\x10\xb0\xa8\x12\x12\x16\n\x10item_key_e300090\x10\xba\xa8\x12\x12\x16\n\x10item_key_e300100\x10\xc4\xa8\x12\x12\x16\n\x10item_key_e300110\x10\xce\xa8\x12\x12\x16\n\x10item_key_e300120\x10\xd8\xa8\x12\x12\x16\n\x10item_key_e301110\x10\xb6\xb0\x12\x12\x16\n\x10item_key_e301120\x10\xc0\xb0\x12\x12\x16\n\x10item_key_e301130\x10\xca\xb0\x12\x12\x16\n\x10item_key_e301140\x10\xd4\xb0\x12\x12\x16\n\x10item_key_e301150\x10\xde\xb0\x12\x12\x16\n\x10item_key_e301210\x10\x9a\xb1\x12\x12\x16\n\x10item_key_e301220\x10\xa4\xb1\x12\x12\x16\n\x10item_key_e301230\x10\xae\xb1\x12\x12\x16\n\x10item_key_e301310\x10\xfe\xb1\x12\x12\x16\n\x10item_key_e301320\x10\x88\xb2\x12\x12\x16\n\x10item_key_e301330\x10\x92\xb2\x12\x12\x16\n\x10item_key_e301410\x10\xe2\xb2\x12\x12\x16\n\x10item_key_e301420\x10\xec\xb2\x12\x12\x16\n\x10item_key_e301430\x10\xf6\xb2\x12\x12\x16\n\x10item_key_e301440\x10\x80\xb3\x12\x12\x16\n\x10item_key_e302010\x10\xba\xb7\x12\x12\x16\n\x10item_key_e302020\x10\xc4\xb7\x12\x12\x16\n\x10item_key_e302030\x10\xce\xb7\x12\x12\x16\n\x10item_key_e302040\x10\xd8\xb7\x12\x12\x16\n\x10item_key_e302050\x10\xe2\xb7\x12\x12\x16\n\x10item_key_e302060\x10\xec\xb7\x12\x12\x16\n\x10item_key_e302070\x10\xf6\xb7\x12\x12\x16\n\x10item_key_e302080\x10\x80\xb8\x12\x12\x16\n\x10item_key_e302090\x10\x8a\xb8\x12\x12\x16\n\x10item_key_e303010\x10\xa2\xbf\x12\x12\x16\n\x10item_key_e303020\x10\xac\xbf\x12\x12\x16\n\x10item_key_e303030\x10\xb6\xbf\x12\x12\x16\n\x10item_key_e303040\x10\xc0\xbf\x12\x12\x16\n\x10item_key_e303050\x10\xca\xbf\x12\x12\x16\n\x10item_key_e303060\x10\xd4\xbf\x12\x12\x16\n\x10item_key_e303070\x10\xde\xbf\x12\x12\x16\n\x10item_key_e304010\x10\x8a\xc7\x12\x12\x16\n\x10item_key_e304020\x10\x94\xc7\x12\x12\x16\n\x10item_key_e304030\x10\x9e\xc7\x12\x12\x16\n\x10item_key_e304040\x10\xa8\xc7\x12\x12\x16\n\x10item_key_e304050\x10\xb2\xc7\x12\x12\x16\n\x10item_key_e304060\x10\xbc\xc7\x12\x12\x16\n\x10item_key_e304070\x10\xc6\xc7\x12\x12\x16\n\x10item_key_e305010\x10\xf2\xce\x12\x12\x16\n\x10item_key_e305020\x10\xfc\xce\x12\x12\x16\n\x10item_key_e305030\x10\x86\xcf\x12\x12\x16\n\x10item_key_e305040\x10\x90\xcf\x12\x12\x16\n\x10item_key_e305050\x10\x9a\xcf\x12\x12\x16\n\x10item_key_e305060\x10\xa4\xcf\x12\x12\x16\n\x10item_key_e305070\x10\xae\xcf\x12\x12\x16\n\x10item_key_e306010\x10\xda\xd6\x12\x12\x16\n\x10item_key_e306020\x10\xe4\xd6\x12\x12\x16\n\x10item_key_e306030\x10\xee\xd6\x12\x12\x16\n\x10item_key_e306040\x10\xf8\xd6\x12\x12\x16\n\x10item_key_e308010\x10\xaa\xe6\x12\x12\x16\n\x10item_key_e308020\x10\xb4\xe6\x12\x12\x16\n\x10item_key_e308030\x10\xbe\xe6\x12\x12\x16\n\x10item_key_e308040\x10\xc8\xe6\x12\x12\x16\n\x10item_key_e308050\x10\xd2\xe6\x12\x12\x16\n\x10item_key_e308060\x10\xdc\xe6\x12\x12\x16\n\x10item_key_e308070\x10\xe6\xe6\x12\x12\x16\n\x10item_key_e309010\x10\x92\xee\x12\x12\x16\n\x10item_key_e309020\x10\x9c\xee\x12\x12\x16\n\x10item_key_e309030\x10\xa6\xee\x12\x12\x16\n\x10item_key_e309040\x10\xb0\xee\x12\x12\x16\n\x10item_key_e309050\x10\xba\xee\x12\x12\x16\n\x10item_key_e309060\x10\xc4\xee\x12\x12\x16\n\x10item_key_e310010\x10\xfa\xf5\x12\x12\x16\n\x10item_key_e310020\x10\x84\xf6\x12\x12\x16\n\x10item_key_e310030\x10\x8e\xf6\x12\x12\x16\n\x10item_key_e310040\x10\x98\xf6\x12\x12\x16\n\x10item_key_e310050\x10\xa2\xf6\x12\x12\x16\n\x10item_key_e311010\x10\xe2\xfd\x12\x12\x16\n\x10item_key_e311020\x10\xec\xfd\x12\x12\x16\n\x10item_key_e311030\x10\xf6\xfd\x12\x12\x16\n\x10item_key_e311040\x10\x80\xfe\x12\x12\x16\n\x10item_key_e311050\x10\x8a\xfe\x12\x12\x16\n\x10item_key_e400010\x10\x8a\xb5\x18\x12\x16\n\x10item_key_e400020\x10\x94\xb5\x18\x12\x16\n\x10item_key_e400030\x10\x9e\xb5\x18\x12\x16\n\x10item_key_e400040\x10\xa8\xb5\x18\x12\x16\n\x10item_key_e401010\x10\xf2\xbc\x18\x12\x16\n\x10item_key_e401020\x10\xfc\xbc\x18\x12\x16\n\x10item_key_e401030\x10\x86\xbd\x18\x12\x16\n\x10item_key_e401040\x10\x90\xbd\x18\x12\x16\n\x10item_key_e401050\x10\x9a\xbd\x18\x12\x16\n\x10item_key_e401060\x10\xa4\xbd\x18\x12\x16\n\x10item_key_e401070\x10\xae\xbd\x18\x12\x16\n\x10item_key_e401080\x10\xb8\xbd\x18\x12\x16\n\x10item_key_e401090\x10\xc2\xbd\x18\x12\x16\n\x10item_key_e401100\x10\xcc\xbd\x18\x12\x16\n\x10item_key_e401110\x10\xd6\xbd\x18\x12\x16\n\x10item_key_e401120\x10\xe0\xbd\x18\x12\x16\n\x10item_key_e401130\x10\xea\xbd\x18\x12\x16\n\x10item_key_e401140\x10\xf4\xbd\x18\x12\x16\n\x10item_key_e401150\x10\xfe\xbd\x18\x12\x16\n\x10item_key_e401160\x10\x88\xbe\x18\x12\x16\n\x10item_key_e402010\x10\xda\xc4\x18\x12\x16\n\x10item_key_e402020\x10\xe4\xc4\x18\x12\x16\n\x10item_key_e402030\x10\xee\xc4\x18\x12\x16\n\x10item_key_e402040\x10\xf8\xc4\x18\x12\x16\n\x10item_key_e402050\x10\x82\xc5\x18\x12\x16\n\x10item_key_e402060\x10\x8c\xc5\x18\x12\x16\n\x10item_key_e402070\x10\x96\xc5\x18\x12\x16\n\x10item_key_e402080\x10\xa0\xc5\x18\x12\x16\n\x10item_key_e402090\x10\xaa\xc5\x18\x12\x16\n\x10item_key_e402100\x10\xb4\xc5\x18\x12\x16\n\x10item_key_e403010\x10\xc2\xcc\x18\x12\x16\n\x10item_key_e403020\x10\xcc\xcc\x18\x12\x16\n\x10item_key_e403030\x10\xd6\xcc\x18\x12\x16\n\x10item_key_e403040\x10\xe0\xcc\x18*r\n\rbox_drop_type\x12\x18\n\x14\x62ox_drop_type_ignore\x10\x00\x12\x18\n\x14\x62ox_drop_type_always\x10\x01\x12\x16\n\x12\x62ox_drop_type_each\x10\x02\x12\x15\n\x11\x62ox_drop_type_one\x10\x03*\x80\x01\n\x07\x63\x61mp_id\x12\x10\n\x0c\x63\x61mp_id_none\x10\x00\x12\x13\n\x0f\x63\x61mp_id_citizen\x10\x01\x12\x13\n\x0f\x63\x61mp_id_academy\x10\x02\x12\x10\n\x0c\x63\x61mp_id_kirk\x10\x03\x12\x10\n\x0c\x63\x61mp_id_frat\x10\x04\x12\x15\n\x11\x63\x61mp_id_bloodrose\x10\x05*l\n\trace_type\x12\x12\n\x0erace_type_none\x10\x00\x12\x18\n\x14race_type_yellowrace\x10\x01\x12\x17\n\x13race_type_caucasian\x10\x02\x12\x18\n\x14race_type_melanoderm\x10\x03*\xf0\x02\n\x04hook\x12\x0e\n\nhook_world\x10\x00\x12\x12\n\x0ehook_upperbody\x10\x01\x12\r\n\thook_hips\x10\x02\x12\x12\n\x0ehook_righthand\x10\x03\x12\x11\n\rhook_lefthand\x10\x04\x12\x12\n\x0ehook_rightfoot\x10\x05\x12\x11\n\rhook_leftfoot\x10\x06\x12\x15\n\x11hook_rightclavice\x10\x07\x12\x14\n\x10hook_leftclavice\x10\x08\x12\x14\n\x10hook_rightcrotch\x10\t\x12\x13\n\x0fhook_leftcrotch\x10\n\x12\x0e\n\nhook_chest\x10\x0b\x12\r\n\thook_head\x10\x0c\x12\x0f\n\x0bhook_bottom\x10\r\x12\x0f\n\x0bhook_weapon\x10\x13\x12\x0f\n\x0bhook_muzzle\x10\x14\x12\x0f\n\x0bhook_barrel\x10\x15\x12\r\n\thook_butt\x10\x16\x12\x0e\n\nhook_scope\x10\x17\x12\r\n\thook_clip\x10\x18*\x80\x02\n\x12target_select_type\x12\x1b\n\x17target_select_type_none\x10\x00\x12\x1e\n\x1atarget_select_type_nearest\x10\x01\x12\x1f\n\x1btarget_select_type_farthest\x10\x02\x12\x1f\n\x1btarget_select_type_hp_least\x10\x03\x12!\n\x1dtarget_select_type_hp_maximum\x10\x04\x12)\n%target_select_type_battle_ability_max\x10\x05\x12\x1d\n\x19target_select_type_random\x10\x06*\xec\x02\n\x0fprojectile_type\x12\x18\n\x14projectile_type_null\x10\x00\x12!\n\x1dprojectile_type_action_pistol\x10\x01\x12\"\n\x1eprojectile_type_action_carbine\x10\x02\x12\"\n\x1eprojectile_type_action_shotgun\x10\x03\x12$\n projectile_type_action_snipergun\x10\x04\x12!\n\x1dprojectile_type_action_gatlin\x10\x05\x12!\n\x1dprojectile_type_action_rocket\x10\x06\x12\"\n\x1eprojectile_type_action_grenade\x10\x07\x12\x1f\n\x1bprojectile_type_action_line\x10\x08\x12#\n\x1fprojectile_type_action_parabola\x10\t*\xeb\x01\n\x08wear_pos\x12\x11\n\rwear_pos_none\x10\x00\x12\x13\n\x0fwear_pos_weapon\x10\x01\x12\x15\n\x11wear_pos_ornament\x10\x02\x12\x14\n\x10wear_pos_clothes\x10\x03\x12\x12\n\x0ewear_pos_pants\x10\x04\x12\x11\n\rwear_pos_shoe\x10\x05\x12\x12\n\x0ewear_pos_plate\x10\x06\x12\x15\n\x11wear_pos_legguard\x10\x07\x12\x13\n\x0fwear_pos_barcer\x10\x08\x12\x11\n\rwear_pos_head\x10\t\x12\x10\n\x0cwear_pos_bag\x10\n*\xd7\x01\n\x12\x63hapter_difficulty\x12\x1b\n\x17\x63hapter_difficulty_none\x10\x00\x12#\n\x1f\x63hapter_difficulty_recreational\x10\x01\x12\x1e\n\x1a\x63hapter_difficulty_general\x10\x02\x12 \n\x1c\x63hapter_difficulty_nightmare\x10\x03\x12\x1b\n\x17\x63hapter_difficulty_hell\x10\x04\x12 \n\x1c\x63hapter_difficulty_purgatory\x10\x05*;\n\x06gender\x12\x0f\n\x0bgender_none\x10\x00\x12\x0e\n\ngender_man\x10\x01\x12\x10\n\x0cgender_woman\x10\x02*`\n\x0cspeedup_type\x12\x1c\n\x18speedup_type_AutoSetZero\x10\x00\x12\x18\n\x14speedup_type_Battery\x10\x01\x12\x18\n\x14speedup_type_Diamond\x10\x02*R\n\tcast_type\x12\x12\n\x0e\x63\x61st_type_none\x10\x00\x12\x18\n\x14\x63\x61st_type_initiative\x10\x01\x12\x17\n\x13\x63\x61st_type_passivity\x10\x02*g\n\x0bweapon_type\x12\x1b\n\x17weapon_type_weapon_none\x10\x00\x12\x1c\n\x18weapon_type_weapon_melee\x10\x01\x12\x1d\n\x19weapon_type_weapon_remote\x10\x02*6\n\x04race\x12\r\n\trace_none\x10\x00\x12\x0e\n\nrace_human\x10\x01\x12\x0f\n\x0brace_zombie\x10\x02*\x96\x01\n\x0bhero_status\x12\x14\n\x10hero_status_idle\x10\x00\x12\x14\n\x10hero_status_hurt\x10\x01\x12\x13\n\x0fhero_status_sad\x10\x02\x12\x17\n\x13hero_status_working\x10\x03\x12\x13\n\x0fhero_status_out\x10\x04\x12\x18\n\x13hero_status_pending\x10\x91N*\xf8\x05\n\x11sub_building_enum\x12\x1a\n\x16sub_building_enum_none\x10\x00\x12\x19\n\x15sub_building_enum_car\x10\x01\x12\x1d\n\x19sub_building_enum_storage\x10\x02\x12\x1d\n\x19sub_building_enum_cockpit\x10\x03\x12\x1c\n\x18sub_building_enum_dynamo\x10\x04\x12\x1c\n\x18sub_building_enum_engine\x10\x05\x12\x1d\n\x19sub_building_enum_oiltank\x10\x06\x12$\n sub_building_enum_machineproduct\x10\x07\x12\x1d\n\x19sub_building_enum_smelter\x10\x08\x12\x1f\n\x1bsub_building_enum_cutterbar\x10\t\x12\x1d\n\x19sub_building_enum_machine\x10\n\x12!\n\x1dsub_building_enum_makeproduct\x10\x0b\x12\x1c\n\x18sub_building_enum_sewing\x10\x0c\x12+\n\'sub_building_enum_electricSolderingIron\x10\r\x12\x1d\n\x19sub_building_enum_welding\x10\x0e\x12$\n sub_building_enum_medicalproduct\x10\x0f\x12\x1f\n\x1bsub_building_enum_burnisher\x10\x10\x12\x1f\n\x1bsub_building_enum_fermentor\x10\x11\x12\x1f\n\x1bsub_building_enum_distiller\x10\x12\x12!\n\x1dsub_building_enum_fireproduct\x10\x13\x12\x1e\n\x1asub_building_enum_gridiron\x10\x14\x12\x19\n\x15sub_building_enum_wok\x10\x15\x12\x1a\n\x16sub_building_enum_oven\x10\x16*\x94\x01\n\x0ehero_name_type\x12\x1e\n\x1ahero_name_type_random_name\x10\x00\x12 \n\x1chero_name_type_random_name_m\x10\x01\x12 \n\x1chero_name_type_random_name_f\x10\x02\x12\x1e\n\x1ahero_name_type_assign_name\x10\x03\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
+)
+
+_ITEM_TYPE = _descriptor.EnumDescriptor(
+  name='item_type',
+  full_name='item_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='item_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_weapon', index=1, number=100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_armor', index=2, number=200,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_consumables', index=3, number=300,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_bag', index=4, number=400,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_building', index=5, number=600,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_warehouse', index=6, number=601,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_refrigerator', index=7, number=602,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_campcar', index=8, number=610,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_hero', index=9, number=700,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_job', index=10, number=800,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_attribute', index=11, number=801,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_battle_tech', index=12, number=900,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_live_tech', index=13, number=901,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_live_condition', index=14, number=902,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_type_building_attribute', index=15, number=903,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=16203,
+  serialized_end=16617,
+)
+_sym_db.RegisterEnumDescriptor(_ITEM_TYPE)
+
+item_type = enum_type_wrapper.EnumTypeWrapper(_ITEM_TYPE)
+_JOB_TYPE = _descriptor.EnumDescriptor(
+  name='job_type',
+  full_name='job_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='job_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='job_type_strength', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='job_type_constitution', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='job_type_agility', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='job_type_intelligence', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='job_type_skill', index=5, number=5,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=16620,
+  serialized_end=16768,
+)
+_sym_db.RegisterEnumDescriptor(_JOB_TYPE)
+
+job_type = enum_type_wrapper.EnumTypeWrapper(_JOB_TYPE)
+_BUFF_TYPE = _descriptor.EnumDescriptor(
+  name='buff_type',
+  full_name='buff_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='buff_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='buff_type_gain', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='buff_type_debuff', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=16770,
+  serialized_end=16843,
+)
+_sym_db.RegisterEnumDescriptor(_BUFF_TYPE)
+
+buff_type = enum_type_wrapper.EnumTypeWrapper(_BUFF_TYPE)
+_BOX_ITEM_TYPE = _descriptor.EnumDescriptor(
+  name='box_item_type',
+  full_name='box_item_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='box_item_type_item', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='box_item_type_box', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='box_item_type_hero', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=16845,
+  serialized_end=16931,
+)
+_sym_db.RegisterEnumDescriptor(_BOX_ITEM_TYPE)
+
+box_item_type = enum_type_wrapper.EnumTypeWrapper(_BOX_ITEM_TYPE)
+_HERO_BATTLE_STATUS_TYPE = _descriptor.EnumDescriptor(
+  name='hero_battle_status_type',
+  full_name='hero_battle_status_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='hero_battle_status_type_AutoSetZero', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_battle_status_type_set_on_battle_failure', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_battle_status_type_set_by_rate_periodically', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=16934,
+  serialized_end=17105,
+)
+_sym_db.RegisterEnumDescriptor(_HERO_BATTLE_STATUS_TYPE)
+
+hero_battle_status_type = enum_type_wrapper.EnumTypeWrapper(_HERO_BATTLE_STATUS_TYPE)
+_EFFECT_TYPE = _descriptor.EnumDescriptor(
+  name='effect_type',
+  full_name='effect_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='effect_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='effect_type_general_harm', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='effect_type_harm', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='effect_type_effect', index=3, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=17107,
+  serialized_end=17218,
+)
+_sym_db.RegisterEnumDescriptor(_EFFECT_TYPE)
+
+effect_type = enum_type_wrapper.EnumTypeWrapper(_EFFECT_TYPE)
+_ARMOR_TYPE = _descriptor.EnumDescriptor(
+  name='armor_type',
+  full_name='armor_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_clothes', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_pants', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_shoe', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_plate', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_legguard', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_barcer', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_hat', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_ornament_cure', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_ornament_boom', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_ornament_other', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='armor_type_bag', index=11, number=11,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=17221,
+  serialized_end=17522,
+)
+_sym_db.RegisterEnumDescriptor(_ARMOR_TYPE)
+
+armor_type = enum_type_wrapper.EnumTypeWrapper(_ARMOR_TYPE)
+_HERO_QUALITY = _descriptor.EnumDescriptor(
+  name='hero_quality',
+  full_name='hero_quality',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality1', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality2', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality3', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality4', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality5', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality6', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_quality_quality7', index=7, number=7,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=17525,
+  serialized_end=17751,
+)
+_sym_db.RegisterEnumDescriptor(_HERO_QUALITY)
+
+hero_quality = enum_type_wrapper.EnumTypeWrapper(_HERO_QUALITY)
+_STATUS_TYPE = _descriptor.EnumDescriptor(
+  name='status_type',
+  full_name='status_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='status_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_bleed', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_firing', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_entangle', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_immobilize', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_stun', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_silence', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_sleep', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_fear', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_poisoning', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_invincible', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_lower_def', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_lower_accuracy', index=12, number=12,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_continue_regain', index=13, number=13,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_enhance_def', index=14, number=14,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='status_type_enhance_atk', index=15, number=15,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=17754,
+  serialized_end=18187,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_TYPE)
+
+status_type = enum_type_wrapper.EnumTypeWrapper(_STATUS_TYPE)
+_BODY_TYPE = _descriptor.EnumDescriptor(
+  name='body_type',
+  full_name='body_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='body_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='body_type_general', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='body_type_fat', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=18189,
+  serialized_end=18262,
+)
+_sym_db.RegisterEnumDescriptor(_BODY_TYPE)
+
+body_type = enum_type_wrapper.EnumTypeWrapper(_BODY_TYPE)
+_WEAPON_SUB_TYPE = _descriptor.EnumDescriptor(
+  name='weapon_sub_type',
+  full_name='weapon_sub_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_null', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_melee_blunt', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_melee_edge', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_melee_heavy', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_pistol', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_carbine', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_shotgun', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_snipergun', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_heavy', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_treat', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_blast', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_gatlin', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_sub_type_remote_rocket', index=12, number=12,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=18265,
+  serialized_end=18723,
+)
+_sym_db.RegisterEnumDescriptor(_WEAPON_SUB_TYPE)
+
+weapon_sub_type = enum_type_wrapper.EnumTypeWrapper(_WEAPON_SUB_TYPE)
+_WEAPON_EFFECT_ACTION = _descriptor.EnumDescriptor(
+  name='weapon_effect_action',
+  full_name='weapon_effect_action',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_null', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_single', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_both', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_pistol', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_carbine', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_shotgun', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_snipergun', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_gatlin', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_rocket', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_claw', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_effect_action_action_saw', index=10, number=10,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=18726,
+  serialized_end=19177,
+)
+_sym_db.RegisterEnumDescriptor(_WEAPON_EFFECT_ACTION)
+
+weapon_effect_action = enum_type_wrapper.EnumTypeWrapper(_WEAPON_EFFECT_ACTION)
+_STAGE_TYPE = _descriptor.EnumDescriptor(
+  name='stage_type',
+  full_name='stage_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='stage_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='stage_type_challenge', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='stage_type_onhook', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=19179,
+  serialized_end=19261,
+)
+_sym_db.RegisterEnumDescriptor(_STAGE_TYPE)
+
+stage_type = enum_type_wrapper.EnumTypeWrapper(_STAGE_TYPE)
+_HERO_STATUS_ENUM = _descriptor.EnumDescriptor(
+  name='hero_status_enum',
+  full_name='hero_status_enum',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_None', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_HeavyHurt', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_BoneBreak', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_BadMood', index=3, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_Hungry', index=4, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_Poison', index=5, number=16,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_enum_Sick', index=6, number=32,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=19264,
+  serialized_end=19488,
+)
+_sym_db.RegisterEnumDescriptor(_HERO_STATUS_ENUM)
+
+hero_status_enum = enum_type_wrapper.EnumTypeWrapper(_HERO_STATUS_ENUM)
+_TASK_GOAL_TYPE = _descriptor.EnumDescriptor(
+  name='task_goal_type',
+  full_name='task_goal_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_build', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_recipe', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_haveitem', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_challenge', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_relieve', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_finishedother', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='task_goal_type_stayovernight', index=7, number=7,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=19491,
+  serialized_end=19740,
+)
+_sym_db.RegisterEnumDescriptor(_TASK_GOAL_TYPE)
+
+task_goal_type = enum_type_wrapper.EnumTypeWrapper(_TASK_GOAL_TYPE)
+_RANGE_TYPE = _descriptor.EnumDescriptor(
+  name='range_type',
+  full_name='range_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='range_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='range_type_straightline', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='range_type_sector', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='range_type_roundness', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='range_type_rectangle', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='range_type_multi_direction', index=5, number=5,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=19743,
+  serialized_end=19912,
+)
+_sym_db.RegisterEnumDescriptor(_RANGE_TYPE)
+
+range_type = enum_type_wrapper.EnumTypeWrapper(_RANGE_TYPE)
+_ITEM_DETAIL_TYPE = _descriptor.EnumDescriptor(
+  name='item_detail_type',
+  full_name='item_detail_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_max_hp', index=1, number=10001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_cur_hp', index=2, number=10002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack', index=3, number=10003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack_speed', index=4, number=10004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack_distance', index=5, number=10005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack_range', index=6, number=10006,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack_angle', index=7, number=10007,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_reload_speed', index=8, number=10008,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_clip', index=9, number=10009,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_crit_rate', index=10, number=10010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_crit_damge', index=11, number=10011,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_hit_rate', index=12, number=10012,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_pierce', index=13, number=10013,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_defend', index=14, number=10014,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_wilful', index=15, number=10015,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_damage_reduction', index=16, number=10016,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_doge', index=17, number=10017,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_move_speed', index=18, number=10018,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_strong', index=19, number=10019,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_physique', index=20, number=10020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_agl', index=21, number=10021,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_int', index=22, number=10022,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_lucky', index=23, number=10023,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_explode', index=24, number=10024,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_treat', index=25, number=10025,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_melee_hit_time', index=26, number=10026,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_hp', index=27, number=10027,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_attack', index=28, number=10028,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_defend', index=29, number=10029,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_hit', index=30, number=10030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_doge', index=31, number=10031,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_expode', index=32, number=10032,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_treat', index=33, number=10033,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_crit_rate', index=34, number=10034,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_grow_crit_damge', index=35, number=10035,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack_times', index=36, number=10036,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_attack_interval', index=37, number=10037,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_view_range', index=38, number=10038,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_danger_range', index=39, number=10039,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_doge_range', index=40, number=10040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_rotation_speed', index=41, number=10041,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_wrestle_technology', index=42, number=11001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_gun_technology', index=43, number=11002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_explode_technology', index=44, number=11003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_treat_technology', index=45, number=11004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_cook_technology', index=46, number=12001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_probe_technology', index=47, number=12002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_machining_technology', index=48, number=12003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_electron_technology', index=49, number=12004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_medica_technology', index=50, number=12005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_chemical_technology', index=51, number=12006,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_sewing_technology', index=52, number=12007,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_mechanism_technology', index=53, number=12008,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_fight_level', index=54, number=12009,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_satiety', index=55, number=13001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_cell', index=56, number=13002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_diamond', index=57, number=13003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_fuel', index=58, number=13004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_equipment_capacity', index=59, number=14001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_warehouse_capacity', index=60, number=14002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_cockpit_capacity', index=61, number=14003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_horsepower_max', index=62, number=14004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_fuel_tank_capacity', index=63, number=14005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_power_supply', index=64, number=14006,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_warehouse_capacity2', index=65, number=14007,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_warehouse_capacity3', index=66, number=14008,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_warehouse_capacity4', index=67, number=14009,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_warehouse_capacity5', index=68, number=14010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_detail_type_warehouse_capacity6', index=69, number=14011,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=19915,
+  serialized_end=22429,
+)
+_sym_db.RegisterEnumDescriptor(_ITEM_DETAIL_TYPE)
+
+item_detail_type = enum_type_wrapper.EnumTypeWrapper(_ITEM_DETAIL_TYPE)
+_ITEM_PARENT_TYPE = _descriptor.EnumDescriptor(
+  name='item_parent_type',
+  full_name='item_parent_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_AutoSetZero', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_warehouse', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_transform_tool', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_hero_attr', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_hero_bag', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_hero_equip', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_battle_fixed_reward', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_battle_additional_reward', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_parent_type_next_level_car_unit', index=8, number=8,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=22432,
+  serialized_end=22780,
+)
+_sym_db.RegisterEnumDescriptor(_ITEM_PARENT_TYPE)
+
+item_parent_type = enum_type_wrapper.EnumTypeWrapper(_ITEM_PARENT_TYPE)
+_TARGET_CAMP_TYPE = _descriptor.EnumDescriptor(
+  name='target_camp_type',
+  full_name='target_camp_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='target_camp_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_camp_type_we', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_camp_type_enemy', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_camp_type_oneself', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_camp_type_all', index=4, number=4,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=22783,
+  serialized_end=22937,
+)
+_sym_db.RegisterEnumDescriptor(_TARGET_CAMP_TYPE)
+
+target_camp_type = enum_type_wrapper.EnumTypeWrapper(_TARGET_CAMP_TYPE)
+_ITEM_KEY = _descriptor.EnumDescriptor(
+  name='item_key',
+  full_name='item_key',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='item_key_item_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10001', index=1, number=10001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10002', index=2, number=10002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10003', index=3, number=10003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10004', index=4, number=10004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10005', index=5, number=10005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10101', index=6, number=10101,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10102', index=7, number=10102,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10103', index=8, number=10103,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10104', index=9, number=10104,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10201', index=10, number=10201,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10202', index=11, number=10202,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10203', index=12, number=10203,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10204', index=13, number=10204,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_StorageBoxSmall', index=14, number=10301,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_StorageBoxMedium', index=15, number=10302,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_StorageBoxLarge', index=16, number=10303,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_RefrigeratorSmall', index=17, number=10313,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_RefrigeratorMedium', index=18, number=10314,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_RefrigeratorLarge', index=19, number=10315,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10401', index=20, number=10401,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10402', index=21, number=10402,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10403', index=22, number=10403,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10501', index=23, number=10501,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10502', index=24, number=10502,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10503', index=25, number=10503,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10504', index=26, number=10504,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10505', index=27, number=10505,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e10506', index=28, number=10506,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_ProcessPlatform', index=29, number=10601,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Smelter', index=30, number=10602,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Cutter', index=31, number=10603,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_MachineTool', index=32, number=10604,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_MedicalPlatform', index=33, number=10701,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Grinder', index=34, number=10702,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Fermentation', index=35, number=10703,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Distill', index=36, number=10704,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_ManufacturePlatform', index=37, number=10801,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Sew', index=38, number=10802,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Solder', index=39, number=10803,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Weld', index=40, number=10804,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Fire', index=41, number=10901,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Gridiron', index=42, number=10902,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Pot', index=43, number=10903,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Oven', index=44, number=10904,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11001', index=45, number=11001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11002', index=46, number=11002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11003', index=47, number=11003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11004', index=48, number=11004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11005', index=49, number=11005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11006', index=50, number=11006,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11101', index=51, number=11101,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11102', index=52, number=11102,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11103', index=53, number=11103,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11104', index=54, number=11104,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11105', index=55, number=11105,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11106', index=56, number=11106,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11201', index=57, number=11201,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11202', index=58, number=11202,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11203', index=59, number=11203,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11204', index=60, number=11204,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11205', index=61, number=11205,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11206', index=62, number=11206,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e11207', index=63, number=11207,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Hero', index=64, number=20001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Chemical', index=65, number=20002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_item_name_10202', index=66, number=20003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechWrestle', index=67, number=30001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechGun', index=68, number=30002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechExplode', index=69, number=30003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechTreat', index=70, number=30004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechCook', index=71, number=30005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechProbe', index=72, number=30006,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechMachining', index=73, number=30007,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechElectron', index=74, number=30008,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechMedica', index=75, number=30009,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechChemical', index=76, number=30010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechSewing', index=77, number=30011,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_TechMechanism', index=78, number=30012,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Satiety', index=79, number=50001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Battery', index=80, number=50002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Diamond', index=81, number=50003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Fuel', index=82, number=50004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60001', index=83, number=60001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60002', index=84, number=60002,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60003', index=85, number=60003,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60004', index=86, number=60004,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60005', index=87, number=60005,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60006', index=88, number=60006,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60007', index=89, number=60007,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60008', index=90, number=60008,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60009', index=91, number=60009,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60010', index=92, number=60010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60011', index=93, number=60011,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60012', index=94, number=60012,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60013', index=95, number=60013,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60014', index=96, number=60014,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60015', index=97, number=60015,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60016', index=98, number=60016,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60017', index=99, number=60017,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60018', index=100, number=60018,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60019', index=101, number=60019,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60020', index=102, number=60020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60021', index=103, number=60021,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60022', index=104, number=60022,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e60023', index=105, number=60023,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100010', index=106, number=100010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100020', index=107, number=100020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100030', index=108, number=100030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100040', index=109, number=100040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100050', index=110, number=100050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100060', index=111, number=100060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100070', index=112, number=100070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100080', index=113, number=100080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100090', index=114, number=100090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100100', index=115, number=100100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100110', index=116, number=100110,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100120', index=117, number=100120,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100130', index=118, number=100130,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100140', index=119, number=100140,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100150', index=120, number=100150,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100160', index=121, number=100160,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100170', index=122, number=100170,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100180', index=123, number=100180,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100190', index=124, number=100190,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100200', index=125, number=100200,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100210', index=126, number=100210,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100220', index=127, number=100220,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100230', index=128, number=100230,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e100240', index=129, number=100240,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101010', index=130, number=101010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101020', index=131, number=101020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101030', index=132, number=101030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101040', index=133, number=101040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101050', index=134, number=101050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101060', index=135, number=101060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101070', index=136, number=101070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101080', index=137, number=101080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101090', index=138, number=101090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101100', index=139, number=101100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101110', index=140, number=101110,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101120', index=141, number=101120,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101130', index=142, number=101130,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101140', index=143, number=101140,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101150', index=144, number=101150,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e101160', index=145, number=101160,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200000', index=146, number=200000,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200010', index=147, number=200010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200020', index=148, number=200020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200030', index=149, number=200030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200040', index=150, number=200040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200050', index=151, number=200050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200060', index=152, number=200060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200070', index=153, number=200070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200080', index=154, number=200080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200090', index=155, number=200090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200100', index=156, number=200100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200110', index=157, number=200110,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200120', index=158, number=200120,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200130', index=159, number=200130,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200140', index=160, number=200140,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200150', index=161, number=200150,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200160', index=162, number=200160,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200170', index=163, number=200170,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200180', index=164, number=200180,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200190', index=165, number=200190,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200200', index=166, number=200200,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200210', index=167, number=200210,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200220', index=168, number=200220,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200230', index=169, number=200230,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200240', index=170, number=200240,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200250', index=171, number=200250,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200260', index=172, number=200260,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200270', index=173, number=200270,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200280', index=174, number=200280,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200290', index=175, number=200290,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200300', index=176, number=200300,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200310', index=177, number=200310,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200320', index=178, number=200320,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200330', index=179, number=200330,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200340', index=180, number=200340,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200350', index=181, number=200350,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200360', index=182, number=200360,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200370', index=183, number=200370,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200380', index=184, number=200380,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200390', index=185, number=200390,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200400', index=186, number=200400,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200410', index=187, number=200410,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200420', index=188, number=200420,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200430', index=189, number=200430,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200440', index=190, number=200440,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200450', index=191, number=200450,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200460', index=192, number=200460,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200470', index=193, number=200470,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200480', index=194, number=200480,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200490', index=195, number=200490,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200500', index=196, number=200500,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200510', index=197, number=200510,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200520', index=198, number=200520,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200530', index=199, number=200530,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200540', index=200, number=200540,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200550', index=201, number=200550,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200560', index=202, number=200560,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200570', index=203, number=200570,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200580', index=204, number=200580,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200590', index=205, number=200590,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200600', index=206, number=200600,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200610', index=207, number=200610,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200620', index=208, number=200620,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200630', index=209, number=200630,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200640', index=210, number=200640,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200650', index=211, number=200650,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200660', index=212, number=200660,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200670', index=213, number=200670,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200680', index=214, number=200680,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200690', index=215, number=200690,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200700', index=216, number=200700,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200710', index=217, number=200710,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200720', index=218, number=200720,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200730', index=219, number=200730,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200740', index=220, number=200740,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200750', index=221, number=200750,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200760', index=222, number=200760,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200770', index=223, number=200770,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200780', index=224, number=200780,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200790', index=225, number=200790,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200800', index=226, number=200800,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e200810', index=227, number=200810,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Repertory1', index=228, number=202011,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Repertory2', index=229, number=202012,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Repertory3', index=230, number=202013,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Repertory4', index=231, number=202014,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Repertory5', index=232, number=202015,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Repertory6', index=233, number=202016,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_Bag', index=234, number=202017,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300010', index=235, number=300010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300020', index=236, number=300020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300030', index=237, number=300030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300040', index=238, number=300040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300050', index=239, number=300050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300060', index=240, number=300060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300070', index=241, number=300070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300080', index=242, number=300080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300090', index=243, number=300090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300100', index=244, number=300100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300110', index=245, number=300110,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e300120', index=246, number=300120,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301110', index=247, number=301110,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301120', index=248, number=301120,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301130', index=249, number=301130,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301140', index=250, number=301140,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301150', index=251, number=301150,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301210', index=252, number=301210,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301220', index=253, number=301220,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301230', index=254, number=301230,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301310', index=255, number=301310,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301320', index=256, number=301320,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301330', index=257, number=301330,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301410', index=258, number=301410,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301420', index=259, number=301420,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301430', index=260, number=301430,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e301440', index=261, number=301440,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302010', index=262, number=302010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302020', index=263, number=302020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302030', index=264, number=302030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302040', index=265, number=302040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302050', index=266, number=302050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302060', index=267, number=302060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302070', index=268, number=302070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302080', index=269, number=302080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e302090', index=270, number=302090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303010', index=271, number=303010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303020', index=272, number=303020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303030', index=273, number=303030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303040', index=274, number=303040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303050', index=275, number=303050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303060', index=276, number=303060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e303070', index=277, number=303070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304010', index=278, number=304010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304020', index=279, number=304020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304030', index=280, number=304030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304040', index=281, number=304040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304050', index=282, number=304050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304060', index=283, number=304060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e304070', index=284, number=304070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305010', index=285, number=305010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305020', index=286, number=305020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305030', index=287, number=305030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305040', index=288, number=305040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305050', index=289, number=305050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305060', index=290, number=305060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e305070', index=291, number=305070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e306010', index=292, number=306010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e306020', index=293, number=306020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e306030', index=294, number=306030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e306040', index=295, number=306040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308010', index=296, number=308010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308020', index=297, number=308020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308030', index=298, number=308030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308040', index=299, number=308040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308050', index=300, number=308050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308060', index=301, number=308060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e308070', index=302, number=308070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e309010', index=303, number=309010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e309020', index=304, number=309020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e309030', index=305, number=309030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e309040', index=306, number=309040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e309050', index=307, number=309050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e309060', index=308, number=309060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e310010', index=309, number=310010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e310020', index=310, number=310020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e310030', index=311, number=310030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e310040', index=312, number=310040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e310050', index=313, number=310050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e311010', index=314, number=311010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e311020', index=315, number=311020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e311030', index=316, number=311030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e311040', index=317, number=311040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e311050', index=318, number=311050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e400010', index=319, number=400010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e400020', index=320, number=400020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e400030', index=321, number=400030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e400040', index=322, number=400040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401010', index=323, number=401010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401020', index=324, number=401020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401030', index=325, number=401030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401040', index=326, number=401040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401050', index=327, number=401050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401060', index=328, number=401060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401070', index=329, number=401070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401080', index=330, number=401080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401090', index=331, number=401090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401100', index=332, number=401100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401110', index=333, number=401110,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401120', index=334, number=401120,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401130', index=335, number=401130,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401140', index=336, number=401140,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401150', index=337, number=401150,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e401160', index=338, number=401160,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402010', index=339, number=402010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402020', index=340, number=402020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402030', index=341, number=402030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402040', index=342, number=402040,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402050', index=343, number=402050,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402060', index=344, number=402060,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402070', index=345, number=402070,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402080', index=346, number=402080,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402090', index=347, number=402090,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e402100', index=348, number=402100,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e403010', index=349, number=403010,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e403020', index=350, number=403020,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e403030', index=351, number=403030,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='item_key_e403040', index=352, number=403040,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=22940,
+  serialized_end=31428,
+)
+_sym_db.RegisterEnumDescriptor(_ITEM_KEY)
+
+item_key = enum_type_wrapper.EnumTypeWrapper(_ITEM_KEY)
+_BOX_DROP_TYPE = _descriptor.EnumDescriptor(
+  name='box_drop_type',
+  full_name='box_drop_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='box_drop_type_ignore', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='box_drop_type_always', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='box_drop_type_each', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='box_drop_type_one', index=3, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=31430,
+  serialized_end=31544,
+)
+_sym_db.RegisterEnumDescriptor(_BOX_DROP_TYPE)
+
+box_drop_type = enum_type_wrapper.EnumTypeWrapper(_BOX_DROP_TYPE)
+_CAMP_ID = _descriptor.EnumDescriptor(
+  name='camp_id',
+  full_name='camp_id',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='camp_id_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='camp_id_citizen', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='camp_id_academy', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='camp_id_kirk', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='camp_id_frat', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='camp_id_bloodrose', index=5, number=5,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=31547,
+  serialized_end=31675,
+)
+_sym_db.RegisterEnumDescriptor(_CAMP_ID)
+
+camp_id = enum_type_wrapper.EnumTypeWrapper(_CAMP_ID)
+_RACE_TYPE = _descriptor.EnumDescriptor(
+  name='race_type',
+  full_name='race_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='race_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='race_type_yellowrace', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='race_type_caucasian', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='race_type_melanoderm', index=3, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=31677,
+  serialized_end=31785,
+)
+_sym_db.RegisterEnumDescriptor(_RACE_TYPE)
+
+race_type = enum_type_wrapper.EnumTypeWrapper(_RACE_TYPE)
+_HOOK = _descriptor.EnumDescriptor(
+  name='hook',
+  full_name='hook',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='hook_world', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_upperbody', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_hips', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_righthand', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_lefthand', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_rightfoot', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_leftfoot', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_rightclavice', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_leftclavice', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_rightcrotch', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_leftcrotch', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_chest', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_head', index=12, number=12,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_bottom', index=13, number=13,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_weapon', index=14, number=19,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_muzzle', index=15, number=20,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_barrel', index=16, number=21,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_butt', index=17, number=22,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_scope', index=18, number=23,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hook_clip', index=19, number=24,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=31788,
+  serialized_end=32156,
+)
+_sym_db.RegisterEnumDescriptor(_HOOK)
+
+hook = enum_type_wrapper.EnumTypeWrapper(_HOOK)
+_TARGET_SELECT_TYPE = _descriptor.EnumDescriptor(
+  name='target_select_type',
+  full_name='target_select_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_nearest', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_farthest', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_hp_least', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_hp_maximum', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_battle_ability_max', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='target_select_type_random', index=6, number=6,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=32159,
+  serialized_end=32415,
+)
+_sym_db.RegisterEnumDescriptor(_TARGET_SELECT_TYPE)
+
+target_select_type = enum_type_wrapper.EnumTypeWrapper(_TARGET_SELECT_TYPE)
+_PROJECTILE_TYPE = _descriptor.EnumDescriptor(
+  name='projectile_type',
+  full_name='projectile_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_null', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_pistol', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_carbine', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_shotgun', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_snipergun', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_gatlin', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_rocket', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_grenade', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_line', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='projectile_type_action_parabola', index=9, number=9,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=32418,
+  serialized_end=32782,
+)
+_sym_db.RegisterEnumDescriptor(_PROJECTILE_TYPE)
+
+projectile_type = enum_type_wrapper.EnumTypeWrapper(_PROJECTILE_TYPE)
+_WEAR_POS = _descriptor.EnumDescriptor(
+  name='wear_pos',
+  full_name='wear_pos',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_weapon', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_ornament', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_clothes', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_pants', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_shoe', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_plate', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_legguard', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_barcer', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_head', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='wear_pos_bag', index=10, number=10,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=32785,
+  serialized_end=33020,
+)
+_sym_db.RegisterEnumDescriptor(_WEAR_POS)
+
+wear_pos = enum_type_wrapper.EnumTypeWrapper(_WEAR_POS)
+_CHAPTER_DIFFICULTY = _descriptor.EnumDescriptor(
+  name='chapter_difficulty',
+  full_name='chapter_difficulty',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='chapter_difficulty_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='chapter_difficulty_recreational', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='chapter_difficulty_general', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='chapter_difficulty_nightmare', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='chapter_difficulty_hell', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='chapter_difficulty_purgatory', index=5, number=5,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33023,
+  serialized_end=33238,
+)
+_sym_db.RegisterEnumDescriptor(_CHAPTER_DIFFICULTY)
+
+chapter_difficulty = enum_type_wrapper.EnumTypeWrapper(_CHAPTER_DIFFICULTY)
+_GENDER = _descriptor.EnumDescriptor(
+  name='gender',
+  full_name='gender',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='gender_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='gender_man', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='gender_woman', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33240,
+  serialized_end=33299,
+)
+_sym_db.RegisterEnumDescriptor(_GENDER)
+
+gender = enum_type_wrapper.EnumTypeWrapper(_GENDER)
+_SPEEDUP_TYPE = _descriptor.EnumDescriptor(
+  name='speedup_type',
+  full_name='speedup_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='speedup_type_AutoSetZero', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='speedup_type_Battery', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='speedup_type_Diamond', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33301,
+  serialized_end=33397,
+)
+_sym_db.RegisterEnumDescriptor(_SPEEDUP_TYPE)
+
+speedup_type = enum_type_wrapper.EnumTypeWrapper(_SPEEDUP_TYPE)
+_CAST_TYPE = _descriptor.EnumDescriptor(
+  name='cast_type',
+  full_name='cast_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='cast_type_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='cast_type_initiative', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='cast_type_passivity', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33399,
+  serialized_end=33481,
+)
+_sym_db.RegisterEnumDescriptor(_CAST_TYPE)
+
+cast_type = enum_type_wrapper.EnumTypeWrapper(_CAST_TYPE)
+_WEAPON_TYPE = _descriptor.EnumDescriptor(
+  name='weapon_type',
+  full_name='weapon_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='weapon_type_weapon_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_type_weapon_melee', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='weapon_type_weapon_remote', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33483,
+  serialized_end=33586,
+)
+_sym_db.RegisterEnumDescriptor(_WEAPON_TYPE)
+
+weapon_type = enum_type_wrapper.EnumTypeWrapper(_WEAPON_TYPE)
+_RACE = _descriptor.EnumDescriptor(
+  name='race',
+  full_name='race',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='race_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='race_human', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='race_zombie', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33588,
+  serialized_end=33642,
+)
+_sym_db.RegisterEnumDescriptor(_RACE)
+
+race = enum_type_wrapper.EnumTypeWrapper(_RACE)
+_HERO_STATUS = _descriptor.EnumDescriptor(
+  name='hero_status',
+  full_name='hero_status',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_idle', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_hurt', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_sad', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_working', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_out', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_status_pending', index=5, number=10001,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33645,
+  serialized_end=33795,
+)
+_sym_db.RegisterEnumDescriptor(_HERO_STATUS)
+
+hero_status = enum_type_wrapper.EnumTypeWrapper(_HERO_STATUS)
+_SUB_BUILDING_ENUM = _descriptor.EnumDescriptor(
+  name='sub_building_enum',
+  full_name='sub_building_enum',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_car', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_storage', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_cockpit', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_dynamo', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_engine', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_oiltank', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_machineproduct', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_smelter', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_cutterbar', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_machine', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_makeproduct', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_sewing', index=12, number=12,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_electricSolderingIron', index=13, number=13,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_welding', index=14, number=14,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_medicalproduct', index=15, number=15,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_burnisher', index=16, number=16,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_fermentor', index=17, number=17,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_distiller', index=18, number=18,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_fireproduct', index=19, number=19,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_gridiron', index=20, number=20,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_wok', index=21, number=21,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='sub_building_enum_oven', index=22, number=22,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=33798,
+  serialized_end=34558,
+)
+_sym_db.RegisterEnumDescriptor(_SUB_BUILDING_ENUM)
+
+sub_building_enum = enum_type_wrapper.EnumTypeWrapper(_SUB_BUILDING_ENUM)
+_HERO_NAME_TYPE = _descriptor.EnumDescriptor(
+  name='hero_name_type',
+  full_name='hero_name_type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='hero_name_type_random_name', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_name_type_random_name_m', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_name_type_random_name_f', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='hero_name_type_assign_name', index=3, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=34561,
+  serialized_end=34709,
+)
+_sym_db.RegisterEnumDescriptor(_HERO_NAME_TYPE)
+
+hero_name_type = enum_type_wrapper.EnumTypeWrapper(_HERO_NAME_TYPE)
+item_type_none = 0
+item_type_weapon = 100
+item_type_armor = 200
+item_type_consumables = 300
+item_type_bag = 400
+item_type_building = 600
+item_type_warehouse = 601
+item_type_refrigerator = 602
+item_type_campcar = 610
+item_type_hero = 700
+item_type_job = 800
+item_type_attribute = 801
+item_type_battle_tech = 900
+item_type_live_tech = 901
+item_type_live_condition = 902
+item_type_building_attribute = 903
+job_type_none = 0
+job_type_strength = 1
+job_type_constitution = 2
+job_type_agility = 3
+job_type_intelligence = 4
+job_type_skill = 5
+buff_type_none = 0
+buff_type_gain = 1
+buff_type_debuff = 2
+box_item_type_item = 0
+box_item_type_box = 1
+box_item_type_hero = 2
+hero_battle_status_type_AutoSetZero = 0
+hero_battle_status_type_set_on_battle_failure = 1
+hero_battle_status_type_set_by_rate_periodically = 2
+effect_type_none = 0
+effect_type_general_harm = 1
+effect_type_harm = 2
+effect_type_effect = 3
+armor_type_none = 0
+armor_type_clothes = 1
+armor_type_pants = 2
+armor_type_shoe = 3
+armor_type_plate = 4
+armor_type_legguard = 5
+armor_type_barcer = 6
+armor_type_hat = 7
+armor_type_ornament_cure = 8
+armor_type_ornament_boom = 9
+armor_type_ornament_other = 10
+armor_type_bag = 11
+hero_quality_none = 0
+hero_quality_quality1 = 1
+hero_quality_quality2 = 2
+hero_quality_quality3 = 3
+hero_quality_quality4 = 4
+hero_quality_quality5 = 5
+hero_quality_quality6 = 6
+hero_quality_quality7 = 7
+status_type_none = 0
+status_type_bleed = 1
+status_type_firing = 2
+status_type_entangle = 3
+status_type_immobilize = 4
+status_type_stun = 5
+status_type_silence = 6
+status_type_sleep = 7
+status_type_fear = 8
+status_type_poisoning = 9
+status_type_invincible = 10
+status_type_lower_def = 11
+status_type_lower_accuracy = 12
+status_type_continue_regain = 13
+status_type_enhance_def = 14
+status_type_enhance_atk = 15
+body_type_none = 0
+body_type_general = 1
+body_type_fat = 2
+weapon_sub_type_null = 0
+weapon_sub_type_melee_blunt = 1
+weapon_sub_type_melee_edge = 2
+weapon_sub_type_melee_heavy = 3
+weapon_sub_type_remote_pistol = 4
+weapon_sub_type_remote_carbine = 5
+weapon_sub_type_remote_shotgun = 6
+weapon_sub_type_remote_snipergun = 7
+weapon_sub_type_remote_heavy = 8
+weapon_sub_type_remote_treat = 9
+weapon_sub_type_remote_blast = 10
+weapon_sub_type_remote_gatlin = 11
+weapon_sub_type_remote_rocket = 12
+weapon_effect_action_null = 0
+weapon_effect_action_action_single = 1
+weapon_effect_action_action_both = 2
+weapon_effect_action_action_pistol = 3
+weapon_effect_action_action_carbine = 4
+weapon_effect_action_action_shotgun = 5
+weapon_effect_action_action_snipergun = 6
+weapon_effect_action_action_gatlin = 7
+weapon_effect_action_action_rocket = 8
+weapon_effect_action_action_claw = 9
+weapon_effect_action_action_saw = 10
+stage_type_none = 0
+stage_type_challenge = 1
+stage_type_onhook = 2
+hero_status_enum_None = 0
+hero_status_enum_HeavyHurt = 1
+hero_status_enum_BoneBreak = 2
+hero_status_enum_BadMood = 4
+hero_status_enum_Hungry = 8
+hero_status_enum_Poison = 16
+hero_status_enum_Sick = 32
+task_goal_type_none = 0
+task_goal_type_build = 1
+task_goal_type_recipe = 2
+task_goal_type_haveitem = 3
+task_goal_type_challenge = 4
+task_goal_type_relieve = 5
+task_goal_type_finishedother = 6
+task_goal_type_stayovernight = 7
+range_type_none = 0
+range_type_straightline = 1
+range_type_sector = 2
+range_type_roundness = 3
+range_type_rectangle = 4
+range_type_multi_direction = 5
+item_detail_type_none = 0
+item_detail_type_max_hp = 10001
+item_detail_type_cur_hp = 10002
+item_detail_type_attack = 10003
+item_detail_type_attack_speed = 10004
+item_detail_type_attack_distance = 10005
+item_detail_type_attack_range = 10006
+item_detail_type_attack_angle = 10007
+item_detail_type_reload_speed = 10008
+item_detail_type_clip = 10009
+item_detail_type_crit_rate = 10010
+item_detail_type_crit_damge = 10011
+item_detail_type_hit_rate = 10012
+item_detail_type_pierce = 10013
+item_detail_type_defend = 10014
+item_detail_type_wilful = 10015
+item_detail_type_damage_reduction = 10016
+item_detail_type_doge = 10017
+item_detail_type_move_speed = 10018
+item_detail_type_strong = 10019
+item_detail_type_physique = 10020
+item_detail_type_agl = 10021
+item_detail_type_int = 10022
+item_detail_type_lucky = 10023
+item_detail_type_explode = 10024
+item_detail_type_treat = 10025
+item_detail_type_melee_hit_time = 10026
+item_detail_type_grow_hp = 10027
+item_detail_type_grow_attack = 10028
+item_detail_type_grow_defend = 10029
+item_detail_type_grow_hit = 10030
+item_detail_type_grow_doge = 10031
+item_detail_type_grow_expode = 10032
+item_detail_type_grow_treat = 10033
+item_detail_type_grow_crit_rate = 10034
+item_detail_type_grow_crit_damge = 10035
+item_detail_type_attack_times = 10036
+item_detail_type_attack_interval = 10037
+item_detail_type_view_range = 10038
+item_detail_type_danger_range = 10039
+item_detail_type_doge_range = 10040
+item_detail_type_rotation_speed = 10041
+item_detail_type_wrestle_technology = 11001
+item_detail_type_gun_technology = 11002
+item_detail_type_explode_technology = 11003
+item_detail_type_treat_technology = 11004
+item_detail_type_cook_technology = 12001
+item_detail_type_probe_technology = 12002
+item_detail_type_machining_technology = 12003
+item_detail_type_electron_technology = 12004
+item_detail_type_medica_technology = 12005
+item_detail_type_chemical_technology = 12006
+item_detail_type_sewing_technology = 12007
+item_detail_type_mechanism_technology = 12008
+item_detail_type_fight_level = 12009
+item_detail_type_satiety = 13001
+item_detail_type_cell = 13002
+item_detail_type_diamond = 13003
+item_detail_type_fuel = 13004
+item_detail_type_equipment_capacity = 14001
+item_detail_type_warehouse_capacity = 14002
+item_detail_type_cockpit_capacity = 14003
+item_detail_type_horsepower_max = 14004
+item_detail_type_fuel_tank_capacity = 14005
+item_detail_type_power_supply = 14006
+item_detail_type_warehouse_capacity2 = 14007
+item_detail_type_warehouse_capacity3 = 14008
+item_detail_type_warehouse_capacity4 = 14009
+item_detail_type_warehouse_capacity5 = 14010
+item_detail_type_warehouse_capacity6 = 14011
+item_parent_type_AutoSetZero = 0
+item_parent_type_warehouse = 1
+item_parent_type_transform_tool = 2
+item_parent_type_hero_attr = 3
+item_parent_type_hero_bag = 4
+item_parent_type_hero_equip = 5
+item_parent_type_battle_fixed_reward = 6
+item_parent_type_battle_additional_reward = 7
+item_parent_type_next_level_car_unit = 8
+target_camp_type_none = 0
+target_camp_type_we = 1
+target_camp_type_enemy = 2
+target_camp_type_oneself = 3
+target_camp_type_all = 4
+item_key_item_none = 0
+item_key_e10001 = 10001
+item_key_e10002 = 10002
+item_key_e10003 = 10003
+item_key_e10004 = 10004
+item_key_e10005 = 10005
+item_key_e10101 = 10101
+item_key_e10102 = 10102
+item_key_e10103 = 10103
+item_key_e10104 = 10104
+item_key_e10201 = 10201
+item_key_e10202 = 10202
+item_key_e10203 = 10203
+item_key_e10204 = 10204
+item_key_StorageBoxSmall = 10301
+item_key_StorageBoxMedium = 10302
+item_key_StorageBoxLarge = 10303
+item_key_RefrigeratorSmall = 10313
+item_key_RefrigeratorMedium = 10314
+item_key_RefrigeratorLarge = 10315
+item_key_e10401 = 10401
+item_key_e10402 = 10402
+item_key_e10403 = 10403
+item_key_e10501 = 10501
+item_key_e10502 = 10502
+item_key_e10503 = 10503
+item_key_e10504 = 10504
+item_key_e10505 = 10505
+item_key_e10506 = 10506
+item_key_ProcessPlatform = 10601
+item_key_Smelter = 10602
+item_key_Cutter = 10603
+item_key_MachineTool = 10604
+item_key_MedicalPlatform = 10701
+item_key_Grinder = 10702
+item_key_Fermentation = 10703
+item_key_Distill = 10704
+item_key_ManufacturePlatform = 10801
+item_key_Sew = 10802
+item_key_Solder = 10803
+item_key_Weld = 10804
+item_key_Fire = 10901
+item_key_Gridiron = 10902
+item_key_Pot = 10903
+item_key_Oven = 10904
+item_key_e11001 = 11001
+item_key_e11002 = 11002
+item_key_e11003 = 11003
+item_key_e11004 = 11004
+item_key_e11005 = 11005
+item_key_e11006 = 11006
+item_key_e11101 = 11101
+item_key_e11102 = 11102
+item_key_e11103 = 11103
+item_key_e11104 = 11104
+item_key_e11105 = 11105
+item_key_e11106 = 11106
+item_key_e11201 = 11201
+item_key_e11202 = 11202
+item_key_e11203 = 11203
+item_key_e11204 = 11204
+item_key_e11205 = 11205
+item_key_e11206 = 11206
+item_key_e11207 = 11207
+item_key_Hero = 20001
+item_key_Chemical = 20002
+item_key_item_name_10202 = 20003
+item_key_TechWrestle = 30001
+item_key_TechGun = 30002
+item_key_TechExplode = 30003
+item_key_TechTreat = 30004
+item_key_TechCook = 30005
+item_key_TechProbe = 30006
+item_key_TechMachining = 30007
+item_key_TechElectron = 30008
+item_key_TechMedica = 30009
+item_key_TechChemical = 30010
+item_key_TechSewing = 30011
+item_key_TechMechanism = 30012
+item_key_Satiety = 50001
+item_key_Battery = 50002
+item_key_Diamond = 50003
+item_key_Fuel = 50004
+item_key_e60001 = 60001
+item_key_e60002 = 60002
+item_key_e60003 = 60003
+item_key_e60004 = 60004
+item_key_e60005 = 60005
+item_key_e60006 = 60006
+item_key_e60007 = 60007
+item_key_e60008 = 60008
+item_key_e60009 = 60009
+item_key_e60010 = 60010
+item_key_e60011 = 60011
+item_key_e60012 = 60012
+item_key_e60013 = 60013
+item_key_e60014 = 60014
+item_key_e60015 = 60015
+item_key_e60016 = 60016
+item_key_e60017 = 60017
+item_key_e60018 = 60018
+item_key_e60019 = 60019
+item_key_e60020 = 60020
+item_key_e60021 = 60021
+item_key_e60022 = 60022
+item_key_e60023 = 60023
+item_key_e100010 = 100010
+item_key_e100020 = 100020
+item_key_e100030 = 100030
+item_key_e100040 = 100040
+item_key_e100050 = 100050
+item_key_e100060 = 100060
+item_key_e100070 = 100070
+item_key_e100080 = 100080
+item_key_e100090 = 100090
+item_key_e100100 = 100100
+item_key_e100110 = 100110
+item_key_e100120 = 100120
+item_key_e100130 = 100130
+item_key_e100140 = 100140
+item_key_e100150 = 100150
+item_key_e100160 = 100160
+item_key_e100170 = 100170
+item_key_e100180 = 100180
+item_key_e100190 = 100190
+item_key_e100200 = 100200
+item_key_e100210 = 100210
+item_key_e100220 = 100220
+item_key_e100230 = 100230
+item_key_e100240 = 100240
+item_key_e101010 = 101010
+item_key_e101020 = 101020
+item_key_e101030 = 101030
+item_key_e101040 = 101040
+item_key_e101050 = 101050
+item_key_e101060 = 101060
+item_key_e101070 = 101070
+item_key_e101080 = 101080
+item_key_e101090 = 101090
+item_key_e101100 = 101100
+item_key_e101110 = 101110
+item_key_e101120 = 101120
+item_key_e101130 = 101130
+item_key_e101140 = 101140
+item_key_e101150 = 101150
+item_key_e101160 = 101160
+item_key_e200000 = 200000
+item_key_e200010 = 200010
+item_key_e200020 = 200020
+item_key_e200030 = 200030
+item_key_e200040 = 200040
+item_key_e200050 = 200050
+item_key_e200060 = 200060
+item_key_e200070 = 200070
+item_key_e200080 = 200080
+item_key_e200090 = 200090
+item_key_e200100 = 200100
+item_key_e200110 = 200110
+item_key_e200120 = 200120
+item_key_e200130 = 200130
+item_key_e200140 = 200140
+item_key_e200150 = 200150
+item_key_e200160 = 200160
+item_key_e200170 = 200170
+item_key_e200180 = 200180
+item_key_e200190 = 200190
+item_key_e200200 = 200200
+item_key_e200210 = 200210
+item_key_e200220 = 200220
+item_key_e200230 = 200230
+item_key_e200240 = 200240
+item_key_e200250 = 200250
+item_key_e200260 = 200260
+item_key_e200270 = 200270
+item_key_e200280 = 200280
+item_key_e200290 = 200290
+item_key_e200300 = 200300
+item_key_e200310 = 200310
+item_key_e200320 = 200320
+item_key_e200330 = 200330
+item_key_e200340 = 200340
+item_key_e200350 = 200350
+item_key_e200360 = 200360
+item_key_e200370 = 200370
+item_key_e200380 = 200380
+item_key_e200390 = 200390
+item_key_e200400 = 200400
+item_key_e200410 = 200410
+item_key_e200420 = 200420
+item_key_e200430 = 200430
+item_key_e200440 = 200440
+item_key_e200450 = 200450
+item_key_e200460 = 200460
+item_key_e200470 = 200470
+item_key_e200480 = 200480
+item_key_e200490 = 200490
+item_key_e200500 = 200500
+item_key_e200510 = 200510
+item_key_e200520 = 200520
+item_key_e200530 = 200530
+item_key_e200540 = 200540
+item_key_e200550 = 200550
+item_key_e200560 = 200560
+item_key_e200570 = 200570
+item_key_e200580 = 200580
+item_key_e200590 = 200590
+item_key_e200600 = 200600
+item_key_e200610 = 200610
+item_key_e200620 = 200620
+item_key_e200630 = 200630
+item_key_e200640 = 200640
+item_key_e200650 = 200650
+item_key_e200660 = 200660
+item_key_e200670 = 200670
+item_key_e200680 = 200680
+item_key_e200690 = 200690
+item_key_e200700 = 200700
+item_key_e200710 = 200710
+item_key_e200720 = 200720
+item_key_e200730 = 200730
+item_key_e200740 = 200740
+item_key_e200750 = 200750
+item_key_e200760 = 200760
+item_key_e200770 = 200770
+item_key_e200780 = 200780
+item_key_e200790 = 200790
+item_key_e200800 = 200800
+item_key_e200810 = 200810
+item_key_Repertory1 = 202011
+item_key_Repertory2 = 202012
+item_key_Repertory3 = 202013
+item_key_Repertory4 = 202014
+item_key_Repertory5 = 202015
+item_key_Repertory6 = 202016
+item_key_Bag = 202017
+item_key_e300010 = 300010
+item_key_e300020 = 300020
+item_key_e300030 = 300030
+item_key_e300040 = 300040
+item_key_e300050 = 300050
+item_key_e300060 = 300060
+item_key_e300070 = 300070
+item_key_e300080 = 300080
+item_key_e300090 = 300090
+item_key_e300100 = 300100
+item_key_e300110 = 300110
+item_key_e300120 = 300120
+item_key_e301110 = 301110
+item_key_e301120 = 301120
+item_key_e301130 = 301130
+item_key_e301140 = 301140
+item_key_e301150 = 301150
+item_key_e301210 = 301210
+item_key_e301220 = 301220
+item_key_e301230 = 301230
+item_key_e301310 = 301310
+item_key_e301320 = 301320
+item_key_e301330 = 301330
+item_key_e301410 = 301410
+item_key_e301420 = 301420
+item_key_e301430 = 301430
+item_key_e301440 = 301440
+item_key_e302010 = 302010
+item_key_e302020 = 302020
+item_key_e302030 = 302030
+item_key_e302040 = 302040
+item_key_e302050 = 302050
+item_key_e302060 = 302060
+item_key_e302070 = 302070
+item_key_e302080 = 302080
+item_key_e302090 = 302090
+item_key_e303010 = 303010
+item_key_e303020 = 303020
+item_key_e303030 = 303030
+item_key_e303040 = 303040
+item_key_e303050 = 303050
+item_key_e303060 = 303060
+item_key_e303070 = 303070
+item_key_e304010 = 304010
+item_key_e304020 = 304020
+item_key_e304030 = 304030
+item_key_e304040 = 304040
+item_key_e304050 = 304050
+item_key_e304060 = 304060
+item_key_e304070 = 304070
+item_key_e305010 = 305010
+item_key_e305020 = 305020
+item_key_e305030 = 305030
+item_key_e305040 = 305040
+item_key_e305050 = 305050
+item_key_e305060 = 305060
+item_key_e305070 = 305070
+item_key_e306010 = 306010
+item_key_e306020 = 306020
+item_key_e306030 = 306030
+item_key_e306040 = 306040
+item_key_e308010 = 308010
+item_key_e308020 = 308020
+item_key_e308030 = 308030
+item_key_e308040 = 308040
+item_key_e308050 = 308050
+item_key_e308060 = 308060
+item_key_e308070 = 308070
+item_key_e309010 = 309010
+item_key_e309020 = 309020
+item_key_e309030 = 309030
+item_key_e309040 = 309040
+item_key_e309050 = 309050
+item_key_e309060 = 309060
+item_key_e310010 = 310010
+item_key_e310020 = 310020
+item_key_e310030 = 310030
+item_key_e310040 = 310040
+item_key_e310050 = 310050
+item_key_e311010 = 311010
+item_key_e311020 = 311020
+item_key_e311030 = 311030
+item_key_e311040 = 311040
+item_key_e311050 = 311050
+item_key_e400010 = 400010
+item_key_e400020 = 400020
+item_key_e400030 = 400030
+item_key_e400040 = 400040
+item_key_e401010 = 401010
+item_key_e401020 = 401020
+item_key_e401030 = 401030
+item_key_e401040 = 401040
+item_key_e401050 = 401050
+item_key_e401060 = 401060
+item_key_e401070 = 401070
+item_key_e401080 = 401080
+item_key_e401090 = 401090
+item_key_e401100 = 401100
+item_key_e401110 = 401110
+item_key_e401120 = 401120
+item_key_e401130 = 401130
+item_key_e401140 = 401140
+item_key_e401150 = 401150
+item_key_e401160 = 401160
+item_key_e402010 = 402010
+item_key_e402020 = 402020
+item_key_e402030 = 402030
+item_key_e402040 = 402040
+item_key_e402050 = 402050
+item_key_e402060 = 402060
+item_key_e402070 = 402070
+item_key_e402080 = 402080
+item_key_e402090 = 402090
+item_key_e402100 = 402100
+item_key_e403010 = 403010
+item_key_e403020 = 403020
+item_key_e403030 = 403030
+item_key_e403040 = 403040
+box_drop_type_ignore = 0
+box_drop_type_always = 1
+box_drop_type_each = 2
+box_drop_type_one = 3
+camp_id_none = 0
+camp_id_citizen = 1
+camp_id_academy = 2
+camp_id_kirk = 3
+camp_id_frat = 4
+camp_id_bloodrose = 5
+race_type_none = 0
+race_type_yellowrace = 1
+race_type_caucasian = 2
+race_type_melanoderm = 3
+hook_world = 0
+hook_upperbody = 1
+hook_hips = 2
+hook_righthand = 3
+hook_lefthand = 4
+hook_rightfoot = 5
+hook_leftfoot = 6
+hook_rightclavice = 7
+hook_leftclavice = 8
+hook_rightcrotch = 9
+hook_leftcrotch = 10
+hook_chest = 11
+hook_head = 12
+hook_bottom = 13
+hook_weapon = 19
+hook_muzzle = 20
+hook_barrel = 21
+hook_butt = 22
+hook_scope = 23
+hook_clip = 24
+target_select_type_none = 0
+target_select_type_nearest = 1
+target_select_type_farthest = 2
+target_select_type_hp_least = 3
+target_select_type_hp_maximum = 4
+target_select_type_battle_ability_max = 5
+target_select_type_random = 6
+projectile_type_null = 0
+projectile_type_action_pistol = 1
+projectile_type_action_carbine = 2
+projectile_type_action_shotgun = 3
+projectile_type_action_snipergun = 4
+projectile_type_action_gatlin = 5
+projectile_type_action_rocket = 6
+projectile_type_action_grenade = 7
+projectile_type_action_line = 8
+projectile_type_action_parabola = 9
+wear_pos_none = 0
+wear_pos_weapon = 1
+wear_pos_ornament = 2
+wear_pos_clothes = 3
+wear_pos_pants = 4
+wear_pos_shoe = 5
+wear_pos_plate = 6
+wear_pos_legguard = 7
+wear_pos_barcer = 8
+wear_pos_head = 9
+wear_pos_bag = 10
+chapter_difficulty_none = 0
+chapter_difficulty_recreational = 1
+chapter_difficulty_general = 2
+chapter_difficulty_nightmare = 3
+chapter_difficulty_hell = 4
+chapter_difficulty_purgatory = 5
+gender_none = 0
+gender_man = 1
+gender_woman = 2
+speedup_type_AutoSetZero = 0
+speedup_type_Battery = 1
+speedup_type_Diamond = 2
+cast_type_none = 0
+cast_type_initiative = 1
+cast_type_passivity = 2
+weapon_type_weapon_none = 0
+weapon_type_weapon_melee = 1
+weapon_type_weapon_remote = 2
+race_none = 0
+race_human = 1
+race_zombie = 2
+hero_status_idle = 0
+hero_status_hurt = 1
+hero_status_sad = 2
+hero_status_working = 3
+hero_status_out = 4
+hero_status_pending = 10001
+sub_building_enum_none = 0
+sub_building_enum_car = 1
+sub_building_enum_storage = 2
+sub_building_enum_cockpit = 3
+sub_building_enum_dynamo = 4
+sub_building_enum_engine = 5
+sub_building_enum_oiltank = 6
+sub_building_enum_machineproduct = 7
+sub_building_enum_smelter = 8
+sub_building_enum_cutterbar = 9
+sub_building_enum_machine = 10
+sub_building_enum_makeproduct = 11
+sub_building_enum_sewing = 12
+sub_building_enum_electricSolderingIron = 13
+sub_building_enum_welding = 14
+sub_building_enum_medicalproduct = 15
+sub_building_enum_burnisher = 16
+sub_building_enum_fermentor = 17
+sub_building_enum_distiller = 18
+sub_building_enum_fireproduct = 19
+sub_building_enum_gridiron = 20
+sub_building_enum_wok = 21
+sub_building_enum_oven = 22
+hero_name_type_random_name = 0
+hero_name_type_random_name_m = 1
+hero_name_type_random_name_f = 2
+hero_name_type_assign_name = 3
+
+
+
+_TOOLTEST_TESTFENTRY = _descriptor.Descriptor(
+  name='TestFEntry',
+  full_name='ToolTest.TestFEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ToolTest.TestFEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='ToolTest.TestFEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=218,
+  serialized_end=262,
+)
+
+_TOOLTEST_TESTGENTRY = _descriptor.Descriptor(
+  name='TestGEntry',
+  full_name='ToolTest.TestGEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='ToolTest.TestGEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='ToolTest.TestGEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=264,
+  serialized_end=308,
+)
+
+_TOOLTEST = _descriptor.Descriptor(
+  name='ToolTest',
+  full_name='ToolTest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='ToolTest.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testA', full_name='ToolTest.testA', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testB', full_name='ToolTest.testB', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testC', full_name='ToolTest.testC', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testD', full_name='ToolTest.testD', index=4,
+      number=5, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testH', full_name='ToolTest.testH', index=5,
+      number=6, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testI', full_name='ToolTest.testI', index=6,
+      number=7, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testE', full_name='ToolTest.testE', index=7,
+      number=8, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testF', full_name='ToolTest.testF', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='testG', full_name='ToolTest.testG', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TOOLTEST_TESTFENTRY, _TOOLTEST_TESTGENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15,
+  serialized_end=308,
 )
 
 
+_ARMOR = _descriptor.Descriptor(
+  name='armor',
+  full_name='armor',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='armor.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='armor.mark', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='wear_pos', full_name='armor.wear_pos', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='armor_type', full_name='armor.armor_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mod_id', full_name='armor.mod_id', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id1', full_name='armor.attr_id1', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v1', full_name='armor.attr_v1', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id2', full_name='armor.attr_id2', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v2', full_name='armor.attr_v2', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id3', full_name='armor.attr_id3', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v3', full_name='armor.attr_v3', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id4', full_name='armor.attr_id4', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v4', full_name='armor.attr_v4', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id5', full_name='armor.attr_id5', index=13,
+      number=14, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v5', full_name='armor.attr_v5', index=14,
+      number=15, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id6', full_name='armor.attr_id6', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v6', full_name='armor.attr_v6', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id7', full_name='armor.attr_id7', index=17,
+      number=18, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v7', full_name='armor.attr_v7', index=18,
+      number=19, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id8', full_name='armor.attr_id8', index=19,
+      number=20, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v8', full_name='armor.attr_v8', index=20,
+      number=21, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id9', full_name='armor.attr_id9', index=21,
+      number=22, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v9', full_name='armor.attr_v9', index=22,
+      number=23, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id12', full_name='armor.attr_id12', index=23,
+      number=24, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v12', full_name='armor.attr_v12', index=24,
+      number=25, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id13', full_name='armor.attr_id13', index=25,
+      number=26, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v13', full_name='armor.attr_v13', index=26,
+      number=27, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id14', full_name='armor.attr_id14', index=27,
+      number=28, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v14', full_name='armor.attr_v14', index=28,
+      number=29, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id15', full_name='armor.attr_id15', index=29,
+      number=30, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v15', full_name='armor.attr_v15', index=30,
+      number=31, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=311,
+  serialized_end=885,
+)
+
+
+_PREFAB_SOUND = _descriptor.Descriptor(
+  name='prefab_sound',
+  full_name='prefab_sound',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='prefab_sound.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sound_name', full_name='prefab_sound.sound_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='prefab_sound.mark', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sound_path', full_name='prefab_sound.sound_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=887,
+  serialized_end=967,
+)
+
+
+_EXP_SKILL_MAP_NEEDITEMENTRY = _descriptor.Descriptor(
+  name='NeedItemEntry',
+  full_name='exp_skill_map.NeedItemEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='exp_skill_map.NeedItemEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='exp_skill_map.NeedItemEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1092,
+  serialized_end=1139,
+)
+
+_EXP_SKILL_MAP = _descriptor.Descriptor(
+  name='exp_skill_map',
+  full_name='exp_skill_map',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='exp_skill_map.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_type', full_name='exp_skill_map.item_type', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='lv', full_name='exp_skill_map.lv', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='exp', full_name='exp_skill_map.exp', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='need_item', full_name='exp_skill_map.need_item', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_EXP_SKILL_MAP_NEEDITEMENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=970,
+  serialized_end=1139,
+)
+
+
+_LEVEL_NPC = _descriptor.Descriptor(
+  name='level_npc',
+  full_name='level_npc',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='level_npc.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='level_npc.mark', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='stage_id', full_name='level_npc.stage_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='area_id', full_name='level_npc.area_id', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_id', full_name='level_npc.hero_id', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_lv', full_name='level_npc.hero_lv', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1141,
+  serialized_end=1247,
+)
+
+
+_JOB = _descriptor.Descriptor(
+  name='job',
+  full_name='job',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='job.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='job.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='job.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_name_type', full_name='job.hero_name_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_name_key', full_name='job.hero_name_key', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_name_cn', full_name='job.hero_name_cn', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='camp', full_name='job.camp', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='race', full_name='job.race', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='star_level', full_name='job.star_level', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='job.type', index=9,
+      number=10, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='story_id', full_name='job.story_id', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk_id', full_name='job.talk_id', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk2_id', full_name='job.talk2_id', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='max_quality', full_name='job.max_quality', index=13,
+      number=14, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk3_id', full_name='job.talk3_id', index=14,
+      number=15, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk4_id', full_name='job.talk4_id', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk5_id', full_name='job.talk5_id', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk6_id', full_name='job.talk6_id', index=17,
+      number=18, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk7_id', full_name='job.talk7_id', index=18,
+      number=19, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='talk8_id', full_name='job.talk8_id', index=19,
+      number=20, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1250,
+  serialized_end=1660,
+)
+
+
+_GLOBAL_VAR = _descriptor.Descriptor(
+  name='global_var',
+  full_name='global_var',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='global_var.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='v_string', full_name='global_var.v_string', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='remark', full_name='global_var.remark', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1662,
+  serialized_end=1721,
+)
+
+
+_ERROR_CODE = _descriptor.Descriptor(
+  name='error_code',
+  full_name='error_code',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='error_code.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='error_code.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value_key', full_name='error_code.value_key', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value_cn', full_name='error_code.value_cn', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1723,
+  serialized_end=1798,
+)
+
+
+_BUFF = _descriptor.Descriptor(
+  name='buff',
+  full_name='buff',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='buff.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='buff_type', full_name='buff.buff_type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status_type', full_name='buff.status_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='target_type', full_name='buff.target_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='invalid_target_type', full_name='buff.invalid_target_type', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='range_type', full_name='buff.range_type', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='range_value', full_name='buff.range_value', index=6,
+      number=7, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='override_buff', full_name='buff.override_buff', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='override_buff_level', full_name='buff.override_buff_level', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='addtive_buff_level', full_name='buff.addtive_buff_level', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='destroy_on_death', full_name='buff.destroy_on_death', index=10,
+      number=11, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='remove_buff_type', full_name='buff.remove_buff_type', index=11,
+      number=12, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='conflict_buff_type', full_name='buff.conflict_buff_type', index=12,
+      number=13, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='conflict_buff_id', full_name='buff.conflict_buff_id', index=13,
+      number=14, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='modify_effect_type', full_name='buff.modify_effect_type', index=14,
+      number=15, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='modify_effect_factor', full_name='buff.modify_effect_factor', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='modify_effect_value', full_name='buff.modify_effect_value', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='damage_range_type', full_name='buff.damage_range_type', index=17,
+      number=18, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='damage_range_value', full_name='buff.damage_range_value', index=18,
+      number=19, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='damage_effect_type', full_name='buff.damage_effect_type', index=19,
+      number=20, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='damage_effect_value', full_name='buff.damage_effect_value', index=20,
+      number=21, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='addtive_effect_type', full_name='buff.addtive_effect_type', index=21,
+      number=22, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='addtive_effect_factor', full_name='buff.addtive_effect_factor', index=22,
+      number=23, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='designated_target_type', full_name='buff.designated_target_type', index=23,
+      number=24, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='designated_effect_type', full_name='buff.designated_effect_type', index=24,
+      number=25, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='designated_effect_value', full_name='buff.designated_effect_value', index=25,
+      number=26, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='during', full_name='buff.during', index=26,
+      number=27, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tick', full_name='buff.tick', index=27,
+      number=28, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='count', full_name='buff.count', index=28,
+      number=29, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='icon_id', full_name='buff.icon_id', index=29,
+      number=30, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='buff_hit', full_name='buff.buff_hit', index=30,
+      number=31, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='art_effect_id', full_name='buff.art_effect_id', index=31,
+      number=32, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='effect_single_id', full_name='buff.effect_single_id', index=32,
+      number=33, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='buff_id', full_name='buff.buff_id', index=33,
+      number=34, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1801,
+  serialized_end=2768,
+)
+
+
+_BOX = _descriptor.Descriptor(
+  name='box',
+  full_name='box',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='box.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='box.mark', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='drop_type', full_name='box.drop_type', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='chapter_id', full_name='box.chapter_id', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_icon', full_name='box.box_icon', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_intro', full_name='box.box_intro', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_quality', full_name='box.box_quality', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='relevance_type', full_name='box.relevance_type', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='relevance_id', full_name='box.relevance_id', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2771,
+  serialized_end=2945,
+)
+
+
+_MAP = _descriptor.Descriptor(
+  name='map',
+  full_name='map',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='map.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='map.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='scene_name', full_name='map.scene_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='paths', full_name='map.paths', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2947,
+  serialized_end=3013,
+)
+
+
+_GLOBAL_STRING = _descriptor.Descriptor(
+  name='global_string',
+  full_name='global_string',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='global_string.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='global_string.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='global_string.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3015,
+  serialized_end=3078,
+)
+
+
+_SKILL = _descriptor.Descriptor(
+  name='skill',
+  full_name='skill',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='skill.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='skill.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='skill.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro_key', full_name='skill.intro_key', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro_cn', full_name='skill.intro_cn', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cast_type', full_name='skill.cast_type', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='level', full_name='skill.level', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cost', full_name='skill.cost', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='performance_id', full_name='skill.performance_id', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='projectile_id', full_name='skill.projectile_id', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hit_performance_id', full_name='skill.hit_performance_id', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='be_hit_time', full_name='skill.be_hit_time', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='blood_performance', full_name='skill.blood_performance', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='buff_array', full_name='skill.buff_array', index=13,
+      number=14, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_shape', full_name='skill.weapon_shape', index=14,
+      number=15, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='startup_time', full_name='skill.startup_time', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='active_time', full_name='skill.active_time', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hit_time', full_name='skill.hit_time', index=17,
+      number=18, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='recover_time', full_name='skill.recover_time', index=18,
+      number=19, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='skill_range_value', full_name='skill.skill_range_value', index=19,
+      number=20, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='target_amount', full_name='skill.target_amount', index=20,
+      number=21, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='target_camp_type', full_name='skill.target_camp_type', index=21,
+      number=22, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='target_select_type', full_name='skill.target_select_type', index=22,
+      number=23, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='target_type', full_name='skill.target_type', index=23,
+      number=24, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='invalid_target_type', full_name='skill.invalid_target_type', index=24,
+      number=25, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_pos_type', full_name='skill.trigger_pos_type', index=25,
+      number=26, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_range_type', full_name='skill.trigger_range_type', index=26,
+      number=27, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_range_value', full_name='skill.trigger_range_value', index=27,
+      number=28, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='effective_time', full_name='skill.effective_time', index=28,
+      number=29, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_performance', full_name='skill.trigger_performance', index=29,
+      number=30, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_unit_performance', full_name='skill.trigger_unit_performance', index=30,
+      number=31, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_single_performance', full_name='skill.trigger_single_performance', index=31,
+      number=32, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_during', full_name='skill.trigger_during', index=32,
+      number=33, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_tick', full_name='skill.trigger_tick', index=33,
+      number=34, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_buff', full_name='skill.trigger_buff', index=34,
+      number=35, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cancel_buff', full_name='skill.cancel_buff', index=35,
+      number=36, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='damage_effect_type', full_name='skill.damage_effect_type', index=36,
+      number=37, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='damage_effect_value', full_name='skill.damage_effect_value', index=37,
+      number=38, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='addtive_damage_effect_type', full_name='skill.addtive_damage_effect_type', index=38,
+      number=39, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='addtive_damage_effect_factor', full_name='skill.addtive_damage_effect_factor', index=39,
+      number=40, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='designated_target_type', full_name='skill.designated_target_type', index=40,
+      number=41, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='designated_effect_type', full_name='skill.designated_effect_type', index=41,
+      number=42, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='designated_effect_value', full_name='skill.designated_effect_value', index=42,
+      number=43, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='icon_id', full_name='skill.icon_id', index=43,
+      number=44, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3081,
+  serialized_end=4274,
+)
+
+
+_TEST_TESTENTRY = _descriptor.Descriptor(
+  name='TESTEntry',
+  full_name='Test.TESTEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='Test.TESTEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Test.TESTEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4347,
+  serialized_end=4390,
+)
+
+_TEST = _descriptor.Descriptor(
+  name='Test',
+  full_name='Test',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='Test.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ARRAY_TEST', full_name='Test.ARRAY_TEST', index=1,
+      number=2, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TEST', full_name='Test.TEST', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TEST_TESTENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4276,
+  serialized_end=4390,
+)
+
+
+_HERO_BATTLE_STATUS = _descriptor.Descriptor(
+  name='hero_battle_status',
+  full_name='hero_battle_status',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='hero_battle_status.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='hero_battle_status.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='des_key', full_name='hero_battle_status.des_key', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status_enum', full_name='hero_battle_status.status_enum', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status_type', full_name='hero_battle_status.status_type', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='hero_battle_status.time', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='rate', full_name='hero_battle_status.rate', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item', full_name='hero_battle_status.item', index=7,
+      number=8, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='recover_key', full_name='hero_battle_status.recover_key', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4393,
+  serialized_end=4584,
+)
+
+
+_TIMELINEINFO_RECOVERENTRY = _descriptor.Descriptor(
+  name='RecoverEntry',
+  full_name='TimelineInfo.RecoverEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='TimelineInfo.RecoverEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='TimelineInfo.RecoverEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4767,
+  serialized_end=4813,
+)
+
+_TIMELINEINFO_PREINPUTENTRY = _descriptor.Descriptor(
+  name='PreInputEntry',
+  full_name='TimelineInfo.PreInputEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='TimelineInfo.PreInputEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='TimelineInfo.PreInputEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4815,
+  serialized_end=4862,
+)
+
+_TIMELINEINFO = _descriptor.Descriptor(
+  name='TimelineInfo',
+  full_name='TimelineInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='TimelineInfo.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='duration', full_name='TimelineInfo.duration', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Recover', full_name='TimelineInfo.Recover', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='PreInput', full_name='TimelineInfo.PreInput', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='AnimationClips', full_name='TimelineInfo.AnimationClips', index=4,
+      number=5, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hitTimes', full_name='TimelineInfo.hitTimes', index=5,
+      number=6, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TIMELINEINFO_RECOVERENTRY, _TIMELINEINFO_PREINPUTENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4587,
+  serialized_end=4862,
+)
+
+
+_TASK_MAIN = _descriptor.Descriptor(
+  name='task_main',
+  full_name='task_main',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='task_main.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='chapter', full_name='task_main.chapter', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='task_type', full_name='task_main.task_type', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='task_main.name_cn', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='task_main.name_key', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='chapter_des', full_name='task_main.chapter_des', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='des_cn', full_name='task_main.des_cn', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='des_key', full_name='task_main.des_key', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='goal_type', full_name='task_main.goal_type', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='goal_id', full_name='task_main.goal_id', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='goal_num', full_name='task_main.goal_num', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box', full_name='task_main.box', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dialog', full_name='task_main.dialog', index=12,
+      number=13, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4865,
+  serialized_end=5113,
+)
+
+
+_PREFAB_EFFECT = _descriptor.Descriptor(
+  name='prefab_effect',
+  full_name='prefab_effect',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='prefab_effect.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_name', full_name='prefab_effect.prefab_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='prefab_effect.mark', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_path', full_name='prefab_effect.attach_path', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='follow_position', full_name='prefab_effect.follow_position', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='follow_rotation', full_name='prefab_effect.follow_rotation', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='effect_path', full_name='prefab_effect.effect_path', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5116,
+  serialized_end=5277,
+)
+
+
+_STAGE = _descriptor.Descriptor(
+  name='stage',
+  full_name='stage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='stage.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='stage.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='icon_id', full_name='stage.icon_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='suggest_power', full_name='stage.suggest_power', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='stage.name_cn', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='chapter_id', full_name='stage.chapter_id', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5279,
+  serialized_end=5393,
+)
+
+
+_HEAD_CONFIG = _descriptor.Descriptor(
+  name='head_config',
+  full_name='head_config',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='head_config.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mod_id', full_name='head_config.mod_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='eye_size', full_name='head_config.eye_size', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='eye_dis', full_name='head_config.eye_dis', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='eye_browdis', full_name='head_config.eye_browdis', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='eye_socket', full_name='head_config.eye_socket', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='nose_width', full_name='head_config.nose_width', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='nose_length', full_name='head_config.nose_length', index=7,
+      number=8, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='nose_hight', full_name='head_config.nose_hight', index=8,
+      number=9, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ear_part', full_name='head_config.ear_part', index=9,
+      number=10, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ear_size', full_name='head_config.ear_size', index=10,
+      number=11, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ear_form', full_name='head_config.ear_form', index=11,
+      number=12, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mouth_part', full_name='head_config.mouth_part', index=12,
+      number=13, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mouth_th', full_name='head_config.mouth_th', index=13,
+      number=14, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mouth_bump', full_name='head_config.mouth_bump', index=14,
+      number=15, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='jaw_th', full_name='head_config.jaw_th', index=15,
+      number=16, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='jaw_length', full_name='head_config.jaw_length', index=16,
+      number=17, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cheek', full_name='head_config.cheek', index=17,
+      number=18, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='brow', full_name='head_config.brow', index=18,
+      number=19, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='goatee', full_name='head_config.goatee', index=19,
+      number=20, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5396,
+  serialized_end=5767,
+)
+
+
+_ROLE_CONFIG = _descriptor.Descriptor(
+  name='role_config',
+  full_name='role_config',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='role_config.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gender', full_name='role_config.gender', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='body_type', full_name='role_config.body_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='race_type', full_name='role_config.race_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sound_id', full_name='role_config.sound_id', index=4,
+      number=5, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='head_id', full_name='role_config.head_id', index=5,
+      number=6, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hat_id', full_name='role_config.hat_id', index=6,
+      number=7, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hair_id', full_name='role_config.hair_id', index=7,
+      number=8, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='clothes_id', full_name='role_config.clothes_id', index=8,
+      number=9, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pants_id', full_name='role_config.pants_id', index=9,
+      number=10, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='shoe_id', full_name='role_config.shoe_id', index=10,
+      number=11, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5770,
+  serialized_end=6005,
+)
+
+
+_STAGE_LEVEL_DROPITEMENTRY = _descriptor.Descriptor(
+  name='DropItemEntry',
+  full_name='stage_level.DropItemEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='stage_level.DropItemEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='stage_level.DropItemEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6196,
+  serialized_end=6243,
+)
+
+_STAGE_LEVEL = _descriptor.Descriptor(
+  name='stage_level',
+  full_name='stage_level',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='stage_level.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='stage_level.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='stage_id', full_name='stage_level.stage_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='stage_type', full_name='stage_level.stage_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box', full_name='stage_level.box', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='drop_item', full_name='stage_level.drop_item', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='map_id', full_name='stage_level.map_id', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trigger_id', full_name='stage_level.trigger_id', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STAGE_LEVEL_DROPITEMENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6008,
+  serialized_end=6243,
+)
+
+
+_DIALOG = _descriptor.Descriptor(
+  name='dialog',
+  full_name='dialog',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='dialog.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dialog_id', full_name='dialog.dialog_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='img_id', full_name='dialog.img_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='img_location', full_name='dialog.img_location', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dialog', full_name='dialog.dialog', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6245,
+  serialized_end=6338,
+)
+
+
+_HERO_ACTIONIDENTRY = _descriptor.Descriptor(
+  name='ActionIdEntry',
+  full_name='hero.ActionIdEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='hero.ActionIdEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='hero.ActionIdEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7936,
+  serialized_end=7983,
+)
+
+_HERO = _descriptor.Descriptor(
+  name='hero',
+  full_name='hero',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='hero.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='hero.job_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='quality', full_name='hero.quality', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='hero.mark', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_type', full_name='hero.weapon_type', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='armor_type', full_name='hero.armor_type', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_id', full_name='hero.weapon_id', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='action_id', full_name='hero.action_id', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_effect_id', full_name='hero.hero_effect_id', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_skill_array', full_name='hero.hero_skill_array', index=9,
+      number=10, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id1', full_name='hero.attr_id1', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v1', full_name='hero.attr_v1', index=11,
+      number=12, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id2', full_name='hero.attr_id2', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v2', full_name='hero.attr_v2', index=13,
+      number=14, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id3', full_name='hero.attr_id3', index=14,
+      number=15, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v3', full_name='hero.attr_v3', index=15,
+      number=16, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id4', full_name='hero.attr_id4', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v4', full_name='hero.attr_v4', index=17,
+      number=18, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id5', full_name='hero.attr_id5', index=18,
+      number=19, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v5', full_name='hero.attr_v5', index=19,
+      number=20, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id6', full_name='hero.attr_id6', index=20,
+      number=21, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v6', full_name='hero.attr_v6', index=21,
+      number=22, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id7', full_name='hero.attr_id7', index=22,
+      number=23, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v7', full_name='hero.attr_v7', index=23,
+      number=24, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id13', full_name='hero.attr_id13', index=24,
+      number=25, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v13', full_name='hero.attr_v13', index=25,
+      number=26, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id26', full_name='hero.attr_id26', index=26,
+      number=27, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v26', full_name='hero.attr_v26', index=27,
+      number=28, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id25', full_name='hero.attr_id25', index=28,
+      number=29, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v25', full_name='hero.attr_v25', index=29,
+      number=30, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id5', full_name='hero.tech_id5', index=30,
+      number=31, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v5', full_name='hero.tech_v5', index=31,
+      number=32, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id6', full_name='hero.tech_id6', index=32,
+      number=33, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v6', full_name='hero.tech_v6', index=33,
+      number=34, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id7', full_name='hero.tech_id7', index=34,
+      number=35, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v7', full_name='hero.tech_v7', index=35,
+      number=36, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id8', full_name='hero.tech_id8', index=36,
+      number=37, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v8', full_name='hero.tech_v8', index=37,
+      number=38, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id9', full_name='hero.tech_id9', index=38,
+      number=39, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v9', full_name='hero.tech_v9', index=39,
+      number=40, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id10', full_name='hero.tech_id10', index=40,
+      number=41, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v10', full_name='hero.tech_v10', index=41,
+      number=42, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id11', full_name='hero.tech_id11', index=42,
+      number=43, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v11', full_name='hero.tech_v11', index=43,
+      number=44, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id12', full_name='hero.tech_id12', index=44,
+      number=45, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v12', full_name='hero.tech_v12', index=45,
+      number=46, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_id13', full_name='hero.tech_id13', index=46,
+      number=47, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tech_v13', full_name='hero.tech_v13', index=47,
+      number=48, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id14', full_name='hero.attr_id14', index=48,
+      number=49, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v14', full_name='hero.attr_v14', index=49,
+      number=50, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id15', full_name='hero.attr_id15', index=50,
+      number=51, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v15', full_name='hero.attr_v15', index=51,
+      number=52, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_hp', full_name='hero.levelup_hp', index=52,
+      number=53, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_hp_var', full_name='hero.levelup_hp_var', index=53,
+      number=54, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_at', full_name='hero.levelup_at', index=54,
+      number=55, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_at_var', full_name='hero.levelup_at_var', index=55,
+      number=56, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_def', full_name='hero.levelup_def', index=56,
+      number=57, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_def_var', full_name='hero.levelup_def_var', index=57,
+      number=58, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_hit', full_name='hero.levelup_hit', index=58,
+      number=59, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_hit_var', full_name='hero.levelup_hit_var', index=59,
+      number=60, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_dod', full_name='hero.levelup_dod', index=60,
+      number=61, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_dod_var', full_name='hero.levelup_dod_var', index=61,
+      number=62, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_explode', full_name='hero.levelup_explode', index=62,
+      number=63, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_explode_var', full_name='hero.levelup_explode_var', index=63,
+      number=64, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_med', full_name='hero.levelup_med', index=64,
+      number=65, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_med_var', full_name='hero.levelup_med_var', index=65,
+      number=66, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_cri', full_name='hero.levelup_cri', index=66,
+      number=67, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_cri_var', full_name='hero.levelup_cri_var', index=67,
+      number=68, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_crihurt', full_name='hero.levelup_crihurt', index=68,
+      number=69, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='levelup_crihurt_var', full_name='hero.levelup_crihurt_var', index=69,
+      number=70, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='up_need_item_id1', full_name='hero.up_need_item_id1', index=70,
+      number=71, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='up_need_item_v1', full_name='hero.up_need_item_v1', index=71,
+      number=72, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='up_need_item_id2', full_name='hero.up_need_item_id2', index=72,
+      number=73, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='up_need_item_v2', full_name='hero.up_need_item_v2', index=73,
+      number=74, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='up_need_item_id3', full_name='hero.up_need_item_id3', index=74,
+      number=75, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='up_need_item_v3', full_name='hero.up_need_item_v3', index=75,
+      number=76, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_HERO_ACTIONIDENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6341,
+  serialized_end=7983,
+)
+
+
+_ITEM = _descriptor.Descriptor(
+  name='item',
+  full_name='item',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='item.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='item.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='item.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro_key', full_name='item.intro_key', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro_cn', full_name='item.intro_cn', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_type', full_name='item.item_type', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_detail_type', full_name='item.item_detail_type', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='block_num', full_name='item.block_num', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='img_id', full_name='item.img_id', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='capacity', full_name='item.capacity', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='can_drop', full_name='item.can_drop', index=10,
+      number=11, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='expire_time', full_name='item.expire_time', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='combustibility', full_name='item.combustibility', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='catalasis', full_name='item.catalasis', index=13,
+      number=14, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mod_id', full_name='item.mod_id', index=14,
+      number=15, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_pro_id', full_name='item.weapon_pro_id', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='armor_pro_id', full_name='item.armor_pro_id', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_id', full_name='item.box_id', index=17,
+      number=18, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7986,
+  serialized_end=8364,
+)
+
+
+_CHAPTER = _descriptor.Descriptor(
+  name='chapter',
+  full_name='chapter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='chapter.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='chapter.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='chapter.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='difficulty', full_name='chapter.difficulty', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro_key', full_name='chapter.intro_key', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='imgid', full_name='chapter.imgid', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8367,
+  serialized_end=8498,
+)
+
+
+_BUILDING_CONSUMEMATERIALSENTRY = _descriptor.Descriptor(
+  name='ConsumeMaterialsEntry',
+  full_name='building.ConsumeMaterialsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='building.ConsumeMaterialsEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='building.ConsumeMaterialsEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8985,
+  serialized_end=9040,
+)
+
+_BUILDING_PRODUCTMATERIALSENTRY = _descriptor.Descriptor(
+  name='ProductMaterialsEntry',
+  full_name='building.ProductMaterialsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='building.ProductMaterialsEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='building.ProductMaterialsEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9042,
+  serialized_end=9097,
+)
+
+_BUILDING = _descriptor.Descriptor(
+  name='building',
+  full_name='building',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='building.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='building.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='building.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='icon_id', full_name='building.icon_id', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='update_group', full_name='building.update_group', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='transform_type', full_name='building.transform_type', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sub_building_type', full_name='building.sub_building_type', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='building_type', full_name='building.building_type', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='position', full_name='building.position', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='need_capacity', full_name='building.need_capacity', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='need_power', full_name='building.need_power', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pre_buildings', full_name='building.pre_buildings', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='level', full_name='building.level', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='building_subtype', full_name='building.building_subtype', index=13,
+      number=14, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='consume_materials', full_name='building.consume_materials', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='product_materials', full_name='building.product_materials', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='initially_owned', full_name='building.initially_owned', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_shape', full_name='building.prefab_shape', index=17,
+      number=18, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_BUILDING_CONSUMEMATERIALSENTRY, _BUILDING_PRODUCTMATERIALSENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8501,
+  serialized_end=9097,
+)
+
+
+_ROLE_SOUND_CONFIG = _descriptor.Descriptor(
+  name='role_sound_config',
+  full_name='role_sound_config',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='role_sound_config.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='breathing', full_name='role_sound_config.breathing', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dead', full_name='role_sound_config.dead', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hurt', full_name='role_sound_config.hurt', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='classicvoice_fire', full_name='role_sound_config.classicvoice_fire', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='classicvoice_go', full_name='role_sound_config.classicvoice_go', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='classicvoice_ok', full_name='role_sound_config.classicvoice_ok', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9100,
+  serialized_end=9255,
+)
+
+
+_PERFORMANCE = _descriptor.Descriptor(
+  name='performance',
+  full_name='performance',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='performance.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark_name', full_name='performance.mark_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='action_id', full_name='performance.action_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='effect_id', full_name='performance.effect_id', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sound_id', full_name='performance.sound_id', index=4,
+      number=5, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='shake_time', full_name='performance.shake_time', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='shake_factor', full_name='performance.shake_factor', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='effect_time', full_name='performance.effect_time', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9258,
+  serialized_end=9421,
+)
+
+
+_STORY = _descriptor.Descriptor(
+  name='story',
+  full_name='story',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='story.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='story_key', full_name='story.story_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='story_cn', full_name='story.story_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9423,
+  serialized_end=9479,
+)
+
+
+_TASK_DAILY = _descriptor.Descriptor(
+  name='task_daily',
+  full_name='task_daily',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='task_daily.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='task_daily.name_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='task_daily.name_cn', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='des_key', full_name='task_daily.des_key', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='des_cn', full_name='task_daily.des_cn', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='task_type', full_name='task_daily.task_type', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='goal_num', full_name='task_daily.goal_num', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item1', full_name='task_daily.item1', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='num1', full_name='task_daily.num1', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item2', full_name='task_daily.item2', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='num2', full_name='task_daily.num2', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item3', full_name='task_daily.item3', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='num3', full_name='task_daily.num3', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9482,
+  serialized_end=9698,
+)
 
 
 _SKILLPREFAB = _descriptor.Descriptor(
@@ -107,10 +8035,1882 @@ _SKILLPREFAB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15,
-  serialized_end=216,
+  serialized_start=9701,
+  serialized_end=9902,
 )
 
+
+_FORMULA_PRODUCTENTRY = _descriptor.Descriptor(
+  name='ProductEntry',
+  full_name='formula.ProductEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='formula.ProductEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='formula.ProductEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10119,
+  serialized_end=10165,
+)
+
+_FORMULA_CONSUMEENTRY = _descriptor.Descriptor(
+  name='ConsumeEntry',
+  full_name='formula.ConsumeEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='formula.ConsumeEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='formula.ConsumeEntry.value', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10167,
+  serialized_end=10213,
+)
+
+_FORMULA = _descriptor.Descriptor(
+  name='formula',
+  full_name='formula',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='formula.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='img_id', full_name='formula.img_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_key', full_name='formula.name_key', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='name_cn', full_name='formula.name_cn', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro_key', full_name='formula.intro_key', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='formula_type', full_name='formula.formula_type', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cost_time', full_name='formula.cost_time', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='product', full_name='formula.product', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='consume', full_name='formula.consume', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_FORMULA_PRODUCTENTRY, _FORMULA_CONSUMEENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9905,
+  serialized_end=10213,
+)
+
+
+_SYSTEM_NAME = _descriptor.Descriptor(
+  name='system_name',
+  full_name='system_name',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='system_name.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='female_firstname', full_name='system_name.female_firstname', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='male_firstname', full_name='system_name.male_firstname', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='lastname', full_name='system_name.lastname', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10215,
+  serialized_end=10308,
+)
+
+
+_PREFAB_ACTION = _descriptor.Descriptor(
+  name='prefab_action',
+  full_name='prefab_action',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='prefab_action.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='action_name', full_name='prefab_action.action_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='intro', full_name='prefab_action.intro', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='action_time', full_name='prefab_action.action_time', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10310,
+  serialized_end=10394,
+)
+
+
+_BOX_DROP = _descriptor.Descriptor(
+  name='box_drop',
+  full_name='box_drop',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='box_drop.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_id', full_name='box_drop.box_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_id', full_name='box_drop.item_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_count', full_name='box_drop.item_count', index=3,
+      number=4, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weight', full_name='box_drop.weight', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark_name', full_name='box_drop.mark_name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_type', full_name='box_drop.item_type', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10397,
+  serialized_end=10542,
+)
+
+
+_PREFAB_SHAPE = _descriptor.Descriptor(
+  name='prefab_shape',
+  full_name='prefab_shape',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='prefab_shape.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_name', full_name='prefab_shape.prefab_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='prefab_shape.mark', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10544,
+  serialized_end=10605,
+)
+
+
+_WEAPON = _descriptor.Descriptor(
+  name='weapon',
+  full_name='weapon',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='weapon.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='weapon.mark', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='wear_pos', full_name='weapon.wear_pos', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_type', full_name='weapon.weapon_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sub_type', full_name='weapon.sub_type', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='energy', full_name='weapon.energy', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id1', full_name='weapon.attr_id1', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v1', full_name='weapon.attr_v1', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id2', full_name='weapon.attr_id2', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v2', full_name='weapon.attr_v2', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id3', full_name='weapon.attr_id3', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v3', full_name='weapon.attr_v3', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id13', full_name='weapon.attr_id13', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v13', full_name='weapon.attr_v13', index=13,
+      number=14, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id4', full_name='weapon.attr_id4', index=14,
+      number=15, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v4', full_name='weapon.attr_v4', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id5', full_name='weapon.attr_id5', index=16,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v5', full_name='weapon.attr_v5', index=17,
+      number=18, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id6', full_name='weapon.attr_id6', index=18,
+      number=19, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v6', full_name='weapon.attr_v6', index=19,
+      number=20, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id7', full_name='weapon.attr_id7', index=20,
+      number=21, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v7', full_name='weapon.attr_v7', index=21,
+      number=22, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id8', full_name='weapon.attr_id8', index=22,
+      number=23, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v8', full_name='weapon.attr_v8', index=23,
+      number=24, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id9', full_name='weapon.attr_id9', index=24,
+      number=25, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v9', full_name='weapon.attr_v9', index=25,
+      number=26, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_id12', full_name='weapon.attr_id12', index=26,
+      number=27, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attr_v12', full_name='weapon.attr_v12', index=27,
+      number=28, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_effect_id', full_name='weapon.weapon_effect_id', index=28,
+      number=29, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10608,
+  serialized_end=11173,
+)
+
+
+_WEAPON_EFFECT = _descriptor.Descriptor(
+  name='weapon_effect',
+  full_name='weapon_effect',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='weapon_effect.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mark', full_name='weapon_effect.mark', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_id', full_name='weapon_effect.prefab_id', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='action', full_name='weapon_effect.action', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cast_performance', full_name='weapon_effect.cast_performance', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hit_performance', full_name='weapon_effect.hit_performance', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hit_time', full_name='weapon_effect.hit_time', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='blood_performance', full_name='weapon_effect.blood_performance', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='muzzle', full_name='weapon_effect.muzzle', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='projectile', full_name='weapon_effect.projectile', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='shellcase', full_name='weapon_effect.shellcase', index=10,
+      number=11, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dummy', full_name='weapon_effect.dummy', index=11,
+      number=12, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attack_clip_time', full_name='weapon_effect.attack_clip_time', index=12,
+      number=13, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11176,
+  serialized_end=11474,
+)
+
+
+_DATAHELPER_TOOLTESTDICTENTRY = _descriptor.Descriptor(
+  name='ToolTestDictEntry',
+  full_name='DataHelper.ToolTestDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.ToolTestDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.ToolTestDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13662,
+  serialized_end=13724,
+)
+
+_DATAHELPER_ARMORDICTENTRY = _descriptor.Descriptor(
+  name='ArmorDictEntry',
+  full_name='DataHelper.ArmorDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.ArmorDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.ArmorDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13726,
+  serialized_end=13782,
+)
+
+_DATAHELPER_PREFABSOUNDDICTENTRY = _descriptor.Descriptor(
+  name='PrefabSoundDictEntry',
+  full_name='DataHelper.PrefabSoundDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.PrefabSoundDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.PrefabSoundDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13784,
+  serialized_end=13853,
+)
+
+_DATAHELPER_EXPSKILLMAPDICTENTRY = _descriptor.Descriptor(
+  name='ExpSkillMapDictEntry',
+  full_name='DataHelper.ExpSkillMapDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.ExpSkillMapDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.ExpSkillMapDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13855,
+  serialized_end=13925,
+)
+
+_DATAHELPER_LEVELNPCDICTENTRY = _descriptor.Descriptor(
+  name='LevelNpcDictEntry',
+  full_name='DataHelper.LevelNpcDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.LevelNpcDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.LevelNpcDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13927,
+  serialized_end=13990,
+)
+
+_DATAHELPER_JOBDICTENTRY = _descriptor.Descriptor(
+  name='JobDictEntry',
+  full_name='DataHelper.JobDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.JobDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.JobDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13992,
+  serialized_end=14044,
+)
+
+_DATAHELPER_GLOBALVARDICTENTRY = _descriptor.Descriptor(
+  name='GlobalVarDictEntry',
+  full_name='DataHelper.GlobalVarDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.GlobalVarDictEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.GlobalVarDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14046,
+  serialized_end=14111,
+)
+
+_DATAHELPER_ERRORCODEDICTENTRY = _descriptor.Descriptor(
+  name='ErrorCodeDictEntry',
+  full_name='DataHelper.ErrorCodeDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.ErrorCodeDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.ErrorCodeDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14113,
+  serialized_end=14178,
+)
+
+_DATAHELPER_BUFFDICTENTRY = _descriptor.Descriptor(
+  name='BuffDictEntry',
+  full_name='DataHelper.BuffDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.BuffDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.BuffDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14180,
+  serialized_end=14234,
+)
+
+_DATAHELPER_BOXDICTENTRY = _descriptor.Descriptor(
+  name='BoxDictEntry',
+  full_name='DataHelper.BoxDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.BoxDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.BoxDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14236,
+  serialized_end=14288,
+)
+
+_DATAHELPER_MAPDICTENTRY = _descriptor.Descriptor(
+  name='MapDictEntry',
+  full_name='DataHelper.MapDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.MapDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.MapDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14290,
+  serialized_end=14342,
+)
+
+_DATAHELPER_GLOBALSTRINGDICTENTRY = _descriptor.Descriptor(
+  name='GlobalStringDictEntry',
+  full_name='DataHelper.GlobalStringDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.GlobalStringDictEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.GlobalStringDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14344,
+  serialized_end=14415,
+)
+
+_DATAHELPER_SKILLDICTENTRY = _descriptor.Descriptor(
+  name='SkillDictEntry',
+  full_name='DataHelper.SkillDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.SkillDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.SkillDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14417,
+  serialized_end=14473,
+)
+
+_DATAHELPER_TESTDICTENTRY = _descriptor.Descriptor(
+  name='TestDictEntry',
+  full_name='DataHelper.TestDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.TestDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.TestDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14475,
+  serialized_end=14529,
+)
+
+_DATAHELPER_HEROBATTLESTATUSDICTENTRY = _descriptor.Descriptor(
+  name='HeroBattleStatusDictEntry',
+  full_name='DataHelper.HeroBattleStatusDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.HeroBattleStatusDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.HeroBattleStatusDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14531,
+  serialized_end=14611,
+)
+
+_DATAHELPER_TIMELINEINFODICTENTRY = _descriptor.Descriptor(
+  name='TimelineInfoDictEntry',
+  full_name='DataHelper.TimelineInfoDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.TimelineInfoDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.TimelineInfoDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14613,
+  serialized_end=14683,
+)
+
+_DATAHELPER_TASKMAINDICTENTRY = _descriptor.Descriptor(
+  name='TaskMainDictEntry',
+  full_name='DataHelper.TaskMainDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.TaskMainDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.TaskMainDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14685,
+  serialized_end=14748,
+)
+
+_DATAHELPER_PREFABEFFECTDICTENTRY = _descriptor.Descriptor(
+  name='PrefabEffectDictEntry',
+  full_name='DataHelper.PrefabEffectDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.PrefabEffectDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.PrefabEffectDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14750,
+  serialized_end=14821,
+)
+
+_DATAHELPER_STAGEDICTENTRY = _descriptor.Descriptor(
+  name='StageDictEntry',
+  full_name='DataHelper.StageDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.StageDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.StageDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14823,
+  serialized_end=14879,
+)
+
+_DATAHELPER_HEADCONFIGDICTENTRY = _descriptor.Descriptor(
+  name='HeadConfigDictEntry',
+  full_name='DataHelper.HeadConfigDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.HeadConfigDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.HeadConfigDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14881,
+  serialized_end=14948,
+)
+
+_DATAHELPER_ROLECONFIGDICTENTRY = _descriptor.Descriptor(
+  name='RoleConfigDictEntry',
+  full_name='DataHelper.RoleConfigDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.RoleConfigDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.RoleConfigDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14950,
+  serialized_end=15017,
+)
+
+_DATAHELPER_STAGELEVELDICTENTRY = _descriptor.Descriptor(
+  name='StageLevelDictEntry',
+  full_name='DataHelper.StageLevelDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.StageLevelDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.StageLevelDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15019,
+  serialized_end=15086,
+)
+
+_DATAHELPER_DIALOGDICTENTRY = _descriptor.Descriptor(
+  name='DialogDictEntry',
+  full_name='DataHelper.DialogDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.DialogDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.DialogDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15088,
+  serialized_end=15146,
+)
+
+_DATAHELPER_HERODICTENTRY = _descriptor.Descriptor(
+  name='HeroDictEntry',
+  full_name='DataHelper.HeroDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.HeroDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.HeroDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15148,
+  serialized_end=15202,
+)
+
+_DATAHELPER_ITEMDICTENTRY = _descriptor.Descriptor(
+  name='ItemDictEntry',
+  full_name='DataHelper.ItemDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.ItemDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.ItemDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15204,
+  serialized_end=15258,
+)
+
+_DATAHELPER_CHAPTERDICTENTRY = _descriptor.Descriptor(
+  name='ChapterDictEntry',
+  full_name='DataHelper.ChapterDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.ChapterDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.ChapterDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15260,
+  serialized_end=15320,
+)
+
+_DATAHELPER_BUILDINGDICTENTRY = _descriptor.Descriptor(
+  name='BuildingDictEntry',
+  full_name='DataHelper.BuildingDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.BuildingDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.BuildingDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15322,
+  serialized_end=15384,
+)
+
+_DATAHELPER_ROLESOUNDCONFIGDICTENTRY = _descriptor.Descriptor(
+  name='RoleSoundConfigDictEntry',
+  full_name='DataHelper.RoleSoundConfigDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.RoleSoundConfigDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.RoleSoundConfigDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15386,
+  serialized_end=15464,
+)
+
+_DATAHELPER_PERFORMANCEDICTENTRY = _descriptor.Descriptor(
+  name='PerformanceDictEntry',
+  full_name='DataHelper.PerformanceDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.PerformanceDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.PerformanceDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15466,
+  serialized_end=15534,
+)
+
+_DATAHELPER_STORYDICTENTRY = _descriptor.Descriptor(
+  name='StoryDictEntry',
+  full_name='DataHelper.StoryDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.StoryDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.StoryDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15536,
+  serialized_end=15592,
+)
+
+_DATAHELPER_TASKDAILYDICTENTRY = _descriptor.Descriptor(
+  name='TaskDailyDictEntry',
+  full_name='DataHelper.TaskDailyDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.TaskDailyDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.TaskDailyDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15594,
+  serialized_end=15659,
+)
 
 _DATAHELPER_SKILLPREFABDICTENTRY = _descriptor.Descriptor(
   name='SkillPrefabDictEntry',
@@ -145,8 +9945,267 @@ _DATAHELPER_SKILLPREFABDICTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=314,
-  serialized_end=382,
+  serialized_start=15661,
+  serialized_end=15729,
+)
+
+_DATAHELPER_FORMULADICTENTRY = _descriptor.Descriptor(
+  name='FormulaDictEntry',
+  full_name='DataHelper.FormulaDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.FormulaDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.FormulaDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15731,
+  serialized_end=15791,
+)
+
+_DATAHELPER_SYSTEMNAMEDICTENTRY = _descriptor.Descriptor(
+  name='SystemNameDictEntry',
+  full_name='DataHelper.SystemNameDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.SystemNameDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.SystemNameDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15793,
+  serialized_end=15860,
+)
+
+_DATAHELPER_PREFABACTIONDICTENTRY = _descriptor.Descriptor(
+  name='PrefabActionDictEntry',
+  full_name='DataHelper.PrefabActionDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.PrefabActionDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.PrefabActionDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15862,
+  serialized_end=15933,
+)
+
+_DATAHELPER_BOXDROPDICTENTRY = _descriptor.Descriptor(
+  name='BoxDropDictEntry',
+  full_name='DataHelper.BoxDropDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.BoxDropDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.BoxDropDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15935,
+  serialized_end=15996,
+)
+
+_DATAHELPER_PREFABSHAPEDICTENTRY = _descriptor.Descriptor(
+  name='PrefabShapeDictEntry',
+  full_name='DataHelper.PrefabShapeDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.PrefabShapeDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.PrefabShapeDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15998,
+  serialized_end=16067,
+)
+
+_DATAHELPER_WEAPONDICTENTRY = _descriptor.Descriptor(
+  name='WeaponDictEntry',
+  full_name='DataHelper.WeaponDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.WeaponDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.WeaponDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16069,
+  serialized_end=16127,
+)
+
+_DATAHELPER_WEAPONEFFECTDICTENTRY = _descriptor.Descriptor(
+  name='WeaponEffectDictEntry',
+  full_name='DataHelper.WeaponEffectDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.WeaponEffectDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.WeaponEffectDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16129,
+  serialized_end=16200,
 )
 
 _DATAHELPER = _descriptor.Descriptor(
@@ -164,8 +10223,274 @@ _DATAHELPER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='SkillPrefab_dict', full_name='DataHelper.SkillPrefab_dict', index=1,
+      name='ToolTest_dict', full_name='DataHelper.ToolTest_dict', index=1,
       number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='armor_dict', full_name='DataHelper.armor_dict', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_sound_dict', full_name='DataHelper.prefab_sound_dict', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='exp_skill_map_dict', full_name='DataHelper.exp_skill_map_dict', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='level_npc_dict', full_name='DataHelper.level_npc_dict', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='job_dict', full_name='DataHelper.job_dict', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='global_var_dict', full_name='DataHelper.global_var_dict', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='error_code_dict', full_name='DataHelper.error_code_dict', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='buff_dict', full_name='DataHelper.buff_dict', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_dict', full_name='DataHelper.box_dict', index=10,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='map_dict', full_name='DataHelper.map_dict', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='global_string_dict', full_name='DataHelper.global_string_dict', index=12,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='skill_dict', full_name='DataHelper.skill_dict', index=13,
+      number=14, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Test_dict', full_name='DataHelper.Test_dict', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_battle_status_dict', full_name='DataHelper.hero_battle_status_dict', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TimelineInfo_dict', full_name='DataHelper.TimelineInfo_dict', index=16,
+      number=17, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='task_main_dict', full_name='DataHelper.task_main_dict', index=17,
+      number=18, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_effect_dict', full_name='DataHelper.prefab_effect_dict', index=18,
+      number=19, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='stage_dict', full_name='DataHelper.stage_dict', index=19,
+      number=20, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='head_config_dict', full_name='DataHelper.head_config_dict', index=20,
+      number=21, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='role_config_dict', full_name='DataHelper.role_config_dict', index=21,
+      number=22, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='stage_level_dict', full_name='DataHelper.stage_level_dict', index=22,
+      number=23, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='dialog_dict', full_name='DataHelper.dialog_dict', index=23,
+      number=24, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hero_dict', full_name='DataHelper.hero_dict', index=24,
+      number=25, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='item_dict', full_name='DataHelper.item_dict', index=25,
+      number=26, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='chapter_dict', full_name='DataHelper.chapter_dict', index=26,
+      number=27, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='building_dict', full_name='DataHelper.building_dict', index=27,
+      number=28, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='role_sound_config_dict', full_name='DataHelper.role_sound_config_dict', index=28,
+      number=29, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='performance_dict', full_name='DataHelper.performance_dict', index=29,
+      number=30, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='story_dict', full_name='DataHelper.story_dict', index=30,
+      number=31, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='task_daily_dict', full_name='DataHelper.task_daily_dict', index=31,
+      number=32, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='SkillPrefab_dict', full_name='DataHelper.SkillPrefab_dict', index=32,
+      number=33, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='formula_dict', full_name='DataHelper.formula_dict', index=33,
+      number=34, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='system_name_dict', full_name='DataHelper.system_name_dict', index=34,
+      number=35, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_action_dict', full_name='DataHelper.prefab_action_dict', index=35,
+      number=36, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='box_drop_dict', full_name='DataHelper.box_drop_dict', index=36,
+      number=37, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='prefab_shape_dict', full_name='DataHelper.prefab_shape_dict', index=37,
+      number=38, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_dict', full_name='DataHelper.weapon_dict', index=38,
+      number=39, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weapon_effect_dict', full_name='DataHelper.weapon_effect_dict', index=39,
+      number=40, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -173,7 +10498,7 @@ _DATAHELPER = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_DATAHELPER_SKILLPREFABDICTENTRY, ],
+  nested_types=[_DATAHELPER_TOOLTESTDICTENTRY, _DATAHELPER_ARMORDICTENTRY, _DATAHELPER_PREFABSOUNDDICTENTRY, _DATAHELPER_EXPSKILLMAPDICTENTRY, _DATAHELPER_LEVELNPCDICTENTRY, _DATAHELPER_JOBDICTENTRY, _DATAHELPER_GLOBALVARDICTENTRY, _DATAHELPER_ERRORCODEDICTENTRY, _DATAHELPER_BUFFDICTENTRY, _DATAHELPER_BOXDICTENTRY, _DATAHELPER_MAPDICTENTRY, _DATAHELPER_GLOBALSTRINGDICTENTRY, _DATAHELPER_SKILLDICTENTRY, _DATAHELPER_TESTDICTENTRY, _DATAHELPER_HEROBATTLESTATUSDICTENTRY, _DATAHELPER_TIMELINEINFODICTENTRY, _DATAHELPER_TASKMAINDICTENTRY, _DATAHELPER_PREFABEFFECTDICTENTRY, _DATAHELPER_STAGEDICTENTRY, _DATAHELPER_HEADCONFIGDICTENTRY, _DATAHELPER_ROLECONFIGDICTENTRY, _DATAHELPER_STAGELEVELDICTENTRY, _DATAHELPER_DIALOGDICTENTRY, _DATAHELPER_HERODICTENTRY, _DATAHELPER_ITEMDICTENTRY, _DATAHELPER_CHAPTERDICTENTRY, _DATAHELPER_BUILDINGDICTENTRY, _DATAHELPER_ROLESOUNDCONFIGDICTENTRY, _DATAHELPER_PERFORMANCEDICTENTRY, _DATAHELPER_STORYDICTENTRY, _DATAHELPER_TASKDAILYDICTENTRY, _DATAHELPER_SKILLPREFABDICTENTRY, _DATAHELPER_FORMULADICTENTRY, _DATAHELPER_SYSTEMNAMEDICTENTRY, _DATAHELPER_PREFABACTIONDICTENTRY, _DATAHELPER_BOXDROPDICTENTRY, _DATAHELPER_PREFABSHAPEDICTENTRY, _DATAHELPER_WEAPONDICTENTRY, _DATAHELPER_WEAPONEFFECTDICTENTRY, ],
   enum_types=[
   ],
   options=None,
@@ -182,16 +10507,568 @@ _DATAHELPER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=382,
+  serialized_start=11477,
+  serialized_end=16200,
 )
 
+_TOOLTEST_TESTFENTRY.containing_type = _TOOLTEST
+_TOOLTEST_TESTGENTRY.containing_type = _TOOLTEST
+_TOOLTEST.fields_by_name['testF'].message_type = _TOOLTEST_TESTFENTRY
+_TOOLTEST.fields_by_name['testG'].message_type = _TOOLTEST_TESTGENTRY
+_ARMOR.fields_by_name['wear_pos'].enum_type = _WEAR_POS
+_ARMOR.fields_by_name['armor_type'].enum_type = _ARMOR_TYPE
+_EXP_SKILL_MAP_NEEDITEMENTRY.containing_type = _EXP_SKILL_MAP
+_EXP_SKILL_MAP.fields_by_name['need_item'].message_type = _EXP_SKILL_MAP_NEEDITEMENTRY
+_JOB.fields_by_name['hero_name_type'].enum_type = _HERO_NAME_TYPE
+_JOB.fields_by_name['camp'].enum_type = _CAMP_ID
+_JOB.fields_by_name['race'].enum_type = _RACE
+_JOB.fields_by_name['type'].enum_type = _JOB_TYPE
+_BUFF.fields_by_name['buff_type'].enum_type = _BUFF_TYPE
+_BUFF.fields_by_name['status_type'].enum_type = _STATUS_TYPE
+_BUFF.fields_by_name['target_type'].enum_type = _TARGET_CAMP_TYPE
+_BUFF.fields_by_name['range_type'].enum_type = _RANGE_TYPE
+_BUFF.fields_by_name['modify_effect_type'].enum_type = _ITEM_DETAIL_TYPE
+_BUFF.fields_by_name['damage_range_type'].enum_type = _RANGE_TYPE
+_BUFF.fields_by_name['damage_effect_type'].enum_type = _EFFECT_TYPE
+_BUFF.fields_by_name['addtive_effect_type'].enum_type = _ITEM_DETAIL_TYPE
+_BUFF.fields_by_name['designated_target_type'].enum_type = _RACE
+_SKILL.fields_by_name['cast_type'].enum_type = _CAST_TYPE
+_SKILL.fields_by_name['target_camp_type'].enum_type = _TARGET_CAMP_TYPE
+_SKILL.fields_by_name['target_select_type'].enum_type = _TARGET_SELECT_TYPE
+_SKILL.fields_by_name['invalid_target_type'].enum_type = _RACE
+_SKILL.fields_by_name['trigger_range_type'].enum_type = _RANGE_TYPE
+_SKILL.fields_by_name['damage_effect_type'].enum_type = _EFFECT_TYPE
+_SKILL.fields_by_name['addtive_damage_effect_type'].enum_type = _ITEM_DETAIL_TYPE
+_SKILL.fields_by_name['designated_target_type'].enum_type = _RACE
+_TEST_TESTENTRY.containing_type = _TEST
+_TEST.fields_by_name['TEST'].message_type = _TEST_TESTENTRY
+_HERO_BATTLE_STATUS.fields_by_name['status_enum'].enum_type = _HERO_STATUS_ENUM
+_TIMELINEINFO_RECOVERENTRY.containing_type = _TIMELINEINFO
+_TIMELINEINFO_PREINPUTENTRY.containing_type = _TIMELINEINFO
+_TIMELINEINFO.fields_by_name['Recover'].message_type = _TIMELINEINFO_RECOVERENTRY
+_TIMELINEINFO.fields_by_name['PreInput'].message_type = _TIMELINEINFO_PREINPUTENTRY
+_TASK_MAIN.fields_by_name['goal_type'].enum_type = _TASK_GOAL_TYPE
+_PREFAB_EFFECT.fields_by_name['attach_path'].enum_type = _HOOK
+_ROLE_CONFIG.fields_by_name['gender'].enum_type = _GENDER
+_ROLE_CONFIG.fields_by_name['body_type'].enum_type = _BODY_TYPE
+_ROLE_CONFIG.fields_by_name['race_type'].enum_type = _RACE_TYPE
+_STAGE_LEVEL_DROPITEMENTRY.containing_type = _STAGE_LEVEL
+_STAGE_LEVEL.fields_by_name['stage_type'].enum_type = _STAGE_TYPE
+_STAGE_LEVEL.fields_by_name['drop_item'].message_type = _STAGE_LEVEL_DROPITEMENTRY
+_HERO_ACTIONIDENTRY.containing_type = _HERO
+_HERO.fields_by_name['quality'].enum_type = _HERO_QUALITY
+_HERO.fields_by_name['weapon_type'].enum_type = _WEAPON_SUB_TYPE
+_HERO.fields_by_name['armor_type'].enum_type = _ARMOR_TYPE
+_HERO.fields_by_name['action_id'].message_type = _HERO_ACTIONIDENTRY
+_ITEM.fields_by_name['item_type'].enum_type = _ITEM_TYPE
+_ITEM.fields_by_name['item_detail_type'].enum_type = _ITEM_DETAIL_TYPE
+_CHAPTER.fields_by_name['difficulty'].enum_type = _CHAPTER_DIFFICULTY
+_BUILDING_CONSUMEMATERIALSENTRY.containing_type = _BUILDING
+_BUILDING_PRODUCTMATERIALSENTRY.containing_type = _BUILDING
+_BUILDING.fields_by_name['sub_building_type'].enum_type = _SUB_BUILDING_ENUM
+_BUILDING.fields_by_name['consume_materials'].message_type = _BUILDING_CONSUMEMATERIALSENTRY
+_BUILDING.fields_by_name['product_materials'].message_type = _BUILDING_PRODUCTMATERIALSENTRY
+_FORMULA_PRODUCTENTRY.containing_type = _FORMULA
+_FORMULA_CONSUMEENTRY.containing_type = _FORMULA
+_FORMULA.fields_by_name['product'].message_type = _FORMULA_PRODUCTENTRY
+_FORMULA.fields_by_name['consume'].message_type = _FORMULA_CONSUMEENTRY
+_BOX_DROP.fields_by_name['item_type'].enum_type = _BOX_ITEM_TYPE
+_WEAPON.fields_by_name['wear_pos'].enum_type = _WEAR_POS
+_WEAPON.fields_by_name['weapon_type'].enum_type = _WEAPON_TYPE
+_WEAPON.fields_by_name['sub_type'].enum_type = _WEAPON_SUB_TYPE
+_WEAPON_EFFECT.fields_by_name['action'].enum_type = _WEAPON_EFFECT_ACTION
+_WEAPON_EFFECT.fields_by_name['dummy'].enum_type = _HOOK
+_DATAHELPER_TOOLTESTDICTENTRY.fields_by_name['value'].message_type = _TOOLTEST
+_DATAHELPER_TOOLTESTDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_ARMORDICTENTRY.fields_by_name['value'].message_type = _ARMOR
+_DATAHELPER_ARMORDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_PREFABSOUNDDICTENTRY.fields_by_name['value'].message_type = _PREFAB_SOUND
+_DATAHELPER_PREFABSOUNDDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_EXPSKILLMAPDICTENTRY.fields_by_name['value'].message_type = _EXP_SKILL_MAP
+_DATAHELPER_EXPSKILLMAPDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_LEVELNPCDICTENTRY.fields_by_name['value'].message_type = _LEVEL_NPC
+_DATAHELPER_LEVELNPCDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_JOBDICTENTRY.fields_by_name['value'].message_type = _JOB
+_DATAHELPER_JOBDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_GLOBALVARDICTENTRY.fields_by_name['value'].message_type = _GLOBAL_VAR
+_DATAHELPER_GLOBALVARDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_ERRORCODEDICTENTRY.fields_by_name['value'].message_type = _ERROR_CODE
+_DATAHELPER_ERRORCODEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_BUFFDICTENTRY.fields_by_name['value'].message_type = _BUFF
+_DATAHELPER_BUFFDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_BOXDICTENTRY.fields_by_name['value'].message_type = _BOX
+_DATAHELPER_BOXDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_MAPDICTENTRY.fields_by_name['value'].message_type = _MAP
+_DATAHELPER_MAPDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_GLOBALSTRINGDICTENTRY.fields_by_name['value'].message_type = _GLOBAL_STRING
+_DATAHELPER_GLOBALSTRINGDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_SKILLDICTENTRY.fields_by_name['value'].message_type = _SKILL
+_DATAHELPER_SKILLDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_TESTDICTENTRY.fields_by_name['value'].message_type = _TEST
+_DATAHELPER_TESTDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_HEROBATTLESTATUSDICTENTRY.fields_by_name['value'].message_type = _HERO_BATTLE_STATUS
+_DATAHELPER_HEROBATTLESTATUSDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_TIMELINEINFODICTENTRY.fields_by_name['value'].message_type = _TIMELINEINFO
+_DATAHELPER_TIMELINEINFODICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_TASKMAINDICTENTRY.fields_by_name['value'].message_type = _TASK_MAIN
+_DATAHELPER_TASKMAINDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_PREFABEFFECTDICTENTRY.fields_by_name['value'].message_type = _PREFAB_EFFECT
+_DATAHELPER_PREFABEFFECTDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_STAGEDICTENTRY.fields_by_name['value'].message_type = _STAGE
+_DATAHELPER_STAGEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_HEADCONFIGDICTENTRY.fields_by_name['value'].message_type = _HEAD_CONFIG
+_DATAHELPER_HEADCONFIGDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_ROLECONFIGDICTENTRY.fields_by_name['value'].message_type = _ROLE_CONFIG
+_DATAHELPER_ROLECONFIGDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_STAGELEVELDICTENTRY.fields_by_name['value'].message_type = _STAGE_LEVEL
+_DATAHELPER_STAGELEVELDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_DIALOGDICTENTRY.fields_by_name['value'].message_type = _DIALOG
+_DATAHELPER_DIALOGDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_HERODICTENTRY.fields_by_name['value'].message_type = _HERO
+_DATAHELPER_HERODICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_ITEMDICTENTRY.fields_by_name['value'].message_type = _ITEM
+_DATAHELPER_ITEMDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_CHAPTERDICTENTRY.fields_by_name['value'].message_type = _CHAPTER
+_DATAHELPER_CHAPTERDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_BUILDINGDICTENTRY.fields_by_name['value'].message_type = _BUILDING
+_DATAHELPER_BUILDINGDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_ROLESOUNDCONFIGDICTENTRY.fields_by_name['value'].message_type = _ROLE_SOUND_CONFIG
+_DATAHELPER_ROLESOUNDCONFIGDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_PERFORMANCEDICTENTRY.fields_by_name['value'].message_type = _PERFORMANCE
+_DATAHELPER_PERFORMANCEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_STORYDICTENTRY.fields_by_name['value'].message_type = _STORY
+_DATAHELPER_STORYDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_TASKDAILYDICTENTRY.fields_by_name['value'].message_type = _TASK_DAILY
+_DATAHELPER_TASKDAILYDICTENTRY.containing_type = _DATAHELPER
 _DATAHELPER_SKILLPREFABDICTENTRY.fields_by_name['value'].message_type = _SKILLPREFAB
 _DATAHELPER_SKILLPREFABDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_FORMULADICTENTRY.fields_by_name['value'].message_type = _FORMULA
+_DATAHELPER_FORMULADICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_SYSTEMNAMEDICTENTRY.fields_by_name['value'].message_type = _SYSTEM_NAME
+_DATAHELPER_SYSTEMNAMEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_PREFABACTIONDICTENTRY.fields_by_name['value'].message_type = _PREFAB_ACTION
+_DATAHELPER_PREFABACTIONDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_BOXDROPDICTENTRY.fields_by_name['value'].message_type = _BOX_DROP
+_DATAHELPER_BOXDROPDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_PREFABSHAPEDICTENTRY.fields_by_name['value'].message_type = _PREFAB_SHAPE
+_DATAHELPER_PREFABSHAPEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_WEAPONDICTENTRY.fields_by_name['value'].message_type = _WEAPON
+_DATAHELPER_WEAPONDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_WEAPONEFFECTDICTENTRY.fields_by_name['value'].message_type = _WEAPON_EFFECT
+_DATAHELPER_WEAPONEFFECTDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER.fields_by_name['ToolTest_dict'].message_type = _DATAHELPER_TOOLTESTDICTENTRY
+_DATAHELPER.fields_by_name['armor_dict'].message_type = _DATAHELPER_ARMORDICTENTRY
+_DATAHELPER.fields_by_name['prefab_sound_dict'].message_type = _DATAHELPER_PREFABSOUNDDICTENTRY
+_DATAHELPER.fields_by_name['exp_skill_map_dict'].message_type = _DATAHELPER_EXPSKILLMAPDICTENTRY
+_DATAHELPER.fields_by_name['level_npc_dict'].message_type = _DATAHELPER_LEVELNPCDICTENTRY
+_DATAHELPER.fields_by_name['job_dict'].message_type = _DATAHELPER_JOBDICTENTRY
+_DATAHELPER.fields_by_name['global_var_dict'].message_type = _DATAHELPER_GLOBALVARDICTENTRY
+_DATAHELPER.fields_by_name['error_code_dict'].message_type = _DATAHELPER_ERRORCODEDICTENTRY
+_DATAHELPER.fields_by_name['buff_dict'].message_type = _DATAHELPER_BUFFDICTENTRY
+_DATAHELPER.fields_by_name['box_dict'].message_type = _DATAHELPER_BOXDICTENTRY
+_DATAHELPER.fields_by_name['map_dict'].message_type = _DATAHELPER_MAPDICTENTRY
+_DATAHELPER.fields_by_name['global_string_dict'].message_type = _DATAHELPER_GLOBALSTRINGDICTENTRY
+_DATAHELPER.fields_by_name['skill_dict'].message_type = _DATAHELPER_SKILLDICTENTRY
+_DATAHELPER.fields_by_name['Test_dict'].message_type = _DATAHELPER_TESTDICTENTRY
+_DATAHELPER.fields_by_name['hero_battle_status_dict'].message_type = _DATAHELPER_HEROBATTLESTATUSDICTENTRY
+_DATAHELPER.fields_by_name['TimelineInfo_dict'].message_type = _DATAHELPER_TIMELINEINFODICTENTRY
+_DATAHELPER.fields_by_name['task_main_dict'].message_type = _DATAHELPER_TASKMAINDICTENTRY
+_DATAHELPER.fields_by_name['prefab_effect_dict'].message_type = _DATAHELPER_PREFABEFFECTDICTENTRY
+_DATAHELPER.fields_by_name['stage_dict'].message_type = _DATAHELPER_STAGEDICTENTRY
+_DATAHELPER.fields_by_name['head_config_dict'].message_type = _DATAHELPER_HEADCONFIGDICTENTRY
+_DATAHELPER.fields_by_name['role_config_dict'].message_type = _DATAHELPER_ROLECONFIGDICTENTRY
+_DATAHELPER.fields_by_name['stage_level_dict'].message_type = _DATAHELPER_STAGELEVELDICTENTRY
+_DATAHELPER.fields_by_name['dialog_dict'].message_type = _DATAHELPER_DIALOGDICTENTRY
+_DATAHELPER.fields_by_name['hero_dict'].message_type = _DATAHELPER_HERODICTENTRY
+_DATAHELPER.fields_by_name['item_dict'].message_type = _DATAHELPER_ITEMDICTENTRY
+_DATAHELPER.fields_by_name['chapter_dict'].message_type = _DATAHELPER_CHAPTERDICTENTRY
+_DATAHELPER.fields_by_name['building_dict'].message_type = _DATAHELPER_BUILDINGDICTENTRY
+_DATAHELPER.fields_by_name['role_sound_config_dict'].message_type = _DATAHELPER_ROLESOUNDCONFIGDICTENTRY
+_DATAHELPER.fields_by_name['performance_dict'].message_type = _DATAHELPER_PERFORMANCEDICTENTRY
+_DATAHELPER.fields_by_name['story_dict'].message_type = _DATAHELPER_STORYDICTENTRY
+_DATAHELPER.fields_by_name['task_daily_dict'].message_type = _DATAHELPER_TASKDAILYDICTENTRY
 _DATAHELPER.fields_by_name['SkillPrefab_dict'].message_type = _DATAHELPER_SKILLPREFABDICTENTRY
+_DATAHELPER.fields_by_name['formula_dict'].message_type = _DATAHELPER_FORMULADICTENTRY
+_DATAHELPER.fields_by_name['system_name_dict'].message_type = _DATAHELPER_SYSTEMNAMEDICTENTRY
+_DATAHELPER.fields_by_name['prefab_action_dict'].message_type = _DATAHELPER_PREFABACTIONDICTENTRY
+_DATAHELPER.fields_by_name['box_drop_dict'].message_type = _DATAHELPER_BOXDROPDICTENTRY
+_DATAHELPER.fields_by_name['prefab_shape_dict'].message_type = _DATAHELPER_PREFABSHAPEDICTENTRY
+_DATAHELPER.fields_by_name['weapon_dict'].message_type = _DATAHELPER_WEAPONDICTENTRY
+_DATAHELPER.fields_by_name['weapon_effect_dict'].message_type = _DATAHELPER_WEAPONEFFECTDICTENTRY
+DESCRIPTOR.message_types_by_name['ToolTest'] = _TOOLTEST
+DESCRIPTOR.message_types_by_name['armor'] = _ARMOR
+DESCRIPTOR.message_types_by_name['prefab_sound'] = _PREFAB_SOUND
+DESCRIPTOR.message_types_by_name['exp_skill_map'] = _EXP_SKILL_MAP
+DESCRIPTOR.message_types_by_name['level_npc'] = _LEVEL_NPC
+DESCRIPTOR.message_types_by_name['job'] = _JOB
+DESCRIPTOR.message_types_by_name['global_var'] = _GLOBAL_VAR
+DESCRIPTOR.message_types_by_name['error_code'] = _ERROR_CODE
+DESCRIPTOR.message_types_by_name['buff'] = _BUFF
+DESCRIPTOR.message_types_by_name['box'] = _BOX
+DESCRIPTOR.message_types_by_name['map'] = _MAP
+DESCRIPTOR.message_types_by_name['global_string'] = _GLOBAL_STRING
+DESCRIPTOR.message_types_by_name['skill'] = _SKILL
+DESCRIPTOR.message_types_by_name['Test'] = _TEST
+DESCRIPTOR.message_types_by_name['hero_battle_status'] = _HERO_BATTLE_STATUS
+DESCRIPTOR.message_types_by_name['TimelineInfo'] = _TIMELINEINFO
+DESCRIPTOR.message_types_by_name['task_main'] = _TASK_MAIN
+DESCRIPTOR.message_types_by_name['prefab_effect'] = _PREFAB_EFFECT
+DESCRIPTOR.message_types_by_name['stage'] = _STAGE
+DESCRIPTOR.message_types_by_name['head_config'] = _HEAD_CONFIG
+DESCRIPTOR.message_types_by_name['role_config'] = _ROLE_CONFIG
+DESCRIPTOR.message_types_by_name['stage_level'] = _STAGE_LEVEL
+DESCRIPTOR.message_types_by_name['dialog'] = _DIALOG
+DESCRIPTOR.message_types_by_name['hero'] = _HERO
+DESCRIPTOR.message_types_by_name['item'] = _ITEM
+DESCRIPTOR.message_types_by_name['chapter'] = _CHAPTER
+DESCRIPTOR.message_types_by_name['building'] = _BUILDING
+DESCRIPTOR.message_types_by_name['role_sound_config'] = _ROLE_SOUND_CONFIG
+DESCRIPTOR.message_types_by_name['performance'] = _PERFORMANCE
+DESCRIPTOR.message_types_by_name['story'] = _STORY
+DESCRIPTOR.message_types_by_name['task_daily'] = _TASK_DAILY
 DESCRIPTOR.message_types_by_name['SkillPrefab'] = _SKILLPREFAB
+DESCRIPTOR.message_types_by_name['formula'] = _FORMULA
+DESCRIPTOR.message_types_by_name['system_name'] = _SYSTEM_NAME
+DESCRIPTOR.message_types_by_name['prefab_action'] = _PREFAB_ACTION
+DESCRIPTOR.message_types_by_name['box_drop'] = _BOX_DROP
+DESCRIPTOR.message_types_by_name['prefab_shape'] = _PREFAB_SHAPE
+DESCRIPTOR.message_types_by_name['weapon'] = _WEAPON
+DESCRIPTOR.message_types_by_name['weapon_effect'] = _WEAPON_EFFECT
 DESCRIPTOR.message_types_by_name['DataHelper'] = _DATAHELPER
+DESCRIPTOR.enum_types_by_name['item_type'] = _ITEM_TYPE
+DESCRIPTOR.enum_types_by_name['job_type'] = _JOB_TYPE
+DESCRIPTOR.enum_types_by_name['buff_type'] = _BUFF_TYPE
+DESCRIPTOR.enum_types_by_name['box_item_type'] = _BOX_ITEM_TYPE
+DESCRIPTOR.enum_types_by_name['hero_battle_status_type'] = _HERO_BATTLE_STATUS_TYPE
+DESCRIPTOR.enum_types_by_name['effect_type'] = _EFFECT_TYPE
+DESCRIPTOR.enum_types_by_name['armor_type'] = _ARMOR_TYPE
+DESCRIPTOR.enum_types_by_name['hero_quality'] = _HERO_QUALITY
+DESCRIPTOR.enum_types_by_name['status_type'] = _STATUS_TYPE
+DESCRIPTOR.enum_types_by_name['body_type'] = _BODY_TYPE
+DESCRIPTOR.enum_types_by_name['weapon_sub_type'] = _WEAPON_SUB_TYPE
+DESCRIPTOR.enum_types_by_name['weapon_effect_action'] = _WEAPON_EFFECT_ACTION
+DESCRIPTOR.enum_types_by_name['stage_type'] = _STAGE_TYPE
+DESCRIPTOR.enum_types_by_name['hero_status_enum'] = _HERO_STATUS_ENUM
+DESCRIPTOR.enum_types_by_name['task_goal_type'] = _TASK_GOAL_TYPE
+DESCRIPTOR.enum_types_by_name['range_type'] = _RANGE_TYPE
+DESCRIPTOR.enum_types_by_name['item_detail_type'] = _ITEM_DETAIL_TYPE
+DESCRIPTOR.enum_types_by_name['item_parent_type'] = _ITEM_PARENT_TYPE
+DESCRIPTOR.enum_types_by_name['target_camp_type'] = _TARGET_CAMP_TYPE
+DESCRIPTOR.enum_types_by_name['item_key'] = _ITEM_KEY
+DESCRIPTOR.enum_types_by_name['box_drop_type'] = _BOX_DROP_TYPE
+DESCRIPTOR.enum_types_by_name['camp_id'] = _CAMP_ID
+DESCRIPTOR.enum_types_by_name['race_type'] = _RACE_TYPE
+DESCRIPTOR.enum_types_by_name['hook'] = _HOOK
+DESCRIPTOR.enum_types_by_name['target_select_type'] = _TARGET_SELECT_TYPE
+DESCRIPTOR.enum_types_by_name['projectile_type'] = _PROJECTILE_TYPE
+DESCRIPTOR.enum_types_by_name['wear_pos'] = _WEAR_POS
+DESCRIPTOR.enum_types_by_name['chapter_difficulty'] = _CHAPTER_DIFFICULTY
+DESCRIPTOR.enum_types_by_name['gender'] = _GENDER
+DESCRIPTOR.enum_types_by_name['speedup_type'] = _SPEEDUP_TYPE
+DESCRIPTOR.enum_types_by_name['cast_type'] = _CAST_TYPE
+DESCRIPTOR.enum_types_by_name['weapon_type'] = _WEAPON_TYPE
+DESCRIPTOR.enum_types_by_name['race'] = _RACE
+DESCRIPTOR.enum_types_by_name['hero_status'] = _HERO_STATUS
+DESCRIPTOR.enum_types_by_name['sub_building_enum'] = _SUB_BUILDING_ENUM
+DESCRIPTOR.enum_types_by_name['hero_name_type'] = _HERO_NAME_TYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ToolTest = _reflection.GeneratedProtocolMessageType('ToolTest', (_message.Message,), dict(
+
+  TestFEntry = _reflection.GeneratedProtocolMessageType('TestFEntry', (_message.Message,), dict(
+    DESCRIPTOR = _TOOLTEST_TESTFENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:ToolTest.TestFEntry)
+    ))
+  ,
+
+  TestGEntry = _reflection.GeneratedProtocolMessageType('TestGEntry', (_message.Message,), dict(
+    DESCRIPTOR = _TOOLTEST_TESTGENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:ToolTest.TestGEntry)
+    ))
+  ,
+  DESCRIPTOR = _TOOLTEST,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:ToolTest)
+  ))
+_sym_db.RegisterMessage(ToolTest)
+_sym_db.RegisterMessage(ToolTest.TestFEntry)
+_sym_db.RegisterMessage(ToolTest.TestGEntry)
+
+armor = _reflection.GeneratedProtocolMessageType('armor', (_message.Message,), dict(
+  DESCRIPTOR = _ARMOR,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:armor)
+  ))
+_sym_db.RegisterMessage(armor)
+
+prefab_sound = _reflection.GeneratedProtocolMessageType('prefab_sound', (_message.Message,), dict(
+  DESCRIPTOR = _PREFAB_SOUND,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:prefab_sound)
+  ))
+_sym_db.RegisterMessage(prefab_sound)
+
+exp_skill_map = _reflection.GeneratedProtocolMessageType('exp_skill_map', (_message.Message,), dict(
+
+  NeedItemEntry = _reflection.GeneratedProtocolMessageType('NeedItemEntry', (_message.Message,), dict(
+    DESCRIPTOR = _EXP_SKILL_MAP_NEEDITEMENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:exp_skill_map.NeedItemEntry)
+    ))
+  ,
+  DESCRIPTOR = _EXP_SKILL_MAP,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:exp_skill_map)
+  ))
+_sym_db.RegisterMessage(exp_skill_map)
+_sym_db.RegisterMessage(exp_skill_map.NeedItemEntry)
+
+level_npc = _reflection.GeneratedProtocolMessageType('level_npc', (_message.Message,), dict(
+  DESCRIPTOR = _LEVEL_NPC,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:level_npc)
+  ))
+_sym_db.RegisterMessage(level_npc)
+
+job = _reflection.GeneratedProtocolMessageType('job', (_message.Message,), dict(
+  DESCRIPTOR = _JOB,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:job)
+  ))
+_sym_db.RegisterMessage(job)
+
+global_var = _reflection.GeneratedProtocolMessageType('global_var', (_message.Message,), dict(
+  DESCRIPTOR = _GLOBAL_VAR,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:global_var)
+  ))
+_sym_db.RegisterMessage(global_var)
+
+error_code = _reflection.GeneratedProtocolMessageType('error_code', (_message.Message,), dict(
+  DESCRIPTOR = _ERROR_CODE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:error_code)
+  ))
+_sym_db.RegisterMessage(error_code)
+
+buff = _reflection.GeneratedProtocolMessageType('buff', (_message.Message,), dict(
+  DESCRIPTOR = _BUFF,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:buff)
+  ))
+_sym_db.RegisterMessage(buff)
+
+box = _reflection.GeneratedProtocolMessageType('box', (_message.Message,), dict(
+  DESCRIPTOR = _BOX,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:box)
+  ))
+_sym_db.RegisterMessage(box)
+
+map = _reflection.GeneratedProtocolMessageType('map', (_message.Message,), dict(
+  DESCRIPTOR = _MAP,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:map)
+  ))
+_sym_db.RegisterMessage(map)
+
+global_string = _reflection.GeneratedProtocolMessageType('global_string', (_message.Message,), dict(
+  DESCRIPTOR = _GLOBAL_STRING,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:global_string)
+  ))
+_sym_db.RegisterMessage(global_string)
+
+skill = _reflection.GeneratedProtocolMessageType('skill', (_message.Message,), dict(
+  DESCRIPTOR = _SKILL,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:skill)
+  ))
+_sym_db.RegisterMessage(skill)
+
+Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), dict(
+
+  TESTEntry = _reflection.GeneratedProtocolMessageType('TESTEntry', (_message.Message,), dict(
+    DESCRIPTOR = _TEST_TESTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:Test.TESTEntry)
+    ))
+  ,
+  DESCRIPTOR = _TEST,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:Test)
+  ))
+_sym_db.RegisterMessage(Test)
+_sym_db.RegisterMessage(Test.TESTEntry)
+
+hero_battle_status = _reflection.GeneratedProtocolMessageType('hero_battle_status', (_message.Message,), dict(
+  DESCRIPTOR = _HERO_BATTLE_STATUS,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:hero_battle_status)
+  ))
+_sym_db.RegisterMessage(hero_battle_status)
+
+TimelineInfo = _reflection.GeneratedProtocolMessageType('TimelineInfo', (_message.Message,), dict(
+
+  RecoverEntry = _reflection.GeneratedProtocolMessageType('RecoverEntry', (_message.Message,), dict(
+    DESCRIPTOR = _TIMELINEINFO_RECOVERENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:TimelineInfo.RecoverEntry)
+    ))
+  ,
+
+  PreInputEntry = _reflection.GeneratedProtocolMessageType('PreInputEntry', (_message.Message,), dict(
+    DESCRIPTOR = _TIMELINEINFO_PREINPUTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:TimelineInfo.PreInputEntry)
+    ))
+  ,
+  DESCRIPTOR = _TIMELINEINFO,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:TimelineInfo)
+  ))
+_sym_db.RegisterMessage(TimelineInfo)
+_sym_db.RegisterMessage(TimelineInfo.RecoverEntry)
+_sym_db.RegisterMessage(TimelineInfo.PreInputEntry)
+
+task_main = _reflection.GeneratedProtocolMessageType('task_main', (_message.Message,), dict(
+  DESCRIPTOR = _TASK_MAIN,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:task_main)
+  ))
+_sym_db.RegisterMessage(task_main)
+
+prefab_effect = _reflection.GeneratedProtocolMessageType('prefab_effect', (_message.Message,), dict(
+  DESCRIPTOR = _PREFAB_EFFECT,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:prefab_effect)
+  ))
+_sym_db.RegisterMessage(prefab_effect)
+
+stage = _reflection.GeneratedProtocolMessageType('stage', (_message.Message,), dict(
+  DESCRIPTOR = _STAGE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:stage)
+  ))
+_sym_db.RegisterMessage(stage)
+
+head_config = _reflection.GeneratedProtocolMessageType('head_config', (_message.Message,), dict(
+  DESCRIPTOR = _HEAD_CONFIG,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:head_config)
+  ))
+_sym_db.RegisterMessage(head_config)
+
+role_config = _reflection.GeneratedProtocolMessageType('role_config', (_message.Message,), dict(
+  DESCRIPTOR = _ROLE_CONFIG,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:role_config)
+  ))
+_sym_db.RegisterMessage(role_config)
+
+stage_level = _reflection.GeneratedProtocolMessageType('stage_level', (_message.Message,), dict(
+
+  DropItemEntry = _reflection.GeneratedProtocolMessageType('DropItemEntry', (_message.Message,), dict(
+    DESCRIPTOR = _STAGE_LEVEL_DROPITEMENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:stage_level.DropItemEntry)
+    ))
+  ,
+  DESCRIPTOR = _STAGE_LEVEL,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:stage_level)
+  ))
+_sym_db.RegisterMessage(stage_level)
+_sym_db.RegisterMessage(stage_level.DropItemEntry)
+
+dialog = _reflection.GeneratedProtocolMessageType('dialog', (_message.Message,), dict(
+  DESCRIPTOR = _DIALOG,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:dialog)
+  ))
+_sym_db.RegisterMessage(dialog)
+
+hero = _reflection.GeneratedProtocolMessageType('hero', (_message.Message,), dict(
+
+  ActionIdEntry = _reflection.GeneratedProtocolMessageType('ActionIdEntry', (_message.Message,), dict(
+    DESCRIPTOR = _HERO_ACTIONIDENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:hero.ActionIdEntry)
+    ))
+  ,
+  DESCRIPTOR = _HERO,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:hero)
+  ))
+_sym_db.RegisterMessage(hero)
+_sym_db.RegisterMessage(hero.ActionIdEntry)
+
+item = _reflection.GeneratedProtocolMessageType('item', (_message.Message,), dict(
+  DESCRIPTOR = _ITEM,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:item)
+  ))
+_sym_db.RegisterMessage(item)
+
+chapter = _reflection.GeneratedProtocolMessageType('chapter', (_message.Message,), dict(
+  DESCRIPTOR = _CHAPTER,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:chapter)
+  ))
+_sym_db.RegisterMessage(chapter)
+
+building = _reflection.GeneratedProtocolMessageType('building', (_message.Message,), dict(
+
+  ConsumeMaterialsEntry = _reflection.GeneratedProtocolMessageType('ConsumeMaterialsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _BUILDING_CONSUMEMATERIALSENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:building.ConsumeMaterialsEntry)
+    ))
+  ,
+
+  ProductMaterialsEntry = _reflection.GeneratedProtocolMessageType('ProductMaterialsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _BUILDING_PRODUCTMATERIALSENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:building.ProductMaterialsEntry)
+    ))
+  ,
+  DESCRIPTOR = _BUILDING,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:building)
+  ))
+_sym_db.RegisterMessage(building)
+_sym_db.RegisterMessage(building.ConsumeMaterialsEntry)
+_sym_db.RegisterMessage(building.ProductMaterialsEntry)
+
+role_sound_config = _reflection.GeneratedProtocolMessageType('role_sound_config', (_message.Message,), dict(
+  DESCRIPTOR = _ROLE_SOUND_CONFIG,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:role_sound_config)
+  ))
+_sym_db.RegisterMessage(role_sound_config)
+
+performance = _reflection.GeneratedProtocolMessageType('performance', (_message.Message,), dict(
+  DESCRIPTOR = _PERFORMANCE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:performance)
+  ))
+_sym_db.RegisterMessage(performance)
+
+story = _reflection.GeneratedProtocolMessageType('story', (_message.Message,), dict(
+  DESCRIPTOR = _STORY,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:story)
+  ))
+_sym_db.RegisterMessage(story)
+
+task_daily = _reflection.GeneratedProtocolMessageType('task_daily', (_message.Message,), dict(
+  DESCRIPTOR = _TASK_DAILY,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:task_daily)
+  ))
+_sym_db.RegisterMessage(task_daily)
 
 SkillPrefab = _reflection.GeneratedProtocolMessageType('SkillPrefab', (_message.Message,), dict(
   DESCRIPTOR = _SKILLPREFAB,
@@ -200,7 +11077,289 @@ SkillPrefab = _reflection.GeneratedProtocolMessageType('SkillPrefab', (_message.
   ))
 _sym_db.RegisterMessage(SkillPrefab)
 
+formula = _reflection.GeneratedProtocolMessageType('formula', (_message.Message,), dict(
+
+  ProductEntry = _reflection.GeneratedProtocolMessageType('ProductEntry', (_message.Message,), dict(
+    DESCRIPTOR = _FORMULA_PRODUCTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:formula.ProductEntry)
+    ))
+  ,
+
+  ConsumeEntry = _reflection.GeneratedProtocolMessageType('ConsumeEntry', (_message.Message,), dict(
+    DESCRIPTOR = _FORMULA_CONSUMEENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:formula.ConsumeEntry)
+    ))
+  ,
+  DESCRIPTOR = _FORMULA,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:formula)
+  ))
+_sym_db.RegisterMessage(formula)
+_sym_db.RegisterMessage(formula.ProductEntry)
+_sym_db.RegisterMessage(formula.ConsumeEntry)
+
+system_name = _reflection.GeneratedProtocolMessageType('system_name', (_message.Message,), dict(
+  DESCRIPTOR = _SYSTEM_NAME,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:system_name)
+  ))
+_sym_db.RegisterMessage(system_name)
+
+prefab_action = _reflection.GeneratedProtocolMessageType('prefab_action', (_message.Message,), dict(
+  DESCRIPTOR = _PREFAB_ACTION,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:prefab_action)
+  ))
+_sym_db.RegisterMessage(prefab_action)
+
+box_drop = _reflection.GeneratedProtocolMessageType('box_drop', (_message.Message,), dict(
+  DESCRIPTOR = _BOX_DROP,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:box_drop)
+  ))
+_sym_db.RegisterMessage(box_drop)
+
+prefab_shape = _reflection.GeneratedProtocolMessageType('prefab_shape', (_message.Message,), dict(
+  DESCRIPTOR = _PREFAB_SHAPE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:prefab_shape)
+  ))
+_sym_db.RegisterMessage(prefab_shape)
+
+weapon = _reflection.GeneratedProtocolMessageType('weapon', (_message.Message,), dict(
+  DESCRIPTOR = _WEAPON,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:weapon)
+  ))
+_sym_db.RegisterMessage(weapon)
+
+weapon_effect = _reflection.GeneratedProtocolMessageType('weapon_effect', (_message.Message,), dict(
+  DESCRIPTOR = _WEAPON_EFFECT,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:weapon_effect)
+  ))
+_sym_db.RegisterMessage(weapon_effect)
+
 DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Message,), dict(
+
+  ToolTestDictEntry = _reflection.GeneratedProtocolMessageType('ToolTestDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_TOOLTESTDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.ToolTestDictEntry)
+    ))
+  ,
+
+  ArmorDictEntry = _reflection.GeneratedProtocolMessageType('ArmorDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ARMORDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.ArmorDictEntry)
+    ))
+  ,
+
+  PrefabSoundDictEntry = _reflection.GeneratedProtocolMessageType('PrefabSoundDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_PREFABSOUNDDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.PrefabSoundDictEntry)
+    ))
+  ,
+
+  ExpSkillMapDictEntry = _reflection.GeneratedProtocolMessageType('ExpSkillMapDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_EXPSKILLMAPDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.ExpSkillMapDictEntry)
+    ))
+  ,
+
+  LevelNpcDictEntry = _reflection.GeneratedProtocolMessageType('LevelNpcDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_LEVELNPCDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.LevelNpcDictEntry)
+    ))
+  ,
+
+  JobDictEntry = _reflection.GeneratedProtocolMessageType('JobDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_JOBDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.JobDictEntry)
+    ))
+  ,
+
+  GlobalVarDictEntry = _reflection.GeneratedProtocolMessageType('GlobalVarDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_GLOBALVARDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.GlobalVarDictEntry)
+    ))
+  ,
+
+  ErrorCodeDictEntry = _reflection.GeneratedProtocolMessageType('ErrorCodeDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ERRORCODEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.ErrorCodeDictEntry)
+    ))
+  ,
+
+  BuffDictEntry = _reflection.GeneratedProtocolMessageType('BuffDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_BUFFDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.BuffDictEntry)
+    ))
+  ,
+
+  BoxDictEntry = _reflection.GeneratedProtocolMessageType('BoxDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_BOXDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.BoxDictEntry)
+    ))
+  ,
+
+  MapDictEntry = _reflection.GeneratedProtocolMessageType('MapDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_MAPDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.MapDictEntry)
+    ))
+  ,
+
+  GlobalStringDictEntry = _reflection.GeneratedProtocolMessageType('GlobalStringDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_GLOBALSTRINGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.GlobalStringDictEntry)
+    ))
+  ,
+
+  SkillDictEntry = _reflection.GeneratedProtocolMessageType('SkillDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_SKILLDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.SkillDictEntry)
+    ))
+  ,
+
+  TestDictEntry = _reflection.GeneratedProtocolMessageType('TestDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_TESTDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.TestDictEntry)
+    ))
+  ,
+
+  HeroBattleStatusDictEntry = _reflection.GeneratedProtocolMessageType('HeroBattleStatusDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_HEROBATTLESTATUSDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.HeroBattleStatusDictEntry)
+    ))
+  ,
+
+  TimelineInfoDictEntry = _reflection.GeneratedProtocolMessageType('TimelineInfoDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_TIMELINEINFODICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.TimelineInfoDictEntry)
+    ))
+  ,
+
+  TaskMainDictEntry = _reflection.GeneratedProtocolMessageType('TaskMainDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_TASKMAINDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.TaskMainDictEntry)
+    ))
+  ,
+
+  PrefabEffectDictEntry = _reflection.GeneratedProtocolMessageType('PrefabEffectDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_PREFABEFFECTDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.PrefabEffectDictEntry)
+    ))
+  ,
+
+  StageDictEntry = _reflection.GeneratedProtocolMessageType('StageDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_STAGEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.StageDictEntry)
+    ))
+  ,
+
+  HeadConfigDictEntry = _reflection.GeneratedProtocolMessageType('HeadConfigDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_HEADCONFIGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.HeadConfigDictEntry)
+    ))
+  ,
+
+  RoleConfigDictEntry = _reflection.GeneratedProtocolMessageType('RoleConfigDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ROLECONFIGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.RoleConfigDictEntry)
+    ))
+  ,
+
+  StageLevelDictEntry = _reflection.GeneratedProtocolMessageType('StageLevelDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_STAGELEVELDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.StageLevelDictEntry)
+    ))
+  ,
+
+  DialogDictEntry = _reflection.GeneratedProtocolMessageType('DialogDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_DIALOGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.DialogDictEntry)
+    ))
+  ,
+
+  HeroDictEntry = _reflection.GeneratedProtocolMessageType('HeroDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_HERODICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.HeroDictEntry)
+    ))
+  ,
+
+  ItemDictEntry = _reflection.GeneratedProtocolMessageType('ItemDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ITEMDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.ItemDictEntry)
+    ))
+  ,
+
+  ChapterDictEntry = _reflection.GeneratedProtocolMessageType('ChapterDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_CHAPTERDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.ChapterDictEntry)
+    ))
+  ,
+
+  BuildingDictEntry = _reflection.GeneratedProtocolMessageType('BuildingDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_BUILDINGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.BuildingDictEntry)
+    ))
+  ,
+
+  RoleSoundConfigDictEntry = _reflection.GeneratedProtocolMessageType('RoleSoundConfigDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ROLESOUNDCONFIGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.RoleSoundConfigDictEntry)
+    ))
+  ,
+
+  PerformanceDictEntry = _reflection.GeneratedProtocolMessageType('PerformanceDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_PERFORMANCEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.PerformanceDictEntry)
+    ))
+  ,
+
+  StoryDictEntry = _reflection.GeneratedProtocolMessageType('StoryDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_STORYDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.StoryDictEntry)
+    ))
+  ,
+
+  TaskDailyDictEntry = _reflection.GeneratedProtocolMessageType('TaskDailyDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_TASKDAILYDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.TaskDailyDictEntry)
+    ))
+  ,
 
   SkillPrefabDictEntry = _reflection.GeneratedProtocolMessageType('SkillPrefabDictEntry', (_message.Message,), dict(
     DESCRIPTOR = _DATAHELPER_SKILLPREFABDICTENTRY,
@@ -208,16 +11367,203 @@ DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Me
     # @@protoc_insertion_point(class_scope:DataHelper.SkillPrefabDictEntry)
     ))
   ,
+
+  FormulaDictEntry = _reflection.GeneratedProtocolMessageType('FormulaDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_FORMULADICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.FormulaDictEntry)
+    ))
+  ,
+
+  SystemNameDictEntry = _reflection.GeneratedProtocolMessageType('SystemNameDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_SYSTEMNAMEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.SystemNameDictEntry)
+    ))
+  ,
+
+  PrefabActionDictEntry = _reflection.GeneratedProtocolMessageType('PrefabActionDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_PREFABACTIONDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.PrefabActionDictEntry)
+    ))
+  ,
+
+  BoxDropDictEntry = _reflection.GeneratedProtocolMessageType('BoxDropDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_BOXDROPDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.BoxDropDictEntry)
+    ))
+  ,
+
+  PrefabShapeDictEntry = _reflection.GeneratedProtocolMessageType('PrefabShapeDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_PREFABSHAPEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.PrefabShapeDictEntry)
+    ))
+  ,
+
+  WeaponDictEntry = _reflection.GeneratedProtocolMessageType('WeaponDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_WEAPONDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.WeaponDictEntry)
+    ))
+  ,
+
+  WeaponEffectDictEntry = _reflection.GeneratedProtocolMessageType('WeaponEffectDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_WEAPONEFFECTDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.WeaponEffectDictEntry)
+    ))
+  ,
   DESCRIPTOR = _DATAHELPER,
   __module__ = 'Data_pb2'
   # @@protoc_insertion_point(class_scope:DataHelper)
   ))
 _sym_db.RegisterMessage(DataHelper)
+_sym_db.RegisterMessage(DataHelper.ToolTestDictEntry)
+_sym_db.RegisterMessage(DataHelper.ArmorDictEntry)
+_sym_db.RegisterMessage(DataHelper.PrefabSoundDictEntry)
+_sym_db.RegisterMessage(DataHelper.ExpSkillMapDictEntry)
+_sym_db.RegisterMessage(DataHelper.LevelNpcDictEntry)
+_sym_db.RegisterMessage(DataHelper.JobDictEntry)
+_sym_db.RegisterMessage(DataHelper.GlobalVarDictEntry)
+_sym_db.RegisterMessage(DataHelper.ErrorCodeDictEntry)
+_sym_db.RegisterMessage(DataHelper.BuffDictEntry)
+_sym_db.RegisterMessage(DataHelper.BoxDictEntry)
+_sym_db.RegisterMessage(DataHelper.MapDictEntry)
+_sym_db.RegisterMessage(DataHelper.GlobalStringDictEntry)
+_sym_db.RegisterMessage(DataHelper.SkillDictEntry)
+_sym_db.RegisterMessage(DataHelper.TestDictEntry)
+_sym_db.RegisterMessage(DataHelper.HeroBattleStatusDictEntry)
+_sym_db.RegisterMessage(DataHelper.TimelineInfoDictEntry)
+_sym_db.RegisterMessage(DataHelper.TaskMainDictEntry)
+_sym_db.RegisterMessage(DataHelper.PrefabEffectDictEntry)
+_sym_db.RegisterMessage(DataHelper.StageDictEntry)
+_sym_db.RegisterMessage(DataHelper.HeadConfigDictEntry)
+_sym_db.RegisterMessage(DataHelper.RoleConfigDictEntry)
+_sym_db.RegisterMessage(DataHelper.StageLevelDictEntry)
+_sym_db.RegisterMessage(DataHelper.DialogDictEntry)
+_sym_db.RegisterMessage(DataHelper.HeroDictEntry)
+_sym_db.RegisterMessage(DataHelper.ItemDictEntry)
+_sym_db.RegisterMessage(DataHelper.ChapterDictEntry)
+_sym_db.RegisterMessage(DataHelper.BuildingDictEntry)
+_sym_db.RegisterMessage(DataHelper.RoleSoundConfigDictEntry)
+_sym_db.RegisterMessage(DataHelper.PerformanceDictEntry)
+_sym_db.RegisterMessage(DataHelper.StoryDictEntry)
+_sym_db.RegisterMessage(DataHelper.TaskDailyDictEntry)
 _sym_db.RegisterMessage(DataHelper.SkillPrefabDictEntry)
+_sym_db.RegisterMessage(DataHelper.FormulaDictEntry)
+_sym_db.RegisterMessage(DataHelper.SystemNameDictEntry)
+_sym_db.RegisterMessage(DataHelper.PrefabActionDictEntry)
+_sym_db.RegisterMessage(DataHelper.BoxDropDictEntry)
+_sym_db.RegisterMessage(DataHelper.PrefabShapeDictEntry)
+_sym_db.RegisterMessage(DataHelper.WeaponDictEntry)
+_sym_db.RegisterMessage(DataHelper.WeaponEffectDictEntry)
 
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\252\002\006Config'))
+_TOOLTEST_TESTFENTRY.has_options = True
+_TOOLTEST_TESTFENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_TOOLTEST_TESTGENTRY.has_options = True
+_TOOLTEST_TESTGENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_EXP_SKILL_MAP_NEEDITEMENTRY.has_options = True
+_EXP_SKILL_MAP_NEEDITEMENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_TEST_TESTENTRY.has_options = True
+_TEST_TESTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_TIMELINEINFO_RECOVERENTRY.has_options = True
+_TIMELINEINFO_RECOVERENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_TIMELINEINFO_PREINPUTENTRY.has_options = True
+_TIMELINEINFO_PREINPUTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_STAGE_LEVEL_DROPITEMENTRY.has_options = True
+_STAGE_LEVEL_DROPITEMENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_HERO_ACTIONIDENTRY.has_options = True
+_HERO_ACTIONIDENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_BUILDING_CONSUMEMATERIALSENTRY.has_options = True
+_BUILDING_CONSUMEMATERIALSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_BUILDING_PRODUCTMATERIALSENTRY.has_options = True
+_BUILDING_PRODUCTMATERIALSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_FORMULA_PRODUCTENTRY.has_options = True
+_FORMULA_PRODUCTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_FORMULA_CONSUMEENTRY.has_options = True
+_FORMULA_CONSUMEENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_TOOLTESTDICTENTRY.has_options = True
+_DATAHELPER_TOOLTESTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_ARMORDICTENTRY.has_options = True
+_DATAHELPER_ARMORDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_PREFABSOUNDDICTENTRY.has_options = True
+_DATAHELPER_PREFABSOUNDDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_EXPSKILLMAPDICTENTRY.has_options = True
+_DATAHELPER_EXPSKILLMAPDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_LEVELNPCDICTENTRY.has_options = True
+_DATAHELPER_LEVELNPCDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_JOBDICTENTRY.has_options = True
+_DATAHELPER_JOBDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_GLOBALVARDICTENTRY.has_options = True
+_DATAHELPER_GLOBALVARDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_ERRORCODEDICTENTRY.has_options = True
+_DATAHELPER_ERRORCODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_BUFFDICTENTRY.has_options = True
+_DATAHELPER_BUFFDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_BOXDICTENTRY.has_options = True
+_DATAHELPER_BOXDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_MAPDICTENTRY.has_options = True
+_DATAHELPER_MAPDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_GLOBALSTRINGDICTENTRY.has_options = True
+_DATAHELPER_GLOBALSTRINGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_SKILLDICTENTRY.has_options = True
+_DATAHELPER_SKILLDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_TESTDICTENTRY.has_options = True
+_DATAHELPER_TESTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_HEROBATTLESTATUSDICTENTRY.has_options = True
+_DATAHELPER_HEROBATTLESTATUSDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_TIMELINEINFODICTENTRY.has_options = True
+_DATAHELPER_TIMELINEINFODICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_TASKMAINDICTENTRY.has_options = True
+_DATAHELPER_TASKMAINDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_PREFABEFFECTDICTENTRY.has_options = True
+_DATAHELPER_PREFABEFFECTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_STAGEDICTENTRY.has_options = True
+_DATAHELPER_STAGEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_HEADCONFIGDICTENTRY.has_options = True
+_DATAHELPER_HEADCONFIGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_ROLECONFIGDICTENTRY.has_options = True
+_DATAHELPER_ROLECONFIGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_STAGELEVELDICTENTRY.has_options = True
+_DATAHELPER_STAGELEVELDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_DIALOGDICTENTRY.has_options = True
+_DATAHELPER_DIALOGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_HERODICTENTRY.has_options = True
+_DATAHELPER_HERODICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_ITEMDICTENTRY.has_options = True
+_DATAHELPER_ITEMDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_CHAPTERDICTENTRY.has_options = True
+_DATAHELPER_CHAPTERDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_BUILDINGDICTENTRY.has_options = True
+_DATAHELPER_BUILDINGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_ROLESOUNDCONFIGDICTENTRY.has_options = True
+_DATAHELPER_ROLESOUNDCONFIGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_PERFORMANCEDICTENTRY.has_options = True
+_DATAHELPER_PERFORMANCEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_STORYDICTENTRY.has_options = True
+_DATAHELPER_STORYDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_TASKDAILYDICTENTRY.has_options = True
+_DATAHELPER_TASKDAILYDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 _DATAHELPER_SKILLPREFABDICTENTRY.has_options = True
 _DATAHELPER_SKILLPREFABDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_FORMULADICTENTRY.has_options = True
+_DATAHELPER_FORMULADICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_SYSTEMNAMEDICTENTRY.has_options = True
+_DATAHELPER_SYSTEMNAMEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_PREFABACTIONDICTENTRY.has_options = True
+_DATAHELPER_PREFABACTIONDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_BOXDROPDICTENTRY.has_options = True
+_DATAHELPER_BOXDROPDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_PREFABSHAPEDICTENTRY.has_options = True
+_DATAHELPER_PREFABSHAPEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_WEAPONDICTENTRY.has_options = True
+_DATAHELPER_WEAPONDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_WEAPONEFFECTDICTENTRY.has_options = True
+_DATAHELPER_WEAPONEFFECTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

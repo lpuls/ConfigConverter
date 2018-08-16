@@ -34,6 +34,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ExcelHelper.py" />
+    <Compile Include="JsonHelper.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MessageData.py">
       <SubType>Code</SubType>
     </Compile>

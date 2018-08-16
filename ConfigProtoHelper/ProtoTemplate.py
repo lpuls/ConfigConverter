@@ -1,8 +1,7 @@
 # _*_coding:utf-8_*_
 
 
-DEFAULT_KEY = "ID"
-DEFAULT_STRING_KEY = "KEY"
+
 
 PROTO_TEMPLATE = """
 syntax = "proto3";

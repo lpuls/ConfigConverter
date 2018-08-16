@@ -1,8 +1,11 @@
 {
+  "JSON_PATH": "../Config/JSON",
   "EXCEL_PATH": "../Config/Excel/",
   "OUT_PATH": "../Config/",
   "PROTO_SAVE_PATH": "../Config/Data.proto",
   "BINARY_SAVE_PATH": "../Config/Data.byte",
   "LOG_PATH": "../Config/log.txt",
-  "PYTHON_PROTO_MODULE_PATH": "Data_pb2"
+  "PYTHON_PROTO_MODULE_PATH": "Data_pb2",
+  "SPAWN_CSHARP_COMMAND": "protoc -I ../Config/ --csharp_out=../Config/ ../Config/Data.proto",
+  "SPAWN_PYTHON_COMMAND": "protoc -I ../Config/ --python_out=./ ../Config/Data.proto"
 }

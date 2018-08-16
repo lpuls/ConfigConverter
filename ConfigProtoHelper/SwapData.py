@@ -5,6 +5,9 @@ from DataType import DataType
 
 
 class SwapData:
+    DEFAULT_KEY = "ID"
+    DEFAULT_STRING_KEY = "KEY"
+
     def __init__(self, file_name, types, notes, field):
         self.types = types
         self.notes = notes
@@ -12,6 +15,7 @@ class SwapData:
         self.field_to_type = dict()
         self.datas = list()
         self.key = None
+        self.key_type = None
 
         # 根据名称前缀确定要生成什么类型的proto代码
         self.is_message = True
@@ -36,7 +40,32 @@ class SwapData:
                 return False
             self.types[index] = data_type
             self.field_to_type[field_name] = data_type
+
+            # 检查一下是否存在key键
+            if self.check_is_key(field_name):
+                self.key = field_name
+                self.key_type = data_type
+
+        # 无自带key,则自动生成
+        if None == self.key:
+            self.auto_key()
         return True
+
+    def check_is_key(self, field):
+        upper = field.upper()
+        return upper == SwapData.DEFAULT_STRING_KEY or upper == SwapData.DEFAULT_KEY
+
+    def auto_key(self):
+        key_data_type = DataType(DataType.INT_TYPE)
+        self.types.insert(0, key_data_type)
+        self.fields.insert(0, SwapData.DEFAULT_KEY)
+        self.field_to_type[SwapData.DEFAULT_KEY] = key_data_type
+        key_value = 1
+        for data in self.datas:
+            data[SwapData.DEFAULT_KEY] = key_value
+            key_value += 1
+        self.key = SwapData.DEFAULT_KEY
+        self.key_type = key_data_type
 
     def get_key_type(self, key, str_key):
         for field in self.fields:

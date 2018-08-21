@@ -100,7 +100,7 @@ def data_to_binary(proto_module, datas):
     for data_key in datas:
         data = datas[data_key]
         print(data_key)
-        if isinstance(data, MessageData):
+        if isinstance(data, MessageData) or isinstance(data, JsonSwapData):
             # 获取DataHelper中对应类的列表
             if not data.key:
                 continue

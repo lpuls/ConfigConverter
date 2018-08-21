@@ -128,9 +128,9 @@ if __name__ == "__main__":
     sheets = dict()
 
     # 找出所有的excel文件并分析二进制表格
-    file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
-    excel_sheets = process_excel_config(file_paths)
-    merge_dict(sheets, excel_sheets)
+    #file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
+    #excel_sheets = process_excel_config(file_paths)
+    #merge_dict(sheets, excel_sheets)
 
     # 找出所有的json文件并分析二进制
     file_paths = search_file(JSON_PATH, [".json", ".JSON"])

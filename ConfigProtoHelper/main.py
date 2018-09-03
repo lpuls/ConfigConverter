@@ -9,7 +9,8 @@ from TimeChecker import init_time, cal_run_time, cal_run_time_no_args
 
 
 EXCEL_NAME = [
-    "../Config/Excel/SkillPrefab.xlsx",
+    "../Config/TestExcel/Test.xlsx",
+    "../Config/TestExcel/SubTest.xlsx",
     ]
 
 JSON_PATH = "../Config/JSON/"               # json所在路径
@@ -128,14 +129,15 @@ if __name__ == "__main__":
     sheets = dict()
 
     # 找出所有的excel文件并分析二进制表格
-    #file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
-    #excel_sheets = process_excel_config(file_paths)
-    #merge_dict(sheets, excel_sheets)
+    # file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
+    # excel_sheets = process_excel_config(file_paths)
+    excel_sheets = process_excel_config(EXCEL_NAME)
+    merge_dict(sheets, excel_sheets)
 
     # 找出所有的json文件并分析二进制
-    file_paths = search_file(JSON_PATH, [".json", ".JSON"])
-    json_sheets = process_json_config(file_paths)
-    merge_dict(sheets, json_sheets)
+    #file_paths = search_file(JSON_PATH, [".json", ".JSON"])
+    #json_sheets = process_json_config(file_paths)
+    #merge_dict(sheets, json_sheets)
 
     # 生成proto文件前先分析一下
     analyze_config(sheets)

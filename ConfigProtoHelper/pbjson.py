@@ -36,6 +36,9 @@ class ConvertException(Exception):
     pass
 
 def dict2pbobj(obj, adict, strict=False):
+    if None is adict:
+        return None
+
     for field in obj.DESCRIPTOR.fields:
         if not field.label == field.LABEL_REQUIRED:
             continue
@@ -61,7 +64,10 @@ def dict2pbobj(obj, adict, strict=False):
                 if isinstance(sub_dict_value, dict):
                     item = getattr(obj, field.name)
                     for key in sub_dict_value:
-                        item[key] = sub_dict_value[key]
+                        if not isinstance(sub_dict_value[key], dict):
+                            item[key] = sub_dict_value[key]
+                        else:
+                            dict2pbobj(item[key], sub_dict_value[key])
                 elif isinstance(sub_dict_value, list):
                     for sub_dict in sub_dict_value:
                         item = getattr(obj, field.name)
@@ -77,7 +83,8 @@ def dict2pbobj(obj, adict, strict=False):
         else:
             if field.type == FD.TYPE_MESSAGE:
                 value = dict2pb(msg_type._concrete_class, adict[field.name])
-                getattr(obj, field.name).CopyFrom(value)
+                if None is not value:
+                    getattr(obj, field.name).CopyFrom(value)
             else:
                 setattr(obj, field.name, adict[field.name])
     return obj
@@ -88,48 +95,7 @@ def dict2pb(cls, adict, strict=False):
     the dict.
     """
     obj = cls()
-    return dict2pbobj(obj)
-    #for field in obj.DESCRIPTOR.fields:
-    #    if not field.label == field.LABEL_REQUIRED:
-    #        continue
-    #    if not field.has_default_value:
-    #        continue
-    #    if not field.name in adict:
-    #        raise ConvertException('Field "%s" missing from descriptor dictionary.'
-    #                               % field.name)
-    #field_names = set([field.name for field in obj.DESCRIPTOR.fields])
-    #if strict:
-    #    for key in adict.keys():
-    #        if key not in field_names:
-    #            raise ConvertException(
-    #                'Key "%s" can not be mapped to field in %s class.'
-    #                % (key, type(obj)))
-    #for field in obj.DESCRIPTOR.fields:
-    #    if not field.name in adict:
-    #        continue
-    #    msg_type = field.message_type
-    #    if field.label == FD.LABEL_REPEATED:
-    #        if field.type == FD.TYPE_MESSAGE:
-    #            sub_dict_value = adict[field.name]
-    #            if isinstance(sub_dict_value, dict):
-    #                item = getattr(obj, field.name)
-    #                for key in sub_dict_value:
-    #                    item[key] = sub_dict_value[key]
-    #            elif isinstance(sub_dict_value, list):
-    #                for sub_dict in sub_dict_value:
-    #                    item = getattr(obj, field.name)
-    #                    item = item.add()
-    #                    item.CopyFrom(dict2pb(msg_type._concrete_class, sub_dict))
-    #        else:
-    #            map(getattr(obj, field.name).append, adict[field.name])
-    #    else:
-    #        if field.type == FD.TYPE_MESSAGE:
-    #            value = dict2pb(msg_type._concrete_class, adict[field.name])
-    #            getattr(obj, field.name).CopyFrom(value)
-    #        else:
-    #            setattr(obj, field.name, adict[field.name])
-    #return obj
-
+    return dict2pbobj(obj, adict)
 
 def pb2dict(obj):
     """

@@ -6,12 +6,14 @@ class DataType:
     BOOL_TYPE = "BOOL"
     ARRAY_TYPE = "ARRAY"
     MAP_TYPE = "MAP"
+    JSON_TYPE = "JSON"
 
     PROTO_INT_TYPE = "int32"
     PROTO_STR_TYPE = "string"
     PROTO_BOOL_TYPE = "bool"
     PROTO_ARRAY_TYPE = "repeated %s"
     PROTO_MAP_TYPE = "map<%s, %s>"
+    PROTO_JSON_TYPE= ""
 
     INVALD_TYPE_OK = 1
     INVALD_TYPE_SKIP = 2
@@ -23,84 +25,90 @@ class DataType:
         self.key_type = None
         self.value_type = None
         self.main_type_proto = None
-        self.key_type_proto = None
-        self.value_type_proto = None
 
         # 检查
-        if '' == type_name:
-            self.is_valid = DataType.INVALD_TYPE_SKIP
-            return
+        type_name_list = type_name
+        if isinstance(type_name, str):
+            if '' == type_name:
+                self.is_valid = DataType.INVALD_TYPE_SKIP
+                return
+            type_name_list = DataType.__split_type_name__(type_name)
 
         # 分析转放类型
-        self.__process_type_name__(type_name)
+        analyze_result = type_name_list
+        if not isinstance(type_name_list, tuple):
+            _, analyze_result = DataType.__analyze_sub_type__(type_name_list, 0)
+            print(analyze_result)
+        self.__process_type_name__(analyze_result)
 
         # 先尝试生成proto类型
         self.main_type_proto = DataType.type_to_proto(self.main_type)
-        self.key_type_proto = DataType.type_to_proto(self.key_type) 
-        self.value_type_proto = DataType.type_to_proto(self.value_type) 
 
     def __process_type_name__(self, type_name):
-        type_names = type_name.split(':')
-        type_name_count = len(type_names)
+        type_name_count = len(type_name)
         assert type_name_count > 0, "无效的数据类型:" + type_name
-        
-        self.main_type = type_names[0]
-        if not DataType.__check_type_valid__(self.main_type):
-            self.is_valid = DataType.INVALD_TYPE_ERROR
-            return
 
-        if type_name_count > 1:
-            sub_type = type_names[1].split(',')
-            sub_type_count = len(sub_type)
-            # key类型
-            if sub_type_count >= 1:
-                self.key_type = sub_type[0]
-            # value类型
-            if sub_type_count >= 2:
-                self.value_type = sub_type[1]
+        self.main_type = type_name[0]
+        if DataType.ARRAY_TYPE == self.main_type or DataType.JSON_TYPE == self.main_type:
+            if len(type_name) >= 2:
+                self.key_type = DataType(type_name[1])
+        elif DataType.MAP_TYPE == self.main_type:
+            if len(type_name) >= 2:
+                self.key_type = DataType(type_name[1])
+                self.value_type = DataType(type_name[2])
+        elif DataType.INT_TYPE == self.main_type:
+            if (len(type_name)) >= 2:
+                 self.key_type = DataType(type_name[1])
+
+    @staticmethod
+    def __analyze_sub_type__(types, index):
+        type_name = types[index]
+        if DataType.ARRAY_TYPE == type_name or DataType.JSON_TYPE ==  type_name:
+            if len(types[index:]) >= 2:
+                new_index, result = DataType.__analyze_sub_type__(types, index + 1)
+                return new_index, (type_name, result, )
+            return index + 1, (type_name, )
+        elif DataType.MAP_TYPE == type_name:
+            if len(types[index:]) >= 3:
+                new_index, key = DataType.__analyze_sub_type__(types, index + 1)
+                new_index, value = DataType.__analyze_sub_type__(types, new_index)
+                return new_index, ( type_name, key, value, )
+            return index + 1, (type_name, )
+        elif DataType.INT_TYPE == type_name:
+            if len(types[index:]) >= 2 and not DataType.__check_type_valid__(types[index + 1]):
+                return index + 2, ( type_name, types[index + 1], )
+            return index + 1, ( type_name,)
+        else:
+            return index + 1, ( type_name, )
+        
 
     def set_key_type(self, key_type):
         self.key_type = key_type
-        self.key_type_proto = DataType.type_to_proto(self.key_type) 
 
     def set_value_type(self, value_type):
         self.value_type = value_type
-        self.value_type_proto = DataType.type_to_proto(self.value_type)
 
     def to_proto_type(self):
         if DataType.INT_TYPE == self.main_type:  # int类型要判断一下是否为枚举
             if None is not self.key_type:
-                return self.key_type
+                return self.key_type.to_proto_type()
             else:
                 return self.main_type_proto
         elif DataType.ARRAY_TYPE == self.main_type:  # 数据类型要判断一下存储类型
-            return DataType.PROTO_ARRAY_TYPE % self.key_type_proto
+            return DataType.PROTO_ARRAY_TYPE % self.key_type.to_proto_type()
         elif DataType.MAP_TYPE == self.main_type:
-            return DataType.PROTO_MAP_TYPE % (self.key_type_proto, self.value_type_proto)
+            return DataType.PROTO_MAP_TYPE % (self.key_type.to_proto_type(), self.value_type.to_proto_type())
+        elif DataType.JSON_TYPE == self.main_type:
+            assert None is not self.key_type, "无法确定Json文件的类型"
+            return self.key_type.to_proto_type()
         else:
             return self.main_type_proto
-
-    def __repr__(self):
-        result = self.main_type
-        if None is not self.key_type:
-            result += (" %s" % self.key_type)
-        if None is not self.value_type:
-            result += (" %s" % self.value_type)
-        return result
-    
-    def __str__(self):
-        result = self.main_type
-        if None is not self.key_type:
-            result += (" %s" % self.key_type)
-        if None is not self.value_type:
-            result += (" %s" % self.value_type)
-        return result
 
     @staticmethod
     def __check_type_valid__(type_name):
         return type_name in (DataType.STR_TYPE, DataType.INT_TYPE, 
                              DataType.BOOL_TYPE, DataType.ARRAY_TYPE, 
-                             DataType.MAP_TYPE)
+                             DataType.MAP_TYPE, DataType.JSON_TYPE)
 
     @staticmethod
     def check_data_type(data):
@@ -109,8 +117,25 @@ class DataType:
             return DataType.INT_TYPE
         elif "TRUE" == temp or "FALSE" == temp:
             return DataType.BOOL_TYPE
+        elif '[' == data[0] and ']' == data[-1]:
+            return DataType.ARRAY_TYPE
+        elif '{' == data[0] and '}' == data[-1]:
+            return DataType.MAP_TYPE
         else:
             return DataType.STR_TYPE
+
+    @staticmethod
+    def __split_type_name__(type_name):
+        type_name_list = list()
+        type_name = type_name.split(':')
+        for type_name_item in type_name:
+            if -1 != type_name_item.find(','):
+                sub_type_name_list = type_name_item.split(',')
+                for sub_type_name_tiem in sub_type_name_list:
+                    type_name_list.append(sub_type_name_tiem)
+            else:
+                type_name_list.append(type_name_item)
+        return type_name_list
 
     @staticmethod
     def type_to_proto(type_name):
@@ -124,4 +149,12 @@ class DataType:
             return DataType.PROTO_ARRAY_TYPE
         elif DataType.MAP_TYPE == type_name:
             return DataType.PROTO_MAP_TYPE
+        elif DataType.JSON_TYPE == type_name:
+            return DataType.PROTO_JSON_TYPE
+        else:
+            return type_name
+
+
+if __name__ == "__main__":
+    data_type = DataType("MAP:ARRAY:JSON:INT,INT:AbilityEffectType")
         

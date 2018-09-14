@@ -9,8 +9,7 @@ from TimeChecker import init_time, cal_run_time, cal_run_time_no_args
 
 
 EXCEL_NAME = [
-    "../Config/TestExcel/Test.xlsx",
-    "../Config/TestExcel/SubTest.xlsx",
+    "../Config/TestExcel/HeroPrefab.xlsx",
     ]
 
 JSON_PATH = "../Config/JSON/"               # json所在路径
@@ -22,6 +21,7 @@ LOG_PATH = "../Config/log.txt"              # 日志结果保存位置
 PYTHON_PROTO_MODULE_PATH = "Data_pb2"       # 生成二进制文件时，所需要的python proto类所在模块
 SPAWN_CSHARP_COMMAND = "protoc -I ../Config/ --csharp_out=../Config/ ../Config/Data.proto"  # 生成csproto指令 
 SPAWN_PYTHON_COMMAND = "protoc -I ../Config/ --python_out=./ ../Config/Data.proto"  # 生成python指令
+OTHER_OUT_PATH = []                         # 其它路径
 
 
 def load_config(path):
@@ -35,6 +35,7 @@ def load_config(path):
     global PYTHON_PROTO_MODULE_PATH
     global SPAWN_CSHARP_COMMAND
     global SPAWN_PYTHON_COMMAND
+    global OTHER_OUT_PATH
 
     result = JsonHelper.load_json(path)
     config = json.loads(result)
@@ -48,7 +49,7 @@ def load_config(path):
     PYTHON_PROTO_MODULE_PATH = config['PYTHON_PROTO_MODULE_PATH']
     SPAWN_CSHARP_COMMAND = config['SPAWN_CSHARP_COMMAND']
     SPAWN_PYTHON_COMMAND = config['SPAWN_PYTHON_COMMAND']
-    print(config)
+    OTHER_OUT_PATH = config['OTHER_OUT_PATH']
 
 
 def write_log(context):
@@ -129,7 +130,7 @@ if __name__ == "__main__":
     sheets = dict()
 
     # 找出所有的excel文件并分析二进制表格
-    # file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
+    file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
     # excel_sheets = process_excel_config(file_paths)
     excel_sheets = process_excel_config(EXCEL_NAME)
     merge_dict(sheets, excel_sheets)

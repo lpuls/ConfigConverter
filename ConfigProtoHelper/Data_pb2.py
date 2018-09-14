@@ -19,43 +19,57 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Data.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\nData.proto\"B\n\x07SubTest\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Test1\x18\x02 \x01(\x05\x12\r\n\x05Test2\x18\x03 \x01(\x05\x12\r\n\x05Test3\x18\x04 \x01(\x05\"\x8c\x02\n\x04Test\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x12\n\nARRAY_TEST\x18\x02 \x03(\t\x12\x1d\n\x04TEST\x18\x03 \x03(\x0b\x32\x0f.Test.TESTEntry\x12\x1c\n\nObjectTest\x18\x04 \x01(\x0b\x32\x08.SubTest\x12\x14\n\x0c\x41RRAY_NORMAL\x18\x05 \x03(\x05\x12(\n\nMAP_NORMAL\x18\x06 \x03(\x0b\x32\x14.Test.MAPNORMALEntry\x1a\x35\n\tTESTEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x17\n\x05value\x18\x02 \x01(\x0b\x32\x08.SubTest:\x02\x38\x01\x1a\x30\n\x0eMAPNORMALEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\xf9\x01\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12\x32\n\x0cSubTest_dict\x18\x02 \x03(\x0b\x32\x1c.DataHelper.SubTestDictEntry\x12,\n\tTest_dict\x18\x03 \x03(\x0b\x32\x19.DataHelper.TestDictEntry\x1a<\n\x10SubTestDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x17\n\x05value\x18\x02 \x01(\x0b\x32\x08.SubTest:\x02\x38\x01\x1a\x36\n\rTestDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x14\n\x05value\x18\x02 \x01(\x0b\x32\x05.Test:\x02\x38\x01\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
+  serialized_pb=_b('\n\nData.proto\"j\n\nHeroPrefab\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x11\n\tModelPath\x18\x02 \x01(\t\x12\x11\n\tModelName\x18\x03 \x01(\t\x12\x0e\n\x06Melees\x18\x04 \x03(\x05\x12\x0f\n\x07\x41\x62ility\x18\x05 \x03(\x05\x12\t\n\x01\x41\x18\x06 \x01(\x05\"\x9f\x01\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12\x38\n\x0fHeroPrefab_dict\x18\x02 \x03(\x0b\x32\x1f.DataHelper.HeroPrefabDictEntry\x1a\x42\n\x13HeroPrefabDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.HeroPrefab:\x02\x38\x01\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
 )
 
 
 
 
-_SUBTEST = _descriptor.Descriptor(
-  name='SubTest',
-  full_name='SubTest',
+_HEROPREFAB = _descriptor.Descriptor(
+  name='HeroPrefab',
+  full_name='HeroPrefab',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='SubTest.ID', index=0,
+      name='ID', full_name='HeroPrefab.ID', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Test1', full_name='SubTest.Test1', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='ModelPath', full_name='HeroPrefab.ModelPath', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Test2', full_name='SubTest.Test2', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='ModelName', full_name='HeroPrefab.ModelName', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Test3', full_name='SubTest.Test3', index=3,
-      number=4, type=5, cpp_type=1, label=1,
+      name='Melees', full_name='HeroPrefab.Melees', index=3,
+      number=4, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Ability', full_name='HeroPrefab.Ability', index=4,
+      number=5, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='A', full_name='HeroPrefab.A', index=5,
+      number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -73,26 +87,26 @@ _SUBTEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=14,
-  serialized_end=80,
+  serialized_end=120,
 )
 
 
-_TEST_TESTENTRY = _descriptor.Descriptor(
-  name='TESTEntry',
-  full_name='Test.TESTEntry',
+_DATAHELPER_HEROPREFABDICTENTRY = _descriptor.Descriptor(
+  name='HeroPrefabDictEntry',
+  full_name='DataHelper.HeroPrefabDictEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='Test.TESTEntry.key', index=0,
+      name='key', full_name='DataHelper.HeroPrefabDictEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='Test.TESTEntry.value', index=1,
+      name='value', full_name='DataHelper.HeroPrefabDictEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -110,185 +124,8 @@ _TEST_TESTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=248,
-  serialized_end=301,
-)
-
-_TEST_MAPNORMALENTRY = _descriptor.Descriptor(
-  name='MAPNORMALEntry',
-  full_name='Test.MAPNORMALEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='Test.MAPNORMALEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Test.MAPNORMALEntry.value', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=303,
-  serialized_end=351,
-)
-
-_TEST = _descriptor.Descriptor(
-  name='Test',
-  full_name='Test',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ID', full_name='Test.ID', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ARRAY_TEST', full_name='Test.ARRAY_TEST', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TEST', full_name='Test.TEST', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ObjectTest', full_name='Test.ObjectTest', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ARRAY_NORMAL', full_name='Test.ARRAY_NORMAL', index=4,
-      number=5, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='MAP_NORMAL', full_name='Test.MAP_NORMAL', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[_TEST_TESTENTRY, _TEST_MAPNORMALENTRY, ],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=83,
-  serialized_end=351,
-)
-
-
-_DATAHELPER_SUBTESTDICTENTRY = _descriptor.Descriptor(
-  name='SubTestDictEntry',
-  full_name='DataHelper.SubTestDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.SubTestDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.SubTestDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=487,
-  serialized_end=547,
-)
-
-_DATAHELPER_TESTDICTENTRY = _descriptor.Descriptor(
-  name='TestDictEntry',
-  full_name='DataHelper.TestDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.TestDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.TestDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=549,
-  serialized_end=603,
+  serialized_start=216,
+  serialized_end=282,
 )
 
 _DATAHELPER = _descriptor.Descriptor(
@@ -306,15 +143,8 @@ _DATAHELPER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='SubTest_dict', full_name='DataHelper.SubTest_dict', index=1,
+      name='HeroPrefab_dict', full_name='DataHelper.HeroPrefab_dict', index=1,
       number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Test_dict', full_name='DataHelper.Test_dict', index=2,
-      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -322,7 +152,7 @@ _DATAHELPER = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_DATAHELPER_SUBTESTDICTENTRY, _DATAHELPER_TESTDICTENTRY, ],
+  nested_types=[_DATAHELPER_HEROPREFABDICTENTRY, ],
   enum_types=[
   ],
   options=None,
@@ -331,70 +161,30 @@ _DATAHELPER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=354,
-  serialized_end=603,
+  serialized_start=123,
+  serialized_end=282,
 )
 
-_TEST_TESTENTRY.fields_by_name['value'].message_type = _SUBTEST
-_TEST_TESTENTRY.containing_type = _TEST
-_TEST_MAPNORMALENTRY.containing_type = _TEST
-_TEST.fields_by_name['TEST'].message_type = _TEST_TESTENTRY
-_TEST.fields_by_name['ObjectTest'].message_type = _SUBTEST
-_TEST.fields_by_name['MAP_NORMAL'].message_type = _TEST_MAPNORMALENTRY
-_DATAHELPER_SUBTESTDICTENTRY.fields_by_name['value'].message_type = _SUBTEST
-_DATAHELPER_SUBTESTDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_TESTDICTENTRY.fields_by_name['value'].message_type = _TEST
-_DATAHELPER_TESTDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER.fields_by_name['SubTest_dict'].message_type = _DATAHELPER_SUBTESTDICTENTRY
-_DATAHELPER.fields_by_name['Test_dict'].message_type = _DATAHELPER_TESTDICTENTRY
-DESCRIPTOR.message_types_by_name['SubTest'] = _SUBTEST
-DESCRIPTOR.message_types_by_name['Test'] = _TEST
+_DATAHELPER_HEROPREFABDICTENTRY.fields_by_name['value'].message_type = _HEROPREFAB
+_DATAHELPER_HEROPREFABDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER.fields_by_name['HeroPrefab_dict'].message_type = _DATAHELPER_HEROPREFABDICTENTRY
+DESCRIPTOR.message_types_by_name['HeroPrefab'] = _HEROPREFAB
 DESCRIPTOR.message_types_by_name['DataHelper'] = _DATAHELPER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-SubTest = _reflection.GeneratedProtocolMessageType('SubTest', (_message.Message,), dict(
-  DESCRIPTOR = _SUBTEST,
+HeroPrefab = _reflection.GeneratedProtocolMessageType('HeroPrefab', (_message.Message,), dict(
+  DESCRIPTOR = _HEROPREFAB,
   __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:SubTest)
+  # @@protoc_insertion_point(class_scope:HeroPrefab)
   ))
-_sym_db.RegisterMessage(SubTest)
-
-Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), dict(
-
-  TESTEntry = _reflection.GeneratedProtocolMessageType('TESTEntry', (_message.Message,), dict(
-    DESCRIPTOR = _TEST_TESTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:Test.TESTEntry)
-    ))
-  ,
-
-  MAPNORMALEntry = _reflection.GeneratedProtocolMessageType('MAPNORMALEntry', (_message.Message,), dict(
-    DESCRIPTOR = _TEST_MAPNORMALENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:Test.MAPNORMALEntry)
-    ))
-  ,
-  DESCRIPTOR = _TEST,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:Test)
-  ))
-_sym_db.RegisterMessage(Test)
-_sym_db.RegisterMessage(Test.TESTEntry)
-_sym_db.RegisterMessage(Test.MAPNORMALEntry)
+_sym_db.RegisterMessage(HeroPrefab)
 
 DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Message,), dict(
 
-  SubTestDictEntry = _reflection.GeneratedProtocolMessageType('SubTestDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_SUBTESTDICTENTRY,
+  HeroPrefabDictEntry = _reflection.GeneratedProtocolMessageType('HeroPrefabDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_HEROPREFABDICTENTRY,
     __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.SubTestDictEntry)
-    ))
-  ,
-
-  TestDictEntry = _reflection.GeneratedProtocolMessageType('TestDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_TESTDICTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.TestDictEntry)
+    # @@protoc_insertion_point(class_scope:DataHelper.HeroPrefabDictEntry)
     ))
   ,
   DESCRIPTOR = _DATAHELPER,
@@ -402,18 +192,11 @@ DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Me
   # @@protoc_insertion_point(class_scope:DataHelper)
   ))
 _sym_db.RegisterMessage(DataHelper)
-_sym_db.RegisterMessage(DataHelper.SubTestDictEntry)
-_sym_db.RegisterMessage(DataHelper.TestDictEntry)
+_sym_db.RegisterMessage(DataHelper.HeroPrefabDictEntry)
 
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\252\002\006Config'))
-_TEST_TESTENTRY.has_options = True
-_TEST_TESTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_TEST_MAPNORMALENTRY.has_options = True
-_TEST_MAPNORMALENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_SUBTESTDICTENTRY.has_options = True
-_DATAHELPER_SUBTESTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_TESTDICTENTRY.has_options = True
-_DATAHELPER_TESTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_HEROPREFABDICTENTRY.has_options = True
+_DATAHELPER_HEROPREFABDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

@@ -38,7 +38,7 @@ class DataType:
         analyze_result = type_name_list
         if not isinstance(type_name_list, tuple):
             _, analyze_result = DataType.__analyze_sub_type__(type_name_list, 0)
-            print(analyze_result)
+            #print(analyze_result)
         self.__process_type_name__(analyze_result)
 
         # 先尝试生成proto类型

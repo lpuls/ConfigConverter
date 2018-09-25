@@ -9,7 +9,20 @@ from TimeChecker import init_time, cal_run_time, cal_run_time_no_args
 
 
 EXCEL_NAME = [
-    "../Config/TestExcel/HeroPrefab.xlsx",
+    "../Config/TestExcel/AbilityConfig.xlsx",
+    "../Config/TestExcel/BuffConfig.xlsx",
+    "../Config/TestExcel/e_BuffStatusType.xlsx",
+    "../Config/TestExcel/e_BuffType.xlsx",
+    "../Config/TestExcel/e_ConversionType.xlsx",
+    "../Config/TestExcel/e_TargetCampType.xlsx",
+    "../Config/TestExcel/e_RangeType.xlsx",
+    "../Config/TestExcel/e_ItemDetailType.xlsx",
+    "../Config/TestExcel/e_EffectType.xlsx",
+    "../Config/TestExcel/e_Shape.xlsx",
+    "../Config/TestExcel/e_TargetCampType.xlsx",
+    "../Config/TestExcel/e_TargetSelectType.xlsx",
+    "../Config/TestExcel/e_TriggerPosType.xlsx",
+    "../Config/TestExcel/RoleConfig.xlsx",
     ]
 
 JSON_PATH = "../Config/JSON/"               # json所在路径
@@ -130,7 +143,7 @@ if __name__ == "__main__":
     sheets = dict()
 
     # 找出所有的excel文件并分析二进制表格
-    file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
+    # file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
     # excel_sheets = process_excel_config(file_paths)
     excel_sheets = process_excel_config(EXCEL_NAME)
     merge_dict(sheets, excel_sheets)

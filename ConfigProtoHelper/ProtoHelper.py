@@ -1,11 +1,12 @@
 # _*_coding:utf-8_*_
 
+import struct
 from pbjson import *
+from ProtoTemplate import *
 from EnumData import EnumData
 from DataType import DataType
 from MessageData import MessageData
 from JsonSwapData import JsonSwapData
-from ProtoTemplate import *
 
 def write_message(message_name, message_fields):
     return MESSAGE_TEMPLATE % {
@@ -90,38 +91,46 @@ def __load_module__(path):
 
 def data_to_binary(proto_module, datas):
     module = __load_module__(proto_module)
-
-    # 生成DataHelper
-    data_helper = getattr(module, "DataHelper")
-    data_helper = data_helper()
-    message_type_list = list()
+    binray_list = list()
 
     # 将数据写进DataHelper
     for data_key in datas:
         data = datas[data_key]
         print(data_key)
         if isinstance(data, MessageData) or isinstance(data, JsonSwapData):
-            # 获取DataHelper中对应类的列表
             if not data.key:
                 continue
-            message_type_list.append(data.file_name);
-            data_helper_field_name = data.file_name + "_dict"
-            data_dict = getattr(data_helper, data_helper_field_name)
 
             # 将dict转为proto类
-            pb_dict = dict()
+            pb_dict = list()
             cls = getattr(module, data.file_name)
             for config_data in data.datas:
-                key = config_data[data.key]
-                dict2pbobj(data_dict[key], config_data)
-    message_types = getattr(data_helper, 'messageType')
-    message_types.extend(message_type_list)
-    return data_helper
+                pb_dict.append(dict2pb(cls, config_data))
+            binray_list.append(merge_single_binary(data.file_name, pb_dict))
+    return merge_all_binary(binray_list)
+
+def merge_single_binary(type_name, binary_data):
+    b_type_name = type_name.encode()
+    type_name_length = len(type_name)
+    binary_head = struct.pack('ii%ds' % (type_name_length,), len(binary_data), type_name_length, b_type_name)
+    for inst in binary_data:
+        inst_binary = inst.SerializeToString()
+        binary_body = struct.pack('i', len(inst_binary)) + inst_binary
+        binary_head += binary_body
+    return binary_head
+
+
+def merge_all_binary(binarys):
+    binary_head = struct.pack('i', len(binarys))
+    for binary in binarys:
+        binary_head = binary_head + struct.pack('i', len(binary)) + binary
+    return binary_head
 
 
 def write_to_binary(path, context):
     binary_file = open(path, 'wb')
-    binary_file.write(context.SerializeToString())
+    #binary_file.write(context.SerializeToString())
+    binary_file.write(context)
     binary_file.close()
 
 

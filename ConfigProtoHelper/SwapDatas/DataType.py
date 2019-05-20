@@ -1,26 +1,29 @@
 # _*_coding:utf-8_*_ 
 
+
 class DataType:
     STR_TYPE = "STR"
     INT_TYPE = "INT"
+    LONG_TYPE = "LONG"
     BOOL_TYPE = "BOOL"
     ARRAY_TYPE = "ARRAY"
     MAP_TYPE = "MAP"
     JSON_TYPE = "JSON"
 
     PROTO_INT_TYPE = "int32"
+    PROTO_LONG_TYPE = "int64"
     PROTO_STR_TYPE = "string"
     PROTO_BOOL_TYPE = "bool"
     PROTO_ARRAY_TYPE = "repeated %s"
     PROTO_MAP_TYPE = "map<%s, %s>"
-    PROTO_JSON_TYPE= ""
+    PROTO_JSON_TYPE = ""
 
-    INVALD_TYPE_OK = 1
-    INVALD_TYPE_SKIP = 2
-    INVALD_TYPE_ERROR = 3
+    INVALID_TYPE_OK = 1
+    INVALID_TYPE_SKIP = 2
+    INVALID_TYPE_ERROR = 3
 
     def __init__(self, type_name):
-        self.is_valid = DataType.INVALD_TYPE_OK
+        self.is_valid = DataType.INVALID_TYPE_OK
         self.main_type = None
         self.key_type = None
         self.value_type = None
@@ -30,7 +33,7 @@ class DataType:
         type_name_list = type_name
         if isinstance(type_name, str):
             if '' == type_name:
-                self.is_valid = DataType.INVALD_TYPE_SKIP
+                self.is_valid = DataType.INVALID_TYPE_SKIP
                 return
             type_name_list = DataType.__split_type_name__(type_name)
 
@@ -38,7 +41,6 @@ class DataType:
         analyze_result = type_name_list
         if not isinstance(type_name_list, tuple):
             _, analyze_result = DataType.__analyze_sub_type__(type_name_list, 0)
-            #print(analyze_result)
         self.__process_type_name__(analyze_result)
 
         # 先尝试生成proto类型
@@ -72,15 +74,14 @@ class DataType:
             if len(types[index:]) >= 3:
                 new_index, key = DataType.__analyze_sub_type__(types, index + 1)
                 new_index, value = DataType.__analyze_sub_type__(types, new_index)
-                return new_index, ( type_name, key, value, )
+                return new_index, (type_name, key, value, )
             return index + 1, (type_name, )
         elif DataType.INT_TYPE == type_name:
             if len(types[index:]) >= 2 and not DataType.__check_type_valid__(types[index + 1]):
                 return index + 2, ( type_name, types[index + 1], )
-            return index + 1, ( type_name,)
+            return index + 1, (type_name,)
         else:
-            return index + 1, ( type_name, )
-        
+            return index + 1, (type_name, )
 
     def set_key_type(self, key_type):
         self.key_type = key_type
@@ -108,7 +109,7 @@ class DataType:
     def __check_type_valid__(type_name):
         return type_name in (DataType.STR_TYPE, DataType.INT_TYPE, 
                              DataType.BOOL_TYPE, DataType.ARRAY_TYPE, 
-                             DataType.MAP_TYPE, DataType.JSON_TYPE)
+                             DataType.MAP_TYPE, DataType.JSON_TYPE, DataType.LONG_TYPE)
 
     @staticmethod
     def check_data_type(data):
@@ -151,10 +152,12 @@ class DataType:
             return DataType.PROTO_MAP_TYPE
         elif DataType.JSON_TYPE == type_name:
             return DataType.PROTO_JSON_TYPE
+        elif DataType.LONG_TYPE == type_name:
+            return DataType.PROTO_LONG_TYPE
         else:
             return type_name
 
 
 if __name__ == "__main__":
     data_type = DataType("MAP:ARRAY:JSON:INT,INT:AbilityEffectType")
-        
+

@@ -2,19 +2,11 @@
 
 import os
 import xlrd
-from SwapData import *
-from EnumData import *
-from MessageData import *
-from TimeChecker import cal_run_time, cal_run_time_deco
+from SwapDatas.EnumData import *
+from SwapDatas.MessageData import *
 
 
-def get_swap_data(file_name, types, notes, field):
-    if 'e_' != file_name[:2]:
-        return MessageData(file_name, types, notes, field)
-    else:
-        return EnumData(file_name[2:], types, notes, field)
-
-class Excel:
+class ExcelHelper:
     TYPE_ROW_ID = 0
     NOTE_ROW_ID = 1
     FIELD_ROW_ID = 2
@@ -28,7 +20,7 @@ class Excel:
             return
 
         # 分析每张工作表的内容
-        data = cal_run_time(xlrd.open_workbook, "Load Excel %s " % path, (path))
+        data = xlrd.open_workbook(path)
         sheets = data.sheets()
         assert len(sheets) > 0, "无可用的工作表"
 
@@ -37,6 +29,13 @@ class Excel:
         sheet_obj = self.__analyze_sheet__(name, sheets[0])
         if None is not sheet_obj:
             self.sheets[name] = sheet_obj
+
+    @staticmethod
+    def __get_swap_data__(file_name, types, notes, field):
+        if 'e_' != file_name[:2]:
+            return MessageData(file_name, types, notes, field)
+        else:
+            return EnumData(file_name[2:], types, notes, field)
     
     @staticmethod
     def __analyze_sheet__(name, sheet):
@@ -45,19 +44,19 @@ class Excel:
             return None
 
         # 获取基本属性
-        types = sheet.row_values(Excel.TYPE_ROW_ID)
-        notes = sheet.row_values(Excel.NOTE_ROW_ID)
-        fields = sheet.row_values(Excel.FIELD_ROW_ID)
+        types = sheet.row_values(ExcelHelper.TYPE_ROW_ID)
+        notes = sheet.row_values(ExcelHelper.NOTE_ROW_ID)
+        fields = sheet.row_values(ExcelHelper.FIELD_ROW_ID)
 
         # 生成数据类
-        sheetData = get_swap_data(name, types, notes, fields)
+        sheet_data = ExcelHelper.__get_swap_data__(name, types, notes, fields)
 
         # 获需所有字段
-        for row_index in range(Excel.FIELD_ROW_ID + 1, sheet.nrows):
+        for row_index in range(ExcelHelper.FIELD_ROW_ID + 1, sheet.nrows):
             data = dict()
             for col_index in range(0, sheet.ncols):
                 field_name = fields[col_index]
                 data[field_name] = sheet.cell(row_index, col_index).value
-            sheetData.insert(data)
+            sheet_data.insert(data)
         
-        return sheetData
+        return sheet_data

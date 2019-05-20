@@ -1,10 +1,7 @@
 # _*_coding:utf-8_*_
 
 import json
-from pbjson import *
-from DataType import *
-from SwapData import *
-from JsonSwapData import JsonSwapData
+from SwapDatas.JsonSwapData import JsonSwapData
 
 
 class JsonHelper:
@@ -38,7 +35,9 @@ class JsonHelper:
         name = path[path.rfind('/') + 1: path.rfind('.')]
 
         # 根据文件名来确定对应哪一张表
-        table_type = name[:name.find('_')]
+        table_type = name
+        if -1 != name.find('_'):
+            table_type = name[:name.find('_')]
         message_data = JsonHelper.MESSAGES.get(table_type, None)
         if None is message_data:
             print("无效的JSON文件 " + path)

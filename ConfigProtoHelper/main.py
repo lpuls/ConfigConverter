@@ -2,10 +2,9 @@
 
 import os
 import json
-from ProtoHelper import *
-from ExcelHelper import Excel
-from JsonHelper import JsonHelper
-from TimeChecker import init_time, cal_run_time, cal_run_time_no_args
+from Helpers.ProtoHelper import *
+from Helpers.ExcelHelper import ExcelHelper
+from Helpers.JsonHelper import JsonHelper
 
 
 EXCEL_NAME = [
@@ -41,7 +40,6 @@ def load_config(path):
     global OUT_PATH
     global LOG_PATH
     global JSON_PATH
-    global JSON_DESC
     global EXCEL_PATH
     global PROTO_SAVE_PATH
     global BINARY_SAVE_PATH
@@ -79,12 +77,12 @@ def merge_dict(dict1, dict2):
 
 
 def process_excel_config(path):
-    sheets = dict()
+    sheet_list = dict()
     for execl_name in path:
-        excel = Excel(execl_name)
+        excel = ExcelHelper(execl_name)
         for sheet_name in excel.sheets:
-            sheets[sheet_name] = excel.sheets[sheet_name]
-    return sheets
+            sheet_list[sheet_name] = excel.sheets[sheet_name]
+    return sheet_list
 
 
 def process_json_config(path):
@@ -94,29 +92,29 @@ def process_json_config(path):
     return JsonHelper.MESSAGES
 
 
-def analyze_config(datas):
+def analyze_config(data_list):
     delete_config = list()
-    for data_name in datas:
-        data = datas[data_name]
+    for data_name in data_list:
+        data = data_list[data_name]
         print("Process %s" % data_name)
         if not data.analyze():
-           print("Process %s [ERROR]\n" % (data_name,))
-           write_log('%s' % data_name)
-           delete_config.append(data_name)
-           continue
+            print("Process %s [ERROR]\n" % (data_name,))
+            write_log('%s' % data_name)
+            delete_config.append(data_name)
+            continue
         print("Process %s [SUCCESS]" % data_name)
     for item in delete_config:
-        del datas[item]
+        del data_list[item]
 
 
-def to_binary(in_path, out_path, sheets):
-   # 生成proto文件
-   os.system(SPAWN_PYTHON_COMMAND)
-   os.system(SPAWN_CSHARP_COMMAND)
+def to_binary(in_path, out_path, sheet_list):
+    # 生成proto文件
+    os.system(SPAWN_PYTHON_COMMAND)
+    os.system(SPAWN_CSHARP_COMMAND)
 
-   # 将表格中的内容生成proto文件
-   binary_context = data_to_binary(in_path, sheets)
-   write_to_binary(out_path, binary_context)
+    # 将表格中的内容生成proto文件
+    binary_context = data_to_binary(in_path, sheet_list)
+    write_to_binary(out_path, binary_context)
 
 
 def end_with(s, *end):
@@ -129,7 +127,7 @@ def end_with(s, *end):
 
 def search_file(file_path, ends):
     files = list()
-    path_dir =  os.listdir(file_path)
+    path_dir = os.listdir(file_path)
     for all_dir in path_dir:
         path = os.path.join('%s%s' % (file_path, all_dir))
         if os.path.isfile(path) and end_with(path, *ends) and -1 == path.find('~$'):
@@ -138,20 +136,19 @@ def search_file(file_path, ends):
 
 
 if __name__ == "__main__":
-    load_config("Config.json");
+    load_config("Config.json")
 
     sheets = dict()
 
     # 找出所有的excel文件并分析二进制表格
-    # file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
-    # excel_sheets = process_excel_config(file_paths)
-    excel_sheets = process_excel_config(EXCEL_NAME)
+    file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
+    excel_sheets = process_excel_config(file_paths)
     merge_dict(sheets, excel_sheets)
 
     # 找出所有的json文件并分析二进制
-    #file_paths = search_file(JSON_PATH, [".json", ".JSON"])
-    #json_sheets = process_json_config(file_paths)
-    #merge_dict(sheets, json_sheets)
+    file_paths = search_file(JSON_PATH, [".json", ".JSON"])
+    json_sheets = process_json_config(file_paths)
+    merge_dict(sheets, json_sheets)
 
     # 生成proto文件前先分析一下
     analyze_config(sheets)

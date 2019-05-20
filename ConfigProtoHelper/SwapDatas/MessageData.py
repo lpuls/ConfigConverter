@@ -1,33 +1,30 @@
 # _*_coding:utf-8_*_ 
 
 import json
-from DataType import DataType
-from SwapData import SwapData
-from time import clock
-from TimeChecker import cal_run_time, cal_run_time_deco
+from SwapDatas.DataType import DataType
+from SwapDatas.SwapData import SwapData
 
-conver_time = 0
 
-def __convert_str__(str_value, type):
+def __convert_str__(str_value, data_type):
     try:
-        if DataType.INT_TYPE == type:
+        if DataType.INT_TYPE == data_type or DataType.LONG_TYPE == data_type:
             return int(str_value)
-        elif DataType.BOOL_TYPE == type:
+        elif DataType.BOOL_TYPE == data_type:
             return bool(str_value)
-        elif DataType.STR_TYPE == type:
+        elif DataType.STR_TYPE == data_type:
             return str(str_value)
-        elif DataType.JSON_TYPE == type:
+        elif DataType.JSON_TYPE == data_type:
             return json.loads(str_value)
     except TypeError:
-        print("无效的类型转换%s, %s" % (str_value, type))
+        print("无效的类型转换%s, %s" % (str_value, data_type))
 
 
-def __str_to_array__(value, type):
+def __str_to_array__(value, data_type):
     value_data = value
     value_data = value_data[1:-1]
 
     # 在正式转换前先确认类型
-    convert_type = type
+    convert_type = data_type
     
     # 数据字符串根据逗号进行分隔
     result = list()
@@ -111,8 +108,8 @@ def __str_to_map(str_value, key_type, value_type):
     if "" is not value and "" is not key_value:
         # 根据内容推存一次类型
         if None is convert_key_type:
-            convert_key_type = DataType(DataType.check_data_type(key))
-            assert convert_key_type, "无法确定类型的字典key：" + key
+            convert_key_type = DataType(DataType.check_data_type(key_value))
+            assert convert_key_type, "无法确定类型的字典key：" + key_value
         if None is convert_value_type:
             convert_value_type = DataType(DataType.check_data_type(value))
             assert convert_value_type, "无法确定类型的字典value：" + value
@@ -126,19 +123,18 @@ def __str_to_map(str_value, key_type, value_type):
 
 
 def __process_data_by_type__(value, type_data):
-    global conver_time
     main_type = type_data.main_type
     if DataType.ARRAY_TYPE == main_type:
         result, convert_type = __str_to_array__(value, type_data.key_type)
         
-        if None is not convert_type and  None is type_data.key_type:
+        if None is not convert_type and None is type_data.key_type:
             type_data.set_key_type(convert_type)
 
         return result
     elif DataType.MAP_TYPE == main_type:
         result, convert_key_type, convert_value_type = __str_to_map(value, type_data.key_type, type_data.value_type)
         
-        if None is not convert_key_type and  None is type_data.key_type:
+        if None is not convert_key_type and None is type_data.key_type:
             type_data.set_key_type(convert_key_type)
         if None is not convert_value_type and None is type_data.value_type:
             type_data.set_value_type(convert_value_type)
@@ -152,9 +148,7 @@ class MessageData(SwapData):
     def __init__(self, file_name, types, notes, field):
         SwapData.__init__(self, file_name, types, notes, field)
     
-    @cal_run_time_deco
     def analyze(self):
-        global conver_time
         # 先分析所有的类型
         if not SwapData.analyze(self):
             return False
@@ -163,21 +157,20 @@ class MessageData(SwapData):
         invalid_field = dict()
 
         # 分析所有的数据
-        use_time = 0
-        for data in self.datas:
+        for data in self.data_list:
             for key in data:
-               type_data = self.field_to_type.get(key, None)
-               assert type_data, "字段%s无对应的数据类型" % key
-               if DataType.INVALD_TYPE_SKIP == type_data.is_valid:
-                   invalid_field[key] = None
-                   continue
-               data[key] = __process_data_by_type__(data[key], type_data)
-
+                type_data = self.field_to_type.get(key, None)
+                assert type_data, "字段%s无对应的数据类型" % key
+                if DataType.INVALID_TYPE_SKIP == type_data.is_valid:
+                    invalid_field[key] = None
+                    continue
+                data[key] = __process_data_by_type__(data[key], type_data)
+               
         # 将无效字段从所有数据中称除
         for field in invalid_field:
             self.fields.remove(field)
             del self.field_to_type[field]
-            for data in self.datas:
+            for data in self.data_list:
                 del data[field]
         return True
 

@@ -1,12 +1,12 @@
 # _*_coding:utf-8_*_
 
 import struct
-from pbjson import *
-from ProtoTemplate import *
-from EnumData import EnumData
-from DataType import DataType
-from MessageData import MessageData
-from JsonSwapData import JsonSwapData
+from Helpers.pbjson import *
+from Helpers.ProtoTemplate import *
+from SwapDatas.DataType import DataType
+from SwapDatas.MessageData import MessageData
+from SwapDatas.JsonSwapData import JsonSwapData
+
 
 def write_message(message_name, message_fields):
     return MESSAGE_TEMPLATE % {
@@ -37,20 +37,19 @@ def write_proto(enum_list, message_helper, message_list):
         }
 
 
-def write_to_file(path, context, modle='w'):
-    f = open(path, modle)
+def write_to_file(path, context, pattern='w'):
+    f = open(path, pattern)
     f.write(context)
     f.close()
 
 
-def process_data_to_proto(path, datas):
+def process_data_to_proto(path, data_lists):
     enum_list = list()
     message_list = list()
-    message_helper_list = list()
     field_index = 2
     message_helper = ""
-    for data_name in datas:
-        data = datas[data_name]
+    for data_name in data_lists:
+        data = data_lists[data_name]
         
         # 找出是否存在默认键
         result = data.to_proto()
@@ -59,22 +58,22 @@ def process_data_to_proto(path, datas):
             message_list.append(write_message(data.file_name, result))
 
             # 获取key来生成最后的DataHelper
-            key_type_name = None
             if not data.key_type:
                 print("config type neither id type nor key type , this config will be ignored : " + data_name)
                 continue
             key_type_name = DataType.type_to_proto(data.key_type.main_type)
 
-            message_helper = message_helper + ("\tmap<%(message_key)s, %(message_name)s> %(message_name)s_dict = %(field_index)d;\n" % {
-                    "message_key": key_type_name,
-                    "message_name": data.file_name,
-                    "field_index": field_index
-                })
+            message_helper = message_helper + (
+                    "\tmap<%(message_key)s, %(message_name)s> %(message_name)s_dict = %(field_index)d;\n" %
+                    {
+                        "message_key": key_type_name,
+                        "message_name": data.file_name,
+                        "field_index": field_index
+                    })
             field_index += 1
         else:
             enum_list.append(write_enum(data.file_name, result))
     context = write_proto(enum_list, message_helper, message_list)
-    print(context)
     write_to_file(path, context)
 
 
@@ -89,13 +88,13 @@ def __load_module__(path):
     return module
 
 
-def data_to_binary(proto_module, datas):
+def data_to_binary(proto_module, data_list):
     module = __load_module__(proto_module)
-    binray_list = list()
+    binary_list = list()
 
     # 将数据写进DataHelper
-    for data_key in datas:
-        data = datas[data_key]
+    for data_key in data_list:
+        data = data_list[data_key]
         print(data_key)
         if isinstance(data, MessageData) or isinstance(data, JsonSwapData):
             if not data.key:
@@ -104,10 +103,11 @@ def data_to_binary(proto_module, datas):
             # 将dict转为proto类
             pb_dict = list()
             cls = getattr(module, data.file_name)
-            for config_data in data.datas:
+            for config_data in data.data_list:
                 pb_dict.append(dict2pb(cls, config_data))
-            binray_list.append(merge_single_binary(data.file_name, pb_dict))
-    return merge_all_binary(binray_list)
+            binary_list.append(merge_single_binary(data.file_name, pb_dict))
+    return merge_all_binary(binary_list)
+
 
 def merge_single_binary(type_name, binary_data):
     b_type_name = type_name.encode()
@@ -120,16 +120,15 @@ def merge_single_binary(type_name, binary_data):
     return binary_head
 
 
-def merge_all_binary(binarys):
-    binary_head = struct.pack('i', len(binarys))
-    for binary in binarys:
+def merge_all_binary(binary_list):
+    binary_head = struct.pack('i', len(binary_list))
+    for binary in binary_list:
         binary_head = binary_head + struct.pack('i', len(binary)) + binary
     return binary_head
 
 
 def write_to_binary(path, context):
     binary_file = open(path, 'wb')
-    #binary_file.write(context.SerializeToString())
     binary_file.write(context)
     binary_file.close()
 

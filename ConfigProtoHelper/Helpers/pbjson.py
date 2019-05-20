@@ -56,7 +56,7 @@ def dict2pbobj(obj, adict, strict=False):
                     % (key, type(obj)))
     for field in obj.DESCRIPTOR.fields:
         if not field.name in adict:
-            continue
+            continue                                                                                                                                    		
         msg_type = field.message_type
         if field.label == FD.LABEL_REPEATED:
             if field.type == FD.TYPE_MESSAGE:

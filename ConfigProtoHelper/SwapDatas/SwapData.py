@@ -1,7 +1,6 @@
 # _*_coding:utf-8_*_ 
 
-from ProtoHelper import *
-from DataType import DataType
+from SwapDatas.DataType import DataType
 
 
 class SwapData:
@@ -13,7 +12,7 @@ class SwapData:
         self.notes = notes
         self.fields = field
         self.field_to_type = dict()
-        self.datas = list()
+        self.data_list = list()
         self.key = None
         self.key_type = None
 
@@ -22,7 +21,7 @@ class SwapData:
         self.file_name = file_name
 
     def insert(self, data):
-        self.datas.append(data)
+        self.data_list.append(data)
 
     def to_proto(self):
         message_field = ""
@@ -39,30 +38,30 @@ class SwapData:
         return message_field
 
     def get(self, index):
-        if index >= 0 and index < len(self.datas):
-            return self.datas[index]
+        if index <= index <= len(self.data_list):
+            return self.data_list[index]
 
     def analyze(self):
         for index in range(0, len(self.types)):
-            type_name = self.types[index]
             field_name = self.fields[index]
             data_type = DataType(self.types[index])
-            if DataType.INVALD_TYPE_ERROR == data_type.is_valid:
+            if DataType.INVALID_TYPE_ERROR == data_type.is_valid:
                 return False
             self.types[index] = data_type
             self.field_to_type[field_name] = data_type
 
             # 检查一下是否存在key键
-            if self.check_is_key(field_name):
+            if SwapData.check_is_key(field_name):
                 self.key = field_name
                 self.key_type = data_type
 
         # 无自带key,则自动生成
-        if None == self.key:
+        if None is self.key:
             self.auto_key()
         return True
 
-    def check_is_key(self, field):
+    @staticmethod
+    def check_is_key(field):
         upper = field.upper()
         return upper == SwapData.DEFAULT_STRING_KEY or upper == SwapData.DEFAULT_KEY
 
@@ -72,7 +71,7 @@ class SwapData:
         self.fields.insert(0, SwapData.DEFAULT_KEY)
         self.field_to_type[SwapData.DEFAULT_KEY] = key_data_type
         key_value = 1
-        for data in self.datas:
+        for data in self.data_list:
             data[SwapData.DEFAULT_KEY] = key_value
             key_value += 1
         self.key = SwapData.DEFAULT_KEY
@@ -82,15 +81,15 @@ class SwapData:
         for field in self.fields:
             upper = field.upper()
             if upper == key:
-                type = self.field_to_type.get(field, None)
-                if None is not type:
+                field_type = self.field_to_type.get(field, None)
+                if None is not field_type:
                     self.key = field
-                    return DataType.type_to_proto(type.main_type)
+                    return DataType.type_to_proto(field_type.main_type)
             elif upper == str_key:
-               type = self.field_to_type.get(field, None)
-               if None is not type:
+                field_type = self.field_to_type.get(field, None)
+                if None is not field_type:
                     self.key = field
-                    return DataType.type_to_proto(type.main_type)
+                    return DataType.type_to_proto(field_type.main_type)
         return None
 
     def __repr__(self):
@@ -110,7 +109,7 @@ class SwapData:
             result += "\t"
 
         result += "\n"
-        for data_value in self.datas:
+        for data_value in self.data_list:
             for key in data_value:
                 data = data_value[key]
                 result = result + str(data) + "\t" + str(type(data)) + "\t"

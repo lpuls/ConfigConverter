@@ -1,6 +1,6 @@
 # _*_coding:utf-8_*_ 
 
-from SwapData import SwapData
+from SwapDatas.SwapData import SwapData
 
 
 class EnumData(SwapData):
@@ -10,7 +10,7 @@ class EnumData(SwapData):
     def to_proto(self):
         has_zero = False
         enum_field = ""
-        for data_value in self.datas:
+        for data_value in self.data_list:
             name = data_value.get("name", None)
             value = data_value.get("value", None)
 
@@ -21,7 +21,7 @@ class EnumData(SwapData):
             # 合成字符
             annotation = data_value.get("annotation", None)
             if None is name or None is value or None is annotation:
-                print("[SwapData]无效的枚举数值定义")
+                print("[SwapDatas]无效的枚举数值定义")
                 return None
             enum_field += "\t%(file_name)s_%(enum_name)s = %(enum_value)d;  // %(annotation)s\n" % {
                     "file_name": self.file_name,

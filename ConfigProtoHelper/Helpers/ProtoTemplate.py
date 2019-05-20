@@ -1,8 +1,6 @@
 # _*_coding:utf-8_*_
 
 
-
-
 PROTO_TEMPLATE = """
 syntax = "proto3";
 option csharp_namespace = "Config";

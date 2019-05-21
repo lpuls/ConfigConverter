@@ -1,9 +1,291 @@
 {
-    "Test": [
-        {
-            "Type": "MAP:INT,INT",
-            "Field": "Start",
-            "Note": "預先开始时间"
-        }
-    ]
+  "InputActionTimelineNode": [
+    {
+      "Type": "INT",
+      "Field": "Start",
+      "Note": "預先开始时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "Duration",
+      "Note": "預先开始时间"
+    },
+    {
+      "Type": "BOOL",
+      "Field": "Enable",
+      "Note": "是否有效"
+    }
+  ],
+  "MoveActionTimelineNode": [
+    {
+      "Type": "INT",
+      "Field": "Start",
+      "Note": "移动开始时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "Duration",
+      "Note": "移动总时长"
+    },
+    {
+      "Type": "ARRAY:INT",
+      "Field": "AnimationMove",
+      "Note": "每一帧移动的距离"
+    },
+    {
+      "Type": "BOOL",
+      "Field": "Enable",
+      "Note": "是否有效"
+    }
+  ],
+  "HitCheckInfo": [
+    {
+      "Type": "INT",
+      "Field": "Start",
+      "Note": "开始时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "HitHeight",
+      "Note": "击飞高度"
+    },
+    {
+      "Type": "INT",
+      "Field": "ValidHitHeight",
+      "Note": "有效攻击高度"
+    },
+    {
+      "Type": "INT:RangeType",
+      "Field": "RangeType",
+      "Note": "攻击范围类型"
+    },
+    {
+      "Type": "INT",
+      "Field": "Range",
+      "Note": "攻击范围"
+    },
+    {
+      "Type": "INT",
+      "Field": "Radius",
+      "Note": "半径"
+    },
+    {
+      "Type": "INT",
+      "Field": "Angle",
+      "Note": "角度"
+    },
+    {
+      "Type": "INT",
+      "Field": "Length",
+      "Note": "长度"
+    },
+    {
+      "Type": "INT",
+      "Field": "Width",
+      "Note": "宽度"
+    },
+    {
+      "Type": "JSON:VectorInt3",
+      "Field": "CenterOffset",
+      "Note": "判定中心偏移"
+    },
+    {
+      "Type": "INT",
+      "Field": "HorizontalSpeed",
+      "Note": "水平受击偏移初速度"
+    },
+    {
+      "Type": "INT",
+      "Field": "HorizontalAcceleratedASpeed",
+      "Note": "水平受击偏移加速度"
+    },
+    {
+      "Type": "INT",
+      "Field": "Duration",
+      "Note": "持續时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "VerticalSpeed",
+      "Note": "挑空初速度"
+    },
+    {
+      "Type": "INT",
+      "Field": "VerticalAcceleratedSpeed",
+      "Note": "重力加速度"
+    },
+    {
+      "Type": "INT",
+      "Field": "HitDamagePec",
+      "Note": "伤害计算使用攻击力的百分比"
+    },
+    {
+      "Type": "INT",
+      "Field": "HitDamageBasics",
+      "Note": "伤害固定初始值"
+    }
+  ],
+  "VectorInt3": [
+    {
+      "Type": "INT",
+      "Field": "X",
+      "Note": "X值"
+    },
+    {
+      "Type": "INT",
+      "Field": "Y",
+      "Note": "Y值"
+    },
+    {
+      "Type": "INT",
+      "Field": "Z",
+      "Note": "Z值"
+    }
+  ],
+  "AbilityEffect": [
+    {
+      "Type": "INT:TargetCampType",
+      "Field": "TargetType",
+      "Note": "目标与我方的关系"
+    },
+    {
+      "Type": "INT:TriggerPosType",
+      "Field": "TriggerPosType",
+      "Note": "触发位置与我方的关系"
+    },
+    {
+      "Type": "INT",
+      "Field": "TriggerDelay",
+      "Note": "延迟时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "TriggerTick",
+      "Note": "触发间隔"
+    },
+    {
+      "Type": "INT:RangeType",
+      "Field": "TriggerRangeType",
+      "Note": "触发判定范围类型"
+    },
+    {
+      "Type": "INT:TargetSelectType",
+      "Field": "TargetSelectType",
+      "Note": "目标选择类型"
+    },
+    {
+      "Type": "INT",
+      "Field": "TargetAmount",
+      "Note": "目标选择数量"
+    },
+    {
+      "Type": "INT",
+      "Field": "Start",
+      "Note": "移动开始时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "Duration",
+      "Note": "移动总时长"
+    },
+    {
+      "Type": "INT:Shape",
+      "Field": "Shape",
+      "Note": "形状"
+    },
+    {
+      "Type": "INT",
+      "Field": "Range",
+      "Note": "作用范围"
+    },
+    {
+      "Type": "JSON:VectorInt3",
+      "Field": "Direction",
+      "Note": "方向"
+    },
+    {
+      "Type": "ARRAY:INT",
+      "Field": "EffectID",
+      "Note": "该帧要触发的所有效果ID"
+    }
+  ],
+  "LockActionNode": [
+    {
+      "Type": "INT",
+      "Field": "Start",
+      "Note": "锁定开始时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "Duration",
+      "Note": "锁定的时长"
+    }
+  ],
+  "Timeline": [
+    {
+      "Type": "INT",
+      "Field": "ID",
+      "Note": "Timeline唯一标识"
+    },
+    {
+      "Type": "INT",
+      "Field": "TICK_INTERVAL",
+      "Note": "帧间隔"
+    },
+    {
+      "Type": "BOOL",
+      "Field": "IsLoop",
+      "Note": "是否循环"
+    },
+    {
+      "Type": "BOOL",
+      "Field": "CanInput",
+      "Note": "是否可输入"
+    },
+    {
+      "Type": "INT",
+      "Field": "Duration",
+      "Note": "Timeline总时长"
+    },
+    {
+      "Type": "INT",
+      "Field": "ReadyTime",
+      "Note": "前摇结束时间"
+    },
+    {
+      "Type": "INT",
+      "Field": "RecoverTime",
+      "Note": "后摇时间"
+    },
+    {
+      "Type": "ARRAY:JSON:HitCheckInfo",
+      "Field": "HitTimeList",
+      "Note": "受击时间点"
+    },
+    {
+      "Type": "ARRAY:JSON:LockActionNode",
+      "Field": "LockAcionList",
+      "Note": "锁定行为列表"
+    },
+    {
+      "Type": "JSON:InputActionTimelineNode",
+      "Field": "InputActionTimelineNode",
+      "Note": "預输入时间"
+    },
+    {
+      "Type": "JSON:MoveActionTimelineNode",
+      "Field": "MoveActionTimelineNode",
+      "Note": "动画位移"
+    },
+    {
+      "Type": "ARRAY:JSON:AbilityEffect",
+      "Field": "AbilityEffectNodeInfo",
+      "Note": "技能效果"
+    },
+    {
+      "Type": "INT",
+      "Field": "ComboOverTime",
+      "Note": "连招失效点"
+    }
+  ]
 }

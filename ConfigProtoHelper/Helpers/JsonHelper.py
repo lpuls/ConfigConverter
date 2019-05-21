@@ -2,6 +2,7 @@
 
 import json
 from SwapDatas.JsonSwapData import JsonSwapData
+from Tools.FileHelper import load_file_to_string
 
 
 class JsonHelper:
@@ -29,7 +30,7 @@ class JsonHelper:
 
     @staticmethod
     def load_json_config(path):
-        json_data = json.loads(JsonHelper.load_json(path))
+        json_data = json.loads(load_file_to_string(path))
 
         # 取出文件名
         name = path[path.rfind('/') + 1: path.rfind('.')]
@@ -43,13 +44,3 @@ class JsonHelper:
             print("无效的JSON文件 " + path)
             return
         message_data.insert(json_data)
-
-    @staticmethod
-    def load_json(path):
-        result = ""
-        with open(path, encoding="utf-8") as f:
-            config_text = f.readlines()
-            f.close()
-            for line in config_text:
-                result += line
-        return result

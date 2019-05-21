@@ -63,13 +63,6 @@ def load_config(path):
     OTHER_OUT_PATH = config['OTHER_OUT_PATH']
 
 
-def write_log(context):
-    log = open(LOG_PATH, 'a')
-    log.write(context)
-    log.write('\n')
-    log.close()
-
-
 def merge_dict(dict1, dict2):
     for key in dict2:
         assert key not in dict1.keys(), "Key重复"
@@ -99,7 +92,6 @@ def analyze_config(data_list):
         print("Process %s" % data_name)
         if not data.analyze():
             print("Process %s [ERROR]\n" % (data_name,))
-            write_log('%s' % data_name)
             delete_config.append(data_name)
             continue
         print("Process %s [SUCCESS]" % data_name)

@@ -60,7 +60,7 @@ class DataType:
                 self.value_type = DataType(type_name[2])
         elif DataType.INT_TYPE == self.main_type:
             if (len(type_name)) >= 2:
-                 self.key_type = DataType(type_name[1])
+                self.key_type = DataType(type_name[1])
 
     @staticmethod
     def __analyze_sub_type__(types, index):

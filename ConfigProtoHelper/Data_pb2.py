@@ -20,327 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Data.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\nData.proto\"V\n\x17InputActionTimelineNode\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x10\n\x08\x44uration\x18\x03 \x01(\x05\x12\x0e\n\x06\x45nable\x18\x04 \x01(\x08\"\xf1\x02\n\nRoleConfig\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x11\n\tModelPath\x18\x02 \x01(\t\x12\x11\n\tModelName\x18\x03 \x01(\t\x12\x0e\n\x06Melees\x18\x04 \x03(\x05\x12\x0f\n\x07\x41\x62ility\x18\x05 \x03(\x05\x12\x14\n\x0c\x41voidAbility\x18\x06 \x03(\x05\x12\x0e\n\x06Radius\x18\x07 \x01(\x05\x12\x0e\n\x06\x42\x61seHP\x18\x08 \x01(\x05\x12\x12\n\nBaseAttack\x18\t \x01(\x05\x12\x12\n\nBaseDefend\x18\n \x01(\x05\x12\x15\n\rGrowHPByLevel\x18\x0b \x01(\x05\x12\x19\n\x11GrowAttackByLevel\x18\x0c \x01(\x05\x12\x19\n\x11GrowDefendByLevel\x18\r \x01(\x05\x12\x14\n\x0cGrowHPByStar\x18\x0e \x01(\x05\x12\x18\n\x10GrowAttackByStar\x18\x0f \x01(\x05\x12\x18\n\x10GrowDefendByStar\x18\x10 \x01(\x05\x12\x1b\n\x08RoleType\x18\x11 \x01(\x0e\x32\t.RoleType\"l\n\x16MoveActionTimelineNode\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x10\n\x08\x44uration\x18\x03 \x01(\x05\x12\x15\n\rAnimationMove\x18\x04 \x03(\x05\x12\x0e\n\x06\x45nable\x18\x05 \x01(\x08\"\x8f\x03\n\x08Timeline\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x15\n\rTICK_INTERVAL\x18\x02 \x01(\x05\x12\x0e\n\x06IsLoop\x18\x03 \x01(\x08\x12\x10\n\x08\x43\x61nInput\x18\x04 \x01(\x08\x12\x10\n\x08\x44uration\x18\x05 \x01(\x05\x12\x11\n\tReadyTime\x18\x06 \x01(\x05\x12\x13\n\x0bRecoverTime\x18\x07 \x01(\x05\x12\"\n\x0bHitTimeList\x18\x08 \x03(\x0b\x32\r.HitCheckInfo\x12&\n\rLockAcionList\x18\t \x03(\x0b\x32\x0f.LockActionNode\x12\x39\n\x17InputActionTimelineNode\x18\n \x01(\x0b\x32\x18.InputActionTimelineNode\x12\x37\n\x16MoveActionTimelineNode\x18\x0b \x01(\x0b\x32\x17.MoveActionTimelineNode\x12-\n\x15\x41\x62ilityEffectNodeInfo\x18\x0c \x03(\x0b\x32\x0e.AbilityEffect\x12\x15\n\rComboOverTime\x18\r \x01(\x05\"\xf6\x02\n\rAbilityEffect\x12\n\n\x02ID\x18\x01 \x01(\x05\x12#\n\nTargetType\x18\x02 \x01(\x0e\x32\x0f.TargetCampType\x12\'\n\x0eTriggerPosType\x18\x03 \x01(\x0e\x32\x0f.TriggerPosType\x12\x14\n\x0cTriggerDelay\x18\x04 \x01(\x05\x12\x13\n\x0bTriggerTick\x18\x05 \x01(\x05\x12$\n\x10TriggerRangeType\x18\x06 \x01(\x0e\x32\n.RangeType\x12+\n\x10TargetSelectType\x18\x07 \x01(\x0e\x32\x11.TargetSelectType\x12\x14\n\x0cTargetAmount\x18\x08 \x01(\x05\x12\r\n\x05Start\x18\t \x01(\x05\x12\x10\n\x08\x44uration\x18\n \x01(\x05\x12\x15\n\x05Shape\x18\x0b \x01(\x0e\x32\x06.Shape\x12\r\n\x05Range\x18\x0c \x01(\x05\x12\x1e\n\tDirection\x18\r \x01(\x0b\x32\x0b.VectorInt3\x12\x10\n\x08\x45\x66\x66\x65\x63tID\x18\x0e \x03(\x05\"\xbd\x04\n\nBuffConfig\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x17\n\x04Type\x18\x02 \x01(\x0e\x32\t.BuffType\x12\x0c\n\x04Name\x18\x03 \x01(\t\x12\x1f\n\x06Status\x18\x04 \x01(\x0e\x32\x0f.BuffStatusType\x12\x1f\n\x06Target\x18\x05 \x01(\x0e\x32\x0f.TargetCampType\x12\r\n\x05\x43ount\x18\x06 \x01(\x05\x12\x0e\n\x06\x44uring\x18\x07 \x01(\x05\x12\x0c\n\x04Tick\x18\x08 \x01(\x05\x12\x16\n\x0e\x43ompulsoryLift\x18\t \x01(\x05\x12$\n\x10TriggerRangeType\x18\n \x01(\x0e\x32\n.RangeType\x12\r\n\x05Range\x18\x0b \x01(\x05\x12%\n\x10\x44\x61mageEffectType\x18\x0c \x01(\x0e\x32\x0b.EffectType\x12\x19\n\x11\x44\x61mageEffectValue\x18\r \x01(\x05\x12*\n\x11\x41\x64\x64tiveEffectType\x18\x0e \x01(\x0e\x32\x0f.ItemDetailType\x12\x1b\n\x13\x41\x64\x64tiveEffectFactor\x18\x0f \x01(\x05\x12\x14\n\x0cLimitAbility\x18\x10 \x01(\x05\x12\x13\n\x0bShieldValue\x18\x11 \x01(\x05\x12&\n\rLeechLifeType\x18\x12 \x01(\x0e\x32\x0f.ConversionType\x12\x16\n\x0eLeechLifeParam\x18\x13 \x01(\x05\x12\x13\n\x0bTransformID\x18\x14 \x01(\x05\x12\x1a\n\x12TransformAttackArr\x18\x15 \x03(\x05\x12\x19\n\x11TransformSkillArr\x18\x16 \x03(\x05\"9\n\nVectorInt3\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\t\n\x01X\x18\x02 \x01(\x05\x12\t\n\x01Y\x18\x03 \x01(\x05\x12\t\n\x01Z\x18\x04 \x01(\x05\"\x9b\x03\n\x0cHitCheckInfo\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x11\n\tHitHeight\x18\x03 \x01(\x05\x12\x16\n\x0eValidHitHeight\x18\x04 \x01(\x05\x12\x1d\n\tRangeType\x18\x05 \x01(\x0e\x32\n.RangeType\x12\r\n\x05Range\x18\x06 \x01(\x05\x12\x0e\n\x06Radius\x18\x07 \x01(\x05\x12\r\n\x05\x41ngle\x18\x08 \x01(\x05\x12\x0e\n\x06Length\x18\t \x01(\x05\x12\r\n\x05Width\x18\n \x01(\x05\x12!\n\x0c\x43\x65nterOffset\x18\x0b \x01(\x0b\x32\x0b.VectorInt3\x12\x17\n\x0fHorizontalSpeed\x18\x0c \x01(\x05\x12#\n\x1bHorizontalAcceleratedASpeed\x18\r \x01(\x05\x12\x10\n\x08\x44uration\x18\x0e \x01(\x05\x12\x15\n\rVerticalSpeed\x18\x0f \x01(\x05\x12 \n\x18VerticalAcceleratedSpeed\x18\x10 \x01(\x05\x12\x14\n\x0cHitDamagePec\x18\x11 \x01(\x05\x12\x17\n\x0fHitDamageBasics\x18\x12 \x01(\x05\"=\n\x0eLockActionNode\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x10\n\x08\x44uration\x18\x03 \x01(\x05\"8\n\rAbilityConfig\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x0c\n\x04Path\x18\x02 \x01(\t\x12\r\n\x05\x41sset\x18\x03 \x01(\t\"\x99\x0b\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12R\n\x1cInputActionTimelineNode_dict\x18\x02 \x03(\x0b\x32,.DataHelper.InputActionTimelineNodeDictEntry\x12\x38\n\x0fRoleConfig_dict\x18\x03 \x03(\x0b\x32\x1f.DataHelper.RoleConfigDictEntry\x12P\n\x1bMoveActionTimelineNode_dict\x18\x04 \x03(\x0b\x32+.DataHelper.MoveActionTimelineNodeDictEntry\x12\x34\n\rTimeline_dict\x18\x05 \x03(\x0b\x32\x1d.DataHelper.TimelineDictEntry\x12>\n\x12\x41\x62ilityEffect_dict\x18\x06 \x03(\x0b\x32\".DataHelper.AbilityEffectDictEntry\x12\x38\n\x0f\x42uffConfig_dict\x18\x07 \x03(\x0b\x32\x1f.DataHelper.BuffConfigDictEntry\x12\x38\n\x0fVectorInt3_dict\x18\x08 \x03(\x0b\x32\x1f.DataHelper.VectorInt3DictEntry\x12<\n\x11HitCheckInfo_dict\x18\t \x03(\x0b\x32!.DataHelper.HitCheckInfoDictEntry\x12@\n\x13LockActionNode_dict\x18\n \x03(\x0b\x32#.DataHelper.LockActionNodeDictEntry\x12>\n\x12\x41\x62ilityConfig_dict\x18\x0b \x03(\x0b\x32\".DataHelper.AbilityConfigDictEntry\x1a\\\n InputActionTimelineNodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.InputActionTimelineNode:\x02\x38\x01\x1a\x42\n\x13RoleConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.RoleConfig:\x02\x38\x01\x1aZ\n\x1fMoveActionTimelineNodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.MoveActionTimelineNode:\x02\x38\x01\x1a>\n\x11TimelineDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.Timeline:\x02\x38\x01\x1aH\n\x16\x41\x62ilityEffectDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.AbilityEffect:\x02\x38\x01\x1a\x42\n\x13\x42uffConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.BuffConfig:\x02\x38\x01\x1a\x42\n\x13VectorInt3DictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.VectorInt3:\x02\x38\x01\x1a\x46\n\x15HitCheckInfoDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.HitCheckInfo:\x02\x38\x01\x1aJ\n\x17LockActionNodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.LockActionNode:\x02\x38\x01\x1aH\n\x16\x41\x62ilityConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.AbilityConfig:\x02\x38\x01*\x87\x01\n\x08RoleType\x12\x11\n\rRoleType_None\x10\x00\x12\x13\n\x0fRoleType_Player\x10\x01\x12\x12\n\x0eRoleType_Enemy\x10\x02\x12\x14\n\x10RoleType_Neutral\x10\x04\x12\x13\n\x0fRoleType_Bunker\x10\x08\x12\x14\n\x10RoleType_Trigger\x10\x10*;\n\x05Shape\x12\x0e\n\nShape_NONE\x10\x00\x12\x10\n\x0cShape_CIRCLE\x10\x01\x12\x10\n\x0cShape_SECTOR\x10\x02*\x8e\x01\n\x0eTargetCampType\x12\x17\n\x13TargetCampType_none\x10\x00\x12\x15\n\x11TargetCampType_we\x10\x01\x12\x18\n\x14TargetCampType_enemy\x10\x02\x12\x1a\n\x16TargetCampType_oneself\x10\x03\x12\x16\n\x12TargetCampType_all\x10\x04*`\n\x0eTriggerPosType\x12\x17\n\x13TriggerPosType_none\x10\x00\x12\x1a\n\x16TriggerPosType_oneself\x10\x01\x12\x19\n\x15TriggerPosType_target\x10\x02*\xa2\x01\n\tRangeType\x12\x12\n\x0eRangeType_none\x10\x00\x12\x1a\n\x16RangeType_straightline\x10\x01\x12\x14\n\x10RangeType_sector\x10\x02\x12\x17\n\x13RangeType_roundness\x10\x03\x12\x17\n\x13RangeType_rectangle\x10\x04\x12\x1d\n\x19RangeType_multi_direction\x10\x05*\xf0\x01\n\x10TargetSelectType\x12\x19\n\x15TargetSelectType_none\x10\x00\x12\x1c\n\x18TargetSelectType_nearest\x10\x01\x12\x1d\n\x19TargetSelectType_farthest\x10\x02\x12\x1d\n\x19TargetSelectType_hp_least\x10\x03\x12\x1f\n\x1bTargetSelectType_hp_maximum\x10\x04\x12\'\n#TargetSelectType_battle_ability_max\x10\x05\x12\x1b\n\x17TargetSelectType_random\x10\x06*b\n\x0e\x43onversionType\x12\x17\n\x13\x43onversionType_none\x10\x00\x12\x18\n\x14\x43onversionType_fixed\x10\x01\x12\x1d\n\x19\x43onversionType_percentage\x10\x02*\x80\x01\n\nEffectType\x12\x13\n\x0f\x45\x66\x66\x65\x63tType_none\x10\x00\x12\x1b\n\x17\x45\x66\x66\x65\x63tType_general_harm\x10\x01\x12\x13\n\x0f\x45\x66\x66\x65\x63tType_harm\x10\x02\x12\x15\n\x11\x45\x66\x66\x65\x63tType_effect\x10\x03\x12\x14\n\x10\x45\x66\x66\x65\x63tType_death\x10\x04*)\n\x0eItemDetailType\x12\x17\n\x13ItemDetailType_none\x10\x00*E\n\x08\x42uffType\x12\x11\n\rBuffType_none\x10\x00\x12\x11\n\rBuffType_buff\x10\x01\x12\x13\n\x0f\x42uffType_debuff\x10\x02*\xc5\x05\n\x0e\x42uffStatusType\x12\x17\n\x13\x42uffStatusType_none\x10\x00\x12\x18\n\x14\x42uffStatusType_bleed\x10\x01\x12\x19\n\x15\x42uffStatusType_firing\x10\x02\x12\x1b\n\x17\x42uffStatusType_entangle\x10\x03\x12\x1d\n\x19\x42uffStatusType_immobilize\x10\x04\x12\x17\n\x13\x42uffStatusType_stun\x10\x05\x12\x1a\n\x16\x42uffStatusType_silence\x10\x06\x12\x18\n\x14\x42uffStatusType_sleep\x10\x07\x12\x17\n\x13\x42uffStatusType_fear\x10\x08\x12\x1c\n\x18\x42uffStatusType_poisoning\x10\t\x12\x1d\n\x19\x42uffStatusType_invincible\x10\n\x12\x1c\n\x18\x42uffStatusType_lower_def\x10\x0b\x12!\n\x1d\x42uffStatusType_lower_accuracy\x10\x0c\x12\"\n\x1e\x42uffStatusType_continue_regain\x10\r\x12\x1e\n\x1a\x42uffStatusType_enhance_def\x10\x0e\x12\x1e\n\x1a\x42uffStatusType_enhance_atk\x10\x0f\x12\x18\n\x14\x42uffStatusType_death\x10\x10\x12\x19\n\x15\x42uffStatusType_freeze\x10\x11\x12\x1c\n\x18\x42uffStatusType_paralysis\x10\x12\x12\x19\n\x15\x42uffStatusType_stupid\x10\x13\x12\x19\n\x15\x42uffStatusType_disarm\x10\x14\x12\x19\n\x15\x42uffStatusType_shield\x10\x15\x12\x1d\n\x19\x42uffStatusType_leech_life\x10\x16\x12\x1c\n\x18\x42uffStatusType_transform\x10\x17\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
+  serialized_pb=_b('\n\nData.proto\"\xf1\x02\n\nRoleConfig\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x11\n\tModelPath\x18\x02 \x01(\t\x12\x11\n\tModelName\x18\x03 \x01(\t\x12\x0e\n\x06Melees\x18\x04 \x03(\x05\x12\x0f\n\x07\x41\x62ility\x18\x05 \x03(\x05\x12\x14\n\x0c\x41voidAbility\x18\x06 \x03(\x05\x12\x0e\n\x06Radius\x18\x07 \x01(\x05\x12\x0e\n\x06\x42\x61seHP\x18\x08 \x01(\x05\x12\x12\n\nBaseAttack\x18\t \x01(\x05\x12\x12\n\nBaseDefend\x18\n \x01(\x05\x12\x15\n\rGrowHPByLevel\x18\x0b \x01(\x05\x12\x19\n\x11GrowAttackByLevel\x18\x0c \x01(\x05\x12\x19\n\x11GrowDefendByLevel\x18\r \x01(\x05\x12\x14\n\x0cGrowHPByStar\x18\x0e \x01(\x05\x12\x18\n\x10GrowAttackByStar\x18\x0f \x01(\x05\x12\x18\n\x10GrowDefendByStar\x18\x10 \x01(\x05\x12\x1b\n\x08RoleType\x18\x11 \x01(\x0e\x32\t.RoleType\"\xbd\x04\n\nBuffConfig\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x17\n\x04Type\x18\x02 \x01(\x0e\x32\t.BuffType\x12\x0c\n\x04Name\x18\x03 \x01(\t\x12\x1f\n\x06Status\x18\x04 \x01(\x0e\x32\x0f.BuffStatusType\x12\x1f\n\x06Target\x18\x05 \x01(\x0e\x32\x0f.TargetCampType\x12\r\n\x05\x43ount\x18\x06 \x01(\x05\x12\x0e\n\x06\x44uring\x18\x07 \x01(\x05\x12\x0c\n\x04Tick\x18\x08 \x01(\x05\x12\x16\n\x0e\x43ompulsoryLift\x18\t \x01(\x05\x12$\n\x10TriggerRangeType\x18\n \x01(\x0e\x32\n.RangeType\x12\r\n\x05Range\x18\x0b \x01(\x05\x12%\n\x10\x44\x61mageEffectType\x18\x0c \x01(\x0e\x32\x0b.EffectType\x12\x19\n\x11\x44\x61mageEffectValue\x18\r \x01(\x05\x12*\n\x11\x41\x64\x64tiveEffectType\x18\x0e \x01(\x0e\x32\x0f.ItemDetailType\x12\x1b\n\x13\x41\x64\x64tiveEffectFactor\x18\x0f \x01(\x05\x12\x14\n\x0cLimitAbility\x18\x10 \x01(\x05\x12\x13\n\x0bShieldValue\x18\x11 \x01(\x05\x12&\n\rLeechLifeType\x18\x12 \x01(\x0e\x32\x0f.ConversionType\x12\x16\n\x0eLeechLifeParam\x18\x13 \x01(\x05\x12\x13\n\x0bTransformID\x18\x14 \x01(\x05\x12\x1a\n\x12TransformAttackArr\x18\x15 \x03(\x05\x12\x19\n\x11TransformSkillArr\x18\x16 \x03(\x05\"l\n\x16MoveActionTimelineNode\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x10\n\x08\x44uration\x18\x03 \x01(\x05\x12\x15\n\rAnimationMove\x18\x04 \x03(\x05\x12\x0e\n\x06\x45nable\x18\x05 \x01(\x08\"8\n\rAbilityConfig\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x0c\n\x04Path\x18\x02 \x01(\t\x12\r\n\x05\x41sset\x18\x03 \x01(\t\"\x8f\x03\n\x08Timeline\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\x15\n\rTICK_INTERVAL\x18\x02 \x01(\x05\x12\x0e\n\x06IsLoop\x18\x03 \x01(\x08\x12\x10\n\x08\x43\x61nInput\x18\x04 \x01(\x08\x12\x10\n\x08\x44uration\x18\x05 \x01(\x05\x12\x11\n\tReadyTime\x18\x06 \x01(\x05\x12\x13\n\x0bRecoverTime\x18\x07 \x01(\x05\x12\"\n\x0bHitTimeList\x18\x08 \x03(\x0b\x32\r.HitCheckInfo\x12&\n\rLockAcionList\x18\t \x03(\x0b\x32\x0f.LockActionNode\x12\x39\n\x17InputActionTimelineNode\x18\n \x01(\x0b\x32\x18.InputActionTimelineNode\x12\x37\n\x16MoveActionTimelineNode\x18\x0b \x01(\x0b\x32\x17.MoveActionTimelineNode\x12-\n\x15\x41\x62ilityEffectNodeInfo\x18\x0c \x03(\x0b\x32\x0e.AbilityEffect\x12\x15\n\rComboOverTime\x18\r \x01(\x05\"\x9b\x03\n\x0cHitCheckInfo\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x11\n\tHitHeight\x18\x03 \x01(\x05\x12\x16\n\x0eValidHitHeight\x18\x04 \x01(\x05\x12\x1d\n\tRangeType\x18\x05 \x01(\x0e\x32\n.RangeType\x12\r\n\x05Range\x18\x06 \x01(\x05\x12\x0e\n\x06Radius\x18\x07 \x01(\x05\x12\r\n\x05\x41ngle\x18\x08 \x01(\x05\x12\x0e\n\x06Length\x18\t \x01(\x05\x12\r\n\x05Width\x18\n \x01(\x05\x12!\n\x0c\x43\x65nterOffset\x18\x0b \x01(\x0b\x32\x0b.VectorInt3\x12\x17\n\x0fHorizontalSpeed\x18\x0c \x01(\x05\x12#\n\x1bHorizontalAcceleratedASpeed\x18\r \x01(\x05\x12\x10\n\x08\x44uration\x18\x0e \x01(\x05\x12\x15\n\rVerticalSpeed\x18\x0f \x01(\x05\x12 \n\x18VerticalAcceleratedSpeed\x18\x10 \x01(\x05\x12\x14\n\x0cHitDamagePec\x18\x11 \x01(\x05\x12\x17\n\x0fHitDamageBasics\x18\x12 \x01(\x05\"\xf6\x02\n\rAbilityEffect\x12\n\n\x02ID\x18\x01 \x01(\x05\x12#\n\nTargetType\x18\x02 \x01(\x0e\x32\x0f.TargetCampType\x12\'\n\x0eTriggerPosType\x18\x03 \x01(\x0e\x32\x0f.TriggerPosType\x12\x14\n\x0cTriggerDelay\x18\x04 \x01(\x05\x12\x13\n\x0bTriggerTick\x18\x05 \x01(\x05\x12$\n\x10TriggerRangeType\x18\x06 \x01(\x0e\x32\n.RangeType\x12+\n\x10TargetSelectType\x18\x07 \x01(\x0e\x32\x11.TargetSelectType\x12\x14\n\x0cTargetAmount\x18\x08 \x01(\x05\x12\r\n\x05Start\x18\t \x01(\x05\x12\x10\n\x08\x44uration\x18\n \x01(\x05\x12\x15\n\x05Shape\x18\x0b \x01(\x0e\x32\x06.Shape\x12\r\n\x05Range\x18\x0c \x01(\x05\x12\x1e\n\tDirection\x18\r \x01(\x0b\x32\x0b.VectorInt3\x12\x10\n\x08\x45\x66\x66\x65\x63tID\x18\x0e \x03(\x05\"9\n\nVectorInt3\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\t\n\x01X\x18\x02 \x01(\x05\x12\t\n\x01Y\x18\x03 \x01(\x05\x12\t\n\x01Z\x18\x04 \x01(\x05\"V\n\x17InputActionTimelineNode\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x10\n\x08\x44uration\x18\x03 \x01(\x05\x12\x0e\n\x06\x45nable\x18\x04 \x01(\x08\"=\n\x0eLockActionNode\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Start\x18\x02 \x01(\x05\x12\x10\n\x08\x44uration\x18\x03 \x01(\x05\"\x99\x0b\n\nDataHelper\x12\x13\n\x0bmessageType\x18\x01 \x03(\t\x12\x38\n\x0fRoleConfig_dict\x18\x02 \x03(\x0b\x32\x1f.DataHelper.RoleConfigDictEntry\x12\x38\n\x0f\x42uffConfig_dict\x18\x03 \x03(\x0b\x32\x1f.DataHelper.BuffConfigDictEntry\x12P\n\x1bMoveActionTimelineNode_dict\x18\x04 \x03(\x0b\x32+.DataHelper.MoveActionTimelineNodeDictEntry\x12>\n\x12\x41\x62ilityConfig_dict\x18\x05 \x03(\x0b\x32\".DataHelper.AbilityConfigDictEntry\x12\x34\n\rTimeline_dict\x18\x06 \x03(\x0b\x32\x1d.DataHelper.TimelineDictEntry\x12<\n\x11HitCheckInfo_dict\x18\x07 \x03(\x0b\x32!.DataHelper.HitCheckInfoDictEntry\x12>\n\x12\x41\x62ilityEffect_dict\x18\x08 \x03(\x0b\x32\".DataHelper.AbilityEffectDictEntry\x12\x38\n\x0fVectorInt3_dict\x18\t \x03(\x0b\x32\x1f.DataHelper.VectorInt3DictEntry\x12R\n\x1cInputActionTimelineNode_dict\x18\n \x03(\x0b\x32,.DataHelper.InputActionTimelineNodeDictEntry\x12@\n\x13LockActionNode_dict\x18\x0b \x03(\x0b\x32#.DataHelper.LockActionNodeDictEntry\x1a\x42\n\x13RoleConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.RoleConfig:\x02\x38\x01\x1a\x42\n\x13\x42uffConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.BuffConfig:\x02\x38\x01\x1aZ\n\x1fMoveActionTimelineNodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.MoveActionTimelineNode:\x02\x38\x01\x1aH\n\x16\x41\x62ilityConfigDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.AbilityConfig:\x02\x38\x01\x1a>\n\x11TimelineDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.Timeline:\x02\x38\x01\x1a\x46\n\x15HitCheckInfoDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.HitCheckInfo:\x02\x38\x01\x1aH\n\x16\x41\x62ilityEffectDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.AbilityEffect:\x02\x38\x01\x1a\x42\n\x13VectorInt3DictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.VectorInt3:\x02\x38\x01\x1a\\\n InputActionTimelineNodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.InputActionTimelineNode:\x02\x38\x01\x1aJ\n\x17LockActionNodeDictEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.LockActionNode:\x02\x38\x01*\xc5\x05\n\x0e\x42uffStatusType\x12\x17\n\x13\x42uffStatusType_none\x10\x00\x12\x18\n\x14\x42uffStatusType_bleed\x10\x01\x12\x19\n\x15\x42uffStatusType_firing\x10\x02\x12\x1b\n\x17\x42uffStatusType_entangle\x10\x03\x12\x1d\n\x19\x42uffStatusType_immobilize\x10\x04\x12\x17\n\x13\x42uffStatusType_stun\x10\x05\x12\x1a\n\x16\x42uffStatusType_silence\x10\x06\x12\x18\n\x14\x42uffStatusType_sleep\x10\x07\x12\x17\n\x13\x42uffStatusType_fear\x10\x08\x12\x1c\n\x18\x42uffStatusType_poisoning\x10\t\x12\x1d\n\x19\x42uffStatusType_invincible\x10\n\x12\x1c\n\x18\x42uffStatusType_lower_def\x10\x0b\x12!\n\x1d\x42uffStatusType_lower_accuracy\x10\x0c\x12\"\n\x1e\x42uffStatusType_continue_regain\x10\r\x12\x1e\n\x1a\x42uffStatusType_enhance_def\x10\x0e\x12\x1e\n\x1a\x42uffStatusType_enhance_atk\x10\x0f\x12\x18\n\x14\x42uffStatusType_death\x10\x10\x12\x19\n\x15\x42uffStatusType_freeze\x10\x11\x12\x1c\n\x18\x42uffStatusType_paralysis\x10\x12\x12\x19\n\x15\x42uffStatusType_stupid\x10\x13\x12\x19\n\x15\x42uffStatusType_disarm\x10\x14\x12\x19\n\x15\x42uffStatusType_shield\x10\x15\x12\x1d\n\x19\x42uffStatusType_leech_life\x10\x16\x12\x1c\n\x18\x42uffStatusType_transform\x10\x17*\xf0\x01\n\x10TargetSelectType\x12\x19\n\x15TargetSelectType_none\x10\x00\x12\x1c\n\x18TargetSelectType_nearest\x10\x01\x12\x1d\n\x19TargetSelectType_farthest\x10\x02\x12\x1d\n\x19TargetSelectType_hp_least\x10\x03\x12\x1f\n\x1bTargetSelectType_hp_maximum\x10\x04\x12\'\n#TargetSelectType_battle_ability_max\x10\x05\x12\x1b\n\x17TargetSelectType_random\x10\x06*`\n\x0eTriggerPosType\x12\x17\n\x13TriggerPosType_none\x10\x00\x12\x1a\n\x16TriggerPosType_oneself\x10\x01\x12\x19\n\x15TriggerPosType_target\x10\x02*)\n\x0eItemDetailType\x12\x17\n\x13ItemDetailType_none\x10\x00*E\n\x08\x42uffType\x12\x11\n\rBuffType_none\x10\x00\x12\x11\n\rBuffType_buff\x10\x01\x12\x13\n\x0f\x42uffType_debuff\x10\x02*\xa2\x01\n\tRangeType\x12\x12\n\x0eRangeType_none\x10\x00\x12\x1a\n\x16RangeType_straightline\x10\x01\x12\x14\n\x10RangeType_sector\x10\x02\x12\x17\n\x13RangeType_roundness\x10\x03\x12\x17\n\x13RangeType_rectangle\x10\x04\x12\x1d\n\x19RangeType_multi_direction\x10\x05*\x87\x01\n\x08RoleType\x12\x11\n\rRoleType_None\x10\x00\x12\x13\n\x0fRoleType_Player\x10\x01\x12\x12\n\x0eRoleType_Enemy\x10\x02\x12\x14\n\x10RoleType_Neutral\x10\x04\x12\x13\n\x0fRoleType_Bunker\x10\x08\x12\x14\n\x10RoleType_Trigger\x10\x10*;\n\x05Shape\x12\x0e\n\nShape_NONE\x10\x00\x12\x10\n\x0cShape_CIRCLE\x10\x01\x12\x10\n\x0cShape_SECTOR\x10\x02*\x8e\x01\n\x0eTargetCampType\x12\x17\n\x13TargetCampType_none\x10\x00\x12\x15\n\x11TargetCampType_we\x10\x01\x12\x18\n\x14TargetCampType_enemy\x10\x02\x12\x1a\n\x16TargetCampType_oneself\x10\x03\x12\x16\n\x12TargetCampType_all\x10\x04*\x80\x01\n\nEffectType\x12\x13\n\x0f\x45\x66\x66\x65\x63tType_none\x10\x00\x12\x1b\n\x17\x45\x66\x66\x65\x63tType_general_harm\x10\x01\x12\x13\n\x0f\x45\x66\x66\x65\x63tType_harm\x10\x02\x12\x15\n\x11\x45\x66\x66\x65\x63tType_effect\x10\x03\x12\x14\n\x10\x45\x66\x66\x65\x63tType_death\x10\x04*b\n\x0e\x43onversionType\x12\x17\n\x13\x43onversionType_none\x10\x00\x12\x18\n\x14\x43onversionType_fixed\x10\x01\x12\x1d\n\x19\x43onversionType_percentage\x10\x02\x42\t\xaa\x02\x06\x43onfigb\x06proto3')
 )
 
-_ROLETYPE = _descriptor.EnumDescriptor(
-  name='RoleType',
-  full_name='RoleType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='RoleType_None', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RoleType_Player', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RoleType_Enemy', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RoleType_Neutral', index=3, number=4,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RoleType_Bunker', index=4, number=8,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RoleType_Trigger', index=5, number=16,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=3970,
-  serialized_end=4105,
-)
-_sym_db.RegisterEnumDescriptor(_ROLETYPE)
-
-RoleType = enum_type_wrapper.EnumTypeWrapper(_ROLETYPE)
-_SHAPE = _descriptor.EnumDescriptor(
-  name='Shape',
-  full_name='Shape',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='Shape_NONE', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='Shape_CIRCLE', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='Shape_SECTOR', index=2, number=2,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4107,
-  serialized_end=4166,
-)
-_sym_db.RegisterEnumDescriptor(_SHAPE)
-
-Shape = enum_type_wrapper.EnumTypeWrapper(_SHAPE)
-_TARGETCAMPTYPE = _descriptor.EnumDescriptor(
-  name='TargetCampType',
-  full_name='TargetCampType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TargetCampType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetCampType_we', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetCampType_enemy', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetCampType_oneself', index=3, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetCampType_all', index=4, number=4,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4169,
-  serialized_end=4311,
-)
-_sym_db.RegisterEnumDescriptor(_TARGETCAMPTYPE)
-
-TargetCampType = enum_type_wrapper.EnumTypeWrapper(_TARGETCAMPTYPE)
-_TRIGGERPOSTYPE = _descriptor.EnumDescriptor(
-  name='TriggerPosType',
-  full_name='TriggerPosType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TriggerPosType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TriggerPosType_oneself', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TriggerPosType_target', index=2, number=2,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4313,
-  serialized_end=4409,
-)
-_sym_db.RegisterEnumDescriptor(_TRIGGERPOSTYPE)
-
-TriggerPosType = enum_type_wrapper.EnumTypeWrapper(_TRIGGERPOSTYPE)
-_RANGETYPE = _descriptor.EnumDescriptor(
-  name='RangeType',
-  full_name='RangeType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='RangeType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RangeType_straightline', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RangeType_sector', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RangeType_roundness', index=3, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RangeType_rectangle', index=4, number=4,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RangeType_multi_direction', index=5, number=5,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4412,
-  serialized_end=4574,
-)
-_sym_db.RegisterEnumDescriptor(_RANGETYPE)
-
-RangeType = enum_type_wrapper.EnumTypeWrapper(_RANGETYPE)
-_TARGETSELECTTYPE = _descriptor.EnumDescriptor(
-  name='TargetSelectType',
-  full_name='TargetSelectType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_nearest', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_farthest', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_hp_least', index=3, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_hp_maximum', index=4, number=4,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_battle_ability_max', index=5, number=5,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TargetSelectType_random', index=6, number=6,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4577,
-  serialized_end=4817,
-)
-_sym_db.RegisterEnumDescriptor(_TARGETSELECTTYPE)
-
-TargetSelectType = enum_type_wrapper.EnumTypeWrapper(_TARGETSELECTTYPE)
-_CONVERSIONTYPE = _descriptor.EnumDescriptor(
-  name='ConversionType',
-  full_name='ConversionType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ConversionType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ConversionType_fixed', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ConversionType_percentage', index=2, number=2,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4819,
-  serialized_end=4917,
-)
-_sym_db.RegisterEnumDescriptor(_CONVERSIONTYPE)
-
-ConversionType = enum_type_wrapper.EnumTypeWrapper(_CONVERSIONTYPE)
-_EFFECTTYPE = _descriptor.EnumDescriptor(
-  name='EffectType',
-  full_name='EffectType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='EffectType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='EffectType_general_harm', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='EffectType_harm', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='EffectType_effect', index=3, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='EffectType_death', index=4, number=4,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=4920,
-  serialized_end=5048,
-)
-_sym_db.RegisterEnumDescriptor(_EFFECTTYPE)
-
-EffectType = enum_type_wrapper.EnumTypeWrapper(_EFFECTTYPE)
-_ITEMDETAILTYPE = _descriptor.EnumDescriptor(
-  name='ItemDetailType',
-  full_name='ItemDetailType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ItemDetailType_none', index=0, number=0,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=5050,
-  serialized_end=5091,
-)
-_sym_db.RegisterEnumDescriptor(_ITEMDETAILTYPE)
-
-ItemDetailType = enum_type_wrapper.EnumTypeWrapper(_ITEMDETAILTYPE)
-_BUFFTYPE = _descriptor.EnumDescriptor(
-  name='BuffType',
-  full_name='BuffType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='BuffType_none', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='BuffType_buff', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='BuffType_debuff', index=2, number=2,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=5093,
-  serialized_end=5162,
-)
-_sym_db.RegisterEnumDescriptor(_BUFFTYPE)
-
-BuffType = enum_type_wrapper.EnumTypeWrapper(_BUFFTYPE)
 _BUFFSTATUSTYPE = _descriptor.EnumDescriptor(
   name='BuffStatusType',
   full_name='BuffStatusType',
@@ -446,54 +128,330 @@ _BUFFSTATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5165,
-  serialized_end=5874,
+  serialized_start=3970,
+  serialized_end=4679,
 )
 _sym_db.RegisterEnumDescriptor(_BUFFSTATUSTYPE)
 
 BuffStatusType = enum_type_wrapper.EnumTypeWrapper(_BUFFSTATUSTYPE)
-RoleType_None = 0
-RoleType_Player = 1
-RoleType_Enemy = 2
-RoleType_Neutral = 4
-RoleType_Bunker = 8
-RoleType_Trigger = 16
-Shape_NONE = 0
-Shape_CIRCLE = 1
-Shape_SECTOR = 2
-TargetCampType_none = 0
-TargetCampType_we = 1
-TargetCampType_enemy = 2
-TargetCampType_oneself = 3
-TargetCampType_all = 4
-TriggerPosType_none = 0
-TriggerPosType_oneself = 1
-TriggerPosType_target = 2
-RangeType_none = 0
-RangeType_straightline = 1
-RangeType_sector = 2
-RangeType_roundness = 3
-RangeType_rectangle = 4
-RangeType_multi_direction = 5
-TargetSelectType_none = 0
-TargetSelectType_nearest = 1
-TargetSelectType_farthest = 2
-TargetSelectType_hp_least = 3
-TargetSelectType_hp_maximum = 4
-TargetSelectType_battle_ability_max = 5
-TargetSelectType_random = 6
-ConversionType_none = 0
-ConversionType_fixed = 1
-ConversionType_percentage = 2
-EffectType_none = 0
-EffectType_general_harm = 1
-EffectType_harm = 2
-EffectType_effect = 3
-EffectType_death = 4
-ItemDetailType_none = 0
-BuffType_none = 0
-BuffType_buff = 1
-BuffType_debuff = 2
+_TARGETSELECTTYPE = _descriptor.EnumDescriptor(
+  name='TargetSelectType',
+  full_name='TargetSelectType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_nearest', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_farthest', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_hp_least', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_hp_maximum', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_battle_ability_max', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetSelectType_random', index=6, number=6,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=4682,
+  serialized_end=4922,
+)
+_sym_db.RegisterEnumDescriptor(_TARGETSELECTTYPE)
+
+TargetSelectType = enum_type_wrapper.EnumTypeWrapper(_TARGETSELECTTYPE)
+_TRIGGERPOSTYPE = _descriptor.EnumDescriptor(
+  name='TriggerPosType',
+  full_name='TriggerPosType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TriggerPosType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TriggerPosType_oneself', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TriggerPosType_target', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=4924,
+  serialized_end=5020,
+)
+_sym_db.RegisterEnumDescriptor(_TRIGGERPOSTYPE)
+
+TriggerPosType = enum_type_wrapper.EnumTypeWrapper(_TRIGGERPOSTYPE)
+_ITEMDETAILTYPE = _descriptor.EnumDescriptor(
+  name='ItemDetailType',
+  full_name='ItemDetailType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ItemDetailType_none', index=0, number=0,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5022,
+  serialized_end=5063,
+)
+_sym_db.RegisterEnumDescriptor(_ITEMDETAILTYPE)
+
+ItemDetailType = enum_type_wrapper.EnumTypeWrapper(_ITEMDETAILTYPE)
+_BUFFTYPE = _descriptor.EnumDescriptor(
+  name='BuffType',
+  full_name='BuffType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BuffType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BuffType_buff', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BuffType_debuff', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5065,
+  serialized_end=5134,
+)
+_sym_db.RegisterEnumDescriptor(_BUFFTYPE)
+
+BuffType = enum_type_wrapper.EnumTypeWrapper(_BUFFTYPE)
+_RANGETYPE = _descriptor.EnumDescriptor(
+  name='RangeType',
+  full_name='RangeType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='RangeType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RangeType_straightline', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RangeType_sector', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RangeType_roundness', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RangeType_rectangle', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RangeType_multi_direction', index=5, number=5,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5137,
+  serialized_end=5299,
+)
+_sym_db.RegisterEnumDescriptor(_RANGETYPE)
+
+RangeType = enum_type_wrapper.EnumTypeWrapper(_RANGETYPE)
+_ROLETYPE = _descriptor.EnumDescriptor(
+  name='RoleType',
+  full_name='RoleType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='RoleType_None', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RoleType_Player', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RoleType_Enemy', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RoleType_Neutral', index=3, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RoleType_Bunker', index=4, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RoleType_Trigger', index=5, number=16,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5302,
+  serialized_end=5437,
+)
+_sym_db.RegisterEnumDescriptor(_ROLETYPE)
+
+RoleType = enum_type_wrapper.EnumTypeWrapper(_ROLETYPE)
+_SHAPE = _descriptor.EnumDescriptor(
+  name='Shape',
+  full_name='Shape',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='Shape_NONE', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='Shape_CIRCLE', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='Shape_SECTOR', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5439,
+  serialized_end=5498,
+)
+_sym_db.RegisterEnumDescriptor(_SHAPE)
+
+Shape = enum_type_wrapper.EnumTypeWrapper(_SHAPE)
+_TARGETCAMPTYPE = _descriptor.EnumDescriptor(
+  name='TargetCampType',
+  full_name='TargetCampType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TargetCampType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetCampType_we', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetCampType_enemy', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetCampType_oneself', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TargetCampType_all', index=4, number=4,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5501,
+  serialized_end=5643,
+)
+_sym_db.RegisterEnumDescriptor(_TARGETCAMPTYPE)
+
+TargetCampType = enum_type_wrapper.EnumTypeWrapper(_TARGETCAMPTYPE)
+_EFFECTTYPE = _descriptor.EnumDescriptor(
+  name='EffectType',
+  full_name='EffectType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='EffectType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EffectType_general_harm', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EffectType_harm', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EffectType_effect', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EffectType_death', index=4, number=4,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5646,
+  serialized_end=5774,
+)
+_sym_db.RegisterEnumDescriptor(_EFFECTTYPE)
+
+EffectType = enum_type_wrapper.EnumTypeWrapper(_EFFECTTYPE)
+_CONVERSIONTYPE = _descriptor.EnumDescriptor(
+  name='ConversionType',
+  full_name='ConversionType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ConversionType_none', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ConversionType_fixed', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ConversionType_percentage', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=5776,
+  serialized_end=5874,
+)
+_sym_db.RegisterEnumDescriptor(_CONVERSIONTYPE)
+
+ConversionType = enum_type_wrapper.EnumTypeWrapper(_CONVERSIONTYPE)
 BuffStatusType_none = 0
 BuffStatusType_bleed = 1
 BuffStatusType_firing = 2
@@ -518,59 +476,49 @@ BuffStatusType_disarm = 20
 BuffStatusType_shield = 21
 BuffStatusType_leech_life = 22
 BuffStatusType_transform = 23
+TargetSelectType_none = 0
+TargetSelectType_nearest = 1
+TargetSelectType_farthest = 2
+TargetSelectType_hp_least = 3
+TargetSelectType_hp_maximum = 4
+TargetSelectType_battle_ability_max = 5
+TargetSelectType_random = 6
+TriggerPosType_none = 0
+TriggerPosType_oneself = 1
+TriggerPosType_target = 2
+ItemDetailType_none = 0
+BuffType_none = 0
+BuffType_buff = 1
+BuffType_debuff = 2
+RangeType_none = 0
+RangeType_straightline = 1
+RangeType_sector = 2
+RangeType_roundness = 3
+RangeType_rectangle = 4
+RangeType_multi_direction = 5
+RoleType_None = 0
+RoleType_Player = 1
+RoleType_Enemy = 2
+RoleType_Neutral = 4
+RoleType_Bunker = 8
+RoleType_Trigger = 16
+Shape_NONE = 0
+Shape_CIRCLE = 1
+Shape_SECTOR = 2
+TargetCampType_none = 0
+TargetCampType_we = 1
+TargetCampType_enemy = 2
+TargetCampType_oneself = 3
+TargetCampType_all = 4
+EffectType_none = 0
+EffectType_general_harm = 1
+EffectType_harm = 2
+EffectType_effect = 3
+EffectType_death = 4
+ConversionType_none = 0
+ConversionType_fixed = 1
+ConversionType_percentage = 2
 
-
-
-_INPUTACTIONTIMELINENODE = _descriptor.Descriptor(
-  name='InputActionTimelineNode',
-  full_name='InputActionTimelineNode',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ID', full_name='InputActionTimelineNode.ID', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Start', full_name='InputActionTimelineNode.Start', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Duration', full_name='InputActionTimelineNode.Duration', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Enable', full_name='InputActionTimelineNode.Enable', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=14,
-  serialized_end=100,
-)
 
 
 _ROLECONFIG = _descriptor.Descriptor(
@@ -711,304 +659,8 @@ _ROLECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=103,
-  serialized_end=472,
-)
-
-
-_MOVEACTIONTIMELINENODE = _descriptor.Descriptor(
-  name='MoveActionTimelineNode',
-  full_name='MoveActionTimelineNode',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ID', full_name='MoveActionTimelineNode.ID', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Start', full_name='MoveActionTimelineNode.Start', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Duration', full_name='MoveActionTimelineNode.Duration', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='AnimationMove', full_name='MoveActionTimelineNode.AnimationMove', index=3,
-      number=4, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Enable', full_name='MoveActionTimelineNode.Enable', index=4,
-      number=5, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=474,
-  serialized_end=582,
-)
-
-
-_TIMELINE = _descriptor.Descriptor(
-  name='Timeline',
-  full_name='Timeline',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ID', full_name='Timeline.ID', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TICK_INTERVAL', full_name='Timeline.TICK_INTERVAL', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='IsLoop', full_name='Timeline.IsLoop', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='CanInput', full_name='Timeline.CanInput', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Duration', full_name='Timeline.Duration', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ReadyTime', full_name='Timeline.ReadyTime', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='RecoverTime', full_name='Timeline.RecoverTime', index=6,
-      number=7, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='HitTimeList', full_name='Timeline.HitTimeList', index=7,
-      number=8, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='LockAcionList', full_name='Timeline.LockAcionList', index=8,
-      number=9, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='InputActionTimelineNode', full_name='Timeline.InputActionTimelineNode', index=9,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='MoveActionTimelineNode', full_name='Timeline.MoveActionTimelineNode', index=10,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='AbilityEffectNodeInfo', full_name='Timeline.AbilityEffectNodeInfo', index=11,
-      number=12, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ComboOverTime', full_name='Timeline.ComboOverTime', index=12,
-      number=13, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=585,
-  serialized_end=984,
-)
-
-
-_ABILITYEFFECT = _descriptor.Descriptor(
-  name='AbilityEffect',
-  full_name='AbilityEffect',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ID', full_name='AbilityEffect.ID', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TargetType', full_name='AbilityEffect.TargetType', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TriggerPosType', full_name='AbilityEffect.TriggerPosType', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TriggerDelay', full_name='AbilityEffect.TriggerDelay', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TriggerTick', full_name='AbilityEffect.TriggerTick', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TriggerRangeType', full_name='AbilityEffect.TriggerRangeType', index=5,
-      number=6, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TargetSelectType', full_name='AbilityEffect.TargetSelectType', index=6,
-      number=7, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='TargetAmount', full_name='AbilityEffect.TargetAmount', index=7,
-      number=8, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Start', full_name='AbilityEffect.Start', index=8,
-      number=9, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Duration', full_name='AbilityEffect.Duration', index=9,
-      number=10, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Shape', full_name='AbilityEffect.Shape', index=10,
-      number=11, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Range', full_name='AbilityEffect.Range', index=11,
-      number=12, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Direction', full_name='AbilityEffect.Direction', index=12,
-      number=13, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='EffectID', full_name='AbilityEffect.EffectID', index=13,
-      number=14, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=987,
-  serialized_end=1361,
+  serialized_start=15,
+  serialized_end=384,
 )
 
 
@@ -1185,42 +837,209 @@ _BUFFCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1364,
-  serialized_end=1937,
+  serialized_start=387,
+  serialized_end=960,
 )
 
 
-_VECTORINT3 = _descriptor.Descriptor(
-  name='VectorInt3',
-  full_name='VectorInt3',
+_MOVEACTIONTIMELINENODE = _descriptor.Descriptor(
+  name='MoveActionTimelineNode',
+  full_name='MoveActionTimelineNode',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='VectorInt3.ID', index=0,
+      name='ID', full_name='MoveActionTimelineNode.ID', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='X', full_name='VectorInt3.X', index=1,
+      name='Start', full_name='MoveActionTimelineNode.Start', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Y', full_name='VectorInt3.Y', index=2,
+      name='Duration', full_name='MoveActionTimelineNode.Duration', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Z', full_name='VectorInt3.Z', index=3,
-      number=4, type=5, cpp_type=1, label=1,
+      name='AnimationMove', full_name='MoveActionTimelineNode.AnimationMove', index=3,
+      number=4, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Enable', full_name='MoveActionTimelineNode.Enable', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=962,
+  serialized_end=1070,
+)
+
+
+_ABILITYCONFIG = _descriptor.Descriptor(
+  name='AbilityConfig',
+  full_name='AbilityConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='AbilityConfig.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Path', full_name='AbilityConfig.Path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Asset', full_name='AbilityConfig.Asset', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1072,
+  serialized_end=1128,
+)
+
+
+_TIMELINE = _descriptor.Descriptor(
+  name='Timeline',
+  full_name='Timeline',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='Timeline.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TICK_INTERVAL', full_name='Timeline.TICK_INTERVAL', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='IsLoop', full_name='Timeline.IsLoop', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='CanInput', full_name='Timeline.CanInput', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Duration', full_name='Timeline.Duration', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ReadyTime', full_name='Timeline.ReadyTime', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='RecoverTime', full_name='Timeline.RecoverTime', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='HitTimeList', full_name='Timeline.HitTimeList', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='LockAcionList', full_name='Timeline.LockAcionList', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='InputActionTimelineNode', full_name='Timeline.InputActionTimelineNode', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='MoveActionTimelineNode', full_name='Timeline.MoveActionTimelineNode', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='AbilityEffectNodeInfo', full_name='Timeline.AbilityEffectNodeInfo', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ComboOverTime', full_name='Timeline.ComboOverTime', index=12,
+      number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1237,8 +1056,8 @@ _VECTORINT3 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1939,
-  serialized_end=1996,
+  serialized_start=1131,
+  serialized_end=1530,
 )
 
 
@@ -1387,8 +1206,234 @@ _HITCHECKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1999,
-  serialized_end=2410,
+  serialized_start=1533,
+  serialized_end=1944,
+)
+
+
+_ABILITYEFFECT = _descriptor.Descriptor(
+  name='AbilityEffect',
+  full_name='AbilityEffect',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='AbilityEffect.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TargetType', full_name='AbilityEffect.TargetType', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TriggerPosType', full_name='AbilityEffect.TriggerPosType', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TriggerDelay', full_name='AbilityEffect.TriggerDelay', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TriggerTick', full_name='AbilityEffect.TriggerTick', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TriggerRangeType', full_name='AbilityEffect.TriggerRangeType', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TargetSelectType', full_name='AbilityEffect.TargetSelectType', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='TargetAmount', full_name='AbilityEffect.TargetAmount', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Start', full_name='AbilityEffect.Start', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Duration', full_name='AbilityEffect.Duration', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Shape', full_name='AbilityEffect.Shape', index=10,
+      number=11, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Range', full_name='AbilityEffect.Range', index=11,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Direction', full_name='AbilityEffect.Direction', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='EffectID', full_name='AbilityEffect.EffectID', index=13,
+      number=14, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1947,
+  serialized_end=2321,
+)
+
+
+_VECTORINT3 = _descriptor.Descriptor(
+  name='VectorInt3',
+  full_name='VectorInt3',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='VectorInt3.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='X', full_name='VectorInt3.X', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Y', full_name='VectorInt3.Y', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Z', full_name='VectorInt3.Z', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2323,
+  serialized_end=2380,
+)
+
+
+_INPUTACTIONTIMELINENODE = _descriptor.Descriptor(
+  name='InputActionTimelineNode',
+  full_name='InputActionTimelineNode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='InputActionTimelineNode.ID', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Start', full_name='InputActionTimelineNode.Start', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Duration', full_name='InputActionTimelineNode.Duration', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Enable', full_name='InputActionTimelineNode.Enable', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2382,
+  serialized_end=2468,
 )
 
 
@@ -1432,92 +1477,10 @@ _LOCKACTIONNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2412,
-  serialized_end=2473,
-)
-
-
-_ABILITYCONFIG = _descriptor.Descriptor(
-  name='AbilityConfig',
-  full_name='AbilityConfig',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ID', full_name='AbilityConfig.ID', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Path', full_name='AbilityConfig.Path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Asset', full_name='AbilityConfig.Asset', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2475,
+  serialized_start=2470,
   serialized_end=2531,
 )
 
-
-_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY = _descriptor.Descriptor(
-  name='InputActionTimelineNodeDictEntry',
-  full_name='DataHelper.InputActionTimelineNodeDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.InputActionTimelineNodeDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.InputActionTimelineNodeDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3219,
-  serialized_end=3311,
-)
 
 _DATAHELPER_ROLECONFIGDICTENTRY = _descriptor.Descriptor(
   name='RoleConfigDictEntry',
@@ -1552,119 +1515,8 @@ _DATAHELPER_ROLECONFIGDICTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3313,
-  serialized_end=3379,
-)
-
-_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY = _descriptor.Descriptor(
-  name='MoveActionTimelineNodeDictEntry',
-  full_name='DataHelper.MoveActionTimelineNodeDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.MoveActionTimelineNodeDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.MoveActionTimelineNodeDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3381,
-  serialized_end=3471,
-)
-
-_DATAHELPER_TIMELINEDICTENTRY = _descriptor.Descriptor(
-  name='TimelineDictEntry',
-  full_name='DataHelper.TimelineDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.TimelineDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.TimelineDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3473,
-  serialized_end=3535,
-)
-
-_DATAHELPER_ABILITYEFFECTDICTENTRY = _descriptor.Descriptor(
-  name='AbilityEffectDictEntry',
-  full_name='DataHelper.AbilityEffectDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.AbilityEffectDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.AbilityEffectDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3537,
-  serialized_end=3609,
+  serialized_start=3219,
+  serialized_end=3285,
 )
 
 _DATAHELPER_BUFFCONFIGDICTENTRY = _descriptor.Descriptor(
@@ -1700,26 +1552,26 @@ _DATAHELPER_BUFFCONFIGDICTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3611,
-  serialized_end=3677,
+  serialized_start=3287,
+  serialized_end=3353,
 )
 
-_DATAHELPER_VECTORINT3DICTENTRY = _descriptor.Descriptor(
-  name='VectorInt3DictEntry',
-  full_name='DataHelper.VectorInt3DictEntry',
+_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY = _descriptor.Descriptor(
+  name='MoveActionTimelineNodeDictEntry',
+  full_name='DataHelper.MoveActionTimelineNodeDictEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.VectorInt3DictEntry.key', index=0,
+      name='key', full_name='DataHelper.MoveActionTimelineNodeDictEntry.key', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.VectorInt3DictEntry.value', index=1,
+      name='value', full_name='DataHelper.MoveActionTimelineNodeDictEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1737,82 +1589,8 @@ _DATAHELPER_VECTORINT3DICTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3679,
-  serialized_end=3745,
-)
-
-_DATAHELPER_HITCHECKINFODICTENTRY = _descriptor.Descriptor(
-  name='HitCheckInfoDictEntry',
-  full_name='DataHelper.HitCheckInfoDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.HitCheckInfoDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.HitCheckInfoDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3747,
-  serialized_end=3817,
-)
-
-_DATAHELPER_LOCKACTIONNODEDICTENTRY = _descriptor.Descriptor(
-  name='LockActionNodeDictEntry',
-  full_name='DataHelper.LockActionNodeDictEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='DataHelper.LockActionNodeDictEntry.key', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='DataHelper.LockActionNodeDictEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3819,
-  serialized_end=3893,
+  serialized_start=3355,
+  serialized_end=3445,
 )
 
 _DATAHELPER_ABILITYCONFIGDICTENTRY = _descriptor.Descriptor(
@@ -1848,7 +1626,229 @@ _DATAHELPER_ABILITYCONFIGDICTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3895,
+  serialized_start=3447,
+  serialized_end=3519,
+)
+
+_DATAHELPER_TIMELINEDICTENTRY = _descriptor.Descriptor(
+  name='TimelineDictEntry',
+  full_name='DataHelper.TimelineDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.TimelineDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.TimelineDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3521,
+  serialized_end=3583,
+)
+
+_DATAHELPER_HITCHECKINFODICTENTRY = _descriptor.Descriptor(
+  name='HitCheckInfoDictEntry',
+  full_name='DataHelper.HitCheckInfoDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.HitCheckInfoDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.HitCheckInfoDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3585,
+  serialized_end=3655,
+)
+
+_DATAHELPER_ABILITYEFFECTDICTENTRY = _descriptor.Descriptor(
+  name='AbilityEffectDictEntry',
+  full_name='DataHelper.AbilityEffectDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.AbilityEffectDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.AbilityEffectDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3657,
+  serialized_end=3729,
+)
+
+_DATAHELPER_VECTORINT3DICTENTRY = _descriptor.Descriptor(
+  name='VectorInt3DictEntry',
+  full_name='DataHelper.VectorInt3DictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.VectorInt3DictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.VectorInt3DictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3731,
+  serialized_end=3797,
+)
+
+_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY = _descriptor.Descriptor(
+  name='InputActionTimelineNodeDictEntry',
+  full_name='DataHelper.InputActionTimelineNodeDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.InputActionTimelineNodeDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.InputActionTimelineNodeDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3799,
+  serialized_end=3891,
+)
+
+_DATAHELPER_LOCKACTIONNODEDICTENTRY = _descriptor.Descriptor(
+  name='LockActionNodeDictEntry',
+  full_name='DataHelper.LockActionNodeDictEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DataHelper.LockActionNodeDictEntry.key', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='DataHelper.LockActionNodeDictEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3893,
   serialized_end=3967,
 )
 
@@ -1867,14 +1867,14 @@ _DATAHELPER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='InputActionTimelineNode_dict', full_name='DataHelper.InputActionTimelineNode_dict', index=1,
+      name='RoleConfig_dict', full_name='DataHelper.RoleConfig_dict', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='RoleConfig_dict', full_name='DataHelper.RoleConfig_dict', index=2,
+      name='BuffConfig_dict', full_name='DataHelper.BuffConfig_dict', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1888,49 +1888,49 @@ _DATAHELPER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Timeline_dict', full_name='DataHelper.Timeline_dict', index=4,
+      name='AbilityConfig_dict', full_name='DataHelper.AbilityConfig_dict', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='AbilityEffect_dict', full_name='DataHelper.AbilityEffect_dict', index=5,
+      name='Timeline_dict', full_name='DataHelper.Timeline_dict', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='BuffConfig_dict', full_name='DataHelper.BuffConfig_dict', index=6,
+      name='HitCheckInfo_dict', full_name='DataHelper.HitCheckInfo_dict', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='VectorInt3_dict', full_name='DataHelper.VectorInt3_dict', index=7,
+      name='AbilityEffect_dict', full_name='DataHelper.AbilityEffect_dict', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='HitCheckInfo_dict', full_name='DataHelper.HitCheckInfo_dict', index=8,
+      name='VectorInt3_dict', full_name='DataHelper.VectorInt3_dict', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='LockActionNode_dict', full_name='DataHelper.LockActionNode_dict', index=9,
+      name='InputActionTimelineNode_dict', full_name='DataHelper.InputActionTimelineNode_dict', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='AbilityConfig_dict', full_name='DataHelper.AbilityConfig_dict', index=10,
+      name='LockActionNode_dict', full_name='DataHelper.LockActionNode_dict', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1939,7 +1939,7 @@ _DATAHELPER = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY, _DATAHELPER_ROLECONFIGDICTENTRY, _DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY, _DATAHELPER_TIMELINEDICTENTRY, _DATAHELPER_ABILITYEFFECTDICTENTRY, _DATAHELPER_BUFFCONFIGDICTENTRY, _DATAHELPER_VECTORINT3DICTENTRY, _DATAHELPER_HITCHECKINFODICTENTRY, _DATAHELPER_LOCKACTIONNODEDICTENTRY, _DATAHELPER_ABILITYCONFIGDICTENTRY, ],
+  nested_types=[_DATAHELPER_ROLECONFIGDICTENTRY, _DATAHELPER_BUFFCONFIGDICTENTRY, _DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY, _DATAHELPER_ABILITYCONFIGDICTENTRY, _DATAHELPER_TIMELINEDICTENTRY, _DATAHELPER_HITCHECKINFODICTENTRY, _DATAHELPER_ABILITYEFFECTDICTENTRY, _DATAHELPER_VECTORINT3DICTENTRY, _DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY, _DATAHELPER_LOCKACTIONNODEDICTENTRY, ],
   enum_types=[
   ],
   options=None,
@@ -1953,17 +1953,6 @@ _DATAHELPER = _descriptor.Descriptor(
 )
 
 _ROLECONFIG.fields_by_name['RoleType'].enum_type = _ROLETYPE
-_TIMELINE.fields_by_name['HitTimeList'].message_type = _HITCHECKINFO
-_TIMELINE.fields_by_name['LockAcionList'].message_type = _LOCKACTIONNODE
-_TIMELINE.fields_by_name['InputActionTimelineNode'].message_type = _INPUTACTIONTIMELINENODE
-_TIMELINE.fields_by_name['MoveActionTimelineNode'].message_type = _MOVEACTIONTIMELINENODE
-_TIMELINE.fields_by_name['AbilityEffectNodeInfo'].message_type = _ABILITYEFFECT
-_ABILITYEFFECT.fields_by_name['TargetType'].enum_type = _TARGETCAMPTYPE
-_ABILITYEFFECT.fields_by_name['TriggerPosType'].enum_type = _TRIGGERPOSTYPE
-_ABILITYEFFECT.fields_by_name['TriggerRangeType'].enum_type = _RANGETYPE
-_ABILITYEFFECT.fields_by_name['TargetSelectType'].enum_type = _TARGETSELECTTYPE
-_ABILITYEFFECT.fields_by_name['Shape'].enum_type = _SHAPE
-_ABILITYEFFECT.fields_by_name['Direction'].message_type = _VECTORINT3
 _BUFFCONFIG.fields_by_name['Type'].enum_type = _BUFFTYPE
 _BUFFCONFIG.fields_by_name['Status'].enum_type = _BUFFSTATUSTYPE
 _BUFFCONFIG.fields_by_name['Target'].enum_type = _TARGETCAMPTYPE
@@ -1971,68 +1960,72 @@ _BUFFCONFIG.fields_by_name['TriggerRangeType'].enum_type = _RANGETYPE
 _BUFFCONFIG.fields_by_name['DamageEffectType'].enum_type = _EFFECTTYPE
 _BUFFCONFIG.fields_by_name['AddtiveEffectType'].enum_type = _ITEMDETAILTYPE
 _BUFFCONFIG.fields_by_name['LeechLifeType'].enum_type = _CONVERSIONTYPE
+_TIMELINE.fields_by_name['HitTimeList'].message_type = _HITCHECKINFO
+_TIMELINE.fields_by_name['LockAcionList'].message_type = _LOCKACTIONNODE
+_TIMELINE.fields_by_name['InputActionTimelineNode'].message_type = _INPUTACTIONTIMELINENODE
+_TIMELINE.fields_by_name['MoveActionTimelineNode'].message_type = _MOVEACTIONTIMELINENODE
+_TIMELINE.fields_by_name['AbilityEffectNodeInfo'].message_type = _ABILITYEFFECT
 _HITCHECKINFO.fields_by_name['RangeType'].enum_type = _RANGETYPE
 _HITCHECKINFO.fields_by_name['CenterOffset'].message_type = _VECTORINT3
-_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY.fields_by_name['value'].message_type = _INPUTACTIONTIMELINENODE
-_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY.containing_type = _DATAHELPER
+_ABILITYEFFECT.fields_by_name['TargetType'].enum_type = _TARGETCAMPTYPE
+_ABILITYEFFECT.fields_by_name['TriggerPosType'].enum_type = _TRIGGERPOSTYPE
+_ABILITYEFFECT.fields_by_name['TriggerRangeType'].enum_type = _RANGETYPE
+_ABILITYEFFECT.fields_by_name['TargetSelectType'].enum_type = _TARGETSELECTTYPE
+_ABILITYEFFECT.fields_by_name['Shape'].enum_type = _SHAPE
+_ABILITYEFFECT.fields_by_name['Direction'].message_type = _VECTORINT3
 _DATAHELPER_ROLECONFIGDICTENTRY.fields_by_name['value'].message_type = _ROLECONFIG
 _DATAHELPER_ROLECONFIGDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY.fields_by_name['value'].message_type = _MOVEACTIONTIMELINENODE
-_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_TIMELINEDICTENTRY.fields_by_name['value'].message_type = _TIMELINE
-_DATAHELPER_TIMELINEDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_ABILITYEFFECTDICTENTRY.fields_by_name['value'].message_type = _ABILITYEFFECT
-_DATAHELPER_ABILITYEFFECTDICTENTRY.containing_type = _DATAHELPER
 _DATAHELPER_BUFFCONFIGDICTENTRY.fields_by_name['value'].message_type = _BUFFCONFIG
 _DATAHELPER_BUFFCONFIGDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_VECTORINT3DICTENTRY.fields_by_name['value'].message_type = _VECTORINT3
-_DATAHELPER_VECTORINT3DICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_HITCHECKINFODICTENTRY.fields_by_name['value'].message_type = _HITCHECKINFO
-_DATAHELPER_HITCHECKINFODICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER_LOCKACTIONNODEDICTENTRY.fields_by_name['value'].message_type = _LOCKACTIONNODE
-_DATAHELPER_LOCKACTIONNODEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY.fields_by_name['value'].message_type = _MOVEACTIONTIMELINENODE
+_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY.containing_type = _DATAHELPER
 _DATAHELPER_ABILITYCONFIGDICTENTRY.fields_by_name['value'].message_type = _ABILITYCONFIG
 _DATAHELPER_ABILITYCONFIGDICTENTRY.containing_type = _DATAHELPER
-_DATAHELPER.fields_by_name['InputActionTimelineNode_dict'].message_type = _DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY
+_DATAHELPER_TIMELINEDICTENTRY.fields_by_name['value'].message_type = _TIMELINE
+_DATAHELPER_TIMELINEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_HITCHECKINFODICTENTRY.fields_by_name['value'].message_type = _HITCHECKINFO
+_DATAHELPER_HITCHECKINFODICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_ABILITYEFFECTDICTENTRY.fields_by_name['value'].message_type = _ABILITYEFFECT
+_DATAHELPER_ABILITYEFFECTDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_VECTORINT3DICTENTRY.fields_by_name['value'].message_type = _VECTORINT3
+_DATAHELPER_VECTORINT3DICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY.fields_by_name['value'].message_type = _INPUTACTIONTIMELINENODE
+_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY.containing_type = _DATAHELPER
+_DATAHELPER_LOCKACTIONNODEDICTENTRY.fields_by_name['value'].message_type = _LOCKACTIONNODE
+_DATAHELPER_LOCKACTIONNODEDICTENTRY.containing_type = _DATAHELPER
 _DATAHELPER.fields_by_name['RoleConfig_dict'].message_type = _DATAHELPER_ROLECONFIGDICTENTRY
-_DATAHELPER.fields_by_name['MoveActionTimelineNode_dict'].message_type = _DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY
-_DATAHELPER.fields_by_name['Timeline_dict'].message_type = _DATAHELPER_TIMELINEDICTENTRY
-_DATAHELPER.fields_by_name['AbilityEffect_dict'].message_type = _DATAHELPER_ABILITYEFFECTDICTENTRY
 _DATAHELPER.fields_by_name['BuffConfig_dict'].message_type = _DATAHELPER_BUFFCONFIGDICTENTRY
-_DATAHELPER.fields_by_name['VectorInt3_dict'].message_type = _DATAHELPER_VECTORINT3DICTENTRY
-_DATAHELPER.fields_by_name['HitCheckInfo_dict'].message_type = _DATAHELPER_HITCHECKINFODICTENTRY
-_DATAHELPER.fields_by_name['LockActionNode_dict'].message_type = _DATAHELPER_LOCKACTIONNODEDICTENTRY
+_DATAHELPER.fields_by_name['MoveActionTimelineNode_dict'].message_type = _DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY
 _DATAHELPER.fields_by_name['AbilityConfig_dict'].message_type = _DATAHELPER_ABILITYCONFIGDICTENTRY
-DESCRIPTOR.message_types_by_name['InputActionTimelineNode'] = _INPUTACTIONTIMELINENODE
+_DATAHELPER.fields_by_name['Timeline_dict'].message_type = _DATAHELPER_TIMELINEDICTENTRY
+_DATAHELPER.fields_by_name['HitCheckInfo_dict'].message_type = _DATAHELPER_HITCHECKINFODICTENTRY
+_DATAHELPER.fields_by_name['AbilityEffect_dict'].message_type = _DATAHELPER_ABILITYEFFECTDICTENTRY
+_DATAHELPER.fields_by_name['VectorInt3_dict'].message_type = _DATAHELPER_VECTORINT3DICTENTRY
+_DATAHELPER.fields_by_name['InputActionTimelineNode_dict'].message_type = _DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY
+_DATAHELPER.fields_by_name['LockActionNode_dict'].message_type = _DATAHELPER_LOCKACTIONNODEDICTENTRY
 DESCRIPTOR.message_types_by_name['RoleConfig'] = _ROLECONFIG
-DESCRIPTOR.message_types_by_name['MoveActionTimelineNode'] = _MOVEACTIONTIMELINENODE
-DESCRIPTOR.message_types_by_name['Timeline'] = _TIMELINE
-DESCRIPTOR.message_types_by_name['AbilityEffect'] = _ABILITYEFFECT
 DESCRIPTOR.message_types_by_name['BuffConfig'] = _BUFFCONFIG
-DESCRIPTOR.message_types_by_name['VectorInt3'] = _VECTORINT3
-DESCRIPTOR.message_types_by_name['HitCheckInfo'] = _HITCHECKINFO
-DESCRIPTOR.message_types_by_name['LockActionNode'] = _LOCKACTIONNODE
+DESCRIPTOR.message_types_by_name['MoveActionTimelineNode'] = _MOVEACTIONTIMELINENODE
 DESCRIPTOR.message_types_by_name['AbilityConfig'] = _ABILITYCONFIG
+DESCRIPTOR.message_types_by_name['Timeline'] = _TIMELINE
+DESCRIPTOR.message_types_by_name['HitCheckInfo'] = _HITCHECKINFO
+DESCRIPTOR.message_types_by_name['AbilityEffect'] = _ABILITYEFFECT
+DESCRIPTOR.message_types_by_name['VectorInt3'] = _VECTORINT3
+DESCRIPTOR.message_types_by_name['InputActionTimelineNode'] = _INPUTACTIONTIMELINENODE
+DESCRIPTOR.message_types_by_name['LockActionNode'] = _LOCKACTIONNODE
 DESCRIPTOR.message_types_by_name['DataHelper'] = _DATAHELPER
+DESCRIPTOR.enum_types_by_name['BuffStatusType'] = _BUFFSTATUSTYPE
+DESCRIPTOR.enum_types_by_name['TargetSelectType'] = _TARGETSELECTTYPE
+DESCRIPTOR.enum_types_by_name['TriggerPosType'] = _TRIGGERPOSTYPE
+DESCRIPTOR.enum_types_by_name['ItemDetailType'] = _ITEMDETAILTYPE
+DESCRIPTOR.enum_types_by_name['BuffType'] = _BUFFTYPE
+DESCRIPTOR.enum_types_by_name['RangeType'] = _RANGETYPE
 DESCRIPTOR.enum_types_by_name['RoleType'] = _ROLETYPE
 DESCRIPTOR.enum_types_by_name['Shape'] = _SHAPE
 DESCRIPTOR.enum_types_by_name['TargetCampType'] = _TARGETCAMPTYPE
-DESCRIPTOR.enum_types_by_name['TriggerPosType'] = _TRIGGERPOSTYPE
-DESCRIPTOR.enum_types_by_name['RangeType'] = _RANGETYPE
-DESCRIPTOR.enum_types_by_name['TargetSelectType'] = _TARGETSELECTTYPE
-DESCRIPTOR.enum_types_by_name['ConversionType'] = _CONVERSIONTYPE
 DESCRIPTOR.enum_types_by_name['EffectType'] = _EFFECTTYPE
-DESCRIPTOR.enum_types_by_name['ItemDetailType'] = _ITEMDETAILTYPE
-DESCRIPTOR.enum_types_by_name['BuffType'] = _BUFFTYPE
-DESCRIPTOR.enum_types_by_name['BuffStatusType'] = _BUFFSTATUSTYPE
+DESCRIPTOR.enum_types_by_name['ConversionType'] = _CONVERSIONTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-InputActionTimelineNode = _reflection.GeneratedProtocolMessageType('InputActionTimelineNode', (_message.Message,), dict(
-  DESCRIPTOR = _INPUTACTIONTIMELINENODE,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:InputActionTimelineNode)
-  ))
-_sym_db.RegisterMessage(InputActionTimelineNode)
 
 RoleConfig = _reflection.GeneratedProtocolMessageType('RoleConfig', (_message.Message,), dict(
   DESCRIPTOR = _ROLECONFIG,
@@ -2041,27 +2034,6 @@ RoleConfig = _reflection.GeneratedProtocolMessageType('RoleConfig', (_message.Me
   ))
 _sym_db.RegisterMessage(RoleConfig)
 
-MoveActionTimelineNode = _reflection.GeneratedProtocolMessageType('MoveActionTimelineNode', (_message.Message,), dict(
-  DESCRIPTOR = _MOVEACTIONTIMELINENODE,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:MoveActionTimelineNode)
-  ))
-_sym_db.RegisterMessage(MoveActionTimelineNode)
-
-Timeline = _reflection.GeneratedProtocolMessageType('Timeline', (_message.Message,), dict(
-  DESCRIPTOR = _TIMELINE,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:Timeline)
-  ))
-_sym_db.RegisterMessage(Timeline)
-
-AbilityEffect = _reflection.GeneratedProtocolMessageType('AbilityEffect', (_message.Message,), dict(
-  DESCRIPTOR = _ABILITYEFFECT,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:AbilityEffect)
-  ))
-_sym_db.RegisterMessage(AbilityEffect)
-
 BuffConfig = _reflection.GeneratedProtocolMessageType('BuffConfig', (_message.Message,), dict(
   DESCRIPTOR = _BUFFCONFIG,
   __module__ = 'Data_pb2'
@@ -2069,26 +2041,12 @@ BuffConfig = _reflection.GeneratedProtocolMessageType('BuffConfig', (_message.Me
   ))
 _sym_db.RegisterMessage(BuffConfig)
 
-VectorInt3 = _reflection.GeneratedProtocolMessageType('VectorInt3', (_message.Message,), dict(
-  DESCRIPTOR = _VECTORINT3,
+MoveActionTimelineNode = _reflection.GeneratedProtocolMessageType('MoveActionTimelineNode', (_message.Message,), dict(
+  DESCRIPTOR = _MOVEACTIONTIMELINENODE,
   __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:VectorInt3)
+  # @@protoc_insertion_point(class_scope:MoveActionTimelineNode)
   ))
-_sym_db.RegisterMessage(VectorInt3)
-
-HitCheckInfo = _reflection.GeneratedProtocolMessageType('HitCheckInfo', (_message.Message,), dict(
-  DESCRIPTOR = _HITCHECKINFO,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:HitCheckInfo)
-  ))
-_sym_db.RegisterMessage(HitCheckInfo)
-
-LockActionNode = _reflection.GeneratedProtocolMessageType('LockActionNode', (_message.Message,), dict(
-  DESCRIPTOR = _LOCKACTIONNODE,
-  __module__ = 'Data_pb2'
-  # @@protoc_insertion_point(class_scope:LockActionNode)
-  ))
-_sym_db.RegisterMessage(LockActionNode)
+_sym_db.RegisterMessage(MoveActionTimelineNode)
 
 AbilityConfig = _reflection.GeneratedProtocolMessageType('AbilityConfig', (_message.Message,), dict(
   DESCRIPTOR = _ABILITYCONFIG,
@@ -2097,40 +2055,54 @@ AbilityConfig = _reflection.GeneratedProtocolMessageType('AbilityConfig', (_mess
   ))
 _sym_db.RegisterMessage(AbilityConfig)
 
-DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Message,), dict(
+Timeline = _reflection.GeneratedProtocolMessageType('Timeline', (_message.Message,), dict(
+  DESCRIPTOR = _TIMELINE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:Timeline)
+  ))
+_sym_db.RegisterMessage(Timeline)
 
-  InputActionTimelineNodeDictEntry = _reflection.GeneratedProtocolMessageType('InputActionTimelineNodeDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.InputActionTimelineNodeDictEntry)
-    ))
-  ,
+HitCheckInfo = _reflection.GeneratedProtocolMessageType('HitCheckInfo', (_message.Message,), dict(
+  DESCRIPTOR = _HITCHECKINFO,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:HitCheckInfo)
+  ))
+_sym_db.RegisterMessage(HitCheckInfo)
+
+AbilityEffect = _reflection.GeneratedProtocolMessageType('AbilityEffect', (_message.Message,), dict(
+  DESCRIPTOR = _ABILITYEFFECT,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:AbilityEffect)
+  ))
+_sym_db.RegisterMessage(AbilityEffect)
+
+VectorInt3 = _reflection.GeneratedProtocolMessageType('VectorInt3', (_message.Message,), dict(
+  DESCRIPTOR = _VECTORINT3,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:VectorInt3)
+  ))
+_sym_db.RegisterMessage(VectorInt3)
+
+InputActionTimelineNode = _reflection.GeneratedProtocolMessageType('InputActionTimelineNode', (_message.Message,), dict(
+  DESCRIPTOR = _INPUTACTIONTIMELINENODE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:InputActionTimelineNode)
+  ))
+_sym_db.RegisterMessage(InputActionTimelineNode)
+
+LockActionNode = _reflection.GeneratedProtocolMessageType('LockActionNode', (_message.Message,), dict(
+  DESCRIPTOR = _LOCKACTIONNODE,
+  __module__ = 'Data_pb2'
+  # @@protoc_insertion_point(class_scope:LockActionNode)
+  ))
+_sym_db.RegisterMessage(LockActionNode)
+
+DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Message,), dict(
 
   RoleConfigDictEntry = _reflection.GeneratedProtocolMessageType('RoleConfigDictEntry', (_message.Message,), dict(
     DESCRIPTOR = _DATAHELPER_ROLECONFIGDICTENTRY,
     __module__ = 'Data_pb2'
     # @@protoc_insertion_point(class_scope:DataHelper.RoleConfigDictEntry)
-    ))
-  ,
-
-  MoveActionTimelineNodeDictEntry = _reflection.GeneratedProtocolMessageType('MoveActionTimelineNodeDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.MoveActionTimelineNodeDictEntry)
-    ))
-  ,
-
-  TimelineDictEntry = _reflection.GeneratedProtocolMessageType('TimelineDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_TIMELINEDICTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.TimelineDictEntry)
-    ))
-  ,
-
-  AbilityEffectDictEntry = _reflection.GeneratedProtocolMessageType('AbilityEffectDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_ABILITYEFFECTDICTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.AbilityEffectDictEntry)
     ))
   ,
 
@@ -2141,10 +2113,24 @@ DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Me
     ))
   ,
 
-  VectorInt3DictEntry = _reflection.GeneratedProtocolMessageType('VectorInt3DictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_VECTORINT3DICTENTRY,
+  MoveActionTimelineNodeDictEntry = _reflection.GeneratedProtocolMessageType('MoveActionTimelineNodeDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY,
     __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.VectorInt3DictEntry)
+    # @@protoc_insertion_point(class_scope:DataHelper.MoveActionTimelineNodeDictEntry)
+    ))
+  ,
+
+  AbilityConfigDictEntry = _reflection.GeneratedProtocolMessageType('AbilityConfigDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ABILITYCONFIGDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.AbilityConfigDictEntry)
+    ))
+  ,
+
+  TimelineDictEntry = _reflection.GeneratedProtocolMessageType('TimelineDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_TIMELINEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.TimelineDictEntry)
     ))
   ,
 
@@ -2155,17 +2141,31 @@ DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Me
     ))
   ,
 
+  AbilityEffectDictEntry = _reflection.GeneratedProtocolMessageType('AbilityEffectDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_ABILITYEFFECTDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.AbilityEffectDictEntry)
+    ))
+  ,
+
+  VectorInt3DictEntry = _reflection.GeneratedProtocolMessageType('VectorInt3DictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_VECTORINT3DICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.VectorInt3DictEntry)
+    ))
+  ,
+
+  InputActionTimelineNodeDictEntry = _reflection.GeneratedProtocolMessageType('InputActionTimelineNodeDictEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY,
+    __module__ = 'Data_pb2'
+    # @@protoc_insertion_point(class_scope:DataHelper.InputActionTimelineNodeDictEntry)
+    ))
+  ,
+
   LockActionNodeDictEntry = _reflection.GeneratedProtocolMessageType('LockActionNodeDictEntry', (_message.Message,), dict(
     DESCRIPTOR = _DATAHELPER_LOCKACTIONNODEDICTENTRY,
     __module__ = 'Data_pb2'
     # @@protoc_insertion_point(class_scope:DataHelper.LockActionNodeDictEntry)
-    ))
-  ,
-
-  AbilityConfigDictEntry = _reflection.GeneratedProtocolMessageType('AbilityConfigDictEntry', (_message.Message,), dict(
-    DESCRIPTOR = _DATAHELPER_ABILITYCONFIGDICTENTRY,
-    __module__ = 'Data_pb2'
-    # @@protoc_insertion_point(class_scope:DataHelper.AbilityConfigDictEntry)
     ))
   ,
   DESCRIPTOR = _DATAHELPER,
@@ -2173,38 +2173,38 @@ DataHelper = _reflection.GeneratedProtocolMessageType('DataHelper', (_message.Me
   # @@protoc_insertion_point(class_scope:DataHelper)
   ))
 _sym_db.RegisterMessage(DataHelper)
-_sym_db.RegisterMessage(DataHelper.InputActionTimelineNodeDictEntry)
 _sym_db.RegisterMessage(DataHelper.RoleConfigDictEntry)
-_sym_db.RegisterMessage(DataHelper.MoveActionTimelineNodeDictEntry)
-_sym_db.RegisterMessage(DataHelper.TimelineDictEntry)
-_sym_db.RegisterMessage(DataHelper.AbilityEffectDictEntry)
 _sym_db.RegisterMessage(DataHelper.BuffConfigDictEntry)
-_sym_db.RegisterMessage(DataHelper.VectorInt3DictEntry)
-_sym_db.RegisterMessage(DataHelper.HitCheckInfoDictEntry)
-_sym_db.RegisterMessage(DataHelper.LockActionNodeDictEntry)
+_sym_db.RegisterMessage(DataHelper.MoveActionTimelineNodeDictEntry)
 _sym_db.RegisterMessage(DataHelper.AbilityConfigDictEntry)
+_sym_db.RegisterMessage(DataHelper.TimelineDictEntry)
+_sym_db.RegisterMessage(DataHelper.HitCheckInfoDictEntry)
+_sym_db.RegisterMessage(DataHelper.AbilityEffectDictEntry)
+_sym_db.RegisterMessage(DataHelper.VectorInt3DictEntry)
+_sym_db.RegisterMessage(DataHelper.InputActionTimelineNodeDictEntry)
+_sym_db.RegisterMessage(DataHelper.LockActionNodeDictEntry)
 
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\252\002\006Config'))
-_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY.has_options = True
-_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 _DATAHELPER_ROLECONFIGDICTENTRY.has_options = True
 _DATAHELPER_ROLECONFIGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY.has_options = True
-_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_TIMELINEDICTENTRY.has_options = True
-_DATAHELPER_TIMELINEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_ABILITYEFFECTDICTENTRY.has_options = True
-_DATAHELPER_ABILITYEFFECTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 _DATAHELPER_BUFFCONFIGDICTENTRY.has_options = True
 _DATAHELPER_BUFFCONFIGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_VECTORINT3DICTENTRY.has_options = True
-_DATAHELPER_VECTORINT3DICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_HITCHECKINFODICTENTRY.has_options = True
-_DATAHELPER_HITCHECKINFODICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DATAHELPER_LOCKACTIONNODEDICTENTRY.has_options = True
-_DATAHELPER_LOCKACTIONNODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY.has_options = True
+_DATAHELPER_MOVEACTIONTIMELINENODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 _DATAHELPER_ABILITYCONFIGDICTENTRY.has_options = True
 _DATAHELPER_ABILITYCONFIGDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_TIMELINEDICTENTRY.has_options = True
+_DATAHELPER_TIMELINEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_HITCHECKINFODICTENTRY.has_options = True
+_DATAHELPER_HITCHECKINFODICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_ABILITYEFFECTDICTENTRY.has_options = True
+_DATAHELPER_ABILITYEFFECTDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_VECTORINT3DICTENTRY.has_options = True
+_DATAHELPER_VECTORINT3DICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY.has_options = True
+_DATAHELPER_INPUTACTIONTIMELINENODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_DATAHELPER_LOCKACTIONNODEDICTENTRY.has_options = True
+_DATAHELPER_LOCKACTIONNODEDICTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

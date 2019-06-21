@@ -5,6 +5,8 @@ import json
 from Helpers.ProtoHelper import *
 from Helpers.ExcelHelper import ExcelHelper
 from Helpers.JsonHelper import JsonHelper
+from Tools.FileHelper import load_json, get_all_file
+from Helpers.CSVHelper import CSVHelper
 
 
 EXCEL_NAME = [
@@ -26,6 +28,7 @@ EXCEL_NAME = [
 
 JSON_PATH = "../Config/JSON/"               # json所在路径
 EXCEL_PATH = "../Config/Excel/"             # excel所在路径
+CSV_PATH = "../Config/CSV/"                 # CSV的文件路径
 OUT_PATH = "../Config/"                     # 结果输出路径
 PROTO_SAVE_PATH = "../Config/Data.proto"    # proto文件保存位置
 BINARY_SAVE_PATH = "../Config/Data.byte"    # 二进制文件保存位置
@@ -47,6 +50,7 @@ def load_config(path):
     global SPAWN_CSHARP_COMMAND
     global SPAWN_PYTHON_COMMAND
     global OTHER_OUT_PATH
+    global CSV_PATH
 
     result = JsonHelper.load_json(path)
     config = json.loads(result)
@@ -61,6 +65,7 @@ def load_config(path):
     SPAWN_CSHARP_COMMAND = config['SPAWN_CSHARP_COMMAND']
     SPAWN_PYTHON_COMMAND = config['SPAWN_PYTHON_COMMAND']
     OTHER_OUT_PATH = config['OTHER_OUT_PATH']
+    CSV_PATH = config['CSV_PATH']
 
 
 def merge_dict(dict1, dict2):
@@ -150,3 +155,12 @@ if __name__ == "__main__":
     
     # 将excel表格生成二进制文件
     to_binary(PYTHON_PROTO_MODULE_PATH, BINARY_SAVE_PATH, sheets)
+
+    # 将excel生成成csv并同时导出lua和erl
+    config = load_json(r"D:/Self/Python/dev/ConfigProtoHelper/ConfigProtoHelper/CSVConfig.json")
+
+    file_list = get_all_file(CSV_PATH, is_deep=True, end_witch=".xlsx")
+    for path in file_list:
+        csv_helper = CSVHelper(path)
+        csv_helper.config = config
+        csv_helper.to_erl_lua("../lua/", "../0__Gen_lua_config.bat")

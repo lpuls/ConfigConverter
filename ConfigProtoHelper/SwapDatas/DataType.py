@@ -9,6 +9,7 @@ class DataType:
     ARRAY_TYPE = "ARRAY"
     MAP_TYPE = "MAP"
     JSON_TYPE = "JSON"
+    FLOAT_TYPE = "FLOAT"
 
     PROTO_INT_TYPE = "int32"
     PROTO_LONG_TYPE = "int64"
@@ -17,6 +18,7 @@ class DataType:
     PROTO_ARRAY_TYPE = "repeated %s"
     PROTO_MAP_TYPE = "map<%s, %s>"
     PROTO_JSON_TYPE = ""
+    PROTO_FLOAT_TYPE = "float"
 
     INVALID_TYPE_OK = 1
     INVALID_TYPE_SKIP = 2

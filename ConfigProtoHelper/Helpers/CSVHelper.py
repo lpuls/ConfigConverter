@@ -20,10 +20,36 @@ return this
 
 class CSVHelper:
     def __init__(self, path, config=None):
+        self.__config = None
+        self.module = ""
+        self.target_name = ""
+        self.order_index = None
+
         if None is not config:
             self.__load_from_csv__(path, config)
         else:
             self.__load_from_excel__(path)
+
+    @property
+    def config(self):
+        return self.__config
+
+    @config.setter
+    def config(self, config):
+        self.__config = config
+        module = config["DataTable"].get(self.name, None)
+        if None is not module:
+            self.target_name = module["TargetName"]
+            self.module = module["Module"]
+            self.order_index = module.get('order_key', None)
+        else:
+            self.module = "default_module"
+            names = self.name.split('_')
+            self.target_name = ""
+            for name in names:
+                self.target_name += name.capitalize()
+            self.target_name += "Cfg"
+            self.order_index = None
 
     def __load_from_csv__(self, path, config):
         """
@@ -39,6 +65,7 @@ class CSVHelper:
         self.order_index = None
         self.extra_index = list()
         self.data = list()
+        self.has_all = True
 
         # 从配置表中找出对应的数据
         self.name = os.path.basename(path)
@@ -48,6 +75,10 @@ class CSVHelper:
             self.target_name = module["TargetName"]
             self.module = module["Module"]
             self.order_index = module.get('order_key', None)
+        else:
+            self.module = "default_module"
+            self.target_name = self.name + "Cfg"
+            self.order_index = None
 
         # 读取csv
         self.__load_csv__(path)
@@ -56,6 +87,7 @@ class CSVHelper:
         self.__process_origin_data__()
         self.__check_type_from_data__()
 
+        self.has_all = self.target_name not in config['WithOutTotalIndex']
         self.extra_index = config['ExtraIndex'].get(self.name, self.extra_index)
         if "define" in self.filed:
             self.extra_index.append(self.filed.index("define"))
@@ -81,27 +113,21 @@ class CSVHelper:
         self.name = os.path.basename(path)
         self.name = self.name.replace(".xlsx", "")
         self.target_name = self.name
-
-        # 分析模版
-        index = self.name.find('module_')
-        if -1 != index:
-            self.module = self.name[: index] + "module"
-        else:
-            self.module = "default_module"
-        self.target_name = self.target_name.replace(self.module + "_", "")
+        first_underline_index = self.name.find("_")
+        self.has_all = (self.name[:first_underline_index]).upper() == "TRUE"
 
         self.__load_excel__(path)
         self.__check_type_from_data__()
 
         # 分析字段
-        for item in self.filed:
+        for item in self.note:
             if -1 != item.upper().find("(EXTRA)"):
-                self.extra_index.append(self.filed.index(item))
+                self.extra_index.append(self.note.index(item))
 
         if "sort_by_field_module" == self.module:
-            for item in self.filed:
+            for item in self.note:
                 if -1 != item.upper().find("(ORDER)"):
-                    self.order_index = self.filed.index(item)
+                    self.order_index = self.note.index(item)
                     break
         elif "unique_module" == self.module:
             if "define" in self.filed:
@@ -116,11 +142,17 @@ class CSVHelper:
         for index in range(0, len(data)):
             if 'int' == self.type[index]:
                 self.swap_type.append(DataType(DataType.INT_TYPE))
+            elif 'float' == self.type[index]:
+                self.swap_type.append(DataType(DataType.FLOAT_TYPE))
+            elif 'bool' == self.type[index]:
+                self.swap_type.append(DataType(DataType.BOOL_TYPE))
             elif 'varchar' == self.type[index]:
-                if '{' == data[index][0]:
+                if len(data[index]) > 0 and '{' == data[index][0]:
                     self.swap_type.append(DataType(DataType.ARRAY_TYPE))
                 else:
                     self.swap_type.append(DataType(DataType.STR_TYPE))
+            else:
+                self.swap_type.append(DataType(self.type[index]))
 
     def __process_origin_data__(self):
         """
@@ -132,7 +164,7 @@ class CSVHelper:
         for item in self.data[1]:
             self.type.append(item)
         for item in self.data[2]:
-            self.platform.append(item)
+            self.platform.append(item.upper())
         for item in self.data[3]:
             self.note.append(item)
         del self.data[0]
@@ -162,12 +194,19 @@ class CSVHelper:
             self.type = sheet.row_values(0)
             self.note = sheet.row_values(1)
             self.filed = sheet.row_values(2)
-            self.platform = sheet.row_values(3)
+            # self.platform = sheet.row_values(3)
 
-            for row_index in range(4, sheet.nrows):
-                # data = list()
-                # for col_index in range(0, sheet.ncols):
-                #     data.append(sheet.cell(row_index, col_index).value)
+            for item in self.note:
+                if -1 != item.find("(C)"):
+                    self.platform.append('C')
+                elif -1 != item.find("(CS)"):
+                    self.platform.append('CS')
+                elif -1 != item.find("(S)"):
+                    self.platform.append("S")
+                else:
+                    self.platform.append("N")
+
+            for row_index in range(3, sheet.nrows):
                 self.data.append(sheet.row_values(row_index))
 
         load_excel(path, analyze_sheet)
@@ -212,6 +251,27 @@ class CSVHelper:
             result += context.format(filed, element)
         return result
 
+    def __get_value_by_type__(self, data, index):
+        if len(data[index]) <= 0:
+            if DataType.INT_TYPE == self.swap_type[index].main_type:
+                return "0"
+            elif DataType.BOOL_TYPE == self.swap_type[index].main_type:
+                return "true"
+            elif DataType.ARRAY_TYPE == self.swap_type[index].main_type:
+                return "{}"
+            else:
+                return "0"
+        else:
+            if DataType.STR_TYPE == self.swap_type[index].main_type:
+                if '{' == data[index][0]:
+                    return data[index]
+                elif '@' == data[index][0]:
+                    return data[index].replace('@', '')
+                else:
+                    return "\"{0}\"".format(data[index])
+            else:
+                return data[index]
+
     def __spawn_element_format__(self):
         """
         根据表结构生成格式
@@ -220,13 +280,10 @@ class CSVHelper:
         index = 0
         element = ""
         for item in self.filed:
-            if -1 != self.platform[index].find('c'):
-                if DataType.STR_TYPE == self.swap_type[index].main_type:
-                    element += "\t\t{{{0}}} = \"{{{1}}}\",\n".format(item, item + "_value")
-                else:
-                    element += "\t\t{{{0}}} = {{{1}}},\n".format(item, item + "_value")
+            if -1 != self.platform[index].find('C'):
+                element += "\t\t{{{0}}} = {{{1}}},\n".format(item, item + "_value")
             index += 1
-        return """\t[{{index}}] = {{{{\n{0}\n\t}}}},\n""".format(element)
+        return """\t[{{id_index_value}}] = {{{{\n{0}\n\t}}}},\n""".format(element)
 
     def __process_default__(self, id_index):
         """
@@ -240,16 +297,21 @@ class CSVHelper:
         result = ""
         for data in self.data:
             filed_to_value = dict()
-            filed_to_value["index"] = data[id_index]
-            all_id.append(int(data[id_index]))
+            filed_to_value["id_index_value"] = self.__get_value_by_type__(data, id_index)  # data[id_index]
+            if self.has_all:
+                all_id.append(int(data[id_index]))
             for index in range(0, len(self.filed)):
-                if -1 == self.platform[index].find('c'):
+                if -1 == self.platform[index].find('C'):
                     continue
                 filed_to_value[self.filed[index]] = self.filed[index]
-                filed_to_value[self.filed[index] + "_value"] = data[index]
+                filed_to_value[self.filed[index] + "_value"] = self.__get_value_by_type__(data, index)
             result += element.format_map(filed_to_value)
-        str_all = str(all_id)
-        return result, "\tall = {{{0}}},".format(str_all[1: len(str_all) - 1])
+        if self.has_all:
+            str_all = str(all_id)
+            str_all = "\tall = {{{0}}},".format(str_all[1: len(str_all) - 1])
+        else:
+            str_all = ""
+        return result, str_all
 
     def __process_sort__(self, id_index):
         """
@@ -263,16 +325,21 @@ class CSVHelper:
         all_id = [None] * len(self.data)
         for data in self.data:
             filed_to_value = dict()
-            filed_to_value["index"] = data[id_index]
-            all_id[int(data[self.order_index]) - 1] = int(data[id_index])
+            filed_to_value["id_index_value"] = self.__get_value_by_type__(data, id_index)  # data[id_index]
+            if self.has_all:
+                all_id[int(data[self.order_index]) - 1] = int(data[id_index])
             for index in range(0, len(self.filed)):
-                if -1 == self.platform[index].find('c'):
+                if -1 == self.platform[index].find('C'):
                     continue
                 filed_to_value[self.filed[index]] = self.filed[index]
-                filed_to_value[self.filed[index] + "_value"] = data[index]
+                filed_to_value[self.filed[index] + "_value"] = self.__get_value_by_type__(data, index)
             result += element.format_map(filed_to_value)
-        str_all = str(all_id)
-        return result, "\tall = {{{0}}},".format(str_all[1: len(str_all) - 1])
+        if self.has_all:
+            str_all = str(all_id)
+            str_all = "\tall = {{{0}}},".format(str_all[1: len(str_all) - 1])
+        else:
+            str_all = ""
+        return result, str_all
 
     def __process_unique__(self, id_index):
         """
@@ -302,9 +369,9 @@ class CSVHelper:
         def tree_to_lua(key, tree, deep):
             space = "\t" * deep
             if not isinstance(tree, dict):
-                return "\n{2}{0} = {1},\n".format(key, tree, space)
+                return "\n{2}{0} = {1},\n".format(key.replace('\\', '\\\\'), tree, space)
 
-            context = "\n{1}[\"{0}\"] = {{".format(key, space)
+            context = "\n{1}[\"{0}\"] = {{".format(key.replace('\\', '\\\\'), space)
             for k, v in tree.items():
                 context += tree_to_lua(k, v, deep + 1)
             context += space + "},\n"
@@ -326,27 +393,31 @@ class CSVHelper:
 
         # 将原本各种模版需要的数据以标记的方式写入字段名中
         if "sort_by_field_module" == self.module and None is not self.order_index and -1 != self.order_index:
-            self.filed[self.order_index] += "(ORDER)"
+            self.note[self.order_index] += "(ORDER)"
         for extra_index in self.extra_index:
-            self.filed[extra_index] += "(EXTRA)"
+            self.note[extra_index] += "(EXTRA)"
 
         # 写入类型
-        CSVHelper.__write_to_execl_by_index__(0, table, self.type)
+        data_type = list()
+        for item in self.swap_type:
+            data_type.append(item.main_type)
+        CSVHelper.__write_to_execl_by_index__(0, table, data_type)
 
         # 写入说明
+        index = 0
+        for item in self.platform:
+            self.note[index] += "({0})".format(item.upper())
+            index += 1
         CSVHelper.__write_to_execl_by_index__(1, table, self.note)
 
         # 写入字段名
         CSVHelper.__write_to_execl_by_index__(2, table, self.filed)
 
-        # 写入导出平台
-        CSVHelper.__write_to_execl_by_index__(3, table, self.platform)
-
         # 写入数据
         for row in range(0, len(self.data)):
-            CSVHelper.__write_to_execl_by_index__(4 + row, table, self.data[row])
+            CSVHelper.__write_to_execl_by_index__(3 + row, table, self.data[row])
 
-        file.save(path + self.module + "_" + self.target_name + ".xlsx")
+        file.save(path + self.name + ".xls")
 
     def to_lua(self, path):
         """
@@ -355,10 +426,7 @@ class CSVHelper:
         :return:
         """
         # 找到id所在的列
-        id_index = None
-        if 'id' in self.filed:
-            id_index = self.filed.index("id")
-
+        id_index = 0
         if "unique_module" == self.module:
             assert None is not id_index, "找不到id"
             result, all_id = self.__process_default__(id_index)
@@ -381,4 +449,21 @@ class CSVHelper:
         with open(path + self.target_name + ".lua", 'w', encoding='utf8') as f:
             f.write(context)
 
+    def to_erl_lua(self, path, command):
+        csv_context = ""
+        csv_format = "{0}," * (len(self.filed) - 1) + "{0}\n"
+        csv_context += csv_format.format(*self.filed)
+        csv_context += csv_format.format(*self.type)
+        csv_context += csv_format.format(*self.platform)
+        csv_context += csv_format.format(*self.note)
+        for data in self.data:
+            csv_context += csv_format.format(*data)
+        with open(path + self.name + ".csv", 'w') as f:
+            f.write(csv_context)
+        print(csv_context)
+
+        # todo 设用erl和lua导出的命令
+        os.system(command)
+
+        os.remove(path + self.name + ".csv")
 

@@ -52,8 +52,8 @@ def load_config(path):
     global OTHER_OUT_PATH
     global CSV_PATH
 
-    result = JsonHelper.load_json(path)
-    config = json.loads(result)
+    #  result = JsonHelper.load_json(path)
+    config = load_json(path)  # json.loads(result)
 
     OUT_PATH = config['OUT_PATH']
     LOG_PATH = config['LOG_PATH']
@@ -65,7 +65,7 @@ def load_config(path):
     SPAWN_CSHARP_COMMAND = config['SPAWN_CSHARP_COMMAND']
     SPAWN_PYTHON_COMMAND = config['SPAWN_PYTHON_COMMAND']
     OTHER_OUT_PATH = config['OTHER_OUT_PATH']
-    CSV_PATH = config['CSV_PATH']
+    # CSV_PATH = config['CSV_PATH']
 
 
 def merge_dict(dict1, dict2):
@@ -157,10 +157,13 @@ if __name__ == "__main__":
     to_binary(PYTHON_PROTO_MODULE_PATH, BINARY_SAVE_PATH, sheets)
 
     # 将excel生成成csv并同时导出lua和erl
-    config = load_json(r"D:/Self/Python/dev/ConfigProtoHelper/ConfigProtoHelper/CSVConfig.json")
+    # config = load_json(r"./CSVConfig.json")
 
-    file_list = get_all_file(CSV_PATH, is_deep=True, end_witch=".xlsx")
-    for path in file_list:
-        csv_helper = CSVHelper(path)
-        csv_helper.config = config
-        csv_helper.to_erl_lua("../lua/", "../0__Gen_lua_config.bat")
+    # os.system("pause")
+    # file_list = get_all_file(CSV_PATH, is_deep=True, end_witch=".xlsx")
+    # for path in file_list:
+    #     if -1 != path.find("this_is_test"):
+    #         print("stop")
+    #     csv_helper = CSVHelper(path)
+    #     csv_helper.to_csv("../Out/temp/")
+    # os.system("call ../0__Gen_lua_config.bat")

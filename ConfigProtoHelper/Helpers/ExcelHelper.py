@@ -39,7 +39,7 @@ class ExcelHelper:
     
     @staticmethod
     def __analyze_sheet__(name, sheet):
-        if sheet.nrows < 3: 
+        if sheet.nrows < 3:
             print("无效的表置表格式")
             return None
 
@@ -56,7 +56,29 @@ class ExcelHelper:
             data = dict()
             for col_index in range(0, sheet.ncols):
                 field_name = fields[col_index]
-                data[field_name] = sheet.cell(row_index, col_index).value
-            sheet_data.insert(data)
-        
+                cell_value = sheet.cell(row_index, col_index).value
+                # data[field_name] = cell_value
+                # 过滤掉注释和空行
+                if 0 == col_index and (isinstance(cell_value, str)
+                                       and (('' != cell_value and '#' == cell_value[0]) or '' == cell_value)):
+                    print(name, row_index, col_index)
+                    continue
+
+                # 检查数值是否为空
+                if (DataType.INT_TYPE == types[col_index] or DataType.FLOAT_TYPE == types[col_index]
+                    or DataType.LONG_TYPE == types[col_index]) \
+                        and '' == cell_value:
+                    cell_value = '0'
+                elif (DataType.MAP_TYPE == types[col_index] or DataType.JSON_TYPE == types[col_index]) \
+                        and '' == cell_value:
+                    cell_value = '{}'
+                elif DataType.ARRAY_TYPE == types[col_index] and '' == cell_value:
+                    cell_value = '[]'
+                elif DataType.BOOL_TYPE == types[col_index] and '' == cell_value:
+                    cell_value == 'False'
+                data[field_name] = cell_value
+            else:
+                # continue
+                sheet_data.insert(data)
+
         return sheet_data

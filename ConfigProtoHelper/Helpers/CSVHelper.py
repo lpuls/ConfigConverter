@@ -112,6 +112,7 @@ class CSVHelper:
         # 分析出文件名
         self.name = os.path.basename(path)
         self.name = self.name.replace(".xlsx", "")
+        self.name = self.name.replace(".xls", "")
         self.target_name = self.name
         first_underline_index = self.name.find("_")
         self.has_all = (self.name[:first_underline_index]).upper() == "TRUE"
@@ -199,7 +200,7 @@ class CSVHelper:
             for item in self.note:
                 if -1 != item.find("(C)"):
                     self.platform.append('C')
-                elif -1 != item.find("(CS)"):
+                elif -1 != item.find("(CS)") or -1 != item.find("(SC)"):
                     self.platform.append('CS')
                 elif -1 != item.find("(S)"):
                     self.platform.append("S")
@@ -269,6 +270,9 @@ class CSVHelper:
                     return data[index].replace('@', '')
                 else:
                     return "\"{0}\"".format(data[index])
+            if DataType.BOOL_TYPE == self.swap_type[index].main_type:
+                print(data, index, data[index])
+                return data[index]
             else:
                 return data[index]
 
@@ -449,21 +453,43 @@ class CSVHelper:
         with open(path + self.target_name + ".lua", 'w', encoding='utf8') as f:
             f.write(context)
 
-    def to_erl_lua(self, path, command):
-        csv_context = ""
-        csv_format = "{0}," * (len(self.filed) - 1) + "{0}\n"
-        csv_context += csv_format.format(*self.filed)
-        csv_context += csv_format.format(*self.type)
-        csv_context += csv_format.format(*self.platform)
-        csv_context += csv_format.format(*self.note)
+    def to_csv(self, path):
+        out = csv.writer(open(path + self.name + ".csv", 'w', encoding='utf-8', newline=''), dialect='excel')
+        
+        out.writerow(self.filed)
+
+        csv_types = list()
+        for swap_type in self.swap_type:
+            if DataType.ARRAY_TYPE == swap_type.main_type or DataType.STR_TYPE == swap_type.main_type:
+                csv_types.append('varchar')
+            elif DataType.INT_TYPE == swap_type.main_type:
+                csv_types.append('int')
+            elif DataType.BOOL_TYPE == swap_type.main_type:
+                csv_types.append('bool')
+            elif DataType.FLOAT_TYPE == swap_type.main_type:
+                csv_types.append('float')
+        out.writerow(csv_types)
+
+        platform = list()
+        for item in self.platform:
+            platform.append(item.lower())
+        out.writerow(platform)
+        
+        out.writerow(self.note)
+
         for data in self.data:
-            csv_context += csv_format.format(*data)
-        with open(path + self.name + ".csv", 'w') as f:
-            f.write(csv_context)
-        print(csv_context)
-
-        # todo 设用erl和lua导出的命令
-        os.system(command)
-
-        os.remove(path + self.name + ".csv")
-
+            temp = list()
+            for index in range(0, len(self.swap_type)):
+                swap_type = self.swap_type[index]
+                if '' != data[index]:
+                    if DataType.ARRAY_TYPE == swap_type.main_type or DataType.STR_TYPE == swap_type.main_type:
+                        temp.append(str(data[index]))
+                    elif DataType.INT_TYPE == swap_type.main_type:
+                        temp.append(int(data[index]))
+                    elif DataType.BOOL_TYPE == swap_type.main_type:
+                        temp.append(str(data[index]))
+                    elif DataType.FLOAT_TYPE == swap_type.main_type:
+                        temp.append(float(data[index]))
+                else:
+                    temp.append(data[index])
+            out.writerow(temp)

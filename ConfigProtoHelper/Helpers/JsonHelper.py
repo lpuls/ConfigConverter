@@ -16,7 +16,7 @@ class JsonHelper:
         JsonHelper.__IS_INIT__ = True
 
         # 根据描述文件创建对应的消息类
-        json_desc = json.loads(JsonHelper.load_json(desc_path))
+        json_desc = json.loads(load_file_to_string(desc_path))
         for desc_name in json_desc:
             message_desc = json_desc[desc_name]
             types = list()

@@ -1,5 +1,6 @@
 # _*_coding:utf-8_*_
 
+import os
 from Tools.FileHelper import load_json, get_all_file
 from Helpers.CSVHelper import CSVHelper
 
@@ -13,21 +14,11 @@ class CSVToErl:
 
 
 if __name__ == "__main__":
-    config = load_json(r"D:/Self/Python/dev/ConfigProtoHelper/ConfigProtoHelper/CSVConfig.json")
+    config = load_json(r"../CSVConfig.json")
 
-    file_list = get_all_file(r"D:\Self\Python\dev\ConfigProtoHelper\Config\CSV/", is_deep=True, end_witch=".csv")
+    file_list = get_all_file(r"F:/p08_2018_2/csv/", is_deep=True, end_witch=".csv")
     for path in file_list:
         print("To Excel " + path)
         csv_helper = CSVHelper(path, config)
-        csv_helper.to_excel(r"D:\Self\Python\dev\ConfigProtoHelper\Config\CSV2Excel/")
-
-    # file_list = get_all_file(r"D:\Self\Python\dev\ConfigProtoHelper\Config\CSV2Excel/",
-    #                          is_deep=True, end_witch=".xlsx")
-    # for path in file_list:
-    #     print("To Lua " + path)
-    #     csv_helper = CSVHelper(path)
-    #     csv_helper.config = config
-    #     csv_helper.to_erl_lua("../lua/", "../0__Gen_lua_config.bat")
-        # csv_helper.to_lua(r"D:\Self\Python\dev\ConfigProtoHelper\Config\Excel2Lua/")
-        # csv_helper.to_erl(r"D:\Self\Python\dev\ConfigProtoHelper\Config\Excel2Erl/")
-
+        csv_helper.to_excel(r"../../Function/")
+        csv_helper.to_csv("../../Out/temp/")

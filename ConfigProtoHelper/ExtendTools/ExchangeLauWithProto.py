@@ -45,7 +45,7 @@ def process_sheet(name, sheet):
     save_to_excel("../../Config/CSV2Excel/" + name + ".xls", sheet)
 
 
-if __name__ == '__main__':
+def main():
     # e = ExcelHelper("../../Config/CSV2Excel/hero.xls")
     # for excel_name, excel_sheet in e.sheets.items():
     #     process_sheet(excel_name, excel_sheet)

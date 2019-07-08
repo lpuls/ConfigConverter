@@ -2,6 +2,46 @@
 syntax = "proto3";
 option csharp_namespace = "Config";
 
+enum TriggerPosType {
+	TriggerPosType_none = 0;  // 无
+	TriggerPosType_oneself = 1;  // 自身
+	TriggerPosType_target = 2;  // 目标
+
+}
+
+enum Shape {
+	Shape_NONE = 0;  // 无
+	Shape_CIRCLE = 1;  // 圆形
+	Shape_SECTOR = 2;  // 扇形
+
+}
+
+enum RangeType {
+	RangeType_none = 0;  // 无
+	RangeType_straightline = 1;  // 直线(距离)
+	RangeType_sector = 2;  // 扇形(角度,半径)
+	RangeType_roundness = 3;  // 圆形区域(半径)
+	RangeType_rectangle = 4;  // 矩形(长，宽)
+	RangeType_multi_direction = 5;  // 多方向射击
+
+}
+
+enum EffectType {
+	EffectType_none = 0;  // 无
+	EffectType_general_harm = 1;  // 普通伤害
+	EffectType_harm = 2;  // 爆炸伤害
+	EffectType_effect = 3;  // 治疗效果
+	EffectType_death = 4;  // 即死
+
+}
+
+enum ConversionType {
+	ConversionType_none = 0;  // 无
+	ConversionType_fixed = 1;  // 固定值
+	ConversionType_percentage = 2;  // 百分比
+
+}
+
 enum BuffStatusType {
 	BuffStatusType_none = 0;  // 无
 	BuffStatusType_bleed = 1;  // 流血
@@ -30,43 +70,8 @@ enum BuffStatusType {
 
 }
 
-enum TargetSelectType {
-	TargetSelectType_none = 0;  // 无
-	TargetSelectType_nearest = 1;  // 最近
-	TargetSelectType_farthest = 2;  // 最远
-	TargetSelectType_hp_least = 3;  // 最低血量
-	TargetSelectType_hp_maximum = 4;  // 最高血量
-	TargetSelectType_battle_ability_max = 5;  // 最高战力
-	TargetSelectType_random = 6;  // 随机
-
-}
-
-enum TriggerPosType {
-	TriggerPosType_none = 0;  // 无
-	TriggerPosType_oneself = 1;  // 自身
-	TriggerPosType_target = 2;  // 目标
-
-}
-
 enum ItemDetailType {
 	ItemDetailType_none = 0;  // 无
-
-}
-
-enum BuffType {
-	BuffType_none = 0;  // 无
-	BuffType_buff = 1;  // 增益
-	BuffType_debuff = 2;  // 减益
-
-}
-
-enum RangeType {
-	RangeType_none = 0;  // 无
-	RangeType_straightline = 1;  // 直线(距离)
-	RangeType_sector = 2;  // 扇形(角度,半径)
-	RangeType_roundness = 3;  // 圆形区域(半径)
-	RangeType_rectangle = 4;  // 矩形(长，宽)
-	RangeType_multi_direction = 5;  // 多方向射击
 
 }
 
@@ -80,10 +85,21 @@ enum RoleType {
 
 }
 
-enum Shape {
-	Shape_NONE = 0;  // 无
-	Shape_CIRCLE = 1;  // 圆形
-	Shape_SECTOR = 2;  // 扇形
+enum TargetSelectType {
+	TargetSelectType_none = 0;  // 无
+	TargetSelectType_nearest = 1;  // 最近
+	TargetSelectType_farthest = 2;  // 最远
+	TargetSelectType_hp_least = 3;  // 最低血量
+	TargetSelectType_hp_maximum = 4;  // 最高血量
+	TargetSelectType_battle_ability_max = 5;  // 最高战力
+	TargetSelectType_random = 6;  // 随机
+
+}
+
+enum BuffType {
+	BuffType_none = 0;  // 无
+	BuffType_buff = 1;  // 增益
+	BuffType_debuff = 2;  // 减益
 
 }
 
@@ -96,42 +112,23 @@ enum TargetCampType {
 
 }
 
-enum EffectType {
-	EffectType_none = 0;  // 无
-	EffectType_general_harm = 1;  // 普通伤害
-	EffectType_harm = 2;  // 爆炸伤害
-	EffectType_effect = 3;  // 治疗效果
-	EffectType_death = 4;  // 即死
 
-}
-
-enum ConversionType {
-	ConversionType_none = 0;  // 无
-	ConversionType_fixed = 1;  // 固定值
-	ConversionType_percentage = 2;  // 百分比
-
-}
-
-
-message RoleConfig
+message MoveActionTimelineNode
 {
 	int32 ID = 1;
-	string ModelPath = 2;
-	string ModelName = 3;
-	repeated int32 Melees = 4;
-	repeated int32 Ability = 5;
-	repeated int32 AvoidAbility = 6;
-	int32 Radius = 7;
-	int32 BaseHP = 8;
-	int32 BaseAttack = 9;
-	int32 BaseDefend = 10;
-	int32 GrowHPByLevel = 11;
-	int32 GrowAttackByLevel = 12;
-	int32 GrowDefendByLevel = 13;
-	int32 GrowHPByStar = 14;
-	int32 GrowAttackByStar = 15;
-	int32 GrowDefendByStar = 16;
-	RoleType RoleType = 17;
+	int32 Start = 2;
+	int32 Duration = 3;
+	repeated int32 AnimationMove = 4;
+	bool Enable = 5;
+
+}
+
+message InputActionTimelineNode
+{
+	int32 ID = 1;
+	int32 Start = 2;
+	int32 Duration = 3;
+	bool Enable = 4;
 
 }
 
@@ -162,39 +159,40 @@ message BuffConfig
 
 }
 
-message MoveActionTimelineNode
-{
-	int32 ID = 1;
-	int32 Start = 2;
-	int32 Duration = 3;
-	repeated int32 AnimationMove = 4;
-	bool Enable = 5;
-
-}
-
 message AbilityConfig
 {
 	int32 ID = 1;
 	string Path = 2;
 	string Asset = 3;
+	repeated repeated string Test = 4;
 
 }
 
-message Timeline
+message VectorInt3
 {
 	int32 ID = 1;
-	int32 TICK_INTERVAL = 2;
-	bool IsLoop = 3;
-	bool CanInput = 4;
-	int32 Duration = 5;
-	int32 ReadyTime = 6;
-	int32 RecoverTime = 7;
-	repeated HitCheckInfo HitTimeList = 8;
-	repeated LockActionNode LockAcionList = 9;
-	InputActionTimelineNode InputActionTimelineNode = 10;
-	MoveActionTimelineNode MoveActionTimelineNode = 11;
-	repeated AbilityEffect AbilityEffectNodeInfo = 12;
-	int32 ComboOverTime = 13;
+	int32 X = 2;
+	int32 Y = 3;
+	int32 Z = 4;
+
+}
+
+message AbilityEffect
+{
+	int32 ID = 1;
+	TargetCampType TargetType = 2;
+	TriggerPosType TriggerPosType = 3;
+	int32 TriggerDelay = 4;
+	int32 TriggerTick = 5;
+	RangeType TriggerRangeType = 6;
+	TargetSelectType TargetSelectType = 7;
+	int32 TargetAmount = 8;
+	int32 Start = 9;
+	int32 Duration = 10;
+	Shape Shape = 11;
+	int32 Range = 12;
+	VectorInt3 Direction = 13;
+	repeated int32 EffectID = 14;
 
 }
 
@@ -221,43 +219,6 @@ message HitCheckInfo
 
 }
 
-message AbilityEffect
-{
-	int32 ID = 1;
-	TargetCampType TargetType = 2;
-	TriggerPosType TriggerPosType = 3;
-	int32 TriggerDelay = 4;
-	int32 TriggerTick = 5;
-	RangeType TriggerRangeType = 6;
-	TargetSelectType TargetSelectType = 7;
-	int32 TargetAmount = 8;
-	int32 Start = 9;
-	int32 Duration = 10;
-	Shape Shape = 11;
-	int32 Range = 12;
-	VectorInt3 Direction = 13;
-	repeated int32 EffectID = 14;
-
-}
-
-message VectorInt3
-{
-	int32 ID = 1;
-	int32 X = 2;
-	int32 Y = 3;
-	int32 Z = 4;
-
-}
-
-message InputActionTimelineNode
-{
-	int32 ID = 1;
-	int32 Start = 2;
-	int32 Duration = 3;
-	bool Enable = 4;
-
-}
-
 message LockActionNode
 {
 	int32 ID = 1;
@@ -266,19 +227,59 @@ message LockActionNode
 
 }
 
+message RoleConfig
+{
+	int32 ID = 1;
+	string ModelPath = 2;
+	string ModelName = 3;
+	repeated int32 Melees = 4;
+	repeated int32 Ability = 5;
+	repeated int32 AvoidAbility = 6;
+	int32 Radius = 7;
+	int32 BaseHP = 8;
+	int32 BaseAttack = 9;
+	int32 BaseDefend = 10;
+	int32 GrowHPByLevel = 11;
+	int32 GrowAttackByLevel = 12;
+	int32 GrowDefendByLevel = 13;
+	int32 GrowHPByStar = 14;
+	int32 GrowAttackByStar = 15;
+	int32 GrowDefendByStar = 16;
+	RoleType RoleType = 17;
+
+}
+
+message Timeline
+{
+	int32 ID = 1;
+	int32 TICK_INTERVAL = 2;
+	bool IsLoop = 3;
+	bool CanInput = 4;
+	int32 Duration = 5;
+	int32 ReadyTime = 6;
+	int32 RecoverTime = 7;
+	repeated HitCheckInfo HitTimeList = 8;
+	repeated LockActionNode LockAcionList = 9;
+	InputActionTimelineNode InputActionTimelineNode = 10;
+	MoveActionTimelineNode MoveActionTimelineNode = 11;
+	repeated AbilityEffect AbilityEffectNodeInfo = 12;
+	int32 ComboOverTime = 13;
+
+}
+
 
 message DataHelper 
 {
     repeated string messageType = 1;
-	map<int32, RoleConfig> RoleConfig_dict = 2;
-	map<int32, BuffConfig> BuffConfig_dict = 3;
-	map<int32, MoveActionTimelineNode> MoveActionTimelineNode_dict = 4;
+	map<int32, MoveActionTimelineNode> MoveActionTimelineNode_dict = 2;
+	map<int32, InputActionTimelineNode> InputActionTimelineNode_dict = 3;
+	map<int32, BuffConfig> BuffConfig_dict = 4;
 	map<int32, AbilityConfig> AbilityConfig_dict = 5;
-	map<int32, Timeline> Timeline_dict = 6;
-	map<int32, HitCheckInfo> HitCheckInfo_dict = 7;
-	map<int32, AbilityEffect> AbilityEffect_dict = 8;
-	map<int32, VectorInt3> VectorInt3_dict = 9;
-	map<int32, InputActionTimelineNode> InputActionTimelineNode_dict = 10;
-	map<int32, LockActionNode> LockActionNode_dict = 11;
+	map<int32, VectorInt3> VectorInt3_dict = 6;
+	map<int32, AbilityEffect> AbilityEffect_dict = 7;
+	map<int32, HitCheckInfo> HitCheckInfo_dict = 8;
+	map<int32, LockActionNode> LockActionNode_dict = 9;
+	map<int32, RoleConfig> RoleConfig_dict = 10;
+	map<int32, Timeline> Timeline_dict = 11;
 
 }

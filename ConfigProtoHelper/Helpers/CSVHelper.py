@@ -482,7 +482,9 @@ class CSVHelper:
             for index in range(0, len(self.swap_type)):
                 swap_type = self.swap_type[index]
                 if '' != data[index]:
-                    if DataType.ARRAY_TYPE == swap_type.main_type or DataType.STR_TYPE == swap_type.main_type:
+                    if DataType.ARRAY_TYPE == swap_type.main_type:
+                        temp.append(str(data[index]).replace('[', '{').replace(']', '}'))
+                    elif DataType.STR_TYPE == swap_type.main_type:
                         temp.append(str(data[index]))
                     elif DataType.INT_TYPE == swap_type.main_type:
                         temp.append(int(data[index]))

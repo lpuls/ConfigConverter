@@ -67,7 +67,7 @@ class DataType:
     @staticmethod
     def __analyze_sub_type__(types, index):
         type_name = types[index]
-        if DataType.ARRAY_TYPE == type_name or DataType.JSON_TYPE ==  type_name:
+        if DataType.ARRAY_TYPE == type_name or DataType.JSON_TYPE == type_name:
             if len(types[index:]) >= 2:
                 new_index, result = DataType.__analyze_sub_type__(types, index + 1)
                 return new_index, (type_name, result, )
@@ -80,7 +80,7 @@ class DataType:
             return index + 1, (type_name, )
         elif DataType.INT_TYPE == type_name:
             if len(types[index:]) >= 2 and not DataType.__check_type_valid__(types[index + 1]):
-                return index + 2, ( type_name, types[index + 1], )
+                return index + 2, (type_name, types[index + 1], )
             return index + 1, (type_name,)
         else:
             return index + 1, (type_name, )

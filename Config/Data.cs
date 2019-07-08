@@ -22,157 +22,172 @@ namespace Config {
     static DataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpEYXRhLnByb3RvIvECCgpSb2xlQ29uZmlnEgoKAklEGAEgASgFEhEKCU1v",
-            "ZGVsUGF0aBgCIAEoCRIRCglNb2RlbE5hbWUYAyABKAkSDgoGTWVsZWVzGAQg",
-            "AygFEg8KB0FiaWxpdHkYBSADKAUSFAoMQXZvaWRBYmlsaXR5GAYgAygFEg4K",
-            "BlJhZGl1cxgHIAEoBRIOCgZCYXNlSFAYCCABKAUSEgoKQmFzZUF0dGFjaxgJ",
-            "IAEoBRISCgpCYXNlRGVmZW5kGAogASgFEhUKDUdyb3dIUEJ5TGV2ZWwYCyAB",
-            "KAUSGQoRR3Jvd0F0dGFja0J5TGV2ZWwYDCABKAUSGQoRR3Jvd0RlZmVuZEJ5",
-            "TGV2ZWwYDSABKAUSFAoMR3Jvd0hQQnlTdGFyGA4gASgFEhgKEEdyb3dBdHRh",
-            "Y2tCeVN0YXIYDyABKAUSGAoQR3Jvd0RlZmVuZEJ5U3RhchgQIAEoBRIbCghS",
-            "b2xlVHlwZRgRIAEoDjIJLlJvbGVUeXBlIr0ECgpCdWZmQ29uZmlnEgoKAklE",
-            "GAEgASgFEhcKBFR5cGUYAiABKA4yCS5CdWZmVHlwZRIMCgROYW1lGAMgASgJ",
-            "Eh8KBlN0YXR1cxgEIAEoDjIPLkJ1ZmZTdGF0dXNUeXBlEh8KBlRhcmdldBgF",
-            "IAEoDjIPLlRhcmdldENhbXBUeXBlEg0KBUNvdW50GAYgASgFEg4KBkR1cmlu",
-            "ZxgHIAEoBRIMCgRUaWNrGAggASgFEhYKDkNvbXB1bHNvcnlMaWZ0GAkgASgF",
-            "EiQKEFRyaWdnZXJSYW5nZVR5cGUYCiABKA4yCi5SYW5nZVR5cGUSDQoFUmFu",
-            "Z2UYCyABKAUSJQoQRGFtYWdlRWZmZWN0VHlwZRgMIAEoDjILLkVmZmVjdFR5",
-            "cGUSGQoRRGFtYWdlRWZmZWN0VmFsdWUYDSABKAUSKgoRQWRkdGl2ZUVmZmVj",
-            "dFR5cGUYDiABKA4yDy5JdGVtRGV0YWlsVHlwZRIbChNBZGR0aXZlRWZmZWN0",
-            "RmFjdG9yGA8gASgFEhQKDExpbWl0QWJpbGl0eRgQIAEoBRITCgtTaGllbGRW",
-            "YWx1ZRgRIAEoBRImCg1MZWVjaExpZmVUeXBlGBIgASgOMg8uQ29udmVyc2lv",
-            "blR5cGUSFgoOTGVlY2hMaWZlUGFyYW0YEyABKAUSEwoLVHJhbnNmb3JtSUQY",
-            "FCABKAUSGgoSVHJhbnNmb3JtQXR0YWNrQXJyGBUgAygFEhkKEVRyYW5zZm9y",
-            "bVNraWxsQXJyGBYgAygFImwKFk1vdmVBY3Rpb25UaW1lbGluZU5vZGUSCgoC",
-            "SUQYASABKAUSDQoFU3RhcnQYAiABKAUSEAoIRHVyYXRpb24YAyABKAUSFQoN",
-            "QW5pbWF0aW9uTW92ZRgEIAMoBRIOCgZFbmFibGUYBSABKAgiOAoNQWJpbGl0",
-            "eUNvbmZpZxIKCgJJRBgBIAEoBRIMCgRQYXRoGAIgASgJEg0KBUFzc2V0GAMg",
-            "ASgJIo8DCghUaW1lbGluZRIKCgJJRBgBIAEoBRIVCg1USUNLX0lOVEVSVkFM",
-            "GAIgASgFEg4KBklzTG9vcBgDIAEoCBIQCghDYW5JbnB1dBgEIAEoCBIQCghE",
-            "dXJhdGlvbhgFIAEoBRIRCglSZWFkeVRpbWUYBiABKAUSEwoLUmVjb3ZlclRp",
-            "bWUYByABKAUSIgoLSGl0VGltZUxpc3QYCCADKAsyDS5IaXRDaGVja0luZm8S",
-            "JgoNTG9ja0FjaW9uTGlzdBgJIAMoCzIPLkxvY2tBY3Rpb25Ob2RlEjkKF0lu",
-            "cHV0QWN0aW9uVGltZWxpbmVOb2RlGAogASgLMhguSW5wdXRBY3Rpb25UaW1l",
-            "bGluZU5vZGUSNwoWTW92ZUFjdGlvblRpbWVsaW5lTm9kZRgLIAEoCzIXLk1v",
-            "dmVBY3Rpb25UaW1lbGluZU5vZGUSLQoVQWJpbGl0eUVmZmVjdE5vZGVJbmZv",
-            "GAwgAygLMg4uQWJpbGl0eUVmZmVjdBIVCg1Db21ib092ZXJUaW1lGA0gASgF",
-            "IpsDCgxIaXRDaGVja0luZm8SCgoCSUQYASABKAUSDQoFU3RhcnQYAiABKAUS",
-            "EQoJSGl0SGVpZ2h0GAMgASgFEhYKDlZhbGlkSGl0SGVpZ2h0GAQgASgFEh0K",
-            "CVJhbmdlVHlwZRgFIAEoDjIKLlJhbmdlVHlwZRINCgVSYW5nZRgGIAEoBRIO",
-            "CgZSYWRpdXMYByABKAUSDQoFQW5nbGUYCCABKAUSDgoGTGVuZ3RoGAkgASgF",
-            "Eg0KBVdpZHRoGAogASgFEiEKDENlbnRlck9mZnNldBgLIAEoCzILLlZlY3Rv",
-            "ckludDMSFwoPSG9yaXpvbnRhbFNwZWVkGAwgASgFEiMKG0hvcml6b250YWxB",
-            "Y2NlbGVyYXRlZEFTcGVlZBgNIAEoBRIQCghEdXJhdGlvbhgOIAEoBRIVCg1W",
-            "ZXJ0aWNhbFNwZWVkGA8gASgFEiAKGFZlcnRpY2FsQWNjZWxlcmF0ZWRTcGVl",
-            "ZBgQIAEoBRIUCgxIaXREYW1hZ2VQZWMYESABKAUSFwoPSGl0RGFtYWdlQmFz",
-            "aWNzGBIgASgFIvYCCg1BYmlsaXR5RWZmZWN0EgoKAklEGAEgASgFEiMKClRh",
-            "cmdldFR5cGUYAiABKA4yDy5UYXJnZXRDYW1wVHlwZRInCg5UcmlnZ2VyUG9z",
-            "VHlwZRgDIAEoDjIPLlRyaWdnZXJQb3NUeXBlEhQKDFRyaWdnZXJEZWxheRgE",
-            "IAEoBRITCgtUcmlnZ2VyVGljaxgFIAEoBRIkChBUcmlnZ2VyUmFuZ2VUeXBl",
-            "GAYgASgOMgouUmFuZ2VUeXBlEisKEFRhcmdldFNlbGVjdFR5cGUYByABKA4y",
-            "ES5UYXJnZXRTZWxlY3RUeXBlEhQKDFRhcmdldEFtb3VudBgIIAEoBRINCgVT",
-            "dGFydBgJIAEoBRIQCghEdXJhdGlvbhgKIAEoBRIVCgVTaGFwZRgLIAEoDjIG",
-            "LlNoYXBlEg0KBVJhbmdlGAwgASgFEh4KCURpcmVjdGlvbhgNIAEoCzILLlZl",
-            "Y3RvckludDMSEAoIRWZmZWN0SUQYDiADKAUiOQoKVmVjdG9ySW50MxIKCgJJ",
-            "RBgBIAEoBRIJCgFYGAIgASgFEgkKAVkYAyABKAUSCQoBWhgEIAEoBSJWChdJ",
-            "bnB1dEFjdGlvblRpbWVsaW5lTm9kZRIKCgJJRBgBIAEoBRINCgVTdGFydBgC",
-            "IAEoBRIQCghEdXJhdGlvbhgDIAEoBRIOCgZFbmFibGUYBCABKAgiPQoOTG9j",
-            "a0FjdGlvbk5vZGUSCgoCSUQYASABKAUSDQoFU3RhcnQYAiABKAUSEAoIRHVy",
-            "YXRpb24YAyABKAUimQsKCkRhdGFIZWxwZXISEwoLbWVzc2FnZVR5cGUYASAD",
-            "KAkSOAoPUm9sZUNvbmZpZ19kaWN0GAIgAygLMh8uRGF0YUhlbHBlci5Sb2xl",
-            "Q29uZmlnRGljdEVudHJ5EjgKD0J1ZmZDb25maWdfZGljdBgDIAMoCzIfLkRh",
-            "dGFIZWxwZXIuQnVmZkNvbmZpZ0RpY3RFbnRyeRJQChtNb3ZlQWN0aW9uVGlt",
-            "ZWxpbmVOb2RlX2RpY3QYBCADKAsyKy5EYXRhSGVscGVyLk1vdmVBY3Rpb25U",
-            "aW1lbGluZU5vZGVEaWN0RW50cnkSPgoSQWJpbGl0eUNvbmZpZ19kaWN0GAUg",
-            "AygLMiIuRGF0YUhlbHBlci5BYmlsaXR5Q29uZmlnRGljdEVudHJ5EjQKDVRp",
-            "bWVsaW5lX2RpY3QYBiADKAsyHS5EYXRhSGVscGVyLlRpbWVsaW5lRGljdEVu",
-            "dHJ5EjwKEUhpdENoZWNrSW5mb19kaWN0GAcgAygLMiEuRGF0YUhlbHBlci5I",
-            "aXRDaGVja0luZm9EaWN0RW50cnkSPgoSQWJpbGl0eUVmZmVjdF9kaWN0GAgg",
-            "AygLMiIuRGF0YUhlbHBlci5BYmlsaXR5RWZmZWN0RGljdEVudHJ5EjgKD1Zl",
-            "Y3RvckludDNfZGljdBgJIAMoCzIfLkRhdGFIZWxwZXIuVmVjdG9ySW50M0Rp",
-            "Y3RFbnRyeRJSChxJbnB1dEFjdGlvblRpbWVsaW5lTm9kZV9kaWN0GAogAygL",
-            "MiwuRGF0YUhlbHBlci5JbnB1dEFjdGlvblRpbWVsaW5lTm9kZURpY3RFbnRy",
-            "eRJAChNMb2NrQWN0aW9uTm9kZV9kaWN0GAsgAygLMiMuRGF0YUhlbHBlci5M",
-            "b2NrQWN0aW9uTm9kZURpY3RFbnRyeRpCChNSb2xlQ29uZmlnRGljdEVudHJ5",
-            "EgsKA2tleRgBIAEoBRIaCgV2YWx1ZRgCIAEoCzILLlJvbGVDb25maWc6AjgB",
-            "GkIKE0J1ZmZDb25maWdEaWN0RW50cnkSCwoDa2V5GAEgASgFEhoKBXZhbHVl",
-            "GAIgASgLMgsuQnVmZkNvbmZpZzoCOAEaWgofTW92ZUFjdGlvblRpbWVsaW5l",
-            "Tm9kZURpY3RFbnRyeRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy5N",
-            "b3ZlQWN0aW9uVGltZWxpbmVOb2RlOgI4ARpIChZBYmlsaXR5Q29uZmlnRGlj",
-            "dEVudHJ5EgsKA2tleRgBIAEoBRIdCgV2YWx1ZRgCIAEoCzIOLkFiaWxpdHlD",
-            "b25maWc6AjgBGj4KEVRpbWVsaW5lRGljdEVudHJ5EgsKA2tleRgBIAEoBRIY",
-            "CgV2YWx1ZRgCIAEoCzIJLlRpbWVsaW5lOgI4ARpGChVIaXRDaGVja0luZm9E",
-            "aWN0RW50cnkSCwoDa2V5GAEgASgFEhwKBXZhbHVlGAIgASgLMg0uSGl0Q2hl",
-            "Y2tJbmZvOgI4ARpIChZBYmlsaXR5RWZmZWN0RGljdEVudHJ5EgsKA2tleRgB",
-            "IAEoBRIdCgV2YWx1ZRgCIAEoCzIOLkFiaWxpdHlFZmZlY3Q6AjgBGkIKE1Zl",
-            "Y3RvckludDNEaWN0RW50cnkSCwoDa2V5GAEgASgFEhoKBXZhbHVlGAIgASgL",
-            "MgsuVmVjdG9ySW50MzoCOAEaXAogSW5wdXRBY3Rpb25UaW1lbGluZU5vZGVE",
-            "aWN0RW50cnkSCwoDa2V5GAEgASgFEicKBXZhbHVlGAIgASgLMhguSW5wdXRB",
-            "Y3Rpb25UaW1lbGluZU5vZGU6AjgBGkoKF0xvY2tBY3Rpb25Ob2RlRGljdEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRIeCgV2YWx1ZRgCIAEoCzIPLkxvY2tBY3Rpb25O",
-            "b2RlOgI4ASrFBQoOQnVmZlN0YXR1c1R5cGUSFwoTQnVmZlN0YXR1c1R5cGVf",
-            "bm9uZRAAEhgKFEJ1ZmZTdGF0dXNUeXBlX2JsZWVkEAESGQoVQnVmZlN0YXR1",
-            "c1R5cGVfZmlyaW5nEAISGwoXQnVmZlN0YXR1c1R5cGVfZW50YW5nbGUQAxId",
-            "ChlCdWZmU3RhdHVzVHlwZV9pbW1vYmlsaXplEAQSFwoTQnVmZlN0YXR1c1R5",
-            "cGVfc3R1bhAFEhoKFkJ1ZmZTdGF0dXNUeXBlX3NpbGVuY2UQBhIYChRCdWZm",
-            "U3RhdHVzVHlwZV9zbGVlcBAHEhcKE0J1ZmZTdGF0dXNUeXBlX2ZlYXIQCBIc",
-            "ChhCdWZmU3RhdHVzVHlwZV9wb2lzb25pbmcQCRIdChlCdWZmU3RhdHVzVHlw",
-            "ZV9pbnZpbmNpYmxlEAoSHAoYQnVmZlN0YXR1c1R5cGVfbG93ZXJfZGVmEAsS",
-            "IQodQnVmZlN0YXR1c1R5cGVfbG93ZXJfYWNjdXJhY3kQDBIiCh5CdWZmU3Rh",
-            "dHVzVHlwZV9jb250aW51ZV9yZWdhaW4QDRIeChpCdWZmU3RhdHVzVHlwZV9l",
-            "bmhhbmNlX2RlZhAOEh4KGkJ1ZmZTdGF0dXNUeXBlX2VuaGFuY2VfYXRrEA8S",
-            "GAoUQnVmZlN0YXR1c1R5cGVfZGVhdGgQEBIZChVCdWZmU3RhdHVzVHlwZV9m",
-            "cmVlemUQERIcChhCdWZmU3RhdHVzVHlwZV9wYXJhbHlzaXMQEhIZChVCdWZm",
-            "U3RhdHVzVHlwZV9zdHVwaWQQExIZChVCdWZmU3RhdHVzVHlwZV9kaXNhcm0Q",
-            "FBIZChVCdWZmU3RhdHVzVHlwZV9zaGllbGQQFRIdChlCdWZmU3RhdHVzVHlw",
-            "ZV9sZWVjaF9saWZlEBYSHAoYQnVmZlN0YXR1c1R5cGVfdHJhbnNmb3JtEBcq",
-            "8AEKEFRhcmdldFNlbGVjdFR5cGUSGQoVVGFyZ2V0U2VsZWN0VHlwZV9ub25l",
-            "EAASHAoYVGFyZ2V0U2VsZWN0VHlwZV9uZWFyZXN0EAESHQoZVGFyZ2V0U2Vs",
-            "ZWN0VHlwZV9mYXJ0aGVzdBACEh0KGVRhcmdldFNlbGVjdFR5cGVfaHBfbGVh",
-            "c3QQAxIfChtUYXJnZXRTZWxlY3RUeXBlX2hwX21heGltdW0QBBInCiNUYXJn",
-            "ZXRTZWxlY3RUeXBlX2JhdHRsZV9hYmlsaXR5X21heBAFEhsKF1RhcmdldFNl",
-            "bGVjdFR5cGVfcmFuZG9tEAYqYAoOVHJpZ2dlclBvc1R5cGUSFwoTVHJpZ2dl",
-            "clBvc1R5cGVfbm9uZRAAEhoKFlRyaWdnZXJQb3NUeXBlX29uZXNlbGYQARIZ",
-            "ChVUcmlnZ2VyUG9zVHlwZV90YXJnZXQQAiopCg5JdGVtRGV0YWlsVHlwZRIX",
-            "ChNJdGVtRGV0YWlsVHlwZV9ub25lEAAqRQoIQnVmZlR5cGUSEQoNQnVmZlR5",
-            "cGVfbm9uZRAAEhEKDUJ1ZmZUeXBlX2J1ZmYQARITCg9CdWZmVHlwZV9kZWJ1",
-            "ZmYQAiqiAQoJUmFuZ2VUeXBlEhIKDlJhbmdlVHlwZV9ub25lEAASGgoWUmFu",
+            "CgpEYXRhLnByb3RvIjkKClZlY3RvckludDMSCgoCSUQYASABKAUSCQoBWBgC",
+            "IAEoBRIJCgFZGAMgASgFEgkKAVoYBCABKAUimwMKDEhpdENoZWNrSW5mbxIK",
+            "CgJJRBgBIAEoBRINCgVTdGFydBgCIAEoBRIRCglIaXRIZWlnaHQYAyABKAUS",
+            "FgoOVmFsaWRIaXRIZWlnaHQYBCABKAUSHQoJUmFuZ2VUeXBlGAUgASgOMgou",
+            "UmFuZ2VUeXBlEg0KBVJhbmdlGAYgASgFEg4KBlJhZGl1cxgHIAEoBRINCgVB",
+            "bmdsZRgIIAEoBRIOCgZMZW5ndGgYCSABKAUSDQoFV2lkdGgYCiABKAUSIQoM",
+            "Q2VudGVyT2Zmc2V0GAsgASgLMgsuVmVjdG9ySW50MxIXCg9Ib3Jpem9udGFs",
+            "U3BlZWQYDCABKAUSIwobSG9yaXpvbnRhbEFjY2VsZXJhdGVkQVNwZWVkGA0g",
+            "ASgFEhAKCER1cmF0aW9uGA4gASgFEhUKDVZlcnRpY2FsU3BlZWQYDyABKAUS",
+            "IAoYVmVydGljYWxBY2NlbGVyYXRlZFNwZWVkGBAgASgFEhQKDEhpdERhbWFn",
+            "ZVBlYxgRIAEoBRIXCg9IaXREYW1hZ2VCYXNpY3MYEiABKAUi8QIKClJvbGVD",
+            "b25maWcSCgoCSUQYASABKAUSEQoJTW9kZWxQYXRoGAIgASgJEhEKCU1vZGVs",
+            "TmFtZRgDIAEoCRIOCgZNZWxlZXMYBCADKAUSDwoHQWJpbGl0eRgFIAMoBRIU",
+            "CgxBdm9pZEFiaWxpdHkYBiADKAUSDgoGUmFkaXVzGAcgASgFEg4KBkJhc2VI",
+            "UBgIIAEoBRISCgpCYXNlQXR0YWNrGAkgASgFEhIKCkJhc2VEZWZlbmQYCiAB",
+            "KAUSFQoNR3Jvd0hQQnlMZXZlbBgLIAEoBRIZChFHcm93QXR0YWNrQnlMZXZl",
+            "bBgMIAEoBRIZChFHcm93RGVmZW5kQnlMZXZlbBgNIAEoBRIUCgxHcm93SFBC",
+            "eVN0YXIYDiABKAUSGAoQR3Jvd0F0dGFja0J5U3RhchgPIAEoBRIYChBHcm93",
+            "RGVmZW5kQnlTdGFyGBAgASgFEhsKCFJvbGVUeXBlGBEgASgOMgkuUm9sZVR5",
+            "cGUijwMKCFRpbWVsaW5lEgoKAklEGAEgASgFEhUKDVRJQ0tfSU5URVJWQUwY",
+            "AiABKAUSDgoGSXNMb29wGAMgASgIEhAKCENhbklucHV0GAQgASgIEhAKCER1",
+            "cmF0aW9uGAUgASgFEhEKCVJlYWR5VGltZRgGIAEoBRITCgtSZWNvdmVyVGlt",
+            "ZRgHIAEoBRIiCgtIaXRUaW1lTGlzdBgIIAMoCzINLkhpdENoZWNrSW5mbxIm",
+            "Cg1Mb2NrQWNpb25MaXN0GAkgAygLMg8uTG9ja0FjdGlvbk5vZGUSOQoXSW5w",
+            "dXRBY3Rpb25UaW1lbGluZU5vZGUYCiABKAsyGC5JbnB1dEFjdGlvblRpbWVs",
+            "aW5lTm9kZRI3ChZNb3ZlQWN0aW9uVGltZWxpbmVOb2RlGAsgASgLMhcuTW92",
+            "ZUFjdGlvblRpbWVsaW5lTm9kZRItChVBYmlsaXR5RWZmZWN0Tm9kZUluZm8Y",
+            "DCADKAsyDi5BYmlsaXR5RWZmZWN0EhUKDUNvbWJvT3ZlclRpbWUYDSABKAUi",
+            "bAoWTW92ZUFjdGlvblRpbWVsaW5lTm9kZRIKCgJJRBgBIAEoBRINCgVTdGFy",
+            "dBgCIAEoBRIQCghEdXJhdGlvbhgDIAEoBRIVCg1BbmltYXRpb25Nb3ZlGAQg",
+            "AygFEg4KBkVuYWJsZRgFIAEoCCK9BAoKQnVmZkNvbmZpZxIKCgJJRBgBIAEo",
+            "BRIXCgRUeXBlGAIgASgOMgkuQnVmZlR5cGUSDAoETmFtZRgDIAEoCRIfCgZT",
+            "dGF0dXMYBCABKA4yDy5CdWZmU3RhdHVzVHlwZRIfCgZUYXJnZXQYBSABKA4y",
+            "Dy5UYXJnZXRDYW1wVHlwZRINCgVDb3VudBgGIAEoBRIOCgZEdXJpbmcYByAB",
+            "KAUSDAoEVGljaxgIIAEoBRIWCg5Db21wdWxzb3J5TGlmdBgJIAEoBRIkChBU",
+            "cmlnZ2VyUmFuZ2VUeXBlGAogASgOMgouUmFuZ2VUeXBlEg0KBVJhbmdlGAsg",
+            "ASgFEiUKEERhbWFnZUVmZmVjdFR5cGUYDCABKA4yCy5FZmZlY3RUeXBlEhkK",
+            "EURhbWFnZUVmZmVjdFZhbHVlGA0gASgFEioKEUFkZHRpdmVFZmZlY3RUeXBl",
+            "GA4gASgOMg8uSXRlbURldGFpbFR5cGUSGwoTQWRkdGl2ZUVmZmVjdEZhY3Rv",
+            "chgPIAEoBRIUCgxMaW1pdEFiaWxpdHkYECABKAUSEwoLU2hpZWxkVmFsdWUY",
+            "ESABKAUSJgoNTGVlY2hMaWZlVHlwZRgSIAEoDjIPLkNvbnZlcnNpb25UeXBl",
+            "EhYKDkxlZWNoTGlmZVBhcmFtGBMgASgFEhMKC1RyYW5zZm9ybUlEGBQgASgF",
+            "EhoKElRyYW5zZm9ybUF0dGFja0FychgVIAMoBRIZChFUcmFuc2Zvcm1Ta2ls",
+            "bEFychgWIAMoBSL2AgoNQWJpbGl0eUVmZmVjdBIKCgJJRBgBIAEoBRIjCgpU",
+            "YXJnZXRUeXBlGAIgASgOMg8uVGFyZ2V0Q2FtcFR5cGUSJwoOVHJpZ2dlclBv",
+            "c1R5cGUYAyABKA4yDy5UcmlnZ2VyUG9zVHlwZRIUCgxUcmlnZ2VyRGVsYXkY",
+            "BCABKAUSEwoLVHJpZ2dlclRpY2sYBSABKAUSJAoQVHJpZ2dlclJhbmdlVHlw",
+            "ZRgGIAEoDjIKLlJhbmdlVHlwZRIrChBUYXJnZXRTZWxlY3RUeXBlGAcgASgO",
+            "MhEuVGFyZ2V0U2VsZWN0VHlwZRIUCgxUYXJnZXRBbW91bnQYCCABKAUSDQoF",
+            "U3RhcnQYCSABKAUSEAoIRHVyYXRpb24YCiABKAUSFQoFU2hhcGUYCyABKA4y",
+            "Bi5TaGFwZRINCgVSYW5nZRgMIAEoBRIeCglEaXJlY3Rpb24YDSABKAsyCy5W",
+            "ZWN0b3JJbnQzEhAKCEVmZmVjdElEGA4gAygFIjgKDUFiaWxpdHlDb25maWcS",
+            "CgoCSUQYASABKAUSDAoEUGF0aBgCIAEoCRINCgVBc3NldBgDIAEoCSI9Cg5M",
+            "b2NrQWN0aW9uTm9kZRIKCgJJRBgBIAEoBRINCgVTdGFydBgCIAEoBRIQCghE",
+            "dXJhdGlvbhgDIAEoBSJWChdJbnB1dEFjdGlvblRpbWVsaW5lTm9kZRIKCgJJ",
+            "RBgBIAEoBRINCgVTdGFydBgCIAEoBRIQCghEdXJhdGlvbhgDIAEoBRIOCgZF",
+            "bmFibGUYBCABKAgimQsKCkRhdGFIZWxwZXISEwoLbWVzc2FnZVR5cGUYASAD",
+            "KAkSOAoPVmVjdG9ySW50M19kaWN0GAIgAygLMh8uRGF0YUhlbHBlci5WZWN0",
+            "b3JJbnQzRGljdEVudHJ5EjwKEUhpdENoZWNrSW5mb19kaWN0GAMgAygLMiEu",
+            "RGF0YUhlbHBlci5IaXRDaGVja0luZm9EaWN0RW50cnkSOAoPUm9sZUNvbmZp",
+            "Z19kaWN0GAQgAygLMh8uRGF0YUhlbHBlci5Sb2xlQ29uZmlnRGljdEVudHJ5",
+            "EjQKDVRpbWVsaW5lX2RpY3QYBSADKAsyHS5EYXRhSGVscGVyLlRpbWVsaW5l",
+            "RGljdEVudHJ5ElAKG01vdmVBY3Rpb25UaW1lbGluZU5vZGVfZGljdBgGIAMo",
+            "CzIrLkRhdGFIZWxwZXIuTW92ZUFjdGlvblRpbWVsaW5lTm9kZURpY3RFbnRy",
+            "eRI4Cg9CdWZmQ29uZmlnX2RpY3QYByADKAsyHy5EYXRhSGVscGVyLkJ1ZmZD",
+            "b25maWdEaWN0RW50cnkSPgoSQWJpbGl0eUVmZmVjdF9kaWN0GAggAygLMiIu",
+            "RGF0YUhlbHBlci5BYmlsaXR5RWZmZWN0RGljdEVudHJ5Ej4KEkFiaWxpdHlD",
+            "b25maWdfZGljdBgJIAMoCzIiLkRhdGFIZWxwZXIuQWJpbGl0eUNvbmZpZ0Rp",
+            "Y3RFbnRyeRJAChNMb2NrQWN0aW9uTm9kZV9kaWN0GAogAygLMiMuRGF0YUhl",
+            "bHBlci5Mb2NrQWN0aW9uTm9kZURpY3RFbnRyeRJSChxJbnB1dEFjdGlvblRp",
+            "bWVsaW5lTm9kZV9kaWN0GAsgAygLMiwuRGF0YUhlbHBlci5JbnB1dEFjdGlv",
+            "blRpbWVsaW5lTm9kZURpY3RFbnRyeRpCChNWZWN0b3JJbnQzRGljdEVudHJ5",
+            "EgsKA2tleRgBIAEoBRIaCgV2YWx1ZRgCIAEoCzILLlZlY3RvckludDM6AjgB",
+            "GkYKFUhpdENoZWNrSW5mb0RpY3RFbnRyeRILCgNrZXkYASABKAUSHAoFdmFs",
+            "dWUYAiABKAsyDS5IaXRDaGVja0luZm86AjgBGkIKE1JvbGVDb25maWdEaWN0",
+            "RW50cnkSCwoDa2V5GAEgASgFEhoKBXZhbHVlGAIgASgLMgsuUm9sZUNvbmZp",
+            "ZzoCOAEaPgoRVGltZWxpbmVEaWN0RW50cnkSCwoDa2V5GAEgASgFEhgKBXZh",
+            "bHVlGAIgASgLMgkuVGltZWxpbmU6AjgBGloKH01vdmVBY3Rpb25UaW1lbGlu",
+            "ZU5vZGVEaWN0RW50cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVlGAIgASgLMhcu",
+            "TW92ZUFjdGlvblRpbWVsaW5lTm9kZToCOAEaQgoTQnVmZkNvbmZpZ0RpY3RF",
+            "bnRyeRILCgNrZXkYASABKAUSGgoFdmFsdWUYAiABKAsyCy5CdWZmQ29uZmln",
+            "OgI4ARpIChZBYmlsaXR5RWZmZWN0RGljdEVudHJ5EgsKA2tleRgBIAEoBRId",
+            "CgV2YWx1ZRgCIAEoCzIOLkFiaWxpdHlFZmZlY3Q6AjgBGkgKFkFiaWxpdHlD",
+            "b25maWdEaWN0RW50cnkSCwoDa2V5GAEgASgFEh0KBXZhbHVlGAIgASgLMg4u",
+            "QWJpbGl0eUNvbmZpZzoCOAEaSgoXTG9ja0FjdGlvbk5vZGVEaWN0RW50cnkS",
+            "CwoDa2V5GAEgASgFEh4KBXZhbHVlGAIgASgLMg8uTG9ja0FjdGlvbk5vZGU6",
+            "AjgBGlwKIElucHV0QWN0aW9uVGltZWxpbmVOb2RlRGljdEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRInCgV2YWx1ZRgCIAEoCzIYLklucHV0QWN0aW9uVGltZWxpbmVO",
+            "b2RlOgI4ASpFCghCdWZmVHlwZRIRCg1CdWZmVHlwZV9ub25lEAASEQoNQnVm",
+            "ZlR5cGVfYnVmZhABEhMKD0J1ZmZUeXBlX2RlYnVmZhACKsUFCg5CdWZmU3Rh",
+            "dHVzVHlwZRIXChNCdWZmU3RhdHVzVHlwZV9ub25lEAASGAoUQnVmZlN0YXR1",
+            "c1R5cGVfYmxlZWQQARIZChVCdWZmU3RhdHVzVHlwZV9maXJpbmcQAhIbChdC",
+            "dWZmU3RhdHVzVHlwZV9lbnRhbmdsZRADEh0KGUJ1ZmZTdGF0dXNUeXBlX2lt",
+            "bW9iaWxpemUQBBIXChNCdWZmU3RhdHVzVHlwZV9zdHVuEAUSGgoWQnVmZlN0",
+            "YXR1c1R5cGVfc2lsZW5jZRAGEhgKFEJ1ZmZTdGF0dXNUeXBlX3NsZWVwEAcS",
+            "FwoTQnVmZlN0YXR1c1R5cGVfZmVhchAIEhwKGEJ1ZmZTdGF0dXNUeXBlX3Bv",
+            "aXNvbmluZxAJEh0KGUJ1ZmZTdGF0dXNUeXBlX2ludmluY2libGUQChIcChhC",
+            "dWZmU3RhdHVzVHlwZV9sb3dlcl9kZWYQCxIhCh1CdWZmU3RhdHVzVHlwZV9s",
+            "b3dlcl9hY2N1cmFjeRAMEiIKHkJ1ZmZTdGF0dXNUeXBlX2NvbnRpbnVlX3Jl",
+            "Z2FpbhANEh4KGkJ1ZmZTdGF0dXNUeXBlX2VuaGFuY2VfZGVmEA4SHgoaQnVm",
+            "ZlN0YXR1c1R5cGVfZW5oYW5jZV9hdGsQDxIYChRCdWZmU3RhdHVzVHlwZV9k",
+            "ZWF0aBAQEhkKFUJ1ZmZTdGF0dXNUeXBlX2ZyZWV6ZRAREhwKGEJ1ZmZTdGF0",
+            "dXNUeXBlX3BhcmFseXNpcxASEhkKFUJ1ZmZTdGF0dXNUeXBlX3N0dXBpZBAT",
+            "EhkKFUJ1ZmZTdGF0dXNUeXBlX2Rpc2FybRAUEhkKFUJ1ZmZTdGF0dXNUeXBl",
+            "X3NoaWVsZBAVEh0KGUJ1ZmZTdGF0dXNUeXBlX2xlZWNoX2xpZmUQFhIcChhC",
+            "dWZmU3RhdHVzVHlwZV90cmFuc2Zvcm0QFyopCg5JdGVtRGV0YWlsVHlwZRIX",
+            "ChNJdGVtRGV0YWlsVHlwZV9ub25lEAAqOwoFU2hhcGUSDgoKU2hhcGVfTk9O",
+            "RRAAEhAKDFNoYXBlX0NJUkNMRRABEhAKDFNoYXBlX1NFQ1RPUhACKo4BCg5U",
+            "YXJnZXRDYW1wVHlwZRIXChNUYXJnZXRDYW1wVHlwZV9ub25lEAASFQoRVGFy",
+            "Z2V0Q2FtcFR5cGVfd2UQARIYChRUYXJnZXRDYW1wVHlwZV9lbmVteRACEhoK",
+            "FlRhcmdldENhbXBUeXBlX29uZXNlbGYQAxIWChJUYXJnZXRDYW1wVHlwZV9h",
+            "bGwQBCqiAQoJUmFuZ2VUeXBlEhIKDlJhbmdlVHlwZV9ub25lEAASGgoWUmFu",
             "Z2VUeXBlX3N0cmFpZ2h0bGluZRABEhQKEFJhbmdlVHlwZV9zZWN0b3IQAhIX",
             "ChNSYW5nZVR5cGVfcm91bmRuZXNzEAMSFwoTUmFuZ2VUeXBlX3JlY3Rhbmds",
-            "ZRAEEh0KGVJhbmdlVHlwZV9tdWx0aV9kaXJlY3Rpb24QBSqHAQoIUm9sZVR5",
-            "cGUSEQoNUm9sZVR5cGVfTm9uZRAAEhMKD1JvbGVUeXBlX1BsYXllchABEhIK",
-            "DlJvbGVUeXBlX0VuZW15EAISFAoQUm9sZVR5cGVfTmV1dHJhbBAEEhMKD1Jv",
-            "bGVUeXBlX0J1bmtlchAIEhQKEFJvbGVUeXBlX1RyaWdnZXIQECo7CgVTaGFw",
-            "ZRIOCgpTaGFwZV9OT05FEAASEAoMU2hhcGVfQ0lSQ0xFEAESEAoMU2hhcGVf",
-            "U0VDVE9SEAIqjgEKDlRhcmdldENhbXBUeXBlEhcKE1RhcmdldENhbXBUeXBl",
-            "X25vbmUQABIVChFUYXJnZXRDYW1wVHlwZV93ZRABEhgKFFRhcmdldENhbXBU",
-            "eXBlX2VuZW15EAISGgoWVGFyZ2V0Q2FtcFR5cGVfb25lc2VsZhADEhYKElRh",
-            "cmdldENhbXBUeXBlX2FsbBAEKoABCgpFZmZlY3RUeXBlEhMKD0VmZmVjdFR5",
-            "cGVfbm9uZRAAEhsKF0VmZmVjdFR5cGVfZ2VuZXJhbF9oYXJtEAESEwoPRWZm",
-            "ZWN0VHlwZV9oYXJtEAISFQoRRWZmZWN0VHlwZV9lZmZlY3QQAxIUChBFZmZl",
-            "Y3RUeXBlX2RlYXRoEAQqYgoOQ29udmVyc2lvblR5cGUSFwoTQ29udmVyc2lv",
-            "blR5cGVfbm9uZRAAEhgKFENvbnZlcnNpb25UeXBlX2ZpeGVkEAESHQoZQ29u",
-            "dmVyc2lvblR5cGVfcGVyY2VudGFnZRACQgmqAgZDb25maWdiBnByb3RvMw=="));
+            "ZRAEEh0KGVJhbmdlVHlwZV9tdWx0aV9kaXJlY3Rpb24QBSpiCg5Db252ZXJz",
+            "aW9uVHlwZRIXChNDb252ZXJzaW9uVHlwZV9ub25lEAASGAoUQ29udmVyc2lv",
+            "blR5cGVfZml4ZWQQARIdChlDb252ZXJzaW9uVHlwZV9wZXJjZW50YWdlEAIq",
+            "gAEKCkVmZmVjdFR5cGUSEwoPRWZmZWN0VHlwZV9ub25lEAASGwoXRWZmZWN0",
+            "VHlwZV9nZW5lcmFsX2hhcm0QARITCg9FZmZlY3RUeXBlX2hhcm0QAhIVChFF",
+            "ZmZlY3RUeXBlX2VmZmVjdBADEhQKEEVmZmVjdFR5cGVfZGVhdGgQBCqHAQoI",
+            "Um9sZVR5cGUSEQoNUm9sZVR5cGVfTm9uZRAAEhMKD1JvbGVUeXBlX1BsYXll",
+            "chABEhIKDlJvbGVUeXBlX0VuZW15EAISFAoQUm9sZVR5cGVfTmV1dHJhbBAE",
+            "EhMKD1JvbGVUeXBlX0J1bmtlchAIEhQKEFJvbGVUeXBlX1RyaWdnZXIQECpg",
+            "Cg5UcmlnZ2VyUG9zVHlwZRIXChNUcmlnZ2VyUG9zVHlwZV9ub25lEAASGgoW",
+            "VHJpZ2dlclBvc1R5cGVfb25lc2VsZhABEhkKFVRyaWdnZXJQb3NUeXBlX3Rh",
+            "cmdldBACKvABChBUYXJnZXRTZWxlY3RUeXBlEhkKFVRhcmdldFNlbGVjdFR5",
+            "cGVfbm9uZRAAEhwKGFRhcmdldFNlbGVjdFR5cGVfbmVhcmVzdBABEh0KGVRh",
+            "cmdldFNlbGVjdFR5cGVfZmFydGhlc3QQAhIdChlUYXJnZXRTZWxlY3RUeXBl",
+            "X2hwX2xlYXN0EAMSHwobVGFyZ2V0U2VsZWN0VHlwZV9ocF9tYXhpbXVtEAQS",
+            "JwojVGFyZ2V0U2VsZWN0VHlwZV9iYXR0bGVfYWJpbGl0eV9tYXgQBRIbChdU",
+            "YXJnZXRTZWxlY3RUeXBlX3JhbmRvbRAGQgmqAgZDb25maWdiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Config.BuffStatusType), typeof(global::Config.TargetSelectType), typeof(global::Config.TriggerPosType), typeof(global::Config.ItemDetailType), typeof(global::Config.BuffType), typeof(global::Config.RangeType), typeof(global::Config.RoleType), typeof(global::Config.Shape), typeof(global::Config.TargetCampType), typeof(global::Config.EffectType), typeof(global::Config.ConversionType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.RoleConfig), global::Config.RoleConfig.Parser, new[]{ "ID", "ModelPath", "ModelName", "Melees", "Ability", "AvoidAbility", "Radius", "BaseHP", "BaseAttack", "BaseDefend", "GrowHPByLevel", "GrowAttackByLevel", "GrowDefendByLevel", "GrowHPByStar", "GrowAttackByStar", "GrowDefendByStar", "RoleType" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.BuffConfig), global::Config.BuffConfig.Parser, new[]{ "ID", "Type", "Name", "Status", "Target", "Count", "During", "Tick", "CompulsoryLift", "TriggerRangeType", "Range", "DamageEffectType", "DamageEffectValue", "AddtiveEffectType", "AddtiveEffectFactor", "LimitAbility", "ShieldValue", "LeechLifeType", "LeechLifeParam", "TransformID", "TransformAttackArr", "TransformSkillArr" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.MoveActionTimelineNode), global::Config.MoveActionTimelineNode.Parser, new[]{ "ID", "Start", "Duration", "AnimationMove", "Enable" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.AbilityConfig), global::Config.AbilityConfig.Parser, new[]{ "ID", "Path", "Asset" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.Timeline), global::Config.Timeline.Parser, new[]{ "ID", "TICKINTERVAL", "IsLoop", "CanInput", "Duration", "ReadyTime", "RecoverTime", "HitTimeList", "LockAcionList", "InputActionTimelineNode", "MoveActionTimelineNode", "AbilityEffectNodeInfo", "ComboOverTime" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.HitCheckInfo), global::Config.HitCheckInfo.Parser, new[]{ "ID", "Start", "HitHeight", "ValidHitHeight", "RangeType", "Range", "Radius", "Angle", "Length", "Width", "CenterOffset", "HorizontalSpeed", "HorizontalAcceleratedASpeed", "Duration", "VerticalSpeed", "VerticalAcceleratedSpeed", "HitDamagePec", "HitDamageBasics" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.AbilityEffect), global::Config.AbilityEffect.Parser, new[]{ "ID", "TargetType", "TriggerPosType", "TriggerDelay", "TriggerTick", "TriggerRangeType", "TargetSelectType", "TargetAmount", "Start", "Duration", "Shape", "Range", "Direction", "EffectID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Config.BuffType), typeof(global::Config.BuffStatusType), typeof(global::Config.ItemDetailType), typeof(global::Config.Shape), typeof(global::Config.TargetCampType), typeof(global::Config.RangeType), typeof(global::Config.ConversionType), typeof(global::Config.EffectType), typeof(global::Config.RoleType), typeof(global::Config.TriggerPosType), typeof(global::Config.TargetSelectType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Config.VectorInt3), global::Config.VectorInt3.Parser, new[]{ "ID", "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.InputActionTimelineNode), global::Config.InputActionTimelineNode.Parser, new[]{ "ID", "Start", "Duration", "Enable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.HitCheckInfo), global::Config.HitCheckInfo.Parser, new[]{ "ID", "Start", "HitHeight", "ValidHitHeight", "RangeType", "Range", "Radius", "Angle", "Length", "Width", "CenterOffset", "HorizontalSpeed", "HorizontalAcceleratedASpeed", "Duration", "VerticalSpeed", "VerticalAcceleratedSpeed", "HitDamagePec", "HitDamageBasics" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.RoleConfig), global::Config.RoleConfig.Parser, new[]{ "ID", "ModelPath", "ModelName", "Melees", "Ability", "AvoidAbility", "Radius", "BaseHP", "BaseAttack", "BaseDefend", "GrowHPByLevel", "GrowAttackByLevel", "GrowDefendByLevel", "GrowHPByStar", "GrowAttackByStar", "GrowDefendByStar", "RoleType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.Timeline), global::Config.Timeline.Parser, new[]{ "ID", "TICKINTERVAL", "IsLoop", "CanInput", "Duration", "ReadyTime", "RecoverTime", "HitTimeList", "LockAcionList", "InputActionTimelineNode", "MoveActionTimelineNode", "AbilityEffectNodeInfo", "ComboOverTime" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.MoveActionTimelineNode), global::Config.MoveActionTimelineNode.Parser, new[]{ "ID", "Start", "Duration", "AnimationMove", "Enable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.BuffConfig), global::Config.BuffConfig.Parser, new[]{ "ID", "Type", "Name", "Status", "Target", "Count", "During", "Tick", "CompulsoryLift", "TriggerRangeType", "Range", "DamageEffectType", "DamageEffectValue", "AddtiveEffectType", "AddtiveEffectFactor", "LimitAbility", "ShieldValue", "LeechLifeType", "LeechLifeParam", "TransformID", "TransformAttackArr", "TransformSkillArr" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.AbilityEffect), global::Config.AbilityEffect.Parser, new[]{ "ID", "TargetType", "TriggerPosType", "TriggerDelay", "TriggerTick", "TriggerRangeType", "TargetSelectType", "TargetAmount", "Start", "Duration", "Shape", "Range", "Direction", "EffectID" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.AbilityConfig), global::Config.AbilityConfig.Parser, new[]{ "ID", "Path", "Asset" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Config.LockActionNode), global::Config.LockActionNode.Parser, new[]{ "ID", "Start", "Duration" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Config.DataHelper), global::Config.DataHelper.Parser, new[]{ "MessageType", "RoleConfigDict", "BuffConfigDict", "MoveActionTimelineNodeDict", "AbilityConfigDict", "TimelineDict", "HitCheckInfoDict", "AbilityEffectDict", "VectorInt3Dict", "InputActionTimelineNodeDict", "LockActionNodeDict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.InputActionTimelineNode), global::Config.InputActionTimelineNode.Parser, new[]{ "ID", "Start", "Duration", "Enable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Config.DataHelper), global::Config.DataHelper.Parser, new[]{ "MessageType", "VectorInt3Dict", "HitCheckInfoDict", "RoleConfigDict", "TimelineDict", "MoveActionTimelineNodeDict", "BuffConfigDict", "AbilityEffectDict", "AbilityConfigDict", "LockActionNodeDict", "InputActionTimelineNodeDict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, })
           }));
     }
     #endregion
 
   }
   #region Enums
+  public enum BuffType {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("BuffType_none")] None = 0,
+    /// <summary>
+    /// 增益
+    /// </summary>
+    [pbr::OriginalName("BuffType_buff")] Buff = 1,
+    /// <summary>
+    /// 减益
+    /// </summary>
+    [pbr::OriginalName("BuffType_debuff")] Debuff = 2,
+  }
+
   public enum BuffStatusType {
     /// <summary>
     /// 无
@@ -272,126 +287,11 @@ namespace Config {
     [pbr::OriginalName("BuffStatusType_transform")] Transform = 23,
   }
 
-  public enum TargetSelectType {
-    /// <summary>
-    /// 无
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_none")] None = 0,
-    /// <summary>
-    /// 最近
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_nearest")] Nearest = 1,
-    /// <summary>
-    /// 最远
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_farthest")] Farthest = 2,
-    /// <summary>
-    /// 最低血量
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_hp_least")] HpLeast = 3,
-    /// <summary>
-    /// 最高血量
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_hp_maximum")] HpMaximum = 4,
-    /// <summary>
-    /// 最高战力
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_battle_ability_max")] BattleAbilityMax = 5,
-    /// <summary>
-    /// 随机
-    /// </summary>
-    [pbr::OriginalName("TargetSelectType_random")] Random = 6,
-  }
-
-  public enum TriggerPosType {
-    /// <summary>
-    /// 无
-    /// </summary>
-    [pbr::OriginalName("TriggerPosType_none")] None = 0,
-    /// <summary>
-    /// 自身
-    /// </summary>
-    [pbr::OriginalName("TriggerPosType_oneself")] Oneself = 1,
-    /// <summary>
-    /// 目标
-    /// </summary>
-    [pbr::OriginalName("TriggerPosType_target")] Target = 2,
-  }
-
   public enum ItemDetailType {
     /// <summary>
     /// 无
     /// </summary>
     [pbr::OriginalName("ItemDetailType_none")] None = 0,
-  }
-
-  public enum BuffType {
-    /// <summary>
-    /// 无
-    /// </summary>
-    [pbr::OriginalName("BuffType_none")] None = 0,
-    /// <summary>
-    /// 增益
-    /// </summary>
-    [pbr::OriginalName("BuffType_buff")] Buff = 1,
-    /// <summary>
-    /// 减益
-    /// </summary>
-    [pbr::OriginalName("BuffType_debuff")] Debuff = 2,
-  }
-
-  public enum RangeType {
-    /// <summary>
-    /// 无
-    /// </summary>
-    [pbr::OriginalName("RangeType_none")] None = 0,
-    /// <summary>
-    /// 直线(距离)
-    /// </summary>
-    [pbr::OriginalName("RangeType_straightline")] Straightline = 1,
-    /// <summary>
-    /// 扇形(角度,半径)
-    /// </summary>
-    [pbr::OriginalName("RangeType_sector")] Sector = 2,
-    /// <summary>
-    /// 圆形区域(半径)
-    /// </summary>
-    [pbr::OriginalName("RangeType_roundness")] Roundness = 3,
-    /// <summary>
-    /// 矩形(长，宽)
-    /// </summary>
-    [pbr::OriginalName("RangeType_rectangle")] Rectangle = 4,
-    /// <summary>
-    /// 多方向射击
-    /// </summary>
-    [pbr::OriginalName("RangeType_multi_direction")] MultiDirection = 5,
-  }
-
-  public enum RoleType {
-    /// <summary>
-    /// 无
-    /// </summary>
-    [pbr::OriginalName("RoleType_None")] None = 0,
-    /// <summary>
-    /// 英雄
-    /// </summary>
-    [pbr::OriginalName("RoleType_Player")] Player = 1,
-    /// <summary>
-    /// 怪物
-    /// </summary>
-    [pbr::OriginalName("RoleType_Enemy")] Enemy = 2,
-    /// <summary>
-    /// 中立
-    /// </summary>
-    [pbr::OriginalName("RoleType_Neutral")] Neutral = 4,
-    /// <summary>
-    /// 堡垒
-    /// </summary>
-    [pbr::OriginalName("RoleType_Bunker")] Bunker = 8,
-    /// <summary>
-    /// 触发器
-    /// </summary>
-    [pbr::OriginalName("RoleType_Trigger")] Trigger = 16,
   }
 
   public enum Shape {
@@ -432,6 +332,48 @@ namespace Config {
     [pbr::OriginalName("TargetCampType_all")] All = 4,
   }
 
+  public enum RangeType {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("RangeType_none")] None = 0,
+    /// <summary>
+    /// 直线(距离)
+    /// </summary>
+    [pbr::OriginalName("RangeType_straightline")] Straightline = 1,
+    /// <summary>
+    /// 扇形(角度,半径)
+    /// </summary>
+    [pbr::OriginalName("RangeType_sector")] Sector = 2,
+    /// <summary>
+    /// 圆形区域(半径)
+    /// </summary>
+    [pbr::OriginalName("RangeType_roundness")] Roundness = 3,
+    /// <summary>
+    /// 矩形(长，宽)
+    /// </summary>
+    [pbr::OriginalName("RangeType_rectangle")] Rectangle = 4,
+    /// <summary>
+    /// 多方向射击
+    /// </summary>
+    [pbr::OriginalName("RangeType_multi_direction")] MultiDirection = 5,
+  }
+
+  public enum ConversionType {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("ConversionType_none")] None = 0,
+    /// <summary>
+    /// 固定值
+    /// </summary>
+    [pbr::OriginalName("ConversionType_fixed")] Fixed = 1,
+    /// <summary>
+    /// 百分比
+    /// </summary>
+    [pbr::OriginalName("ConversionType_percentage")] Percentage = 2,
+  }
+
   public enum EffectType {
     /// <summary>
     /// 无
@@ -455,24 +397,882 @@ namespace Config {
     [pbr::OriginalName("EffectType_death")] Death = 4,
   }
 
-  public enum ConversionType {
+  public enum RoleType {
     /// <summary>
     /// 无
     /// </summary>
-    [pbr::OriginalName("ConversionType_none")] None = 0,
+    [pbr::OriginalName("RoleType_None")] None = 0,
     /// <summary>
-    /// 固定值
+    /// 英雄
     /// </summary>
-    [pbr::OriginalName("ConversionType_fixed")] Fixed = 1,
+    [pbr::OriginalName("RoleType_Player")] Player = 1,
     /// <summary>
-    /// 百分比
+    /// 怪物
     /// </summary>
-    [pbr::OriginalName("ConversionType_percentage")] Percentage = 2,
+    [pbr::OriginalName("RoleType_Enemy")] Enemy = 2,
+    /// <summary>
+    /// 中立
+    /// </summary>
+    [pbr::OriginalName("RoleType_Neutral")] Neutral = 4,
+    /// <summary>
+    /// 堡垒
+    /// </summary>
+    [pbr::OriginalName("RoleType_Bunker")] Bunker = 8,
+    /// <summary>
+    /// 触发器
+    /// </summary>
+    [pbr::OriginalName("RoleType_Trigger")] Trigger = 16,
+  }
+
+  public enum TriggerPosType {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("TriggerPosType_none")] None = 0,
+    /// <summary>
+    /// 自身
+    /// </summary>
+    [pbr::OriginalName("TriggerPosType_oneself")] Oneself = 1,
+    /// <summary>
+    /// 目标
+    /// </summary>
+    [pbr::OriginalName("TriggerPosType_target")] Target = 2,
+  }
+
+  public enum TargetSelectType {
+    /// <summary>
+    /// 无
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_none")] None = 0,
+    /// <summary>
+    /// 最近
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_nearest")] Nearest = 1,
+    /// <summary>
+    /// 最远
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_farthest")] Farthest = 2,
+    /// <summary>
+    /// 最低血量
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_hp_least")] HpLeast = 3,
+    /// <summary>
+    /// 最高血量
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_hp_maximum")] HpMaximum = 4,
+    /// <summary>
+    /// 最高战力
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_battle_ability_max")] BattleAbilityMax = 5,
+    /// <summary>
+    /// 随机
+    /// </summary>
+    [pbr::OriginalName("TargetSelectType_random")] Random = 6,
   }
 
   #endregion
 
   #region Messages
+  public sealed partial class VectorInt3 : pb::IMessage<VectorInt3> {
+    private static readonly pb::MessageParser<VectorInt3> _parser = new pb::MessageParser<VectorInt3>(() => new VectorInt3());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<VectorInt3> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public VectorInt3() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public VectorInt3(VectorInt3 other) : this() {
+      iD_ = other.iD_;
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public VectorInt3 Clone() {
+      return new VectorInt3(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "X" field.</summary>
+    public const int XFieldNumber = 2;
+    private int x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Y" field.</summary>
+    public const int YFieldNumber = 3;
+    private int y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Z" field.</summary>
+    public const int ZFieldNumber = 4;
+    private int z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as VectorInt3);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(VectorInt3 other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (X != other.X) return false;
+      if (Y != other.Y) return false;
+      if (Z != other.Z) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (X != 0) hash ^= X.GetHashCode();
+      if (Y != 0) hash ^= Y.GetHashCode();
+      if (Z != 0) hash ^= Z.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (X != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(X);
+      }
+      if (Y != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Y);
+      }
+      if (Z != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Z);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (X != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(X);
+      }
+      if (Y != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Y);
+      }
+      if (Z != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Z);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(VectorInt3 other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.X != 0) {
+        X = other.X;
+      }
+      if (other.Y != 0) {
+        Y = other.Y;
+      }
+      if (other.Z != 0) {
+        Z = other.Z;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            X = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Y = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Z = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class HitCheckInfo : pb::IMessage<HitCheckInfo> {
+    private static readonly pb::MessageParser<HitCheckInfo> _parser = new pb::MessageParser<HitCheckInfo>(() => new HitCheckInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<HitCheckInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HitCheckInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HitCheckInfo(HitCheckInfo other) : this() {
+      iD_ = other.iD_;
+      start_ = other.start_;
+      hitHeight_ = other.hitHeight_;
+      validHitHeight_ = other.validHitHeight_;
+      rangeType_ = other.rangeType_;
+      range_ = other.range_;
+      radius_ = other.radius_;
+      angle_ = other.angle_;
+      length_ = other.length_;
+      width_ = other.width_;
+      CenterOffset = other.centerOffset_ != null ? other.CenterOffset.Clone() : null;
+      horizontalSpeed_ = other.horizontalSpeed_;
+      horizontalAcceleratedASpeed_ = other.horizontalAcceleratedASpeed_;
+      duration_ = other.duration_;
+      verticalSpeed_ = other.verticalSpeed_;
+      verticalAcceleratedSpeed_ = other.verticalAcceleratedSpeed_;
+      hitDamagePec_ = other.hitDamagePec_;
+      hitDamageBasics_ = other.hitDamageBasics_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HitCheckInfo Clone() {
+      return new HitCheckInfo(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Start" field.</summary>
+    public const int StartFieldNumber = 2;
+    private int start_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Start {
+      get { return start_; }
+      set {
+        start_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HitHeight" field.</summary>
+    public const int HitHeightFieldNumber = 3;
+    private int hitHeight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitHeight {
+      get { return hitHeight_; }
+      set {
+        hitHeight_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ValidHitHeight" field.</summary>
+    public const int ValidHitHeightFieldNumber = 4;
+    private int validHitHeight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ValidHitHeight {
+      get { return validHitHeight_; }
+      set {
+        validHitHeight_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RangeType" field.</summary>
+    public const int RangeTypeFieldNumber = 5;
+    private global::Config.RangeType rangeType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.RangeType RangeType {
+      get { return rangeType_; }
+      set {
+        rangeType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Range" field.</summary>
+    public const int RangeFieldNumber = 6;
+    private int range_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Range {
+      get { return range_; }
+      set {
+        range_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Radius" field.</summary>
+    public const int RadiusFieldNumber = 7;
+    private int radius_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Radius {
+      get { return radius_; }
+      set {
+        radius_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Angle" field.</summary>
+    public const int AngleFieldNumber = 8;
+    private int angle_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Angle {
+      get { return angle_; }
+      set {
+        angle_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Length" field.</summary>
+    public const int LengthFieldNumber = 9;
+    private int length_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Length {
+      get { return length_; }
+      set {
+        length_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Width" field.</summary>
+    public const int WidthFieldNumber = 10;
+    private int width_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Width {
+      get { return width_; }
+      set {
+        width_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "CenterOffset" field.</summary>
+    public const int CenterOffsetFieldNumber = 11;
+    private global::Config.VectorInt3 centerOffset_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.VectorInt3 CenterOffset {
+      get { return centerOffset_; }
+      set {
+        centerOffset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HorizontalSpeed" field.</summary>
+    public const int HorizontalSpeedFieldNumber = 12;
+    private int horizontalSpeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HorizontalSpeed {
+      get { return horizontalSpeed_; }
+      set {
+        horizontalSpeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HorizontalAcceleratedASpeed" field.</summary>
+    public const int HorizontalAcceleratedASpeedFieldNumber = 13;
+    private int horizontalAcceleratedASpeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HorizontalAcceleratedASpeed {
+      get { return horizontalAcceleratedASpeed_; }
+      set {
+        horizontalAcceleratedASpeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Duration" field.</summary>
+    public const int DurationFieldNumber = 14;
+    private int duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "VerticalSpeed" field.</summary>
+    public const int VerticalSpeedFieldNumber = 15;
+    private int verticalSpeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int VerticalSpeed {
+      get { return verticalSpeed_; }
+      set {
+        verticalSpeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "VerticalAcceleratedSpeed" field.</summary>
+    public const int VerticalAcceleratedSpeedFieldNumber = 16;
+    private int verticalAcceleratedSpeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int VerticalAcceleratedSpeed {
+      get { return verticalAcceleratedSpeed_; }
+      set {
+        verticalAcceleratedSpeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HitDamagePec" field.</summary>
+    public const int HitDamagePecFieldNumber = 17;
+    private int hitDamagePec_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitDamagePec {
+      get { return hitDamagePec_; }
+      set {
+        hitDamagePec_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HitDamageBasics" field.</summary>
+    public const int HitDamageBasicsFieldNumber = 18;
+    private int hitDamageBasics_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HitDamageBasics {
+      get { return hitDamageBasics_; }
+      set {
+        hitDamageBasics_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as HitCheckInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(HitCheckInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Start != other.Start) return false;
+      if (HitHeight != other.HitHeight) return false;
+      if (ValidHitHeight != other.ValidHitHeight) return false;
+      if (RangeType != other.RangeType) return false;
+      if (Range != other.Range) return false;
+      if (Radius != other.Radius) return false;
+      if (Angle != other.Angle) return false;
+      if (Length != other.Length) return false;
+      if (Width != other.Width) return false;
+      if (!object.Equals(CenterOffset, other.CenterOffset)) return false;
+      if (HorizontalSpeed != other.HorizontalSpeed) return false;
+      if (HorizontalAcceleratedASpeed != other.HorizontalAcceleratedASpeed) return false;
+      if (Duration != other.Duration) return false;
+      if (VerticalSpeed != other.VerticalSpeed) return false;
+      if (VerticalAcceleratedSpeed != other.VerticalAcceleratedSpeed) return false;
+      if (HitDamagePec != other.HitDamagePec) return false;
+      if (HitDamageBasics != other.HitDamageBasics) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Start != 0) hash ^= Start.GetHashCode();
+      if (HitHeight != 0) hash ^= HitHeight.GetHashCode();
+      if (ValidHitHeight != 0) hash ^= ValidHitHeight.GetHashCode();
+      if (RangeType != 0) hash ^= RangeType.GetHashCode();
+      if (Range != 0) hash ^= Range.GetHashCode();
+      if (Radius != 0) hash ^= Radius.GetHashCode();
+      if (Angle != 0) hash ^= Angle.GetHashCode();
+      if (Length != 0) hash ^= Length.GetHashCode();
+      if (Width != 0) hash ^= Width.GetHashCode();
+      if (centerOffset_ != null) hash ^= CenterOffset.GetHashCode();
+      if (HorizontalSpeed != 0) hash ^= HorizontalSpeed.GetHashCode();
+      if (HorizontalAcceleratedASpeed != 0) hash ^= HorizontalAcceleratedASpeed.GetHashCode();
+      if (Duration != 0) hash ^= Duration.GetHashCode();
+      if (VerticalSpeed != 0) hash ^= VerticalSpeed.GetHashCode();
+      if (VerticalAcceleratedSpeed != 0) hash ^= VerticalAcceleratedSpeed.GetHashCode();
+      if (HitDamagePec != 0) hash ^= HitDamagePec.GetHashCode();
+      if (HitDamageBasics != 0) hash ^= HitDamageBasics.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Start != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Start);
+      }
+      if (HitHeight != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(HitHeight);
+      }
+      if (ValidHitHeight != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(ValidHitHeight);
+      }
+      if (RangeType != 0) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) RangeType);
+      }
+      if (Range != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Range);
+      }
+      if (Radius != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Radius);
+      }
+      if (Angle != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Angle);
+      }
+      if (Length != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Length);
+      }
+      if (Width != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Width);
+      }
+      if (centerOffset_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(CenterOffset);
+      }
+      if (HorizontalSpeed != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(HorizontalSpeed);
+      }
+      if (HorizontalAcceleratedASpeed != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(HorizontalAcceleratedASpeed);
+      }
+      if (Duration != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Duration);
+      }
+      if (VerticalSpeed != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(VerticalSpeed);
+      }
+      if (VerticalAcceleratedSpeed != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(VerticalAcceleratedSpeed);
+      }
+      if (HitDamagePec != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(HitDamagePec);
+      }
+      if (HitDamageBasics != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(HitDamageBasics);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Start != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Start);
+      }
+      if (HitHeight != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitHeight);
+      }
+      if (ValidHitHeight != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ValidHitHeight);
+      }
+      if (RangeType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RangeType);
+      }
+      if (Range != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Range);
+      }
+      if (Radius != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Radius);
+      }
+      if (Angle != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Angle);
+      }
+      if (Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Length);
+      }
+      if (Width != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Width);
+      }
+      if (centerOffset_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CenterOffset);
+      }
+      if (HorizontalSpeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HorizontalSpeed);
+      }
+      if (HorizontalAcceleratedASpeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HorizontalAcceleratedASpeed);
+      }
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      if (VerticalSpeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(VerticalSpeed);
+      }
+      if (VerticalAcceleratedSpeed != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(VerticalAcceleratedSpeed);
+      }
+      if (HitDamagePec != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HitDamagePec);
+      }
+      if (HitDamageBasics != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HitDamageBasics);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(HitCheckInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Start != 0) {
+        Start = other.Start;
+      }
+      if (other.HitHeight != 0) {
+        HitHeight = other.HitHeight;
+      }
+      if (other.ValidHitHeight != 0) {
+        ValidHitHeight = other.ValidHitHeight;
+      }
+      if (other.RangeType != 0) {
+        RangeType = other.RangeType;
+      }
+      if (other.Range != 0) {
+        Range = other.Range;
+      }
+      if (other.Radius != 0) {
+        Radius = other.Radius;
+      }
+      if (other.Angle != 0) {
+        Angle = other.Angle;
+      }
+      if (other.Length != 0) {
+        Length = other.Length;
+      }
+      if (other.Width != 0) {
+        Width = other.Width;
+      }
+      if (other.centerOffset_ != null) {
+        if (centerOffset_ == null) {
+          centerOffset_ = new global::Config.VectorInt3();
+        }
+        CenterOffset.MergeFrom(other.CenterOffset);
+      }
+      if (other.HorizontalSpeed != 0) {
+        HorizontalSpeed = other.HorizontalSpeed;
+      }
+      if (other.HorizontalAcceleratedASpeed != 0) {
+        HorizontalAcceleratedASpeed = other.HorizontalAcceleratedASpeed;
+      }
+      if (other.Duration != 0) {
+        Duration = other.Duration;
+      }
+      if (other.VerticalSpeed != 0) {
+        VerticalSpeed = other.VerticalSpeed;
+      }
+      if (other.VerticalAcceleratedSpeed != 0) {
+        VerticalAcceleratedSpeed = other.VerticalAcceleratedSpeed;
+      }
+      if (other.HitDamagePec != 0) {
+        HitDamagePec = other.HitDamagePec;
+      }
+      if (other.HitDamageBasics != 0) {
+        HitDamageBasics = other.HitDamageBasics;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Start = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            HitHeight = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            ValidHitHeight = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            rangeType_ = (global::Config.RangeType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Range = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            Radius = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Angle = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Length = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Width = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            if (centerOffset_ == null) {
+              centerOffset_ = new global::Config.VectorInt3();
+            }
+            input.ReadMessage(centerOffset_);
+            break;
+          }
+          case 96: {
+            HorizontalSpeed = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            HorizontalAcceleratedASpeed = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            Duration = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            VerticalSpeed = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            VerticalAcceleratedSpeed = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            HitDamagePec = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            HitDamageBasics = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class RoleConfig : pb::IMessage<RoleConfig> {
     private static readonly pb::MessageParser<RoleConfig> _parser = new pb::MessageParser<RoleConfig>(() => new RoleConfig());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -480,7 +1280,7 @@ namespace Config {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1017,6 +1817,669 @@ namespace Config {
 
   }
 
+  public sealed partial class Timeline : pb::IMessage<Timeline> {
+    private static readonly pb::MessageParser<Timeline> _parser = new pb::MessageParser<Timeline>(() => new Timeline());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Timeline> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Timeline() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Timeline(Timeline other) : this() {
+      iD_ = other.iD_;
+      tICKINTERVAL_ = other.tICKINTERVAL_;
+      isLoop_ = other.isLoop_;
+      canInput_ = other.canInput_;
+      duration_ = other.duration_;
+      readyTime_ = other.readyTime_;
+      recoverTime_ = other.recoverTime_;
+      hitTimeList_ = other.hitTimeList_.Clone();
+      lockAcionList_ = other.lockAcionList_.Clone();
+      InputActionTimelineNode = other.inputActionTimelineNode_ != null ? other.InputActionTimelineNode.Clone() : null;
+      MoveActionTimelineNode = other.moveActionTimelineNode_ != null ? other.MoveActionTimelineNode.Clone() : null;
+      abilityEffectNodeInfo_ = other.abilityEffectNodeInfo_.Clone();
+      comboOverTime_ = other.comboOverTime_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Timeline Clone() {
+      return new Timeline(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "TICK_INTERVAL" field.</summary>
+    public const int TICKINTERVALFieldNumber = 2;
+    private int tICKINTERVAL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TICKINTERVAL {
+      get { return tICKINTERVAL_; }
+      set {
+        tICKINTERVAL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "IsLoop" field.</summary>
+    public const int IsLoopFieldNumber = 3;
+    private bool isLoop_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsLoop {
+      get { return isLoop_; }
+      set {
+        isLoop_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "CanInput" field.</summary>
+    public const int CanInputFieldNumber = 4;
+    private bool canInput_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CanInput {
+      get { return canInput_; }
+      set {
+        canInput_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Duration" field.</summary>
+    public const int DurationFieldNumber = 5;
+    private int duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ReadyTime" field.</summary>
+    public const int ReadyTimeFieldNumber = 6;
+    private int readyTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ReadyTime {
+      get { return readyTime_; }
+      set {
+        readyTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RecoverTime" field.</summary>
+    public const int RecoverTimeFieldNumber = 7;
+    private int recoverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RecoverTime {
+      get { return recoverTime_; }
+      set {
+        recoverTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HitTimeList" field.</summary>
+    public const int HitTimeListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Config.HitCheckInfo> _repeated_hitTimeList_codec
+        = pb::FieldCodec.ForMessage(66, global::Config.HitCheckInfo.Parser);
+    private readonly pbc::RepeatedField<global::Config.HitCheckInfo> hitTimeList_ = new pbc::RepeatedField<global::Config.HitCheckInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Config.HitCheckInfo> HitTimeList {
+      get { return hitTimeList_; }
+    }
+
+    /// <summary>Field number for the "LockAcionList" field.</summary>
+    public const int LockAcionListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Config.LockActionNode> _repeated_lockAcionList_codec
+        = pb::FieldCodec.ForMessage(74, global::Config.LockActionNode.Parser);
+    private readonly pbc::RepeatedField<global::Config.LockActionNode> lockAcionList_ = new pbc::RepeatedField<global::Config.LockActionNode>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Config.LockActionNode> LockAcionList {
+      get { return lockAcionList_; }
+    }
+
+    /// <summary>Field number for the "InputActionTimelineNode" field.</summary>
+    public const int InputActionTimelineNodeFieldNumber = 10;
+    private global::Config.InputActionTimelineNode inputActionTimelineNode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.InputActionTimelineNode InputActionTimelineNode {
+      get { return inputActionTimelineNode_; }
+      set {
+        inputActionTimelineNode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "MoveActionTimelineNode" field.</summary>
+    public const int MoveActionTimelineNodeFieldNumber = 11;
+    private global::Config.MoveActionTimelineNode moveActionTimelineNode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Config.MoveActionTimelineNode MoveActionTimelineNode {
+      get { return moveActionTimelineNode_; }
+      set {
+        moveActionTimelineNode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "AbilityEffectNodeInfo" field.</summary>
+    public const int AbilityEffectNodeInfoFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Config.AbilityEffect> _repeated_abilityEffectNodeInfo_codec
+        = pb::FieldCodec.ForMessage(98, global::Config.AbilityEffect.Parser);
+    private readonly pbc::RepeatedField<global::Config.AbilityEffect> abilityEffectNodeInfo_ = new pbc::RepeatedField<global::Config.AbilityEffect>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Config.AbilityEffect> AbilityEffectNodeInfo {
+      get { return abilityEffectNodeInfo_; }
+    }
+
+    /// <summary>Field number for the "ComboOverTime" field.</summary>
+    public const int ComboOverTimeFieldNumber = 13;
+    private int comboOverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ComboOverTime {
+      get { return comboOverTime_; }
+      set {
+        comboOverTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Timeline);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Timeline other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (TICKINTERVAL != other.TICKINTERVAL) return false;
+      if (IsLoop != other.IsLoop) return false;
+      if (CanInput != other.CanInput) return false;
+      if (Duration != other.Duration) return false;
+      if (ReadyTime != other.ReadyTime) return false;
+      if (RecoverTime != other.RecoverTime) return false;
+      if(!hitTimeList_.Equals(other.hitTimeList_)) return false;
+      if(!lockAcionList_.Equals(other.lockAcionList_)) return false;
+      if (!object.Equals(InputActionTimelineNode, other.InputActionTimelineNode)) return false;
+      if (!object.Equals(MoveActionTimelineNode, other.MoveActionTimelineNode)) return false;
+      if(!abilityEffectNodeInfo_.Equals(other.abilityEffectNodeInfo_)) return false;
+      if (ComboOverTime != other.ComboOverTime) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (TICKINTERVAL != 0) hash ^= TICKINTERVAL.GetHashCode();
+      if (IsLoop != false) hash ^= IsLoop.GetHashCode();
+      if (CanInput != false) hash ^= CanInput.GetHashCode();
+      if (Duration != 0) hash ^= Duration.GetHashCode();
+      if (ReadyTime != 0) hash ^= ReadyTime.GetHashCode();
+      if (RecoverTime != 0) hash ^= RecoverTime.GetHashCode();
+      hash ^= hitTimeList_.GetHashCode();
+      hash ^= lockAcionList_.GetHashCode();
+      if (inputActionTimelineNode_ != null) hash ^= InputActionTimelineNode.GetHashCode();
+      if (moveActionTimelineNode_ != null) hash ^= MoveActionTimelineNode.GetHashCode();
+      hash ^= abilityEffectNodeInfo_.GetHashCode();
+      if (ComboOverTime != 0) hash ^= ComboOverTime.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (TICKINTERVAL != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(TICKINTERVAL);
+      }
+      if (IsLoop != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsLoop);
+      }
+      if (CanInput != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(CanInput);
+      }
+      if (Duration != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Duration);
+      }
+      if (ReadyTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(ReadyTime);
+      }
+      if (RecoverTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(RecoverTime);
+      }
+      hitTimeList_.WriteTo(output, _repeated_hitTimeList_codec);
+      lockAcionList_.WriteTo(output, _repeated_lockAcionList_codec);
+      if (inputActionTimelineNode_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(InputActionTimelineNode);
+      }
+      if (moveActionTimelineNode_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(MoveActionTimelineNode);
+      }
+      abilityEffectNodeInfo_.WriteTo(output, _repeated_abilityEffectNodeInfo_codec);
+      if (ComboOverTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(ComboOverTime);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (TICKINTERVAL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TICKINTERVAL);
+      }
+      if (IsLoop != false) {
+        size += 1 + 1;
+      }
+      if (CanInput != false) {
+        size += 1 + 1;
+      }
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      if (ReadyTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReadyTime);
+      }
+      if (RecoverTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RecoverTime);
+      }
+      size += hitTimeList_.CalculateSize(_repeated_hitTimeList_codec);
+      size += lockAcionList_.CalculateSize(_repeated_lockAcionList_codec);
+      if (inputActionTimelineNode_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InputActionTimelineNode);
+      }
+      if (moveActionTimelineNode_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MoveActionTimelineNode);
+      }
+      size += abilityEffectNodeInfo_.CalculateSize(_repeated_abilityEffectNodeInfo_codec);
+      if (ComboOverTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ComboOverTime);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Timeline other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.TICKINTERVAL != 0) {
+        TICKINTERVAL = other.TICKINTERVAL;
+      }
+      if (other.IsLoop != false) {
+        IsLoop = other.IsLoop;
+      }
+      if (other.CanInput != false) {
+        CanInput = other.CanInput;
+      }
+      if (other.Duration != 0) {
+        Duration = other.Duration;
+      }
+      if (other.ReadyTime != 0) {
+        ReadyTime = other.ReadyTime;
+      }
+      if (other.RecoverTime != 0) {
+        RecoverTime = other.RecoverTime;
+      }
+      hitTimeList_.Add(other.hitTimeList_);
+      lockAcionList_.Add(other.lockAcionList_);
+      if (other.inputActionTimelineNode_ != null) {
+        if (inputActionTimelineNode_ == null) {
+          inputActionTimelineNode_ = new global::Config.InputActionTimelineNode();
+        }
+        InputActionTimelineNode.MergeFrom(other.InputActionTimelineNode);
+      }
+      if (other.moveActionTimelineNode_ != null) {
+        if (moveActionTimelineNode_ == null) {
+          moveActionTimelineNode_ = new global::Config.MoveActionTimelineNode();
+        }
+        MoveActionTimelineNode.MergeFrom(other.MoveActionTimelineNode);
+      }
+      abilityEffectNodeInfo_.Add(other.abilityEffectNodeInfo_);
+      if (other.ComboOverTime != 0) {
+        ComboOverTime = other.ComboOverTime;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            TICKINTERVAL = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            IsLoop = input.ReadBool();
+            break;
+          }
+          case 32: {
+            CanInput = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Duration = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            ReadyTime = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            RecoverTime = input.ReadInt32();
+            break;
+          }
+          case 66: {
+            hitTimeList_.AddEntriesFrom(input, _repeated_hitTimeList_codec);
+            break;
+          }
+          case 74: {
+            lockAcionList_.AddEntriesFrom(input, _repeated_lockAcionList_codec);
+            break;
+          }
+          case 82: {
+            if (inputActionTimelineNode_ == null) {
+              inputActionTimelineNode_ = new global::Config.InputActionTimelineNode();
+            }
+            input.ReadMessage(inputActionTimelineNode_);
+            break;
+          }
+          case 90: {
+            if (moveActionTimelineNode_ == null) {
+              moveActionTimelineNode_ = new global::Config.MoveActionTimelineNode();
+            }
+            input.ReadMessage(moveActionTimelineNode_);
+            break;
+          }
+          case 98: {
+            abilityEffectNodeInfo_.AddEntriesFrom(input, _repeated_abilityEffectNodeInfo_codec);
+            break;
+          }
+          case 104: {
+            ComboOverTime = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class MoveActionTimelineNode : pb::IMessage<MoveActionTimelineNode> {
+    private static readonly pb::MessageParser<MoveActionTimelineNode> _parser = new pb::MessageParser<MoveActionTimelineNode>(() => new MoveActionTimelineNode());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<MoveActionTimelineNode> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MoveActionTimelineNode() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MoveActionTimelineNode(MoveActionTimelineNode other) : this() {
+      iD_ = other.iD_;
+      start_ = other.start_;
+      duration_ = other.duration_;
+      animationMove_ = other.animationMove_.Clone();
+      enable_ = other.enable_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MoveActionTimelineNode Clone() {
+      return new MoveActionTimelineNode(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Start" field.</summary>
+    public const int StartFieldNumber = 2;
+    private int start_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Start {
+      get { return start_; }
+      set {
+        start_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Duration" field.</summary>
+    public const int DurationFieldNumber = 3;
+    private int duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "AnimationMove" field.</summary>
+    public const int AnimationMoveFieldNumber = 4;
+    private static readonly pb::FieldCodec<int> _repeated_animationMove_codec
+        = pb::FieldCodec.ForInt32(34);
+    private readonly pbc::RepeatedField<int> animationMove_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> AnimationMove {
+      get { return animationMove_; }
+    }
+
+    /// <summary>Field number for the "Enable" field.</summary>
+    public const int EnableFieldNumber = 5;
+    private bool enable_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Enable {
+      get { return enable_; }
+      set {
+        enable_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as MoveActionTimelineNode);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(MoveActionTimelineNode other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Start != other.Start) return false;
+      if (Duration != other.Duration) return false;
+      if(!animationMove_.Equals(other.animationMove_)) return false;
+      if (Enable != other.Enable) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Start != 0) hash ^= Start.GetHashCode();
+      if (Duration != 0) hash ^= Duration.GetHashCode();
+      hash ^= animationMove_.GetHashCode();
+      if (Enable != false) hash ^= Enable.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Start != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Start);
+      }
+      if (Duration != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Duration);
+      }
+      animationMove_.WriteTo(output, _repeated_animationMove_codec);
+      if (Enable != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Enable);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Start != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Start);
+      }
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      size += animationMove_.CalculateSize(_repeated_animationMove_codec);
+      if (Enable != false) {
+        size += 1 + 1;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(MoveActionTimelineNode other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Start != 0) {
+        Start = other.Start;
+      }
+      if (other.Duration != 0) {
+        Duration = other.Duration;
+      }
+      animationMove_.Add(other.animationMove_);
+      if (other.Enable != false) {
+        Enable = other.Enable;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Start = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Duration = input.ReadInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            animationMove_.AddEntriesFrom(input, _repeated_animationMove_codec);
+            break;
+          }
+          case 40: {
+            Enable = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class BuffConfig : pb::IMessage<BuffConfig> {
     private static readonly pb::MessageParser<BuffConfig> _parser = new pb::MessageParser<BuffConfig>(() => new BuffConfig());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1024,7 +2487,7 @@ namespace Config {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1708,1441 +3171,6 @@ namespace Config {
 
   }
 
-  public sealed partial class MoveActionTimelineNode : pb::IMessage<MoveActionTimelineNode> {
-    private static readonly pb::MessageParser<MoveActionTimelineNode> _parser = new pb::MessageParser<MoveActionTimelineNode>(() => new MoveActionTimelineNode());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<MoveActionTimelineNode> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MoveActionTimelineNode() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MoveActionTimelineNode(MoveActionTimelineNode other) : this() {
-      iD_ = other.iD_;
-      start_ = other.start_;
-      duration_ = other.duration_;
-      animationMove_ = other.animationMove_.Clone();
-      enable_ = other.enable_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MoveActionTimelineNode Clone() {
-      return new MoveActionTimelineNode(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private int iD_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ID {
-      get { return iD_; }
-      set {
-        iD_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Start" field.</summary>
-    public const int StartFieldNumber = 2;
-    private int start_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Start {
-      get { return start_; }
-      set {
-        start_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Duration" field.</summary>
-    public const int DurationFieldNumber = 3;
-    private int duration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Duration {
-      get { return duration_; }
-      set {
-        duration_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "AnimationMove" field.</summary>
-    public const int AnimationMoveFieldNumber = 4;
-    private static readonly pb::FieldCodec<int> _repeated_animationMove_codec
-        = pb::FieldCodec.ForInt32(34);
-    private readonly pbc::RepeatedField<int> animationMove_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> AnimationMove {
-      get { return animationMove_; }
-    }
-
-    /// <summary>Field number for the "Enable" field.</summary>
-    public const int EnableFieldNumber = 5;
-    private bool enable_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Enable {
-      get { return enable_; }
-      set {
-        enable_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as MoveActionTimelineNode);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(MoveActionTimelineNode other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (Start != other.Start) return false;
-      if (Duration != other.Duration) return false;
-      if(!animationMove_.Equals(other.animationMove_)) return false;
-      if (Enable != other.Enable) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID != 0) hash ^= ID.GetHashCode();
-      if (Start != 0) hash ^= Start.GetHashCode();
-      if (Duration != 0) hash ^= Duration.GetHashCode();
-      hash ^= animationMove_.GetHashCode();
-      if (Enable != false) hash ^= Enable.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(ID);
-      }
-      if (Start != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Start);
-      }
-      if (Duration != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Duration);
-      }
-      animationMove_.WriteTo(output, _repeated_animationMove_codec);
-      if (Enable != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(Enable);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
-      }
-      if (Start != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Start);
-      }
-      if (Duration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
-      }
-      size += animationMove_.CalculateSize(_repeated_animationMove_codec);
-      if (Enable != false) {
-        size += 1 + 1;
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(MoveActionTimelineNode other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID != 0) {
-        ID = other.ID;
-      }
-      if (other.Start != 0) {
-        Start = other.Start;
-      }
-      if (other.Duration != 0) {
-        Duration = other.Duration;
-      }
-      animationMove_.Add(other.animationMove_);
-      if (other.Enable != false) {
-        Enable = other.Enable;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            ID = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Start = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            Duration = input.ReadInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            animationMove_.AddEntriesFrom(input, _repeated_animationMove_codec);
-            break;
-          }
-          case 40: {
-            Enable = input.ReadBool();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class AbilityConfig : pb::IMessage<AbilityConfig> {
-    private static readonly pb::MessageParser<AbilityConfig> _parser = new pb::MessageParser<AbilityConfig>(() => new AbilityConfig());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<AbilityConfig> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AbilityConfig() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AbilityConfig(AbilityConfig other) : this() {
-      iD_ = other.iD_;
-      path_ = other.path_;
-      asset_ = other.asset_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AbilityConfig Clone() {
-      return new AbilityConfig(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private int iD_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ID {
-      get { return iD_; }
-      set {
-        iD_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Path" field.</summary>
-    public const int PathFieldNumber = 2;
-    private string path_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Path {
-      get { return path_; }
-      set {
-        path_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Asset" field.</summary>
-    public const int AssetFieldNumber = 3;
-    private string asset_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Asset {
-      get { return asset_; }
-      set {
-        asset_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as AbilityConfig);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(AbilityConfig other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (Path != other.Path) return false;
-      if (Asset != other.Asset) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID != 0) hash ^= ID.GetHashCode();
-      if (Path.Length != 0) hash ^= Path.GetHashCode();
-      if (Asset.Length != 0) hash ^= Asset.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(ID);
-      }
-      if (Path.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Path);
-      }
-      if (Asset.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Asset);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
-      }
-      if (Path.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Path);
-      }
-      if (Asset.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Asset);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(AbilityConfig other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID != 0) {
-        ID = other.ID;
-      }
-      if (other.Path.Length != 0) {
-        Path = other.Path;
-      }
-      if (other.Asset.Length != 0) {
-        Asset = other.Asset;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            ID = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Path = input.ReadString();
-            break;
-          }
-          case 26: {
-            Asset = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Timeline : pb::IMessage<Timeline> {
-    private static readonly pb::MessageParser<Timeline> _parser = new pb::MessageParser<Timeline>(() => new Timeline());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Timeline> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Timeline() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Timeline(Timeline other) : this() {
-      iD_ = other.iD_;
-      tICKINTERVAL_ = other.tICKINTERVAL_;
-      isLoop_ = other.isLoop_;
-      canInput_ = other.canInput_;
-      duration_ = other.duration_;
-      readyTime_ = other.readyTime_;
-      recoverTime_ = other.recoverTime_;
-      hitTimeList_ = other.hitTimeList_.Clone();
-      lockAcionList_ = other.lockAcionList_.Clone();
-      InputActionTimelineNode = other.inputActionTimelineNode_ != null ? other.InputActionTimelineNode.Clone() : null;
-      MoveActionTimelineNode = other.moveActionTimelineNode_ != null ? other.MoveActionTimelineNode.Clone() : null;
-      abilityEffectNodeInfo_ = other.abilityEffectNodeInfo_.Clone();
-      comboOverTime_ = other.comboOverTime_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Timeline Clone() {
-      return new Timeline(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private int iD_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ID {
-      get { return iD_; }
-      set {
-        iD_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "TICK_INTERVAL" field.</summary>
-    public const int TICKINTERVALFieldNumber = 2;
-    private int tICKINTERVAL_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int TICKINTERVAL {
-      get { return tICKINTERVAL_; }
-      set {
-        tICKINTERVAL_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "IsLoop" field.</summary>
-    public const int IsLoopFieldNumber = 3;
-    private bool isLoop_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool IsLoop {
-      get { return isLoop_; }
-      set {
-        isLoop_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "CanInput" field.</summary>
-    public const int CanInputFieldNumber = 4;
-    private bool canInput_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool CanInput {
-      get { return canInput_; }
-      set {
-        canInput_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Duration" field.</summary>
-    public const int DurationFieldNumber = 5;
-    private int duration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Duration {
-      get { return duration_; }
-      set {
-        duration_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ReadyTime" field.</summary>
-    public const int ReadyTimeFieldNumber = 6;
-    private int readyTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ReadyTime {
-      get { return readyTime_; }
-      set {
-        readyTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "RecoverTime" field.</summary>
-    public const int RecoverTimeFieldNumber = 7;
-    private int recoverTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int RecoverTime {
-      get { return recoverTime_; }
-      set {
-        recoverTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HitTimeList" field.</summary>
-    public const int HitTimeListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Config.HitCheckInfo> _repeated_hitTimeList_codec
-        = pb::FieldCodec.ForMessage(66, global::Config.HitCheckInfo.Parser);
-    private readonly pbc::RepeatedField<global::Config.HitCheckInfo> hitTimeList_ = new pbc::RepeatedField<global::Config.HitCheckInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Config.HitCheckInfo> HitTimeList {
-      get { return hitTimeList_; }
-    }
-
-    /// <summary>Field number for the "LockAcionList" field.</summary>
-    public const int LockAcionListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Config.LockActionNode> _repeated_lockAcionList_codec
-        = pb::FieldCodec.ForMessage(74, global::Config.LockActionNode.Parser);
-    private readonly pbc::RepeatedField<global::Config.LockActionNode> lockAcionList_ = new pbc::RepeatedField<global::Config.LockActionNode>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Config.LockActionNode> LockAcionList {
-      get { return lockAcionList_; }
-    }
-
-    /// <summary>Field number for the "InputActionTimelineNode" field.</summary>
-    public const int InputActionTimelineNodeFieldNumber = 10;
-    private global::Config.InputActionTimelineNode inputActionTimelineNode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Config.InputActionTimelineNode InputActionTimelineNode {
-      get { return inputActionTimelineNode_; }
-      set {
-        inputActionTimelineNode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "MoveActionTimelineNode" field.</summary>
-    public const int MoveActionTimelineNodeFieldNumber = 11;
-    private global::Config.MoveActionTimelineNode moveActionTimelineNode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Config.MoveActionTimelineNode MoveActionTimelineNode {
-      get { return moveActionTimelineNode_; }
-      set {
-        moveActionTimelineNode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "AbilityEffectNodeInfo" field.</summary>
-    public const int AbilityEffectNodeInfoFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Config.AbilityEffect> _repeated_abilityEffectNodeInfo_codec
-        = pb::FieldCodec.ForMessage(98, global::Config.AbilityEffect.Parser);
-    private readonly pbc::RepeatedField<global::Config.AbilityEffect> abilityEffectNodeInfo_ = new pbc::RepeatedField<global::Config.AbilityEffect>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Config.AbilityEffect> AbilityEffectNodeInfo {
-      get { return abilityEffectNodeInfo_; }
-    }
-
-    /// <summary>Field number for the "ComboOverTime" field.</summary>
-    public const int ComboOverTimeFieldNumber = 13;
-    private int comboOverTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ComboOverTime {
-      get { return comboOverTime_; }
-      set {
-        comboOverTime_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Timeline);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Timeline other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (TICKINTERVAL != other.TICKINTERVAL) return false;
-      if (IsLoop != other.IsLoop) return false;
-      if (CanInput != other.CanInput) return false;
-      if (Duration != other.Duration) return false;
-      if (ReadyTime != other.ReadyTime) return false;
-      if (RecoverTime != other.RecoverTime) return false;
-      if(!hitTimeList_.Equals(other.hitTimeList_)) return false;
-      if(!lockAcionList_.Equals(other.lockAcionList_)) return false;
-      if (!object.Equals(InputActionTimelineNode, other.InputActionTimelineNode)) return false;
-      if (!object.Equals(MoveActionTimelineNode, other.MoveActionTimelineNode)) return false;
-      if(!abilityEffectNodeInfo_.Equals(other.abilityEffectNodeInfo_)) return false;
-      if (ComboOverTime != other.ComboOverTime) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID != 0) hash ^= ID.GetHashCode();
-      if (TICKINTERVAL != 0) hash ^= TICKINTERVAL.GetHashCode();
-      if (IsLoop != false) hash ^= IsLoop.GetHashCode();
-      if (CanInput != false) hash ^= CanInput.GetHashCode();
-      if (Duration != 0) hash ^= Duration.GetHashCode();
-      if (ReadyTime != 0) hash ^= ReadyTime.GetHashCode();
-      if (RecoverTime != 0) hash ^= RecoverTime.GetHashCode();
-      hash ^= hitTimeList_.GetHashCode();
-      hash ^= lockAcionList_.GetHashCode();
-      if (inputActionTimelineNode_ != null) hash ^= InputActionTimelineNode.GetHashCode();
-      if (moveActionTimelineNode_ != null) hash ^= MoveActionTimelineNode.GetHashCode();
-      hash ^= abilityEffectNodeInfo_.GetHashCode();
-      if (ComboOverTime != 0) hash ^= ComboOverTime.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(ID);
-      }
-      if (TICKINTERVAL != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(TICKINTERVAL);
-      }
-      if (IsLoop != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsLoop);
-      }
-      if (CanInput != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(CanInput);
-      }
-      if (Duration != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Duration);
-      }
-      if (ReadyTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(ReadyTime);
-      }
-      if (RecoverTime != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(RecoverTime);
-      }
-      hitTimeList_.WriteTo(output, _repeated_hitTimeList_codec);
-      lockAcionList_.WriteTo(output, _repeated_lockAcionList_codec);
-      if (inputActionTimelineNode_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(InputActionTimelineNode);
-      }
-      if (moveActionTimelineNode_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(MoveActionTimelineNode);
-      }
-      abilityEffectNodeInfo_.WriteTo(output, _repeated_abilityEffectNodeInfo_codec);
-      if (ComboOverTime != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(ComboOverTime);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
-      }
-      if (TICKINTERVAL != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TICKINTERVAL);
-      }
-      if (IsLoop != false) {
-        size += 1 + 1;
-      }
-      if (CanInput != false) {
-        size += 1 + 1;
-      }
-      if (Duration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
-      }
-      if (ReadyTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReadyTime);
-      }
-      if (RecoverTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RecoverTime);
-      }
-      size += hitTimeList_.CalculateSize(_repeated_hitTimeList_codec);
-      size += lockAcionList_.CalculateSize(_repeated_lockAcionList_codec);
-      if (inputActionTimelineNode_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InputActionTimelineNode);
-      }
-      if (moveActionTimelineNode_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MoveActionTimelineNode);
-      }
-      size += abilityEffectNodeInfo_.CalculateSize(_repeated_abilityEffectNodeInfo_codec);
-      if (ComboOverTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ComboOverTime);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Timeline other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID != 0) {
-        ID = other.ID;
-      }
-      if (other.TICKINTERVAL != 0) {
-        TICKINTERVAL = other.TICKINTERVAL;
-      }
-      if (other.IsLoop != false) {
-        IsLoop = other.IsLoop;
-      }
-      if (other.CanInput != false) {
-        CanInput = other.CanInput;
-      }
-      if (other.Duration != 0) {
-        Duration = other.Duration;
-      }
-      if (other.ReadyTime != 0) {
-        ReadyTime = other.ReadyTime;
-      }
-      if (other.RecoverTime != 0) {
-        RecoverTime = other.RecoverTime;
-      }
-      hitTimeList_.Add(other.hitTimeList_);
-      lockAcionList_.Add(other.lockAcionList_);
-      if (other.inputActionTimelineNode_ != null) {
-        if (inputActionTimelineNode_ == null) {
-          inputActionTimelineNode_ = new global::Config.InputActionTimelineNode();
-        }
-        InputActionTimelineNode.MergeFrom(other.InputActionTimelineNode);
-      }
-      if (other.moveActionTimelineNode_ != null) {
-        if (moveActionTimelineNode_ == null) {
-          moveActionTimelineNode_ = new global::Config.MoveActionTimelineNode();
-        }
-        MoveActionTimelineNode.MergeFrom(other.MoveActionTimelineNode);
-      }
-      abilityEffectNodeInfo_.Add(other.abilityEffectNodeInfo_);
-      if (other.ComboOverTime != 0) {
-        ComboOverTime = other.ComboOverTime;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            ID = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            TICKINTERVAL = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            IsLoop = input.ReadBool();
-            break;
-          }
-          case 32: {
-            CanInput = input.ReadBool();
-            break;
-          }
-          case 40: {
-            Duration = input.ReadInt32();
-            break;
-          }
-          case 48: {
-            ReadyTime = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            RecoverTime = input.ReadInt32();
-            break;
-          }
-          case 66: {
-            hitTimeList_.AddEntriesFrom(input, _repeated_hitTimeList_codec);
-            break;
-          }
-          case 74: {
-            lockAcionList_.AddEntriesFrom(input, _repeated_lockAcionList_codec);
-            break;
-          }
-          case 82: {
-            if (inputActionTimelineNode_ == null) {
-              inputActionTimelineNode_ = new global::Config.InputActionTimelineNode();
-            }
-            input.ReadMessage(inputActionTimelineNode_);
-            break;
-          }
-          case 90: {
-            if (moveActionTimelineNode_ == null) {
-              moveActionTimelineNode_ = new global::Config.MoveActionTimelineNode();
-            }
-            input.ReadMessage(moveActionTimelineNode_);
-            break;
-          }
-          case 98: {
-            abilityEffectNodeInfo_.AddEntriesFrom(input, _repeated_abilityEffectNodeInfo_codec);
-            break;
-          }
-          case 104: {
-            ComboOverTime = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class HitCheckInfo : pb::IMessage<HitCheckInfo> {
-    private static readonly pb::MessageParser<HitCheckInfo> _parser = new pb::MessageParser<HitCheckInfo>(() => new HitCheckInfo());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<HitCheckInfo> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HitCheckInfo() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HitCheckInfo(HitCheckInfo other) : this() {
-      iD_ = other.iD_;
-      start_ = other.start_;
-      hitHeight_ = other.hitHeight_;
-      validHitHeight_ = other.validHitHeight_;
-      rangeType_ = other.rangeType_;
-      range_ = other.range_;
-      radius_ = other.radius_;
-      angle_ = other.angle_;
-      length_ = other.length_;
-      width_ = other.width_;
-      CenterOffset = other.centerOffset_ != null ? other.CenterOffset.Clone() : null;
-      horizontalSpeed_ = other.horizontalSpeed_;
-      horizontalAcceleratedASpeed_ = other.horizontalAcceleratedASpeed_;
-      duration_ = other.duration_;
-      verticalSpeed_ = other.verticalSpeed_;
-      verticalAcceleratedSpeed_ = other.verticalAcceleratedSpeed_;
-      hitDamagePec_ = other.hitDamagePec_;
-      hitDamageBasics_ = other.hitDamageBasics_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HitCheckInfo Clone() {
-      return new HitCheckInfo(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private int iD_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ID {
-      get { return iD_; }
-      set {
-        iD_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Start" field.</summary>
-    public const int StartFieldNumber = 2;
-    private int start_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Start {
-      get { return start_; }
-      set {
-        start_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HitHeight" field.</summary>
-    public const int HitHeightFieldNumber = 3;
-    private int hitHeight_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int HitHeight {
-      get { return hitHeight_; }
-      set {
-        hitHeight_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ValidHitHeight" field.</summary>
-    public const int ValidHitHeightFieldNumber = 4;
-    private int validHitHeight_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ValidHitHeight {
-      get { return validHitHeight_; }
-      set {
-        validHitHeight_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "RangeType" field.</summary>
-    public const int RangeTypeFieldNumber = 5;
-    private global::Config.RangeType rangeType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Config.RangeType RangeType {
-      get { return rangeType_; }
-      set {
-        rangeType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Range" field.</summary>
-    public const int RangeFieldNumber = 6;
-    private int range_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Range {
-      get { return range_; }
-      set {
-        range_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Radius" field.</summary>
-    public const int RadiusFieldNumber = 7;
-    private int radius_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Radius {
-      get { return radius_; }
-      set {
-        radius_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Angle" field.</summary>
-    public const int AngleFieldNumber = 8;
-    private int angle_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Angle {
-      get { return angle_; }
-      set {
-        angle_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Length" field.</summary>
-    public const int LengthFieldNumber = 9;
-    private int length_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Length {
-      get { return length_; }
-      set {
-        length_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Width" field.</summary>
-    public const int WidthFieldNumber = 10;
-    private int width_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Width {
-      get { return width_; }
-      set {
-        width_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "CenterOffset" field.</summary>
-    public const int CenterOffsetFieldNumber = 11;
-    private global::Config.VectorInt3 centerOffset_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Config.VectorInt3 CenterOffset {
-      get { return centerOffset_; }
-      set {
-        centerOffset_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HorizontalSpeed" field.</summary>
-    public const int HorizontalSpeedFieldNumber = 12;
-    private int horizontalSpeed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int HorizontalSpeed {
-      get { return horizontalSpeed_; }
-      set {
-        horizontalSpeed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HorizontalAcceleratedASpeed" field.</summary>
-    public const int HorizontalAcceleratedASpeedFieldNumber = 13;
-    private int horizontalAcceleratedASpeed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int HorizontalAcceleratedASpeed {
-      get { return horizontalAcceleratedASpeed_; }
-      set {
-        horizontalAcceleratedASpeed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Duration" field.</summary>
-    public const int DurationFieldNumber = 14;
-    private int duration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Duration {
-      get { return duration_; }
-      set {
-        duration_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "VerticalSpeed" field.</summary>
-    public const int VerticalSpeedFieldNumber = 15;
-    private int verticalSpeed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int VerticalSpeed {
-      get { return verticalSpeed_; }
-      set {
-        verticalSpeed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "VerticalAcceleratedSpeed" field.</summary>
-    public const int VerticalAcceleratedSpeedFieldNumber = 16;
-    private int verticalAcceleratedSpeed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int VerticalAcceleratedSpeed {
-      get { return verticalAcceleratedSpeed_; }
-      set {
-        verticalAcceleratedSpeed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HitDamagePec" field.</summary>
-    public const int HitDamagePecFieldNumber = 17;
-    private int hitDamagePec_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int HitDamagePec {
-      get { return hitDamagePec_; }
-      set {
-        hitDamagePec_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HitDamageBasics" field.</summary>
-    public const int HitDamageBasicsFieldNumber = 18;
-    private int hitDamageBasics_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int HitDamageBasics {
-      get { return hitDamageBasics_; }
-      set {
-        hitDamageBasics_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as HitCheckInfo);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(HitCheckInfo other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (Start != other.Start) return false;
-      if (HitHeight != other.HitHeight) return false;
-      if (ValidHitHeight != other.ValidHitHeight) return false;
-      if (RangeType != other.RangeType) return false;
-      if (Range != other.Range) return false;
-      if (Radius != other.Radius) return false;
-      if (Angle != other.Angle) return false;
-      if (Length != other.Length) return false;
-      if (Width != other.Width) return false;
-      if (!object.Equals(CenterOffset, other.CenterOffset)) return false;
-      if (HorizontalSpeed != other.HorizontalSpeed) return false;
-      if (HorizontalAcceleratedASpeed != other.HorizontalAcceleratedASpeed) return false;
-      if (Duration != other.Duration) return false;
-      if (VerticalSpeed != other.VerticalSpeed) return false;
-      if (VerticalAcceleratedSpeed != other.VerticalAcceleratedSpeed) return false;
-      if (HitDamagePec != other.HitDamagePec) return false;
-      if (HitDamageBasics != other.HitDamageBasics) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID != 0) hash ^= ID.GetHashCode();
-      if (Start != 0) hash ^= Start.GetHashCode();
-      if (HitHeight != 0) hash ^= HitHeight.GetHashCode();
-      if (ValidHitHeight != 0) hash ^= ValidHitHeight.GetHashCode();
-      if (RangeType != 0) hash ^= RangeType.GetHashCode();
-      if (Range != 0) hash ^= Range.GetHashCode();
-      if (Radius != 0) hash ^= Radius.GetHashCode();
-      if (Angle != 0) hash ^= Angle.GetHashCode();
-      if (Length != 0) hash ^= Length.GetHashCode();
-      if (Width != 0) hash ^= Width.GetHashCode();
-      if (centerOffset_ != null) hash ^= CenterOffset.GetHashCode();
-      if (HorizontalSpeed != 0) hash ^= HorizontalSpeed.GetHashCode();
-      if (HorizontalAcceleratedASpeed != 0) hash ^= HorizontalAcceleratedASpeed.GetHashCode();
-      if (Duration != 0) hash ^= Duration.GetHashCode();
-      if (VerticalSpeed != 0) hash ^= VerticalSpeed.GetHashCode();
-      if (VerticalAcceleratedSpeed != 0) hash ^= VerticalAcceleratedSpeed.GetHashCode();
-      if (HitDamagePec != 0) hash ^= HitDamagePec.GetHashCode();
-      if (HitDamageBasics != 0) hash ^= HitDamageBasics.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(ID);
-      }
-      if (Start != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Start);
-      }
-      if (HitHeight != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(HitHeight);
-      }
-      if (ValidHitHeight != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(ValidHitHeight);
-      }
-      if (RangeType != 0) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) RangeType);
-      }
-      if (Range != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(Range);
-      }
-      if (Radius != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(Radius);
-      }
-      if (Angle != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Angle);
-      }
-      if (Length != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(Length);
-      }
-      if (Width != 0) {
-        output.WriteRawTag(80);
-        output.WriteInt32(Width);
-      }
-      if (centerOffset_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(CenterOffset);
-      }
-      if (HorizontalSpeed != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(HorizontalSpeed);
-      }
-      if (HorizontalAcceleratedASpeed != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(HorizontalAcceleratedASpeed);
-      }
-      if (Duration != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(Duration);
-      }
-      if (VerticalSpeed != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(VerticalSpeed);
-      }
-      if (VerticalAcceleratedSpeed != 0) {
-        output.WriteRawTag(128, 1);
-        output.WriteInt32(VerticalAcceleratedSpeed);
-      }
-      if (HitDamagePec != 0) {
-        output.WriteRawTag(136, 1);
-        output.WriteInt32(HitDamagePec);
-      }
-      if (HitDamageBasics != 0) {
-        output.WriteRawTag(144, 1);
-        output.WriteInt32(HitDamageBasics);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
-      }
-      if (Start != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Start);
-      }
-      if (HitHeight != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitHeight);
-      }
-      if (ValidHitHeight != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ValidHitHeight);
-      }
-      if (RangeType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RangeType);
-      }
-      if (Range != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Range);
-      }
-      if (Radius != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Radius);
-      }
-      if (Angle != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Angle);
-      }
-      if (Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Length);
-      }
-      if (Width != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Width);
-      }
-      if (centerOffset_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CenterOffset);
-      }
-      if (HorizontalSpeed != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HorizontalSpeed);
-      }
-      if (HorizontalAcceleratedASpeed != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HorizontalAcceleratedASpeed);
-      }
-      if (Duration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
-      }
-      if (VerticalSpeed != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(VerticalSpeed);
-      }
-      if (VerticalAcceleratedSpeed != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(VerticalAcceleratedSpeed);
-      }
-      if (HitDamagePec != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HitDamagePec);
-      }
-      if (HitDamageBasics != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HitDamageBasics);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(HitCheckInfo other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID != 0) {
-        ID = other.ID;
-      }
-      if (other.Start != 0) {
-        Start = other.Start;
-      }
-      if (other.HitHeight != 0) {
-        HitHeight = other.HitHeight;
-      }
-      if (other.ValidHitHeight != 0) {
-        ValidHitHeight = other.ValidHitHeight;
-      }
-      if (other.RangeType != 0) {
-        RangeType = other.RangeType;
-      }
-      if (other.Range != 0) {
-        Range = other.Range;
-      }
-      if (other.Radius != 0) {
-        Radius = other.Radius;
-      }
-      if (other.Angle != 0) {
-        Angle = other.Angle;
-      }
-      if (other.Length != 0) {
-        Length = other.Length;
-      }
-      if (other.Width != 0) {
-        Width = other.Width;
-      }
-      if (other.centerOffset_ != null) {
-        if (centerOffset_ == null) {
-          centerOffset_ = new global::Config.VectorInt3();
-        }
-        CenterOffset.MergeFrom(other.CenterOffset);
-      }
-      if (other.HorizontalSpeed != 0) {
-        HorizontalSpeed = other.HorizontalSpeed;
-      }
-      if (other.HorizontalAcceleratedASpeed != 0) {
-        HorizontalAcceleratedASpeed = other.HorizontalAcceleratedASpeed;
-      }
-      if (other.Duration != 0) {
-        Duration = other.Duration;
-      }
-      if (other.VerticalSpeed != 0) {
-        VerticalSpeed = other.VerticalSpeed;
-      }
-      if (other.VerticalAcceleratedSpeed != 0) {
-        VerticalAcceleratedSpeed = other.VerticalAcceleratedSpeed;
-      }
-      if (other.HitDamagePec != 0) {
-        HitDamagePec = other.HitDamagePec;
-      }
-      if (other.HitDamageBasics != 0) {
-        HitDamageBasics = other.HitDamageBasics;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            ID = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Start = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            HitHeight = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            ValidHitHeight = input.ReadInt32();
-            break;
-          }
-          case 40: {
-            rangeType_ = (global::Config.RangeType) input.ReadEnum();
-            break;
-          }
-          case 48: {
-            Range = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            Radius = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            Angle = input.ReadInt32();
-            break;
-          }
-          case 72: {
-            Length = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            Width = input.ReadInt32();
-            break;
-          }
-          case 90: {
-            if (centerOffset_ == null) {
-              centerOffset_ = new global::Config.VectorInt3();
-            }
-            input.ReadMessage(centerOffset_);
-            break;
-          }
-          case 96: {
-            HorizontalSpeed = input.ReadInt32();
-            break;
-          }
-          case 104: {
-            HorizontalAcceleratedASpeed = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            Duration = input.ReadInt32();
-            break;
-          }
-          case 120: {
-            VerticalSpeed = input.ReadInt32();
-            break;
-          }
-          case 128: {
-            VerticalAcceleratedSpeed = input.ReadInt32();
-            break;
-          }
-          case 136: {
-            HitDamagePec = input.ReadInt32();
-            break;
-          }
-          case 144: {
-            HitDamageBasics = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class AbilityEffect : pb::IMessage<AbilityEffect> {
     private static readonly pb::MessageParser<AbilityEffect> _parser = new pb::MessageParser<AbilityEffect>(() => new AbilityEffect());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3623,10 +3651,10 @@ namespace Config {
 
   }
 
-  public sealed partial class VectorInt3 : pb::IMessage<VectorInt3> {
-    private static readonly pb::MessageParser<VectorInt3> _parser = new pb::MessageParser<VectorInt3>(() => new VectorInt3());
+  public sealed partial class AbilityConfig : pb::IMessage<AbilityConfig> {
+    private static readonly pb::MessageParser<AbilityConfig> _parser = new pb::MessageParser<AbilityConfig>(() => new AbilityConfig());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<VectorInt3> Parser { get { return _parser; } }
+    public static pb::MessageParser<AbilityConfig> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -3639,23 +3667,22 @@ namespace Config {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public VectorInt3() {
+    public AbilityConfig() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public VectorInt3(VectorInt3 other) : this() {
+    public AbilityConfig(AbilityConfig other) : this() {
       iD_ = other.iD_;
-      x_ = other.x_;
-      y_ = other.y_;
-      z_ = other.z_;
+      path_ = other.path_;
+      asset_ = other.asset_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public VectorInt3 Clone() {
-      return new VectorInt3(this);
+    public AbilityConfig Clone() {
+      return new AbilityConfig(this);
     }
 
     /// <summary>Field number for the "ID" field.</summary>
@@ -3669,46 +3696,35 @@ namespace Config {
       }
     }
 
-    /// <summary>Field number for the "X" field.</summary>
-    public const int XFieldNumber = 2;
-    private int x_;
+    /// <summary>Field number for the "Path" field.</summary>
+    public const int PathFieldNumber = 2;
+    private string path_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int X {
-      get { return x_; }
+    public string Path {
+      get { return path_; }
       set {
-        x_ = value;
+        path_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "Y" field.</summary>
-    public const int YFieldNumber = 3;
-    private int y_;
+    /// <summary>Field number for the "Asset" field.</summary>
+    public const int AssetFieldNumber = 3;
+    private string asset_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Y {
-      get { return y_; }
+    public string Asset {
+      get { return asset_; }
       set {
-        y_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Z" field.</summary>
-    public const int ZFieldNumber = 4;
-    private int z_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Z {
-      get { return z_; }
-      set {
-        z_ = value;
+        asset_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as VectorInt3);
+      return Equals(other as AbilityConfig);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(VectorInt3 other) {
+    public bool Equals(AbilityConfig other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -3716,9 +3732,8 @@ namespace Config {
         return true;
       }
       if (ID != other.ID) return false;
-      if (X != other.X) return false;
-      if (Y != other.Y) return false;
-      if (Z != other.Z) return false;
+      if (Path != other.Path) return false;
+      if (Asset != other.Asset) return false;
       return true;
     }
 
@@ -3726,9 +3741,8 @@ namespace Config {
     public override int GetHashCode() {
       int hash = 1;
       if (ID != 0) hash ^= ID.GetHashCode();
-      if (X != 0) hash ^= X.GetHashCode();
-      if (Y != 0) hash ^= Y.GetHashCode();
-      if (Z != 0) hash ^= Z.GetHashCode();
+      if (Path.Length != 0) hash ^= Path.GetHashCode();
+      if (Asset.Length != 0) hash ^= Asset.GetHashCode();
       return hash;
     }
 
@@ -3743,17 +3757,13 @@ namespace Config {
         output.WriteRawTag(8);
         output.WriteInt32(ID);
       }
-      if (X != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(X);
+      if (Path.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Path);
       }
-      if (Y != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Y);
-      }
-      if (Z != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Z);
+      if (Asset.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Asset);
       }
     }
 
@@ -3763,34 +3773,201 @@ namespace Config {
       if (ID != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
       }
-      if (X != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(X);
+      if (Path.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Path);
       }
-      if (Y != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Y);
-      }
-      if (Z != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Z);
+      if (Asset.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Asset);
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(VectorInt3 other) {
+    public void MergeFrom(AbilityConfig other) {
       if (other == null) {
         return;
       }
       if (other.ID != 0) {
         ID = other.ID;
       }
-      if (other.X != 0) {
-        X = other.X;
+      if (other.Path.Length != 0) {
+        Path = other.Path;
       }
-      if (other.Y != 0) {
-        Y = other.Y;
+      if (other.Asset.Length != 0) {
+        Asset = other.Asset;
       }
-      if (other.Z != 0) {
-        Z = other.Z;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Path = input.ReadString();
+            break;
+          }
+          case 26: {
+            Asset = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LockActionNode : pb::IMessage<LockActionNode> {
+    private static readonly pb::MessageParser<LockActionNode> _parser = new pb::MessageParser<LockActionNode>(() => new LockActionNode());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LockActionNode> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LockActionNode() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LockActionNode(LockActionNode other) : this() {
+      iD_ = other.iD_;
+      start_ = other.start_;
+      duration_ = other.duration_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LockActionNode Clone() {
+      return new LockActionNode(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Start" field.</summary>
+    public const int StartFieldNumber = 2;
+    private int start_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Start {
+      get { return start_; }
+      set {
+        start_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Duration" field.</summary>
+    public const int DurationFieldNumber = 3;
+    private int duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LockActionNode);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LockActionNode other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Start != other.Start) return false;
+      if (Duration != other.Duration) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Start != 0) hash ^= Start.GetHashCode();
+      if (Duration != 0) hash ^= Duration.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Start != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Start);
+      }
+      if (Duration != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Duration);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Start != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Start);
+      }
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LockActionNode other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Start != 0) {
+        Start = other.Start;
+      }
+      if (other.Duration != 0) {
+        Duration = other.Duration;
       }
     }
 
@@ -3807,15 +3984,11 @@ namespace Config {
             break;
           }
           case 16: {
-            X = input.ReadInt32();
+            Start = input.ReadInt32();
             break;
           }
           case 24: {
-            Y = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            Z = input.ReadInt32();
+            Duration = input.ReadInt32();
             break;
           }
         }
@@ -3831,7 +4004,7 @@ namespace Config {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Config.DataReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4025,179 +4198,6 @@ namespace Config {
 
   }
 
-  public sealed partial class LockActionNode : pb::IMessage<LockActionNode> {
-    private static readonly pb::MessageParser<LockActionNode> _parser = new pb::MessageParser<LockActionNode>(() => new LockActionNode());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LockActionNode> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Config.DataReflection.Descriptor.MessageTypes[9]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LockActionNode() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LockActionNode(LockActionNode other) : this() {
-      iD_ = other.iD_;
-      start_ = other.start_;
-      duration_ = other.duration_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LockActionNode Clone() {
-      return new LockActionNode(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private int iD_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ID {
-      get { return iD_; }
-      set {
-        iD_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Start" field.</summary>
-    public const int StartFieldNumber = 2;
-    private int start_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Start {
-      get { return start_; }
-      set {
-        start_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Duration" field.</summary>
-    public const int DurationFieldNumber = 3;
-    private int duration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Duration {
-      get { return duration_; }
-      set {
-        duration_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as LockActionNode);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LockActionNode other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (Start != other.Start) return false;
-      if (Duration != other.Duration) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID != 0) hash ^= ID.GetHashCode();
-      if (Start != 0) hash ^= Start.GetHashCode();
-      if (Duration != 0) hash ^= Duration.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(ID);
-      }
-      if (Start != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Start);
-      }
-      if (Duration != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Duration);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
-      }
-      if (Start != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Start);
-      }
-      if (Duration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LockActionNode other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID != 0) {
-        ID = other.ID;
-      }
-      if (other.Start != 0) {
-        Start = other.Start;
-      }
-      if (other.Duration != 0) {
-        Duration = other.Duration;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            ID = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Start = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            Duration = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class DataHelper : pb::IMessage<DataHelper> {
     private static readonly pb::MessageParser<DataHelper> _parser = new pb::MessageParser<DataHelper>(() => new DataHelper());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4223,16 +4223,16 @@ namespace Config {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DataHelper(DataHelper other) : this() {
       messageType_ = other.messageType_.Clone();
-      roleConfigDict_ = other.roleConfigDict_.Clone();
-      buffConfigDict_ = other.buffConfigDict_.Clone();
-      moveActionTimelineNodeDict_ = other.moveActionTimelineNodeDict_.Clone();
-      abilityConfigDict_ = other.abilityConfigDict_.Clone();
-      timelineDict_ = other.timelineDict_.Clone();
-      hitCheckInfoDict_ = other.hitCheckInfoDict_.Clone();
-      abilityEffectDict_ = other.abilityEffectDict_.Clone();
       vectorInt3Dict_ = other.vectorInt3Dict_.Clone();
-      inputActionTimelineNodeDict_ = other.inputActionTimelineNodeDict_.Clone();
+      hitCheckInfoDict_ = other.hitCheckInfoDict_.Clone();
+      roleConfigDict_ = other.roleConfigDict_.Clone();
+      timelineDict_ = other.timelineDict_.Clone();
+      moveActionTimelineNodeDict_ = other.moveActionTimelineNodeDict_.Clone();
+      buffConfigDict_ = other.buffConfigDict_.Clone();
+      abilityEffectDict_ = other.abilityEffectDict_.Clone();
+      abilityConfigDict_ = other.abilityConfigDict_.Clone();
       lockActionNodeDict_ = other.lockActionNodeDict_.Clone();
+      inputActionTimelineNodeDict_ = other.inputActionTimelineNodeDict_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4250,64 +4250,64 @@ namespace Config {
       get { return messageType_; }
     }
 
+    /// <summary>Field number for the "VectorInt3_dict" field.</summary>
+    public const int VectorInt3DictFieldNumber = 2;
+    private static readonly pbc::MapField<int, global::Config.VectorInt3>.Codec _map_vectorInt3Dict_codec
+        = new pbc::MapField<int, global::Config.VectorInt3>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.VectorInt3.Parser), 18);
+    private readonly pbc::MapField<int, global::Config.VectorInt3> vectorInt3Dict_ = new pbc::MapField<int, global::Config.VectorInt3>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.VectorInt3> VectorInt3Dict {
+      get { return vectorInt3Dict_; }
+    }
+
+    /// <summary>Field number for the "HitCheckInfo_dict" field.</summary>
+    public const int HitCheckInfoDictFieldNumber = 3;
+    private static readonly pbc::MapField<int, global::Config.HitCheckInfo>.Codec _map_hitCheckInfoDict_codec
+        = new pbc::MapField<int, global::Config.HitCheckInfo>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.HitCheckInfo.Parser), 26);
+    private readonly pbc::MapField<int, global::Config.HitCheckInfo> hitCheckInfoDict_ = new pbc::MapField<int, global::Config.HitCheckInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.HitCheckInfo> HitCheckInfoDict {
+      get { return hitCheckInfoDict_; }
+    }
+
     /// <summary>Field number for the "RoleConfig_dict" field.</summary>
-    public const int RoleConfigDictFieldNumber = 2;
+    public const int RoleConfigDictFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Config.RoleConfig>.Codec _map_roleConfigDict_codec
-        = new pbc::MapField<int, global::Config.RoleConfig>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.RoleConfig.Parser), 18);
+        = new pbc::MapField<int, global::Config.RoleConfig>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.RoleConfig.Parser), 34);
     private readonly pbc::MapField<int, global::Config.RoleConfig> roleConfigDict_ = new pbc::MapField<int, global::Config.RoleConfig>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Config.RoleConfig> RoleConfigDict {
       get { return roleConfigDict_; }
     }
 
-    /// <summary>Field number for the "BuffConfig_dict" field.</summary>
-    public const int BuffConfigDictFieldNumber = 3;
-    private static readonly pbc::MapField<int, global::Config.BuffConfig>.Codec _map_buffConfigDict_codec
-        = new pbc::MapField<int, global::Config.BuffConfig>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.BuffConfig.Parser), 26);
-    private readonly pbc::MapField<int, global::Config.BuffConfig> buffConfigDict_ = new pbc::MapField<int, global::Config.BuffConfig>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::Config.BuffConfig> BuffConfigDict {
-      get { return buffConfigDict_; }
-    }
-
-    /// <summary>Field number for the "MoveActionTimelineNode_dict" field.</summary>
-    public const int MoveActionTimelineNodeDictFieldNumber = 4;
-    private static readonly pbc::MapField<int, global::Config.MoveActionTimelineNode>.Codec _map_moveActionTimelineNodeDict_codec
-        = new pbc::MapField<int, global::Config.MoveActionTimelineNode>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.MoveActionTimelineNode.Parser), 34);
-    private readonly pbc::MapField<int, global::Config.MoveActionTimelineNode> moveActionTimelineNodeDict_ = new pbc::MapField<int, global::Config.MoveActionTimelineNode>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::Config.MoveActionTimelineNode> MoveActionTimelineNodeDict {
-      get { return moveActionTimelineNodeDict_; }
-    }
-
-    /// <summary>Field number for the "AbilityConfig_dict" field.</summary>
-    public const int AbilityConfigDictFieldNumber = 5;
-    private static readonly pbc::MapField<int, global::Config.AbilityConfig>.Codec _map_abilityConfigDict_codec
-        = new pbc::MapField<int, global::Config.AbilityConfig>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.AbilityConfig.Parser), 42);
-    private readonly pbc::MapField<int, global::Config.AbilityConfig> abilityConfigDict_ = new pbc::MapField<int, global::Config.AbilityConfig>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::Config.AbilityConfig> AbilityConfigDict {
-      get { return abilityConfigDict_; }
-    }
-
     /// <summary>Field number for the "Timeline_dict" field.</summary>
-    public const int TimelineDictFieldNumber = 6;
+    public const int TimelineDictFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Config.Timeline>.Codec _map_timelineDict_codec
-        = new pbc::MapField<int, global::Config.Timeline>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.Timeline.Parser), 50);
+        = new pbc::MapField<int, global::Config.Timeline>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.Timeline.Parser), 42);
     private readonly pbc::MapField<int, global::Config.Timeline> timelineDict_ = new pbc::MapField<int, global::Config.Timeline>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Config.Timeline> TimelineDict {
       get { return timelineDict_; }
     }
 
-    /// <summary>Field number for the "HitCheckInfo_dict" field.</summary>
-    public const int HitCheckInfoDictFieldNumber = 7;
-    private static readonly pbc::MapField<int, global::Config.HitCheckInfo>.Codec _map_hitCheckInfoDict_codec
-        = new pbc::MapField<int, global::Config.HitCheckInfo>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.HitCheckInfo.Parser), 58);
-    private readonly pbc::MapField<int, global::Config.HitCheckInfo> hitCheckInfoDict_ = new pbc::MapField<int, global::Config.HitCheckInfo>();
+    /// <summary>Field number for the "MoveActionTimelineNode_dict" field.</summary>
+    public const int MoveActionTimelineNodeDictFieldNumber = 6;
+    private static readonly pbc::MapField<int, global::Config.MoveActionTimelineNode>.Codec _map_moveActionTimelineNodeDict_codec
+        = new pbc::MapField<int, global::Config.MoveActionTimelineNode>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.MoveActionTimelineNode.Parser), 50);
+    private readonly pbc::MapField<int, global::Config.MoveActionTimelineNode> moveActionTimelineNodeDict_ = new pbc::MapField<int, global::Config.MoveActionTimelineNode>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::Config.HitCheckInfo> HitCheckInfoDict {
-      get { return hitCheckInfoDict_; }
+    public pbc::MapField<int, global::Config.MoveActionTimelineNode> MoveActionTimelineNodeDict {
+      get { return moveActionTimelineNodeDict_; }
+    }
+
+    /// <summary>Field number for the "BuffConfig_dict" field.</summary>
+    public const int BuffConfigDictFieldNumber = 7;
+    private static readonly pbc::MapField<int, global::Config.BuffConfig>.Codec _map_buffConfigDict_codec
+        = new pbc::MapField<int, global::Config.BuffConfig>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.BuffConfig.Parser), 58);
+    private readonly pbc::MapField<int, global::Config.BuffConfig> buffConfigDict_ = new pbc::MapField<int, global::Config.BuffConfig>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.BuffConfig> BuffConfigDict {
+      get { return buffConfigDict_; }
     }
 
     /// <summary>Field number for the "AbilityEffect_dict" field.</summary>
@@ -4320,34 +4320,34 @@ namespace Config {
       get { return abilityEffectDict_; }
     }
 
-    /// <summary>Field number for the "VectorInt3_dict" field.</summary>
-    public const int VectorInt3DictFieldNumber = 9;
-    private static readonly pbc::MapField<int, global::Config.VectorInt3>.Codec _map_vectorInt3Dict_codec
-        = new pbc::MapField<int, global::Config.VectorInt3>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.VectorInt3.Parser), 74);
-    private readonly pbc::MapField<int, global::Config.VectorInt3> vectorInt3Dict_ = new pbc::MapField<int, global::Config.VectorInt3>();
+    /// <summary>Field number for the "AbilityConfig_dict" field.</summary>
+    public const int AbilityConfigDictFieldNumber = 9;
+    private static readonly pbc::MapField<int, global::Config.AbilityConfig>.Codec _map_abilityConfigDict_codec
+        = new pbc::MapField<int, global::Config.AbilityConfig>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.AbilityConfig.Parser), 74);
+    private readonly pbc::MapField<int, global::Config.AbilityConfig> abilityConfigDict_ = new pbc::MapField<int, global::Config.AbilityConfig>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::Config.VectorInt3> VectorInt3Dict {
-      get { return vectorInt3Dict_; }
-    }
-
-    /// <summary>Field number for the "InputActionTimelineNode_dict" field.</summary>
-    public const int InputActionTimelineNodeDictFieldNumber = 10;
-    private static readonly pbc::MapField<int, global::Config.InputActionTimelineNode>.Codec _map_inputActionTimelineNodeDict_codec
-        = new pbc::MapField<int, global::Config.InputActionTimelineNode>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.InputActionTimelineNode.Parser), 82);
-    private readonly pbc::MapField<int, global::Config.InputActionTimelineNode> inputActionTimelineNodeDict_ = new pbc::MapField<int, global::Config.InputActionTimelineNode>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<int, global::Config.InputActionTimelineNode> InputActionTimelineNodeDict {
-      get { return inputActionTimelineNodeDict_; }
+    public pbc::MapField<int, global::Config.AbilityConfig> AbilityConfigDict {
+      get { return abilityConfigDict_; }
     }
 
     /// <summary>Field number for the "LockActionNode_dict" field.</summary>
-    public const int LockActionNodeDictFieldNumber = 11;
+    public const int LockActionNodeDictFieldNumber = 10;
     private static readonly pbc::MapField<int, global::Config.LockActionNode>.Codec _map_lockActionNodeDict_codec
-        = new pbc::MapField<int, global::Config.LockActionNode>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.LockActionNode.Parser), 90);
+        = new pbc::MapField<int, global::Config.LockActionNode>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.LockActionNode.Parser), 82);
     private readonly pbc::MapField<int, global::Config.LockActionNode> lockActionNodeDict_ = new pbc::MapField<int, global::Config.LockActionNode>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Config.LockActionNode> LockActionNodeDict {
       get { return lockActionNodeDict_; }
+    }
+
+    /// <summary>Field number for the "InputActionTimelineNode_dict" field.</summary>
+    public const int InputActionTimelineNodeDictFieldNumber = 11;
+    private static readonly pbc::MapField<int, global::Config.InputActionTimelineNode>.Codec _map_inputActionTimelineNodeDict_codec
+        = new pbc::MapField<int, global::Config.InputActionTimelineNode>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Config.InputActionTimelineNode.Parser), 90);
+    private readonly pbc::MapField<int, global::Config.InputActionTimelineNode> inputActionTimelineNodeDict_ = new pbc::MapField<int, global::Config.InputActionTimelineNode>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, global::Config.InputActionTimelineNode> InputActionTimelineNodeDict {
+      get { return inputActionTimelineNodeDict_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4364,16 +4364,16 @@ namespace Config {
         return true;
       }
       if(!messageType_.Equals(other.messageType_)) return false;
-      if (!RoleConfigDict.Equals(other.RoleConfigDict)) return false;
-      if (!BuffConfigDict.Equals(other.BuffConfigDict)) return false;
-      if (!MoveActionTimelineNodeDict.Equals(other.MoveActionTimelineNodeDict)) return false;
-      if (!AbilityConfigDict.Equals(other.AbilityConfigDict)) return false;
-      if (!TimelineDict.Equals(other.TimelineDict)) return false;
-      if (!HitCheckInfoDict.Equals(other.HitCheckInfoDict)) return false;
-      if (!AbilityEffectDict.Equals(other.AbilityEffectDict)) return false;
       if (!VectorInt3Dict.Equals(other.VectorInt3Dict)) return false;
-      if (!InputActionTimelineNodeDict.Equals(other.InputActionTimelineNodeDict)) return false;
+      if (!HitCheckInfoDict.Equals(other.HitCheckInfoDict)) return false;
+      if (!RoleConfigDict.Equals(other.RoleConfigDict)) return false;
+      if (!TimelineDict.Equals(other.TimelineDict)) return false;
+      if (!MoveActionTimelineNodeDict.Equals(other.MoveActionTimelineNodeDict)) return false;
+      if (!BuffConfigDict.Equals(other.BuffConfigDict)) return false;
+      if (!AbilityEffectDict.Equals(other.AbilityEffectDict)) return false;
+      if (!AbilityConfigDict.Equals(other.AbilityConfigDict)) return false;
       if (!LockActionNodeDict.Equals(other.LockActionNodeDict)) return false;
+      if (!InputActionTimelineNodeDict.Equals(other.InputActionTimelineNodeDict)) return false;
       return true;
     }
 
@@ -4381,16 +4381,16 @@ namespace Config {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= messageType_.GetHashCode();
-      hash ^= RoleConfigDict.GetHashCode();
-      hash ^= BuffConfigDict.GetHashCode();
-      hash ^= MoveActionTimelineNodeDict.GetHashCode();
-      hash ^= AbilityConfigDict.GetHashCode();
-      hash ^= TimelineDict.GetHashCode();
-      hash ^= HitCheckInfoDict.GetHashCode();
-      hash ^= AbilityEffectDict.GetHashCode();
       hash ^= VectorInt3Dict.GetHashCode();
-      hash ^= InputActionTimelineNodeDict.GetHashCode();
+      hash ^= HitCheckInfoDict.GetHashCode();
+      hash ^= RoleConfigDict.GetHashCode();
+      hash ^= TimelineDict.GetHashCode();
+      hash ^= MoveActionTimelineNodeDict.GetHashCode();
+      hash ^= BuffConfigDict.GetHashCode();
+      hash ^= AbilityEffectDict.GetHashCode();
+      hash ^= AbilityConfigDict.GetHashCode();
       hash ^= LockActionNodeDict.GetHashCode();
+      hash ^= InputActionTimelineNodeDict.GetHashCode();
       return hash;
     }
 
@@ -4402,32 +4402,32 @@ namespace Config {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       messageType_.WriteTo(output, _repeated_messageType_codec);
-      roleConfigDict_.WriteTo(output, _map_roleConfigDict_codec);
-      buffConfigDict_.WriteTo(output, _map_buffConfigDict_codec);
-      moveActionTimelineNodeDict_.WriteTo(output, _map_moveActionTimelineNodeDict_codec);
-      abilityConfigDict_.WriteTo(output, _map_abilityConfigDict_codec);
-      timelineDict_.WriteTo(output, _map_timelineDict_codec);
-      hitCheckInfoDict_.WriteTo(output, _map_hitCheckInfoDict_codec);
-      abilityEffectDict_.WriteTo(output, _map_abilityEffectDict_codec);
       vectorInt3Dict_.WriteTo(output, _map_vectorInt3Dict_codec);
-      inputActionTimelineNodeDict_.WriteTo(output, _map_inputActionTimelineNodeDict_codec);
+      hitCheckInfoDict_.WriteTo(output, _map_hitCheckInfoDict_codec);
+      roleConfigDict_.WriteTo(output, _map_roleConfigDict_codec);
+      timelineDict_.WriteTo(output, _map_timelineDict_codec);
+      moveActionTimelineNodeDict_.WriteTo(output, _map_moveActionTimelineNodeDict_codec);
+      buffConfigDict_.WriteTo(output, _map_buffConfigDict_codec);
+      abilityEffectDict_.WriteTo(output, _map_abilityEffectDict_codec);
+      abilityConfigDict_.WriteTo(output, _map_abilityConfigDict_codec);
       lockActionNodeDict_.WriteTo(output, _map_lockActionNodeDict_codec);
+      inputActionTimelineNodeDict_.WriteTo(output, _map_inputActionTimelineNodeDict_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += messageType_.CalculateSize(_repeated_messageType_codec);
-      size += roleConfigDict_.CalculateSize(_map_roleConfigDict_codec);
-      size += buffConfigDict_.CalculateSize(_map_buffConfigDict_codec);
-      size += moveActionTimelineNodeDict_.CalculateSize(_map_moveActionTimelineNodeDict_codec);
-      size += abilityConfigDict_.CalculateSize(_map_abilityConfigDict_codec);
-      size += timelineDict_.CalculateSize(_map_timelineDict_codec);
-      size += hitCheckInfoDict_.CalculateSize(_map_hitCheckInfoDict_codec);
-      size += abilityEffectDict_.CalculateSize(_map_abilityEffectDict_codec);
       size += vectorInt3Dict_.CalculateSize(_map_vectorInt3Dict_codec);
-      size += inputActionTimelineNodeDict_.CalculateSize(_map_inputActionTimelineNodeDict_codec);
+      size += hitCheckInfoDict_.CalculateSize(_map_hitCheckInfoDict_codec);
+      size += roleConfigDict_.CalculateSize(_map_roleConfigDict_codec);
+      size += timelineDict_.CalculateSize(_map_timelineDict_codec);
+      size += moveActionTimelineNodeDict_.CalculateSize(_map_moveActionTimelineNodeDict_codec);
+      size += buffConfigDict_.CalculateSize(_map_buffConfigDict_codec);
+      size += abilityEffectDict_.CalculateSize(_map_abilityEffectDict_codec);
+      size += abilityConfigDict_.CalculateSize(_map_abilityConfigDict_codec);
       size += lockActionNodeDict_.CalculateSize(_map_lockActionNodeDict_codec);
+      size += inputActionTimelineNodeDict_.CalculateSize(_map_inputActionTimelineNodeDict_codec);
       return size;
     }
 
@@ -4437,16 +4437,16 @@ namespace Config {
         return;
       }
       messageType_.Add(other.messageType_);
-      roleConfigDict_.Add(other.roleConfigDict_);
-      buffConfigDict_.Add(other.buffConfigDict_);
-      moveActionTimelineNodeDict_.Add(other.moveActionTimelineNodeDict_);
-      abilityConfigDict_.Add(other.abilityConfigDict_);
-      timelineDict_.Add(other.timelineDict_);
-      hitCheckInfoDict_.Add(other.hitCheckInfoDict_);
-      abilityEffectDict_.Add(other.abilityEffectDict_);
       vectorInt3Dict_.Add(other.vectorInt3Dict_);
-      inputActionTimelineNodeDict_.Add(other.inputActionTimelineNodeDict_);
+      hitCheckInfoDict_.Add(other.hitCheckInfoDict_);
+      roleConfigDict_.Add(other.roleConfigDict_);
+      timelineDict_.Add(other.timelineDict_);
+      moveActionTimelineNodeDict_.Add(other.moveActionTimelineNodeDict_);
+      buffConfigDict_.Add(other.buffConfigDict_);
+      abilityEffectDict_.Add(other.abilityEffectDict_);
+      abilityConfigDict_.Add(other.abilityConfigDict_);
       lockActionNodeDict_.Add(other.lockActionNodeDict_);
+      inputActionTimelineNodeDict_.Add(other.inputActionTimelineNodeDict_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4462,27 +4462,27 @@ namespace Config {
             break;
           }
           case 18: {
-            roleConfigDict_.AddEntriesFrom(input, _map_roleConfigDict_codec);
+            vectorInt3Dict_.AddEntriesFrom(input, _map_vectorInt3Dict_codec);
             break;
           }
           case 26: {
-            buffConfigDict_.AddEntriesFrom(input, _map_buffConfigDict_codec);
+            hitCheckInfoDict_.AddEntriesFrom(input, _map_hitCheckInfoDict_codec);
             break;
           }
           case 34: {
-            moveActionTimelineNodeDict_.AddEntriesFrom(input, _map_moveActionTimelineNodeDict_codec);
+            roleConfigDict_.AddEntriesFrom(input, _map_roleConfigDict_codec);
             break;
           }
           case 42: {
-            abilityConfigDict_.AddEntriesFrom(input, _map_abilityConfigDict_codec);
-            break;
-          }
-          case 50: {
             timelineDict_.AddEntriesFrom(input, _map_timelineDict_codec);
             break;
           }
+          case 50: {
+            moveActionTimelineNodeDict_.AddEntriesFrom(input, _map_moveActionTimelineNodeDict_codec);
+            break;
+          }
           case 58: {
-            hitCheckInfoDict_.AddEntriesFrom(input, _map_hitCheckInfoDict_codec);
+            buffConfigDict_.AddEntriesFrom(input, _map_buffConfigDict_codec);
             break;
           }
           case 66: {
@@ -4490,15 +4490,15 @@ namespace Config {
             break;
           }
           case 74: {
-            vectorInt3Dict_.AddEntriesFrom(input, _map_vectorInt3Dict_codec);
+            abilityConfigDict_.AddEntriesFrom(input, _map_abilityConfigDict_codec);
             break;
           }
           case 82: {
-            inputActionTimelineNodeDict_.AddEntriesFrom(input, _map_inputActionTimelineNodeDict_codec);
+            lockActionNodeDict_.AddEntriesFrom(input, _map_lockActionNodeDict_codec);
             break;
           }
           case 90: {
-            lockActionNodeDict_.AddEntriesFrom(input, _map_lockActionNodeDict_codec);
+            inputActionTimelineNodeDict_.AddEntriesFrom(input, _map_inputActionTimelineNodeDict_codec);
             break;
           }
         }

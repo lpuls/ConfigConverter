@@ -1,3 +1,7 @@
+*.js linguist-language=python
+*.css linguist-language=python
+*.html linguist-language=python
+
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################

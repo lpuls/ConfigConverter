@@ -45,6 +45,30 @@ def __str_to_array__(value, data_type):
     if 0 >= len(result):
         value_list = value_data.split(',')
 
+        if None is convert_type:
+            check_type = None
+            for item in value_list:
+                if None is check_type:
+                    check_type = DataType.check_data_type(item)
+                else:
+                    temp = DataType.check_data_type(item)
+                    if temp != check_type:
+                        if check_type == DataType.INT_TYPE or check_type == DataType.LONG_TYPE:
+                            if temp == DataType.FLOAT_TYPE:
+                                check_type = DataType.FLOAT_TYPE
+                            elif temp == DataType.INT_TYPE or temp == DataType.LONG_TYPE:
+                                pass
+                            else:
+                                check_type = DataType.STR_TYPE
+                        elif check_type == DataType.FLOAT_TYPE:
+                            if temp == DataType.FLOAT_TYPE or temp == DataType.INT_TYPE or check_type == DataType.LONG_TYPE:
+                                pass
+                            else:
+                                check_type = DataType.STR_TYPE
+                        else:
+                            check_type = DataType.STR_TYPE
+            convert_type = DataType(check_type)
+
         # 数据字符串根据逗号进行分隔
         for item in value_list:
             if ' ' == item or '' == item:
@@ -192,4 +216,6 @@ class MessageData(SwapData):
         return True
 
 
+if __name__ == '__main__':
+    print(__str_to_array__('[1.0, 2.1, 3,2]', None))
 

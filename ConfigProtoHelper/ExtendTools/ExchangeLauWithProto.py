@@ -57,9 +57,9 @@ if __name__ == '__main__':
     for file_name in file_list:
         e = ExcelHelper(file_name)
         for excel_name, excel_sheet in e.sheets.items():
-            try:
-                process_sheet(excel_name, excel_sheet)
-            except Exception as error:
-                print(excel_name, error)
+            # try:
+            process_sheet(excel_name, excel_sheet)
+            # except Exception as error:
+            #     print(excel_name, error)
         c = CSVHelper(file_name)
         c.to_csv("../../Config/CSV/")

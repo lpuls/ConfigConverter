@@ -1,5 +1,7 @@
 # _*_coding:utf-8_*_ 
 
+import re
+
 
 class DataType:
     STR_TYPE = "STR"
@@ -115,14 +117,21 @@ class DataType:
 
     @staticmethod
     def check_data_type(data):
+        """
+        todo: 之后可以尝试将检查会都换成正则
+        :param data: 检查的对像
+        :return: 类型名称
+        """
         temp = data.upper()
         if temp.isdigit():
             return DataType.INT_TYPE
+        elif None is not re.match(r'^(-?\d+)(\.\d+)?$', data.replace(' ', '')):
+            return DataType.FLOAT_TYPE
         elif "TRUE" == temp or "FALSE" == temp:
             return DataType.BOOL_TYPE
-        elif '[' == data[0] and ']' == data[-1]:
+        elif len(data) > 0 and '[' == data[0] and ']' == data[-1]:
             return DataType.ARRAY_TYPE
-        elif '{' == data[0] and '}' == data[-1]:
+        elif len(data) > 0 and '{' == data[0] and '}' == data[-1]:
             return DataType.MAP_TYPE
         else:
             return DataType.STR_TYPE

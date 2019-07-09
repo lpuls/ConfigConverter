@@ -12,11 +12,19 @@ __FIELD_ROW_ID__ = 2
 
 
 def __add_new_enum_type__(name, data):
-    desc = dict()
-    for index, data_type in enumerate(data.types):
+    desc = list()
+    for index, _ in enumerate(data.data_list):
+        field = data.data_list[index][0]
+        value = int(data.data_list[index][1])
+        desc.append((field, value))
+    new_enum(name, desc)
+
+
+def __add_new_class_type__(name, data):
+    desc = list()
+    for index, type_inst in enumerate(data.types):
         field = data.fields[index]
-        value = data.data_list[index][1]
-        desc[field] = (get_type(data_type), value)
+        desc.append((field, type_inst))
     new_type(name, desc)
 
 
@@ -36,13 +44,16 @@ def __analyze_sheet__(name, sheet):
         data = list()
         for col_index in range(0, sheet.ncols):
             # todo: 之后再加入过滤和缺省
-            data.append(fields[col_index])
+            data.append(sheet.cell(row_index, col_index).value)
         data_list.append(data)
+    print(data_list)
 
     ci_data = CIFormat(name, types, notes, fields, data_list)
     # 判断是枚举还是表格，若是枚举则需要加入一种新的类型
     if 'e_' == name[:2]:
-        new_type(name[2:], ci_data)
+        __add_new_enum_type__(name[2:], ci_data)
+    else:
+        __add_new_class_type__(name, ci_data)
 
     return ci_data
 
@@ -63,5 +74,6 @@ def reader(path):
 
 
 if __name__ == '__main__':
-    reader('../../Config/Excel/e_TargetSelectType.xlsx')
-    print(get_type('TargetSelectType'))
+    reader('../../Config/Excel/e_FloatingType.xlsx')
+    reader('../../Config/Excel/Spawn.xlsx')
+    print(get_type('FloatingType'))

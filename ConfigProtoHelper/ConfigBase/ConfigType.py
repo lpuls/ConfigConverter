@@ -1,6 +1,18 @@
 # _*_coding:utf-8_*_
 
 
+__STR_TYPE__ = "STR"
+__INT_TYPE__ = "INT"
+__LONG_TYPE__ = "LONG"
+__BOOL_TYPE__ = "BOOL"
+__ARRAY_TYPE__ = "ARRAY"
+__MAP_TYPE__ = "MAP"
+__JSON_TYPE__ = "JSON"
+__FLOAT_TYPE__ = "FLOAT"
+
+__TYPE_TABLE__ = dict()
+
+
 class ConfigType:
     def __init__(self):
         pass
@@ -55,24 +67,24 @@ class CustomType(ConfigType):
     custom_type: 表示该类型的名称
     custom_desc:
         该类型的描述，这是一个字典
-        字段名: 元组(类型, 缺省值)
+        字段名: 类型
     """
     def __init__(self):
         ConfigType.__init__(self)
-        self.custom_type = None
+        self.type_name = None
         self.custom_desc = dict()
 
 
-__STR_TYPE__ = "STR"
-__INT_TYPE__ = "INT"
-__LONG_TYPE__ = "LONG"
-__BOOL_TYPE__ = "BOOL"
-__ARRAY_TYPE__ = "ARRAY"
-__MAP_TYPE__ = "MAP"
-__JSON_TYPE__ = "JSON"
-__FLOAT_TYPE__ = "FLOAT"
-
-__TYPE_TABLE__ = dict()
+class EnumType(CustomType):
+    """
+    自定义类型
+    custom_type: 表示该类型的名称
+    custom_desc:
+        该类型的描述，这是一个字典
+        字段名: 值
+    """
+    def __init__(self):
+        CustomType.__init__(self)
 
 
 def __init_type__():
@@ -86,6 +98,10 @@ def __init_type__():
     __TYPE_TABLE__[__JSON_TYPE__] = JsonType()
 
 
+def get_all_type():
+    return __TYPE_TABLE__
+
+
 def new_type(name, desc):
     if len(__TYPE_TABLE__) <= 0:
         __init_type__()
@@ -94,8 +110,21 @@ def new_type(name, desc):
     if None is not type_inst:
         raise Exception('重定义类型 ' + name)
     type_inst = CustomType()
-    type_inst.custom_type = name
+    type_inst.type_name = name
     type_inst.custom_desc = desc
+    __TYPE_TABLE__[name] = type_inst
+
+
+def new_enum(name, value):
+    if len(__TYPE_TABLE__) <= 0:
+        __init_type__()
+
+    type_inst = __TYPE_TABLE__.get(name, None)
+    if None is not type_inst:
+        raise Exception('重定义枚举 ' + name)
+    type_inst = EnumType()
+    type_inst.type_name = name
+    type_inst.custom_desc = value
     __TYPE_TABLE__[name] = type_inst
 
 
@@ -128,8 +157,8 @@ def get_type(type_str):
 
 if __name__ == '__main__':
     new_type('AbilityType', {
-        'ID': (get_type(__INT_TYPE__), 0),
-        'Name': (get_type(__STR_TYPE__), '')
+        'ID': get_type(__INT_TYPE__),
+        'Name': get_type(__STR_TYPE__)
     })
     print(type(get_type('INT')))
     print(type(get_type('FLOAT')))

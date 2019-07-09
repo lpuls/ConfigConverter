@@ -1,0 +1,27 @@
+
+syntax = "proto3";
+option csharp_namespace = "Config";
+
+enum FloatingType {
+    FloatingType_NONE = 0;
+    Score = 1;
+    Block = 2;
+    Trap = 4;
+    InfiniteGloves = 5;
+    TheWorld = 6;
+    Target = 64;
+
+}
+
+
+message Spawn
+{
+    int32 ID = 1;
+    int32 Round = 2;
+    int32 SpawnType = 3;
+    int32 X = 4;
+    int32 Y = 5;
+    int32 ArrayTest = 6;
+
+}
+

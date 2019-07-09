@@ -41,25 +41,32 @@ def process_sheet(name, sheet):
                 else:
                     data[field_name] = temp
                     result = re.search(r'\[*', data[field_name])
-                    sheet.types[index] = len(result.group()) * 'ARRAY:' + t.main_type
+                    array_count = len(result.group())
+                    if array_count == 2:
+                        if DataType.INT_TYPE == t.main_type:
+                            sheet.types[index] = 'ARRAY:IntArray'
+                        elif DataType.LONG_TYPE == t.main_type:
+                            sheet.types[index] = 'ARRAY:LongArray'
+                        elif DataType.FLOAT_TYPE == t.main_type:
+                            sheet.types[index] = 'ARRAY:FloatArray'
+                        elif DataType.STR_TYPE == t.main_type:
+                            sheet.types[index] = 'ARRAY:StringArray'
+                        elif DataType.BOOL_TYPE == t.main_type:
+                            sheet.types[index] = 'ARRAY:BoolArray'
+                    elif array_count == 1:
+                        sheet.types[index] = len(result.group()) * 'ARRAY:' + t.main_type
+                    else:
+                        raise Exception('数组维度不许超过2层')
+
     save_to_excel("../../Config/CSV2Excel/" + name + ".xls", sheet)
 
 
 def main():
-    # e = ExcelHelper("../../Config/CSV2Excel/hero.xls")
-    # for excel_name, excel_sheet in e.sheets.items():
-    #     process_sheet(excel_name, excel_sheet)
-    # c = CSVHelper("../../Config/CSV2Excel/activity_template.xls")
-    # c.to_csv("../../Config/CSV/")
-
     file_list = get_all_file("../../Config/CSV2Excel/", is_deep=True, end_witch=".xlsx")
     file_list += get_all_file("../../Config/CSV2Excel/", is_deep=True, end_witch=".xls")
     for file_name in file_list:
         e = ExcelHelper(file_name)
         for excel_name, excel_sheet in e.sheets.items():
-            # try:
             process_sheet(excel_name, excel_sheet)
-            # except Exception as error:
-            #     print(excel_name, error)
         c = CSVHelper(file_name)
         c.to_csv("../../Config/CSV/")

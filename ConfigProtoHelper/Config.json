@@ -1,6 +1,7 @@
 {
   "JSON_PATH": "../Config/JSON/",
-  "EXCEL_PATH": "../Config/Excel/",
+  "EXCEL_PATH": ["../Config/Excel/"],
+  "CSV_PATH": ["../Config/CSV2Excel/"],
   "OUT_PATH": "../Config/",
   "PROTO_SAVE_PATH": "../Config/Data.proto",
   "BINARY_SAVE_PATH": "../Config/Data.byte",

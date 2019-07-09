@@ -65,7 +65,7 @@ def load_config(path):
     SPAWN_CSHARP_COMMAND = config['SPAWN_CSHARP_COMMAND']
     SPAWN_PYTHON_COMMAND = config['SPAWN_PYTHON_COMMAND']
     OTHER_OUT_PATH = config['OTHER_OUT_PATH']
-    # CSV_PATH = config['CSV_PATH']
+    CSV_PATH = config['CSV_PATH']
 
 
 def merge_dict(dict1, dict2):
@@ -138,7 +138,9 @@ if __name__ == "__main__":
     sheets = dict()
 
     # 找出所有的excel文件并分析二进制表格
-    file_paths = search_file(EXCEL_PATH, [".xlsx", ".XLSX"])
+    file_paths = list()
+    for item in EXCEL_PATH:
+        file_paths += search_file(item, [".xlsx", ".XLSX"])
     excel_sheets = process_excel_config(file_paths)
     merge_dict(sheets, excel_sheets)
 
@@ -155,15 +157,3 @@ if __name__ == "__main__":
     
     # 将excel表格生成二进制文件
     to_binary(PYTHON_PROTO_MODULE_PATH, BINARY_SAVE_PATH, sheets)
-
-    # 将excel生成成csv并同时导出lua和erl
-    # config = load_json(r"./CSVConfig.json")
-
-    # os.system("pause")
-    # file_list = get_all_file(CSV_PATH, is_deep=True, end_witch=".xlsx")
-    # for path in file_list:
-    #     if -1 != path.find("this_is_test"):
-    #         print("stop")
-    #     csv_helper = CSVHelper(path)
-    #     csv_helper.to_csv("../Out/temp/")
-    # os.system("call ../0__Gen_lua_config.bat")

@@ -208,7 +208,13 @@ class CSVHelper:
                     self.platform.append("N")
 
             for row_index in range(3, sheet.nrows):
-                self.data.append(sheet.row_values(row_index))
+                row_data = sheet.row_values(row_index)
+                if len(row_data) > 0:
+                    first_data = row_data[0]
+                    if isinstance(first_data, str) \
+                       and ((len(first_data) > 0 and '#' == first_data[0]) or (len(first_data) <= 0)):
+                        continue
+                self.data.append(row_data)
 
         load_excel(path, analyze_sheet)
 
@@ -455,7 +461,7 @@ class CSVHelper:
 
     def to_csv(self, path):
         out = csv.writer(open(path + self.name + ".csv", 'w', encoding='utf-8', newline=''), dialect='excel')
-        
+
         out.writerow(self.filed)
 
         csv_types = list()

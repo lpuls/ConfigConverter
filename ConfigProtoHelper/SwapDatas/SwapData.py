@@ -30,6 +30,10 @@ class SwapData:
             data_type = self.field_to_type.get(field_name, None)  # self.types[index]
             assert data_type, "无法找到%s对应的类型" % field_name
 
+            # 所有的ID都转换成大写
+            if 'ID' == field_name.upper():
+                field_name = field_name.upper()
+
             message_field = message_field + "\t%(type_name)s %(field_name)s = %(index)d;\n" % {
                     "type_name": DataType.to_proto_type(data_type),
                     "field_name": field_name,

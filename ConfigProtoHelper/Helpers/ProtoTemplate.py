@@ -5,6 +5,32 @@ PROTO_TEMPLATE = """
 syntax = "proto3";
 option csharp_namespace = "Config";
 %(enums)s
+
+message IntArray
+{
+    repeated int32 data = 1;
+}
+
+message LongArray
+{
+    repeated int32 data = 1;
+}
+
+message FloatArray
+{
+    repeated float data = 1;
+}
+
+message StringArray
+{
+    repeated string data = 1;
+}
+
+message BoolArray
+{
+    repeated bool data = 1;
+}
+
 %(messages)s
 
 message DataHelper 

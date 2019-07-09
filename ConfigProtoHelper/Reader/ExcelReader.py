@@ -11,11 +11,16 @@ __NOTE_ROW_ID__ = 1
 __FIELD_ROW_ID__ = 2
 
 
-def __analyze_sheet__(name, sheet):
-    # 判断是枚举还是表格，若是枚举则需要加入一种新的类型
-    if 'e_' == name[:2]:
-        new_type(name[2:])
+def __add_new_enum_type__(name, data):
+    desc = dict()
+    for index, data_type in enumerate(data.types):
+        field = data.fields[index]
+        value = data.data_list[index][1]
+        desc[field] = (get_type(data_type), value)
+    new_type(name, desc)
 
+
+def __analyze_sheet__(name, sheet):
     # 字段不够就没有继续的必要了
     if sheet.nrows < 3:
         print("无效的表置表格式")
@@ -34,7 +39,12 @@ def __analyze_sheet__(name, sheet):
             data.append(fields[col_index])
         data_list.append(data)
 
-    return CIFormat(name, types, notes, fields, data_list)
+    ci_data = CIFormat(name, types, notes, fields, data_list)
+    # 判断是枚举还是表格，若是枚举则需要加入一种新的类型
+    if 'e_' == name[:2]:
+        new_type(name[2:], ci_data)
+
+    return ci_data
 
 
 def reader(path):
@@ -50,3 +60,8 @@ def reader(path):
     # 暂时不支持多张sheet表了
     name = path[path.rfind('/') + 1: path.rfind('.')]
     return __analyze_sheet__(name, sheets[0])
+
+
+if __name__ == '__main__':
+    reader('../../Config/Excel/e_TargetSelectType.xlsx')
+    print(get_type('TargetSelectType'))

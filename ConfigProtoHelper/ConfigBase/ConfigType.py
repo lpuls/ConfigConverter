@@ -50,9 +50,17 @@ class MapType(ConfigType):
 
 
 class CustomType(ConfigType):
+    """
+    自定义类型
+    custom_type: 表示该类型的名称
+    custom_desc:
+        该类型的描述，这是一个字典
+        字段名: 元组(类型, 缺省值)
+    """
     def __init__(self):
         ConfigType.__init__(self)
         self.custom_type = None
+        self.custom_desc = dict()
 
 
 __STR_TYPE__ = "STR"
@@ -78,7 +86,7 @@ def __init_type__():
     __TYPE_TABLE__[__JSON_TYPE__] = JsonType()
 
 
-def new_type(name):
+def new_type(name, desc):
     if len(__TYPE_TABLE__) <= 0:
         __init_type__()
 
@@ -87,6 +95,7 @@ def new_type(name):
         raise Exception('重定义类型 ' + name)
     type_inst = CustomType()
     type_inst.custom_type = name
+    type_inst.custom_desc = desc
     __TYPE_TABLE__[name] = type_inst
 
 
@@ -98,6 +107,8 @@ def get_type(type_str):
     type_inst = __TYPE_TABLE__.get(type_str, None)
     if None is type_inst:
         index = type_str.find(':')
+        if -1 == index:
+            raise Exception('无效类型声明' + type_str)
         main_type_str = type_str[:index]
         type_inst = get_type(main_type_str)
         if -1 != type_str.find(__MAP_TYPE__):
@@ -116,7 +127,10 @@ def get_type(type_str):
 
 
 if __name__ == '__main__':
-    new_type('AbilityType')
+    new_type('AbilityType', {
+        'ID': (get_type(__INT_TYPE__), 0),
+        'Name': (get_type(__STR_TYPE__), '')
+    })
     print(type(get_type('INT')))
     print(type(get_type('FLOAT')))
     print(type(get_type('LONG')))

@@ -2,11 +2,9 @@
 
 import os
 import struct
-from Writer.pbjson import *
+from Writer.Proto.pbjson import *
 from ConfigBase.ConfigType import *
 from Tools.ModuleHelper import load_module
-from ConfigBase.CommonIntermediateFormat import CommonIntermediateFormat as CIFormat
-
 
 PROTO_TEMPLATE = """
 syntax = "proto3";

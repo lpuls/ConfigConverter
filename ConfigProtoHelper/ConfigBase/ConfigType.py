@@ -113,6 +113,7 @@ def new_type(name, desc):
     type_inst.type_name = name
     type_inst.custom_desc = desc
     __TYPE_TABLE__[name] = type_inst
+    return type_inst
 
 
 def new_enum(name, value):
@@ -126,6 +127,7 @@ def new_enum(name, value):
     type_inst.type_name = name
     type_inst.custom_desc = value
     __TYPE_TABLE__[name] = type_inst
+    return type_inst
 
 
 def get_type(type_str):

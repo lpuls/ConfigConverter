@@ -228,11 +228,11 @@ def new_type(name, desc):
     type_inst = __TYPE_TABLE__.get(name, None)
     if None is not type_inst:
         raise Exception('重定义类型 ' + name)
-    type_inst = CustomType()
-    type_inst.type_name = name.replace(':', '_')
 
     # 没有描述，说明要从名称直接推导出类型
     if None is not desc:
+        type_inst = CustomType()
+        type_inst.type_name = name.replace(':', '_')
         type_inst.custom_desc = desc
     else:
         type_inst = __new_type__(name)

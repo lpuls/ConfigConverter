@@ -32,11 +32,8 @@ def __check_array_element_type__(array):
     return ARRAY_TYPE + ':' + temp_type
 
 
-def __check_map_key_value_type__(map_str, key_type, value_type):
-    pass
-
-
 def pre_process_and_check_type(data_str, data_type):
+    result = None
     if isinstance(data_type, ArrayType):
         # 根据是否为json字符串先处理数据
         array_data = data_str
@@ -49,28 +46,43 @@ def pre_process_and_check_type(data_str, data_type):
 
         # 根据确定了的元还给类型将所有子元素处处理一下
         for index in range(0, len(array_data)):
-            array_data[index], _ = pre_process_and_check_type(array_data[index], data_type)
+            array_data[index], _ = pre_process_and_check_type(array_data[index], data_type.sub_type)
 
         # 将处理完的结果及确定了的类型返回
-        return array_data,
+        result = array_data
     elif isinstance(data_type, JsonType):
-        return json.loads(data_str), data_type
+        result = json.loads(data_str)
     elif isinstance(data_type, IntType):
         # todo: 之后再处理枚举的问题
-        return int(data_str), data_type
+        result = int(data_str)
     elif isinstance(data_type, LongType):
-        return int(data_str), data_type
+        result = int(data_str)
     elif isinstance(data_type, FloatType):
-        return float(data_str), data_type
+        result = int(data_str)
     elif isinstance(data_type, BoolType):
-        return True if 'TRUE' == data_str.upper() else False, data_type
+        result = True if 'TRUE' == data_str.upper() else False
     elif isinstance(data_type, StringType):
-        return data_str, data_type
+        result = data_str
     elif isinstance(data_type, MapType):
-        return None, __check_map_key_value_type__(data_str, data_type.key_type, data_type.value_type)
+        # todo json只支持以str为key，这边也先这先规定，以后再处理
+        array_data = data_str
+        if isinstance(data_str, str):
+            array_data = json.loads(data_str)
+
+        new_dict = dict()
+        for key, value in array_data.items():
+            key_value, _ = pre_process_and_check_type(key, data_type.key_type)
+            value_value, _ = pre_process_and_check_type(value, data_type.value_type)
+            new_dict[key_value] = value_value
+
+        result = new_dict
+    return result, data_type
 
 
 if __name__ == '__main__':
-    new_type('ARRAY:ARRAY:INT', None)
-    v, t = pre_process_and_check_type('[[1, 2, 3], [1, 2, 3], [1, 2, 3]]', get_type(ARRAY_TYPE))
+    _2d_array = new_type('ARRAY:ARRAY:INT', None)
+    _spec_map_ = new_type('MAP:INT,ARRAY:INT', None)
+    v, t = pre_process_and_check_type('[[1, 2, 3], [1, 2, 3], [1, 2, 3]]', _2d_array)
+    print(v, type(t))
+    v, t = pre_process_and_check_type('{"1":[1, 2, 3], "2": [3, 4, 5]}', _spec_map_)
     print(v, type(t))

@@ -1,0 +1,8 @@
+{
+  "excel_path": ["../Config/Excel/"],
+  "binary_path": "./Temp/Config.bytes",
+  "cs_path": "./Temp",
+  "py_path": "./",
+  "proto_path": "./Temp/Config.Path",
+  "python_name": "Config_pb2"
+}

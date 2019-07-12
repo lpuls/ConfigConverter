@@ -154,15 +154,18 @@ def spawn_proto_file():
 def write(config, cif_list):
     # 写入proto
     proto_context = spawn_proto_file()
-    with open('./Temp/Config.proto', 'w') as f:
+    # with open('./Temp/Config.proto', 'w') as f:
+    with open(config.proto_path, 'w') as f:
         f.write(proto_context)
 
     # 调用Protoc生成proto代码
-    os.system("protoc --python_out=./ ./Temp/Config.proto")
-    os.system("protoc --csharp_out=./Temp ./Temp/Config.proto")
+    # os.system("protoc --python_out=./ ./Temp/Config.proto")
+    # os.system("protoc --csharp_out=./Temp ./Temp/Config.proto")
+    os.system("protoc --python_out=%s %s" % (config.py_path, config.proto_path))
+    os.system("protoc --csharp_out=%s %s" % (config.cs_path, config.proto_path))
 
     # 加载proto.py模块
-    binary_data = __data_to_binary__(config.python_proto, cif_list)
+    binary_data = __data_to_binary__(config.python_name, cif_list)
     with open(config.binary_path, 'wb+') as f:
         f.write(binary_data)
 

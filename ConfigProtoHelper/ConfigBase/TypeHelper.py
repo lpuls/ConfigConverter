@@ -42,7 +42,12 @@ def pre_process_and_check_type(data_str, data_type):
 
         # 是否确定的元素类型
         if None is data_type.sub_type:
-            data_type = get_type(__check_array_element_type__(array_data))
+            type_str = __check_array_element_type__(array_data)
+            data_type = get_type(type_str)
+            if None is data_type:
+                data_type = new_type(type_str, None)
+        if None is data_type:
+            raise Exception('无法处理的数组对像')
 
         # 根据确定了的元还给类型将所有子元素处处理一下
         for index in range(0, len(array_data)):

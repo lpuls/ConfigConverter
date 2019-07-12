@@ -217,6 +217,9 @@ def __new_type__(type_str):
         elif ARRAY_TYPE == pre_type_name or JSON_TYPE == pre_type_name or MAP_TYPE == pre_type_name:
             main_type_inst = ArrayType()
             main_type_inst.sub_type = __new_type__(sub_type_str)
+        elif INT_TYPE == pre_type_name:
+            main_type_inst = IntType()
+            main_type_inst.sub_type = __new_type__(sub_type_str)
         return main_type_inst
     return get_type(type_str)
 

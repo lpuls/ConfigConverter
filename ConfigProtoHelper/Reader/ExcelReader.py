@@ -49,23 +49,23 @@ def __analyze_sheet__(name, sheet):
             data.append(sheet.cell(row_index, col_index).value)
         data_list.append(data)
 
-    for index, type_str in enumerate(types):
-        type_inst = get_type(type_str)
-        if None is type_inst:
-            type_inst = new_type(type_str, None)
-        types[index] = type_inst
-
-    # 根据数据类型的字符串得到数据类型实例，若无法判断，则读取数据的第一行
-    for row_data in data_list:
-        for index, data in enumerate(row_data):
-            type_inst = types[index]
-            row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
-    ci_data = CIFormat(name, types, notes, fields, data_list)
-
     # 判断是枚举还是表格，若是枚举则需要加入一种新的类型
     if 'e_' == name[:2]:
+        ci_data = CIFormat(name[2:], types, notes, fields, data_list)
         __add_new_enum_type__(name[2:], ci_data)
     else:
+        for index, type_str in enumerate(types):
+            type_inst = get_type(type_str)
+            if None is type_inst:
+                type_inst = new_type(type_str, None)
+            types[index] = type_inst
+
+        # 根据数据类型的字符串得到数据类型实例，若无法判断，则读取数据的第一行
+        for row_data in data_list:
+            for index, data in enumerate(row_data):
+                type_inst = types[index]
+                row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
+        ci_data = CIFormat(name, types, notes, fields, data_list)
         __add_new_class_type__(name, ci_data)
 
     return ci_data
@@ -87,6 +87,6 @@ def reader(path):
 
 
 if __name__ == '__main__':
-    reader('../../Config/Excel/AbilityConfig.xlsx')
-    # reader('../../Config/Excel/Spawn.xlsx')
+    reader('../../Config/Excel/Spawn.xlsx')
+    reader('../../Config/Excel/e_FloatingType.xlsx')
     # print(get_type('FloatingType'))

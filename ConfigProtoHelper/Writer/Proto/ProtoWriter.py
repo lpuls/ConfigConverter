@@ -103,9 +103,10 @@ def __data_to_binary__(proto_module, data_list):
 
     # 将数据写进DataHelper
     for data in data_list:
-        # data = data_list[data_key]
-        # if not data.key:
-        #     continue
+
+        type_inst = get_type(data.name)
+        if isinstance(type_inst, EnumType):
+            continue
 
         # 将dict转为proto类
         pb_dict = list()

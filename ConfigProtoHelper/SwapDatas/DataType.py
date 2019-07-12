@@ -165,6 +165,8 @@ class DataType:
             return DataType.PROTO_JSON_TYPE
         elif DataType.LONG_TYPE == type_name:
             return DataType.PROTO_LONG_TYPE
+        elif DataType.FLOAT_TYPE == type_name:
+            return DataType.PROTO_FLOAT_TYPE
         else:
             return type_name
 

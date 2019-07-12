@@ -1,16 +1,17 @@
 # _*_coding:utf-8_*_
 
 
-__STR_TYPE__ = "STR"
-__INT_TYPE__ = "INT"
-__LONG_TYPE__ = "LONG"
-__BOOL_TYPE__ = "BOOL"
-__ARRAY_TYPE__ = "ARRAY"
-__MAP_TYPE__ = "MAP"
-__JSON_TYPE__ = "JSON"
-__FLOAT_TYPE__ = "FLOAT"
+STR_TYPE = "STR"
+INT_TYPE = "INT"
+LONG_TYPE = "LONG"
+BOOL_TYPE = "BOOL"
+ARRAY_TYPE = "ARRAY"
+MAP_TYPE = "MAP"
+JSON_TYPE = "JSON"
+FLOAT_TYPE = "FLOAT"
 
 __TYPE_TABLE__ = dict()
+__TYPE_AUTHORITY__ = dict()
 
 
 class ConfigType:
@@ -88,18 +89,136 @@ class EnumType(CustomType):
 
 
 def __init_type__():
-    __TYPE_TABLE__[__STR_TYPE__] = StringType()
-    __TYPE_TABLE__[__INT_TYPE__] = IntType()
-    __TYPE_TABLE__[__LONG_TYPE__] = LongType()
-    __TYPE_TABLE__[__BOOL_TYPE__] = BoolType()
-    __TYPE_TABLE__[__FLOAT_TYPE__] = FloatType()
-    __TYPE_TABLE__[__MAP_TYPE__] = MapType()
-    __TYPE_TABLE__[__ARRAY_TYPE__] = ArrayType()
-    __TYPE_TABLE__[__JSON_TYPE__] = JsonType()
+    __TYPE_TABLE__[STR_TYPE] = StringType()
+    __TYPE_TABLE__[INT_TYPE] = IntType()
+    __TYPE_TABLE__[LONG_TYPE] = LongType()
+    __TYPE_TABLE__[BOOL_TYPE] = BoolType()
+    __TYPE_TABLE__[FLOAT_TYPE] = FloatType()
+    __TYPE_TABLE__[MAP_TYPE] = MapType()
+    __TYPE_TABLE__[ARRAY_TYPE] = ArrayType()
+    __TYPE_TABLE__[JSON_TYPE] = JsonType()
+
+    # 权限，用于确定类型转换的时候,以值大的类型为主，若相等，说明冲突，以STR为主
+    __TYPE_AUTHORITY__[BOOL_TYPE] = {
+        BOOL_TYPE: BOOL_TYPE,
+        INT_TYPE: INT_TYPE,
+        LONG_TYPE: LONG_TYPE,
+        FLOAT_TYPE: FLOAT_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[INT_TYPE] = {
+        BOOL_TYPE: INT_TYPE,
+        INT_TYPE: INT_TYPE,
+        LONG_TYPE: LONG_TYPE,
+        FLOAT_TYPE: FLOAT_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[LONG_TYPE] = {
+        BOOL_TYPE: LONG_TYPE,
+        INT_TYPE: LONG_TYPE,
+        LONG_TYPE: LONG_TYPE,
+        FLOAT_TYPE: FLOAT_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[FLOAT_TYPE] = {
+        BOOL_TYPE: FLOAT_TYPE,
+        INT_TYPE: FLOAT_TYPE,
+        LONG_TYPE: FLOAT_TYPE,
+        FLOAT_TYPE: FLOAT_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[JSON_TYPE] = {
+        BOOL_TYPE: STR_TYPE,
+        INT_TYPE: STR_TYPE,
+        LONG_TYPE: STR_TYPE,
+        FLOAT_TYPE: STR_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[ARRAY_TYPE] = {
+        BOOL_TYPE: STR_TYPE,
+        INT_TYPE: STR_TYPE,
+        LONG_TYPE: STR_TYPE,
+        FLOAT_TYPE: STR_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[MAP_TYPE] = {
+        BOOL_TYPE: STR_TYPE,
+        INT_TYPE: STR_TYPE,
+        LONG_TYPE: STR_TYPE,
+        FLOAT_TYPE: STR_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
+    __TYPE_AUTHORITY__[STR_TYPE] = {
+        BOOL_TYPE: STR_TYPE,
+        INT_TYPE: STR_TYPE,
+        LONG_TYPE: STR_TYPE,
+        FLOAT_TYPE: STR_TYPE,
+        JSON_TYPE: STR_TYPE,
+        ARRAY_TYPE: STR_TYPE,
+        MAP_TYPE: STR_TYPE,
+        STR_TYPE: STR_TYPE
+    }
 
 
 def get_all_type():
     return __TYPE_TABLE__
+
+
+def get_type(type_str):
+    if len(__TYPE_TABLE__) <= 0:
+        __init_type__()
+
+    # 尝试根据类型的字符串找出对应的类型
+    return __TYPE_TABLE__.get(type_str, None)
+
+
+def get_authority(type_str, other_type):
+    if len(__TYPE_TABLE__) <= 0:
+        __init_type__()
+    sub_authority = __TYPE_AUTHORITY__.get(type_str, None)
+    if None is not sub_authority:
+        return sub_authority.get(other_type, STR_TYPE)
+    return STR_TYPE
+
+
+def __new_type__(type_str):
+    index = type_str.find(':')
+    if -1 != index:
+        pre_type_name = type_str[:index]
+        sub_type_str = type_str[index + 1:]
+        if MAP_TYPE == pre_type_name:
+            # todo 关于多层map循环嵌套……再说吧
+            main_type_inst = MapType()
+            key_type_str = sub_type_str[:sub_type_str.find(',')]
+            value_type_str = sub_type_str[sub_type_str.find(',') + 1:]
+            main_type_inst.key_type = __new_type__(key_type_str)
+            main_type_inst.value_type = __new_type__(value_type_str)
+        elif ARRAY_TYPE == pre_type_name or JSON_TYPE == pre_type_name or MAP_TYPE == pre_type_name:
+            main_type_inst = ArrayType()
+            main_type_inst.sub_type = __new_type__(sub_type_str)
+        return main_type_inst
+    return get_type(type_str)
 
 
 def new_type(name, desc):
@@ -110,8 +229,13 @@ def new_type(name, desc):
     if None is not type_inst:
         raise Exception('重定义类型 ' + name)
     type_inst = CustomType()
-    type_inst.type_name = name
-    type_inst.custom_desc = desc
+    type_inst.type_name = name.replace(':', '_')
+
+    # 没有描述，说明要从名称直接推导出类型
+    if None is not desc:
+        type_inst.custom_desc = desc
+    else:
+        type_inst = __new_type__(name)
     __TYPE_TABLE__[name] = type_inst
     return type_inst
 
@@ -130,44 +254,18 @@ def new_enum(name, value):
     return type_inst
 
 
-def get_type(type_str):
-    if len(__TYPE_TABLE__) <= 0:
-        __init_type__()
-
-    # 尝试根据类型的字符串找出对应的类型
-    type_inst = __TYPE_TABLE__.get(type_str, None)
-    if None is type_inst:
-        index = type_str.find(':')
-        if -1 == index:
-            raise Exception('无效类型声明' + type_str)
-        main_type_str = type_str[:index]
-        type_inst = get_type(main_type_str)
-        if -1 != type_str.find(__MAP_TYPE__):
-            sub_type_str = type_str[index + 1:]
-            index = sub_type_str.find(',')
-            key_type_str = sub_type_str[:index]
-            value_type_str = sub_type_str[index + 1:]
-            type_inst.key_type = get_type(key_type_str)
-            type_inst.value_type = get_type(value_type_str)
-        elif -1 != index and (-1 != type_str.find(__ARRAY_TYPE__) or
-                              -1 != type_str.find(__JSON_TYPE__) or -1 != type_str.find(__INT_TYPE__)):
-            type_inst.sub_type = get_type(type_str[index + 1:])
-        else:
-            raise Exception('未知类型' + type_str)
-    return type_inst
-
-
 if __name__ == '__main__':
-    new_type('AbilityType', {
-        'ID': get_type(__INT_TYPE__),
-        'Name': get_type(__STR_TYPE__)
-    })
-    print(type(get_type('INT')))
-    print(type(get_type('FLOAT')))
-    print(type(get_type('LONG')))
-    print(type(get_type('BOOL')))
-    print(type(get_type('STR')))
-    print(type(get_type('MAP:INT,STR')))
-    print(type(get_type('ARRAY:AbilityType')))
-    print(type(get_type('INT:AbilityType')))
+    new_type('ARRAY:ARRAY:FLOAT')
+    # new_type('AbilityType', {
+    #     'ID': get_type(INT_TYPE),
+    #     'Name': get_type(STR_TYPE)
+    # })
+    # print(type(get_type('INT')))
+    # print(type(get_type('FLOAT')))
+    # print(type(get_type('LONG')))
+    # print(type(get_type('BOOL')))
+    # print(type(get_type('STR')))
+    # print(type(get_type('MAP:INT,STR')))
+    # print(type(get_type('ARRAY:INT')))
+    # print(type(get_type('INT:AbilityType')))
     # print(type(get_type('STR')))

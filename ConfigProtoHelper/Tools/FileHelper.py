@@ -27,7 +27,7 @@ def load_json(path):
     return json.loads(context)
 
 
-def get_all_file(path, is_deep=True, end_witch=None):
+def get_all_file(path, is_deep=True, end_witch=None, with_name=False):
     file_list = list()
     path_dir = os.listdir(path)
     for all_dir in path_dir:
@@ -35,7 +35,10 @@ def get_all_file(path, is_deep=True, end_witch=None):
         if os.path.isfile(file_path):
             if end_witch and not file_path.endswith(end_witch):
                 continue
-            file_list.append(file_path)
+            if with_name:
+                file_list.append((file_path, all_dir))
+            else:
+                file_list.append(file_path)
         elif is_deep:
             file_list += get_all_file(file_path, is_deep, end_witch)
     return file_list

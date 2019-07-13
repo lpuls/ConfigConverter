@@ -1,8 +1,10 @@
 {
   "excel_path": ["../Config/Excel/"],
+  "json_path": ["../Config/Json/"],
+  "json_desc_path": ["../Config/Json/JsonDesc.json"],
   "binary_path": "./Temp/Config.bytes",
   "cs_path": "./Temp",
-  "py_path": "./",
-  "proto_path": "./Temp/Config.Path",
+  "py_path": ".",
+  "proto_path": "./Temp/Config.proto",
   "python_name": "Config_pb2"
 }

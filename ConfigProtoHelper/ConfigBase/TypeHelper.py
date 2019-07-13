@@ -32,6 +32,16 @@ def __check_array_element_type__(array):
     return ARRAY_TYPE + ':' + temp_type
 
 
+def get_type_from_type_list(types):
+    new_types = list()
+    for index, item in enumerate(types):
+        type_inst = get_type(item)
+        if None is type_inst:
+            type_inst = new_type(item, None)
+        new_types.append(type_inst)
+    return new_types
+
+
 def pre_process_and_check_type(data_str, data_type):
     result = None
     if isinstance(data_type, ArrayType):

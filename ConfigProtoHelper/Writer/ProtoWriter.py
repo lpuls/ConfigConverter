@@ -1,10 +1,12 @@
 # _*_coding:utf-8_*_
 
 import os
+import tqdm
 import struct
-from Writer.Proto.pbjson import *
+
 from ConfigBase.ConfigType import *
 from Tools.ModuleHelper import load_module
+from Writer.pbjson import *
 
 PROTO_TEMPLATE = """
 syntax = "proto3";
@@ -46,6 +48,7 @@ def __get_proto_type__(type_inst):
             "v": __get_proto_type__(type_inst.value_type)
         }
     elif isinstance(type_inst, ArrayType):
+        # 添加多维数组的处理
         return 'repeated %(t)s' % {
             "t": __get_proto_type__(type_inst.sub_type),
         }
@@ -97,6 +100,27 @@ def __spawn_class_def__(class_inst):
     }
 
 
+def __check_id__(data_list):
+    for data in data_list:
+
+        type_inst = get_type(data.name)
+        if isinstance(type_inst, EnumType) or len(data.data_list) <= 0:
+            continue
+
+        # 检查是否存在id,没有的话生成一个并以当前行做为ID号，所有的ID字段都为大写的ID
+        for index, field in enumerate(data.fields):
+            if 'ID' == field.upper():
+                data.fields[index] = 'ID'
+                break
+        else:
+            type_inst.custom_desc.insert(0, ('ID', get_type(INT_TYPE)))
+            data.fields.insert(0, 'ID')
+            data.types.insert(0, get_type(INT_TYPE))
+            data.notes.insert(0, 'Automatic generated ID')
+            for index, config_data in enumerate(data.data_list):
+                config_data.insert(0, index)
+
+
 def __data_to_binary__(proto_module, data_list):
     module_inst = load_module(proto_module)
     binary_list = list()
@@ -107,6 +131,17 @@ def __data_to_binary__(proto_module, data_list):
         type_inst = get_type(data.name)
         if isinstance(type_inst, EnumType):
             continue
+
+        # 检查是否存在id,没有的话生成一个并以当前行做为ID号，所有的ID字段都为大写的ID
+        for index, field in enumerate(data.fields):
+            if 'ID' == field.upper():
+                data.fields[index] = 'ID'
+                break
+        else:
+            data.fields.insert(0, 'ID')
+            data.types.insert(0, get_type(INT_TYPE))
+            for index, config_data in enumerate(data.data_list):
+                config_data.insert(0, index)
 
         # 将dict转为proto类
         pb_dict = list()
@@ -152,15 +187,15 @@ def spawn_proto_file():
 
 
 def write(config, cif_list):
+    # 先检查一下ID
+    __check_id__(cif_list)
+
     # 写入proto
     proto_context = spawn_proto_file()
-    # with open('./Temp/Config.proto', 'w') as f:
     with open(config.proto_path, 'w') as f:
         f.write(proto_context)
 
     # 调用Protoc生成proto代码
-    # os.system("protoc --python_out=./ ./Temp/Config.proto")
-    # os.system("protoc --csharp_out=./Temp ./Temp/Config.proto")
     os.system("protoc --python_out=%s %s" % (config.py_path, config.proto_path))
     os.system("protoc --csharp_out=%s %s" % (config.cs_path, config.proto_path))
 

@@ -31,7 +31,7 @@ def __read_desc__(path_list):
 
             # 处理一下类型和数据
             types = get_type_from_type_list(types)
-            cif_dict[class_name] = CIF(class_name, types, types, fields, list())
+            cif_dict[class_name] = CIF(class_name, types, notes, fields, list())
 
     return cif_dict
 

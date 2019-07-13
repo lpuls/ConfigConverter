@@ -1,7 +1,6 @@
 # _*_coding:utf-8_*_
 
 import os
-import tqdm
 import struct
 
 from ConfigBase.ConfigType import *
@@ -48,8 +47,6 @@ def __get_proto_type__(type_inst):
             "v": __get_proto_type__(type_inst.value_type)
         }
     elif isinstance(type_inst, ArrayType):
-
-
         return 'repeated %(t)s' % {
             "t": __get_proto_type__(type_inst.sub_type),
         }

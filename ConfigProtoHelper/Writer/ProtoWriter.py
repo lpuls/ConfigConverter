@@ -48,7 +48,8 @@ def __get_proto_type__(type_inst):
             "v": __get_proto_type__(type_inst.value_type)
         }
     elif isinstance(type_inst, ArrayType):
-        # 添加多维数组的处理
+
+
         return 'repeated %(t)s' % {
             "t": __get_proto_type__(type_inst.sub_type),
         }
@@ -175,11 +176,26 @@ def spawn_proto_file():
     enum_def = ""
     message_def = ""
     type_tables = get_all_type()
-    for _, type_inst in type_tables.items():
+    table_list = list(type_tables.values())
+
+    # 主要用于记录多组数组所产生的额外的类型
+    temp = list()
+
+    # 将现有的类型分析成对应的proto数据
+    for type_inst in table_list:
         if isinstance(type_inst, EnumType):
             enum_def += __spawn_enum_def__(type_inst)
         elif isinstance(type_inst, CustomType):
             message_def += __spawn_class_def__(type_inst)
+
+    # 将生成过程中额外产生的多组数组类形生成成proto数据
+    for type_inst in temp:
+        if isinstance(type_inst, EnumType):
+            enum_def += __spawn_enum_def__(type_inst)
+        elif isinstance(type_inst, CustomType):
+            message_def += __spawn_class_def__(type_inst)
+
+    # 合成proto数据
     return PROTO_TEMPLATE % {
         "enums": enum_def,
         "messages": message_def
@@ -203,6 +219,10 @@ def write(config, cif_list):
     binary_data = __data_to_binary__(config.python_name, cif_list)
     with open(config.binary_path, 'wb+') as f:
         f.write(binary_data)
+
+
+if __name__ == '__main__':
+    print(__get_proto_type__(new_type('ARRAY:ARRAY:ARRAY:ARRAY:INT', None)))
 
 
 

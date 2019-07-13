@@ -65,6 +65,27 @@ def __analyze_sheet__(name, sheet):
             for index, data in enumerate(row_data):
                 type_inst = types[index]
                 row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
+
+        # 检查多维数组，将多维数组合并成新的数据类型，交替换掉当前类型
+        for type_inst in types:
+            if isinstance(type_inst.sub_type, ArrayType):
+                sub_type_inst = type_inst.sub_type
+                sub_type_inst_list = list()
+                while isinstance(sub_type_inst, ArrayType):
+                    sub_type_inst_list.append(sub_type_inst)
+                    sub_type_inst = sub_type_inst.sub_type
+
+                    for index, item in enumerate(sub_type_inst_list[::-1]):
+                        if 0 == index:
+                            new_type('_%dDArray' % (index + 2), [
+                                ('data', item)
+                            ])
+                        else:
+                            new_type('_%dDArray' % (index + 2), [
+                                ('data', get_type('_%dDArray' % (index + 2)))
+                            ])
+                    type_inst.sub_type = get_type('_%dDArray' % (len(sub_type_inst_list) + 1))
+
         ci_data = CIFormat(name, types, notes, fields, data_list)
         __add_new_class_type__(name, ci_data)
 

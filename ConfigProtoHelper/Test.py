@@ -38,14 +38,14 @@ if __name__ == '__main__':
             print(path)
             data_list.append(excel_reader(path))
 
-    path_list.clear()
-    temp_path = list()
-    for item in config.json_path:
-        temp_path += get_all_file(path=item, is_deep=False, end_witch='json', with_name=True)
-        for path, name in temp_path:
-            path_list.append((path, name))
-    data_dict = json_reader(config.json_desc_path, path_list)
-
-    data_list += list(data_dict.values())
+    # path_list.clear()
+    # temp_path = list()
+    # for item in config.json_path:
+    #     temp_path += get_all_file(path=item, is_deep=False, end_witch='json', with_name=True)
+    #     for path, name in temp_path:
+    #         path_list.append((path, name))
+    # data_dict = json_reader(config.json_desc_path, path_list)
+    #
+    # data_list += list(data_dict.values())
 
     proto_writer(config, data_list)

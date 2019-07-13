@@ -3,7 +3,7 @@
 import sys
 import struct
 from Tools.ModuleHelper import *
-from Temp.Config_pb2 import Spawn, NewConfigHelperTest
+from Temp.Config_pb2 import Spawn
 
 __CONFIG__ = dict()
 
@@ -50,5 +50,5 @@ def get(cls, config_id):
 if __name__ == '__main__':
     sys.path.append('../Temp')
     init('../Temp/Config.bytes')
-    print(get(Spawn, 5))
-    print(get(NewConfigHelperTest, 0))
+    s = get(Spawn, 5)
+    print(s._2DArray[0])

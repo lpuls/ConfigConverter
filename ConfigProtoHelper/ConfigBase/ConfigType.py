@@ -68,7 +68,7 @@ class CustomType(ConfigType):
     custom_type: 表示该类型的名称
     custom_desc:
         该类型的描述，这是一个字典
-        字段名: 类型
+        字段名: 类型实例
     """
     def __init__(self):
         ConfigType.__init__(self)
@@ -230,7 +230,9 @@ def new_type(name, desc):
 
     type_inst = __TYPE_TABLE__.get(name, None)
     if None is not type_inst:
-        raise Exception('重定义类型 ' + name)
+        print('重定义类型 ' + name)
+        return type_inst
+        # raise Exception('重定义类型 ' + name)
 
     # 没有描述，说明要从名称直接推导出类型
     if None is not desc:

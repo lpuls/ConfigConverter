@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=_b('\252\002\006Config'),
-  serialized_pb=_b('\n\x11Temp/Config.proto\"^\n\x05Spawn\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Round\x18\x02 \x01(\x05\x12\x11\n\tSpawnType\x18\x03 \x01(\x05\x12\t\n\x01X\x18\x04 \x01(\x05\x12\t\n\x01Y\x18\x05 \x01(\x05\x12\x11\n\tArrayTest\x18\x06 \x01(\x05*s\n\x0c\x46loatingType\x12\x15\n\x11\x46loatingType_NONE\x10\x00\x12\t\n\x05Score\x10\x01\x12\t\n\x05\x42lock\x10\x02\x12\x08\n\x04Trap\x10\x04\x12\x12\n\x0eInfiniteGloves\x10\x05\x12\x0c\n\x08TheWorld\x10\x06\x12\n\n\x06Target\x10@B\t\xaa\x02\x06\x43onfigb\x06proto3')
+  serialized_pb=_b('\n\x11Temp/Config.proto\"\x8a\x01\n\x05Spawn\x12\n\n\x02ID\x18\x01 \x01(\x05\x12\r\n\x05Round\x18\x02 \x01(\x05\x12 \n\tSpawnType\x18\x03 \x01(\x0e\x32\r.FloatingType\x12\t\n\x01X\x18\x04 \x01(\x05\x12\t\n\x01Y\x18\x05 \x01(\x05\x12\x11\n\tArrayTest\x18\x06 \x03(\x05\x12\x1b\n\x08_2DArray\x18\x07 \x03(\x0b\x32\t._2DArray\"\x18\n\x08_2DArray\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x05*s\n\x0c\x46loatingType\x12\x15\n\x11\x46loatingType_NONE\x10\x00\x12\t\n\x05Score\x10\x01\x12\t\n\x05\x42lock\x10\x02\x12\x08\n\x04Trap\x10\x04\x12\x12\n\x0eInfiniteGloves\x10\x05\x12\x0c\n\x08TheWorld\x10\x06\x12\n\n\x06Target\x10@B\t\xaa\x02\x06\x43onfigb\x06proto3')
 )
 
 _FLOATINGTYPE = _descriptor.EnumDescriptor(
@@ -61,8 +61,8 @@ _FLOATINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=117,
-  serialized_end=232,
+  serialized_start=188,
+  serialized_end=303,
 )
 _sym_db.RegisterEnumDescriptor(_FLOATINGTYPE)
 
@@ -100,7 +100,7 @@ _SPAWN = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='SpawnType', full_name='Spawn.SpawnType', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -121,8 +121,15 @@ _SPAWN = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ArrayTest', full_name='Spawn.ArrayTest', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=6, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='_2DArray', full_name='Spawn._2DArray', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -138,11 +145,45 @@ _SPAWN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21,
-  serialized_end=115,
+  serialized_start=22,
+  serialized_end=160,
 )
 
+
+__2DARRAY = _descriptor.Descriptor(
+  name='_2DArray',
+  full_name='_2DArray',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='data', full_name='_2DArray.data', index=0,
+      number=1, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=162,
+  serialized_end=186,
+)
+
+_SPAWN.fields_by_name['SpawnType'].enum_type = _FLOATINGTYPE
+_SPAWN.fields_by_name['_2DArray'].message_type = __2DARRAY
 DESCRIPTOR.message_types_by_name['Spawn'] = _SPAWN
+DESCRIPTOR.message_types_by_name['_2DArray'] = __2DARRAY
 DESCRIPTOR.enum_types_by_name['FloatingType'] = _FLOATINGTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -152,6 +193,13 @@ Spawn = _reflection.GeneratedProtocolMessageType('Spawn', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:Spawn)
   })
 _sym_db.RegisterMessage(Spawn)
+
+_2DArray = _reflection.GeneratedProtocolMessageType('_2DArray', (_message.Message,), {
+  'DESCRIPTOR' : __2DARRAY,
+  '__module__' : 'Temp.Config_pb2'
+  # @@protoc_insertion_point(class_scope:_2DArray)
+  })
+_sym_db.RegisterMessage(_2DArray)
 
 
 DESCRIPTOR._options = None

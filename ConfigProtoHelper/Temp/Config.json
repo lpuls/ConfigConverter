@@ -6,5 +6,6 @@
   "cs_path": "./Temp",
   "py_path": ".",
   "proto_path": "./Temp/Config.proto",
-  "python_name": "Config_pb2"
+  "python_name": "Config_pb2",
+  "csv_path": "./Temp/csv_out/"
 }

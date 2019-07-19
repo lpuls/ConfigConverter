@@ -39,12 +39,16 @@ def __read_desc__(path_list):
 def __read_json_data__(cif_dict, path, name):
     index = name.find('_')
     if -1 == index:
-        raise Exception('无效的Json文件' + name)
+        print('无效的Json文件' + name)
+        return
+        # raise Exception('无效的Json文件' + name)
 
     class_name = name[:index]
     cif = cif_dict.get(class_name, None)
     if not cif:
-        raise Exception('无法找到有效的类型 ' + name)
+        print('无法找到有效的类型 ' + name)
+        return
+        # raise Exception('无法找到有效的类型 ' + name)
 
     context = load_file_to_string(path)
     json_data = json.loads(context)
@@ -60,10 +64,10 @@ def __read_json_data__(cif_dict, path, name):
 def reader(desc_path_list, path_with_name_list):
     cif_dict = __read_desc__(desc_path_list)
     for data_path, name in path_with_name_list:
-        try:
+        # try:
             __read_json_data__(cif_dict, data_path, name)
-        except Exception as error:
-            print(error)
+        # except Exception as error:
+        #     print("Error: " + str(error) + " Path:" + data_path + " Name:" + name)
     return cif_dict
 
 

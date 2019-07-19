@@ -39,10 +39,10 @@ def __process_cif_to_csv__(cif, save_path):
     out.writerow(cif.notes)
 
     # 写入数据
-    for data in cif.data_list:
+    for data_index, data in enumerate(cif.data_list):
         temp = list()
         for index, type_inst in enumerate(cif.types):
-            if '' != data[index]:
+            if isinstance(data[index], str) and len(data[index]) > 0 and '' != data[index]:
                 if isinstance(type_inst, ArrayType):
                     temp.append(str(data[index]).replace('[', '{').replace(']', '}'))
                 elif isinstance(type_inst, StringType):

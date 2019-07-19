@@ -52,3 +52,4 @@ if __name__ == '__main__':
     init('../Temp/Config.bytes')
     s = get(Spawn, 5)
     print(s._2DArray[0])
+

@@ -45,15 +45,21 @@ def __analyze_sheet__(name, sheet):
     for row_index in range(__FIELD_ROW_ID__ + 1, sheet.nrows):
         data = list()
         for col_index in range(0, sheet.ncols):
-            # todo: 之后再加入过滤和缺省
-            data.append(sheet.cell(row_index, col_index).value)
-        data_list.append(data)
+            value = sheet.cell(row_index, col_index).value
+            if 0 == col_index and (isinstance(value, str)
+                                   and ((len(value) > 0 and '#' == value[0]) or len(value) <= 0)):
+                print("Skip ", row_index)
+                break
+            data.append(value)
+        else:
+            data_list.append(data)
 
     # 判断是枚举还是表格，若是枚举则需要加入一种新的类型
     if 'e_' == name[:2]:
         ci_data = CIFormat(name[2:], types, notes, fields, data_list)
         __add_new_enum_type__(name[2:], ci_data)
     else:
+
         for index, type_str in enumerate(types):
             type_inst = get_type(type_str)
             if None is type_inst:
@@ -61,20 +67,37 @@ def __analyze_sheet__(name, sheet):
             types[index] = type_inst
 
         # 根据数据类型的字符串得到数据类型实例，若无法判断，则读取数据的第一行
-        for row_data in data_list:
+        for row_index, row_data in enumerate(data_list):
             for index, data in enumerate(row_data):
                 type_inst = types[index]
-                row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
+
+                # 若是有空值，则根据类型填写默认值
+                if isinstance(data, str) and len(data) <= 0:
+                    if isinstance(type_inst, ArrayType):
+                        row_data[index] = []
+                    elif isinstance(type_inst, MapType):
+                        row_data[index] = {}
+                    elif isinstance(type_inst, BoolType):
+                        row_data[index] = False
+                    elif isinstance(type_inst, FloatType):
+                        row_data[index] = 0.0
+                    elif isinstance(type_inst, IntType) or isinstance(type_inst, LongType):
+                        row_data[index] = 0
+                    else:
+                        row_data[index] = ""
+                else:
+                    row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
 
         # 检查多维数组，将多维数组合并成新的数据类型，交替换掉当前类型
         for type_inst in types:
-            if isinstance(type_inst.sub_type, ArrayType):
+            if isinstance(type_inst, ArrayType) and isinstance(type_inst.sub_type, ArrayType):
                 sub_type_inst = type_inst.sub_type
                 sub_type_inst_list = list()
                 while isinstance(sub_type_inst, ArrayType):
                     sub_type_inst_list.append(sub_type_inst)
                     sub_type_inst = sub_type_inst.sub_type
 
+                    # 分析多维数组
                     for index, item in enumerate(sub_type_inst_list[::-1]):
                         if 0 == index:
                             new_type('_%dDArray' % (index + 2), [

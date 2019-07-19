@@ -60,7 +60,7 @@ def __get_proto_type__(type_inst):
     elif isinstance(type_inst, EnumType) or isinstance(type_inst, CustomType):
         return type_inst.type_name
     else:
-        return __TYPE_TO_PROTO__.get(type_inst, 'int32')
+        return __TYPE_TO_PROTO__.get(type_inst.__class__, 'int32')
 
 
 def __spawn_enum_def__(enum_inst):
@@ -68,8 +68,8 @@ def __spawn_enum_def__(enum_inst):
     for item in enum_inst.custom_desc:
         field = item[0]
         value = item[1]
-        if 'NONE' == field.upper():
-            field = enum_inst.type_name + '_' + field.upper()
+        # if 'NONE' == field.upper():
+        field = enum_inst.type_name + '_' + field.upper()
         enum_fields += '    %(field)s = %(value)d;\n' % {
             "field": field,
             "value": value
@@ -144,7 +144,7 @@ def __data_to_binary__(proto_module, data_list):
         # 将dict转为proto类
         pb_dict = list()
         cls = getattr(module_inst, data.name)
-        for config_data in data.data_list:
+        for index, config_data in enumerate(data.data_list):
             data_dict = dict(zip(data.fields, config_data))
             pb_dict.append(dict2pb(cls, data_dict))
         binary_list.append(__merge_single_binary__(data.name, pb_dict))

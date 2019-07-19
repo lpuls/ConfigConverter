@@ -44,7 +44,9 @@ def get_type_from_type_list(types):
 
 def pre_process_and_check_type(data_str, data_type):
     result = None
-    if isinstance(data_type, ArrayType):
+    if isinstance(data_type, JsonType):
+        result = json.loads(data_str)
+    elif isinstance(data_type, ArrayType):
         # 根据是否为json字符串先处理数据
         array_data = data_str
         if isinstance(data_str, str):
@@ -65,17 +67,17 @@ def pre_process_and_check_type(data_str, data_type):
 
         # 将处理完的结果及确定了的类型返回
         result = array_data
-    elif isinstance(data_type, JsonType):
-        result = json.loads(data_str)
     elif isinstance(data_type, IntType):
-        # todo: 之后再处理枚举的问题
         result = int(data_str)
     elif isinstance(data_type, LongType):
         result = int(data_str)
     elif isinstance(data_type, FloatType):
         result = int(data_str)
     elif isinstance(data_type, BoolType):
-        result = True if 'TRUE' == data_str.upper() else False
+        if isinstance(data_str, str):
+            result = True if 'TRUE' == data_str.upper() else False
+        else:
+            result = bool(data_str)
     elif isinstance(data_type, StringType):
         result = data_str
     elif isinstance(data_type, MapType):

@@ -1,0 +1,10 @@
+id,difficulty,type,name,tips,map,music,level,cost,monster_normal_level,monster_elitel_level,monster_boss_level,monster_sta_multiple,monster_atk_multiple,monster_ratio_multiple,extra_reward_need,drop_lib_id,user_exp,hero_exp
+int,int,int,varchar,varchar,varchar,varchar,int,int,int,int,int,float,float,float,varchar,int,int,int
+cs,cs,cs,c,c,cs,cs,cs,cs,s,s,s,s,s,s,cs,cs,cs,cs
+序号，前两位代表副本类型(CS),难度(CS),关卡类型(CS),关卡名字(C),关卡简介(C),地图(CS),音乐(CS),进入最低等级(CS),所需体力(CS),怪物等级(S),精英怪等级(S),BOSS等级(S),血量倍数(S),攻击倍数(S),防御倍数(S),"特殊掉落条件{type,参数}，game_tips.csv中 52000+type(CS)",对应的掉落库id(CS),通关玩家获得经验(CS),通关出战角色获得经验(CS)
+1001,1,10,星象观测,击杀,1001,,10,5,10,10,10,2.0,2.0,2.0,"{{1,100},{5,1}}",131001,5,5
+1002,2,10,星象观测,击杀,1001,,30,10,30,30,30,2.0,2.0,2.0,"{{1,100},{5,1}}",131002,10,10
+1003,3,10,星象观测,击杀,1001,,50,15,50,50,50,2.0,2.0,2.0,"{{1,100},{5,1}}",131003,15,15
+1101,1,11,秘宝寻访,生存时间,1101,,10,5,10,10,10,2.0,2.0,2.0,"{{1,100},{5,1}}",131104,5,5
+1102,2,11,秘宝寻访,生存时间,1101,,30,10,30,30,30,2.0,2.0,2.0,"{{1,100},{5,1}}",131105,10,10
+1103,3,11,秘宝寻访,生存时间,1101,,50,15,50,50,50,2.0,2.0,2.0,"{{1,100},{5,1}}",131106,15,15

@@ -1,0 +1,7 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+ImmediatelyDeath,0,立刻死亡
+WaitHitRecover,1,等待受击结束
+WaitGetUp,2,等待落地

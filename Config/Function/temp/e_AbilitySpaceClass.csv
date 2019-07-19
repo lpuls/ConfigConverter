@@ -1,0 +1,7 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+None,0,无
+Ground,1,地面
+Air,2,空中

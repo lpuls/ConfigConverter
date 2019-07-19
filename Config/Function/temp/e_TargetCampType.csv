@@ -1,0 +1,9 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+none,0,无
+we,1,我方
+enemy,2,敌方
+oneself,3,自身
+all,4,全体

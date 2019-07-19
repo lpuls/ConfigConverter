@@ -1,0 +1,11 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+none,0,无
+nearest,1,最近
+farthest,2,最远
+hp_least,3,最低血量
+hp_maximum,4,最高血量
+battle_ability_max,5,最高战力
+random,6,随机

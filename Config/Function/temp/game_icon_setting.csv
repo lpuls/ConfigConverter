@@ -1,0 +1,6 @@
+id,name,icon,desc
+varchar,varchar,varchar,varchar
+cs,c,c,c
+键(CS),成就类型(C),图标(C),描述(C)
+user_exp,玩家经验,,玩家经验
+hero_exp,角色经验,,角色经验

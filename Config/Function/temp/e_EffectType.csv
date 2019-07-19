@@ -1,0 +1,9 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+none,0,无
+general_harm,1,普通伤害
+harm,2,爆炸伤害
+effect,3,治疗效果
+death,4,即死

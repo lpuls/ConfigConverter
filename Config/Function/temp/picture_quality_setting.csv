@@ -1,0 +1,10 @@
+id,name,resolution,frame,hdr,high_quality,anti_aliasing,distortion_effect,reflection_effect,physical_simulation
+int,varchar,int,int,int,int,int,int,int,int
+c,c,c,c,c,c,c,c,c,c
+序号(C),设置名称(C),分辨率，1=低，2=中，3=高(C),帧数，0=30，1=60(C),HDR，0=关闭，1=开启(C),高品质，0=关闭，1=开启(C),抗锯齿，0=关闭，1=开启(C),扭曲效果，0=关闭，1=开启(C),反射效果，0=关闭，1=开启(C),物理模拟，0=关闭，1=开启(C)
+1,极简,2,0,0,0,0,0,0,0
+2,流畅,2,0,1,0,0,0,0,0
+3,清晰,2,0,1,0,0,0,0,1
+4,高清,2,0,1,1,1,1,1,1
+5,超清,3,1,1,1,1,1,1,1
+6,省电,1,0,0,0,0,0,0,0

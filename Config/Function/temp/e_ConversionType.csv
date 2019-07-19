@@ -1,0 +1,7 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+none,0,无
+fixed,1,固定值
+percentage,2,百分比

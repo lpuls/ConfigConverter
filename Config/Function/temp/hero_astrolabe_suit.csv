@@ -1,0 +1,55 @@
+id,suit,need,para,note,name,english,icon,color,textColor
+int,int,int,int,varchar,varchar,varchar,varchar,varchar,varchar
+cs,cs,cs,cs,c,c,c,c,c,c
+序号(CS),星盘ID(CS),不同星盘数量(CS),程序对应的借口(CS),星盘说明(C),名称(C),英文名(C),图标(C),颜色(C),字体颜色(C)
+1,1,2,0,1星盘说明啊2件套效果,1星盘,SUIT OF ONE,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+2,1,4,0,1星盘说明啊4件套效果,1星盘,SUIT OF ONE,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+3,1,6,0,1星盘说明啊6件套效果,1星盘,SUIT OF ONE,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+4,2,2,0,2星盘说明啊2件套效果,2星盘,SUIT OF TWO,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+5,2,4,0,2星盘说明啊4件套效果,2星盘,SUIT OF TWO,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+6,2,6,0,2星盘说明啊6件套效果,2星盘,SUIT OF TWO,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+7,3,2,0,3星盘说明啊2件套效果,3星盘,SUIT OF THREE,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+8,3,4,0,3星盘说明啊4件套效果,3星盘,SUIT OF THREE,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+9,3,6,0,3星盘说明啊6件套效果,3星盘,SUIT OF THREE,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+10,4,2,0,4星盘说明啊2件套效果,4星盘,SUIT OF FOUR,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+11,4,4,0,4星盘说明啊4件套效果,4星盘,SUIT OF FOUR,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+12,4,6,0,4星盘说明啊6件套效果,4星盘,SUIT OF FOUR,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+13,5,2,0,5星盘说明啊2件套效果,5星盘,SUIT OF FIVE,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+14,5,4,0,5星盘说明啊4件套效果,5星盘,SUIT OF FIVE,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+15,5,6,0,5星盘说明啊6件套效果,5星盘,SUIT OF FIVE,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+16,6,2,0,6星盘说明啊2件套效果,6星盘,SUIT OF SIX,board_xp_tf_yellow,"{0.118,0.729,0.667,0.46}",1ebaaa
+17,6,4,0,6星盘说明啊4件套效果,6星盘,SUIT OF SIX,board_xp_tf_yellow,"{0.118,0.729,0.667,0.46}",1ebaaa
+18,6,6,0,6星盘说明啊6件套效果,6星盘,SUIT OF SIX,board_xp_tf_yellow,"{0.118,0.729,0.667,0.46}",1ebaaa
+19,7,2,0,7星盘说明啊2件套效果,7星盘,SUIT OF SEVEN,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+20,7,4,0,7星盘说明啊4件套效果,7星盘,SUIT OF SEVEN,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+21,7,6,0,7星盘说明啊6件套效果,7星盘,SUIT OF SEVEN,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+22,8,2,0,8星盘说明啊2件套效果,8星盘,SUIT OF EIGHT,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+23,8,4,0,8星盘说明啊4件套效果,8星盘,SUIT OF EIGHT,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+24,8,6,0,8星盘说明啊6件套效果,8星盘,SUIT OF EIGHT,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+25,9,2,0,9星盘说明啊2件套效果,9星盘,SUIT OF NINE,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+26,9,4,0,9星盘说明啊4件套效果,9星盘,SUIT OF NINE,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+27,9,6,0,9星盘说明啊6件套效果,9星盘,SUIT OF NINE,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+28,10,2,0,10星盘说明啊2件套效果,10星盘,SUIT OF TEN,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+29,10,4,0,10星盘说明啊4件套效果,10星盘,SUIT OF TEN,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+30,10,6,0,10星盘说明啊6件套效果,10星盘,SUIT OF TEN,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+31,11,2,0,11星盘说明啊2件套效果,11星盘,SUIT OF ELEVEN,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+32,11,4,0,11星盘说明啊4件套效果,11星盘,SUIT OF ELEVEN,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+33,11,6,0,11星盘说明啊6件套效果,11星盘,SUIT OF ELEVEN,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+34,12,2,0,12星盘说明啊2件套效果,12星盘,SUIT OF TWELVE,board_xp_tf_yellow,"{0.118,0.729,0.667,0.46}",1ebaaa
+35,12,4,0,12星盘说明啊4件套效果,12星盘,SUIT OF TWELVE,board_xp_tf_yellow,"{0.118,0.729,0.667,0.46}",1ebaaa
+36,12,6,0,12星盘说明啊6件套效果,12星盘,SUIT OF TWELVE,board_xp_tf_yellow,"{0.118,0.729,0.667,0.46}",1ebaaa
+37,13,2,0,13星盘说明啊2件套效果,13星盘,SUIT OF THIRTEEN,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+38,13,4,0,13星盘说明啊4件套效果,13星盘,SUIT OF THIRTEEN,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+39,13,6,0,13星盘说明啊6件套效果,13星盘,SUIT OF THIRTEEN,board_xp_tf_blue,"{0.988,0.792,0.341,0.46}",d09e27
+40,14,2,0,1星盘说明啊2件套效果,14星盘,SUIT OF FOURTEEN,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+41,14,4,0,1星盘说明啊4件套效果,14星盘,SUIT OF FOURTEEN,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+42,14,6,0,1星盘说明啊6件套效果,14星盘,SUIT OF FOURTEEN,board_xp_tf_green,"{0.894,0.275,0.318,0.46}",e44651
+43,15,2,0,2星盘说明啊2件套效果,15星盘,SUIT OF FIFTEEN,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+44,15,4,0,2星盘说明啊4件套效果,15星盘,SUIT OF FIFTEEN,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+45,15,6,0,2星盘说明啊6件套效果,15星盘,SUIT OF FIFTEEN,board_xp_tf_purple,"{0.671,0.471,0.996,0.46}",ab78fe
+46,16,2,0,3星盘说明啊2件套效果,16星盘,SUIT OF SIXTEEN,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+47,16,4,0,3星盘说明啊4件套效果,16星盘,SUIT OF SIXTEEN,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+48,16,6,0,3星盘说明啊6件套效果,16星盘,SUIT OF SIXTEEN,board_xp_tf_red,"{0.176,0.467,0.941,0.46}",2196f5
+49,17,2,0,4星盘说明啊2件套效果,17星盘,SUIT OF SEVENTEEN,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+50,17,4,0,4星盘说明啊4件套效果,17星盘,SUIT OF SEVENTEEN,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3
+51,17,6,0,4星盘说明啊6件套效果,17星盘,SUIT OF SEVENTEEN,board_xp_tf_waterblue,"{0.09,0.808,0.953,0.46}",17cef3

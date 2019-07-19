@@ -1,0 +1,5 @@
+id,type,language,text
+int,int,int,varchar
+cs,cs,cs,cs
+id(CS),文本类型(CS),文本语言{0-中文1-英文2-日文}(CS),文本内容(CS)
+1,1,0,社团特殊道具

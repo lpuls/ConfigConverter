@@ -1,0 +1,7 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+none,0,无
+buff,1,增益
+debuff,2,减益

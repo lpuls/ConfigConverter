@@ -1,0 +1,6 @@
+id,name,chapters,guide_name
+int,varchar,varchar,varchar
+c,c,c,c
+区域id(C),区域名称(C),对应章(C),导航栏里显示的名字(C)
+1,初始台地,"{1,2}",第一章
+2,斯皮尔特工业,"{3,4,5}",第二章

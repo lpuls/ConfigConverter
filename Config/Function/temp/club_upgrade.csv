@@ -1,0 +1,9 @@
+id,club_level,level_up_cost,maintenance_cost,member_count_limit,level_up_need
+int,int,int,int,int,int
+cs,cs,cs,cs,cs,cs
+序号(CS),社团等级(CS),升级消耗(CS),每日维护费用(CS),成员人数上限(CS),需要满足的建设度(CS)
+1,1,200,1,24,3
+2,2,500,200,30,4
+3,3,1000,300,36,5
+4,4,1500,400,42,6
+5,5,2000,500,50,7

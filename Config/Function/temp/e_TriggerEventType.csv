@@ -1,0 +1,11 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+MapInit ,0,地图初始化
+UnitEnterArea ,1,单位进入区域
+UnitDie ,2,单位死亡
+UnitAttrChange ,3,单位属性变化
+UnitPrepareCast ,4,单位准备施法
+ChangeAttarge ,5,切换攻击目标
+UnitAcceptDamage ,6,单位接受伤害

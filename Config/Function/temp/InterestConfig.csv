@@ -1,0 +1,17 @@
+ID,Group
+int,varchar
+n,n
+ID,"默認興趣組None 0 无
+Player 1 英雄
+Enemy 2 怪物
+Neutral 4 中立
+Bunker 8 堡垒
+Trigger 16 触发器"
+1,"{2,64}"
+2,"{1,128}"
+4,{}
+8,{}
+16,{}
+32,"{1,2,128}"
+64,{}
+128,{}

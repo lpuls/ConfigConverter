@@ -1,0 +1,9 @@
+id,desc,open_time,close_time,premission_need,need,club_medal,club_popularity,group_id,drop_num
+int,varchar,varchar,varchar,int,int,int,int,int,int
+cs,n,s,s,s,cs,cs,cs,cs,cs
+序号(CS),说明(N),开放时间(S),关闭时间(S),"是否需求玩家是团长/副团长,1=是,0=否(S)","需求,0=无(CS)",玩家获得的社团勋章(CS),社团获得的社团人气值(CS),权重组id 对应club_sign_item中group(CS),掉落数量(CS)
+1,每日签到奖励,,,0,0,100,500,0,0
+2,每日19-23点签到奖励,"{19,0,0}","{23,0,0}",0,0,100,500,0,0
+3,每日19-23点额外奖励,"{19,0,0}","{23,0,0}",1,0,100,300,0,0
+4,累积10人签到,,,0,10,0,1000,0,0
+5,累计签到2次额外奖励,,,0,2,0,0,1,1

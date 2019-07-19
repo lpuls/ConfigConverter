@@ -1,0 +1,7 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+Body,0,身躯
+Foreleg,1,前肢
+Hindleg,2,后肢

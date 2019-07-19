@@ -1,0 +1,9 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+None,0,无
+CastAnimation,1,前摇
+CastPoint,2,中段
+CastBackswing,3,后摇
+CastMoveswing,4,可移动后摇

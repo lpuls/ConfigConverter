@@ -1,0 +1,10 @@
+id,packIndex,name,atlasName,emojiName
+int,int,varchar,varchar,varchar
+c,c,c,c,c
+序号(C),类别(C),中文名(C),图集名称(C),图片名字(C)
+1,1,静态表情1,HeadIconAtlas,1
+2,1,静态表情2,HeadIconAtlas,2
+3,1,静态表情3,HeadIconAtlas,3
+4,1,静态表情4,HeadIconAtlas,4
+5,1,静态表情5,HeadIconAtlas,5
+6,2,动态表情1,package1,expression1

@@ -1,0 +1,13 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+None,0,无
+Player,1,英雄
+Enemy,2,怪物
+Neutral,4,中立
+Bunker,8,堡垒
+Trigger,16,触发器
+Trap,32,陷阱
+Box,64,宝箱
+Friend,128,友方

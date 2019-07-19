@@ -1,0 +1,26 @@
+ID,WeaponCategory,RoleCategory,AudioClipPath
+int,int,int,varchar
+n,n,n,n
+"id
+规则=武器种类*100+种族类型","武器种类
+0 == 无
+1 == 拳套","角色种族
+0 == 无
+1 == 人形
+2 == 虚拟
+3 == 机械",音效路径
+1,0,1,Audio/attack/1050_attack5_routi
+2,0,2,Audio/attack/1050_attack_routi
+3,0,3,Audio/attack/1050_attack5_routi
+101,1,1,Audio/attack/attack_za_routi
+102,1,2,Audio/attack/attack_za_routi
+103,1,3,Audio/attack/attack_za_jixie
+201,2,1,Audio/attack/1050_attack_routi
+202,2,2,Audio/attack/1050_attack_routi
+203,2,3,Audio/attack/1050_attack5_routi
+301,3,1,Audio/attack/attack_bian_routi
+302,3,2,Audio/attack/attack_bian_bug
+303,3,3,Audio/attack/attack_bian_routi
+401,4,1,Audio/attack/attack_quite
+402,4,2,Audio/attack/attack_quite
+403,4,3,Audio/attack/attack_quite

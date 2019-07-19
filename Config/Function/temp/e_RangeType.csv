@@ -1,0 +1,10 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+none,0,无
+straightline,1,直线(距离)
+sector,2,"扇形(角度,半径)"
+roundness,3,圆形区域(半径)
+rectangle,4,矩形(长，宽)
+multi_direction,5,多方向射击

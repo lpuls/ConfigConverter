@@ -1,0 +1,9 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+None,0,无
+Gloves,1,拳套
+Tachi,2,太刀
+Whip,3,鞭子
+Quite,4,安静

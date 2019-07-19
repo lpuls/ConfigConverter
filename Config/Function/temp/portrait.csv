@@ -1,0 +1,7 @@
+id,portrait,condition
+int,varchar,int
+cs,c,cs
+id(CS),图标(C),条件(CS)
+1,icon_1048_portrait,1
+2,icon_1048_portrait,2
+3,icon_1048_portrait,3

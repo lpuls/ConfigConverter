@@ -1,0 +1,11 @@
+id,displayname,table,icon,rare,name,describe,source,atlas
+int,varchar,varchar,varchar,varchar,varchar,varchar,varchar,varchar
+c,c,c,c,c,c,c,c,c
+id(C),说明(C),大类对应的表(C),图标(C),稀有度(C),物品名称(C),文字描述(C),获取途径(C),图标图集(C)
+1,货币,@CurrencyCfg,icon,rare,name,describe,source,CurrencyAtlas
+2,英雄,@HeroCfg,littleIcon,"{1,4}",name,describe_hero,source,HeadIconAtlas
+3,英雄碎片,@HeroCfg,littleIcon,"{1,4}",name_fragment,describe_fragment,source_fragment,HeadIconAtlas
+4,装备,@EquipCfg,icon,"{2,EquipStarCfg,""equip_star"",""rare""}",name,describe,source,EquipAtlas
+5,装备碎片,@EquipCfg,icon,"{1,3}",name_fragment,describe_fragment,source_fragment,EquipAtlas
+6,材料,@MaterialCfg,icon,rare,name,desc,source,ItemAtlas
+7,剧情掉落,@CommissionInformationCfg,drop_icon,"{1, 1}",name,desc,source,HeadIconAtlas

@@ -1,0 +1,7 @@
+name,value,annotation
+varchar,int,varchar
+n,n,n
+枚举,值,备注
+NONE,0,无
+CIRCLE,1,圆形
+SECTOR,2,扇形

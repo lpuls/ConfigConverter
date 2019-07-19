@@ -1,0 +1,8 @@
+id,name,cost,atlasName,icon,desc,goods,value1,time_value,buy_count
+int,varchar,int,varchar,varchar,varchar,varchar,int,float,int
+cs,c,cs,c,c,c,cs,cs,cs,cs
+商品ID(CS),商品名称(C),消耗人气值(CS),图集名(C),图标(C),商品描述(C),"商品内容{类型,ID,星级,数量}(CS)",对应的属性加成值(CS),持续的时间值（小时）(CS),可购买次数（-1为无限购买）(CS)
+1,金币加成,700,CurrencyAtlas,icon_diamond,社团成员战斗胜利获得的金币增加%s%%（持续%s小时）,"{{7,1001,0,1}}",20,8.0,-1
+2,经验加成,700,CurrencyAtlas,icon_gold,社团成员战斗胜利获得的经验增加%s%%（持续%s小时）,"{{7,2001,0,1}}",20,8.0,-1
+3,装备掉落加成,700,CurrencyAtlas,icon_power,社团成员战斗胜利获得的装备增加%s%%（持续%s小时）,"{{7,2001,0,1}}",20,8.0,-1
+4,社团礼包,1000,HeadIconAtlas,1,社团大礼包,"{{6,2,0,1},{6,5,0,2}}",0,0.0,1

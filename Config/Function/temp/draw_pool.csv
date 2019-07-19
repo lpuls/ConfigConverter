@@ -1,0 +1,8 @@
+id,pool_list,cost_once,cost_ten_times,cost_item,name,note,order,pool_type
+int,varchar,int,int,int,varchar,varchar,int,int
+cs,cs,cs,cs,cs,c,n,c,cs
+奖池id(CS),奖库对应列表(CS),单抽消耗(CS),十连消耗(CS),对应currency.csv表内id(CS),名字(C),备注(N),序号(ORDER)(C),奖池类型(10-普通 11-友情 12-活动 )(CS)
+12001,"{2,3,5,6}",1,10,5,限定池1,限定池1,1,12
+10001,"{2,3,4,5,6}",1,10,5,通常池,通常池,4,10
+11001,"{1,2,4}",2,20,3,友情池,友情池,3,11
+12002,"{2,3,4,5,6}",1,10,5,限定池2,限定池2,2,12

@@ -1,0 +1,8 @@
+id,littleIconAtlas,littleIcon,iconAtlas,icon
+int,varchar,varchar,varchar,varchar
+c,c,c,c,c
+id(C),小图标图集名(C),小图标(C),大图标图集名(C),大图标(C)
+1,HeadIconAtlas,1,PortraitAtlas,1011
+2,HeadIconAtlas,2,PortraitAtlas,1019
+3,HeadIconAtlas,3,PortraitAtlas,1048
+4,HeadIconAtlas,4,PortraitAtlas,1050

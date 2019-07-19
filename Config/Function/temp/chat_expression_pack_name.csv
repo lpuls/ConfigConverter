@@ -1,0 +1,6 @@
+id,category,name
+int,int,varchar
+c,c,c
+序号(C),类别1：符号表情；2：静态图片；3：动态图片(C),中文名(C)
+1,2,静态表情
+2,3,动态表情

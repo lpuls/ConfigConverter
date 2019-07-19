@@ -1,0 +1,241 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 4012232,
+    "IsLoop": false,
+    "Duration": 4026,
+    "RecoverTime": 3422,
+    "ComboOverTime": 4026,
+    "IsFinalAction": false,
+    "IsNeedLock": false,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": true,
+    "UseDefaultCamera": true,
+    "UseCameraMove": false,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [
+        {
+            "Start": 33,
+            "ID": 4012051,
+            "TargetCampType": 0,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 7500,
+                "Z": 1000
+            },
+            "SpawnForward": {
+                "X": 0,
+                "Y": 90000,
+                "Z": 60000
+            },
+            "RangeType": 2,
+            "Radius": 0,
+            "Angle": 0,
+            "Length": 0,
+            "Width": 0,
+            "Height": 0,
+            "TargetSelectType": 0,
+            "UseCommon": true
+        },
+        {
+            "Start": 166,
+            "ID": 4012051,
+            "TargetCampType": 0,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 7500,
+                "Z": 1000
+            },
+            "SpawnForward": {
+                "X": 0,
+                "Y": 90000,
+                "Z": -60000
+            },
+            "RangeType": 2,
+            "Radius": 0,
+            "Angle": 0,
+            "Length": 0,
+            "Width": 0,
+            "Height": 0,
+            "TargetSelectType": 0,
+            "UseCommon": true
+        },
+        {
+            "Start": 300,
+            "ID": 4012051,
+            "TargetCampType": 0,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 7500,
+                "Z": 1000
+            },
+            "SpawnForward": {
+                "X": 60000,
+                "Y": 90000,
+                "Z": 0
+            },
+            "RangeType": 2,
+            "Radius": 0,
+            "Angle": 0,
+            "Length": 0,
+            "Width": 0,
+            "Height": 0,
+            "TargetSelectType": 0,
+            "UseCommon": true
+        },
+        {
+            "Start": 433,
+            "ID": 4012051,
+            "TargetCampType": 0,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 7500,
+                "Z": 1000
+            },
+            "SpawnForward": {
+                "X": -60000,
+                "Y": 90000,
+                "Z": 0
+            },
+            "RangeType": 2,
+            "Radius": 0,
+            "Angle": 0,
+            "Length": 0,
+            "Width": 0,
+            "Height": 0,
+            "TargetSelectType": 0,
+            "UseCommon": true
+        },
+        {
+            "Start": 566,
+            "ID": 4012051,
+            "TargetCampType": 0,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 7500,
+                "Z": 1000
+            },
+            "SpawnForward": {
+                "X": 0,
+                "Y": 90000,
+                "Z": 30000
+            },
+            "RangeType": 2,
+            "Radius": 0,
+            "Angle": 0,
+            "Length": 0,
+            "Width": 0,
+            "Height": 0,
+            "TargetSelectType": 0,
+            "UseCommon": true
+        },
+        {
+            "Start": 700,
+            "ID": 4012051,
+            "TargetCampType": 0,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 7500,
+                "Z": 1000
+            },
+            "SpawnForward": {
+                "X": 0,
+                "Y": 90000,
+                "Z": -30000
+            },
+            "RangeType": 2,
+            "Radius": 0,
+            "Angle": 0,
+            "Length": 0,
+            "Width": 0,
+            "Height": 0,
+            "TargetSelectType": 0,
+            "UseCommon": true
+        }
+    ],
+    "PostDespownThronEvents": [],
+    "HitTimeList": [],
+    "MoveActionTimelineNode": {
+        "Enable": false,
+        "Start": 0,
+        "Duration": 0,
+        "AnimationMove": []
+    },
+    "InputActionTimelineNode": {
+        "Enable": false,
+        "Start": 3220,
+        "Duration": 3623
+    },
+    "LockAcionList": [],
+    "ThrownCollisionCheckInfoList": [],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 4026,
+            "AbilityStateIndex": 80102
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 4000,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 15000,
+                    "Enable": true
+                },
+                {
+                    "ShapePartType": 1,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 4360
+                    },
+                    "Size": 2598,
+                    "Enable": false
+                },
+                {
+                    "ShapePartType": 2,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": -2529
+                    },
+                    "Size": 2598,
+                    "Enable": false
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

@@ -1,0 +1,781 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 2026103,
+    "IsLoop": false,
+    "Duration": 4092,
+    "RecoverTime": 3478,
+    "ComboOverTime": 4092,
+    "IsFinalAction": false,
+    "IsNeedLock": false,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": true,
+    "UseDefaultCamera": true,
+    "UseCameraMove": false,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [],
+    "PostDespownThronEvents": [],
+    "HitTimeList": [
+        {
+            "HitCheckID": 0,
+            "Start": 1166,
+            "RangeType": 2,
+            "Range": 4500,
+            "Radius": 4500,
+            "Angle": 150,
+            "Length": 1000,
+            "Width": 1000,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 3000,
+            "HorizontalSpeed": 20000,
+            "HorizontalAcceleratedASpeed": 66666,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 799,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 1000
+        },
+        {
+            "HitCheckID": 1,
+            "Start": 1966,
+            "RangeType": 3,
+            "Range": 3000,
+            "Radius": 3000,
+            "Angle": 50,
+            "Length": 1000,
+            "Width": 1000,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 4690
+            },
+            "HorizontalOffset": 6500,
+            "HorizontalSpeed": 30000,
+            "HorizontalAcceleratedASpeed": 69230,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 766,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": true,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        }
+    ],
+    "MoveActionTimelineNode": {
+        "Enable": true,
+        "Start": 0,
+        "Duration": 124,
+        "AnimationMove": [
+            {
+                "X": 35,
+                "Y": 1279,
+                "Z": 8
+            },
+            {
+                "X": 39,
+                "Y": -30,
+                "Z": 8
+            },
+            {
+                "X": 40,
+                "Y": -31,
+                "Z": 8
+            },
+            {
+                "X": 38,
+                "Y": -31,
+                "Z": 8
+            },
+            {
+                "X": 33,
+                "Y": -31,
+                "Z": 8
+            },
+            {
+                "X": 26,
+                "Y": -31,
+                "Z": 9
+            },
+            {
+                "X": 17,
+                "Y": -31,
+                "Z": 9
+            },
+            {
+                "X": 4,
+                "Y": -31,
+                "Z": 9
+            },
+            {
+                "X": -6,
+                "Y": -30,
+                "Z": 9
+            },
+            {
+                "X": -14,
+                "Y": -29,
+                "Z": 9
+            },
+            {
+                "X": -18,
+                "Y": -28,
+                "Z": 10
+            },
+            {
+                "X": -19,
+                "Y": -26,
+                "Z": 11
+            },
+            {
+                "X": -17,
+                "Y": -25,
+                "Z": 14
+            },
+            {
+                "X": -11,
+                "Y": -23,
+                "Z": 17
+            },
+            {
+                "X": -5,
+                "Y": -21,
+                "Z": 18
+            },
+            {
+                "X": -3,
+                "Y": -19,
+                "Z": 17
+            },
+            {
+                "X": -2,
+                "Y": -17,
+                "Z": 16
+            },
+            {
+                "X": -1,
+                "Y": -15,
+                "Z": 16
+            },
+            {
+                "X": -1,
+                "Y": -13,
+                "Z": 18
+            },
+            {
+                "X": 0,
+                "Y": -11,
+                "Z": 21
+            },
+            {
+                "X": 0,
+                "Y": -9,
+                "Z": 25
+            },
+            {
+                "X": 0,
+                "Y": -6,
+                "Z": 30
+            },
+            {
+                "X": 0,
+                "Y": -4,
+                "Z": 36
+            },
+            {
+                "X": -1,
+                "Y": -1,
+                "Z": 43
+            },
+            {
+                "X": -1,
+                "Y": 4,
+                "Z": 58
+            },
+            {
+                "X": 0,
+                "Y": 15,
+                "Z": 82
+            },
+            {
+                "X": 0,
+                "Y": 25,
+                "Z": 101
+            },
+            {
+                "X": -1,
+                "Y": 33,
+                "Z": 114
+            },
+            {
+                "X": -3,
+                "Y": 36,
+                "Z": 112
+            },
+            {
+                "X": -16,
+                "Y": 66,
+                "Z": 218
+            },
+            {
+                "X": -18,
+                "Y": 93,
+                "Z": 202
+            },
+            {
+                "X": -13,
+                "Y": 85,
+                "Z": -317
+            },
+            {
+                "X": 26,
+                "Y": 74,
+                "Z": -440
+            },
+            {
+                "X": 146,
+                "Y": 84,
+                "Z": 179
+            },
+            {
+                "X": 229,
+                "Y": 91,
+                "Z": 622
+            },
+            {
+                "X": 188,
+                "Y": 51,
+                "Z": 628
+            },
+            {
+                "X": 50,
+                "Y": -15,
+                "Z": 429
+            },
+            {
+                "X": -63,
+                "Y": -57,
+                "Z": 288
+            },
+            {
+                "X": -93,
+                "Y": -77,
+                "Z": 226
+            },
+            {
+                "X": -91,
+                "Y": -86,
+                "Z": 130
+            },
+            {
+                "X": -80,
+                "Y": -80,
+                "Z": 28
+            },
+            {
+                "X": -54,
+                "Y": -75,
+                "Z": 17
+            },
+            {
+                "X": -50,
+                "Y": -78,
+                "Z": 39
+            },
+            {
+                "X": -56,
+                "Y": -74,
+                "Z": 44
+            },
+            {
+                "X": -46,
+                "Y": -53,
+                "Z": 40
+            },
+            {
+                "X": -40,
+                "Y": -13,
+                "Z": 43
+            },
+            {
+                "X": -51,
+                "Y": 33,
+                "Z": 65
+            },
+            {
+                "X": -55,
+                "Y": 65,
+                "Z": 96
+            },
+            {
+                "X": -42,
+                "Y": 69,
+                "Z": 88
+            },
+            {
+                "X": -25,
+                "Y": 113,
+                "Z": 145
+            },
+            {
+                "X": -4,
+                "Y": 328,
+                "Z": 471
+            },
+            {
+                "X": 12,
+                "Y": 487,
+                "Z": 756
+            },
+            {
+                "X": 10,
+                "Y": 299,
+                "Z": 680
+            },
+            {
+                "X": 5,
+                "Y": 34,
+                "Z": 551
+            },
+            {
+                "X": 4,
+                "Y": -97,
+                "Z": 532
+            },
+            {
+                "X": 3,
+                "Y": -198,
+                "Z": 520
+            },
+            {
+                "X": -8,
+                "Y": -347,
+                "Z": 470
+            },
+            {
+                "X": -30,
+                "Y": -386,
+                "Z": 236
+            },
+            {
+                "X": -53,
+                "Y": -106,
+                "Z": -54
+            },
+            {
+                "X": -45,
+                "Y": 122,
+                "Z": -73
+            },
+            {
+                "X": 0,
+                "Y": 120,
+                "Z": 42
+            },
+            {
+                "X": 3,
+                "Y": 59,
+                "Z": 65
+            },
+            {
+                "X": 3,
+                "Y": -24,
+                "Z": 75
+            },
+            {
+                "X": 2,
+                "Y": -52,
+                "Z": 47
+            },
+            {
+                "X": 0,
+                "Y": -58,
+                "Z": 10
+            },
+            {
+                "X": 0,
+                "Y": -64,
+                "Z": 2
+            },
+            {
+                "X": 0,
+                "Y": -61,
+                "Z": -3
+            },
+            {
+                "X": 0,
+                "Y": -53,
+                "Z": -6
+            },
+            {
+                "X": 0,
+                "Y": -45,
+                "Z": -15
+            },
+            {
+                "X": 0,
+                "Y": -33,
+                "Z": -19
+            },
+            {
+                "X": 0,
+                "Y": -15,
+                "Z": -11
+            },
+            {
+                "X": 0,
+                "Y": -5,
+                "Z": -4
+            },
+            {
+                "X": -1,
+                "Y": -4,
+                "Z": -4
+            },
+            {
+                "X": -1,
+                "Y": -3,
+                "Z": -3
+            },
+            {
+                "X": -1,
+                "Y": -2,
+                "Z": -2
+            },
+            {
+                "X": -1,
+                "Y": -1,
+                "Z": -2
+            },
+            {
+                "X": -1,
+                "Y": 0,
+                "Z": -2
+            },
+            {
+                "X": -1,
+                "Y": 0,
+                "Z": -2
+            },
+            {
+                "X": 0,
+                "Y": 2,
+                "Z": -2
+            },
+            {
+                "X": 0,
+                "Y": 3,
+                "Z": -3
+            },
+            {
+                "X": 2,
+                "Y": 4,
+                "Z": -4
+            },
+            {
+                "X": 3,
+                "Y": 5,
+                "Z": -5
+            },
+            {
+                "X": 5,
+                "Y": 6,
+                "Z": -6
+            },
+            {
+                "X": 8,
+                "Y": 8,
+                "Z": -6
+            },
+            {
+                "X": 12,
+                "Y": 10,
+                "Z": -6
+            },
+            {
+                "X": 15,
+                "Y": 11,
+                "Z": -6
+            },
+            {
+                "X": 17,
+                "Y": 13,
+                "Z": -6
+            },
+            {
+                "X": 17,
+                "Y": 14,
+                "Z": -7
+            },
+            {
+                "X": 17,
+                "Y": 15,
+                "Z": -8
+            },
+            {
+                "X": 16,
+                "Y": 16,
+                "Z": -10
+            },
+            {
+                "X": 13,
+                "Y": 17,
+                "Z": -12
+            },
+            {
+                "X": 10,
+                "Y": 17,
+                "Z": -14
+            },
+            {
+                "X": 6,
+                "Y": 18,
+                "Z": -17
+            },
+            {
+                "X": 1,
+                "Y": 18,
+                "Z": -20
+            },
+            {
+                "X": -5,
+                "Y": 20,
+                "Z": -27
+            },
+            {
+                "X": -11,
+                "Y": 24,
+                "Z": -35
+            },
+            {
+                "X": -15,
+                "Y": 27,
+                "Z": -41
+            },
+            {
+                "X": -19,
+                "Y": 28,
+                "Z": -44
+            },
+            {
+                "X": -21,
+                "Y": 28,
+                "Z": -45
+            },
+            {
+                "X": -21,
+                "Y": 28,
+                "Z": -44
+            },
+            {
+                "X": -21,
+                "Y": 26,
+                "Z": -41
+            },
+            {
+                "X": -18,
+                "Y": 23,
+                "Z": -35
+            },
+            {
+                "X": -15,
+                "Y": 19,
+                "Z": -27
+            },
+            {
+                "X": -10,
+                "Y": 14,
+                "Z": -16
+            },
+            {
+                "X": -4,
+                "Y": 8,
+                "Z": -3
+            },
+            {
+                "X": 1,
+                "Y": 2,
+                "Z": 9
+            },
+            {
+                "X": 5,
+                "Y": -2,
+                "Z": 18
+            },
+            {
+                "X": 8,
+                "Y": -6,
+                "Z": 26
+            },
+            {
+                "X": 11,
+                "Y": -9,
+                "Z": 33
+            },
+            {
+                "X": 13,
+                "Y": -11,
+                "Z": 39
+            },
+            {
+                "X": 14,
+                "Y": -13,
+                "Z": 43
+            },
+            {
+                "X": 15,
+                "Y": -15,
+                "Z": 45
+            },
+            {
+                "X": 16,
+                "Y": -15,
+                "Z": 46
+            },
+            {
+                "X": 16,
+                "Y": -15,
+                "Z": 46
+            },
+            {
+                "X": 15,
+                "Y": -14,
+                "Z": 45
+            },
+            {
+                "X": 14,
+                "Y": -13,
+                "Z": 41
+            },
+            {
+                "X": 12,
+                "Y": -11,
+                "Z": 37
+            },
+            {
+                "X": 10,
+                "Y": -8,
+                "Z": 32
+            },
+            {
+                "X": 6,
+                "Y": -3,
+                "Z": 21
+            },
+            {
+                "X": 1,
+                "Y": 2,
+                "Z": 8
+            },
+            {
+                "X": -1,
+                "Y": 6,
+                "Z": 0
+            },
+            {
+                "X": -2,
+                "Y": 7,
+                "Z": -3
+            },
+            {
+                "X": -1,
+                "Y": 6,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 1,
+                "Z": 0
+            }
+        ]
+    },
+    "InputActionTimelineNode": {
+        "Enable": false,
+        "Start": 3273,
+        "Duration": 3682
+    },
+    "LockAcionList": [
+        {
+            "Start": 0,
+            "Duration": 133
+        }
+    ],
+    "ThrownCollisionCheckInfoList": [],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 4092,
+            "AbilityStateIndex": 10102
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 4092,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 500,
+                    "Enable": true
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

@@ -1,0 +1,715 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 1046201,
+    "IsLoop": false,
+    "Duration": 1452,
+    "RecoverTime": 1234,
+    "ComboOverTime": 1452,
+    "IsFinalAction": false,
+    "IsNeedLock": true,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": true,
+    "UseDefaultCamera": true,
+    "UseCameraMove": true,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [],
+    "PostDespownThronEvents": [],
+    "HitTimeList": [
+        {
+            "HitCheckID": 0,
+            "Start": 33,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 1000
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 66,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 99,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 132,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 165,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 198,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 231,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 264,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 297,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 330,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 0,
+            "Start": 363,
+            "RangeType": 3,
+            "Range": 1840,
+            "Radius": 1840,
+            "Angle": 60,
+            "Length": 3410,
+            "Width": 2109,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 1000,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 49999,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 10,
+            "HorizontalSpeedOnFloat": 1000,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": true,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 60000,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        }
+    ],
+    "MoveActionTimelineNode": {
+        "Enable": true,
+        "Start": 0,
+        "Duration": 44,
+        "AnimationMove": [
+            {
+                "X": -31,
+                "Y": 1151,
+                "Z": 1315
+            },
+            {
+                "X": -108,
+                "Y": -105,
+                "Z": 1596
+            },
+            {
+                "X": -15,
+                "Y": 7,
+                "Z": 2124
+            },
+            {
+                "X": 5,
+                "Y": 19,
+                "Z": 1673
+            },
+            {
+                "X": 1,
+                "Y": 25,
+                "Z": 649
+            },
+            {
+                "X": 2,
+                "Y": 26,
+                "Z": 312
+            },
+            {
+                "X": 2,
+                "Y": 22,
+                "Z": 155
+            },
+            {
+                "X": 2,
+                "Y": 13,
+                "Z": 170
+            },
+            {
+                "X": 0,
+                "Y": -5,
+                "Z": 191
+            },
+            {
+                "X": 0,
+                "Y": -22,
+                "Z": 130
+            },
+            {
+                "X": 0,
+                "Y": -26,
+                "Z": 119
+            },
+            {
+                "X": 7,
+                "Y": -30,
+                "Z": 138
+            },
+            {
+                "X": 10,
+                "Y": -34,
+                "Z": 134
+            },
+            {
+                "X": -5,
+                "Y": -20,
+                "Z": 106
+            },
+            {
+                "X": -28,
+                "Y": -4,
+                "Z": 78
+            },
+            {
+                "X": -40,
+                "Y": 0,
+                "Z": 68
+            },
+            {
+                "X": -45,
+                "Y": 2,
+                "Z": 61
+            },
+            {
+                "X": -45,
+                "Y": 7,
+                "Z": 54
+            },
+            {
+                "X": -39,
+                "Y": 13,
+                "Z": 49
+            },
+            {
+                "X": -27,
+                "Y": 20,
+                "Z": 45
+            },
+            {
+                "X": -14,
+                "Y": 29,
+                "Z": 38
+            },
+            {
+                "X": -4,
+                "Y": 38,
+                "Z": 30
+            },
+            {
+                "X": 2,
+                "Y": 45,
+                "Z": 24
+            },
+            {
+                "X": 8,
+                "Y": 49,
+                "Z": 21
+            },
+            {
+                "X": 11,
+                "Y": 50,
+                "Z": 22
+            },
+            {
+                "X": 13,
+                "Y": 47,
+                "Z": 26
+            },
+            {
+                "X": 15,
+                "Y": 45,
+                "Z": 32
+            },
+            {
+                "X": 19,
+                "Y": 46,
+                "Z": 35
+            },
+            {
+                "X": 23,
+                "Y": 46,
+                "Z": 37
+            },
+            {
+                "X": 25,
+                "Y": 45,
+                "Z": 38
+            },
+            {
+                "X": 26,
+                "Y": 42,
+                "Z": 37
+            },
+            {
+                "X": 26,
+                "Y": 38,
+                "Z": 35
+            },
+            {
+                "X": 29,
+                "Y": 28,
+                "Z": 34
+            },
+            {
+                "X": 33,
+                "Y": 14,
+                "Z": 32
+            },
+            {
+                "X": 28,
+                "Y": 6,
+                "Z": 22
+            },
+            {
+                "X": 18,
+                "Y": 4,
+                "Z": 9
+            },
+            {
+                "X": 14,
+                "Y": 3,
+                "Z": 4
+            },
+            {
+                "X": 13,
+                "Y": 2,
+                "Z": 2
+            },
+            {
+                "X": 12,
+                "Y": 1,
+                "Z": 0
+            },
+            {
+                "X": 11,
+                "Y": 1,
+                "Z": 0
+            },
+            {
+                "X": 10,
+                "Y": 1,
+                "Z": -1
+            },
+            {
+                "X": 11,
+                "Y": 1,
+                "Z": 0
+            },
+            {
+                "X": 11,
+                "Y": 1,
+                "Z": 0
+            },
+            {
+                "X": 5,
+                "Y": 0,
+                "Z": 0
+            }
+        ]
+    },
+    "InputActionTimelineNode": {
+        "Enable": true,
+        "Start": 133,
+        "Duration": 1300
+    },
+    "LockAcionList": [
+        {
+            "Start": 0,
+            "Duration": 66
+        }
+    ],
+    "ThrownCollisionCheckInfoList": [],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 266,
+            "AbilityStateIndex": 60102
+        },
+        {
+            "Start": 266,
+            "Duration": 867,
+            "AbilityStateIndex": 20103
+        },
+        {
+            "Start": 1133,
+            "Duration": 319,
+            "AbilityStateIndex": 20104
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 1452,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 400,
+                    "Enable": true
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

@@ -1,0 +1,1063 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 3001202,
+    "IsLoop": false,
+    "Duration": 5478,
+    "RecoverTime": 4656,
+    "ComboOverTime": 5478,
+    "IsFinalAction": false,
+    "IsNeedLock": false,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": true,
+    "UseDefaultCamera": true,
+    "UseCameraMove": true,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [],
+    "PostDespownThronEvents": [],
+    "HitTimeList": [
+        {
+            "HitCheckID": 0,
+            "Start": 2033,
+            "RangeType": 4,
+            "Range": 1000,
+            "Radius": 1000,
+            "Angle": 60,
+            "Length": 7900,
+            "Width": 8800,
+            "CenterOffset": {
+                "X": 270,
+                "Y": 0,
+                "Z": 2400
+            },
+            "HorizontalOffset": 3000,
+            "HorizontalSpeed": 20000,
+            "HorizontalAcceleratedASpeed": 66666,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 180,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 1000
+        },
+        {
+            "HitCheckID": 1,
+            "Start": 2460,
+            "RangeType": 4,
+            "Range": 1000,
+            "Radius": 1000,
+            "Angle": 60,
+            "Length": 8859,
+            "Width": 8800,
+            "CenterOffset": {
+                "X": -419,
+                "Y": 0,
+                "Z": -949
+            },
+            "HorizontalOffset": 3000,
+            "HorizontalSpeed": 20000,
+            "HorizontalAcceleratedASpeed": 66666,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 140,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 2,
+            "Start": 2833,
+            "RangeType": 4,
+            "Range": 1000,
+            "Radius": 1000,
+            "Angle": 60,
+            "Length": 8090,
+            "Width": 7780,
+            "CenterOffset": {
+                "X": 509,
+                "Y": 0,
+                "Z": -129
+            },
+            "HorizontalOffset": 3000,
+            "HorizontalSpeed": 20000,
+            "HorizontalAcceleratedASpeed": 66666,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 206,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        },
+        {
+            "HitCheckID": 3,
+            "Start": 3133,
+            "RangeType": 4,
+            "Range": 1000,
+            "Radius": 1000,
+            "Angle": 60,
+            "Length": 8000,
+            "Width": 8800,
+            "CenterOffset": {
+                "X": -779,
+                "Y": 0,
+                "Z": -3059
+            },
+            "HorizontalOffset": 5000,
+            "HorizontalSpeed": 20000,
+            "HorizontalAcceleratedASpeed": 40000,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 12,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": true,
+            "HitDownDuration": 280,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 165
+        }
+    ],
+    "MoveActionTimelineNode": {
+        "Enable": true,
+        "Start": 0,
+        "Duration": 166,
+        "AnimationMove": [
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 2
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 8
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 15
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 21
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 24
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 27
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 27
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 26
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 24
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 20
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 15
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 8
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 1
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": -5
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 31
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 160
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 281
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 299
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 251
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 219
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 225
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 228
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 230
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 232
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 234
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 235
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 236
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 237
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 238
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 238
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 238
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 238
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 238
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 237
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 236
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 235
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 234
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 232
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 230
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 228
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 225
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 223
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 220
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 216
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 213
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 209
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 205
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 201
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 196
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 191
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 186
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 181
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 175
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 170
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 163
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 153
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 138
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 124
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 111
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 98
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 87
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 76
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 65
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 56
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 47
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 39
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 32
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 25
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 19
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 14
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 10
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 6
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 3
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 1
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            }
+        ]
+    },
+    "InputActionTimelineNode": {
+        "Enable": false,
+        "Start": 4382,
+        "Duration": 4930
+    },
+    "LockAcionList": [
+        {
+            "Start": 0,
+            "Duration": 266
+        }
+    ],
+    "ThrownCollisionCheckInfoList": [],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 5478,
+            "AbilityStateIndex": 140102
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 5478,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 800,
+                    "Enable": true
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

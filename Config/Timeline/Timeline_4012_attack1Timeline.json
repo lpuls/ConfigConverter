@@ -1,0 +1,252 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 4012101,
+    "IsLoop": false,
+    "Duration": 4355,
+    "RecoverTime": 3701,
+    "ComboOverTime": 4355,
+    "IsFinalAction": false,
+    "IsNeedLock": false,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": true,
+    "UseDefaultCamera": true,
+    "UseCameraMove": false,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [],
+    "PostDespownThronEvents": [],
+    "HitTimeList": [
+        {
+            "HitCheckID": 0,
+            "Start": 1566,
+            "RangeType": 2,
+            "Range": 18000,
+            "Radius": 18000,
+            "Angle": 120,
+            "Length": 1000,
+            "Width": 1000,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "HorizontalOffset": 0,
+            "HorizontalSpeed": 0,
+            "HorizontalAcceleratedASpeed": 0,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 0,
+            "HitKartunTime": 0,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": false,
+            "HitDownDuration": 333,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 1000
+        }
+    ],
+    "MoveActionTimelineNode": {
+        "Enable": false,
+        "Start": 0,
+        "Duration": 0,
+        "AnimationMove": []
+    },
+    "InputActionTimelineNode": {
+        "Enable": false,
+        "Start": 3484,
+        "Duration": 3919
+    },
+    "LockAcionList": [],
+    "ThrownCollisionCheckInfoList": [],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 2500,
+            "AbilityStateIndex": 80102
+        },
+        {
+            "Start": 2500,
+            "Duration": 1855,
+            "AbilityStateIndex": 20103
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 633,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 3000,
+                    "Enable": false
+                },
+                {
+                    "ShapePartType": 1,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 2539
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                },
+                {
+                    "ShapePartType": 2,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": -3420
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                }
+            ]
+        },
+        {
+            "Start": 633,
+            "Duration": 833,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 3000,
+                    "Enable": false
+                },
+                {
+                    "ShapePartType": 1,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 2598,
+                    "Enable": false
+                },
+                {
+                    "ShapePartType": 2,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": -3000
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                }
+            ]
+        },
+        {
+            "Start": 1466,
+            "Duration": 1133,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 3000,
+                    "Enable": false
+                },
+                {
+                    "ShapePartType": 1,
+                    "Offset": {
+                        "X": -1659,
+                        "Y": 0,
+                        "Z": 1389
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                },
+                {
+                    "ShapePartType": 2,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": -3000
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                }
+            ]
+        },
+        {
+            "Start": 2600,
+            "Duration": 1733,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 3000,
+                    "Enable": false
+                },
+                {
+                    "ShapePartType": 1,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 3088
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                },
+                {
+                    "ShapePartType": 2,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": -3000
+                    },
+                    "Size": 2598,
+                    "Enable": true
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

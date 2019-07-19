@@ -1,0 +1,198 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 3009052,
+    "IsLoop": false,
+    "Duration": 967,
+    "RecoverTime": 821,
+    "ComboOverTime": 967,
+    "IsFinalAction": false,
+    "IsNeedLock": false,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": false,
+    "UseDefaultCamera": true,
+    "UseCameraMove": false,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [],
+    "PostDespownThronEvents": [
+        {
+            "Start": 533,
+            "ID": 3009052
+        }
+    ],
+    "HitTimeList": [],
+    "MoveActionTimelineNode": {
+        "Enable": true,
+        "Start": 0,
+        "Duration": 18,
+        "AnimationMove": [
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 742
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 119
+            }
+        ]
+    },
+    "InputActionTimelineNode": {
+        "Enable": false,
+        "Start": 773,
+        "Duration": 870
+    },
+    "LockAcionList": [],
+    "ThrownCollisionCheckInfoList": [
+        {
+            "Start": 0,
+            "Duration": 533,
+            "RangeType": 4,
+            "Radius": 1000,
+            "Angle": 60,
+            "Length": 800,
+            "Width": 529,
+            "Height": 3000,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+            },
+            "IgnoreHitHistory": false,
+            "ThrownBehaviourOnCollision": 7,
+            "SpawnThrownTimelineID": 3009054,
+            "ChangeTargetCountLimit": 0
+        }
+    ],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 967,
+            "AbilityStateIndex": 130102
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 967,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 500,
+                    "Enable": true
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

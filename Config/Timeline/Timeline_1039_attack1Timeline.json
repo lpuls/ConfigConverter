@@ -1,0 +1,240 @@
+{
+    "TICK_INTERVAL": 33,
+    "ID": 1039101,
+    "IsLoop": false,
+    "Duration": 693,
+    "RecoverTime": 589,
+    "ComboOverTime": 433,
+    "IsFinalAction": false,
+    "IsNeedLock": true,
+    "IsUseConfigY": false,
+    "IsUseConfigX": false,
+    "ThrownIgnoreGraph": false,
+    "ThrownCanOutRange": true,
+    "ThrownOutRangeSpawnID": 0,
+    "ArrivedCreateThrownTimelineID": 0,
+    "IsDependCasterForThrown": false,
+    "UseTangentMove": true,
+    "UseDefaultCamera": true,
+    "UseCameraMove": true,
+    "TransformActionInfo": {
+        "Start": 0,
+        "TransformRoleID": 0,
+        "TransformActionID": 0
+    },
+    "RangeType": 0,
+    "Radius": 0,
+    "Angle": 0,
+    "Length": 0,
+    "Width": 0,
+    "StartFrame": 0,
+    "EndFrame": 0,
+    "IsCustomAttackPoint": false,
+    "CustomAttackPointDistance": 0,
+    "CDCompensationList": [],
+    "PostSpwanThrownEvents": [],
+    "PostDespownThronEvents": [],
+    "HitTimeList": [
+        {
+            "HitCheckID": 0,
+            "Start": 166,
+            "RangeType": 4,
+            "Range": 1000,
+            "Radius": 1000,
+            "Angle": 60,
+            "Length": 5449,
+            "Width": 2660,
+            "CenterOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 2220
+            },
+            "HorizontalOffset": 800,
+            "HorizontalSpeed": 10000,
+            "HorizontalAcceleratedASpeed": 62500,
+            "VerticalSpeed": 0,
+            "VerticalAcceleratedSpeed": 0,
+            "HitHeight": 0,
+            "ValidHitHeight": 0,
+            "HorizontalSpeedOnFloat": 0,
+            "Duration": 33,
+            "AttackerKartunTime": 25,
+            "HitKartunTime": 25,
+            "IgnoreHitHistory": false,
+            "IsUseAttackerDirection": false,
+            "HitDownDuration": 366,
+            "IsThump": false,
+            "NoReoverHitKartunTime": 0,
+            "UseHitDownDuration": false,
+            "IsLargeHitBack": false,
+            "IsTargetChangeSpeed": false,
+            "TargetSpeed": 100,
+            "ChangeSpeedTime": 1000
+        }
+    ],
+    "MoveActionTimelineNode": {
+        "Enable": true,
+        "Start": 0,
+        "Duration": 21,
+        "AnimationMove": [
+            {
+                "X": 49,
+                "Y": 1463,
+                "Z": 120
+            },
+            {
+                "X": 16,
+                "Y": -92,
+                "Z": 100
+            },
+            {
+                "X": -3,
+                "Y": -132,
+                "Z": 178
+            },
+            {
+                "X": -18,
+                "Y": -139,
+                "Z": 1356
+            },
+            {
+                "X": -42,
+                "Y": -78,
+                "Z": 1166
+            },
+            {
+                "X": -1,
+                "Y": -2,
+                "Z": 246
+            },
+            {
+                "X": 0,
+                "Y": 0,
+                "Z": 59
+            },
+            {
+                "X": 0,
+                "Y": 4,
+                "Z": -23
+            },
+            {
+                "X": 0,
+                "Y": 16,
+                "Z": -32
+            },
+            {
+                "X": 0,
+                "Y": 46,
+                "Z": -18
+            },
+            {
+                "X": 0,
+                "Y": 66,
+                "Z": 5
+            },
+            {
+                "X": 0,
+                "Y": 68,
+                "Z": 32
+            },
+            {
+                "X": 0,
+                "Y": 72,
+                "Z": 53
+            },
+            {
+                "X": 0,
+                "Y": 72,
+                "Z": 58
+            },
+            {
+                "X": 0,
+                "Y": 67,
+                "Z": 63
+            },
+            {
+                "X": 0,
+                "Y": 58,
+                "Z": 67
+            },
+            {
+                "X": 0,
+                "Y": 43,
+                "Z": 70
+            },
+            {
+                "X": 0,
+                "Y": 30,
+                "Z": 77
+            },
+            {
+                "X": 0,
+                "Y": 23,
+                "Z": 85
+            },
+            {
+                "X": 0,
+                "Y": 25,
+                "Z": 83
+            },
+            {
+                "X": 0,
+                "Y": 5,
+                "Z": 7
+            }
+        ]
+    },
+    "InputActionTimelineNode": {
+        "Enable": true,
+        "Start": 100,
+        "Duration": 600
+    },
+    "LockAcionList": [
+        {
+            "Start": 0,
+            "Duration": 33
+        }
+    ],
+    "ThrownCollisionCheckInfoList": [],
+    "ThrownLockActionInfoList": [],
+    "CameraTypeInfoList": [],
+    "ThrownBackActionInfoList": [],
+    "ShapeEnableInfoList": [],
+    "AbilityStateInfoList": [
+        {
+            "Start": 0,
+            "Duration": 233,
+            "AbilityStateIndex": 10102
+        },
+        {
+            "Start": 233,
+            "Duration": 133,
+            "AbilityStateIndex": 10103
+        },
+        {
+            "Start": 366,
+            "Duration": 327,
+            "AbilityStateIndex": 10104
+        }
+    ],
+    "AbilitySpeedInfoList": [],
+    "ShapeInfoList": [
+        {
+            "Start": 0,
+            "Duration": 693,
+            "ShapeItemInfoList": [
+                {
+                    "ShapePartType": 0,
+                    "Offset": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                    },
+                    "Size": 400,
+                    "Enable": true
+                }
+            ]
+        }
+    ],
+    "ExportRelativeDisplacement": false
+}

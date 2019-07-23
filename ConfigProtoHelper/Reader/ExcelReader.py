@@ -29,6 +29,15 @@ def __add_new_class_type__(name, data):
     new_type(name, desc)
 
 
+def __conversion_list_to_n_array__(list_data):
+    if isinstance(list_data, list):
+        data = {"data": list()}
+        for item in list_data:
+            data["data"].append(__conversion_list_to_n_array__(item))
+        return data
+    return list_data
+
+
 def __analyze_sheet__(name, sheet):
     # 字段不够就没有继续的必要了
     if sheet.nrows < 3:
@@ -89,7 +98,7 @@ def __analyze_sheet__(name, sheet):
                     row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
 
         # 检查多维数组，将多维数组合并成新的数据类型，交替换掉当前类型
-        for type_inst in types:
+        for type_index, type_inst in enumerate(types):
             if isinstance(type_inst, ArrayType) and isinstance(type_inst.sub_type, ArrayType):
                 sub_type_inst = type_inst.sub_type
                 sub_type_inst_list = list()
@@ -108,6 +117,13 @@ def __analyze_sheet__(name, sheet):
                                 ('data', get_type('_%dDArray' % (index + 2)))
                             ])
                     type_inst.sub_type = get_type('_%dDArray' % (len(sub_type_inst_list) + 1))
+
+                # 转换数据
+                for item in data_list:
+                    temp = list()
+                    for item_value in item[type_index]:
+                        temp.append(__conversion_list_to_n_array__(item_value))
+                    item[type_index] = temp
 
         ci_data = CIFormat(name, types, notes, fields, data_list)
         __add_new_class_type__(name, ci_data)
@@ -131,6 +147,5 @@ def reader(path):
 
 
 if __name__ == '__main__':
-    reader('../../Config/Excel/Spawn.xlsx')
-    reader('../../Config/Excel/e_FloatingType.xlsx')
-    # print(get_type('FloatingType'))
+    r = __conversion_list_to_n_array__([[[1, 2, 3], [2, 3, 4], [5, 6, 7]], [[1, 2, 3], [2, 3, 4], [5, 6, 7]]])
+    print(r)

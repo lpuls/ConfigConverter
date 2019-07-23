@@ -24,35 +24,62 @@ class IntType(ConfigType):
         ConfigType.__init__(self)
         self.sub_type = None
 
+    def __repr__(self):
+        if None is not self.sub_type:
+            return "Int: " + str(self.sub_type)
+        return "Int"
+
 
 class LongType(ConfigType):
     def __init__(self):
         ConfigType.__init__(self)
+
+    def __repr__(self):
+        return "Long"
 
 
 class FloatType(ConfigType):
     def __init__(self):
         ConfigType.__init__(self)
 
+    def __repr__(self):
+        return "Float"
+
 
 class BoolType(ConfigType):
     def __init__(self):
         ConfigType.__init__(self)
+
+    def __repr__(self):
+        return "Bool"
 
 
 class StringType(ConfigType):
     def __init__(self):
         ConfigType.__init__(self)
 
+    def __repr__(self):
+        return "String"
+
 
 class ArrayType(IntType):
     def __init__(self):
         IntType.__init__(self)
 
+    def __repr__(self):
+        if None is not self.sub_type:
+            return "Array: " + str(self.sub_type)
+        return "Array: Error"
+
 
 class JsonType(IntType):
     def __init__(self):
         IntType.__init__(self)
+
+    def __repr__(self):
+        if None is not self.sub_type:
+            return "Json: " + str(self.sub_type)
+        return "Json: Error"
 
 
 class MapType(ConfigType):
@@ -60,6 +87,11 @@ class MapType(ConfigType):
         ConfigType.__init__(self)
         self.key_type = None
         self.value_type = None
+
+    def __repr__(self):
+        if None is not self.key_type and None is not self.value_type:
+            return "Map: " + str(self.key_type) + ", " + str(self.value_type)
+        return "Map: Error"
 
 
 class CustomType(ConfigType):
@@ -74,6 +106,9 @@ class CustomType(ConfigType):
         ConfigType.__init__(self)
         self.type_name = None
         self.custom_desc = dict()
+
+    def __repr__(self):
+        return self.type_name
 
 
 class EnumType(CustomType):
@@ -212,14 +247,16 @@ def __new_type__(type_str):
             main_type_inst = MapType()
             key_type_str = sub_type_str[:sub_type_str.find(',')]
             value_type_str = sub_type_str[sub_type_str.find(',') + 1:]
-            main_type_inst.key_type = __new_type__(key_type_str)
-            main_type_inst.value_type = __new_type__(value_type_str)
-        elif ARRAY_TYPE == pre_type_name or JSON_TYPE == pre_type_name or MAP_TYPE == pre_type_name:
+            main_type_inst.key_type = new_type(key_type_str, None)
+            main_type_inst.value_type = new_type(value_type_str, None)
+        elif ARRAY_TYPE == pre_type_name:
             main_type_inst = ArrayType()
-            main_type_inst.sub_type = __new_type__(sub_type_str)
+            main_type_inst.sub_type = new_type(sub_type_str, None)
+        elif JSON_TYPE == pre_type_name:
+            main_type_inst = new_type(sub_type_str, None)
         elif INT_TYPE == pre_type_name:
             main_type_inst = IntType()
-            main_type_inst.sub_type = __new_type__(sub_type_str)
+            main_type_inst.sub_type = new_type(sub_type_str, None)
         return main_type_inst
     return get_type(type_str)
 

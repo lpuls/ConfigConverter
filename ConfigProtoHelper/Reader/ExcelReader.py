@@ -49,7 +49,7 @@ def __process_structure_data__(name, sheet):
     for y in range(__FIELD_ROW_ID__ + 1, sheet.nrows):
         data_dict = dict()
         for x in range(0, sheet.ncols):
-            data_dict[inst.desc[x].field] = sheet.cell_value(y, x)
+            data_dict[inst.desc[x].field] = inst.desc[x].type.to_data(sheet.cell_value(y, x))
             # data_list.append(sheet.cell_value(y, x))
         inst.data.append(data_dict)
 

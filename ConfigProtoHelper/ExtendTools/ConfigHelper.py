@@ -3,7 +3,7 @@
 import sys
 import struct
 from Tools.ModuleHelper import *
-from Temp.Config_pb2 import ConfigHelper
+from Temp.Config_pb2 import Box, Studen
 
 __CONFIG__ = dict()
 
@@ -23,7 +23,8 @@ def init(path):
         binary_length, inst_count, class_name_length = struct.unpack('iii', binary_data_list[:12])
         binary_data_list = binary_data_list[12:]
 
-        class_name = struct.unpack('%ds' % (class_name_length,), binary_data_list[:class_name_length])[0].decode('utf-8')
+        class_name = struct.unpack('%ds' % (class_name_length,),
+                                   binary_data_list[:class_name_length])[0].decode('utf-8')
         binary_data_list = binary_data_list[class_name_length:]
 
         config_dict = dict()
@@ -50,6 +51,8 @@ def get(cls, config_id):
 if __name__ == '__main__':
     sys.path.append('../Temp')
     init('../Temp/Config.bytes')
-    s = get(ConfigHelper, 1)
-    print(s.ARRAY_ARRAY_INT_TEST[0])
+    s = get(Box, 1)
+    print(s)
+    s = get(Studen, 1)
+    print(s)
 

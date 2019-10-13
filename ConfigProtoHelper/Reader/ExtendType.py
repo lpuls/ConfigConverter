@@ -5,9 +5,8 @@ from ConfigBase.ConfigHelper import get_type, add_type
 
 
 class Array2D(StructureType):
-    def __init__(self):
-        self.element_type = None
-        self.desc = None
+    def __init__(self, name, desc):
+        StructureType.__init__(self, name, desc)
 
     def to_data(self, v):
         if isinstance(v, str):
@@ -25,37 +24,32 @@ class Array2D(StructureType):
 
 class IntArray2D(Array2D):
     def __init__(self):
-        ConfigType.__init__(self, "IntArray2D")
         self.element_type = get_type(IntType.DEF)
-        self.desc = [StructureType.StructureElement("Data", "数组数据", self.element_type)]
+        Array2D.__init__(self, "IntArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
 
 
 class LongArray2D(Array2D):
     def __init__(self):
-        ConfigType.__init__(self, "LongArray2D")
         self.element_type = get_type(LongType.DEF)
-        self.desc = [StructureType.StructureElement("Data", "数组数据", self.element_type)]
+        Array2D.__init__(self, "LongArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
 
 
 class FloatArray2D(Array2D):
     def __init__(self):
-        ConfigType.__init__(self, ArrayType.DEF)
         self.element_type = get_type(FloatType.DEF)
-        self.desc = [StructureType.StructureElement("Data", "数组数据", self.element_type)]
+        Array2D.__init__(self, "FloatArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
 
 
 class BoolArray2D(Array2D):
     def __init__(self):
-        ConfigType.__init__(self, "BoolArray2D")
         self.element_type = get_type(BoolType.DEF)
-        self.desc = [StructureType.StructureElement("Data", "数组数据", self.element_type)]
+        Array2D.__init__(self, "BoolArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
 
 
 class StringArray2D(Array2D):
     def __init__(self):
-        ConfigType.__init__(self, "StringArray2D")
         self.element_type = get_type(StringType.DEF)
-        self.desc = [StructureType.StructureElement("Data", "数组数据", self.element_type)]
+        Array2D.__init__(self, "StringArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
 
 
 def init_extend_type():

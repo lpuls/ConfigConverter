@@ -7,7 +7,7 @@ from ConfigBase.ConfigHelper import init_type
 from Reader.ExtendType import init_extend_type
 from Reader.ExcelReader import process as excel_processor
 from Reader.JsonReader import process_type as json_type_processor, process_data as json_data_processor
-from Writer.ProtoWriter import spawn_proto_file
+from Writer.ProtoWriter import spawn_proto_file, call_proto_executor, to_binary
 from Tools.FileHelper import load_file_to_string, get_all_file
 
 
@@ -49,6 +49,8 @@ if __name__ == '__main__':
     json_data_processor(path_list)
 
     spawn_proto_file(config.package_name, config.proto_path)
+    call_proto_executor(config.cs_path, config.py_path, config.proto_path)
+    to_binary(config.python_name, config.binary_path)
 
     # path_list.clear()
     # temp_path = list()

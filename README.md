@@ -6,24 +6,31 @@
 * FLOAT                     float，该类型支持不是很好，基本等于没有
 * BOOL                      bool
 * STR                       string
-* ARRAY[:Type]              repeated, 数组类型；子类型若不填写则会自动推导，建议写上
-* MAP[:KeyType, ValueType]  map<Type1, Type>，字典类型，子类型若不填写则会自动推导，但建议写上
-* JSON:Type                 自定义结构类型，需要提供该Json的描述文件
+* ARRAY[:Type]              repeated, 数组类型
+* MAP[:KeyType, ValueType]  map<Type1, Type>，字典类型
+* Type                      自定义结构类型，需要提供该Json的描述文件或着是Excel中定义的枚举
 
 ## 配置文件
 * Config.json
-    * JSON_PATH: json文件所有的路径，在该路径下的文件分为两类：
-        1. JsonDesc.json 该文件为json类型的自定义结构类型的描述文件，明声了该结构的成员
-        2. JsonType_JsonFileName.json JsonType为在描述文件中声明过的结构，JsonFileName则是该结构的实例名称
-    * EXCEL_PATH: Excel文件的读取路径
-    * OUT_PATH: 最后输出的proto文件的路径
-    * PROTO_SAVE_PATH: 根据excel/json生成的proto文件的存放路径，该proto文件是用来确定根据json及excel字段生成的
-    * BINARY_SAVE_PATH: 二进制文件生成路径
-    * LOG_PATH： 无用
-    * PYTHON_PROTO_MODULE_PATH: 生成的python的proto文件的所在位置；这里面会利用python的反射将数据写进二进制文件中，因此需要标名该文件的位置
-    * SPAWN_CSHARP_COMMAND: 该指令用来生成C# 的proto文件
-    * SPAWN_PYTHON_COMMAND: 该指令用来生成python的proto文件
-    * OTHER_OUT_PATH: 暂时无用
+    * package_name      包名，放在CS文件中就表示命名空间
+    * excel_path        要读取的Excel文件的地址（有读取Excel文件为数据源时才有效）
+    * json_path         要读取的Json文件包在的地址（有读取Json文件为数据源时才有效）
+    * json_desc_path    在Json中定义的描述文件，用于声明一个结构（有读取Json文件为数据源时才有效）
+    * binary_path       保存二进制文件的地址（使用写二进制文件功能才有效）
+    * cs_path           保存CS文件的地址（使用写二进制文件功能才有效）
+    * py_path           保存python文件的地址（使用写二进制文件功能才有效）
+    * python_name       写成二进制文件时，要通过返射获取实例的python文件名（使用写二进制文件功能才有效）
+    * proto_path        保存生成的proto文件的地址（使用写二进制文件功能才有效）
+    * csv_path          保存生成的csv文件的地址（使用写csv文件功能才有效）
     
 ## 其它
 * ExtendTools是工作中为了解决一些特殊文件而存在的
+
+## 使用
+* Excel
+    * 数据：前三行分别为：类型，描述，字段名称
+    * 枚举：前三行如数据；第一列为枚举名称，第二列为枚举值，第三列为枚潜描述
+
+* Json
+    * 需要在Config.json_desc_path列表中添加描述文件的地址
+    * 按照描述文件定义的格式往里面写入数据，就如同普通的Json文件一样

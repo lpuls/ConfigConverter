@@ -1,25 +1,66 @@
-
 syntax = "proto3";
+
 option csharp_namespace = "Config";
 
+enum BoxType {
+	BoxType_NONE = 0;
+	BoxType_NORMAL = 1;
+	BoxType_METAL = 2;
+	BoxType_ELEMENT = 3;
+	BoxType_BOOM = 4;
 
-message _2DArray
-{
-    repeated int32 data = 1;
+}
+
+
+
+message IntArray2D {
+	int32 Data = 1;
 
 }
 
-message ConfigHelper
-{
-    int32 ID = 1;
-    int64 LONG_TEST = 2;
-    float FLOAT_TEST = 3;
-    bool BOOL_TEST = 4;
-    string STR_TEST = 5;
-    repeated int32 ARRAY_TEST = 6;
-    repeated int32 ARRAY_INT_TEST = 7;
-    map<int32, int32> MAP_INT_INT_TEST = 8;
-    repeated _2DArray ARRAY_ARRAY_INT_TEST = 9;
+message BoolArray2D {
+	bool Data = 1;
 
 }
+
+message FloatArray2D {
+	float Data = 1;
+
+}
+
+message LongArray2D {
+	int64 Data = 1;
+
+}
+
+message Skill {
+	int32 ID = 1;
+	string Name = 2;
+	int32 Cost = 3;
+
+}
+
+message Box {
+	int32 ID = 1;
+	string Prefab = 2;
+	BoxType Type = 3;
+	repeated int32 Lose = 4;
+	map<int32, int32> LoseCount = 5;
+	IntArray2D SpecialTest = 6;
+
+}
+
+message StringArray2D {
+	string Data = 1;
+
+}
+
+message Studen {
+	int32 ID = 1;
+	repeated Skill Skill = 2;
+	repeated int32 Age = 3;
+
+}
+
+
 

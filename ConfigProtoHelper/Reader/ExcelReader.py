@@ -1,151 +1,108 @@
 # _*_coding:utf-8_*_
 
-import os
-import xlrd
-from ConfigBase.ConfigType import *
-from ConfigBase.TypeHelper import *
-from ConfigBase.CommonIntermediateFormat import CommonIntermediateFormat as CIFormat
+from ConfigBase.ConfigHelper import *
+from Tools.FileHelper import load_excel, get_all_file
 
+
+__ENUM_PREFIX__ = 'e_'
 
 __TYPE_ROW_ID__ = 0
 __NOTE_ROW_ID__ = 1
 __FIELD_ROW_ID__ = 2
 
+__ENUM_NAME_ROW__ = 0
+__ENUM_VALUE_ROW__ = 1
+__ENUM_NOTE_ROW__ = 2
 
-def __add_new_enum_type__(name, data):
+
+def __process_enum_excel__(name, sheet):
+    desc = dict()
+    notes = list()
+
+    row_count = sheet.nrows
+    for y in range(__FIELD_ROW_ID__ + 1, row_count):
+        enum_name = sheet.cell_value(y, __ENUM_NAME_ROW__)
+        value = int(sheet.cell_value(y, __ENUM_VALUE_ROW__))
+        note = sheet.cell_value(y, __ENUM_NOTE_ROW__)
+        desc[enum_name] = value
+        notes.append(note)
+    add_enum_type(name.replace(__ENUM_PREFIX__, ''), desc, notes)
+
+
+def __process_structure_excel__(name, sheet):
     desc = list()
-    for index, _ in enumerate(data.data_list):
-        field = data.data_list[index][0]
-        value = int(data.data_list[index][1])
-        desc.append((field, value))
-    new_enum(name, desc)
+    col_count = sheet.ncols
+    for x in range(0, col_count):
+        type_str = sheet.cell_value(__TYPE_ROW_ID__, x)
+        note = sheet.cell_value(__NOTE_ROW_ID__, x)
+        field = sheet.cell_value(__FIELD_ROW_ID__, x)
+        element = StructureType.StructureElement(field, note, type_str)
+        desc.append(element)
+    add_structure_type(name, desc)
 
 
-def __add_new_class_type__(name, data):
-    desc = list()
-    for index, type_inst in enumerate(data.types):
-        field = data.fields[index]
-        desc.append((field, type_inst))
-    new_type(name, desc)
+def __process_structure_data__(name, sheet):
+    inst = get_type(name)
+    if None is inst:
+        raise Exception("无效的结构 " + name)
+
+    for y in range(__FIELD_ROW_ID__ + 1, sheet.nrows):
+        data_dict = dict()
+        for x in range(0, sheet.ncols):
+            data_dict[inst.desc[x].field] = sheet.cell_value(y, x)
+            # data_list.append(sheet.cell_value(y, x))
+        inst.data.append(data_dict)
 
 
-def __conversion_list_to_n_array__(list_data):
-    if isinstance(list_data, list):
-        data = {"data": list()}
-        for item in list_data:
-            data["data"].append(__conversion_list_to_n_array__(item))
-        return data
-    return list_data
+def __process_structure_list_type__(structure_list):
+    for name in structure_list:
+        structure = get_type(name.replace('.xlsx', ''))
+        if None is structure:
+            raise Exception('存在无法正确识别的类型声时 ' + name)
+
+        process_structure_element_type(structure)
 
 
-def __analyze_sheet__(name, sheet):
-    # 字段不够就没有继续的必要了
-    if sheet.nrows < 3:
-        print("无效的表置表格式")
-        return None
+def process(file_list):
+    enum_path_list = list()
+    structure_name_list = list()
+    structure_path_list = list()
 
-    # 获取基本属性
-    types = sheet.row_values(__TYPE_ROW_ID__)
-    notes = sheet.row_values(__NOTE_ROW_ID__)
-    fields = sheet.row_values(__FIELD_ROW_ID__)
-    data_list = list()
-
-    # 读取表格并生成中间文件
-    for row_index in range(__FIELD_ROW_ID__ + 1, sheet.nrows):
-        data = list()
-        for col_index in range(0, sheet.ncols):
-            value = sheet.cell(row_index, col_index).value
-            if 0 == col_index and (isinstance(value, str)
-                                   and ((len(value) > 0 and '#' == value[0]) or len(value) <= 0)):
-                print("Skip ", row_index)
-                break
-            data.append(value)
+    # 将枚举和结构体分离
+    for item in file_list:
+        path = item[0]
+        name = item[1]
+        if name[:2] == __ENUM_PREFIX__:
+            enum_path_list.append(path)
         else:
-            data_list.append(data)
+            structure_name_list.append(name)
+            structure_path_list.append(path)
 
-    # 判断是枚举还是表格，若是枚举则需要加入一种新的类型
-    if 'e_' == name[:2]:
-        ci_data = CIFormat(name[2:], types, notes, fields, data_list)
-        __add_new_enum_type__(name[2:], ci_data)
-    else:
+    # 先将枚举加入类型列表中
+    for path in enum_path_list:
+        load_excel(path, __process_enum_excel__)
 
-        for index, type_str in enumerate(types):
-            type_inst = get_type(type_str)
-            if None is type_inst:
-                type_inst = new_type(type_str, None)
-            types[index] = type_inst
+    # 再处理结构体
+    for path in structure_path_list:
+        load_excel(path, __process_structure_excel__)
 
-        # 根据数据类型的字符串得到数据类型实例，若无法判断，则读取数据的第一行
-        for row_index, row_data in enumerate(data_list):
-            for index, data in enumerate(row_data):
-                type_inst = types[index]
+    # 确定结构体的类型
+    __process_structure_list_type__(structure_name_list)
 
-                # 若是有空值，则根据类型填写默认值
-                if isinstance(data, str) and len(data) <= 0:
-                    if isinstance(type_inst, ArrayType):
-                        row_data[index] = []
-                    elif isinstance(type_inst, MapType):
-                        row_data[index] = {}
-                    elif isinstance(type_inst, BoolType):
-                        row_data[index] = False
-                    elif isinstance(type_inst, FloatType):
-                        row_data[index] = 0.0
-                    elif isinstance(type_inst, IntType) or isinstance(type_inst, LongType):
-                        row_data[index] = 0
-                    else:
-                        row_data[index] = ""
-                else:
-                    row_data[index], types[index] = pre_process_and_check_type(data, type_inst)
-
-        # 检查多维数组，将多维数组合并成新的数据类型，交替换掉当前类型
-        for type_index, type_inst in enumerate(types):
-            if isinstance(type_inst, ArrayType) and isinstance(type_inst.sub_type, ArrayType):
-                sub_type_inst = type_inst.sub_type
-                sub_type_inst_list = list()
-                while isinstance(sub_type_inst, ArrayType):
-                    sub_type_inst_list.append(sub_type_inst)
-                    sub_type_inst = sub_type_inst.sub_type
-
-                    # 分析多维数组
-                    for index, item in enumerate(sub_type_inst_list[::-1]):
-                        if 0 == index:
-                            new_type('_%dDArray' % (index + 2), [
-                                ('data', item)
-                            ])
-                        else:
-                            new_type('_%dDArray' % (index + 2), [
-                                ('data', get_type('_%dDArray' % (index + 2)))
-                            ])
-                    type_inst.sub_type = get_type('_%dDArray' % (len(sub_type_inst_list) + 1))
-
-                # 转换数据
-                for item in data_list:
-                    temp = list()
-                    for item_value in item[type_index]:
-                        temp.append(__conversion_list_to_n_array__(item_value))
-                    item[type_index] = temp
-
-        ci_data = CIFormat(name, types, notes, fields, data_list)
-        __add_new_class_type__(name, ci_data)
-
-    return ci_data
+    # 处理结构体中的数据
+    for path in structure_path_list:
+        load_excel(path, __process_structure_data__)
 
 
-def reader(path):
-    if not os.access(path, os.R_OK):
-        print("文件%s不可读" % path)
-        return
-
-    # 分析每张工作表的内容
-    data = xlrd.open_workbook(path)
-    sheets = data.sheets()
-    assert len(sheets) > 0, "无可用的工作表"
-
-    # 暂时不支持多张sheet表了
-    name = path[path.rfind('/') + 1: path.rfind('.')]
-    return __analyze_sheet__(name, sheets[0])
+def __test__():
+    excel_list = get_all_file('../../Config/Test/', is_deep=False, end_witch='.xlsx', with_name=True)
+    process(excel_list)
+    type_inst = get_type('Box')
+    print(type_inst.data)
+    pass
 
 
 if __name__ == '__main__':
-    r = __conversion_list_to_n_array__([[[1, 2, 3], [2, 3, 4], [5, 6, 7]], [[1, 2, 3], [2, 3, 4], [5, 6, 7]]])
-    print(r)
+    init_type()
+    __test__()
+    pass

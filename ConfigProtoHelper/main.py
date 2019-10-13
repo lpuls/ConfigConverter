@@ -3,15 +3,18 @@
 import json
 import sys
 
-from Reader.ExcelReader import reader as excel_reader
-from Writer.ProtoWriter import write as proto_writer
-from Writer.CSVWriter import writer as csv_writer
+from ConfigBase.ConfigHelper import init_type
+from Reader.ExtendType import init_extend_type
+from Reader.ExcelReader import process as excel_processor
+from Reader.JsonReader import process_type as json_type_processor, process_data as json_data_processor
+from Writer.ProtoWriter import spawn_proto_file
 from Tools.FileHelper import load_file_to_string, get_all_file
 
 
 class Config:
     def __init__(self):
         self.excel_path = list()
+        self.package_name = 'Config'
         self.python_name = 'Config_pb2'
         self.binary_path = './Temp/Config.bytes'
         self.cs_path = ''
@@ -30,14 +33,22 @@ if __name__ == '__main__':
 
     sys.path.append(config.cs_path)
 
-    data_list = list()
-    path_list = list()
+    # 预处理类型
+    init_type()
+    init_extend_type()
+    json_type_processor(config.json_desc_path)
 
+    path_list = list()
     for item in config.excel_path:
-        path_list += get_all_file(path=item, is_deep=True, end_witch='xlsx')
-        for path in path_list:
-            print(path)
-            data_list.append(excel_reader(path))
+        path_list += get_all_file(path=item, is_deep=True, end_witch='xlsx', with_name=True)
+    excel_processor(path_list)
+
+    path_list.clear()
+    for item in config.json_path:
+        path_list += get_all_file(path=item, is_deep=True, end_witch='json', with_name=True)
+    json_data_processor(path_list)
+
+    spawn_proto_file(config.package_name, config.proto_path)
 
     # path_list.clear()
     # temp_path = list()
@@ -49,6 +60,5 @@ if __name__ == '__main__':
 
     # data_list += list(data_dict.values())
 
-    proto_writer(config, data_list)
-    csv_writer(config, data_list)
+    # proto_writer(config, data_list)
 

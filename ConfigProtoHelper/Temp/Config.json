@@ -1,7 +1,8 @@
 {
-  "excel_path": ["../Config/Battle/"],
-  "json_path": ["../Config/Timeline/"],
-  "json_desc_path": ["../Config/Timeline/JsonDesc.json"],
+  "package_name": "Config",
+  "excel_path": ["../Config/Test/"],
+  "json_path": ["../Config/Test/"],
+  "json_desc_path": ["../Config/Test/JsonDesc.json"],
   "binary_path": "./Temp/Config.bytes",
   "cs_path": "./Temp",
   "py_path": ".",

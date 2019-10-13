@@ -63,8 +63,8 @@ class StringType(ConfigType):
 class ArrayType(ConfigType):
     DEF = 'ARRAY'
 
-    def __init__(self):
-        ConfigType.__init__(self, ArrayType.DEF)
+    def __init__(self, name):
+        ConfigType.__init__(self, name)
         self.element_type = None
 
     def to_data(self, v):
@@ -79,10 +79,10 @@ class ArrayType(ConfigType):
 
 
 class MapType(ConfigType):
-    DEF = 'ARRAY'
+    DEF = 'MAP'
 
-    def __init__(self):
-        ConfigType.__init__(self, MapType.DEF)
+    def __init__(self, name):
+        ConfigType.__init__(self, name)
         self.key_type = None
         self.value_type = None
 

@@ -3,12 +3,15 @@
 import json
 import sys
 
-from ConfigBase.ConfigHelper import init_type
-from Reader.ExtendType import init_extend_type
+from Tools.FileHelper import load_file_to_string, get_all_file
+
+from ConfigBase.ConfigTypeHelper import init_type
+from ConfigBase.ConfigTypeParser import init_parser
+
+from Reader.ExtendType import init_extend_parser
 from Reader.ExcelReader import process as excel_processor
 from Reader.JsonReader import process_type as json_type_processor, process_data as json_data_processor
 from Writer.ProtoWriter import spawn_proto_file, call_proto_executor, to_binary
-from Tools.FileHelper import load_file_to_string, get_all_file
 
 
 class Config:
@@ -35,7 +38,8 @@ if __name__ == '__main__':
 
     # 预处理类型
     init_type()
-    init_extend_type()
+    init_parser()
+    init_extend_parser()
     json_type_processor(config.json_desc_path)
 
     path_list = list()
@@ -51,16 +55,4 @@ if __name__ == '__main__':
     spawn_proto_file(config.package_name, config.proto_path)
     call_proto_executor(config.cs_path, config.py_path, config.proto_path)
     to_binary(config.python_name, config.binary_path)
-
-    # path_list.clear()
-    # temp_path = list()
-    # for item in config.json_path:
-    #     temp_path += get_all_file(path=item, is_deep=False, end_witch='json', with_name=True)
-    #     for path, name in temp_path:
-    #         path_list.append((path, name))
-    # data_dict = json_reader(config.json_desc_path, path_list)
-
-    # data_list += list(data_dict.values())
-
-    # proto_writer(config, data_list)
 

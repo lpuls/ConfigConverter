@@ -1,6 +1,7 @@
 # _*_coding:utf-8_*_
 
-from ConfigBase.ConfigHelper import *
+from ConfigBase.ConfigTypeHelper import *
+from ConfigBase.ConfigTypeParser import process_structure_element_type
 from Tools.FileHelper import load_excel, get_all_file
 
 

@@ -13,25 +13,8 @@ enum BoxType {
 
 
 
-message Skill {
-	int32 ID = 1;
-	string Name = 2;
-	int32 Cost = 3;
-
-}
-
-message StringArray2D {
-	string Data = 1;
-
-}
-
-message Box {
-	int32 ID = 1;
-	string Prefab = 2;
-	BoxType Type = 3;
-	repeated int32 Lose = 4;
-	map<int32, int32> LoseCount = 5;
-	IntArray2D SpecialTest = 6;
+message INTArray2D {
+	repeated int32 Data = 1;
 
 }
 
@@ -42,23 +25,20 @@ message Studen {
 
 }
 
-message FloatArray2D {
-	float Data = 1;
+message Skill {
+	int32 ID = 1;
+	string Name = 2;
+	int32 Cost = 3;
 
 }
 
-message BoolArray2D {
-	bool Data = 1;
-
-}
-
-message IntArray2D {
-	int32 Data = 1;
-
-}
-
-message LongArray2D {
-	int64 Data = 1;
+message Box {
+	int32 ID = 1;
+	string Prefab = 2;
+	BoxType Type = 3;
+	repeated int32 Lose = 4;
+	map<int32, int32> LoseCount = 5;
+	INTArray2D SpecialTest = 6;
 
 }
 

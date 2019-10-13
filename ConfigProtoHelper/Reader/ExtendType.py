@@ -1,12 +1,13 @@
 # _*_coding:utf-8_*_
 
 from ConfigBase.ConfigType import *
-from ConfigBase.ConfigHelper import get_type, add_type
+from ConfigBase.ConfigTypeParser import parser, add_parser, to_type_name
 
 
 class Array2D(StructureType):
     def __init__(self, name, desc):
         StructureType.__init__(self, name, desc)
+        self.element_type = None
 
     def to_data(self, v):
         if isinstance(v, str):
@@ -22,46 +23,22 @@ class Array2D(StructureType):
         return data
 
 
-class IntArray2D(Array2D):
-    def __init__(self):
-        self.element_type = get_type(IntType.DEF)
-        Array2D.__init__(self, "IntArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
+def __parser_array_2d__(type_list):
+    if len(type_list) < 1:
+        raise Exception("无效的Array2D类型定义长度")
+
+    index = 1
+    element_type_inst, offset = parser(type_list[index:])
+    if None is element_type_inst:
+        raise Exception("无效的Array2D的成员类型定义")
+
+    array_inst = ArrayType(to_type_name(type_list))
+    array_inst.element_type = element_type_inst
+    inst = Array2D(element_type_inst.name + "Array2D",
+                   [StructureType.StructureElement("Data", "数组数据", array_inst)])
+    inst.element_type = element_type_inst
+    return inst, offset
 
 
-class LongArray2D(Array2D):
-    def __init__(self):
-        self.element_type = get_type(LongType.DEF)
-        Array2D.__init__(self, "LongArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
-
-
-class FloatArray2D(Array2D):
-    def __init__(self):
-        self.element_type = get_type(FloatType.DEF)
-        Array2D.__init__(self, "FloatArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
-
-
-class BoolArray2D(Array2D):
-    def __init__(self):
-        self.element_type = get_type(BoolType.DEF)
-        Array2D.__init__(self, "BoolArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
-
-
-class StringArray2D(Array2D):
-    def __init__(self):
-        self.element_type = get_type(StringType.DEF)
-        Array2D.__init__(self, "StringArray2D", [StructureType.StructureElement("Data", "数组数据", self.element_type)])
-
-
-def init_extend_type():
-    add_type("IntArray2D", IntArray2D(), True)
-    add_type("LongArray2D", LongArray2D(), True)
-    add_type("FloatArray2D", FloatArray2D(), True)
-    add_type("BoolArray2D", BoolArray2D(), True)
-    add_type("StringArray2D", StringArray2D(), True)
-
-
-if __name__ == '__main__':
-    a = Array2D()
-    a.element_type = IntType()
-    print(a.to_data('[[1, 2, 3, 4], [5, 6, 7, 8]]'))
-
+def init_extend_parser():
+    add_parser('ARRAY2D', __parser_array_2d__)

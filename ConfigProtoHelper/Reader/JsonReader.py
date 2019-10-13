@@ -1,7 +1,8 @@
 # _*_coding:utf-8_*_
 
 from Tools.FileHelper import load_json
-from ConfigBase.ConfigHelper import *
+from ConfigBase.ConfigTypeHelper import *
+from ConfigBase.ConfigTypeParser import process_structure_element_type
 
 
 def process_type(file_list):

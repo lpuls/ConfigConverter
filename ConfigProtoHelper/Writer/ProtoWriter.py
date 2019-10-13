@@ -3,7 +3,7 @@
 import os
 import struct
 from ConfigBase.ConfigType import *
-from ConfigBase.ConfigHelper import get_enum_type_dict, get_structure_type_dict
+from ConfigBase.ConfigTypeHelper import get_enum_type_dict, get_structure_type_dict
 from Tools.ModuleHelper import load_module
 from Writer.pbjson import *
 
